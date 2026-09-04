@@ -1,0 +1,7 @@
+key,speaker,text_english,text_spanish
+SC1_ROCKET_001,Rocket,You're late...,
+SC1_KAZAK_001,Kazak,I know...,
+SC1_PROMPT_001,,How do you respond?,
+SC1_PROMPT_001_CHOICE_1,Kazak,Sorry for the delay,
+SC1_PROMPT_001_CHOICE_2,Kazak,(Say nothing),
+SC2_ROCKET_001,Rocket,"Well, here we are",

@@ -1,0 +1,6 @@
+SEQUENCE NAME,LINE TITLE,LINE TEXT
+lineSeqTest,Colors,"white white [c_yellow]yellow yellow[/c] white white [rainbow]rainbow rainbow[/rainbow] white white [cycle,241,0,128]cycle text[/cycle] white white"
+lineSeqTest,Delay,"normal text normal text [delay, 1000]delayed text delayed text [speed, 3]fast text fast text fast text fast text fast text fast text[/speed] [delay, 2000]normal text normal text"
+lineSeqTest,Effects,normal text [wave]wave text[/wave] [shake]shake text[/shake] [wobble]wobble text[/wobble] [pulse]pulse text[/pulse] [wheel]wheel text[/wheel] [jitter]jitter text[/jitter] [blink]blink text[/blink] normal text
+lineSeqTest,Font,consolas consolas [fComic] comic sans comic sans [fConsol] consolas consolas
+lineSeqTest,Sprite,this is a sprite: [sPixel]
