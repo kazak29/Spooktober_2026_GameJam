@@ -4,6 +4,7 @@
 
 //line sequences
 #macro LINE_SEQ_TEST	"lineSeqTest"
+#macro LINE_SEQ_TEST1	"lineSeqTest1"
 
 //sound
 #macro AMBIENT_MUSIC	"ambientMusic"

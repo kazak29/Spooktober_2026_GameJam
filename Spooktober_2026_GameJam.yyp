@@ -44,7 +44,9 @@
     {"$GMFolder":"","%Name":"Misc","folderPath":"folders/Sprites/Misc.yy","name":"Misc","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Placeholders","folderPath":"folders/Sprites/Placeholders.yy","name":"Placeholders","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
-  "ForcedPrefabProjectReferences":[],
+  "ForcedPrefabProjectReferences":[
+    {"link":"io.gamemaker.sdfshaders-1.0.0","name":"io.gamemaker.sdfshaders-1.0.0","path":"io.gamemaker.sdfshaders-1.0.0.yyp",},
+  ],
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"lines.csv","CopyToMask":-1,"filePath":"datafiles","name":"lines.csv","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"scribble_license.txt","CopyToMask":-1,"filePath":"datafiles","name":"scribble_license.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -62,6 +64,7 @@
     {"id":{"name":"scribble_fallback_font","path":"fonts/scribble_fallback_font/scribble_fallback_font.yy",},},
     {"id":{"name":"oDirector","path":"objects/oDirector/oDirector.yy",},},
     {"id":{"name":"oGameManager","path":"objects/oGameManager/oGameManager.yy",},},
+    {"id":{"name":"oGuy","path":"objects/oGuy/oGuy.yy",},},
     {"id":{"name":"oInitManager","path":"objects/oInitManager/oInitManager.yy",},},
     {"id":{"name":"oInputManager","path":"objects/oInputManager/oInputManager.yy",},},
     {"id":{"name":"oTestDialogue","path":"objects/oTestDialogue/oTestDialogue.yy",},},
@@ -112,6 +115,7 @@
     {"id":{"name":"__scribble_texture_get_material","path":"scripts/__scribble_texture_get_material/__scribble_texture_get_material.yy",},},
     {"id":{"name":"__scribble_texture_group_get_ready","path":"scripts/__scribble_texture_group_get_ready/__scribble_texture_group_get_ready.yy",},},
     {"id":{"name":"__scribble_tick","path":"scripts/__scribble_tick/__scribble_tick.yy",},},
+    {"id":{"name":"DialogueEvents","path":"scripts/DialogueEvents/DialogueEvents.yy",},},
     {"id":{"name":"DialogueLogic","path":"scripts/DialogueLogic/DialogueLogic.yy",},},
     {"id":{"name":"draw_text_scribble_ext","path":"scripts/draw_text_scribble_ext/draw_text_scribble_ext.yy",},},
     {"id":{"name":"draw_text_scribble","path":"scripts/draw_text_scribble/draw_text_scribble.yy",},},
