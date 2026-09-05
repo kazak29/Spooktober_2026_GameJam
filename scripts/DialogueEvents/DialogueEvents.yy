@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"DialogueEvents",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"DialogueEvents",
+  "parent":{
+    "name":"Text",
+    "path":"folders/Scripts/Text.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

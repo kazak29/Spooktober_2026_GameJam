@@ -24,6 +24,6 @@ if global.cheat {
 	
 	draw_set_colour(c_yellow);
 	draw_set_halign(fa_left);
-	draw_text(10,	VIEWPORT_HEIGHT - 64,	$"CHEATS ARE ACTIVE");
+	draw_text(16,	VIEWPORT_HEIGHT - 32,	$"CHEATS ARE ACTIVE");
 	
 }
