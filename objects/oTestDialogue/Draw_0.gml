@@ -1,8 +1,10 @@
 //setup position
 var _x = x + 32, _y = y + 32;
 
-//draw title
-DrawLineTitle(_x,_y, lineData.title);
+//setup strings
+var _title	= lineData[$ "title"]	?? "NO LINE TITLE SET";
+var _line	= lineData[$ "line"]	?? "NO LINE TEXT SET";
 
-//draw text
-DrawLineText(_x,_y+32, lineData.line);
+//draw strings
+DrawLine(_x,_y, _title, textW, fConsol, c_white, image_alpha);
+DrawLineTypist(_x,_y+32, _line, textW, fConsol, c_white, image_alpha);

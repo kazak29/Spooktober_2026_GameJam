@@ -8,9 +8,9 @@ function DialogueProgress(){
 	if (lineNum >= _sqL) {
 				
 		//stop dialogue
-		//lineSeq = "";
+		lineSeq = "";
 		lineNum = 0;
-		//exit;
+		exit;
 		
 	}
 	

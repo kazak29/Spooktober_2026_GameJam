@@ -4,122 +4,73 @@
 	enum LOCALE { EN }
 	global.locale = LOCALE.EN;
 	
-	//load csv file data into a ds_grid
-	global.csvLines = load_csv("lines.csv");
-
+	//structs to get assets from, using variable names as strings in csv
+	global.lineSfx = {
+		sansundertale		: noone,
+		papyrusundertale	: noone,
+	};
+	global.lineTbStyles = {
+		basic		: sPixel,
+		special		: sPlaceholderCharacter1,
+		character1	: sPixel,
+		whatever	: sPixel,
+	};
+	
 #endregion
-#region setup scripts for individual lines
-
-	//setup line with default params
-	function DataLineSetup(_title, _text){
+#region line sequences setup
+	
+	//setup individual line data
+	function DataLineSetup(_seq, _sfx, _tbStyle, _title, _text){
 		var _line = {
-			sprInd: noone,
-			sfx: noone,
-			title: {
-				str: _title,
-				col: c_white,
-				alpha: 1,
-				font: undefined,
-			},
-			line: {
-				str: _text,
-				col: c_white,
-				alpha: 1,
-				font: undefined,
-			},
+			sfx		:	_sfx,
+			tbStyle	:	_tbStyle,
+			title	:	_title,
+			line	:	_text,
 		};
-	
-		//push line into dummy array to copy from later
-		array_push(global.dataLines.seqCopy, _line);
-	}
-
-	//change params of a line (general)
-	function DataLineSetParamsGeneral(_num, _sprInd = noone, _sfx = noone){
-		var _al = array_length(global.dataLines.seqCopy);
-		if (_num < _al) {
 		
-			var _line = global.dataLines.seqCopy[_num];
-			with _line {
-				sprInd	= _sprInd;
-				sfx		= _sfx;
-			}
+		//setup a new array for set sequence if not set before
+		if !struct_exists(global.dataLines, _seq) global.dataLines[$ _seq] = [];
 		
-		}
-	}
-
-	//change params of a line (title)
-	function DataLineSetParamsTitle(_num, _col = c_white, _alpha = 1, _font = undefined){
-		var _al = array_length(global.dataLines.seqCopy);
-		if (_num < _al) {
-		
-			var _line = global.dataLines.seqCopy[_num];
-			with _line.title {
-				col		= _col;
-				alpha	= _alpha;
-				font	= _font;
-			}
-		
-		}
+		//push line into array
+		array_push(global.dataLines[$ _seq], _line);
 	}
 	
-	//change params of a line (text)
-	function DataLineSetParamsText(_num, _col = c_white, _alpha = 1, _font = undefined){
-		var _al = array_length(global.dataLines.seqCopy);
-		if (_num < _al) {
+	//setup line sequence data from a grid from csv file (as a struct of arrays of structs)
+	function DataLineSeqSetup(){
+		global.dataLines = {};
 		
-			var _line = global.dataLines.seqCopy[_num];
-			with _line.line {
-				col		= _col;
-				alpha	= _alpha;
-				font	= _font;
-			}
+		//load csv file data into a ds_grid
+		var _csvGrid = load_csv("lines.csv");
 		
-		}
-	}
-	
-#endregion
-#region setup scripts for line sequences
-	
-	//setup a line sequence from csv file
-	function DataLineSeqSetup(_seq){
-		var _hh = ds_grid_height(global.csvLines);
-	    for (var i = 0; i < _hh; i++) {
+		//loop through every row in the grid
+		var _hh = ds_grid_height(_csvGrid);
+	    for (var i = 1; i < _hh; i++) {
 			
-			//get name of sequence as set in csv file
-			var _key = global.csvLines[# 0, i];
-			
-			//compare to sequence name (must be identical)
-			if _key == _seq {
-				var _title	=	global.csvLines[# 1 + global.locale*2, i];
-				var _text	=	global.csvLines[# 2 + global.locale*2, i];
-				DataLineSetup(_title, _text);
+			//get name of sequence as set in csv file (and check that its not empty)
+			var _seq = _csvGrid[# 0, i];
+			if (_seq != "") {
+				
+				//sfx setup
+				var _sfxName = _csvGrid[# 1, i];
+				var _sfx = global.lineSfx[$ _sfxName] ?? noone;
+				
+				//tb setup
+				var _tbName = _csvGrid[# 2, i];
+				var _tbStyle = global.lineTbStyles[$ _tbName] ?? global.lineTbStyles.basic;
+				
+				//strings setup
+				var _title	=	_csvGrid[# 3 + global.locale*2, i];
+				var _text	=	_csvGrid[# 4 + global.locale*2, i];
+				
+				//combine all and push into line sequence array
+				DataLineSetup(_seq, _sfx, _tbStyle, _title, _text);
+				
 			}
 			
 	    }
-	}
-
-	//commit sequence into global data
-	function DataLineSeqCommit(_seq){
-		global.dataLines[$ _seq] = variable_clone(global.dataLines.seqCopy);
-		global.dataLines.seqCopy = [];
-	}
-
-	//setup all line data
-	function DataSetupLines() {
-		//initiate global data struct (a struct of arrays of structs)
-		global.dataLines = {seqCopy: []};
-	
-		#region sequence test
-			//setup sequence into dummy array, where all params are default except title and text strings
-			DataLineSeqSetup(LINE_SEQ_TEST);
-			
-			//change any params of any line
-			DataLineSetParamsGeneral(0, noone, noone);
-			DataLineSetParamsText(2, c_yellow, 0.7);
-			
-			//commit by copying dummy array into actual sequence array
-			DataLineSeqCommit(LINE_SEQ_TEST);
-		#endregion
+		
+		//delete ds grid
+		ds_grid_destroy(_csvGrid);
 	}
 	
 #endregion
@@ -127,6 +78,6 @@
 //setup all text data (with ability to change language)
 function SetLocale(_locale) {
 	global.locale = _locale;
-	DataSetupLines();
+	DataLineSeqSetup();
 }
 SetLocale(LOCALE.EN);
