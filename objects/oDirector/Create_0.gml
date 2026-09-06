@@ -25,8 +25,8 @@
 	global.gamePaused = false;
 	global.midTransition = false;
 	
-	global.gameState = GameStateDefault;
-	global.gameStatePrev = GameStateDefault;
+	global.directorState = GameStateDefault;
+	global.directorStatePrev = GameStateDefault;
 	
 #endregion
 #region screenplay

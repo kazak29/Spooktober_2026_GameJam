@@ -18,7 +18,7 @@
 #endregion
 
 //global state machine
-global.gameState();
+global.directorState();
 
 //ambient fade control
 AmbientFadeCheck();

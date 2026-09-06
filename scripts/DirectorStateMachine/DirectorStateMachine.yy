@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"GameStateMachine",
+  "%Name":"DirectorStateMachine",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"GameStateMachine",
+  "name":"DirectorStateMachine",
   "parent":{
     "name":"System",
     "path":"folders/Scripts/System.yy",
