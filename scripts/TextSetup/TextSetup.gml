@@ -74,10 +74,40 @@
 	}
 	
 #endregion
+#region UI text setup
+	
+	//setup ui text data from a grid from csv file (as a simple one-dimensional struct)
+	function DataTextUISetup(){
+		global.dataTextUI = {};
+		
+		//load csv file data into a ds_grid
+		var _csvGrid = load_csv("ui.csv");
+		
+		//loop through every row in the grid
+		var _hh = ds_grid_height(_csvGrid);
+	    for (var i = 1; i < _hh; i++) {
+			
+			//get text key as set in csv file (and check that its not empty)
+			var _key = _csvGrid[# 0, i];
+			if (_key != "") {
+				
+				//setup a string into struct
+				global.dataTextUI[$ _key] = _csvGrid[# 1 + global.locale, i];
+				
+			}
+			
+	    }
+		
+		//delete ds grid
+		ds_grid_destroy(_csvGrid);
+	}
+	
+#endregion
 
 //setup all text data (with ability to change language)
 function SetLocale(_locale) {
 	global.locale = _locale;
 	DataLineSeqSetup();
+	DataTextUISetup();
 }
 SetLocale(LOCALE.EN);

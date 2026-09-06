@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"LoadScreenplay",
+  "%Name":"ScreenplaySetup",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"LoadScreenplay",
+  "name":"ScreenplaySetup",
   "parent":{
     "name":"Screenplay",
     "path":"folders/Scripts/Screenplay.yy",
