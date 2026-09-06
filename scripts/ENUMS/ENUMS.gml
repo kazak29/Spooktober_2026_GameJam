@@ -1,0 +1,9 @@
+//scene node types
+enum NODE_TYPE {
+	TRANSITION,
+	DIALOGUE,
+	CHOICE,
+	MINIGAME,
+	
+	HEIGHT
+}

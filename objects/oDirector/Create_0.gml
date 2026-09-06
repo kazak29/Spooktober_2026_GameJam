@@ -1,5 +1,37 @@
+#region debug
+	
+	//randomise();
+	global.cheat = true;
+	global.cheatcode = "bees";
+	global.showDebugUI = false;
 
-screenplay = LoadScreenplay();
+#endregion
+#region sound
+	
+	global.volMusic		= 0.5;
+	global.volSound		= 0.5;
+	global.volDialogue	= 0.5;
+	
+	global.ambient = {};
+	
+#endregion
+#region gamedata
+	
+	global.screenShakeActive = true;
+	
+#endregion
+#region state machine
 
-show_debug_message(screenplay);
-
+	global.gamePaused = false;
+	global.midTransition = false;
+	
+	global.gameState = GameStateDefault;
+	global.gameStatePrev = GameStateDefault;
+	
+#endregion
+#region screenplay
+	
+	global.sceneCurrent = "";
+	global.sceneNodeNum = 0;
+	
+#endregion

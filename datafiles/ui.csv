@@ -1,3 +1,6 @@
 KEY,TEXT - ENGLISH,TEXT - SPANISH
 scene_001_option_001,I would leave it be...,
 scene_001_option_002,(Say nothing),
+,,
+ui_test,UI TEST 0,POR FAVOR
+ui_test1,UI TEST 1,POR FAVOR
