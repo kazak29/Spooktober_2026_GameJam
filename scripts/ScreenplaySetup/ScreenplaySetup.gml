@@ -92,20 +92,28 @@
 		global.dataScreenplay = {};
 		
 		#region scene test
+			//create scene
 			DataSceneCreate(SCENE_TEST);
 			
+			//dialogue
 			DataNodeSetupDialogue(LINE_SEQ_TEST);
 			
+			//choice
 			DataNodeSetupChoice(UIKEY_TEST, ChoiceTest);
 			DataNodeChoiceOptionAdd(UIKEY_TEST1, ChoiceTest);
 			DataNodeChoiceOptionAdd(UIKEY_TEST1, ChoiceTest);
 			
+			//move to next scene
 			DataNodeSetupTransition(SCENE_TEST1);
 		#endregion
 		#region scene test 1
+			//create scene
 			DataSceneCreate(SCENE_TEST1);
+			
+			//dialogue
 			DataNodeSetupDialogue(LINE_SEQ_TEST1);
 			
+			//move to next scene
 			DataNodeSetupTransition();
 		#endregion
 	}

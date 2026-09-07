@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"ChoiceNodeScripts",
   "parent":{
-    "name":"Screenplay",
-    "path":"folders/Scripts/Screenplay.yy",
+    "name":"Scenes",
+    "path":"folders/Scripts/Screenplay/Scenes.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

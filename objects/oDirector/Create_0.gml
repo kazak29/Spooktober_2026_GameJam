@@ -8,10 +8,12 @@
 #endregion
 #region sound
 	
-	global.volMusic		= 0.5;
-	global.volSound		= 0.5;
-	global.volDialogue	= 0.5;
+	//volume
+	global.volMusic		= 0.5;	//music
+	global.volSound		= 0.5;	//ambient and sound effects
+	global.volLineTW	= 0.5;	//line typewriter
 	
+	//struct for all ambient data (includes music)
 	global.ambient = {};
 	
 #endregion
@@ -25,13 +27,19 @@
 	global.gamePaused = false;
 	global.midTransition = false;
 	
-	global.directorState = GameStateDefault;
-	global.directorStatePrev = GameStateDefault;
+	global.directorState = DirectorStateDefault;
+	global.directorStatePrev = DirectorStateDefault;
 	
 #endregion
 #region screenplay
 	
-	global.sceneCurrent = "";
-	global.sceneNodeNum = 0;
+	//scene vars
+	global.sceneCurrent = SCENE_TEST;
+	global.sceneNodePos = 0;
+	global.sceneNodeData = {};
+	
+	//line sequence vars
+	global.lineSeq = "";
+	global.lineSeqPos = 0;
 	
 #endregion

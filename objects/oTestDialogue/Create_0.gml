@@ -56,4 +56,4 @@ DrawLineTypist = function(_x,_y, _str, _wrapW, _font, _col, _alpha){
 	
 }
 	
-DialogueProgress();
+LineSequenceProgress();

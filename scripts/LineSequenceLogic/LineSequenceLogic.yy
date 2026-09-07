@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"DialogueEvents",
+  "%Name":"LineSequenceLogic",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"DialogueEvents",
+  "name":"LineSequenceLogic",
   "parent":{
-    "name":"Text",
-    "path":"folders/Scripts/Text.yy",
+    "name":"Lines",
+    "path":"folders/Scripts/Screenplay/Lines.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -4,12 +4,12 @@ if keyboard_check_pressed(vk_space) {
 	if typist.get_state() >= 1 {
 		
 		//progress sequence
-		DialogueProgress();
+		LineSequenceProgress();
 		
 		//reset sequence when finished
 		if lineSeq == "" {
 			lineSeq = LINE_SEQ_TEST;
-			DialogueProgress();
+			LineSequenceProgress();
 		}
 		
 	} else {

@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"ENUMS",
+  "%Name":"LineSequenceEvents",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"ENUMS",
+  "name":"LineSequenceEvents",
   "parent":{
-    "name":"System",
-    "path":"folders/Scripts/System.yy",
+    "name":"Lines",
+    "path":"folders/Scripts/Screenplay/Lines.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
