@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"ENUMS",
+  "%Name":"Misc",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"ENUMS",
+  "name":"Misc",
   "parent":{
     "name":"System",
     "path":"folders/Scripts/System.yy",

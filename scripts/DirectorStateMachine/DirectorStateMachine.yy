@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"DirectorStateMachine",
   "parent":{
-    "name":"System",
-    "path":"folders/Scripts/System.yy",
+    "name":"Scenes",
+    "path":"folders/Scripts/Screenplay/Scenes.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

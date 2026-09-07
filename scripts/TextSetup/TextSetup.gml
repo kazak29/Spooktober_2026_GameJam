@@ -10,10 +10,52 @@
 		papyrusundertale	: noone,
 	};
 	global.lineTbStyles = {
-		basic		: sPixel,
-		special		: sPlaceholderCharacter1,
-		character1	: sPixel,
-		whatever	: sPixel,
+		basic		: {
+			sprite_index	:	sTextboxBasic,
+			image_index		:	0,
+			image_speed		:	0,
+			
+			x				:	144,
+			y				:	VIEWPORT_HEIGHT - 240,
+			
+			tbW				:	VIEWPORT_WIDTH - 288 - 32,
+			tbH				:	192,
+			
+			alphaMax		:	1,
+			alphaSpd		:	0.02,
+							
+			textX			:	16,
+			textY			:	16,
+			textSpd			:	0.7,
+			textSmooth		:	4,		//makes characters fade in (in amount of frames)
+								
+			textCol			:	c_white,
+			textAlpha		:	1,
+			textFont		:	fConsol,
+		},
+		special		: {
+			sprite_index	:	sTextboxBasic1,
+			image_index		:	0,
+			image_speed		:	0,
+			
+			x				:	144,
+			y				:	VIEWPORT_HEIGHT - 240,
+			
+			tbW				:	VIEWPORT_WIDTH - 288 - 32,
+			tbH				:	192,
+			
+			alphaMax		:	1,
+			alphaSpd		:	0.02,
+							
+			textX			:	16,
+			textY			:	16,
+			textSpd			:	0.7,
+			textSmooth		:	4,		//makes characters fade in (in amount of frames)
+								
+			textCol			:	c_white,
+			textAlpha		:	1,
+			textFont		:	fComic,
+		},
 	};
 	
 #endregion
@@ -22,10 +64,10 @@
 	//setup individual line data
 	function DataLineSetup(_seq, _sfx, _tbStyle, _title, _text){
 		var _line = {
-			sfx		:	_sfx,
-			tbStyle	:	_tbStyle,
-			title	:	_title,
-			line	:	_text,
+			sfx		:	_sfx,		//sound asset
+			tbStyle	:	_tbStyle,	//struct
+			title	:	_title,		//string
+			line	:	_text,		//string
 		};
 		
 		//setup a new array for set sequence if not set before

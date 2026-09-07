@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"TextSetup",
   "parent":{
-    "name":"Text",
-    "path":"folders/Scripts/Text.yy",
+    "name":"Lines",
+    "path":"folders/Scripts/Screenplay/Lines.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

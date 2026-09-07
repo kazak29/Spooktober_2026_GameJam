@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"DialogueLogic",
+  "%Name":"TextboxStates",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"DialogueLogic",
+  "name":"TextboxStates",
   "parent":{
-    "name":"Text",
-    "path":"folders/Scripts/Text.yy",
+    "name":"Textbox",
+    "path":"folders/Scripts/Screenplay/Textbox.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
