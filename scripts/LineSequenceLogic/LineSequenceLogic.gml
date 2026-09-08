@@ -11,8 +11,8 @@ function LineSequenceProgress(){
 		global.lineSeq = "";
 		global.lineSeqPos = 0;
 		
-		//fadeout textboxes
-		with oTextbox textboxState = TextboxStateFadeOut;
+		//move to next scene node
+		DirectorSceneProgress();
 		
 		//skip all shit below
 		exit;
@@ -20,39 +20,33 @@ function LineSequenceProgress(){
 	}
 	
 	
-	//setup line data and its textbox
+	//setup line data and its textbox style
 	var _dataLine = _dataSeq[global.lineSeqPos];
-	var _tbId = id;
+	var _dataTbStyle = _dataLine.tbStyle;
 	
-	//check if prev line had different textbox
-	if (global.lineSeqPos > 0) {
+	//check currently present textbox (true = same style, false = different style or no current textbox exists)
+	if !TextboxCompare(_dataTbStyle) {
 		
-		var _textboxPrev = _dataSeq[global.lineSeqPos - 1].tbStyle;
-		var _textboxNext = _dataSeq[global.lineSeqPos	 ].tbStyle;
-		if (_textboxNext != _textboxPrev) {
-			
-			//make this textbox dissapear
-			typist.pause();
-			textboxState = TextboxStateFadeOut;
-			
-			//get new textbox data
-			var _dataTbStyle = _dataLine.tbStyle;
-	
-			//setup textbox position
-			var _x = _dataTbStyle.x;
-			var _y = _dataTbStyle.y;
-			
-			//create a new textbox
-			_tbId = instance_create_layer(_x,_y, "Textbox", oTextbox, _dataTbStyle);
-			
-		}
+		//destroy previous textbox (need replacement with animations later)
+		with global.tbId textboxState = TextboxStateDestroy;
+		
+		//create a new textbox
+		TextboxCreate(_dataTbStyle);
 		
 	}
 	
-	
-	//setup text string for textbox
-	with _tbId {
+	//setup line for textbox
+	with global.tbId {
+		
+		//line string
 		textStr = _dataLine[$ "line"]	?? "NO LINE TEXT SET";
+		
+		//typewriter sfx
+		
+		
+		//title string
+		
+		
 	}
 	
 	//progress sequence position
@@ -62,28 +56,19 @@ function LineSequenceProgress(){
 
 function LineSequenceStart(_seq){
 	
-	//clear any textboxes just in case
-	//with oTextbox instance_destroy();
-	//with oTextboxName instance_destroy();
-	
 	//setup sequence
 	global.lineSeq = _seq;
 	global.lineSeqPos = 0;
 	
-	//get sequence data
+	//get sequence data and check if it exists
 	var _dataSeq = global.dataLines[$ global.lineSeq] ?? [];
-	if (array_length(_dataSeq) <= 0) exit;
+	if (array_length(_dataSeq) <= 0) {
+		show_debug_message($"{_seq}: LINE SEQUENCE DATA MISSING, SKIPPING NODE");
+		DirectorSceneProgress();
+		exit;
+	}
 	
-	//get textbox data for first line
-	var _dataLine		= _dataSeq[0];
-	var _dataTbStyle	= _dataLine.tbStyle;
-	
-	//setup textbox position
-	var _x = _dataTbStyle.x;
-	var _y = _dataTbStyle.y;
-	
-	//create a first textbox (first state is fade-in)
-	var _tb = instance_create_layer(_x,_y, "Textbox", oTextbox, _dataTbStyle);
-	with _tb LineSequenceProgress();
+	//trigger first line
+	LineSequenceProgress();
 	
 }

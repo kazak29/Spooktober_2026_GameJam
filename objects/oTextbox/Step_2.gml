@@ -1,5 +1,5 @@
 //follow position
-with oTextboxName {
+with oTextboxTitle {
 	
 	x = other.x + shiftX;
 	y = other.y + shiftY;

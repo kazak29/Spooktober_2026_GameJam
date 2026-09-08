@@ -97,6 +97,7 @@
 			
 			//dialogue
 			DataNodeSetupDialogue(LINE_SEQ_TEST);
+			DataNodeSetupDialogue(LINE_SEQ_TEST1);
 			
 			//choice
 			DataNodeSetupChoice(UIKEY_TEST, ChoiceTest);
