@@ -39,12 +39,13 @@ function LineSequenceProgress(){
 	with global.tbId {
 		
 		//line string
-		textStr = _dataLine[$ "line"]	?? "NO LINE TEXT SET";
+		textStr = _dataLine[$ "line"] ?? "NO LINE TEXT SET";
+		
+		//title
+		var _title = _dataLine[$ "title"] ?? "NO LINE TITLE SET";
+		TextboxTitleSet(_title);
 		
 		//typewriter sfx
-		
-		
-		//title string
 		
 		
 	}
