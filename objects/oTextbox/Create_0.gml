@@ -1,14 +1,13 @@
 //set scale and alpha
 image_xscale	= tbW/sprite_width;
 image_yscale	= tbH/sprite_height;
-image_alpha		= 0;
-		
+image_alpha		= alphaMax;
+
 //calculate maximum string width for line
 textW = floor((bbox_right - bbox_left) - 32);
-		
+
 //state machine
-textboxState = TextboxStateFadeIn;
-textboxPrev = noone;
+textboxState = TextboxStateDialogue;
 
 //scribble typist
 typist = scribble_typist();

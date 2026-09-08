@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"oTextboxName",
+  "%Name":"oTextboxTitle",
   "eventList":[],
   "managed":true,
-  "name":"oTextboxName",
+  "name":"oTextboxTitle",
   "overriddenProperties":[],
   "parent":{
     "name":"Textbox",

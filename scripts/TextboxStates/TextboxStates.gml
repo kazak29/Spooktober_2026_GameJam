@@ -1,17 +1,13 @@
-function TextboxStateFadeIn(){
+function TextboxStateAnimation(){
 	
-	//increase alpha by speed set in textbox style struct
-	image_alpha = Approach(image_alpha, alphaMax, alphaSpd);
+	//forget it for now
 	
-	//check player input
-	if keyboard_check_pressed(vk_space) || mouse_check_button_pressed(mb_any) {
-		image_alpha = alphaMax;
-	}
+}
+
+function TextboxStateDestroy(){
 	
-	//when faded in progress line
-	if image_alpha >= alphaMax {
-		textboxState = TextboxStateDialogue;
-	}
+	//just remove textbox
+	instance_destroy();
 	
 }
 
@@ -37,20 +33,5 @@ function TextboxStateDialogue(){
 		}
 				
 	}
-	
-}
-
-function TextboxStateFadeOut(){
-	
-	//reduce alpha
-	image_alpha = Approach(image_alpha, 0, alphaSpd);
-	
-	//check player input
-	if keyboard_check_pressed(vk_space) || mouse_check_button_pressed(mb_any) {
-		image_alpha = 0;
-	}
-	
-	//check alpha
-	if image_alpha <= 0 instance_destroy();
 	
 }

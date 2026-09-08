@@ -22,6 +22,8 @@
 			
 			case NODE_TYPE.CHOICE: {
 				
+				var _a = 1;
+				
 			} break;
 			
 			case NODE_TYPE.MINIGAME: {

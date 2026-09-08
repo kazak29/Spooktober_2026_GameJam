@@ -47,4 +47,7 @@
 	global.lineSeq = "";
 	global.lineSeqPos = 0;
 	
+	//textbox
+	global.tbId = noone;
+	
 #endregion
