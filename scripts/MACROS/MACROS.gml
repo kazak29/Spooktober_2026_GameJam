@@ -4,6 +4,8 @@
 	#macro VIEWPORT_WIDTH	1920
 	#macro VIEWPORT_HEIGHT	1080
 	
+	#macro MAX_DEPTH -9999
+	
 #endregion
 #region sound
 	
@@ -30,7 +32,15 @@
 	#macro DEFAULT_DEADZONE     0.2
 	
 #endregion
+#region room layers
+	
+	#macro SYSTEM_LAYER     "System"
+	#macro INSTANCES_LAYER  "Instances"
+	#macro ASSETS_LAYER     "Assets"
+	#macro BACKGROUND_LAYER "Background"
+	#macro TRANSITION_LAYER "Transition"
 
+#endregion
 #region line sequences
 	
 	//test

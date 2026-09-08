@@ -22,10 +22,15 @@
 	global.screenShakeActive = true;
 	
 #endregion
+#region transition
+
+	global.midTransition = false;
+	global.roomTarget = noone;
+
+#endregion
 #region state machine
 
 	global.gamePaused = false;
-	global.midTransition = false;
 	
 	global.directorState = DirectorStateDefault;
 	global.directorStatePrev = DirectorStateDefault;
