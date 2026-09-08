@@ -14,7 +14,7 @@ input = {
 	select: [ vk_space,  gp_face1 ],   // A on XBox, X on Playstation
 	cancel: [ vk_escape, gp_face2 ],   // B on XBox, Circle on Playstation
 	
-	start: [ vk_enter, gp_start ],
+	pause: [ vk_enter, gp_start ],
 };
 input_keys = variable_struct_get_names(input);
 

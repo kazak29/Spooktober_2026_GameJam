@@ -1,15 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"oInitManager",
+  "%Name":"oInitController",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oInitManager",
+  "name":"oInitController",
   "overriddenProperties":[],
   "parent":{
-    "name":"System",
-    "path":"folders/Objects/System.yy",
+    "name":"RoomControllers",
+    "path":"folders/Objects/RoomControllers.yy",
   },
   "parentObjectId":null,
   "persistent":false,
