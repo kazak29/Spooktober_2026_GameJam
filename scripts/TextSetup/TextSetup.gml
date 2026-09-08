@@ -5,10 +5,6 @@
 	global.locale = LOCALE.EN;
 	
 	//structs to get assets from, using variable names as strings in csv
-	global.lineSfx = {
-		sansundertale		: noone,
-		papyrusundertale	: noone,
-	};
 	global.lineTbStyles = {
 		basic		: {
 			sprite_index	:	sTextboxBasic,
@@ -20,18 +16,34 @@
 			
 			tbW				:	VIEWPORT_WIDTH - 288 - 32,
 			tbH				:	192,
-			
-			alphaMax		:	1,
-			alphaSpd		:	0.02,
 							
 			textX			:	16,
-			textY			:	16,
+			textY			:	32,
 			textSpd			:	0.7,
 			textSmooth		:	4,		//makes characters fade in (in amount of frames)
 								
 			textCol			:	c_white,
 			textAlpha		:	1,
 			textFont		:	fConsol,
+			
+			title			: {
+				
+				sprite_index	: sTextboxBasic,
+				image_index		: 1,
+				image_speed		: 0,
+				
+				shiftPos		: TB_TITLE_POS.INSIDE_TOP_LEFT,
+				shiftX			: 0,
+				shiftY			: 0,
+				
+				textX			: 16+4,
+				textY			: 12,
+				
+				textCol			: c_white,
+				textAlpha		: 1,
+				textFont		: fConsol,
+				
+			},
 		},
 		special		: {
 			sprite_index	:	sTextboxBasic1,
@@ -43,19 +55,39 @@
 			
 			tbW				:	VIEWPORT_WIDTH - 288 - 32,
 			tbH				:	192,
-			
-			alphaMax		:	1,
-			alphaSpd		:	0.02,
 							
 			textX			:	16,
-			textY			:	16,
+			textY			:	24,
 			textSpd			:	0.7,
 			textSmooth		:	4,		//makes characters fade in (in amount of frames)
 								
 			textCol			:	c_white,
 			textAlpha		:	1,
 			textFont		:	fComic,
+			
+			title			: {
+				
+				sprite_index	: sTextboxBasic,
+				image_index		: 0,
+				image_speed		: 0,
+				
+				shiftPos		: TB_TITLE_POS.ABOVE_TOP_RIGHT,
+				shiftX			: 0,
+				shiftY			: 0,
+				
+				textX			: 16+4,
+				textY			: 16,
+				
+				textCol			: c_white,
+				textAlpha		: 1,
+				textFont		: fComic,
+				
+			},
 		},
+	};
+	global.lineSfx = {
+		sansundertale		: noone,
+		papyrusundertale	: noone,
 	};
 	
 #endregion

@@ -1,7 +1,11 @@
 {
   "$GMObject":"",
   "%Name":"oTextboxTitle",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":2,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"oTextboxTitle",
   "overriddenProperties":[],
@@ -23,7 +27,14 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v2","%Name":"textX","filters":[],"listItems":[],"multiselect":false,"name":"textX","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.0","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"textY","filters":[],"listItems":[],"multiselect":false,"name":"textY","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.0","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"textCol","filters":[],"listItems":[],"multiselect":false,"name":"textCol","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.0","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"textAlpha","filters":[],"listItems":[],"multiselect":false,"name":"textAlpha","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.0","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"textFont","filters":[],"listItems":[],"multiselect":false,"name":"textFont","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.0","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"textStr","filters":[],"listItems":[],"multiselect":false,"name":"textStr","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":2,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,

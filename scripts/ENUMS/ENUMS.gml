@@ -7,3 +7,13 @@ enum NODE_TYPE {
 	
 	HEIGHT
 }
+
+//textbox title position
+enum TB_TITLE_POS {
+	ABOVE_TOP_LEFT,
+	ABOVE_TOP_RIGHT,
+	INSIDE_TOP_LEFT,
+	INSIDE_TOP_RIGHT,
+	
+	HEIGHT
+}

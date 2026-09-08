@@ -1,5 +1,5 @@
-//follow position
-with oTextboxTitle {
+//make title follow textbox
+with titleId {
 	
 	x = other.x + shiftX;
 	y = other.y + shiftY;
