@@ -1,15 +1,11 @@
-SEQUENCE NAME,TYPEWRITER SFX,TEXTBOX STYLE,LINE TITLE - ENGLISH,LINE TEXT - ENGLISH,LINE TITLE - SPANISH,LINE TEXT - SPANISH
-lineSeqTest,,,Colors,"white white [c_yellow]yellow yellow[/c] white white [rainbow]rainbow rainbow[/rainbow] white white [cycle,241,0,128]cycle text[/cycle] [alpha,0.5]transparent text [alpha,1] white white",,
-lineSeqTest,,special,Delay,"normal text normal text [delay, 1000]delayed text delayed text [delay, 500][speed, 3]fast text fast text fast text fast text fast text fast text[/speed] [delay, 2000]normal text normal text",,
-lineSeqTest,,special,Effects,normal text [wave]wave text[/wave] [shake]shake text[/shake] [wobble]wobble text[/wobble] [pulse]pulse text[/pulse] [wheel]wheel text[/wheel] [jitter]jitter text[/jitter] [blink]blink text[/blink] normal text,,
-lineSeqTest,,,Font,consolas consolas [fComic] comic sans comic sans [/f] consol consol,,
-lineSeqTest,,special,Sprite,this is a sprite: [sPixel],,
-,,,,,,
-lineSeqTest1,,,Character,"What a pleasant day! I love the sun, and the clouds. What good weather we have today! Yay!",,
-lineSeqTest1,,,Character,"[GuyMove, 1440, 320]NAH THIS SHIT SUCKS!!! I HATE THE SUN, AND THE CLOUDS. WHAT BAD !!! WEATHER !! WE ! HAVE !!!! TODAY.",,
-,,,,,,
-lineSeqIntro,,,,,,
-lineSeqIntro,,,,,,
-,,,,,,
-lineSeqPrompt1,,whatever,NPC,I don't know what to do...,,
-lineSeqPrompt1,,whatever,NPC,What would you do?,,
+SEQUENCE NAME,TYPEWRITER SFX,TEXTBOX STYLE,LINE TITLE,LINE TEXT
+lineSeqTest,,,Colors,"white white [c_yellow]yellow yellow[/c] white white [rainbow]rainbow rainbow[/rainbow] white white [cycle,241,0,128]cycle text[/cycle] [alpha,0.5]transparent text [alpha,1] white white"
+lineSeqTest,,special,Delay,"normal text normal text [delay, 1000]delayed text delayed text [delay, 500][speed, 3]fast text fast text fast text fast text fast text fast text[/speed] [delay, 2000]normal text normal text"
+lineSeqTest,,special,Effects,normal text [wave]wave text[/wave] [shake]shake text[/shake] [wobble]wobble text[/wobble] [pulse]pulse text[/pulse] [wheel]wheel text[/wheel] [jitter]jitter text[/jitter] [blink]blink text[/blink] normal text
+lineSeqTest,,,Font,consolas consolas [fComic] comic sans comic sans [/f] consol consol
+lineSeqTest,,special,Sprite,this is a sprite: [sPixel]
+,,,,
+lineSeqPrompt1,,whatever,NPC,What would you like to choose?
+,,,,
+lineSeqTest1,,,Character,"What a pleasant day! I love the sun, and the clouds. What good weather we have today! Yay!"
+lineSeqTest1,,,Character,"[GuyMove, 1440, 320]NAH THIS SHIT SUCKS!!! I HATE THE SUN, AND THE CLOUDS. WHAT BAD !!! WEATHER !! WE ! HAVE !!!! TODAY."

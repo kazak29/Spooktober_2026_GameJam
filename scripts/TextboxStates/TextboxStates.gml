@@ -12,9 +12,9 @@ function TextboxStateDestroy(){
 }
 
 function TextboxStateDialogue(){
-
+	
 	//check player input
-	if keyboard_check_pressed(vk_space) || mouse_check_button_pressed(mb_any) {
+	if (oInputManager.pressed.confirm || mouse_check_button_pressed(mb_left)) {
 		
 		//check if all text is visible
 		if typist.get_state() >= 1 {

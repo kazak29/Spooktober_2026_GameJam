@@ -42,34 +42,26 @@
 		DataNodeAdd(_node);
 	}
 	
-	//choice node (with first option)
-	function DataNodeSetupChoice(_textKey, _script, _arguments = []) {
+	//choice node
+	function DataNodeSetupChoice(_lineSeq) {
 		var _node = {
 			nodeType	:	NODE_TYPE.CHOICE,
-			options		:	[
-				{
-					key	: _textKey,
-					scr	: _script,
-					args: _arguments,
-				},
-			],
+			lineSeq     :   _lineSeq,
+			options		:	[],
 		};
 		DataNodeAdd(_node);
 	}
 	
-	//additional options for last created choice node
+	//add options for last created choice node
 	function DataNodeChoiceOptionAdd(_textKey, _script, _arguments = []) {
 		var _node = global.gameDataSetupLastNode;
 		if (_node.nodeType != NODE_TYPE.CHOICE) exit;
 		
-		//create a choice option
 		var _option = {
 			key	: _textKey,
 			scr	: _script,
 			args: _arguments,
 		};
-		
-		//push option into array
 		array_push(_node.options, _option);
 	}
 	
@@ -92,30 +84,26 @@
 		global.dataScreenplay = {};
 		
 		#region scene test
-			//create scene
 			DataSceneCreate(SCENE_TEST);
 			
-			//dialogue
 			DataNodeSetupDialogue(LINE_SEQ_TEST);
-			DataNodeSetupDialogue(LINE_SEQ_TEST1);
 			
-			//choice
-			DataNodeSetupChoice(UIKEY_TEST, ChoiceTest);
-			DataNodeChoiceOptionAdd(UIKEY_TEST1, ChoiceTest);
-			DataNodeChoiceOptionAdd(UIKEY_TEST1, ChoiceTest);
+			DataNodeSetupChoice(LINE_SEQ_PROMPT1);
+			DataNodeChoiceOptionAdd(UIKEY_TEST1, noone);
+			DataNodeChoiceOptionAdd(UIKEY_TEST1, noone);
 			
 			//move to next scene
-			DataNodeSetupTransition(SCENE_TEST1);
+			//DataNodeSetupTransition(SCENE_TEST1);
 		#endregion
 		#region scene test 1
 			//create scene
-			DataSceneCreate(SCENE_TEST1);
+			//DataSceneCreate(SCENE_TEST1);
 			
 			//dialogue
-			DataNodeSetupDialogue(LINE_SEQ_TEST1);
+			//DataNodeSetupDialogue(LINE_SEQ_TEST1);
 			
 			//move to next scene
-			DataNodeSetupTransition();
+			//DataNodeSetupTransition();
 		#endregion
 	}
 	DataSceneScreenplaySetup();
