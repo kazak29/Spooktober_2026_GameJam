@@ -1,6 +1,6 @@
-KEY,TEXT - ENGLISH,TEXT - SPANISH
-scene_001_option_001,I would leave it be...,
-scene_001_option_002,(Say nothing),
+KEY,TEXT,
+option_test_1,I would leave it be...,
+option_test_2,(Say nothing),
 ,,
-ui_test,UI TEST 0,POR FAVOR
-ui_test1,UI TEST 1,POR FAVOR
+ui_test,UI TEST 0,
+ui_test1,UI TEST 1,
