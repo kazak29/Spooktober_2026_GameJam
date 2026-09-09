@@ -11,10 +11,11 @@ input = {
 	left:  [ A_KEY, gp_padl ],
 	right: [ D_KEY, gp_padr ],
 	
-	select: [ vk_space,  gp_face1 ],   // A on XBox, X on Playstation
-	cancel: [ vk_escape, gp_face2 ],   // B on XBox, Circle on Playstation
+	confirm: [ vk_space,  gp_face1 ],  // A on XBox, X on Playstation
+	cancel:  [ vk_escape, gp_face2 ],  // B on XBox, Circle on Playstation
 	
-	pause: [ vk_enter, gp_start ],
+	select: [ vk_enter, gp_select ],   // Select button
+	pause: [ vk_escape, gp_start ],    // Start button
 };
 input_keys = variable_struct_get_names(input);
 
