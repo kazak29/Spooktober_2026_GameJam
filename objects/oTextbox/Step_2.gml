@@ -5,5 +5,4 @@ with titleId {
 	y = other.y + shiftY;
 	
 	image_alpha = other.image_alpha;
-	
 }

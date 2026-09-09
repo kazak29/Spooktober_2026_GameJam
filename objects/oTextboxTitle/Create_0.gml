@@ -13,6 +13,5 @@ TextScribGet = function(){
 		//.wrap(textW);	no wrap here
 	
 	//return scribble id
-	return _scribId;
-	
+	return _scribId;	
 }

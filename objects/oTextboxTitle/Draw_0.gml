@@ -7,5 +7,4 @@ if global.tbId.textboxState == TextboxStateDialogue {
 	//draw with scribble (no typist)
 	var _scribId = TextScribGet();
 	_scribId.draw(x+textX,y+textY);
-
 }
