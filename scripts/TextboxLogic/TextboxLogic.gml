@@ -41,7 +41,10 @@ function TextboxCreate(_dataTbStyle){
 function TextboxTitleSet(_text){
 		
 	//remove previous title
-	with titleId instance_destroy();
+	if (instance_exists(titleId)) {
+        instance_destroy(titleId);
+        titleId = noone;
+    }
 		
 	//check if title necessary
 	if (!is_string(_text) || _text == "") exit;
