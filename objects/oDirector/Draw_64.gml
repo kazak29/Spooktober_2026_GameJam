@@ -16,7 +16,6 @@ if global.showDebugUI {
 	draw_set_halign(fa_right);
 	//other bs
 	draw_set_halign(fa_left);
-	
 }
 
 //draw reminder

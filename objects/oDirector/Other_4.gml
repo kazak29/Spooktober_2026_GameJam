@@ -1,3 +1,3 @@
 switch room {
-	case rmStage: DirectorSceneProgress();
+	case rmStageTest: DirectorSceneProgress();
 }
