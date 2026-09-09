@@ -18,7 +18,6 @@
 		
 		//set this node as last created
 		global.gameDataSetupLastNode = _node;
-		
 	}
 	
 #endregion
@@ -90,7 +89,7 @@
 			
 			DataNodeSetupChoice(LINE_SEQ_PROMPT1);
 			DataNodeChoiceOptionAdd(UIKEY_TEST1, noone);
-			DataNodeChoiceOptionAdd(UIKEY_TEST1, noone);
+			DataNodeChoiceOptionAdd(UIKEY_TEST2, noone);
 			
 			//move to next scene
 			//DataNodeSetupTransition(SCENE_TEST1);

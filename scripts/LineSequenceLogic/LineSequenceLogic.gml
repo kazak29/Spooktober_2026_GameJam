@@ -1,20 +1,27 @@
 function LineSequenceProgress(){
 	
-	//get sequence and line data
 	var _dataSeq = global.dataLines[$ global.lineSeq] ?? [];
-	
-	//stop if sequence finished (or not set at all)
-	var _sqL = array_length(_dataSeq);
-	if (global.lineSeqPos >= _sqL) {
-		
-		//reset globals
-		global.lineSeq = "";
-		global.lineSeqPos = 0;
+    var _sqL = array_length(_dataSeq);
+    
+    // Check if the current line sequence has completed
+    if (global.lineSeqPos >= _sqL) {
+        
+        global.lineSeq = "";
+        global.lineSeqPos = 0;
+        
+        // If the current scene node is a CHOICE, spawn the choices menu
+        if (global.sceneNodeData.nodeType == NODE_TYPE.CHOICE) {
+            var _options = global.sceneNodeData.options;
+            if (array_length(_options) > 0) {
+                instance_create_layer(0, 0, CHOICES_LAYER, oChoiceMenu, {
+                    options: _options
+                });
+                exit;
+            }
+        }
 		
 		//move to next scene node
 		DirectorSceneProgress();
-		
-		//skip all shit below
 		exit;
 		
 	}
