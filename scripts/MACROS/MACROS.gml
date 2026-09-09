@@ -46,6 +46,7 @@
 	//test
 	#macro LINE_SEQ_TEST	"lineSeqTest"
 	#macro LINE_SEQ_TEST1	"lineSeqTest1"
+	#macro LINE_SEQ_PROMPT1 "lineSeqPrompt1"
 
 #endregion
 #region scene names
@@ -61,7 +62,7 @@
 #region UI KEYS
 	
 	//test
-	#macro UIKEY_TEST	"ui_test"
 	#macro UIKEY_TEST1	"ui_test1"
+	#macro UIKEY_TEST2	"ui_test2"
 	
 #endregion

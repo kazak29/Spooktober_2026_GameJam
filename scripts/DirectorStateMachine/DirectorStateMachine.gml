@@ -14,16 +14,11 @@
 			} break;
 			
 			case NODE_TYPE.DIALOGUE: {
-				
-				//start line sequence
 				LineSequenceStart(_node.lineSeq);
-				
 			} break;
 			
 			case NODE_TYPE.CHOICE: {
-				
-				var _a = 1;
-				
+				LineSequenceStart(_node.lineSeq);
 			} break;
 			
 			case NODE_TYPE.MINIGAME: {

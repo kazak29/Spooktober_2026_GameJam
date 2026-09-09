@@ -1,6 +1,3 @@
 KEY,TEXT,
-option_test_1,I would leave it be...,
-option_test_2,(Say nothing),
-,,
-ui_test,UI TEST 0,
 ui_test1,UI TEST 1,
+ui_test2,UI TEST 2,
