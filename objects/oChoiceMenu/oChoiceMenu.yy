@@ -10,8 +10,8 @@
   "name":"oChoiceMenu",
   "overriddenProperties":[],
   "parent":{
-    "name":"ScreenPlay",
-    "path":"folders/Objects/ScreenPlay.yy",
+    "name":"Archive",
+    "path":"folders/Archive.yy",
   },
   "parentObjectId":null,
   "persistent":false,

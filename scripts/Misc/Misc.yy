@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"Misc",
   "parent":{
-    "name":"System",
-    "path":"folders/Scripts/System.yy",
+    "name":"Archive",
+    "path":"folders/Archive.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

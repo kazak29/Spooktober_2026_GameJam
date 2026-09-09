@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"LineSequenceLogic",
   "parent":{
-    "name":"Lines",
-    "path":"folders/Scripts/Screenplay/Lines.yy",
+    "name":"Archive",
+    "path":"folders/Archive.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

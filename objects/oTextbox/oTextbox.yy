@@ -12,8 +12,8 @@
   "name":"oTextbox",
   "overriddenProperties":[],
   "parent":{
-    "name":"Textbox",
-    "path":"folders/Objects/Textbox.yy",
+    "name":"Archive",
+    "path":"folders/Archive.yy",
   },
   "parentObjectId":null,
   "persistent":false,

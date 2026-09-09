@@ -10,8 +10,8 @@
   "name":"oTestDialogue",
   "overriddenProperties":[],
   "parent":{
-    "name":"Test",
-    "path":"folders/Objects/Test.yy",
+    "name":"Archive",
+    "path":"folders/Archive.yy",
   },
   "parentObjectId":null,
   "persistent":false,
