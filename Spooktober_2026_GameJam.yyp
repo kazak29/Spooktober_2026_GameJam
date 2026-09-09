@@ -12,6 +12,7 @@
   "Folders":[
     {"$GMFolder":"","%Name":"Fonts","folderPath":"folders/Fonts.yy","name":"Fonts","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Objects","folderPath":"folders/Objects.yy","name":"Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"ScreenPlay","folderPath":"folders/Objects/ScreenPlay.yy","name":"ScreenPlay","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"RoomControllers","folderPath":"folders/Objects/RoomControllers.yy","name":"RoomControllers","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"System","folderPath":"folders/Objects/System.yy","name":"System","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Test","folderPath":"folders/Objects/Test.yy","name":"Test","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -68,6 +69,7 @@
     {"id":{"name":"fComic","path":"fonts/fComic/fComic.yy",},},
     {"id":{"name":"fConsol","path":"fonts/fConsol/fConsol.yy",},},
     {"id":{"name":"scribble_fallback_font","path":"fonts/scribble_fallback_font/scribble_fallback_font.yy",},},
+    {"id":{"name":"oChoiceMenu","path":"objects/oChoiceMenu/oChoiceMenu.yy",},},
     {"id":{"name":"oDirector","path":"objects/oDirector/oDirector.yy",},},
     {"id":{"name":"oGuy","path":"objects/oGuy/oGuy.yy",},},
     {"id":{"name":"oInitController","path":"objects/oInitController/oInitController.yy",},},

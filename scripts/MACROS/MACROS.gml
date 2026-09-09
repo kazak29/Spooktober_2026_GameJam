@@ -39,6 +39,8 @@
 	#macro ASSETS_LAYER     "Assets"
 	#macro BACKGROUND_LAYER "Background"
 	#macro TRANSITION_LAYER "Transition"
+	#macro CHARACTERS_LAYER "Characters"
+	#macro CHOICES_LAYER    "Choices"
 
 #endregion
 #region line sequences
