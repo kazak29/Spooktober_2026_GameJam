@@ -1,3 +1,4 @@
+/*
 #region functions to run within text
 	
 	function GuyMove(_scribbleElement, _paramArray, _characterIndex){
@@ -20,3 +21,4 @@
 	scribble_typists_add_event("GuyMove", GuyMove);
 	
 #endregion
+*/

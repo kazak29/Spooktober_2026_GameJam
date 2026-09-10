@@ -1,3 +1,4 @@
+/*
 function LineSequenceProgress(){
 	
 	var _dataSeq = global.dataLines[$ global.lineSeq] ?? [];
@@ -80,3 +81,4 @@ function LineSequenceStart(_seq){
 	LineSequenceProgress();
 	
 }
+*/

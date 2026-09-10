@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"NodeType",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"NodeType",
+  "parent":{
+    "name":"Enum",
+    "path":"folders/Scripts/Enum.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

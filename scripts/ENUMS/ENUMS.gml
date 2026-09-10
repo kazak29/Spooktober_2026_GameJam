@@ -1,3 +1,4 @@
+/*
 //scene node types
 enum NODE_TYPE {
 	TRANSITION,
@@ -17,3 +18,4 @@ enum TB_TITLE_POS {
 	
 	HEIGHT
 }
+*/

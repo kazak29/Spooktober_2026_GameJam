@@ -6,5 +6,5 @@ var _title	= lineData[$ "title"]	?? "NO LINE TITLE SET";
 var _line	= lineData[$ "line"]	?? "NO LINE TEXT SET";
 
 //draw strings
-DrawLine(_x,_y, _title, textW, fConsol, c_white, image_alpha);
-DrawLineTypist(_x,_y+32, _line, textW, fConsol, c_white, image_alpha);
+DrawLine(_x,_y, _title, textW, fConsol16, c_white, image_alpha);
+DrawLineTypist(_x,_y+32, _line, textW, fConsol16, c_white, image_alpha);

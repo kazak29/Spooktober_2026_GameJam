@@ -1,3 +1,4 @@
+/*
 function TextboxStateAnimation(){
 	//forget it for now	
 }
@@ -24,3 +25,4 @@ function TextboxStateDialogue(){
         }
     }
 }
+*/

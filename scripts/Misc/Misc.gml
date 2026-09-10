@@ -1,3 +1,4 @@
+/*
 //approach one number to another
 function Approach(_val, _newVal, _speed){
 		
@@ -24,3 +25,4 @@ function Approach(_val, _newVal, _speed){
 	return _val;
 	
 }
+*/
