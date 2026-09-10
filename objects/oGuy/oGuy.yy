@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sPlaceholderCharacter1",
-    "path":"sprites/sPlaceholderCharacter1/sPlaceholderCharacter1.yy",
+    "name":"sPlaceholderMainCharacter",
+    "path":"sprites/sPlaceholderMainCharacter/sPlaceholderMainCharacter.yy",
   },
   "spriteMaskId":null,
   "visible":true,
