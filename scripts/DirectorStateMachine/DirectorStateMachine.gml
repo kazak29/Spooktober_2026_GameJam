@@ -3,20 +3,40 @@ function DirectorStateIdle()
     // Do Nothing
 }
 
+function DirectorStateTransitionIn()
+{
+    if (!global.midTransition)
+    {
+        AdvanceNode();
+    }
+}
+
+function DirectorStateDelay()
+{
+    delayTimer--;
+    if (delayTimer <= 0)
+    {
+        AdvanceNode();
+    }
+}
+
 function DirectorStateLineSequence()
 {
     if (oInputManager.pressed.confirm)
     {
-        // Autofill text if typewriter is still revealing text
-        if (typist.get_state() < 1) { 
+        if (typist.get_state() < 1)
+        { 
             typist.skip(); 
         }
-        else {
+        else
+        {
             currentLineIndex++;
-            if (currentLineIndex >= array_length(currentLineSequence)) {
-                AdvanceNode(); // Corrected function name capitalization
-            } else {
-                // Reset typewriter effect for the new line
+            if (currentLineIndex >= array_length(currentLineSequence))
+            {
+                AdvanceNode();
+            }
+            else
+            {
                 typist.reset();
             }
         }
@@ -25,20 +45,17 @@ function DirectorStateLineSequence()
 
 
 
+// ------------------------------------------------------------------
+// HELPER FUNCTIONS
+// ------------------------------------------------------------------
 
-
-// Helper Functions ***************************************************************************
-
-
-// Start the scene with the given scene ID
 function StartScene(_sceneId)
 {
-    // End of scenes
     if (_sceneId == noone || !struct_exists(screenPlay, _sceneId))
     {
         currentSceneId = noone;
-        currentNodeId = noone;
-        directorState = DirectorStateIdle;
+        currentNodeId  = noone;
+        directorState  = DirectorStateIdle;
         return;
     }
     
@@ -48,46 +65,43 @@ function StartScene(_sceneId)
 }
 
 
-// Run the next node
+
 function AdvanceNode()
 {
     var _activeScene = screenPlay[$ currentSceneId];
     var _activeNode  = _activeScene.nodes[$ currentNodeId];
-    RunNode(_activeNode.nextNode);
+    
+    if (_activeNode.nextNode != noone) { RunNode(_activeNode.nextNode); }
+    else { directorState = DirectorStateIdle; }
 }
 
 
-// Process the node with the given node ID
+
 function RunNode(_nodeId)
 {
-    var _activeScene = screenPlay[$ currentSceneId];
-    
-    // If node ID is noone, this scene is finished, go to the next scene
-    if (_nodeId == noone || !struct_exists(_activeScene.nodes, _nodeId))
-    {
-        StartScene(_activeScene.nextScene);
-        return;
-    }
-    
+    var _scene = screenPlay[$ currentSceneId];
+    var _node  = _scene.nodes[$ _nodeId];
     currentNodeId = _nodeId;
-    var _activeNode = _activeScene.nodes[$ currentNodeId];
-	
-	// Process the node differently depending on the type
-    var _nodeType = _activeNode.nodeType;
-    switch (_nodeType)
+    
+    switch (_node.nodeType)
     {
+        case NodeType.TRANSITION_IN:
+            var _transitionSequence = _node.transitionSequence ?? sqFadeIn;
+            SceneTransitionIn(_transitionSequence);
+            directorState = DirectorStateTransitionIn;
+        break;
+
+        case NodeType.DELAY:
+            var _duration = _node.duration ?? 0;
+            delayTimer = _duration * game_get_speed(gamespeed_fps);
+            directorState = DirectorStateDelay;
+        break;
+		
         case NodeType.LINE_SEQUENCE:
-            if (struct_exists(lineData, _activeNode.sequenceId))
-            {
-                currentLineSequence = lineData[$ _activeNode.sequenceId];
-                currentLineIndex = 0;
-                
-                typist.reset();
-                directorState = DirectorStateLineSequence;
-            }
-            else { 
-				AdvanceNode(); // Sequence ID is missing, skip safely
-            } 
-            break;
+            currentLineSequence = lineData[$ _node.sequenceId] ?? [];
+            currentLineIndex = 0;
+            typist.reset();
+            directorState = DirectorStateLineSequence;
+        break;
     }
 }
