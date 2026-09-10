@@ -26,7 +26,7 @@ function DrawDialogueBox ()
     // Smaller width, offset to the right side of the screen
     var _boxW   = 1200;
     var _boxH   = 220;
-    var _boxX   = _guiW - _boxW - 240;
+    var _boxX   = _guiW - _boxW - 280;
     var _boxY   = _guiH - _boxH - 60;
 
     draw_sprite_stretched(sTextbox, 0, _boxX, _boxY, _boxW, _boxH);
@@ -67,29 +67,6 @@ function DrawDialogueBox ()
 
 
 
-function UpdateCharacterPortraits ()
-{
-    var _slots = [CharacterSlot.LEFT, CharacterSlot.CENTER, CharacterSlot.RIGHT];
-    for (var _i = 0; _i < array_length(_slots); _i++)
-    {
-        var _slotData = activeCharacters[$ _slots[_i]];
-        if (_slotData != undefined)
-        {
-            if (_slotData.alpha < _slotData.targetAlpha)
-            {
-                _slotData.alpha = min(_slotData.alpha + characterFadeSpeed, _slotData.targetAlpha);
-            }
-            else if (_slotData.alpha > _slotData.targetAlpha)
-            {
-                _slotData.alpha = max(_slotData.alpha - characterFadeSpeed, _slotData.targetAlpha);
-                if (_slotData.alpha == 0) { _slotData.sprite = noone; }
-            }
-        }
-    }
-}
-
-
-
 function DrawCharacterPortraits ()
 {
     var _guiW = VIEWPORT_WIDTH;
@@ -114,16 +91,15 @@ function DrawCharacterPortraits ()
             draw_sprite_ext(_slotData.sprite, 0, _coords[$ _key], _guiH, 1, 1, 0, c_white, _slotData.alpha);
         }
     }
-    
-    // Main Character
-    if (directorState == DirectorStateLineSequence && array_length(currentLineSequence) > 0)
-	{
-		var _lineEntry = currentLineSequence[currentLineIndex];
-		var _titleText = _lineEntry.lineTitle ?? "";
-    
-		if (_titleText == mainCharacterName && sprite_exists(mainCharacterSprite))
-		{
-			draw_sprite(mainCharacterSprite, 0, 120, _guiH);
-		}
-	}
+}
+
+
+
+function DrawMainCharacterPortrait ()
+{
+    var _guiH = VIEWPORT_HEIGHT;
+    if (mainCharacter.alpha > 0 && sprite_exists(mainCharacter.sprite))
+    {
+        draw_sprite_ext(mainCharacter.sprite, 0, 220, _guiH + (sprite_get_height(mainCharacter.sprite) / 3), 1, 1, 0, c_white, mainCharacter.alpha);
+    }
 }

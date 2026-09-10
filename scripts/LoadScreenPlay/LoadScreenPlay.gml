@@ -14,24 +14,45 @@ function LoadScreenPlay()
                 scene1_delay1: {
                     nodeType: NodeType.DELAY,
                     duration: 0.5,
-                    nextNode: "scene1_character1_enter"
+                    nextNode: "scene1_main_character_enter"
                 },
-				scene1_character1_enter: {
+				scene1_main_character_enter: {
+					nodeType: NodeType.MAIN_CHARACTER_IN,
+					nextNode: "scene1_delay2"
+				},
+				scene1_delay2: {
+                    nodeType: NodeType.DELAY,
+                    duration: 0.5,
+                    nextNode: "scene1_character_enter1"
+                },
+				scene1_character_enter1: {
 					nodeType: NodeType.CHARACTER_IN,
-					slot: CharacterSlot.CENTER,
-					sprite: sPlaceholderCharacter1,
+					characters: [
+						{ slot: CharacterSlot.CENTER, sprite: sPlaceholderCharacter1 }
+					],
 					nextNode: "scene1_dialogue1"
 				},
                 scene1_dialogue1: {
                     nodeType: NodeType.LINE_SEQUENCE,
                     sequenceId: "scene1_dialogue1",
-                    nextNode: noone //"scene1_prompt1"
+                    nextNode: "scene1_character_exit1"
                 },
-                //scene1_prompt1: {
-                //    nodeType: NodeType.LINE_SEQUENCE,
-                //    sequenceId: "scene1_prompt1",
-                //    nextNode: noone
-                //}
+				scene1_character_exit1: {
+					nodeType: NodeType.CHARACTER_OUT,
+					characters: [
+						{ slot: CharacterSlot.CENTER }
+					],
+					nextNode: "scene1_delay3"
+				},
+				scene1_delay3: {
+                    nodeType: NodeType.DELAY,
+                    duration: 0.5,
+                    nextNode: "scene1_main_character_exit"
+                },
+				scene1_main_character_exit: {
+					nodeType: NodeType.MAIN_CHARACTER_OUT,
+					nextNode: noone
+				},
             }
         } // scene1
     };
