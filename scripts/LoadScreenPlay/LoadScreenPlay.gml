@@ -13,9 +13,15 @@ function LoadScreenPlay()
                 },
                 scene1_delay1: {
                     nodeType: NodeType.DELAY,
-                    duration: 1.0,
-                    nextNode: "scene1_dialogue1"
+                    duration: 0.5,
+                    nextNode: "scene1_character1_enter"
                 },
+				scene1_character1_enter: {
+					nodeType: NodeType.CHARACTER_IN,
+					slot: CharacterSlot.CENTER,
+					sprite: sPlaceholderCharacter1,
+					nextNode: "scene1_dialogue1"
+				},
                 scene1_dialogue1: {
                     nodeType: NodeType.LINE_SEQUENCE,
                     sequenceId: "scene1_dialogue1",

@@ -1,0 +1,2 @@
+
+if (directorState == DirectorStateLineSequence) { DrawDialogueBox(); }

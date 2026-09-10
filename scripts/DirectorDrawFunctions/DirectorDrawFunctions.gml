@@ -23,10 +23,10 @@ function DrawDialogueBox ()
     // ------------------------------------------------------------------
     // DIALOGUE TEXTBOX
     // ------------------------------------------------------------------
-    var _margin = 60;
-    var _boxW   = _guiW - (_margin * 2);
-    var _boxH   = 240;
-    var _boxX   = _margin;
+    // Smaller width, offset to the right side of the screen
+    var _boxW   = 1200;
+    var _boxH   = 220;
+    var _boxX   = _guiW - _boxW - 240;
     var _boxY   = _guiH - _boxH - 60;
 
     draw_sprite_stretched(sTextbox, 0, _boxX, _boxY, _boxW, _boxH);
@@ -36,8 +36,8 @@ function DrawDialogueBox ()
     // ------------------------------------------------------------------
     if (_titleText != "")
     {
-        var _titleBoxW = 320;
-        var _titleBoxH = 64;
+        var _titleBoxW = 280;
+        var _titleBoxH = 56;
         var _titleBoxX = _boxX;
         var _titleBoxY = _boxY - _titleBoxH + 5;
         
@@ -62,5 +62,68 @@ function DrawDialogueBox ()
         .starting_format(FONT_CONSOLE_16, c_white)
         .shadow(c_black, 1)
         .wrap(_maxTextW)
-		.draw(_textX, _textY, typist);
+        .draw(_textX, _textY, typist);
+}
+
+
+
+function UpdateCharacterPortraits ()
+{
+    var _slots = [CharacterSlot.LEFT, CharacterSlot.CENTER, CharacterSlot.RIGHT];
+    for (var _i = 0; _i < array_length(_slots); _i++)
+    {
+        var _slotData = activeCharacters[$ _slots[_i]];
+        if (_slotData != undefined)
+        {
+            if (_slotData.alpha < _slotData.targetAlpha)
+            {
+                _slotData.alpha = min(_slotData.alpha + characterFadeSpeed, _slotData.targetAlpha);
+            }
+            else if (_slotData.alpha > _slotData.targetAlpha)
+            {
+                _slotData.alpha = max(_slotData.alpha - characterFadeSpeed, _slotData.targetAlpha);
+                if (_slotData.alpha == 0) { _slotData.sprite = noone; }
+            }
+        }
+    }
+}
+
+
+
+function DrawCharacterPortraits ()
+{
+    var _guiW = VIEWPORT_WIDTH;
+    var _guiH = VIEWPORT_HEIGHT;
+    
+    UpdateCharacterPortraits();
+
+    // Map enum slots directly to screen positions
+    var _coords = {};
+    _coords[$ CharacterSlot.LEFT]   = 380;
+    _coords[$ CharacterSlot.CENTER] = _guiW / 2;
+    _coords[$ CharacterSlot.RIGHT]  = _guiW - 380;
+
+    var _slots = [CharacterSlot.LEFT, CharacterSlot.CENTER, CharacterSlot.RIGHT];
+    for (var _i = 0; _i < array_length(_slots); _i++)
+    {
+        var _key = _slots[_i];
+        var _slotData = activeCharacters[$ _key];
+        
+        if (_slotData.alpha > 0 && sprite_exists(_slotData.sprite))
+        {
+            draw_sprite_ext(_slotData.sprite, 0, _coords[$ _key], _guiH, 1, 1, 0, c_white, _slotData.alpha);
+        }
+    }
+    
+    // Main Character
+    if (directorState == DirectorStateLineSequence && array_length(currentLineSequence) > 0)
+	{
+		var _lineEntry = currentLineSequence[currentLineIndex];
+		var _titleText = _lineEntry.lineTitle ?? "";
+    
+		if (_titleText == mainCharacterName && sprite_exists(mainCharacterSprite))
+		{
+			draw_sprite(mainCharacterSprite, 0, 120, _guiH);
+		}
+	}
 }

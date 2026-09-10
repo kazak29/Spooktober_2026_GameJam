@@ -1,7 +1,9 @@
+
 function DirectorStateIdle()
 {
     // Do Nothing
 }
+
 
 function DirectorStateTransitionIn()
 {
@@ -11,6 +13,7 @@ function DirectorStateTransitionIn()
     }
 }
 
+
 function DirectorStateDelay()
 {
     delayTimer--;
@@ -19,6 +22,7 @@ function DirectorStateDelay()
         AdvanceNode();
     }
 }
+
 
 function DirectorStateLineSequence()
 {
@@ -42,6 +46,27 @@ function DirectorStateLineSequence()
         }
     }
 }
+
+
+function DirectorStateCharacterFade()
+{
+    var _slots = [CharacterSlot.LEFT, CharacterSlot.CENTER, CharacterSlot.RIGHT];
+    var _isFinished = true;
+    
+    for (var _i = 0; _i < array_length(_slots); _i++)
+    {
+        var _slotData = activeCharacters[$ _slots[_i]];
+        if (_slotData.alpha != _slotData.targetAlpha)
+        {
+            _isFinished = false;
+            break;
+        }
+    }
+    
+    if (_isFinished) { AdvanceNode(); }
+}
+
+
 
 
 
@@ -89,19 +114,38 @@ function RunNode(_nodeId)
             var _transitionSequence = _node.transitionSequence ?? sqFadeIn;
             SceneTransitionIn(_transitionSequence);
             directorState = DirectorStateTransitionIn;
-        break;
+			break;
 
         case NodeType.DELAY:
             var _duration = _node.duration ?? 0;
             delayTimer = _duration * game_get_speed(gamespeed_fps);
             directorState = DirectorStateDelay;
-        break;
+			break;
 		
         case NodeType.LINE_SEQUENCE:
             currentLineSequence = lineData[$ _node.sequenceId] ?? [];
             currentLineIndex = 0;
             typist.reset();
             directorState = DirectorStateLineSequence;
-        break;
+			break;
+
+        case NodeType.CHARACTER_IN:
+            var _slotData = activeCharacters[$ _node.slot];
+            if (_slotData != undefined)
+            {
+                _slotData.sprite      = _node.sprite;
+                _slotData.targetAlpha = 1;
+            }
+            directorState = DirectorStateCharacterFade;
+			break;
+
+        case NodeType.CHARACTER_OUT:
+            var _slotData = activeCharacters[$ _node.slot];
+            if (_slotData != undefined)
+            {
+                _slotData.targetAlpha = 0;
+            }
+            directorState = DirectorStateCharacterFade;
+			break;
     }
 }

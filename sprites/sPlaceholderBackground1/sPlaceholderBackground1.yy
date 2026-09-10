@@ -19,7 +19,7 @@
   "height":1080,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"b79a3f5c-51f2-4d6c-afe8-828d3954f8df","blendMode":0,"displayName":"default","isLocked":false,"name":"b79a3f5c-51f2-4d6c-afe8-828d3954f8df","opacity":50.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"b79a3f5c-51f2-4d6c-afe8-828d3954f8df","blendMode":0,"displayName":"default","isLocked":false,"name":"b79a3f5c-51f2-4d6c-afe8-828d3954f8df","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"sPlaceholderBackground1",
   "nineSlice":null,

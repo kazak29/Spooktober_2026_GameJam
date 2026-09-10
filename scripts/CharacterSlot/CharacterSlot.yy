@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"ScreenplaySetup",
+  "%Name":"CharacterSlot",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"ScreenplaySetup",
+  "name":"CharacterSlot",
   "parent":{
-    "name":"Archive",
-    "path":"folders/Archive.yy",
+    "name":"Enum",
+    "path":"folders/Scripts/Enum.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
