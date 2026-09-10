@@ -1,5 +1,4 @@
 
-if (directorState == DirectorStateLineSequence && array_length(currentLineSequence) != 0)
-{
-	DrawDialogueBox();
-}
+if (currentSceneId != noone) { DrawSceneBackground(); }
+
+if (directorState == DirectorStateLineSequence) { DrawDialogueBox(); }
