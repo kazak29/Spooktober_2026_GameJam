@@ -3,7 +3,7 @@ lineData = LoadLineData();
 screenPlay = LoadScreenPlay();
 
 
-currentSceneId = "scene1";
+currentSceneId = "scene1";   // Set this to whatever the first scene is
 currentNodeId  = noone;
 
 
@@ -11,7 +11,7 @@ directorState = DirectorStateIdle;
 
 
 typist = scribble_typist();
-typist.in(0.5, 0);
+typist.in(TYPIST_SPEED, TYPIST_SMOOTHNESS);
 
 
 currentLineSequence = [];

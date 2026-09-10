@@ -13,8 +13,9 @@
 
 	#macro MAX_LAYER_DEPTH -9999
 
-	#macro SYSTEM_LAYER "System"
+	#macro SYSTEM_LAYER     "System"
 	#macro BACKGROUND_LAYER "Background"
+	#macro TRANSITION_LAYER "Transition"
 
 #endregion
 
@@ -36,8 +37,11 @@
 
 #endregion
 
-#region Fonts
-
+#region Typist
+	
+	#macro TYPIST_SPEED      0.5
+	#macro TYPIST_SMOOTHNESS 0
+	
 	#macro FONT_CONSOLE_16 "fConsol16"
 
 #endregion
