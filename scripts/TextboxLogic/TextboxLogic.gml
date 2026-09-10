@@ -1,3 +1,4 @@
+/*
 //compare new style to currently present textbox
 function TextboxCompare(_styleNew){
 	
@@ -103,3 +104,4 @@ function TextboxTitlePositionSet(){
 	y += shiftY;
 	
 }
+*/

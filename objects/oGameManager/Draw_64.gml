@@ -1,5 +1,5 @@
 // Setup font and alignment
-draw_set_font(fConsol);
+draw_set_font(fConsol16);
 draw_set_valign(fa_top);
 draw_set_halign(fa_left);
 

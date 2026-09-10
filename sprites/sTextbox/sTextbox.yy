@@ -1,6 +1,6 @@
 {
   "$GMSprite":"v2",
-  "%Name":"sTextboxBasic",
+  "%Name":"sTextbox",
   "bboxMode":0,
   "bbox_bottom":127,
   "bbox_left":0,
@@ -22,7 +22,7 @@
   "layers":[
     {"$GMImageLayer":"","%Name":"c21e8235-79da-448b-89e1-b7ca4c618149","blendMode":0,"displayName":"default","isLocked":false,"name":"c21e8235-79da-448b-89e1-b7ca4c618149","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"sTextboxBasic",
+  "name":"sTextbox",
   "nineSlice":{
     "$GMNineSliceData":"",
     "bottom":18,
@@ -45,15 +45,15 @@
   },
   "origin":0,
   "parent":{
-    "name":"Textboxes",
-    "path":"folders/Sprites/Textboxes.yy",
+    "name":"Dialogue System",
+    "path":"folders/Dialogue System.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1",
-    "%Name":"sTextboxBasic",
+    "%Name":"sTextbox",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -77,7 +77,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"sTextboxBasic",
+    "name":"sTextbox",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -89,10 +89,10 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"0adb1ba1-37b9-4e98-91dc-31779abb098a","path":"sprites/sTextboxBasic/sTextboxBasic.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"0adb1ba1-37b9-4e98-91dc-31779abb098a","path":"sprites/sTextbox/sTextbox.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"7e40df62-9c69-4173-a5b9-ec799cf92343","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"887ab0ed-01cc-4bea-833d-f29f46dbee28","path":"sprites/sTextboxBasic/sTextboxBasic.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"887ab0ed-01cc-4bea-833d-f29f46dbee28","path":"sprites/sTextbox/sTextbox.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"62016cbd-858d-49ef-b8bc-c4ae681122af","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],

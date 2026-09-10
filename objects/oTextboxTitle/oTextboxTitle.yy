@@ -39,8 +39,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sTextboxBasic",
-    "path":"sprites/sTextboxBasic/sTextboxBasic.yy",
+    "name":"sTextbox",
+    "path":"sprites/sTextbox/sTextbox.yy",
   },
   "spriteMaskId":null,
   "visible":true,

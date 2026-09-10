@@ -1,53 +1,23 @@
-#region debug
-	
-	//randomise();
-	global.cheat = true;
-	global.cheatcode = "bees";
-	global.showDebugUI = false;
 
-#endregion
-#region sound
-	
-	//volume
-	global.volMusic		= 0.5;	//music
-	global.volSound		= 0.5;	//ambient and sound effects
-	global.volLineTW	= 0.5;	//line typewriter
-	
-	//struct for all ambient data (includes music)
-	global.ambient = {};
-	
-#endregion
-#region gamedata
-	
-	global.screenShakeActive = true;
-	
-#endregion
-#region transition
+lineData = LoadLineData();
+screenPlay = LoadScreenPlay();
 
-	global.midTransition = false;
-	global.roomTarget = noone;
 
-#endregion
-#region state machine
+currentSceneId = "scene1";
+currentNodeId  = noone;
 
-	global.gamePaused = false;
-	
-	global.directorState = DirectorStateDefault;
-	global.directorStatePrev = DirectorStateDefault;
-	
-#endregion
-#region screenplay
-	
-	//scene vars
-	global.sceneCurrent = SCENE_TEST;
-	global.sceneNodePos = 0;
-	global.sceneNodeData = {};
-	
-	//line sequence vars
-	global.lineSeq = "";
-	global.lineSeqPos = 0;
-	
-	//textbox
-	global.tbId = noone;
-	
-#endregion
+
+directorState = DirectorStateIdle;
+
+
+typist = scribble_typist();
+typist.in(0.5, 0);
+
+
+currentLineSequence = [];
+currentLineIndex = 0;
+
+
+
+// Start the first Scene
+StartScene(currentSceneId);

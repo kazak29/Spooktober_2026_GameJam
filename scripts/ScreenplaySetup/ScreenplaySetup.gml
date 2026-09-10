@@ -1,3 +1,4 @@
+/*
 #region globals used only here
 	
 	//last created scene
@@ -108,3 +109,4 @@
 	DataSceneScreenplaySetup();
 	
 #endregion
+*/

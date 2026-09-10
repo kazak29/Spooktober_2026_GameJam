@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"TextboxLogic",
   "parent":{
-    "name":"Textbox",
-    "path":"folders/Scripts/Screenplay/Textbox.yy",
+    "name":"Archive",
+    "path":"folders/Archive.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

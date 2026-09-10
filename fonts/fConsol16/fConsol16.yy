@@ -1,6 +1,6 @@
 {
   "$GMFont":"",
-  "%Name":"fConsol",
+  "%Name":"fConsol16",
   "AntiAlias":0,
   "applyKerning":0,
   "ascender":19,
@@ -117,10 +117,10 @@
   "last":0,
   "lineHeight":25,
   "maintainGms1Font":false,
-  "name":"fConsol",
+  "name":"fConsol16",
   "parent":{
-    "name":"Fonts",
-    "path":"folders/Fonts.yy",
+    "name":"Dialogue System",
+    "path":"folders/Dialogue System.yy",
   },
   "pointRounding":0,
   "ranges":[

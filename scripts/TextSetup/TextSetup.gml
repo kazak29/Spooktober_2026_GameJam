@@ -1,3 +1,4 @@
+/*
 #region global text setup
 	
 	//locale setup if we ever wanna do translations
@@ -185,3 +186,4 @@ function SetLocale(_locale) {
 	DataTextUISetup();
 }
 SetLocale(LOCALE.EN);
+*/
