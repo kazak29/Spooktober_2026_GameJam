@@ -9,22 +9,12 @@ function LoadScreenPlay()
                 scene1_transition_in: {
                     nodeType: NodeType.TRANSITION_IN,
                     transitionSequence: sqFadeIn,
-                    nextNode: "scene1_delay1"
-                },
-                scene1_delay1: {
-                    nodeType: NodeType.DELAY,
-                    duration: 0.5,
                     nextNode: "scene1_main_character_enter"
                 },
 				scene1_main_character_enter: {
 					nodeType: NodeType.MAIN_CHARACTER_IN,
-					nextNode: "scene1_delay2"
+					nextNode: "scene1_character_enter1"
 				},
-				scene1_delay2: {
-                    nodeType: NodeType.DELAY,
-                    duration: 0.5,
-                    nextNode: "scene1_character_enter1"
-                },
 				scene1_character_enter1: {
 					nodeType: NodeType.CHARACTER_IN,
 					characters: [
@@ -42,13 +32,8 @@ function LoadScreenPlay()
 					characters: [
 						{ slot: CharacterSlot.CENTER }
 					],
-					nextNode: "scene1_delay3"
+					nextNode: "scene1_main_character_exit"
 				},
-				scene1_delay3: {
-                    nodeType: NodeType.DELAY,
-                    duration: 0.5,
-                    nextNode: "scene1_main_character_exit"
-                },
 				scene1_main_character_exit: {
 					nodeType: NodeType.MAIN_CHARACTER_OUT,
 					nextNode: noone
