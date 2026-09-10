@@ -17,10 +17,7 @@ function DirectorStateTransitionIn()
 function DirectorStateDelay()
 {
     delayTimer--;
-    if (delayTimer <= 0)
-    {
-        RunNode(currentNodeId);
-    }
+    if (delayTimer <= 0) { ProcessNode(currentNodeId); }
 }
 
 
@@ -50,14 +47,13 @@ function DirectorStateLineSequence()
 
 function DirectorStateCharacterFade()
 {
-    var _slots = [CharacterSlot.LEFT, CharacterSlot.CENTER, CharacterSlot.RIGHT];
     var _isFinished = true;
     
-    // Check stage slot alphas
-    for (var _i = 0; _i < array_length(_slots); _i++)
+    // Check stage characters alpha status
+    for (var _i = 0; _i < array_length(stageCharacters); _i++)
     {
-        var _slotData = activeCharacters[$ _slots[_i]];
-        if (_slotData.alpha != _slotData.targetAlpha)
+        var _char = stageCharacters[_i];
+        if (_char.alpha != _char.targetAlpha)
         {
             _isFinished = false;
             break;
@@ -66,7 +62,6 @@ function DirectorStateCharacterFade()
     
     // Check main character alpha
     if (mainCharacter.alpha != mainCharacter.targetAlpha) { _isFinished = false; }
-    
     if (_isFinished) { AdvanceNode(); }
 }
 
@@ -90,7 +85,7 @@ function StartScene(_sceneId)
     
     currentSceneId = _sceneId;
     var _activeScene = screenPlay[$ currentSceneId];
-    RunNode(_activeScene.startNode);
+    ProcessNode(_activeScene.startNode);
 }
 
 
@@ -100,116 +95,54 @@ function AdvanceNode()
     var _activeScene = screenPlay[$ currentSceneId];
     var _activeNode  = _activeScene.nodes[$ currentNodeId];
     
-    if (_activeNode.nextNode != noone) { RunNode(_activeNode.nextNode); }
+    if (_activeNode.nextNode != noone) { ProcessNode(_activeNode.nextNode); }
     else { directorState = DirectorStateIdle; }
 }
 
 
 
-function RunNode(_nodeId)
+function UpdateCharacterPortraits()
 {
-    var _scene = screenPlay[$ currentSceneId];
-    var _node  = _scene.nodes[$ _nodeId];
-    currentNodeId = _nodeId;
-    
+    var _guiW = VIEWPORT_WIDTH;
+    var _count = array_length(stageCharacters);
+
     // ------------------------------------------------------------------
-    // NODE DELAY
+    // UPDATE TARGET X POSITIONS BASED ON CHARACTER COUNT
     // ------------------------------------------------------------------
-    var _defaultDelay = (_node.nodeType == NodeType.TRANSITION_IN) ? 0 : DEFAULT_NODE_DELAY;
-    var _delaySeconds = struct_get(_node, "delay") ?? _defaultDelay;
-    if (_delaySeconds > 0 && directorState != DirectorStateDelay)
+    var _targetPositions = [];
+    switch (_count)
     {
-        delayTimer = _delaySeconds * game_get_speed(gamespeed_fps);
-        directorState = DirectorStateDelay;
-        return;
+        case 1: 
+            _targetPositions = [_guiW / 2]; 
+            break;
+        case 2: 
+            _targetPositions = [380, _guiW / 2]; 
+            break;
+        case MAX_STAGE_CHARACTERS: 
+            _targetPositions = [380, _guiW / 2, _guiW - 380]; 
+            break;
     }
-    delayTimer = 0;
-    
+
     // ------------------------------------------------------------------
-    // NODE EXECUTION
+    // CHARACTER ALPHAS AND POSITIONS
     // ------------------------------------------------------------------
-    switch (_node.nodeType)
+    for (var _i = _count - 1; _i >= 0; _i--)
     {
-        case NodeType.TRANSITION_IN: {
-            var _transitionSequence = _node.transitionSequence ?? sqFadeIn;
-            SceneTransitionIn(_transitionSequence);
-            directorState = DirectorStateTransitionIn;
-            break;
-        }
+        var _char = stageCharacters[_i];
         
-        case NodeType.LINE_SEQUENCE: {
-            currentLineSequence = lineData[$ _node.sequenceId] ?? [];
-            currentLineIndex = 0;
-            typist.reset();
-            directorState = DirectorStateLineSequence;
-            break;
-        }
+        // Smoothly slide X position toward targetX
+        if (_i < array_length(_targetPositions)) { _char.targetX = _targetPositions[_i]; }
+        _char.x = lerp(_char.x, _char.targetX, 0.15);
         
-        case NodeType.CHARACTER_IN: {
-            var _list = _node.characters ?? [];
-            for (var _i = 0; _i < array_length(_list); _i++)
-            {
-                var _entry = _list[_i];
-                var _slotData = activeCharacters[$ _entry.slot];
-                if (_slotData != undefined)
-                {
-                    _slotData.sprite = _entry.sprite;
-                    _slotData.targetAlpha = MAX_ALPHA;
-                }
-            }
-            directorState = DirectorStateCharacterFade;
-            break;
+        // Handle Fade In / Fade Out
+        if (_char.alpha < _char.targetAlpha) 
+        { 
+            _char.alpha = min(_char.alpha + CHARACTER_FADE_SPEED, _char.targetAlpha); 
         }
-        
-        case NodeType.CHARACTER_OUT: {
-            var _list = _node.characters ?? [];
-            for (var _i = 0; _i < array_length(_list); _i++)
-            {
-                var _entry = _list[_i];
-                var _slotData = activeCharacters[$ _entry.slot];
-                if (_slotData != undefined) { _slotData.targetAlpha = MIN_ALPHA; }
-            }
-            directorState = DirectorStateCharacterFade;
-            break;
-        }
-        
-        case NodeType.MAIN_CHARACTER_IN: {
-            if (struct_exists(_node, SPRITE) && sprite_exists(_node.sprite)) 
-            { 
-                mainCharacter.sprite = _node.sprite; 
-            }
-            mainCharacter.targetAlpha = MAX_ALPHA;
-            directorState = DirectorStateCharacterFade;
-            break;
-        }
-        
-        case NodeType.MAIN_CHARACTER_OUT: {
-            mainCharacter.targetAlpha = MIN_ALPHA;
-            directorState = DirectorStateCharacterFade;
-            break;
-        }
-    }
-}
-
-
-
-function UpdateCharacterPortraits ()
-{
-    var _slots = [CharacterSlot.LEFT, CharacterSlot.CENTER, CharacterSlot.RIGHT];
-    for (var _i = 0; _i < array_length(_slots); _i++)
-    {
-        var _slotData = activeCharacters[$ _slots[_i]];
-        if (_slotData != undefined)
+        else if (_char.alpha > _char.targetAlpha)
         {
-            if (_slotData.alpha < _slotData.targetAlpha)
-            {
-                _slotData.alpha = min(_slotData.alpha + CHARACTER_FADE_SPEED, _slotData.targetAlpha);
-            }
-            else if (_slotData.alpha > _slotData.targetAlpha)
-            {
-                _slotData.alpha = max(_slotData.alpha - CHARACTER_FADE_SPEED, _slotData.targetAlpha);
-                if (_slotData.alpha == MIN_ALPHA) { _slotData.sprite = noone; }
-            }
+            _char.alpha = max(_char.alpha - CHARACTER_FADE_SPEED, _char.targetAlpha);
+            if (_char.alpha == MIN_ALPHA) { array_delete(stageCharacters, _i, 1); }
         }
     }
     

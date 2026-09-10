@@ -67,28 +67,22 @@ function DrawDialogueBox ()
 
 
 
-function DrawCharacterPortraits ()
+function DrawCharacterPortraits()
 {
-    var _guiW = VIEWPORT_WIDTH;
     var _guiH = VIEWPORT_HEIGHT;
     
     UpdateCharacterPortraits();
 
-    // Map enum slots directly to screen positions
-    var _coords = {};
-    _coords[$ CharacterSlot.LEFT]   = 380;
-    _coords[$ CharacterSlot.CENTER] = _guiW / 2;
-    _coords[$ CharacterSlot.RIGHT]  = _guiW - 380;
+    var _count = array_length(stageCharacters);
+    if (_count == 0) { return; }
 
-    var _slots = [CharacterSlot.LEFT, CharacterSlot.CENTER, CharacterSlot.RIGHT];
-    for (var _i = 0; _i < array_length(_slots); _i++)
+    // Draw all active characters at their current X position
+    for (var _i = 0; _i < _count; _i++)
     {
-        var _key = _slots[_i];
-        var _slotData = activeCharacters[$ _key];
-        
-        if (_slotData.alpha > 0 && sprite_exists(_slotData.sprite))
+        var _char = stageCharacters[_i];
+        if (_char.alpha > 0 && sprite_exists(_char.sprite))
         {
-            draw_sprite_ext(_slotData.sprite, 0, _coords[$ _key], _guiH, 1, 1, 0, c_white, _slotData.alpha);
+            draw_sprite_ext(_char.sprite, 0, _char.x, _guiH, 1, 1, 0, c_white, _char.alpha);
         }
     }
 }
