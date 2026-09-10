@@ -1,8 +1,14 @@
 #region Included Files
 
 	#macro LINES_CSV "lines.csv"
-
 	#macro FILE_ERROR -1
+
+#endregion
+
+#region General
+
+	#macro MIN_ALPHA 0
+	#macro MAX_ALPHA 1
 
 #endregion
 

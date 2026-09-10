@@ -14,6 +14,15 @@ function LoadScreenPlay()
                 scene1_delay1: {
                     nodeType: NodeType.DELAY,
                     duration: 0.5,
+                    nextNode: "scene1_main_character_enter"
+                },
+				scene1_main_character_enter: {
+					nodeType: NodeType.MAIN_CHARACTER_IN,
+					nextNode: "scene1_delay2"
+				},
+				scene1_delay2: {
+                    nodeType: NodeType.DELAY,
+                    duration: 0.5,
                     nextNode: "scene1_character_enter1"
                 },
 				scene1_character_enter1: {
@@ -33,13 +42,17 @@ function LoadScreenPlay()
 					characters: [
 						{ slot: CharacterSlot.CENTER }
 					],
+					nextNode: "scene1_delay3"
+				},
+				scene1_delay3: {
+                    nodeType: NodeType.DELAY,
+                    duration: 0.5,
+                    nextNode: "scene1_main_character_exit"
+                },
+				scene1_main_character_exit: {
+					nodeType: NodeType.MAIN_CHARACTER_OUT,
 					nextNode: noone
-				}
-                //scene1_prompt1: {
-                //    nodeType: NodeType.LINE_SEQUENCE,
-                //    sequenceId: "scene1_prompt1",
-                //    nextNode: noone
-                //}
+				},
             }
         } // scene1
     };
