@@ -77,11 +77,11 @@ function UpdateCharacterPortraits ()
         {
             if (_slotData.alpha < _slotData.targetAlpha)
             {
-                _slotData.alpha = min(_slotData.alpha + characterFadeSpeed, _slotData.targetAlpha);
+                _slotData.alpha = min(_slotData.alpha + CHARACTER_FADE_SPEED, _slotData.targetAlpha);
             }
             else if (_slotData.alpha > _slotData.targetAlpha)
             {
-                _slotData.alpha = max(_slotData.alpha - characterFadeSpeed, _slotData.targetAlpha);
+                _slotData.alpha = max(_slotData.alpha - CHARACTER_FADE_SPEED, _slotData.targetAlpha);
                 if (_slotData.alpha == 0) { _slotData.sprite = noone; }
             }
         }

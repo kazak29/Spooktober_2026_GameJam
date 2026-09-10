@@ -14,9 +14,9 @@ function LoadScreenPlay()
                 scene1_delay1: {
                     nodeType: NodeType.DELAY,
                     duration: 0.5,
-                    nextNode: "scene1_character1_enter"
+                    nextNode: "scene1_character_enter1"
                 },
-				scene1_character1_enter: {
+				scene1_character_enter1: {
 					nodeType: NodeType.CHARACTER_IN,
 					characters: [
 						{ slot: CharacterSlot.CENTER, sprite: sPlaceholderCharacter1 }
@@ -26,8 +26,15 @@ function LoadScreenPlay()
                 scene1_dialogue1: {
                     nodeType: NodeType.LINE_SEQUENCE,
                     sequenceId: "scene1_dialogue1",
-                    nextNode: noone //"scene1_prompt1"
+                    nextNode: "scene1_character_exit1"
                 },
+				scene1_character_exit1: {
+					nodeType: NodeType.CHARACTER_OUT,
+					characters: [
+						{ slot: CharacterSlot.CENTER }
+					],
+					nextNode: noone
+				}
                 //scene1_prompt1: {
                 //    nodeType: NodeType.LINE_SEQUENCE,
                 //    sequenceId: "scene1_prompt1",

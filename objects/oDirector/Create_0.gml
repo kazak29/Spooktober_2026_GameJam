@@ -11,8 +11,6 @@ currentLineSequence = [];
 currentLineIndex = 0;
 
 // Characters
-characterFadeSpeed = 0.05; // Added missing global fade speed
-
 activeCharacters = {};
 activeCharacters[$ CharacterSlot.LEFT]   = { sprite: noone, alpha: 0, targetAlpha: 0 };
 activeCharacters[$ CharacterSlot.CENTER] = { sprite: noone, alpha: 0, targetAlpha: 0 };

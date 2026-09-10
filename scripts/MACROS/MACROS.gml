@@ -45,3 +45,9 @@
 	#macro FONT_CONSOLE_16 "fConsol16"
 
 #endregion
+
+#region Screen Play
+
+	#macro CHARACTER_FADE_SPEED 0.05
+
+#endregion
