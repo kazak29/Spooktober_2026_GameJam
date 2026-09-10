@@ -130,22 +130,32 @@ function RunNode(_nodeId)
 			break;
 
         case NodeType.CHARACTER_IN:
-            var _slotData = activeCharacters[$ _node.slot];
-            if (_slotData != undefined)
-            {
-                _slotData.sprite      = _node.sprite;
-                _slotData.targetAlpha = 1;
-            }
-            directorState = DirectorStateCharacterFade;
+			var _list = _node.characters ?? [];
+			for (var _i = 0; _i < array_length(_list); _i++)
+			{
+				var _entry = _list[_i];
+				var _slotData = activeCharacters[$ _entry.slot];
+				if (_slotData != undefined)
+				{
+					_slotData.sprite = _entry.sprite;
+					_slotData.targetAlpha = 1;
+				}
+			}
+			directorState = DirectorStateCharacterFade;
 			break;
 
         case NodeType.CHARACTER_OUT:
-            var _slotData = activeCharacters[$ _node.slot];
-            if (_slotData != undefined)
-            {
-                _slotData.targetAlpha = 0;
-            }
-            directorState = DirectorStateCharacterFade;
+			var _list = _node.characters ?? [];
+			for (var _i = 0; _i < array_length(_list); _i++)
+			{
+				var _entry = _list[_i];
+				var _slotData = activeCharacters[$ _entry.slot];
+				if (_slotData != undefined)
+				{
+					_slotData.targetAlpha = 0;
+				}
+			}
+			directorState = DirectorStateCharacterFade;
 			break;
     }
 }

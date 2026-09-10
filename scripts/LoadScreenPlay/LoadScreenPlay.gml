@@ -18,8 +18,9 @@ function LoadScreenPlay()
                 },
 				scene1_character1_enter: {
 					nodeType: NodeType.CHARACTER_IN,
-					slot: CharacterSlot.CENTER,
-					sprite: sPlaceholderCharacter1,
+					characters: [
+						{ slot: CharacterSlot.CENTER, sprite: sPlaceholderCharacter1 }
+					],
 					nextNode: "scene1_dialogue1"
 				},
                 scene1_dialogue1: {
