@@ -5,7 +5,10 @@ function DirectorStateIdle()
 
 function DirectorStateTransitionIn()
 {
-    if (!global.midTransition) { AdvanceNode(); }
+    if (!global.midTransition)
+    {
+        AdvanceNode();
+    }
 }
 
 function DirectorStateDelay()
@@ -13,8 +16,7 @@ function DirectorStateDelay()
     delayTimer--;
     if (delayTimer <= 0)
     {
-        typist.reset();
-        directorState = DirectorStateLineSequence;
+        AdvanceNode();
     }
 }
 
@@ -22,16 +24,19 @@ function DirectorStateLineSequence()
 {
     if (oInputManager.pressed.confirm)
     {
-        // Autofill text if typewriter is still revealing text
-        if (typist.get_state() < 1) { 
+        if (typist.get_state() < 1)
+        { 
             typist.skip(); 
         }
-        else {
+        else
+        {
             currentLineIndex++;
-            if (currentLineIndex >= array_length(currentLineSequence)) {
+            if (currentLineIndex >= array_length(currentLineSequence))
+            {
                 AdvanceNode();
-            } else {
-                // Reset typewriter effect for the new line
+            }
+            else
+            {
                 typist.reset();
             }
         }
@@ -39,9 +44,11 @@ function DirectorStateLineSequence()
 }
 
 
-// Helper Functions ***************************************************************************
 
-// Start the scene with the given scene ID
+// ------------------------------------------------------------------
+// HELPER FUNCTIONS
+// ------------------------------------------------------------------
+
 function StartScene(_sceneId)
 {
     if (_sceneId == noone || !struct_exists(screenPlay, _sceneId))
@@ -57,23 +64,19 @@ function StartScene(_sceneId)
     RunNode(_activeScene.startNode);
 }
 
-// Run the next node
+
+
 function AdvanceNode()
 {
     var _activeScene = screenPlay[$ currentSceneId];
     var _activeNode  = _activeScene.nodes[$ currentNodeId];
     
-    if (_activeNode.nextNode != noone)
-    {
-        RunNode(_activeNode.nextNode);
-    }
-    else
-    {
-        directorState = DirectorStateIdle;
-    }
+    if (_activeNode.nextNode != noone) { RunNode(_activeNode.nextNode); }
+    else { directorState = DirectorStateIdle; }
 }
 
-// Process the node with the given node ID
+
+
 function RunNode(_nodeId)
 {
     var _scene = screenPlay[$ currentSceneId];
@@ -87,22 +90,18 @@ function RunNode(_nodeId)
             SceneTransitionIn(_transitionSequence);
             directorState = DirectorStateTransitionIn;
         break;
+
+        case NodeType.DELAY:
+            var _duration = _node.duration ?? 0;
+            delayTimer = _duration * game_get_speed(gamespeed_fps);
+            directorState = DirectorStateDelay;
+        break;
 		
         case NodeType.LINE_SEQUENCE:
             currentLineSequence = lineData[$ _node.sequenceId] ?? [];
-            currentLineIndex    = 0;
-            
-            var _delay = _node.delay ?? 0;
-            if (_delay > 0)
-            {
-                delayTimer    = _delay * game_get_speed(gamespeed_fps);
-                directorState = DirectorStateDelay;
-            }
-            else
-            {
-                typist.reset();
-                directorState = DirectorStateLineSequence;
-            }
+            currentLineIndex = 0;
+            typist.reset();
+            directorState = DirectorStateLineSequence;
         break;
     }
 }

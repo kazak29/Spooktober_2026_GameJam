@@ -2,5 +2,6 @@
 enum NodeType
 {
 	TRANSITION_IN,
+	DELAY,
 	LINE_SEQUENCE
 }
