@@ -5,6 +5,7 @@ screenPlay = LoadScreenPlay();
 
 
 directorState = DirectorStateIdle;
+delayTimer = 0;
 
 
 

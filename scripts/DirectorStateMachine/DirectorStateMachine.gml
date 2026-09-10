@@ -19,7 +19,7 @@ function DirectorStateDelay()
     delayTimer--;
     if (delayTimer <= 0)
     {
-        AdvanceNode();
+        RunNode(currentNodeId);
     }
 }
 
@@ -112,6 +112,22 @@ function RunNode(_nodeId)
     var _node  = _scene.nodes[$ _nodeId];
     currentNodeId = _nodeId;
     
+    // ------------------------------------------------------------------
+    // NODE DELAY
+    // ------------------------------------------------------------------
+    var _defaultDelay = (_node.nodeType == NodeType.TRANSITION_IN) ? 0 : DEFAULT_NODE_DELAY;
+    var _delaySeconds = struct_get(_node, "delay") ?? _defaultDelay;
+    if (_delaySeconds > 0 && directorState != DirectorStateDelay)
+    {
+        delayTimer = _delaySeconds * game_get_speed(gamespeed_fps);
+        directorState = DirectorStateDelay;
+        return;
+    }
+    delayTimer = 0;
+    
+    // ------------------------------------------------------------------
+    // NODE EXECUTION
+    // ------------------------------------------------------------------
     switch (_node.nodeType)
     {
         case NodeType.TRANSITION_IN: {
@@ -120,14 +136,7 @@ function RunNode(_nodeId)
             directorState = DirectorStateTransitionIn;
             break;
         }
-		
-        case NodeType.DELAY: {
-            var _duration = _node.duration ?? 0;
-            delayTimer = _duration * game_get_speed(gamespeed_fps);
-            directorState = DirectorStateDelay;
-            break;
-        }
-		
+        
         case NodeType.LINE_SEQUENCE: {
             currentLineSequence = lineData[$ _node.sequenceId] ?? [];
             currentLineIndex = 0;
@@ -135,7 +144,7 @@ function RunNode(_nodeId)
             directorState = DirectorStateLineSequence;
             break;
         }
-		
+        
         case NodeType.CHARACTER_IN: {
             var _list = _node.characters ?? [];
             for (var _i = 0; _i < array_length(_list); _i++)
@@ -151,7 +160,7 @@ function RunNode(_nodeId)
             directorState = DirectorStateCharacterFade;
             break;
         }
-		
+        
         case NodeType.CHARACTER_OUT: {
             var _list = _node.characters ?? [];
             for (var _i = 0; _i < array_length(_list); _i++)
@@ -163,19 +172,22 @@ function RunNode(_nodeId)
             directorState = DirectorStateCharacterFade;
             break;
         }
-		
-		case NodeType.MAIN_CHARACTER_IN: {
-		if (struct_exists(_node, "sprite") && sprite_exists(_node.sprite)) { mainCharacter.sprite = _node.sprite; }
-			mainCharacter.targetAlpha = MAX_ALPHA;
-			directorState = DirectorStateCharacterFade;
-			break;
-		}
-		
-		case NodeType.MAIN_CHARACTER_OUT: {
-			mainCharacter.targetAlpha = MIN_ALPHA;
-			directorState = DirectorStateCharacterFade;
-			break;
-		}
+        
+        case NodeType.MAIN_CHARACTER_IN: {
+            if (struct_exists(_node, SPRITE) && sprite_exists(_node.sprite)) 
+            { 
+                mainCharacter.sprite = _node.sprite; 
+            }
+            mainCharacter.targetAlpha = MAX_ALPHA;
+            directorState = DirectorStateCharacterFade;
+            break;
+        }
+        
+        case NodeType.MAIN_CHARACTER_OUT: {
+            mainCharacter.targetAlpha = MIN_ALPHA;
+            directorState = DirectorStateCharacterFade;
+            break;
+        }
     }
 }
 
