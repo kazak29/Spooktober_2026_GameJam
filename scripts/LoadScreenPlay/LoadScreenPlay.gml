@@ -20,17 +20,22 @@ function LoadScreenPlay()
                 
                 scene1_character_enter1: {
                     nodeType: NodeType.CHARACTER_IN,
-                    characters: [
-                        { charId: "char1", sprite: sPlaceholderCharacter1 }
-                    ],
+                    charId: "char1",
+					sprite: sPlaceholderCharacter1,
                     nextNode: "scene1_character_enter2"
                 },
                 
                 scene1_character_enter2: {
                     nodeType: NodeType.CHARACTER_IN,
-                    characters: [
-                        { charId: "char2", sprite: sPlaceholderCharacter2 }
-                    ],
+                    charId: "char2",
+					sprite: sPlaceholderCharacter2,
+                    nextNode: "scene1_character_enter3"
+                },
+				
+				scene1_character_enter3: {
+                    nodeType: NodeType.CHARACTER_IN,
+                    charId: "char3",
+					sprite: sPlaceholderCharacter3,
                     nextNode: "scene1_dialogue1"
                 },
                 
@@ -42,12 +47,22 @@ function LoadScreenPlay()
                 
                 scene1_character_exit1: {
                     nodeType: NodeType.CHARACTER_OUT,
-                    characters: [
-                        { charId: "char1" }
-                    ],
+                    charId: "char2",
+                    nextNode: "scene1_character_exit2"
+                },
+				
+				scene1_character_exit2: {
+                    nodeType: NodeType.CHARACTER_OUT,
+                    charId: "char1",
+                    nextNode: "scene1_character_exit3"
+                },
+				
+				scene1_character_exit3: {
+                    nodeType: NodeType.CHARACTER_OUT,
+                    charId: "char3",
                     nextNode: "scene1_main_character_exit"
                 },
-                
+				
                 scene1_main_character_exit: {
                     nodeType: NodeType.MAIN_CHARACTER_OUT,
                     nextNode: noone

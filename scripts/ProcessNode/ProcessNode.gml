@@ -41,19 +41,14 @@ function ProcessNode(_nodeId)
 		
         case NodeType.CHARACTER_IN:
 		{
-		    var _list = _node.characters ?? [];
-		    var _guiW = VIEWPORT_WIDTH;
-    
-		    for (var _i = 0; _i < array_length(_list); _i++)
+		    if (array_length(stageCharacters) < MAX_STAGE_CHARACTERS)
 		    {
-		        if (array_length(stageCharacters) >= MAX_STAGE_CHARACTERS) { break; }
-		        var _entry = _list[_i];
-        
-		        var _charId = struct_exists(_entry, CHARACTER_ID) ? _entry.charId : "";
-		        var _sprite = struct_exists(_entry, SPRITE) ? _entry.sprite : noone;
+		        var _charId = struct_exists(_node, "charId") ? _node.charId : "";
+		        var _sprite = struct_exists(_node, "sprite") ? _node.sprite : noone;
+		        var _guiW   = VIEWPORT_WIDTH;
         
 		        var _newCount = array_length(stageCharacters) + 1;
-		        var _spawnX = _guiW * (_newCount / (_newCount + 1));
+		        var _spawnX   = _guiW * (_newCount / (_newCount + 1));
         
 		        array_push(stageCharacters, {
 		            charId: _charId,
@@ -64,31 +59,27 @@ function ProcessNode(_nodeId)
 		            targetX: _spawnX
 		        });
 		    }
+    
 		    directorState = DirectorStateCharacterFade;
 		    break;
 		}
 		
 		case NodeType.CHARACTER_OUT:
 		{
-		    var _list = _node.characters ?? [];
-		    for (var _i = 0; _i < array_length(_list); _i++)
+		    var _searchId     = struct_exists(_node, "charId") ? _node.charId : noone;
+		    var _searchSprite = struct_exists(_node, "sprite") ? _node.sprite : noone;
+    
+		    for (var _j = 0; _j < array_length(stageCharacters); _j++)
 		    {
-		        var _entry = _list[_i];
-        
-		        // Safely pull values without throwing a missing variable error
-		        var _searchId = struct_exists(_entry, CHARACTER_ID) ? _entry.charId : noone;
-		        var _searchSprite = struct_exists(_entry, SPRITE) ? _entry.sprite : noone;
-        
-		        for (var _j = 0; _j < array_length(stageCharacters); _j++)
+		        // Match by ID first, fallback to sprite reference
+		        if ((_searchId != noone && stageCharacters[_j].charId == _searchId) || 
+		            (_searchSprite != noone && stageCharacters[_j].sprite == _searchSprite))
 		        {
-		            if ((_searchId != noone && stageCharacters[_j].charId == _searchId) || 
-		                (_searchSprite != noone && stageCharacters[_j].sprite == _searchSprite))
-		            {
-		                stageCharacters[_j].targetAlpha = MIN_ALPHA;
-		                break;
-		            }
+		            stageCharacters[_j].targetAlpha = MIN_ALPHA;
+		            break;
 		        }
 		    }
+    
 		    directorState = DirectorStateCharacterFade;
 		    break;
 		}
