@@ -58,8 +58,9 @@
 	#macro DEFAULT_NODE_DELAY   0.5
 	#macro MAX_STAGE_CHARACTERS 3
 	
-	#macro DELAY      "delay"
-	#macro SPRITE     "sprite"
-	#macro CHARACTERS "characters"
+	#macro DELAY        "delay"
+	#macro SPRITE       "sprite"
+	#macro CHARACTERS   "characters"
+	#macro CHARACTER_ID "charId"
 	
 #endregion

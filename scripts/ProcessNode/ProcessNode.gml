@@ -1,4 +1,3 @@
-
 function ProcessNode(_nodeId)
 {
     var _scene = screenPlay[$ currentSceneId];
@@ -24,7 +23,7 @@ function ProcessNode(_nodeId)
     switch (_node.nodeType)
     {
         case NodeType.TRANSITION_IN:
-		{
+        {
             var _transitionSequence = _node.transitionSequence ?? sqFadeIn;
             SceneTransitionIn(_transitionSequence);
             directorState = DirectorStateTransitionIn;
@@ -32,57 +31,70 @@ function ProcessNode(_nodeId)
         }
         
         case NodeType.LINE_SEQUENCE:
-		{
+        {
             currentLineSequence = lineData[$ _node.sequenceId] ?? [];
             currentLineIndex = 0;
             typist.reset();
             directorState = DirectorStateLineSequence;
             break;
         }
-        
+		
         case NodeType.CHARACTER_IN:
 		{
-			var _list = struct_get(_node, CHARACTERS) ?? [];
-			for (var _i = 0; _i < array_length(_list); _i++)
-			{
-				if (array_length(stageCharacters) >= MAX_STAGE_CHARACTERS) { break; }
-				var _entry = _list[_i];
+		    var _list = _node.characters ?? [];
+		    var _guiW = VIEWPORT_WIDTH;
+    
+		    for (var _i = 0; _i < array_length(_list); _i++)
+		    {
+		        if (array_length(stageCharacters) >= MAX_STAGE_CHARACTERS) { break; }
+		        var _entry = _list[_i];
         
-
-				array_push(stageCharacters, {
-					sprite: _entry.sprite,
-					alpha: MIN_ALPHA,
-					targetAlpha: MAX_ALPHA,
-					x: VIEWPORT_WIDTH / 2,
-					targetX: VIEWPORT_WIDTH / 2
-				});
-			}
-			directorState = DirectorStateCharacterFade;
-			break;
+		        var _charId = struct_exists(_entry, CHARACTER_ID) ? _entry.charId : "";
+		        var _sprite = struct_exists(_entry, SPRITE) ? _entry.sprite : noone;
+        
+		        var _newCount = array_length(stageCharacters) + 1;
+		        var _spawnX = _guiW * (_newCount / (_newCount + 1));
+        
+		        array_push(stageCharacters, {
+		            charId: _charId,
+		            sprite: _sprite,
+		            alpha: MIN_ALPHA,
+		            targetAlpha: MAX_ALPHA,
+		            xPosition: _spawnX,
+		            targetX: _spawnX
+		        });
+		    }
+		    directorState = DirectorStateCharacterFade;
+		    break;
 		}
-        
-        case NodeType.CHARACTER_OUT:
+		
+		case NodeType.CHARACTER_OUT:
 		{
-			var _list = struct_get(_node, CHARACTERS) ?? [];
-			for (var _i = 0; _i < array_length(_list); _i++)
-			{
-				// Find character by sprite and set target alpha to 0 for exit fade
-				var _entry = _list[_i];
-				for (var _c = 0; _c < array_length(stageCharacters); _c++)
-				{
-					if (stageCharacters[_c].sprite == _entry.sprite)
-					{
-						stageCharacters[_c].targetAlpha = MIN_ALPHA;
-						break;
-					}
-				}
-			}
-			directorState = DirectorStateCharacterFade;
-			break;
-		}
+		    var _list = _node.characters ?? [];
+		    for (var _i = 0; _i < array_length(_list); _i++)
+		    {
+		        var _entry = _list[_i];
         
+		        // Safely pull values without throwing a missing variable error
+		        var _searchId = struct_exists(_entry, CHARACTER_ID) ? _entry.charId : noone;
+		        var _searchSprite = struct_exists(_entry, SPRITE) ? _entry.sprite : noone;
+        
+		        for (var _j = 0; _j < array_length(stageCharacters); _j++)
+		        {
+		            if ((_searchId != noone && stageCharacters[_j].charId == _searchId) || 
+		                (_searchSprite != noone && stageCharacters[_j].sprite == _searchSprite))
+		            {
+		                stageCharacters[_j].targetAlpha = MIN_ALPHA;
+		                break;
+		            }
+		        }
+		    }
+		    directorState = DirectorStateCharacterFade;
+		    break;
+		}
+		
         case NodeType.MAIN_CHARACTER_IN:
-		{
+        {
             if (struct_exists(_node, SPRITE) && sprite_exists(_node.sprite)) { mainCharacter.sprite = _node.sprite; }
             mainCharacter.targetAlpha = MAX_ALPHA;
             directorState = DirectorStateCharacterFade;
@@ -90,7 +102,7 @@ function ProcessNode(_nodeId)
         }
         
         case NodeType.MAIN_CHARACTER_OUT:
-		{
+        {
             mainCharacter.targetAlpha = MIN_ALPHA;
             directorState = DirectorStateCharacterFade;
             break;

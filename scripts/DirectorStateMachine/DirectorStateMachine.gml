@@ -107,34 +107,22 @@ function UpdateCharacterPortraits()
     var _count = array_length(stageCharacters);
 
     // ------------------------------------------------------------------
-    // UPDATE TARGET X POSITIONS BASED ON CHARACTER COUNT
-    // ------------------------------------------------------------------
-    var _targetPositions = [];
-    switch (_count)
-    {
-        case 1: 
-            _targetPositions = [_guiW / 2]; 
-            break;
-        case 2: 
-            _targetPositions = [380, _guiW / 2]; 
-            break;
-        case MAX_STAGE_CHARACTERS: 
-            _targetPositions = [380, _guiW / 2, _guiW - 380]; 
-            break;
-    }
-
-    // ------------------------------------------------------------------
-    // CHARACTER ALPHAS AND POSITIONS
+    // DYNAMIC EQUAL SPACING CALCULATION
+    // 1 Char  -> 1/2 (50%)
+    // 2 Chars -> 1/3 (33.3%), 2/3 (66.6%)
+    // 3 Chars -> 1/4 (25%), 2/4 (50%), 3/4 (75%)
     // ------------------------------------------------------------------
     for (var _i = _count - 1; _i >= 0; _i--)
     {
         var _char = stageCharacters[_i];
         
-        // Smoothly slide X position toward targetX
-        if (_i < array_length(_targetPositions)) { _char.targetX = _targetPositions[_i]; }
-        _char.x = lerp(_char.x, _char.targetX, 0.15);
+        // Target slot X formula
+        _char.targetX = _guiW * ((_i + 1) / (_count + 1));
         
-        // Handle Fade In / Fade Out
+        // Smooth slide to target position
+        _char.xPosition = lerp(_char.xPosition, _char.targetX, 0.15);
+        
+        // Fade In / Fade Out logic
         if (_char.alpha < _char.targetAlpha) 
         { 
             _char.alpha = min(_char.alpha + CHARACTER_FADE_SPEED, _char.targetAlpha); 
@@ -142,7 +130,10 @@ function UpdateCharacterPortraits()
         else if (_char.alpha > _char.targetAlpha)
         {
             _char.alpha = max(_char.alpha - CHARACTER_FADE_SPEED, _char.targetAlpha);
-            if (_char.alpha == MIN_ALPHA) { array_delete(stageCharacters, _i, 1); }
+            if (_char.alpha == MIN_ALPHA) 
+            { 
+                array_delete(stageCharacters, _i, 1); 
+            }
         }
     }
     
