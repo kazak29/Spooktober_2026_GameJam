@@ -20,7 +20,7 @@ currentLineIndex = 0;
 // Auto-managed Character Stage (Max 3)
 stageCharacters = [];
 mainCharacter = {
-    name: "Rocket",
+    charId: "Rocket",
     sprite: sPlaceholderMainCharacter,
     alpha: MIN_ALPHA,
     targetAlpha: MIN_ALPHA

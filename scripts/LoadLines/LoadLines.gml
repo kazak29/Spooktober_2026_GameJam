@@ -18,9 +18,9 @@ function LoadLineData ()
 	for (var _row = 1; _row < _gridHeight; _row++)
 	{
 		// NOTE: Check the CSV file for which column is which field
-		var _sequenceId = _grid[# 0, _row];
-        var _lineTitle = _grid[# 1, _row];
-        var _lineText  = _grid[# 2, _row];
+		var _sequenceId      = _grid[# 0, _row];
+        var _lineTitle       = _grid[# 1, _row];
+        var _lineText        = _grid[# 2, _row];
 		
 		if (_sequenceId == "") continue;   // Skip empty lines
 		
