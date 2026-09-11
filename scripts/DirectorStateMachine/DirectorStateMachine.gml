@@ -5,7 +5,7 @@ function DirectorStateIdle()
 }
 
 
-function DirectorStateTransitionIn()
+function DirectorStateTransition()
 {
     if (!global.midTransition)
     {

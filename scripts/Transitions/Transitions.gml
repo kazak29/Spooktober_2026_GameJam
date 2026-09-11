@@ -36,15 +36,12 @@ function TransitionFinished ()
 
 // SCENE TRANSITION *************************************************************************************
 
-function SceneTransitionIn (_typeIn)
+function SceneTransition (_type)
 {
 	if (layer_exists(TRANSITION_LAYER)) { layer_destroy(TRANSITION_LAYER); }
     
     var _layer = layer_create(MAX_LAYER_DEPTH, TRANSITION_LAYER);
     global.midTransition = true;
     
-    layer_sequence_create(_layer, 0, 0, _typeIn);
+    layer_sequence_create(_layer, 0, 0, _type);
 }
-
-
-
