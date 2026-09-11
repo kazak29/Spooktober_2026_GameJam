@@ -142,7 +142,8 @@ function AdvanceNode()
     { 
         currentSceneId = noone;
         currentNodeId  = noone;
-        directorState  = DirectorStateIdle; 
+        directorState  = DirectorStateIdle;
+		TransitionStart(rmMap, sqFadeOut, sqFadeIn);
     }
 }
 
