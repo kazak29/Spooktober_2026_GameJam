@@ -5,7 +5,7 @@ function LoadScreenPlay_Demo()
     var _sceneData = {
         scene1: {
             startNode: "scene1_main_character_enter",
-            nextScene: noone,
+            nextScene: "scene2",
             background: sPlaceholderBackground1,
             nodes: {
                 scene1_main_character_enter: {
@@ -64,7 +64,18 @@ function LoadScreenPlay_Demo()
                 },
 				
             }
-        } // scene1
+        }, // scene1
+		scene2: {
+			startNode: "scene2_main_character_enter",
+            nextScene: noone,
+            background: sPlaceholderBackground2,
+            nodes: {
+				scene2_main_character_enter: {
+                    nodeType: NodeType.MAIN_CHARACTER_IN,
+                    nextNode: noone
+                }
+			}
+		} // scene2
     };
     
     return _sceneData;

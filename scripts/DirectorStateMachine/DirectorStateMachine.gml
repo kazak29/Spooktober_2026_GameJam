@@ -96,6 +96,8 @@ function StartScene(_sceneId)
         return;
     }
     
+	ClearStage();
+	
     currentSceneId = _sceneId;
     var _activeScene = screenPlay[$ currentSceneId];
     ProcessNode(_activeScene.startNode);
@@ -108,8 +110,39 @@ function AdvanceNode()
     var _activeScene = screenPlay[$ currentSceneId];
     var _activeNode  = _activeScene.nodes[$ currentNodeId];
     
-    if (_activeNode.nextNode != noone) { ProcessNode(_activeNode.nextNode); }
-    else { directorState = DirectorStateIdle; }
+    // Go to the next node in the scene
+    if (_activeNode.nextNode != noone) 
+    { 
+        ProcessNode(_activeNode.nextNode); 
+    }
+    // Go to the next scene if one exists
+    else if (_activeScene.nextScene != noone)
+    {
+        StartScene(_activeScene.nextScene);
+    }
+    // Finished all nodes AND all scenes
+    else 
+    { 
+        currentSceneId = noone;
+        currentNodeId  = noone;
+        directorState  = DirectorStateIdle; 
+    }
+}
+
+
+
+function ClearStage()
+{
+    stageCharacters = [];
+    
+    // Reset main character
+    mainCharacter.alpha = MIN_ALPHA;
+    mainCharacter.targetAlpha = MIN_ALPHA;
+    mainCharacter.yOffset = 0;
+    mainCharacter.yVelocity = 0;
+    mainCharacter.blend = c_white;
+    
+    previousSpeaker = "";
 }
 
 
