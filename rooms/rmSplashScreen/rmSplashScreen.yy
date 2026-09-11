@@ -19,8 +19,8 @@
   ],
   "name":"rmSplashScreen",
   "parent":{
-    "name":"Rooms",
-    "path":"folders/Rooms.yy",
+    "name":"MenuScreens",
+    "path":"folders/Rooms/MenuScreens.yy",
   },
   "parentRoom":null,
   "physicsSettings":{
