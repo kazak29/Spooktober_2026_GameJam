@@ -18,7 +18,7 @@ currentLineIndex = 0;
 
 
 // Auto-managed Character Stage (Max 3)
-stageCharacters = [];   // Stores objects: { sprite: sSprite, alpha: 0, targetAlpha: 0 }
+stageCharacters = [];
 mainCharacter = {
     name: "Rocket",
     sprite: sPlaceholderMainCharacter,

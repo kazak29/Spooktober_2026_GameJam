@@ -82,7 +82,7 @@ function DrawCharacterPortraits()
         var _char = stageCharacters[_i];
         if (_char.alpha > 0 && sprite_exists(_char.sprite))
         {
-            draw_sprite_ext(_char.sprite, 0, _char.x, _guiH, 1, 1, 0, c_white, _char.alpha);
+            draw_sprite_ext(_char.sprite, 0, _char.xPosition, _guiH, 1, 1, 0, c_white, _char.alpha);
         }
     }
 }
