@@ -1,6 +1,6 @@
 {
   "$GMSequence":"v1",
-  "%Name":"sqFadeIn",
+  "%Name":"sqSceneFadeIn",
   "autoRecord":true,
   "backdropHeight":1080,
   "backdropImageOpacity":0.5,
@@ -25,15 +25,15 @@
           "0":{"$MomentsEventKeyframe":"","Events":[
               "TransitionFinished",
             ],"resourceType":"MomentsEventKeyframe","resourceVersion":"2.0",},
-        },"Disabled":false,"id":"e45a66fd-10a1-4df0-b368-f0fdd05af65d","IsCreationKey":false,"Key":59.9999,"Length":1.0,"resourceType":"Keyframe<MomentsEventKeyframe>","resourceVersion":"2.0","Stretch":false,},
+        },"Disabled":false,"id":"3c149124-6627-47f4-b148-b73dbbf9339b","IsCreationKey":false,"Key":59.9999,"Length":1.0,"resourceType":"Keyframe<MomentsEventKeyframe>","resourceVersion":"2.0","Stretch":false,},
     ],
     "resourceType":"KeyframeStore<MomentsEventKeyframe>",
     "resourceVersion":"2.0",
   },
-  "name":"sqFadeIn",
+  "name":"sqSceneFadeIn",
   "parent":{
     "name":"Fade",
-    "path":"folders/Sequences/RoomTransitions/Fade.yy",
+    "path":"folders/Sequences/SceneTransitions/Fade.yy",
   },
   "playback":0,
   "playbackSpeed":60.0,

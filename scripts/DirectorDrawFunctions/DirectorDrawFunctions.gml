@@ -76,24 +76,25 @@ function DrawCharacterPortraits()
     var _count = array_length(stageCharacters);
     if (_count == 0) { return; }
 
-    // Draw all active characters at their current X position
     for (var _i = 0; _i < _count; _i++)
     {
         var _char = stageCharacters[_i];
         if (_char.alpha > 0 && sprite_exists(_char.sprite))
         {
-            draw_sprite_ext(_char.sprite, 0, _char.xPosition, _guiH, 1, 1, 0, c_white, _char.alpha);
+            var _drawY = _guiH + _char.yOffset;
+            draw_sprite_ext(_char.sprite, 0, _char.xPosition, _drawY, 1, 1, 0, _char.blend, _char.alpha);
         }
     }
 }
 
 
 
-function DrawMainCharacterPortrait ()
+function DrawMainCharacterPortrait()
 {
     var _guiH = VIEWPORT_HEIGHT;
     if (mainCharacter.alpha > 0 && sprite_exists(mainCharacter.sprite))
     {
-        draw_sprite_ext(mainCharacter.sprite, 0, 220, _guiH + (sprite_get_height(mainCharacter.sprite) / 3), 1, 1, 0, c_white, mainCharacter.alpha);
+        var _drawY = _guiH + (sprite_get_height(mainCharacter.sprite) / 3) + mainCharacter.yOffset;
+        draw_sprite_ext(mainCharacter.sprite, 0, 220, _drawY, 1, 1, 0, mainCharacter.blend, mainCharacter.alpha);
     }
 }
