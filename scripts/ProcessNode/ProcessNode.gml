@@ -36,16 +36,13 @@ function ProcessNode(_nodeId)
         {
             if (array_length(stageCharacters) < MAX_STAGE_CHARACTERS)
             {
-                var _charId = struct_exists(_node, CHARACTER_ID) ? _node.charId : "";
-                var _sprite = struct_exists(_node, SPRITE) ? _node.sprite : noone;
-                var _guiW   = VIEWPORT_WIDTH;
-        
                 var _newCount = array_length(stageCharacters) + 1;
-                var _spawnX   = _guiW * (_newCount / (_newCount + 1));
+                var _spawnX   = VIEWPORT_WIDTH * (_newCount / (_newCount + 1));
         
                 array_push(stageCharacters, {
-                    charId: _charId,
-                    sprite: _sprite,
+                    charId: _node.charId,
+                    sprite: _node.sprite,
+					expressionFrame: _node.expressionFrame,
                     alpha: MIN_ALPHA,
                     targetAlpha: MAX_ALPHA,
                     xPosition: _spawnX,
@@ -80,6 +77,7 @@ function ProcessNode(_nodeId)
             if (struct_exists(_node, SPRITE) && sprite_exists(_node.sprite)) 
             { 
                 mainCharacter.sprite = _node.sprite; 
+				mainCharacter.expressionFrame = _node.expressionFrame;
             }
             mainCharacter.targetAlpha = MAX_ALPHA;
             directorState = DirectorStateCharacterFade;

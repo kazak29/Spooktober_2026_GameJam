@@ -10,6 +10,7 @@ function LoadScreenPlay_Demo()
             nodes: {
                 scene1_main_character_enter: {
                     nodeType: NodeType.MAIN_CHARACTER_IN,
+					expressionFrame: 0,
                     nextNode: "scene1_character_enter1"
                 },
                 
@@ -17,6 +18,7 @@ function LoadScreenPlay_Demo()
                     nodeType: NodeType.CHARACTER_IN,
                     charId: "Kazak",
 					sprite: sPlaceholderCharacter1,
+					expressionFrame: 0,
                     nextNode: "scene1_character_enter2"
                 },
 				
@@ -24,6 +26,7 @@ function LoadScreenPlay_Demo()
                     nodeType: NodeType.CHARACTER_IN,
                     charId: "Extonjunior",
 					sprite: sPlaceholderCharacter2,
+					expressionFrame: 0,
                     nextNode: "scene1_character_enter3"
                 },
 				
@@ -31,6 +34,7 @@ function LoadScreenPlay_Demo()
                     nodeType: NodeType.CHARACTER_IN,
                     charId: "Atlas",
 					sprite: sPlaceholderCharacter3,
+					expressionFrame: 0,
                     nextNode: "scene1_dialogue1"
                 },
 				
@@ -72,6 +76,7 @@ function LoadScreenPlay_Demo()
             nodes: {
 				scene2_main_character_enter: {
                     nodeType: NodeType.MAIN_CHARACTER_IN,
+					expressionFrame: 0,
                     nextNode: "scene2_main_character_exit"
                 },
 				scene2_main_character_exit: {

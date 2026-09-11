@@ -34,6 +34,7 @@ stageCharacters = [];
 mainCharacter = {
     charId: "Rocket",
     sprite: sPlaceholderMainCharacter,
+	expressionFrame: 0,
     alpha: MIN_ALPHA,
     targetAlpha: MIN_ALPHA
 };
