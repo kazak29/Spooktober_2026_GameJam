@@ -23,6 +23,20 @@ function LoadScreenPlay()
                     nodeType: NodeType.CHARACTER_IN,
                     charId: "Kazak",
 					sprite: sPlaceholderCharacter1,
+                    nextNode: "scene1_character_enter2"
+                },
+				
+				scene1_character_enter2: {
+                    nodeType: NodeType.CHARACTER_IN,
+                    charId: "Extonjunior",
+					sprite: sPlaceholderCharacter2,
+                    nextNode: "scene1_character_enter3"
+                },
+				
+				scene1_character_enter3: {
+                    nodeType: NodeType.CHARACTER_IN,
+                    charId: "Atlas",
+					sprite: sPlaceholderCharacter3,
                     nextNode: "scene1_dialogue1"
                 },
 				
@@ -35,6 +49,18 @@ function LoadScreenPlay()
                 scene1_character_exit1: {
                     nodeType: NodeType.CHARACTER_OUT,
                     charId: "Kazak",
+                    nextNode: "scene1_character_exit2"
+                },
+				
+				scene1_character_exit2: {
+                    nodeType: NodeType.CHARACTER_OUT,
+                    charId: "Atlas",
+                    nextNode: "scene1_character_exit3"
+                },
+				
+				scene1_character_exit3: {
+                    nodeType: NodeType.CHARACTER_OUT,
+                    charId: "Extonjunior",
                     nextNode: "scene1_main_character_exit"
                 },
 				
@@ -43,7 +69,15 @@ function LoadScreenPlay()
                     nextNode: noone
                 }
             }
-        } // scene1
+        }, // scene1
+		scene2: {
+		
+		
+		
+		
+		
+		
+		}
     };
     
     return _sceneData;

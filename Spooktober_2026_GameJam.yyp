@@ -226,6 +226,7 @@
     {"id":{"name":"scribble_fallback_bulletpoint","path":"sprites/scribble_fallback_bulletpoint/scribble_fallback_bulletpoint.yy",},},
     {"id":{"name":"sPixel","path":"sprites/sPixel/sPixel.yy",},},
     {"id":{"name":"sPlaceholderBackground1","path":"sprites/sPlaceholderBackground1/sPlaceholderBackground1.yy",},},
+    {"id":{"name":"sPlaceholderBackground2","path":"sprites/sPlaceholderBackground2/sPlaceholderBackground2.yy",},},
     {"id":{"name":"sPlaceholderCharacter1","path":"sprites/sPlaceholderCharacter1/sPlaceholderCharacter1.yy",},},
     {"id":{"name":"sPlaceholderCharacter2","path":"sprites/sPlaceholderCharacter2/sPlaceholderCharacter2.yy",},},
     {"id":{"name":"sPlaceholderCharacter3","path":"sprites/sPlaceholderCharacter3/sPlaceholderCharacter3.yy",},},
