@@ -72,6 +72,10 @@ function LoadScreenPlay_Demo()
             nodes: {
 				scene2_main_character_enter: {
                     nodeType: NodeType.MAIN_CHARACTER_IN,
+                    nextNode: "scene2_main_character_exit"
+                },
+				scene2_main_character_exit: {
+                    nodeType: NodeType.MAIN_CHARACTER_OUT,
                     nextNode: noone
                 }
 			}

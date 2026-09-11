@@ -28,4 +28,8 @@
 	global.roomTarget = noone;
 
 #endregion
+#region screenplay
 
+	global.sceneToPlay = "scene1";   // Set this to the first scene in the game
+
+#endregion

@@ -40,7 +40,7 @@ mainCharacter = {
 
 
 
-// Start the first Scene
-currentSceneId = "scene1";
+// Start the scene that was set as a global
+currentSceneId = global.sceneToPlay;
 currentNodeId  = noone;
 StartScene(currentSceneId);
