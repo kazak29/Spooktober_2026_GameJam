@@ -17,17 +17,13 @@ currentLineIndex = 0;
 
 
 
-// Characters
-activeCharacters = {};
-activeCharacters[$ CharacterSlot.LEFT]   = { sprite: noone, alpha: 0, targetAlpha: 0 };
-activeCharacters[$ CharacterSlot.CENTER] = { sprite: noone, alpha: 0, targetAlpha: 0 };
-activeCharacters[$ CharacterSlot.RIGHT]  = { sprite: noone, alpha: 0, targetAlpha: 0 };
-
+// Auto-managed Character Stage (Max 3)
+stageCharacters = [];   // Stores objects: { sprite: sSprite, alpha: 0, targetAlpha: 0 }
 mainCharacter = {
     name: "Rocket",
     sprite: sPlaceholderMainCharacter,
-    alpha: 0,
-    targetAlpha: 0
+    alpha: MIN_ALPHA,
+    targetAlpha: MIN_ALPHA
 };
 
 
