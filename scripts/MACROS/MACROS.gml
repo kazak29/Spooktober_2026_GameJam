@@ -1,6 +1,7 @@
 #region Included Files
 
 	#macro LINES_CSV "lines.csv"
+	#macro UI_CSV    "ui.csv"
 	#macro FILE_ERROR -1
 
 #endregion

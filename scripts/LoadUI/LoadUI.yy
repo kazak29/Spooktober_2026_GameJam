@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"LoadUI",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"LoadUI",
+  "parent":{
+    "name":"Loading",
+    "path":"folders/Scripts/Loading.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

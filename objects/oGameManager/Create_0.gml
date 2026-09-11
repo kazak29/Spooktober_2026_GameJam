@@ -1,3 +1,8 @@
+#region load ui text
+
+	global.uiData = LoadUI();
+
+#endregion
 #region debug
 	
 	//randomise();
