@@ -75,25 +75,13 @@ function DrawCharacterPortraits()
 
     var _count = array_length(stageCharacters);
     if (_count == 0) { return; }
-	
-    var _currentSpeaker = "";
-    if (directorState == DirectorStateLineSequence && currentLineIndex < array_length(currentLineSequence))
-    {
-        var _lineEntry = currentLineSequence[currentLineIndex];
-        _currentSpeaker = _lineEntry.lineTitle ?? "";
-    }
 
     for (var _i = 0; _i < _count; _i++)
     {
         var _char = stageCharacters[_i];
         if (_char.alpha > 0 && sprite_exists(_char.sprite))
         {
-            // Dim if dialogue is active and this character is not speaking
-            var _isSpeaking = (_currentSpeaker == _char.charId);
-            var _color = (directorState == DirectorStateLineSequence && _currentSpeaker != "" && !_isSpeaking) ? c_dkgray : c_white;
-            var _scale = _isSpeaking ? 1.03 : 1.0;
-
-            draw_sprite_ext(_char.sprite, 0, _char.xPosition, _guiH, _scale, _scale, 0, _color, _char.alpha);
+            draw_sprite_ext(_char.sprite, 0, _char.xPosition, _guiH, _char.scale, _char.scale, 0, _char.blend, _char.alpha);
         }
     }
 }
@@ -105,17 +93,6 @@ function DrawMainCharacterPortrait()
     var _guiH = VIEWPORT_HEIGHT;
     if (mainCharacter.alpha > 0 && sprite_exists(mainCharacter.sprite))
     {
-        var _currentSpeaker = "";
-        if (directorState == DirectorStateLineSequence && currentLineIndex < array_length(currentLineSequence))
-        {
-            var _lineEntry = currentLineSequence[currentLineIndex];
-            _currentSpeaker = _lineEntry.lineTitle ?? "";
-        }
-		
-        var _isSpeaking = (_currentSpeaker == mainCharacter.charId);
-        var _color = (directorState == DirectorStateLineSequence && _currentSpeaker != "" && !_isSpeaking) ? c_dkgray : c_white;
-        var _scale = _isSpeaking ? 1.03 : 1.0;
-
-        draw_sprite_ext(mainCharacter.sprite, 0, 220, _guiH + (sprite_get_height(mainCharacter.sprite) / 3), _scale, _scale, 0, _color, mainCharacter.alpha);
+        draw_sprite_ext(mainCharacter.sprite, 0, 220, _guiH + (sprite_get_height(mainCharacter.sprite) / 3), mainCharacter.scale, mainCharacter.scale, 0, mainCharacter.blend, mainCharacter.alpha);
     }
 }

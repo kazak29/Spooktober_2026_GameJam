@@ -105,6 +105,14 @@ function UpdateCharacterPortraits()
 {
     var _guiW = VIEWPORT_WIDTH;
     var _count = array_length(stageCharacters);
+    
+    // Get current speaker for dimming
+    var _currentSpeaker = "";
+    if (directorState == DirectorStateLineSequence && currentLineIndex < array_length(currentLineSequence))
+    {
+        var _lineEntry = currentLineSequence[currentLineIndex];
+        _currentSpeaker = _lineEntry.lineTitle ?? "";
+    }
 
     // ------------------------------------------------------------------
     // DYNAMIC EQUAL SPACING CALCULATION
@@ -116,26 +124,43 @@ function UpdateCharacterPortraits()
     {
         var _char = stageCharacters[_i];
         
-        // Target slot X formula
         _char.targetX = _guiW * ((_i + 1) / (_count + 1));
-        
-        // Smooth slide to target position
         _char.xPosition = lerp(_char.xPosition, _char.targetX, 0.15);
         
+        // If there is dialogue and speaker doesn't match, target dark grey. Otherwise normal white
+        var _isSpeaking = (_currentSpeaker != "" && _currentSpeaker == _char.charId);
+        var _targetColor = (directorState == DirectorStateLineSequence && !_isSpeaking) ? c_dkgray : c_white;
+        
+        // Initialize image_blend if it doesn't exist yet
+        if (!struct_exists(_char, "blend")) { _char.blend = c_white; }
+        _char.blend = merge_color(_char.blend, _targetColor, 0.15);
+        
+        // Active Speaker Scale Lerp
+        var _targetScale = _isSpeaking ? 1.03 : 1.0;
+        if (!struct_exists(_char, "scale")) { _char.scale = 1.0; }
+        _char.scale = lerp(_char.scale, _targetScale, 0.15);
+        
         // Fade In / Fade Out logic
-        if (_char.alpha < _char.targetAlpha) 
-        { 
-            _char.alpha = min(_char.alpha + CHARACTER_FADE_SPEED, _char.targetAlpha); 
-        }
+        if (_char.alpha < _char.targetAlpha) { _char.alpha = min(_char.alpha + CHARACTER_FADE_SPEED, _char.targetAlpha); }
         else if (_char.alpha > _char.targetAlpha)
         {
             _char.alpha = max(_char.alpha - CHARACTER_FADE_SPEED, _char.targetAlpha);
-            if (_char.alpha == MIN_ALPHA) 
-            { 
-                array_delete(stageCharacters, _i, 1); 
-            }
+            if (_char.alpha == MIN_ALPHA) { array_delete(stageCharacters, _i, 1); }
         }
     }
+    
+    //// ------------------------------------------------------------------
+    // MAIN CHARACTER DIMMING & SCALE
+    // ------------------------------------------------------------------
+    var _mainIsSpeaking = (_currentSpeaker != "" && _currentSpeaker == mainCharacter.charId);
+    var _mainTargetColor = (directorState == DirectorStateLineSequence && !_mainIsSpeaking) ? c_dkgray : c_white;
+    
+    if (!struct_exists(mainCharacter, "blend")) { mainCharacter.blend = c_white; }
+    mainCharacter.blend = merge_color(mainCharacter.blend, _mainTargetColor, 0.15);
+    
+    var _mainTargetScale = _mainIsSpeaking ? 1.03 : 1.0;
+    if (!struct_exists(mainCharacter, "scale")) { mainCharacter.scale = 1.0; }
+    mainCharacter.scale = lerp(mainCharacter.scale, _mainTargetScale, 0.15);
     
     // Step Main Character Alpha
     if (mainCharacter.alpha < mainCharacter.targetAlpha)

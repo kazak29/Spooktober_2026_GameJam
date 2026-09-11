@@ -1,3 +1,4 @@
+
 function LoadScreenPlay()
 {
     var _sceneData = {
