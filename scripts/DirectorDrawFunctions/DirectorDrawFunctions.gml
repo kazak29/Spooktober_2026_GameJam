@@ -80,7 +80,7 @@ function DrawCharacterPortraits()
         if (_char.alpha > 0 && sprite_exists(_char.sprite))
         {
             var _drawY = _guiH + _char.yOffset;
-            draw_sprite_ext(_char.sprite, 0, _char.xPosition, _drawY, 1, 1, 0, _char.blend, _char.alpha);
+            draw_sprite_ext(_char.sprite, _char.expressionFrame, _char.xPosition, _drawY, 1, 1, 0, _char.blend, _char.alpha);
         }
     }
 }
@@ -93,6 +93,6 @@ function DrawMainCharacterPortrait()
     if (mainCharacter.alpha > 0 && sprite_exists(mainCharacter.sprite))
     {
         var _drawY = _guiH + (sprite_get_height(mainCharacter.sprite) / 3) + mainCharacter.yOffset;
-        draw_sprite_ext(mainCharacter.sprite, 0, 220, _drawY, 1, 1, 0, mainCharacter.blend, mainCharacter.alpha);
+        draw_sprite_ext(mainCharacter.sprite, mainCharacter.expressionFrame, 220, _drawY, 1, 1, 0, mainCharacter.blend, mainCharacter.alpha);
     }
 }
