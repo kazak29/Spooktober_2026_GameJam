@@ -91,5 +91,29 @@ function ProcessNode(_nodeId)
             break;
         }
 		
+		case NodeType.CHARACTER_UPDATE:
+		{
+		    var _charId = _node.charId;
+			
+			// Main Character
+		    if (mainCharacter.charId == _charId) { mainCharacter.expressionFrame = _node.expressionFrame; }
+			
+			// Other Characters
+		    else
+		    {
+		        for (var _i = 0; _i < array_length(stageCharacters); _i++)
+		        {
+		            if (stageCharacters[_i].charId == _charId)
+		            {
+		                stageCharacters[_i].expressionFrame = _node.expressionFrame;;
+		                break;
+		            }
+		        }
+		    }
+			
+		    AdvanceNode();
+		    break;
+		}
+		
     }
 }

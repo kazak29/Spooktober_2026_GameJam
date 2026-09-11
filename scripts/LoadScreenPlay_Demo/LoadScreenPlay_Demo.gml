@@ -41,9 +41,16 @@ function LoadScreenPlay_Demo()
                 scene1_dialogue1: {
                     nodeType: NodeType.LINE_SEQUENCE,
                     sequenceId: "scene1_dialogue1",
-                    nextNode: "scene1_character_exit1"
+					nextNode: "scene1_change_main_exp"
                 },
                 
+				scene1_change_main_exp: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: "Extonjunior",
+					expressionFrame: 1,
+					nextNode: "scene1_character_exit1"
+				},
+				
                 scene1_character_exit1: {
                     nodeType: NodeType.CHARACTER_OUT,
                     charId: "Kazak",
