@@ -81,7 +81,8 @@ function DrawCharacterPortraits()
         var _char = stageCharacters[_i];
         if (_char.alpha > 0 && sprite_exists(_char.sprite))
         {
-            draw_sprite_ext(_char.sprite, 0, _char.xPosition, _guiH, _char.scale, _char.scale, 0, _char.blend, _char.alpha);
+            var _drawY = _guiH + _char.yOffset;
+            draw_sprite_ext(_char.sprite, 0, _char.xPosition, _drawY, 1, 1, 0, _char.blend, _char.alpha);
         }
     }
 }
@@ -93,6 +94,7 @@ function DrawMainCharacterPortrait()
     var _guiH = VIEWPORT_HEIGHT;
     if (mainCharacter.alpha > 0 && sprite_exists(mainCharacter.sprite))
     {
-        draw_sprite_ext(mainCharacter.sprite, 0, 220, _guiH + (sprite_get_height(mainCharacter.sprite) / 3), mainCharacter.scale, mainCharacter.scale, 0, mainCharacter.blend, mainCharacter.alpha);
+        var _drawY = _guiH + (sprite_get_height(mainCharacter.sprite) / 3) + mainCharacter.yOffset;
+        draw_sprite_ext(mainCharacter.sprite, 0, 220, _drawY, 1, 1, 0, mainCharacter.blend, mainCharacter.alpha);
     }
 }

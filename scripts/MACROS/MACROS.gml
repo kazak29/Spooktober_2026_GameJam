@@ -54,8 +54,12 @@
 
 #region Screen Play
 
-	#macro CHARACTER_FADE_SPEED 0.05
+	#macro CHARACTER_FADE_SPEED    0.05
+	#macro CHARACTER_BOUNCE_HEIGHT   -6
+	#macro CHARACTER_BOUNCE_SPEED   0.5
+	
 	#macro DEFAULT_NODE_DELAY   0.5
+	
 	#macro MAX_STAGE_CHARACTERS 3
 	
 	#macro DELAY        "delay"

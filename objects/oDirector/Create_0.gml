@@ -15,6 +15,9 @@ typist.in(TYPIST_SPEED, TYPIST_SMOOTHNESS);
 currentLineSequence = [];
 currentLineIndex = 0;
 
+// Speaker tracking for bounce animations
+previousSpeaker = "";
+
 
 
 // Auto-managed Character Stage (Max 3)

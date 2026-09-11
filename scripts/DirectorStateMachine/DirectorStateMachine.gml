@@ -103,10 +103,7 @@ function AdvanceNode()
 
 function UpdateCharacterPortraits()
 {
-    var _guiW = VIEWPORT_WIDTH;
-    var _count = array_length(stageCharacters);
-    
-    // Get current speaker for dimming
+    // Resolve current speaker once for all update logic
     var _currentSpeaker = "";
     if (directorState == DirectorStateLineSequence && currentLineIndex < array_length(currentLineSequence))
     {
@@ -114,55 +111,99 @@ function UpdateCharacterPortraits()
         _currentSpeaker = _lineEntry.lineTitle ?? "";
     }
 
-    // ------------------------------------------------------------------
-    // DYNAMIC EQUAL SPACING CALCULATION
-    // 1 Char  -> 1/2 (50%)
-    // 2 Chars -> 1/3 (33.3%), 2/3 (66.6%)
-    // 3 Chars -> 1/4 (25%), 2/4 (50%), 3/4 (75%)
-    // ------------------------------------------------------------------
+    var _speakerJustChanged = (_currentSpeaker != previousSpeaker);
+    previousSpeaker = _currentSpeaker;
+
+    // Delegate updates
+    UpdateStageCharacterPortraits(_currentSpeaker, _speakerJustChanged);
+    UpdateMainCharacterPortrait(_currentSpeaker, _speakerJustChanged);
+}
+
+
+
+// Called in UpdateCharacterPortraits above
+function UpdateStageCharacterPortraits(_currentSpeaker, _speakerJustChanged)
+{
+    var _guiW = VIEWPORT_WIDTH;
+    var _count = array_length(stageCharacters);
+
     for (var _i = _count - 1; _i >= 0; _i--)
     {
         var _char = stageCharacters[_i];
         
+        // Dynamic equal spacing
         _char.targetX = _guiW * ((_i + 1) / (_count + 1));
         _char.xPosition = lerp(_char.xPosition, _char.targetX, 0.15);
         
-        // If there is dialogue and speaker doesn't match, target dark grey. Otherwise normal white
+        // Dimming / Color Lerp
         var _isSpeaking = (_currentSpeaker != "" && _currentSpeaker == _char.charId);
         var _targetColor = (directorState == DirectorStateLineSequence && !_isSpeaking) ? c_dkgray : c_white;
-        
-        // Initialize image_blend if it doesn't exist yet
         if (!struct_exists(_char, "blend")) { _char.blend = c_white; }
         _char.blend = merge_color(_char.blend, _targetColor, 0.15);
         
-        // Active Speaker Scale Lerp
-        var _targetScale = _isSpeaking ? 1.03 : 1.0;
-        if (!struct_exists(_char, "scale")) { _char.scale = 1.0; }
-        _char.scale = lerp(_char.scale, _targetScale, 0.15);
+        // Bounce Animation
+        if (!struct_exists(_char, "yOffset")) { _char.yOffset = 0; }
+        if (!struct_exists(_char, "yVelocity")) { _char.yVelocity = 0; }
         
-        // Fade In / Fade Out logic
-        if (_char.alpha < _char.targetAlpha) { _char.alpha = min(_char.alpha + CHARACTER_FADE_SPEED, _char.targetAlpha); }
+        // Reduced jump height
+        if (_speakerJustChanged && _isSpeaking) { _char.yVelocity = CHARACTER_BOUNCE_HEIGHT; }
+        
+        // Slower gravity/float
+        _char.yVelocity += CHARACTER_BOUNCE_SPEED;
+        _char.yOffset += _char.yVelocity;
+        
+        if (_char.yOffset >= 0)
+        {
+            _char.yOffset = 0;
+            _char.yVelocity = 0;
+        }
+        
+        // Alpha Transitions
+        if (_char.alpha < _char.targetAlpha) 
+        { 
+            _char.alpha = min(_char.alpha + CHARACTER_FADE_SPEED, _char.targetAlpha); 
+        }
         else if (_char.alpha > _char.targetAlpha)
         {
             _char.alpha = max(_char.alpha - CHARACTER_FADE_SPEED, _char.targetAlpha);
-            if (_char.alpha == MIN_ALPHA) { array_delete(stageCharacters, _i, 1); }
+            if (_char.alpha == MIN_ALPHA) 
+            { 
+                array_delete(stageCharacters, _i, 1); 
+            }
         }
     }
-    
-    //// ------------------------------------------------------------------
-    // MAIN CHARACTER DIMMING & SCALE
-    // ------------------------------------------------------------------
+}
+
+
+
+// Called in UpdateCharacterPortraits above
+function UpdateMainCharacterPortrait(_currentSpeaker, _speakerJustChanged)
+{
     var _mainIsSpeaking = (_currentSpeaker != "" && _currentSpeaker == mainCharacter.charId);
     var _mainTargetColor = (directorState == DirectorStateLineSequence && !_mainIsSpeaking) ? c_dkgray : c_white;
     
+    // Dimming / Color Lerp
     if (!struct_exists(mainCharacter, "blend")) { mainCharacter.blend = c_white; }
     mainCharacter.blend = merge_color(mainCharacter.blend, _mainTargetColor, 0.15);
     
-    var _mainTargetScale = _mainIsSpeaking ? 1.03 : 1.0;
-    if (!struct_exists(mainCharacter, "scale")) { mainCharacter.scale = 1.0; }
-    mainCharacter.scale = lerp(mainCharacter.scale, _mainTargetScale, 0.15);
+    // Bounce Animation
+    if (!struct_exists(mainCharacter, "yOffset")) { mainCharacter.yOffset = 0; }
+    if (!struct_exists(mainCharacter, "yVelocity")) { mainCharacter.yVelocity = 0; }
     
-    // Step Main Character Alpha
+    // Reduced jump height
+    if (_speakerJustChanged && _mainIsSpeaking) { mainCharacter.yVelocity = CHARACTER_BOUNCE_HEIGHT; }
+    
+    // Slower gravity/float
+    mainCharacter.yVelocity += CHARACTER_BOUNCE_SPEED;
+    mainCharacter.yOffset += mainCharacter.yVelocity;
+    
+    if (mainCharacter.yOffset >= 0)
+    {
+        mainCharacter.yOffset = 0;
+        mainCharacter.yVelocity = 0;
+    }
+    
+    // Alpha Transitions
     if (mainCharacter.alpha < mainCharacter.targetAlpha)
     {
         mainCharacter.alpha = min(mainCharacter.alpha + CHARACTER_FADE_SPEED, mainCharacter.targetAlpha);
