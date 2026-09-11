@@ -5,11 +5,26 @@ function DirectorStateIdle()
 }
 
 
-function DirectorStateTransition()
+function DirectorStateSceneTransition()
 {
-    if (!global.midTransition)
+    fadeAlpha = Approach(fadeAlpha, fadeTarget, SCENE_FADE_SPEED);
+
+    if (fadeTarget == MAX_ALPHA && fadeAlpha >= MAX_ALPHA)
     {
-        AdvanceNode();
+        ClearStage();
+        currentSceneId = nextSceneId;
+        nextSceneId = noone;
+        
+        var _activeScene = screenPlay[$ currentSceneId];
+        currentNodeId = _activeScene.startNode;
+        
+        fadeTarget = MIN_ALPHA;
+    }
+
+    else if (fadeTarget == MIN_ALPHA && fadeAlpha <= MIN_ALPHA)
+    {
+        directorState = DirectorStateIdle;
+        ProcessNode(currentNodeId);
     }
 }
 
@@ -110,17 +125,19 @@ function AdvanceNode()
     var _activeScene = screenPlay[$ currentSceneId];
     var _activeNode  = _activeScene.nodes[$ currentNodeId];
     
-    // Go to the next node in the scene
+    // More nodes in current scene
     if (_activeNode.nextNode != noone) 
     { 
         ProcessNode(_activeNode.nextNode); 
     }
-    // Go to the next scene if one exists
+    // Next scene exists
     else if (_activeScene.nextScene != noone)
     {
-        StartScene(_activeScene.nextScene);
+        nextSceneId = _activeScene.nextScene;
+        fadeTarget = MAX_ALPHA;
+        directorState = DirectorStateSceneTransition;
     }
-    // Finished all nodes AND all scenes
+    // Screenplay complete
     else 
     { 
         currentSceneId = noone;

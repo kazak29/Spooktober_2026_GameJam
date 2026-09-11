@@ -10,6 +10,8 @@
 
 	#macro MIN_ALPHA 0
 	#macro MAX_ALPHA 1
+	
+	#macro SCENE_FADE_SPEED 0.03
 
 #endregion
 
