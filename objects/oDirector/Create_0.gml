@@ -11,6 +11,13 @@ delayTimer = 0;
 
 
 
+// Scene Transition
+fadeAlpha = 0;
+fadeTarget = 0;
+nextSceneId = noone;
+
+
+
 // Line Sequence
 typist = scribble_typist();
 typist.in(TYPIST_SPEED, TYPIST_SMOOTHNESS);
