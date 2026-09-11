@@ -16,11 +16,11 @@ if (oInputManager.pressed.confirm)
 	switch (menuIndex)
 	{
 		case 0:   // Start Button
-			show_debug_message("Start Selected");
+			TransitionStart(rmStage, sqFadeOut, sqFadeIn);
 			break;
 			
 		case 1:   // Credits Button
-			show_debug_message("Credits Selected");
+			TransitionStart(rmCredits, sqFadeOut, sqFadeIn);
 			break;
 			
 		default: break;
