@@ -33,7 +33,7 @@
   "name":"sqFadeIn",
   "parent":{
     "name":"Fade",
-    "path":"folders/Sequences/RoomTransitions/Fade.yy",
+    "path":"folders/Sequences/Fade.yy",
   },
   "playback":0,
   "playbackSpeed":60.0,
