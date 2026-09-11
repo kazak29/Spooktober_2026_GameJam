@@ -5,6 +5,7 @@ screenPlay = LoadScreenPlay_Demo();   // TODO: Switch this out for the actual sc
 
 
 
+// State machine
 directorState = DirectorStateIdle;
 delayTimer = 0;
 

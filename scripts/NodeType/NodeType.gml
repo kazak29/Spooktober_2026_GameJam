@@ -1,9 +1,6 @@
 
 enum NodeType
 {
-	TRANSITION_IN,
-	TRANSITION_OUT,
-	
 	LINE_SEQUENCE,
 	
 	CHARACTER_IN,

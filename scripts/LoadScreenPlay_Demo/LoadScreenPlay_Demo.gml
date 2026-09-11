@@ -4,16 +4,10 @@ function LoadScreenPlay_Demo()
 {
     var _sceneData = {
         scene1: {
-            startNode: "scene1_transition_in",
+            startNode: "scene1_main_character_enter",
             nextScene: noone,
             background: sPlaceholderBackground1,
             nodes: {
-                scene1_transition_in: {
-                    nodeType: NodeType.TRANSITION_IN,
-                    transitionSequence: sqSceneFadeIn,
-                    nextNode: "scene1_main_character_enter"
-                },
-                
                 scene1_main_character_enter: {
                     nodeType: NodeType.MAIN_CHARACTER_IN,
                     nextNode: "scene1_character_enter1"
@@ -66,14 +60,9 @@ function LoadScreenPlay_Demo()
 				
                 scene1_main_character_exit: {
                     nodeType: NodeType.MAIN_CHARACTER_OUT,
-                    nextNode: "scene1_transition_out"
-                },
-				
-				scene1_transition_out: {
-                    nodeType: NodeType.TRANSITION_OUT,
-                    transitionSequence: sqSceneFadeOut,
                     nextNode: noone
                 },
+				
             }
         } // scene1
     };
