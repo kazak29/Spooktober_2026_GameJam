@@ -71,8 +71,6 @@ function DrawCharacterPortraits()
 {
     var _guiH = VIEWPORT_HEIGHT;
     
-    UpdateCharacterPortraits();
-
     var _count = array_length(stageCharacters);
     if (_count == 0) { return; }
 

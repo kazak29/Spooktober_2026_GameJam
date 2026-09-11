@@ -49,20 +49,33 @@ function DirectorStateCharacterFade()
 {
     var _isFinished = true;
     
-    // Check stage characters alpha status
+    // Check if any stage character is still fading
     for (var _i = 0; _i < array_length(stageCharacters); _i++)
     {
         var _char = stageCharacters[_i];
-        if (_char.alpha != _char.targetAlpha)
+        if (abs(_char.alpha - _char.targetAlpha) > 0.01)
         {
             _isFinished = false;
             break;
         }
     }
     
-    // Check main character alpha
-    if (mainCharacter.alpha != mainCharacter.targetAlpha) { _isFinished = false; }
-    if (_isFinished) { AdvanceNode(); }
+    // Check main character
+    if (abs(mainCharacter.alpha - mainCharacter.targetAlpha) > 0.01) 
+    { 
+        _isFinished = false; 
+    }
+
+    if (_isFinished) 
+    { 
+        // Snap final values to prevent small floating-point offsets
+        for (var _i = 0; _i < array_length(stageCharacters); _i++) {
+            stageCharacters[_i].alpha = stageCharacters[_i].targetAlpha;
+        }
+        mainCharacter.alpha = mainCharacter.targetAlpha;
+        
+        AdvanceNode(); 
+    }
 }
 
 
@@ -126,12 +139,12 @@ function UpdateStageCharacterPortraits(_currentSpeaker, _speakerJustChanged)
 {
     var _guiW = VIEWPORT_WIDTH;
     var _count = array_length(stageCharacters);
-
+	
     for (var _i = _count - 1; _i >= 0; _i--)
     {
         var _char = stageCharacters[_i];
         
-        // Dynamic equal spacing
+        // Equal spacing
         _char.targetX = _guiW * ((_i + 1) / (_count + 1));
         _char.xPosition = lerp(_char.xPosition, _char.targetX, 0.15);
         
@@ -145,10 +158,8 @@ function UpdateStageCharacterPortraits(_currentSpeaker, _speakerJustChanged)
         if (!struct_exists(_char, "yOffset")) { _char.yOffset = 0; }
         if (!struct_exists(_char, "yVelocity")) { _char.yVelocity = 0; }
         
-        // Reduced jump height
         if (_speakerJustChanged && _isSpeaking) { _char.yVelocity = CHARACTER_BOUNCE_HEIGHT; }
         
-        // Slower gravity/float
         _char.yVelocity += CHARACTER_BOUNCE_SPEED;
         _char.yOffset += _char.yVelocity;
         
@@ -166,10 +177,15 @@ function UpdateStageCharacterPortraits(_currentSpeaker, _speakerJustChanged)
         else if (_char.alpha > _char.targetAlpha)
         {
             _char.alpha = max(_char.alpha - CHARACTER_FADE_SPEED, _char.targetAlpha);
-            if (_char.alpha == MIN_ALPHA) 
-            { 
-                array_delete(stageCharacters, _i, 1); 
-            }
+        }
+    }
+
+    // Delete characters that have completely faded out
+    for (var _i = array_length(stageCharacters) - 1; _i >= 0; _i--)
+    {
+        if (stageCharacters[_i].alpha <= MIN_ALPHA && stageCharacters[_i].targetAlpha == MIN_ALPHA)
+        {
+            array_delete(stageCharacters, _i, 1);
         }
     }
 }

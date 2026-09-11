@@ -1,2 +1,4 @@
 
+UpdateCharacterPortraits();
+
 directorState();
