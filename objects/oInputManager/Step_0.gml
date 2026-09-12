@@ -1,32 +1,29 @@
 
-// Handle controller connect/connect
-if (gamepad_id == GAMEPAD_DISCONNECTED)
-{
-    for (var _slot = SLOT_1; _slot <= SLOT_11; _slot++)
-    {
-        if (gamepad_is_connected(_slot))
-        {
-            gamepad_id = _slot;
-            //show_debug_message("Gamepad Connected on slot "+string(_slot)+": "+gamepad_get_description(_slot));
-            break;
-        }
-    }
-}
-else if (!gamepad_is_connected(gamepad_id))
-{
-    //show_debug_message("Gamepad Disconnected from slot "+string(gamepad_id));
-    gamepad_id = GAMEPAD_DISCONNECTED;
-    using_gamepad = false;   // Fall back to keyboard if disconnected
-}
+#region Handle controller connect/connect
+	
+	if (gamepad_id == GAMEPAD_DISCONNECTED)
+	{
+	    for (var _slot = SLOT_1; _slot <= SLOT_11; _slot++)
+	    {
+	        if (gamepad_is_connected(_slot))
+	        {
+	            gamepad_id = _slot;
+	            //show_debug_message("Gamepad Connected on slot "+string(_slot)+": "+gamepad_get_description(_slot));
+	            break;
+	        }
+	    }
+	}
+	else if (!gamepad_is_connected(gamepad_id))
+	{
+	    //show_debug_message("Gamepad Disconnected from slot "+string(gamepad_id));
+	    gamepad_id = GAMEPAD_DISCONNECTED;
+	    using_gamepad = false;   // Fall back to keyboard if disconnected
+	}
+	
+#endregion
 
 // Reset input states every frame
-for (var _key = 0; _key < array_length(input_keys); _key++)
-{
-    var _key_name = input_keys[_key];
-    pressed[$ _key_name]  = false;
-    held[$ _key_name]     = false;
-    released[$ _key_name] = false;
-}
+InputReset();
 
 // Keyboard Input Checks
 for (var _key = 0; _key < array_length(input_keys); _key++)
@@ -38,7 +35,7 @@ for (var _key = 0; _key < array_length(input_keys); _key++)
     var _bind = _keybinds[0]; 
     
     if (keyboard_check(_bind))          { held[$ _key_name] = true; }
-    if (keyboard_check_pressed(_bind))  { pressed[$ _key_name] = true; using_gamepad = false; } // Switched to keyboard
+    if (keyboard_check_pressed(_bind))  { pressed[$ _key_name] = true; using_gamepad = false; using_mouse = false; } // Switched to keyboard
     if (keyboard_check_released(_bind)) { released[$ _key_name] = true; }
 }
 
@@ -54,7 +51,7 @@ if (gamepad_id >= SLOT_1)
         var _bind = _keybinds[1]; 
         
         if (gamepad_button_check(gamepad_id, _bind))          { held[$ _key_name] = true; }
-        if (gamepad_button_check_pressed(gamepad_id, _bind))  { pressed[$ _key_name] = true; using_gamepad = true; } // Switched to gamepad!
+        if (gamepad_button_check_pressed(gamepad_id, _bind))  { pressed[$ _key_name] = true; using_gamepad = true; using_mouse = false; } // Switched to gamepad!
         if (gamepad_button_check_released(gamepad_id, _bind)) { released[$ _key_name] = true; }
     }
     
@@ -66,4 +63,29 @@ if (gamepad_id >= SLOT_1)
     {
         using_gamepad = true;
     }
+}
+
+//mouse checks
+for (var _key = 0; _key < array_length(input_keys); _key++)
+{
+    var _key_name = input_keys[_key];
+    var _keybinds = input[$ _key_name];
+    
+    // Index 2 is always your mouse button in the struct setup
+	var _al = array_length(_keybinds);
+	if (_al >= 3) {
+	    var _bind = _keybinds[2];
+    
+	    if (mouse_check_button(_bind))			{ held[$ _key_name] = true; }
+	    if (mouse_check_button_pressed(_bind))  { pressed[$ _key_name] = true; using_gamepad = false; using_mouse = true; } // Switched to mouse
+	    if (mouse_check_button_released(_bind)) { released[$ _key_name] = true; }
+	}
+	
+	//mouse position check
+	if (mouseX != mouse_x) || (mouseY != mouse_y) {
+		mouseX = mouse_x;
+		mouseY = mouse_y;
+		using_gamepad = false;
+		using_mouse = true;
+	}
 }

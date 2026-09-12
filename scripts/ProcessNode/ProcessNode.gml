@@ -105,7 +105,7 @@ function ProcessNode(_nodeId)
 		        {
 		            if (stageCharacters[_i].charId == _charId)
 		            {
-		                stageCharacters[_i].expressionFrame = _node.expressionFrame;;
+		                stageCharacters[_i].expressionFrame = _node.expressionFrame;
 		                break;
 		            }
 		        }
