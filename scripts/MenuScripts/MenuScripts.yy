@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"NodeType",
+  "%Name":"MenuScripts",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"NodeType",
+  "name":"MenuScripts",
   "parent":{
-    "name":"Constants",
-    "path":"folders/Scripts/Constants.yy",
+    "name":"Menu",
+    "path":"folders/Scripts/Menu.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

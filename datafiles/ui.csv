@@ -1,6 +1,11 @@
 Key,Text
-start_button,Start
-credits_button,Credits
+menuStart,Start
+menuCredits,Credits
+menuSettings,Settings
+menuBack,Back
+menuFullscreen,Fullscreen
+menuOn, On
+menuOff, Off
 ,
 choice_comfort,"Aw, it'll be okay"
 choice_ignore,(Say nothing)

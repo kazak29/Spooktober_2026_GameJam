@@ -1,17 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"oTitleScreenController",
+  "%Name":"oMenu",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oTitleScreenController",
+  "name":"oMenu",
   "overriddenProperties":[],
   "parent":{
-    "name":"RoomControllers",
-    "path":"folders/Objects/RoomControllers.yy",
+    "name":"Menu",
+    "path":"folders/Objects/RoomControllers/Menu.yy",
   },
   "parentObjectId":null,
   "persistent":false,
