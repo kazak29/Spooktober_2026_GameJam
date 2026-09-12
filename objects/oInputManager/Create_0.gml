@@ -47,6 +47,12 @@ MouseHoverCircle = function(_x,_y,_rad){
 	}
 	return false;
 }
+MouseHoverObject = function(_id){
+	if using_mouse && instance_position(mouseX,mouseY, _id) {
+		return true;
+	}
+	return false;
+}
 
 
 // Input States (Updated every frame)

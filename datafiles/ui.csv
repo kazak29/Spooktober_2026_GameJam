@@ -1,6 +1,8 @@
 Key,Text
-start_button,Start
-credits_button,Credits
+menuButtonStart,Start
+menuButtonCredits,Credits
+menuButtonSettings,Settings
+menuButtonBack,Back
 ,
 choice_comfort,"Aw, it'll be okay"
 choice_leave,(Say nothing)
