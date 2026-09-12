@@ -15,7 +15,7 @@ function DirectorStateSceneTransition()
         currentSceneId = nextSceneId;
         nextSceneId = noone;
         
-        var _activeScene = screenPlay[$ currentSceneId];
+        var _activeScene = global.screenPlay[$ currentSceneId];
         currentNodeId = _activeScene.startNode;
         
         fadeTarget = MIN_ALPHA;
@@ -103,7 +103,7 @@ function DirectorStateCharacterFade()
 
 function StartScene(_sceneId)
 {
-    if (_sceneId == noone || !struct_exists(screenPlay, _sceneId))
+    if (_sceneId == noone || !struct_exists(global.screenPlay, _sceneId))
     {
         currentSceneId = noone;
         currentNodeId  = noone;
@@ -114,7 +114,7 @@ function StartScene(_sceneId)
 	ClearStage();
 	
     currentSceneId = _sceneId;
-    var _activeScene = screenPlay[$ currentSceneId];
+    var _activeScene = global.screenPlay[$ currentSceneId];
     ProcessNode(_activeScene.startNode);
 }
 
@@ -122,7 +122,7 @@ function StartScene(_sceneId)
 
 function AdvanceNode()
 {
-    var _activeScene = screenPlay[$ currentSceneId];
+    var _activeScene = global.screenPlay[$ currentSceneId];
     var _activeNode  = _activeScene.nodes[$ currentNodeId];
     
     // More nodes in current scene

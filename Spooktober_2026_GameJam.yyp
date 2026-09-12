@@ -71,6 +71,7 @@
     {"id":{"name":"fConsol16","path":"fonts/fConsol16/fConsol16.yy",},},
     {"id":{"name":"fConsol24","path":"fonts/fConsol24/fConsol24.yy",},},
     {"id":{"name":"scribble_fallback_font","path":"fonts/scribble_fallback_font/scribble_fallback_font.yy",},},
+    {"id":{"name":"oChoice","path":"objects/oChoice/oChoice.yy",},},
     {"id":{"name":"oCreditsController","path":"objects/oCreditsController/oCreditsController.yy",},},
     {"id":{"name":"oDirector","path":"objects/oDirector/oDirector.yy",},},
     {"id":{"name":"oGameManager","path":"objects/oGameManager/oGameManager.yy",},},

@@ -1,9 +1,9 @@
 
 function DrawSceneBackground ()
 {
-	if (!struct_exists(screenPlay, currentSceneId)) { return; }
+	if (!struct_exists(global.screenPlay, currentSceneId)) { return; }
 	
-	var _activeScene = screenPlay[$ currentSceneId];
+	var _activeScene = global.screenPlay[$ currentSceneId];
 	var _background  = _activeScene.background ?? noone;
 	if (sprite_exists(_background)) { draw_sprite(_background, 0, 0, 0); }
 }
