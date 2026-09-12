@@ -41,8 +41,17 @@ function LoadScreenPlay_Demo()
                 scene1_dialogue1: {
                     nodeType: NodeType.LINE_SEQUENCE,
                     sequenceId: "scene1_dialogue1",
-					nextNode: "scene1_change_main_exp"
+					nextNode: "scene1_choice1"
                 },
+				
+				scene1_choice1: {
+					nodeType: NodeType.CHOICE,
+					sequenceId: "scene1_prompt1",
+					choices: [
+						{ key: "choice_comfort", nextNode: "scene1_character_exit3" },
+						{ key: "choice_ignore", nextNode: "scene1_change_main_exp" },
+					],
+				},
                 
 				scene1_change_main_exp: {
 					nodeType: NodeType.CHARACTER_UPDATE,
