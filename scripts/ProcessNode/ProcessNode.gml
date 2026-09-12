@@ -115,5 +115,12 @@ function ProcessNode(_nodeId)
 		    break;
 		}
 		
+		case NodeType.CHOICE:
+		{
+			
+			
+			
+		}
+		
     }
 }
