@@ -113,6 +113,18 @@ function DirectorStateChoice()
 
     // Update sprite based on selected
     for (var _i = 0; _i < _choiceCount; _i++) { choices[_i].image_index = (_i == currentChoice) ? 1 : 0; }
+	
+	// Choice selected
+	if (oInputManager.pressed.confirm)
+    {
+		// Clear the options and go to the next node
+		var _selectedButton = choices[currentChoice];
+        var _targetNode = _selectedButton.nextNode;
+		for (var _i = 0; _i < _choiceCount; _i++) { instance_destroy(choices[_i]); }
+		choices = [];
+        currentChoice = 0;
+		ProcessNode(_targetNode);
+	}
 }
 
 
