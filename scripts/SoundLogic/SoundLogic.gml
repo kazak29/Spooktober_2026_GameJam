@@ -10,7 +10,7 @@
 		_volPercent = clamp(_volPercent, 0, 500);
 	
 		//change gain by percentage
-		var _gain = (global.soundVolume * _volPercent) / 100;
+		var _gain = (global.volSound * _volPercent) / 100;
 	
 		//play the sound
 		var _id = audio_play_sound(_snd,1,_looping,_gain);
@@ -97,10 +97,10 @@
 		
 		
 		//switch which global volume type is applied
-		var _volGlobal = global.soundVolume;
+		var _volGlobal = global.volSound;
 		switch _type {
 			
-			case AMBIENT_MUSIC: _volGlobal = global.musicVolume; break;
+			case AMBIENT_MUSIC: _volGlobal = global.volMusic; break;
 			
 		}
 	
@@ -153,10 +153,10 @@
 		} else {
 			
 			//switch type of volume depending on ambient type
-			var _volGlobal = global.soundVolume;
+			var _volGlobal = global.volSound;
 			switch _type {
 			
-				case AMBIENT_MUSIC: _volGlobal = global.musicVolume; break;
+				case AMBIENT_MUSIC: _volGlobal = global.volMusic; break;
 			
 			}
 			

@@ -5,16 +5,19 @@
 	#macro FILE_ERROR -1
 
 #endregion
-
 #region General
 
 	#macro MIN_ALPHA 0
 	#macro MAX_ALPHA 1
 	
-	#macro SCENE_FADE_SPEED 0.03
+#endregion
+#region Music / SFX
+
+	#macro AMBIENT_MUSIC "ambientMusic"
+	
+	#macro DEFAULT_VOLUME_PERCENT 60
 
 #endregion
-
 #region Room
 
 	#macro VIEWPORT_WIDTH  1920
@@ -28,7 +31,6 @@
 	#macro CHOICES_LAYER    "Choices"
 
 #endregion
-
 #region Input Manager
 
 	#macro W_KEY ord("W")
@@ -46,7 +48,6 @@
 	#macro DEFAULT_DEADZONE     0.2
 
 #endregion
-
 #region Typist
 	
 	#macro TYPIST_SPEED      0.5
@@ -55,9 +56,10 @@
 	#macro FONT_CONSOLE_16 "fConsol16"
 
 #endregion
-
 #region Screen Play
-
+	
+	#macro SCENE_FADE_SPEED 0.03
+	
 	#macro CHARACTER_FADE_SPEED    0.05
 	#macro CHARACTER_BOUNCE_HEIGHT   -6
 	#macro CHARACTER_BOUNCE_SPEED   0.5

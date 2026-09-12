@@ -4,10 +4,17 @@ function LoadScreenPlay_Demo()
 {
     var _sceneData = {
         scene1: {
-            startNode: "scene1_main_character_enter",
+            startNode: "scene1_music",
             nextScene: "scene2",
             background: sPlaceholderBackground1,
             nodes: {
+				
+				scene1_music: {
+					nodeType: NodeType.MUSIC,
+					song: sndSpookTheme,
+					nextNode: "scene1_main_character_enter"
+				},
+				
                 scene1_main_character_enter: {
                     nodeType: NodeType.MAIN_CHARACTER_IN,
 					expressionFrame: 0,
@@ -75,6 +82,7 @@ function LoadScreenPlay_Demo()
 				scene1_condition1: {
 					nodeType: NodeType.CONDITION,
 					conditionScript: InventoryContainsCheese,
+					args: [],
 					ifTrue: "scene1_character_exit3",
 					ifFalse: "scene1_main_character_exit"
 				},
