@@ -105,7 +105,7 @@ function ProcessNode(_nodeId)
 		        {
 		            if (stageCharacters[_i].charId == _charId)
 		            {
-		                stageCharacters[_i].expressionFrame = _node.expressionFrame;;
+		                stageCharacters[_i].expressionFrame = _node.expressionFrame;
 		                break;
 		            }
 		        }
@@ -117,9 +117,11 @@ function ProcessNode(_nodeId)
 		
 		case NodeType.CHOICE:
 		{
-			
-			
-			
+			var _choices = _node.choices;
+		    for (var _i = 0; _i < array_length(_choices); _i++)
+			{
+				show_debug_message(string(_choices[_i].key));
+			}
 		}
 		
     }

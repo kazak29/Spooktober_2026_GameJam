@@ -46,7 +46,7 @@ function LoadScreenPlay_Demo()
 				
 				scene1_choice1: {
 					nodeType: NodeType.CHOICE,
-					promptId: "scene1_prompt1",
+					sequenceId: "scene1_prompt1",
 					choices: [
 						{ key: "choice_comfort", nextNode: "scene1_character_exit3" },
 						{ key: "choice_ignore", nextNode: "scene1_change_main_exp" },

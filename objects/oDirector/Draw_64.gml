@@ -1,8 +1,17 @@
 
+// Main Character is drawn on the GUI
 if (currentSceneId != noone) { DrawMainCharacterPortrait(); }
 
-if (directorState == DirectorStateLineSequence) { DrawDialogueBox(); }
 
+
+// Textbox for lines
+if (directorState == DirectorStateLineSequence ||
+    directorState == DirectorStateChoice)
+	{ DrawDialogueBox(); }
+
+
+
+// Fade between scenes
 if (fadeAlpha > MIN_ALPHA)
 {
     draw_set_color(c_black);

@@ -94,6 +94,12 @@ function DirectorStateCharacterFade()
 }
 
 
+function DirectorStateChoice()
+{
+	
+}
+
+
 
 
 
