@@ -245,6 +245,7 @@
     {"id":{"name":"sPlaceholderCharacter1","path":"sprites/sPlaceholderCharacter1/sPlaceholderCharacter1.yy",},},
     {"id":{"name":"sPlaceholderCharacter2","path":"sprites/sPlaceholderCharacter2/sPlaceholderCharacter2.yy",},},
     {"id":{"name":"sPlaceholderCharacter3","path":"sprites/sPlaceholderCharacter3/sPlaceholderCharacter3.yy",},},
+    {"id":{"name":"sPlaceholderChoice","path":"sprites/sPlaceholderChoice/sPlaceholderChoice.yy",},},
     {"id":{"name":"sPlaceholderMainCharacter","path":"sprites/sPlaceholderMainCharacter/sPlaceholderMainCharacter.yy",},},
     {"id":{"name":"sPlaceholderTitleArt","path":"sprites/sPlaceholderTitleArt/sPlaceholderTitleArt.yy",},},
     {"id":{"name":"sSplashScreen","path":"sprites/sSplashScreen/sSplashScreen.yy",},},

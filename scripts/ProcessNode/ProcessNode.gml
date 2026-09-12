@@ -117,11 +117,26 @@ function ProcessNode(_nodeId)
 		
 		case NodeType.CHOICE:
 		{
+			currentLineSequence = global.lineData[$ _node.sequenceId];
+			currentLineIndex = 0;
+			typist.reset();
+			
 			var _choices = _node.choices;
 		    for (var _i = 0; _i < array_length(_choices); _i++)
 			{
-				show_debug_message(string(_choices[_i].key));
+				
+				var _x = VIEWPORT_WIDTH / 2;
+				var _y = (VIEWPORT_HEIGHT / 2) + (_i * CHOICE_Y_SPACING);
+				var _choice = _choices[_i];
+				var _choiceButton = instance_create_layer(_x, _y, CHOICES_LAYER, oChoice);
+				_choiceButton.nextNode = _choice.nextNode;
+				_choiceButton.buttonText = global.uiData[$ _choice.key];
+				array_push(choices, _choiceButton);
 			}
+			
+			currentChoice = 0;
+			directorState = DirectorStateChoice;
+			break;
 		}
 		
     }

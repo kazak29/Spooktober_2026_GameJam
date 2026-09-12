@@ -96,7 +96,23 @@ function DirectorStateCharacterFade()
 
 function DirectorStateChoice()
 {
-	
+	var _choiceCount = array_length(choices);
+    if (_choiceCount == 0) return;
+
+	// Navigation
+    if (oInputManager.pressed.up)
+    {
+        currentChoice--;
+        if (currentChoice < 0) currentChoice = _choiceCount - 1;
+    }
+    else if (oInputManager.pressed.down)
+    {
+        currentChoice++;
+        if (currentChoice >= _choiceCount) currentChoice = 0;
+    }
+
+    // Update sprite based on selected
+    for (var _i = 0; _i < _choiceCount; _i++) { choices[_i].image_index = (_i == currentChoice) ? 1 : 0; }
 }
 
 

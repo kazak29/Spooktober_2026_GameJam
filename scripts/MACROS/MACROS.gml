@@ -25,6 +25,7 @@
 	#macro SYSTEM_LAYER     "System"
 	#macro BACKGROUND_LAYER "Background"
 	#macro TRANSITION_LAYER "Transition"
+	#macro CHOICES_LAYER    "Choices"
 
 #endregion
 
@@ -61,9 +62,11 @@
 	#macro CHARACTER_BOUNCE_HEIGHT   -6
 	#macro CHARACTER_BOUNCE_SPEED   0.5
 	
-	#macro DEFAULT_NODE_DELAY   0.5
+	#macro DEFAULT_NODE_DELAY 0.5
 	
 	#macro MAX_STAGE_CHARACTERS 3
+	
+	#macro CHOICE_Y_SPACING 100
 	
 	#macro DELAY        "delay"
 	#macro SPRITE       "sprite"
