@@ -115,5 +115,47 @@ function ProcessNode(_nodeId)
 		    break;
 		}
 		
+		case NodeType.CHOICE:
+		{
+			currentLineSequence = global.lineData[$ _node.sequenceId];
+			currentLineIndex = 0;
+			typist.reset();
+			
+			var _choices = _node.choices;
+		    for (var _i = 0; _i < array_length(_choices); _i++)
+			{
+				
+				var _x = VIEWPORT_WIDTH / 2;
+				var _y = (VIEWPORT_HEIGHT / 2) + (_i * CHOICE_Y_SPACING);
+				var _choice = _choices[_i];
+				var _choiceButton = instance_create_layer(_x, _y, CHOICES_LAYER, oChoice);
+				_choiceButton.nextNode = _choice.nextNode;
+				_choiceButton.buttonText = global.uiData[$ _choice.key];
+				array_push(choices, _choiceButton);
+			}
+			
+			currentChoice = 0;
+			directorState = DirectorStateChoice;
+			break;
+		}
+		
+		case NodeType.CONDITION: {
+			var _conditionScript = _node.conditionScript;
+			var _args = _node.args;
+			var _truePath = _node.ifTrue;
+			var _falsePath = _node.ifFalse;
+			var _conditionResult = _conditionScript(_args);
+			if (_conditionResult) { ProcessNode(_truePath); }
+			else { ProcessNode(_falsePath); }
+			break;
+		}
+		
+		case NodeType.MUSIC: {
+			var _song = _node.song;
+			AmbientChange(AMBIENT_MUSIC, _song, DEFAULT_VOLUME_PERCENT);
+			AdvanceNode();
+			break;
+		}
+		
     }
 }

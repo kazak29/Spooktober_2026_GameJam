@@ -8,4 +8,4 @@ menuOn, On
 menuOff, Off
 ,
 choice_comfort,"Aw, it'll be okay"
-choice_leave,(Say nothing)
+choice_ignore,(Say nothing)

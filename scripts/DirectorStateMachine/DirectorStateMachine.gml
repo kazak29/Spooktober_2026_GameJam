@@ -94,6 +94,83 @@ function DirectorStateCharacterFade()
 }
 
 
+function DirectorStateChoice()
+{
+    var _choiceCount = array_length(choices);
+    if (_choiceCount == 0) return;
+
+    // ------------------------------------------------------------------
+    // Mouse Hover
+    // ------------------------------------------------------------------
+    var _guiMouseX = device_mouse_x_to_gui(0);
+    var _guiMouseY = device_mouse_y_to_gui(0);
+    var _mouseMoved = (device_mouse_x_to_gui(0) != oDirector.prevMouseX || device_mouse_y_to_gui(0) != oDirector.prevMouseY);
+    
+    // Store current mouse position on oDirector to track movement
+    oDirector.prevMouseX = _guiMouseX;
+    oDirector.prevMouseY = _guiMouseY;
+
+    var _hoveredIndex = -1;
+    var _w = 400;
+    var _h = 80;
+
+    for (var _i = 0; _i < _choiceCount; _i++)
+    {
+        var _btn = choices[_i];
+        if (instance_exists(_btn))
+        {
+            // Calculate bounding box matching the GUI draw location (Bottom-Center origin)
+            var _left   = _btn.x - (_w / 2);
+            var _right  = _btn.x + (_w / 2);
+            var _top    = _btn.y - _h;
+            var _bottom = _btn.y;
+
+            if (_guiMouseX >= _left && _guiMouseX <= _right && _guiMouseY >= _top && _guiMouseY <= _bottom)
+            {
+                _hoveredIndex = _i;
+                break;
+            }
+        }
+    }
+
+    // Priority: If the mouse is hovering over a button, force currentChoice to match it
+    if (_hoveredIndex != -1)
+    {
+        currentChoice = _hoveredIndex;
+    }
+    // ------------------------------------------------------------------
+    // Keyboard / Gamepad Navigation
+    // ------------------------------------------------------------------
+    else if (oInputManager.pressed.up)
+    {
+        currentChoice--;
+        if (currentChoice < 0) currentChoice = _choiceCount - 1;
+    }
+    else if (oInputManager.pressed.down)
+    {
+        currentChoice++;
+        if (currentChoice >= _choiceCount) currentChoice = 0;
+    }
+	
+    for (var _i = 0; _i < _choiceCount; _i++) { choices[_i].image_index = (_i == currentChoice) ? 1 : 0; }
+
+    // Confirm Selection
+    var _mouseClicked = mouse_check_button_pressed(mb_left) && (_hoveredIndex != -1);
+    if (oInputManager.pressed.confirm || _mouseClicked)
+    {
+        var _selectedButton = choices[currentChoice];
+        var _targetNode = _selectedButton.nextNode;
+
+        // Clear Options
+        for (var _i = 0; _i < _choiceCount; _i++) { instance_destroy(choices[_i]); }
+        choices = [];
+        currentChoice = 0;
+
+        ProcessNode(_targetNode);
+    }
+}
+
+
 
 
 

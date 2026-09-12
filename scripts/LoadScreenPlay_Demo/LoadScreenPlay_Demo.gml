@@ -4,10 +4,17 @@ function LoadScreenPlay_Demo()
 {
     var _sceneData = {
         scene1: {
-            startNode: "scene1_main_character_enter",
+            startNode: "scene1_music",
             nextScene: "scene2",
             background: sPlaceholderBackground1,
             nodes: {
+				
+				scene1_music: {
+					nodeType: NodeType.MUSIC,
+					song: sndSpookTheme,
+					nextNode: "scene1_main_character_enter"
+				},
+				
                 scene1_main_character_enter: {
                     nodeType: NodeType.MAIN_CHARACTER_IN,
 					expressionFrame: 0,
@@ -41,8 +48,17 @@ function LoadScreenPlay_Demo()
                 scene1_dialogue1: {
                     nodeType: NodeType.LINE_SEQUENCE,
                     sequenceId: "scene1_dialogue1",
-					nextNode: "scene1_change_main_exp"
+					nextNode: "scene1_choice1"
                 },
+				
+				scene1_choice1: {
+					nodeType: NodeType.CHOICE,
+					sequenceId: "scene1_prompt1",
+					choices: [
+						{ key: "choice_comfort", nextNode: "scene1_character_exit3" },
+						{ key: "choice_ignore", nextNode: "scene1_change_main_exp" },
+					],
+				},
                 
 				scene1_change_main_exp: {
 					nodeType: NodeType.CHARACTER_UPDATE,
@@ -60,8 +76,16 @@ function LoadScreenPlay_Demo()
 				scene1_character_exit2: {
                     nodeType: NodeType.CHARACTER_OUT,
                     charId: "Atlas",
-                    nextNode: "scene1_character_exit3"
+                    nextNode: "scene1_condition1"
                 },
+				
+				scene1_condition1: {
+					nodeType: NodeType.CONDITION,
+					conditionScript: InventoryContainsCheese,
+					args: [],
+					ifTrue: "scene1_character_exit3",
+					ifFalse: "scene1_main_character_exit"
+				},
 				
 				scene1_character_exit3: {
                     nodeType: NodeType.CHARACTER_OUT,
@@ -72,7 +96,7 @@ function LoadScreenPlay_Demo()
                 scene1_main_character_exit: {
                     nodeType: NodeType.MAIN_CHARACTER_OUT,
                     nextNode: noone
-                },
+                }
 				
             }
         }, // scene1

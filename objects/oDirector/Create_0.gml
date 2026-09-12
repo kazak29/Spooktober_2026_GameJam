@@ -29,6 +29,14 @@ previousSpeaker = "";
 
 
 
+// Choices
+currentChoice = 0;
+choices = [];
+prevMouseX = 0;
+prevMouseY = 0;
+
+
+
 // Auto-managed Character Stage (Max 3)
 stageCharacters = [];
 mainCharacter = {
