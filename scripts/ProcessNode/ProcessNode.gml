@@ -1,7 +1,7 @@
 
 function ProcessNode(_nodeId)
 {
-    var _scene = screenPlay[$ currentSceneId];
+    var _scene = global.screenPlay[$ currentSceneId];
     var _node  = _scene.nodes[$ _nodeId];
     currentNodeId = _nodeId;
     
@@ -25,7 +25,7 @@ function ProcessNode(_nodeId)
     {
         case NodeType.LINE_SEQUENCE:
         {
-            currentLineSequence = lineData[$ _node.sequenceId] ?? [];
+            currentLineSequence = global.lineData[$ _node.sequenceId] ?? [];
             currentLineIndex = 0;
             typist.reset();
             directorState = DirectorStateLineSequence;

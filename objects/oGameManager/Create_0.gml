@@ -1,7 +1,8 @@
-#region load ui text
+#region load from files
 
 	global.uiData = LoadUI();
-
+	global.lineData = LoadLineData();
+	
 #endregion
 #region debug
 	
@@ -30,6 +31,7 @@
 #endregion
 #region screenplay
 
-	global.sceneToPlay = "scene1";   // Set this to the first scene in the game
+	global.screenPlay = LoadScreenPlay_Demo();  // TODO: Switch this out for the actual screenplay
+	global.sceneToPlay = "scene1";              // TODO: Set this to the first scene in the game
 
 #endregion
