@@ -1,30 +1,32 @@
 if !instance_exists(oMenu) exit;
-	
+
 var _page = oMenu.menuPages[$ oMenu.pageName];
 var _elem = _page.elements[elementNum];
 
 var _c = COL_MENU_OPTION_DEFAULT;
-if (oMenu.elementNum == elementNum) _c = COL_MENU_OPTION_SELECTED;
-
-//choose text align base on page layout
-var _alignH = fa_left;
-var _alignV = fa_top;
-switch _page.layout {
-	case MENU_LAYOUT.MAIN: {
-		_alignH = fa_center;
-		_alignV = fa_middle;
-	} break;
-	case MENU_LAYOUT.SETTINGS: {
-		_alignH = fa_right;
-		_alignV = fa_middle;
-	} break;
+var _frame = 0;
+if (oMenu.elementNum == elementNum) {
+	_c = COL_MENU_OPTION_SELECTED;
+	_frame = 1;
 }
 
-scribble(_elem.title)
-	.starting_format(FONT_CONSOLE_24, c_white)
-	.blend(_c, 1)
-	.align(_alignH, _alignV)
-	.draw(x, y);
+if sprite_exists(_page.elemSpr) {
+	
+	_c = COL_MENU_OPTION_DEFAULT;
+	var _spr = _page.elemSpr;
+	
+	var _bbox = scribId.get_bbox(x,y);
+	
+	var _sprX = _bbox.left + _bbox.width/2;// - sprite_get_width(_spr)/2;
+	var _sprY = _bbox.top + _bbox.height/2;// - sprite_get_height(_spr)/2;
+	
+	draw_sprite(_spr, _frame, _sprX, _sprY);
+	
+}
+
+
+
+scribId.blend(_c, 1).draw(x, y);
 
 /*
 #region right side

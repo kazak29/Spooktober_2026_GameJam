@@ -2,7 +2,7 @@
 menuPages = {
 	main: {
 		layout: MENU_LAYOUT.MAIN,
-		butSprite: sPlaceholderButton,
+		elemSpr: sPlaceholderButton,
 		elements: [
 			//start game
 			{
@@ -28,7 +28,7 @@ menuPages = {
 	},
 	settings: {
 		layout: MENU_LAYOUT.SETTINGS,
-		butSprite: noone,
+		elemSpr: noone,
 		elements: [
 			//fullscreen
 			{
