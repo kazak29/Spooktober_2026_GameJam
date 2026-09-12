@@ -10,6 +10,10 @@ if (oMenu.elementNum == elementNum) _c = COL_MENU_OPTION_SELECTED;
 var _alignH = fa_left;
 var _alignV = fa_top;
 switch _page.layout {
+	case MENU_LAYOUT.MAIN: {
+		_alignH = fa_center;
+		_alignV = fa_middle;
+	} break;
 	case MENU_LAYOUT.SETTINGS: {
 		_alignH = fa_right;
 		_alignV = fa_middle;

@@ -51,38 +51,15 @@ pageName = "main";
 elementNum = 0;
 inputting = false;
 
-
-PageCreateLayoutMain = function(){
-	
-}
-
-PageCreateLayoutSettings = function(){
+//create every page element
+PageUpdate = function(){
+	with oMenuElement instance_destroy();
 	
 	var _elems = menuPages[$ pageName].elements;
 	var _elemsL = array_length(_elems);
-	
-	var _bufferX = 64, _startX = VIEWPORT_WIDTH / 2;
-	var _bufferY = 64, _startY = (VIEWPORT_HEIGHT / 2) - ((_elemsL-1)/2)*_bufferY;
-
-	var _x = _startX - _bufferX;
-	var _y = _startY;
-	
-	for (var i = 0; i < _elemsL; i++) {
-		_y = _startY + i*_bufferY;
-			
-		var _id = instance_create_layer(_x,_y, "System", oMenuElement, {elementNum: i});
+	for (var i = 0; i < _elemsL; i++) {	
+		var _id = instance_create_layer(0,0, "System", oMenuElement, {elementNum: i});
 		_elems[i].elemId = _id;
-	}
-	
-}
-
-PageUpdate = function(){
-	with oMenuElement instance_destroy();
-	switch menuPages[$ pageName].layout {
-		
-		case MENU_LAYOUT.MAIN:		PageCreateLayoutSettings();		break;
-		case MENU_LAYOUT.SETTINGS:	PageCreateLayoutSettings();	break;
-		
 	}
 }
 PageUpdate();
