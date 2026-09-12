@@ -32,6 +32,8 @@ previousSpeaker = "";
 // Choices
 currentChoice = 0;
 choices = [];
+prevMouseX = 0;
+prevMouseY = 0;
 
 
 
