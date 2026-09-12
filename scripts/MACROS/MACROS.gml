@@ -52,6 +52,7 @@
 	#macro TYPIST_SMOOTHNESS 0
 	
 	#macro FONT_CONSOLE_16 "fConsol16"
+	#macro FONT_CONSOLE_24 "fConsol24"
 
 #endregion
 
@@ -69,5 +70,13 @@
 	#macro SPRITE       "sprite"
 	#macro CHARACTERS   "characters"
 	#macro CHARACTER_ID "charId"
+	
+#endregion
+
+#region colors
+	
+	#macro COL_MENU_OPTION_DEFAULT	c_white
+	#macro COL_MENU_OPTION_SELECTED c_yellow
+	#macro COL_MENU_OPTION_DISABLED c_dkgray
 	
 #endregion

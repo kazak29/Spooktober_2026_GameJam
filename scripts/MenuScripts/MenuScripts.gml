@@ -4,3 +4,7 @@ function MenuTransitionStart(_args){
 	
 	TransitionStart(_args[0], _args[1], _args[2]);
 }
+
+function MenuFullscreen(){
+	
+}

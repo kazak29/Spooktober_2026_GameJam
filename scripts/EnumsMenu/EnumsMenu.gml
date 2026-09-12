@@ -4,5 +4,13 @@ enum MENU_ELEMENT_TYPE {
 	SLIDER,
 	SHIFT,
 	TOGGLE,
+	
+	HEIGHT
+}
+
+enum MENU_LAYOUT {
+	MAIN,
+	SETTINGS,
+	
 	HEIGHT
 }
