@@ -141,9 +141,10 @@ function ProcessNode(_nodeId)
 		
 		case NodeType.CONDITION: {
 			var _conditionScript = _node.conditionScript;
+			var _args = _node.args;
 			var _truePath = _node.ifTrue;
 			var _falsePath = _node.ifFalse;
-			var _conditionResult = _conditionScript();
+			var _conditionResult = _conditionScript(_args);
 			if (_conditionResult) { ProcessNode(_truePath); }
 			else { ProcessNode(_falsePath); }
 			break;

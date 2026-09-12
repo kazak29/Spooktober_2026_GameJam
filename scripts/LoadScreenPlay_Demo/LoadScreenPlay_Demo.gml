@@ -75,6 +75,7 @@ function LoadScreenPlay_Demo()
 				scene1_condition1: {
 					nodeType: NodeType.CONDITION,
 					conditionScript: InventoryContainsCheese,
+					args: [],
 					ifTrue: "scene1_character_exit3",
 					ifFalse: "scene1_main_character_exit"
 				},
