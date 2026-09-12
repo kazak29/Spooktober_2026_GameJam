@@ -150,5 +150,12 @@ function ProcessNode(_nodeId)
 			break;
 		}
 		
+		case NodeType.MUSIC: {
+			var _song = _node.song;
+			AmbientChange(AMBIENT_MUSIC, _song, DEFAULT_VOLUME_PERCENT);
+			AdvanceNode();
+			break;
+		}
+		
     }
 }

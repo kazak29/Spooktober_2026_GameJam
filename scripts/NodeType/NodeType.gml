@@ -12,5 +12,7 @@ enum NodeType
 	CHARACTER_UPDATE,
 	
 	CHOICE,
-	CONDITION
+	CONDITION,
+	
+	MUSIC
 }
