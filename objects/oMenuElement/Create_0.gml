@@ -14,16 +14,21 @@ scribId = scribble(_elem.title).starting_format(FONT_CONSOLE_24, c_white);
 	var _bufferX = 64;
 	var _bufferY = 64+16;
 	
-	if sprite_exists(_page.elemSpr) {
+	var _offsetX = 0;
+	var _offsetY = 0;
 	
-		var _spr = _page.elemSpr;
-		var _bbox = scribId.get_bbox(x,y);
-	
-		sprX = _bbox.left + _bbox.width/2;// - sprite_get_width(_spr)/2;
-		sprY = _bbox.top + _bbox.height/2;// - sprite_get_height(_spr)/2;
+	var _spr = _page.elemSpr;
+	if sprite_exists(_spr) {
 		
-		_bufferX += sprite_get_width(_spr)/2;
-		_bufferY += sprite_get_height(_spr)/2;
+		sprite_index = _spr;
+		var _sprW = sprite_get_width(_spr);
+		var _sprH = sprite_get_height(_spr);
+		
+		_offsetX = sprite_get_xoffset(_spr) - _sprW/2;
+		_offsetY = sprite_get_yoffset(_spr) - _sprH/2;
+		
+		_bufferX += _sprW/2;
+		_bufferY += _sprH/2;
 		
 	}
 	
@@ -33,18 +38,22 @@ scribId = scribble(_elem.title).starting_format(FONT_CONSOLE_24, c_white);
 	switch _page.layout {
 		
 		case MENU_LAYOUT.MAIN: {
-			x = _startX;
-			y = _startY + elementNum*_bufferY;
+			strX = _startX;
+			strY = _startY + elementNum*_bufferY;
 			scribId.align(fa_center, fa_middle);
 		} break;
 		
 		case MENU_LAYOUT.SETTINGS: {
-			x = _startX - _bufferX;
-			y = _startY + elementNum*_bufferY;
+			strX = _startX - _bufferX;
+			strY = _startY + elementNum*_bufferY;
 			scribId.align(fa_right, fa_middle);
 		} break;
 		
 	}
+	
+	var _bbox = scribId.get_bbox(strX,strY);
+	x = _bbox.left + _bbox.width/2 + _offsetX;
+	y = _bbox.top + _bbox.height/2 + _offsetY;
 	
 #endregion
 

@@ -1,4 +1,7 @@
-var _elems = menuPages[$ pageName].elements;
+if global.midTransition || global.gamePaused exit;
+
+var _page = menuPages[$ pageName];
+var _elems = _page.elements;
 var _elemsL = array_length(_elems);
 
 if inputting {
@@ -26,7 +29,22 @@ if inputting {
 		if (elementNum < 0)			{ elementNum = _elemsL-1;	}
 	}
 	//navigate menu (mouse)
-	
+	with oInputManager {
+		var _id = noone;
+		if sprite_exists(_page.elemSpr) {
+			
+			_id = MouseHoverObjectId(oMenuElement);
+			
+		} else {
+			
+			with oMenuElement {
+				var _bbox = scribId.get_bbox(strX,strY);
+				if other.MouseHoverRectangle(_bbox.x0, _bbox.y0, _bbox.x3, _bbox.y3) _id = id;
+			}
+			
+		}
+		if instance_exists(_id) other.elementNum = _id.elementNum;
+	}
 }
 
 if (oInputManager.pressed.confirm) {
@@ -49,5 +67,24 @@ if (oInputManager.pressed.confirm) {
 		case MENU_ELEMENT_TYPE.SLIDER:	inputting = !inputting; break;
 		case MENU_ELEMENT_TYPE.TOGGLE:	inputting = !inputting; break;
 		
+	}
+}
+
+if (oInputManager.pressed.cancel) {
+	if inputting {
+		switch _elems[elementNum].elemType {
+			
+			case MENU_ELEMENT_TYPE.SHIFT:	inputting = !inputting; break;
+			case MENU_ELEMENT_TYPE.SLIDER:	inputting = !inputting; break;
+			case MENU_ELEMENT_TYPE.TOGGLE:	inputting = !inputting; break;
+			
+		}
+	} else {
+		var _prev = _page.pageNamePrev;
+		if is_string(_prev) && (_prev != "") {
+			pageName = _prev;
+			elementNum = 0;
+			PageUpdate();
+		}
 	}
 }

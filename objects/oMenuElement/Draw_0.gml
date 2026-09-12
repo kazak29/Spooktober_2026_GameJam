@@ -10,23 +10,17 @@ if (oMenu.elementNum == elementNum) {
 	_frame = 1;
 }
 
-if sprite_exists(_page.elemSpr) {
+if sprite_exists(sprite_index) {
 	
 	_c = COL_MENU_OPTION_DEFAULT;
-	var _spr = _page.elemSpr;
-	
-	var _bbox = scribId.get_bbox(x,y);
-	
-	var _sprX = _bbox.left + _bbox.width/2;// - sprite_get_width(_spr)/2;
-	var _sprY = _bbox.top + _bbox.height/2;// - sprite_get_height(_spr)/2;
-	
-	draw_sprite(_spr, _frame, _sprX, _sprY);
+	image_index = _frame;
+	draw_self();
 	
 }
 
 
 
-scribId.blend(_c, 1).draw(x, y);
+scribId.blend(_c, 1).draw(strX, strY);
 
 /*
 #region right side

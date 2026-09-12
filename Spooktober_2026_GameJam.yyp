@@ -84,7 +84,6 @@
     {"id":{"name":"oMenuElement","path":"objects/oMenuElement/oMenuElement.yy",},},
     {"id":{"name":"oMenuElementSub","path":"objects/oMenuElementSub/oMenuElementSub.yy",},},
     {"id":{"name":"oSplashScreenContoller","path":"objects/oSplashScreenContoller/oSplashScreenContoller.yy",},},
-    {"id":{"name":"oTitleScreenControllerOld","path":"objects/oTitleScreenControllerOld/oTitleScreenControllerOld.yy",},},
     {"id":{"name":"rmCredits","path":"rooms/rmCredits/rmCredits.yy",},},
     {"id":{"name":"rmInit","path":"rooms/rmInit/rmInit.yy",},},
     {"id":{"name":"rmMap","path":"rooms/rmMap/rmMap.yy",},},

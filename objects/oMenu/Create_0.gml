@@ -1,6 +1,7 @@
 //struct of structs, containing arrays of structs
 menuPages = {
 	main: {
+		pageNamePrev: "",
 		layout: MENU_LAYOUT.MAIN,
 		elemSpr: sPlaceholderButton,
 		elements: [
@@ -27,6 +28,7 @@ menuPages = {
 		],
 	},
 	settings: {
+		pageNamePrev: "main",
 		layout: MENU_LAYOUT.SETTINGS,
 		elemSpr: noone,
 		elements: [
@@ -51,7 +53,7 @@ pageName = "main";
 elementNum = 0;
 inputting = false;
 
-//create every page element
+//create every page element as object on screen
 PageUpdate = function(){
 	with oMenuElement instance_destroy();
 	
