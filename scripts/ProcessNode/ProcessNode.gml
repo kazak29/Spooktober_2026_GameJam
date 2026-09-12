@@ -139,5 +139,15 @@ function ProcessNode(_nodeId)
 			break;
 		}
 		
+		case NodeType.CONDITION: {
+			var _conditionScript = _node.conditionScript;
+			var _truePath = _node.ifTrue;
+			var _falsePath = _node.ifFalse;
+			var _conditionResult = _conditionScript();
+			if (_conditionResult) { ProcessNode(_truePath); }
+			else { ProcessNode(_falsePath); }
+			break;
+		}
+		
     }
 }

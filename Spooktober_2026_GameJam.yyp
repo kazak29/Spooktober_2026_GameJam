@@ -131,6 +131,7 @@
     {"id":{"name":"__scribble_texture_get_material","path":"scripts/__scribble_texture_get_material/__scribble_texture_get_material.yy",},},
     {"id":{"name":"__scribble_texture_group_get_ready","path":"scripts/__scribble_texture_group_get_ready/__scribble_texture_group_get_ready.yy",},},
     {"id":{"name":"__scribble_tick","path":"scripts/__scribble_tick/__scribble_tick.yy",},},
+    {"id":{"name":"ConditionNodeScripts","path":"scripts/ConditionNodeScripts/ConditionNodeScripts.yy",},},
     {"id":{"name":"DirectorDrawFunctions","path":"scripts/DirectorDrawFunctions/DirectorDrawFunctions.yy",},},
     {"id":{"name":"DirectorStateMachine","path":"scripts/DirectorStateMachine/DirectorStateMachine.yy",},},
     {"id":{"name":"draw_text_scribble_ext","path":"scripts/draw_text_scribble_ext/draw_text_scribble_ext.yy",},},

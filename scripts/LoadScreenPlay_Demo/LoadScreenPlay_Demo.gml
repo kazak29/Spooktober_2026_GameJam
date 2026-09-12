@@ -69,8 +69,15 @@ function LoadScreenPlay_Demo()
 				scene1_character_exit2: {
                     nodeType: NodeType.CHARACTER_OUT,
                     charId: "Atlas",
-                    nextNode: "scene1_character_exit3"
+                    nextNode: "scene1_condition1"
                 },
+				
+				scene1_condition1: {
+					nodeType: NodeType.CONDITION,
+					conditionScript: InventoryContainsCheese,
+					ifTrue: "scene1_character_exit3",
+					ifFalse: "scene1_main_character_exit"
+				},
 				
 				scene1_character_exit3: {
                     nodeType: NodeType.CHARACTER_OUT,
@@ -81,7 +88,7 @@ function LoadScreenPlay_Demo()
                 scene1_main_character_exit: {
                     nodeType: NodeType.MAIN_CHARACTER_OUT,
                     nextNode: noone
-                },
+                }
 				
             }
         }, // scene1
