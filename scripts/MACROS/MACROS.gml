@@ -85,3 +85,9 @@
 	#macro COL_MENU_OPTION_DISABLED c_dkgray
 	
 #endregion
+#region menu misc
+
+	#macro MENU_BUFFER_X 64
+	#macro MENU_BUFFER_Y 80
+	
+#endregion

@@ -39,6 +39,14 @@ menuPages = {
 				scr:		MenuFullscreen,
 				arg:		window_get_fullscreen(),
 			},
+			//language
+			{
+				title:			global.uiData.menuLanguage,
+				elemType:		MENU_ELEMENT_TYPE.SHIFT,
+				scr:			MenuLanguage,
+				arg:			0,
+				argTitles:		[global.uiData.menuLanguageEng, global.uiData.menuLanguageTur, global.uiData.menuLanguageKaz],
+			},
 			//back to main page
 			{
 				title:		global.uiData.menuBack,

@@ -4,8 +4,12 @@ menuCredits,Credits
 menuSettings,Settings
 menuBack,Back
 menuFullscreen,Fullscreen
-menuOn, On
-menuOff, Off
+menuLanguage,Language
+menuLanguageEng,English
+menuLanguageTur,Turkish
+menuLanguageKaz,Kazakh
+menuOn,On
+menuOff,Off
 ,
 choice_comfort,"Aw, it'll be okay"
 choice_ignore,(Say nothing)
