@@ -35,20 +35,20 @@ mouseX = mouse_x;
 mouseY = mouse_y;
 using_mouse = false;
 
-MouseHoverRectangle = function(_x1,_y1,_x2,_y2){
-	if !using_mouse return false;
+MouseHoverRectangle = function(_x1,_y1,_x2,_y2, _fresh = true){
+	if _fresh && !using_mouse return false;
 	return point_in_rectangle(mouseX,mouseY, _x1,_y1,_x2,_y2);
 }
-MouseHoverCircle = function(_x,_y,_rad){
-	if !using_mouse return false;
+MouseHoverCircle = function(_x,_y,_rad, _fresh = true){
+	if _fresh && !using_mouse return false;
 	return point_in_circle(mouseX,mouseY, _x,_y,_rad);
 }
-MouseHoverObjectBool = function(_id){
-	if !using_mouse return false;
+MouseHoverObjectBool = function(_id, _fresh = true){
+	if _fresh && !using_mouse return false;
 	return position_meeting(mouseX,mouseY, _id);
 }
-MouseHoverObjectId = function(_id){
-	if !using_mouse return noone;
+MouseHoverObjectId = function(_id, _fresh = true){
+	if _fresh && !using_mouse return noone;
 	return instance_position(mouseX,mouseY, _id);
 }
 

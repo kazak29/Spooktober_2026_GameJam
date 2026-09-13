@@ -53,7 +53,10 @@ pageName = "main";
 elementNum = 0;
 inputting = false;
 
-//create every page element as object on screen
+elementSelectedMain = noone;
+elementSelectedSub = noone;
+
+//create every main element on a page as object on screen
 PageUpdate = function(){
 	with oMenuElementParent instance_destroy();
 	
