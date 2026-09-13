@@ -76,8 +76,8 @@ scribId = scribble(_elem.title).starting_format(FONT_CONSOLE_24, c_white);
 			var _x = _startX + _bufferX;
 			var _y = _startY + elementNum*_bufferY;
 			
-			_createSubToggle(_x,				_y, MENU_TOGGLE_SIDE.OFF);
-			_createSubToggle(_x + _bufferX*2,	_y, MENU_TOGGLE_SIDE.ON);
+			_createSubToggle(_x,				_y, false);
+			_createSubToggle(_x + _bufferX*2,	_y, true);
 		} break;
 		case MENU_ELEMENT_TYPE.SHIFT: {
 			
