@@ -39,6 +39,7 @@ menuPages = {
 				scr:		MenuFullscreen,
 				arg:		window_get_fullscreen(),
 			},
+			/*
 			//language
 			{
 				title:			global.uiData.menuLanguage,
@@ -47,6 +48,7 @@ menuPages = {
 				arg:			0,
 				argTitles:		[global.uiData.menuLanguageEng, global.uiData.menuLanguageTur, global.uiData.menuLanguageKaz],
 			},
+			*/
 			//back to main page
 			{
 				title:		global.uiData.menuBack,
@@ -59,19 +61,18 @@ menuPages = {
 
 pageName = "main";
 elementNum = 0;
-inputting = false;
 
 elementSelectedMain = noone;
 elementSelectedSub = noone;
 
 //create every main element on a page as object on screen
 PageUpdate = function(){
-	with oMenuElementParent instance_destroy();
+	with oMenuElement instance_destroy();
 	
 	var _elems = menuPages[$ pageName].elements;
 	var _elemsL = array_length(_elems);
 	for (var i = 0; i < _elemsL; i++) {	
-		var _id = instance_create_layer(0,0, "System", oMenuElementMain, {elementNum: i});
+		var _id = instance_create_layer(0,0, "System", oMenuElementMain, {elementNum: i, elementData: _elems[i]});
 		_elems[i].elemId = _id;
 	}
 }

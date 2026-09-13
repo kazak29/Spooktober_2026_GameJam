@@ -5,9 +5,9 @@ elementSelectedSub = noone;
 #region small repeating scripts
 	
 	//execute a script from element data with set argument(s)
-	var _elemScrExecute = function() {
-		var _scr = menuPages[$ pageName].elements[elementNum].scr;
-		var _arg = menuPages[$ pageName].elements[elementNum].arg;
+	var _elemScrExecute = function(_elemData) {
+		var _scr = _elemData.scr;
+		var _arg = _elemData.arg;
 			
 		_scr(_arg);
 	}
@@ -29,13 +29,16 @@ elementSelectedSub = noone;
 	
 	//change shift argument
 	var _shiftArgChange = function(_val){
-		var _elem = menuPages[$ pageName].elements[elementNum];
-		_elem.arg += _val;
+		if instance_exists(elementSelectedMain) {
+			var _elemData = elementSelectedMain.elementData;
+			_elemData.arg += _val;
 				
-		//cycle when out of bounds
-		var _argMax = array_length(_elem.argTitles);
-		if (_elem.arg > _argMax)	_elem.arg = 0;
-		if (_elem.arg < 0)			_elem.arg = _argMax;
+			//cycle when out of bounds
+			var _argMax = array_length(_elemData.argTitles);
+			if (_elemData.arg > _argMax)	_elemData.arg = 0;
+			if (_elemData.arg < 0)			_elemData.arg = _argMax;
+			
+		}
 	}
 	
 #endregion
@@ -44,30 +47,9 @@ var _page = menuPages[$ pageName];
 var _elems = _page.elements;
 var _elemsL = array_length(_elems);
 
-//keyboard and gamepad logic
-if inputting {
-	//change settings in input mode
-	switch _elems[elementNum].elemType {
-		
-		case MENU_ELEMENT_TYPE.TOGGLE: {
-			var _hinput = oInputManager.pressed.right - oInputManager.pressed.left;
-			if (_hinput != 0) {
-				_elems[elementNum].arg += _hinput;
-				_elems[elementNum].arg = clamp(_elems[elementNum].arg, 0,1);
-			}
-		} break;
-		case MENU_ELEMENT_TYPE.SHIFT: {
-			var _hinput = oInputManager.pressed.right - oInputManager.pressed.left;
-			if (_hinput != 0) _shiftArgChange(_hinput);
-		} break;
-		case MENU_ELEMENT_TYPE.SLIDER: {
-			
-		} break;
-		
-	}
+#region selecting main element
 	
-} else {
-	//navigate menu
+	//discret navigation for main elements
 	var _pressVer = oInputManager.pressed.down - oInputManager.pressed.up;
 	if (_pressVer != 0) {
 		elementNum += _pressVer;
@@ -75,106 +57,132 @@ if inputting {
 		if (elementNum < 0)			{ elementNum = _elemsL-1;	}
 	}
 	
-}
+	//mouse navigation for main elements
+	var _mouseHoverMain = false;
+	with oMenuElementMain {
 
-//mouse logic
-var _mouseElementMain = noone;
-var _mouseElementSub = noone;
-with oMenuElementMain {
-	
-	_mouseElementMain = _elemMouseHoverGet(id);
-	if instance_exists(_mouseElementMain) {
-		if !other.inputting other.elementNum = elementNum;
-		break;
-	}
-	
-}
-with oMenuElementSub {
-	
-	_mouseElementSub = _elemMouseHoverGet(id);
-	if instance_exists(_mouseElementSub) {
-		switch elemSubtype {
-			case MENU_ELEMENT_SUBTYPE.TOGGLE_OFF:	other.elementSelectedSub = _mouseElementSub; break;
-			case MENU_ELEMENT_SUBTYPE.TOGGLE_ON:	other.elementSelectedSub = _mouseElementSub; break;
-			case MENU_ELEMENT_SUBTYPE.SHIFT_LEFT:	other.elementSelectedSub = _mouseElementSub; break;
-			case MENU_ELEMENT_SUBTYPE.SHIFT_RIGHT:	other.elementSelectedSub = _mouseElementSub; break;
+		if _elemMouseHoverGet(id) {
+			_mouseHoverMain = true;
+			other.elementNum = elementNum;
+			break;
 		}
-		break;
+	
 	}
 	
-}
-
-
-elementSelectedMain = struct_get(_elems[elementNum], "elemId") ?? noone;
-if (oInputManager.pressed.confirm) {
+	elementSelectedMain = struct_get(_elems[elementNum], "elemId") ?? noone;
 	
-	var _mouseClicked = mouse_check_button_pressed(mb_any);
-	var _triggerMain = !(_mouseClicked && !instance_exists(_mouseElementMain) && !inputting);	//DO NOT trigger if mouse clicked on empty space in room while not inputting
-	var _triggerSub = _mouseClicked && instance_exists(_mouseElementSub);						//DO trigger if clicked on sub element
+#endregion
+#region selecting sub element
 	
-	//triggered by keyboard + gamepad + mouse
-	if _triggerMain && !_triggerSub {
-		switch _elems[elementNum].elemType {
+	//discrete navigation for sub element
+	if instance_exists(elementSelectedMain) {
 		
-			case MENU_ELEMENT_TYPE.SCRIPT_RUNNER: {
-				_elemScrExecute();
+		var _subIds = elementSelectedMain.subIds;
+		var _elem = _elems[elementNum];
+	
+		switch _elem.elemType {
+			case MENU_ELEMENT_TYPE.TOGGLE: {
+				elementSelectedSub = _subIds[_elem.arg];
 			} break;
+		}
 		
-			case MENU_ELEMENT_TYPE.PAGE_TRANSFER: {
-				pageName = _elems[elementNum].pageName;
+	}
+	
+	//mouse navigation for sub elements
+	var _mouseHoverSub = false;
+	with oMenuElementSub {
+		
+		if _elemMouseHoverGet(id) {
+			_mouseHoverSub = true;
+			other.elementSelectedSub = id;
+			break;
+		}
+	
+	}
+	
+#endregion
+
+//inputs
+var _confirm		= oInputManager.pressed.confirm;
+var _mouseClick		= mouse_check_button_pressed(mb_any);
+var _mouseMain		= _confirm && _mouseHoverMain;
+var _mouseSub		= _confirm && _mouseHoverSub;
+var _mouseEmpty		= _mouseClick && !_mouseHoverMain && !_mouseHoverSub;	//clicked empty space on screen
+
+//main element confirm logic
+if instance_exists(elementSelectedMain) {
+	var _elemData = elementSelectedMain.elementData;
+	switch _elemData.elemType {
+	
+		case MENU_ELEMENT_TYPE.SCRIPT_RUNNER: {
+			if (_confirm && !_mouseEmpty && !_mouseSub) {
+				_elemScrExecute(_elemData);
+			}
+		} break;
+		
+		case MENU_ELEMENT_TYPE.PAGE_TRANSFER: {
+			if (_confirm && !_mouseEmpty && !_mouseSub) {
+				pageName = _elemData.pageName;
 				elementNum = 0;
 				PageUpdate();
-			} break;
-			
-			case MENU_ELEMENT_TYPE.TOGGLE:	_elemScrExecute(); inputting = !inputting; break;
-			case MENU_ELEMENT_TYPE.SHIFT:	_elemScrExecute(); inputting = !inputting; break;
-			case MENU_ELEMENT_TYPE.SLIDER:	_elemScrExecute(); inputting = !inputting; break;
-		
-		}
-	}
+			}
+		} break;
 	
-	//triggered by only mouse
-	if _triggerSub {
-		inputting = false;
-		elementNum = _mouseElementSub.elementNum;
-		switch _mouseElementSub.elemSubtype {
-		
-			case MENU_ELEMENT_SUBTYPE.TOGGLE_OFF: {
-				_elems[elementNum].arg = 0;
-				_elemScrExecute();
-			} break;
-			case MENU_ELEMENT_SUBTYPE.TOGGLE_ON: {
-				_elems[elementNum].arg = 1;
-				_elemScrExecute();
-			} break;
+		case MENU_ELEMENT_TYPE.TOGGLE: {
+			var _hinput = oInputManager.pressed.right - oInputManager.pressed.left;
+			if (_hinput != 0) {
+				
+				_elemData.arg += _hinput;
+				_elemData.arg = clamp(_elemData.arg, 0,1);
+				_elemScrExecute(_elemData);
 			
-			case MENU_ELEMENT_SUBTYPE.SHIFT_LEFT: {
-				_shiftArgChange(-1);
-				_elemScrExecute();
-			} break;
-			case MENU_ELEMENT_SUBTYPE.SHIFT_RIGHT: {
-				_shiftArgChange(1);
-				_elemScrExecute();
-			} break;
+			}
+		} break;
+	
+		case MENU_ELEMENT_TYPE.SHIFT: {
+			
+		} break;
+		case MENU_ELEMENT_TYPE.SLIDER: {
+			
+		} break;
 		
-		}
 	}
 }
+
+
+//sub element confirm logic
+if instance_exists(elementSelectedSub) {
+	var _elemData = elementSelectedSub.elementData;
+	switch _elemData.elemType {
+	
+		case MENU_ELEMENT_TYPE.TOGGLE: {
+			if _mouseSub {
+			
+				elementNum = elementSelectedSub.elementNum;
+				elementSelectedMain = elementSelectedSub.elemId;
+			
+				_elemData.arg = elementSelectedSub.side;
+				_elemScrExecute(_elemData);
+			
+			}
+		} break;
+	
+		case MENU_ELEMENT_TYPE.SHIFT: {
+		
+		} break;
+		case MENU_ELEMENT_TYPE.SLIDER: {
+			
+		} break;
+		
+	}
+}
+
+//cancel logic
 if (oInputManager.pressed.cancel) {
-	if inputting {
-		switch _elems[elementNum].elemType {
-			
-			case MENU_ELEMENT_TYPE.TOGGLE:	_elemScrExecute(); inputting = !inputting; break;
-			case MENU_ELEMENT_TYPE.SHIFT:	_elemScrExecute(); inputting = !inputting; break;
-			case MENU_ELEMENT_TYPE.SLIDER:	_elemScrExecute(); inputting = !inputting; break;
-			
-		}
-	} else {
-		var _prev = _page.pageNamePrev;
-		if is_string(_prev) && (_prev != "") {
-			pageName = _prev;
-			elementNum = 0;
-			PageUpdate();
-		}
+	var _prev = _page.pageNamePrev;
+	if is_string(_prev) && (_prev != "") {
+		pageName = _prev;
+		elementNum = 0;
+		PageUpdate();
 	}
 }

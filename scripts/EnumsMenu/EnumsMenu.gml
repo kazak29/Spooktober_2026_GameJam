@@ -20,6 +20,13 @@ enum MENU_ELEMENT_SUBTYPE {
 	HEIGHT
 }
 
+enum MENU_TOGGLE_SIDE {
+	OFF,
+	ON,
+	
+	HEIGHT
+}
+
 enum MENU_LAYOUT {
 	MAIN,
 	SETTINGS,

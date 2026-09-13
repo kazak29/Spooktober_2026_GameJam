@@ -1,12 +1,8 @@
 if !instance_exists(oMenu) exit;
-var _selected = id == oMenu.elementSelectedMain;
-
-var _page = oMenu.menuPages[$ oMenu.pageName];
-var _elem = _page.elements[elementNum];
+var _selected = (id == oMenu.elementSelectedMain);
 
 var _c = COL_MENU_OPTION_DEFAULT;
 var _frame = 0;
-//if (oMenu.elementNum == elementNum) {
 if _selected {
 	_c = COL_MENU_OPTION_SELECTED;
 	_frame = 1;

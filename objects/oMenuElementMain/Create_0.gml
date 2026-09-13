@@ -60,31 +60,28 @@ scribId = scribble(_elem.title).starting_format(FONT_CONSOLE_24, c_white);
 #region create sub elements
 	
 	//fast creation
-	var _createSub = function(_x,_y,_type){
-		instance_create_layer(_x,_y, "System", oMenuElementSub, {
+	var _createSubToggle = function(_x,_y, _side){
+		var _id = instance_create_layer(_x,_y, "System", oMenuElementToggle, {
 			elemId:			id,
 			elementNum:		elementNum,
-			elemSubtype:	_type,
+			elementData:	elementData,
+			side:			_side,
 		});
+		array_push(subIds, _id);
 	}
 	
 	var _type = _elem.elemType;
 	switch _type {
 		
-		//position set once right here
 		case MENU_ELEMENT_TYPE.TOGGLE: {
 			var _x = _startX + _bufferX;
 			var _y = _startY + elementNum*_bufferY;
 			
-			_createSub(_x,				_y, MENU_ELEMENT_SUBTYPE.TOGGLE_OFF);
-			_createSub(x + _bufferX*2,	_y, MENU_ELEMENT_SUBTYPE.TOGGLE_ON);
+			_createSubToggle(_x,				_y, MENU_TOGGLE_SIDE.OFF);
+			_createSubToggle(_x + _bufferX*2,	_y, MENU_TOGGLE_SIDE.ON);
 		} break;
-		
-		//position updated by objects themselves
 		case MENU_ELEMENT_TYPE.SHIFT: {
-			_createSub(x,y, MENU_ELEMENT_SUBTYPE.SHIFT_LEFT);
-			_createSub(x,y, MENU_ELEMENT_SUBTYPE.SHIFT_CENTER);
-			_createSub(x,y, MENU_ELEMENT_SUBTYPE.SHIFT_RIGHT);
+			
 		} break;
 		case MENU_ELEMENT_TYPE.SLIDER: {
 			

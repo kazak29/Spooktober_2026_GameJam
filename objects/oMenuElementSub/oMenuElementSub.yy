@@ -1,10 +1,7 @@
 {
   "$GMObject":"",
   "%Name":"oMenuElementSub",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "eventList":[],
   "managed":true,
   "name":"oMenuElementSub",
   "overriddenProperties":[],
@@ -13,8 +10,8 @@
     "path":"folders/Objects/RoomControllers/Menu.yy",
   },
   "parentObjectId":{
-    "name":"oMenuElementParent",
-    "path":"objects/oMenuElementParent/oMenuElementParent.yy",
+    "name":"oMenuElement",
+    "path":"objects/oMenuElement/oMenuElement.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -30,7 +27,6 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v2","%Name":"elemSubtype","filters":[],"listItems":[],"multiselect":false,"name":"elemSubtype","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.0","varType":0,},
     {"$GMObjectProperty":"v2","%Name":"elemId","filters":[],"listItems":[],"multiselect":false,"name":"elemId","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.0","varType":0,},
   ],
   "resourceType":"GMObject",
