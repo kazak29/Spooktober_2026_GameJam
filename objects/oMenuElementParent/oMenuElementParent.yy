@@ -1,18 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"oMenuElementSub",
+  "%Name":"oMenuElementParent",
   "eventList":[],
   "managed":true,
-  "name":"oMenuElementSub",
+  "name":"oMenuElementParent",
   "overriddenProperties":[],
   "parent":{
     "name":"Menu",
     "path":"folders/Objects/RoomControllers/Menu.yy",
   },
-  "parentObjectId":{
-    "name":"oMenuElementParent",
-    "path":"objects/oMenuElementParent/oMenuElementParent.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

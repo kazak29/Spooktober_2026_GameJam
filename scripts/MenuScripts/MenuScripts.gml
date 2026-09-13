@@ -1,10 +1,10 @@
-function MenuTransitionStart(_args){
-	var _al = array_length(_args);
+function MenuTransitionStart(_arg){
+	var _al = array_length(_arg);
 	if (_al < 3) show_debug_message("MENU TRANSITION DATA MISSING");
 	
-	TransitionStart(_args[0], _args[1], _args[2]);
+	TransitionStart(_arg[0], _arg[1], _arg[2]);
 }
 
-function MenuFullscreen(){
-	
+function MenuFullscreen(_arg){
+	window_set_fullscreen(_arg);
 }

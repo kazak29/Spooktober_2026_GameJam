@@ -4,6 +4,14 @@ var _page = menuPages[$ pageName];
 var _elems = _page.elements;
 var _elemsL = array_length(_elems);
 
+//execute a script from element data with set argument(s)
+var _elemScrExecute = function() {
+	var _scr = _elems[elementNum].scr;
+	var _arg = _elems[elementNum].arg;
+			
+	_scr(_arg);
+}
+
 if inputting {
 	//change settings in input mode
 	switch _elems[elementNum].elemType {
@@ -15,7 +23,12 @@ if inputting {
 			
 		} break;
 		case MENU_ELEMENT_TYPE.TOGGLE: {
-			
+			var _hinput = oInputManager.pressed.right - oInputManager.pressed.left;
+			if (_hinput != 0) {
+				_elems[elementNum].arg += _hinput;
+				_elems[elementNum].arg = clamp(_elems[elementNum].arg, 0,1);		
+				_elemScrExecute();
+			}
 		} break;
 		
 	}
@@ -28,22 +41,26 @@ if inputting {
 		if (elementNum > _elemsL-1)	{ elementNum = 0;			}
 		if (elementNum < 0)			{ elementNum = _elemsL-1;	}
 	}
-	//navigate menu (mouse)
-	with oInputManager {
-		var _id = noone;
-		if sprite_exists(_page.elemSpr) {
+}
+
+//navigate menu (mouse)
+with oInputManager {
+	var _id = noone;
+	if sprite_exists(_page.elemSpr) {
 			
-			_id = MouseHoverObjectId(oMenuElement);
+		_id = MouseHoverObjectId(oMenuElementMain);
 			
-		} else {
+	} else {
 			
-			with oMenuElement {
-				var _bbox = scribId.get_bbox(strX,strY);
-				if other.MouseHoverRectangle(_bbox.x0, _bbox.y0, _bbox.x3, _bbox.y3) _id = id;
-			}
-			
+		with oMenuElementMain {
+			var _bbox = scribId.get_bbox(strX,strY);
+			if other.MouseHoverRectangle(_bbox.x0, _bbox.y0, _bbox.x3, _bbox.y3) _id = id;
 		}
-		if instance_exists(_id) other.elementNum = _id.elementNum;
+			
+	}
+	if instance_exists(_id) {
+		other.elementNum = _id.elementNum;
+		other.inputting = false;
 	}
 }
 
@@ -51,10 +68,7 @@ if (oInputManager.pressed.confirm) {
 	switch _elems[elementNum].elemType {
 		
 		case MENU_ELEMENT_TYPE.SCRIPT_RUNNER: {
-			var _scr = _elems[elementNum].scr;
-			var _args = _elems[elementNum].args;
-			
-			_scr(_args);
+			_elemScrExecute();
 		} break;
 		
 		case MENU_ELEMENT_TYPE.PAGE_TRANSFER: {

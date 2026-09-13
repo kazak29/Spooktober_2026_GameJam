@@ -10,7 +10,7 @@ menuPages = {
 				title:		global.uiData.menuStart,
 				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
 				scr:		MenuTransitionStart,
-				args:		[rmStage, sqFadeOut, sqFadeIn],
+				arg:		[rmStage, sqFadeOut, sqFadeIn],
 			},
 			//settings page
 			{
@@ -23,7 +23,7 @@ menuPages = {
 				title:		global.uiData.menuCredits,
 				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
 				scr:		MenuTransitionStart,
-				args:		[rmCredits, sqFadeOut, sqFadeIn],
+				arg:		[rmCredits, sqFadeOut, sqFadeIn],
 			},
 		],
 	},
@@ -55,12 +55,12 @@ inputting = false;
 
 //create every page element as object on screen
 PageUpdate = function(){
-	with oMenuElement instance_destroy();
+	with oMenuElementParent instance_destroy();
 	
 	var _elems = menuPages[$ pageName].elements;
 	var _elemsL = array_length(_elems);
 	for (var i = 0; i < _elemsL; i++) {	
-		var _id = instance_create_layer(0,0, "System", oMenuElement, {elementNum: i});
+		var _id = instance_create_layer(0,0, "System", oMenuElementMain, {elementNum: i});
 		_elems[i].elemId = _id;
 	}
 }
