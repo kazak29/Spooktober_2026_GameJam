@@ -1,5 +1,4 @@
-image_speed = 0;
-image_index = 0;
+event_inherited();
 
 if !instance_exists(oMenu) exit;
 var _page = oMenu.menuPages[$ oMenu.pageName];
