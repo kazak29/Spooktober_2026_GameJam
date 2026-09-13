@@ -6,8 +6,8 @@ var _elemsL = array_length(_elems);
 
 //execute a script from element data with set argument(s)
 var _elemScrExecute = function() {
-	var _scr = _elems[elementNum].scr;
-	var _arg = _elems[elementNum].arg;
+	var _scr = menuPages[$ pageName].elements[elementNum].scr;
+	var _arg = menuPages[$ pageName].elements[elementNum].arg;
 			
 	_scr(_arg);
 }
@@ -41,28 +41,29 @@ if inputting {
 		if (elementNum > _elemsL-1)	{ elementNum = 0;			}
 		if (elementNum < 0)			{ elementNum = _elemsL-1;	}
 	}
+	
 }
 
 //navigate menu (mouse)
-with oInputManager {
-	var _id = noone;
-	if sprite_exists(_page.elemSpr) {
-			
-		_id = MouseHoverObjectId(oMenuElementMain);
-			
-	} else {
-			
-		with oMenuElementMain {
+var _mouseHover = false;
+if oInputManager.using_mouse {
+	with oMenuElementMain {
+		
+		if sprite_exists(sprite_index) {
+			_mouseHover = oInputManager.MouseHoverObjectBool(id);
+		} else {
 			var _bbox = scribId.get_bbox(strX,strY);
-			if other.MouseHoverRectangle(_bbox.x0, _bbox.y0, _bbox.x3, _bbox.y3) _id = id;
+			_mouseHover = oInputManager.MouseHoverRectangle(_bbox.x0, _bbox.y0, _bbox.x3, _bbox.y3);
 		}
-			
-	}
-	if instance_exists(_id) {
-		other.elementNum = _id.elementNum;
-		other.inputting = false;
+		
+		if _mouseHover {
+			if !other.inputting other.elementNum = elementNum;
+			break;
+		}
+		
 	}
 }
+var _mouseClickCheck = mouse_check_button_pressed(mb_any) && !_mouseHover && !inputting;
 
 if (oInputManager.pressed.confirm) {
 	switch _elems[elementNum].elemType {
@@ -77,9 +78,9 @@ if (oInputManager.pressed.confirm) {
 			PageUpdate();
 		} break;
 		
-		case MENU_ELEMENT_TYPE.SHIFT:	inputting = !inputting; break;
-		case MENU_ELEMENT_TYPE.SLIDER:	inputting = !inputting; break;
-		case MENU_ELEMENT_TYPE.TOGGLE:	inputting = !inputting; break;
+		case MENU_ELEMENT_TYPE.SHIFT:	if !_mouseClickCheck inputting = !inputting; break;
+		case MENU_ELEMENT_TYPE.SLIDER:	if !_mouseClickCheck inputting = !inputting; break;
+		case MENU_ELEMENT_TYPE.TOGGLE:	if !_mouseClickCheck inputting = !inputting; break;
 		
 	}
 }

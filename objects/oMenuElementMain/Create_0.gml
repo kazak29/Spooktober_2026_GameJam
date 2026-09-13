@@ -69,7 +69,18 @@ scribId = scribble(_elem.title).starting_format(FONT_CONSOLE_24, c_white);
 			
 		} break;
 		case MENU_ELEMENT_TYPE.TOGGLE: {
+			var _x = _startX + _bufferX;
+			var _y = _startY + elementNum*_bufferY;
 			
+			instance_create_layer(_x,_y, "System", oMenuElementSub, {
+				elementNum: elementNum,
+				elemSubtype: MENU_ELEMENT_SUBTYPE.TOGGLE_OFF,
+			});
+			
+			instance_create_layer(_x + _bufferX*2,_y, "System", oMenuElementSub, {
+				elementNum: elementNum,
+				elemSubtype: MENU_ELEMENT_SUBTYPE.TOGGLE_ON,
+			});
 		} break;
 	
 	}
