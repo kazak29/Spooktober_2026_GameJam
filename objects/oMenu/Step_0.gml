@@ -65,7 +65,7 @@ if oInputManager.using_mouse {
 }
 var _mouseClickCheck = mouse_check_button_pressed(mb_any) && !_mouseHover && !inputting;
 
-if (oInputManager.pressed.confirm) {
+if (oInputManager.pressed.confirm) && !_mouseClickCheck {
 	switch _elems[elementNum].elemType {
 		
 		case MENU_ELEMENT_TYPE.SCRIPT_RUNNER: {
@@ -78,9 +78,9 @@ if (oInputManager.pressed.confirm) {
 			PageUpdate();
 		} break;
 		
-		case MENU_ELEMENT_TYPE.SHIFT:	if !_mouseClickCheck inputting = !inputting; break;
-		case MENU_ELEMENT_TYPE.SLIDER:	if !_mouseClickCheck inputting = !inputting; break;
-		case MENU_ELEMENT_TYPE.TOGGLE:	if !_mouseClickCheck inputting = !inputting; break;
+		case MENU_ELEMENT_TYPE.SHIFT:	inputting = !inputting; break;
+		case MENU_ELEMENT_TYPE.SLIDER:	inputting = !inputting; break;
+		case MENU_ELEMENT_TYPE.TOGGLE:	inputting = !inputting; break;
 		
 	}
 }
