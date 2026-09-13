@@ -186,3 +186,6 @@ if (oInputManager.pressed.cancel) {
 		PageUpdate();
 	}
 }
+
+//son
+menuPages.settings.elements[0].arg = window_get_fullscreen();

@@ -20,41 +20,6 @@
 		y = _bbox.top + _bbox.height/2 + _offsetY;
 	}
 	
-	//update shift elements for menu settings
-	function MenuSubElementUpdateShiftSides(_centerNum, _scribId, _spr = noone){
-		with oMenuElementSub {
-			if (elementNum != _centerNum) continue;
-			switch elemSubtype {
-				case MENU_ELEMENT_SUBTYPE.SHIFT_LEFT: {
-					
-					
-					
-				} break;
-				case MENU_ELEMENT_SUBTYPE.SHIFT_RIGHT: {
-					
-				} break;
-			}
-		}
-	}
-	
-	//update shift elements for menu settings
-	function MenuSubElementUpdateShift(){
-		with oMenuElementSub {
-			if elemSubtype == MENU_ELEMENT_SUBTYPE.SHIFT_CENTER {
-				if !instance_exists(elemId) exit;
-				
-				strX = elemId.strX + MENU_BUFFER_X*2;
-				strY = elemId.strY;
-				
-				var _title = elem.argTitles[elem.arg];
-				scribId = scribble(_title).starting_format(FONT_CONSOLE_24, c_white).align(fa_left, fa_middle);
-				
-				MenuSubElementUpdateGeneralPosition(scribId, sprite_index);
-				MenuSubElementUpdateShiftSides(elementNum, scribId, sprite_index);
-			}
-		}
-	}
-	
 #endregion
 #region triggers set into buttons
 	function MenuTransitionStart(_arg){
