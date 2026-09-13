@@ -11,8 +11,8 @@ scribId = scribble(_elem.title).starting_format(FONT_CONSOLE_24, c_white);
 	
 	var _elemsL	= array_length(_page.elements);
 	
-	var _bufferX = 64;
-	var _bufferY = 64+16;
+	var _bufferX = MENU_BUFFER_X;
+	var _bufferY = MENU_BUFFER_Y;
 	
 	var _offsetX = 0;
 	var _offsetY = 0;
@@ -59,16 +59,31 @@ scribId = scribble(_elem.title).starting_format(FONT_CONSOLE_24, c_white);
 
 #region create sub elements
 	
+	//fast creation
+	var _createSubToggle = function(_x,_y, _side){
+		var _id = instance_create_layer(_x,_y, "System", oMenuElementToggle, {
+			elemId:			id,
+			elementNum:		elementNum,
+			elementData:	elementData,
+			side:			_side,
+		});
+		array_push(subIds, _id);
+	}
+	
 	var _type = _elem.elemType;
 	switch _type {
-	
+		
+		case MENU_ELEMENT_TYPE.TOGGLE: {
+			var _x = _startX + _bufferX;
+			var _y = _startY + elementNum*_bufferY;
+			
+			_createSubToggle(_x,				_y, MENU_TOGGLE_SIDE.OFF);
+			_createSubToggle(_x + _bufferX*2,	_y, MENU_TOGGLE_SIDE.ON);
+		} break;
 		case MENU_ELEMENT_TYPE.SHIFT: {
 			
 		} break;
 		case MENU_ELEMENT_TYPE.SLIDER: {
-			
-		} break;
-		case MENU_ELEMENT_TYPE.TOGGLE: {
 			
 		} break;
 	

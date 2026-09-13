@@ -10,7 +10,7 @@ menuPages = {
 				title:		global.uiData.menuStart,
 				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
 				scr:		MenuTransitionStart,
-				args:		[rmStage, sqFadeOut, sqFadeIn],
+				arg:		[rmStage, sqFadeOut, sqFadeIn],
 			},
 			//settings page
 			{
@@ -23,7 +23,7 @@ menuPages = {
 				title:		global.uiData.menuCredits,
 				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
 				scr:		MenuTransitionStart,
-				args:		[rmCredits, sqFadeOut, sqFadeIn],
+				arg:		[rmCredits, sqFadeOut, sqFadeIn],
 			},
 		],
 	},
@@ -39,6 +39,16 @@ menuPages = {
 				scr:		MenuFullscreen,
 				arg:		window_get_fullscreen(),
 			},
+			/*
+			//language
+			{
+				title:			global.uiData.menuLanguage,
+				elemType:		MENU_ELEMENT_TYPE.SHIFT,
+				scr:			MenuLanguage,
+				arg:			0,
+				argTitles:		[global.uiData.menuLanguageEng, global.uiData.menuLanguageTur, global.uiData.menuLanguageKaz],
+			},
+			*/
 			//back to main page
 			{
 				title:		global.uiData.menuBack,
@@ -51,16 +61,18 @@ menuPages = {
 
 pageName = "main";
 elementNum = 0;
-inputting = false;
 
-//create every page element as object on screen
+elementSelectedMain = noone;
+elementSelectedSub = noone;
+
+//create every main element on a page as object on screen
 PageUpdate = function(){
 	with oMenuElement instance_destroy();
 	
 	var _elems = menuPages[$ pageName].elements;
 	var _elemsL = array_length(_elems);
 	for (var i = 0; i < _elemsL; i++) {	
-		var _id = instance_create_layer(0,0, "System", oMenuElement, {elementNum: i});
+		var _id = instance_create_layer(0,0, "System", oMenuElementMain, {elementNum: i, elementData: _elems[i]});
 		_elems[i].elemId = _id;
 	}
 }
