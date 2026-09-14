@@ -47,6 +47,30 @@ menuPages = {
 				arg:			0,
 				argTitles:		[global.uiData.menuLanguageEng, global.uiData.menuLanguageTur, global.uiData.menuLanguageKaz],
 			},
+			//music volume
+			{
+				title:			global.uiData.menuVolMusic,
+				elemType:		MENU_ELEMENT_TYPE.SLIDER,
+				scr:			MenuVolSound,
+				arg:			global.volMusic,
+				argClamp:		[0,1],
+			},
+			//sound volume
+			{
+				title:			global.uiData.menuVolSound,
+				elemType:		MENU_ELEMENT_TYPE.SLIDER,
+				scr:			MenuVolSound,
+				arg:			global.volSound,
+				argClamp:		[0,1],
+			},
+			//dialogue volume
+			{
+				title:			global.uiData.menuVolDialogue,
+				elemType:		MENU_ELEMENT_TYPE.SLIDER,
+				scr:			MenuVolSound,
+				arg:			global.volTypeWriter,
+				argClamp:		[0,1],
+			},
 			//back to main page
 			{
 				title:		global.uiData.menuBack,
@@ -64,6 +88,7 @@ elementSelectedMain = noone;
 elementSelectedSub = noone;
 mouseHoverMain = false;
 mouseHoverSub = false;
+mouseClickLock = false;
 
 //create every main element on a page as object on screen
 PageUpdate = function(){
@@ -72,7 +97,12 @@ PageUpdate = function(){
 	var _elems = menuPages[$ pageName].elements;
 	var _elemsL = array_length(_elems);
 	for (var i = 0; i < _elemsL; i++) {	
-		var _id = instance_create_layer(0,0, "System", oMenuElementMain, {elementNum: i, elementData: _elems[i]});
+		var _data = {
+			elementNum: i,
+			elementData: _elems[i],
+		};
+		
+		var _id = instance_create_layer(0,0, "System", oMenuElementMain, _data);
 		_elems[i].elemId = _id;
 	}
 }

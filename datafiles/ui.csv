@@ -4,6 +4,9 @@ menuCredits,Credits
 menuSettings,Settings
 menuBack,Back
 menuFullscreen,Fullscreen
+menuVolSound,Sound
+menuVolMusic,Music
+menuVolDialogue,Dialogue Sound Effects
 menuLanguage,Language
 menuLanguageEng,English
 menuLanguageTur,Turkish

@@ -19,4 +19,5 @@ if sprite_exists(sprite_index) {
 	_c				= COL_MENU_OPTION_DEFAULT;
 	image_index		= _frame;
 	draw_self();
-} else scribId.blend(_c, 1).draw(strX, strY);
+}
+scribId.blend(_c, 1).draw(strX, strY);

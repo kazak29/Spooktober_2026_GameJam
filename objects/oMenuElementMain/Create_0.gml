@@ -3,7 +3,7 @@ if !instance_exists(oMenu) exit;
 var _page = oMenu.menuPages[$ oMenu.pageName];
 
 var _elem = elementData;
-scribId = scribble(_elem.title).starting_format(FONT_CONSOLE_24, c_white);
+scribId = scribble(_elem.title).starting_format(MENU_FONT, c_white);
 
 #region set parameters based on menu page layout and sprite
 	
@@ -58,22 +58,37 @@ scribId = scribble(_elem.title).starting_format(FONT_CONSOLE_24, c_white);
 #region create sub elements
 	
 	//fast creation
-	var _createSubToggle = function(_x,_y, _side){
-		var _id = instance_create_layer(_x,_y, "System", oMenuElementToggle, {
+	var _createSubToggle	= function(_x,_y, _side){			//side: 0 - false, 1 - true
+		var _data = {
 			mainId:			id,
 			elementNum:		elementNum,
 			elementData:	elementData,
 			side:			_side,
-		});
+		};
+		
+		var _id = instance_create_layer(_x,_y, "System", oMenuElementToggle, _data);
 		array_push(subIds, _id);
 	}
-	var _createSubShift = function(_x,_y, _side){
-		var _id = instance_create_layer(_x,_y, "System", oMenuElementShift, {
+	var _createSubShift		= function(_x,_y, _side){			//side: 0 - left, 1 - center, 2 - right
+		var _data = {
 			mainId:			id,
 			elementNum:		elementNum,
 			elementData:	elementData,
 			side:			_side,
-		});
+		};
+		
+		var _id = instance_create_layer(_x,_y, "System", oMenuElementShift, _data);
+		array_push(subIds, _id);
+	}
+	var _createSubSlider	= function(_x,_y, _length = -1){	//length is in pixels, defaults to sprite width
+		var _data = {
+			mainId:			id,
+			elementNum:		elementNum,
+			elementData:	elementData,
+			sliderLength:	_length,
+		};
+		
+		var _id = instance_create_layer(_x,_y, "System", oMenuElementSlider, _data);
 		array_push(subIds, _id);
 	}
 	
@@ -87,16 +102,30 @@ scribId = scribble(_elem.title).starting_format(FONT_CONSOLE_24, c_white);
 			_createSubToggle(_x,				_y, false);
 			_createSubToggle(_x + _bufferX*2,	_y, true);
 		} break;
+		
 		case MENU_ELEMENT_TYPE.SHIFT: {
-			var _x = _startX + _bufferX*1.5;
+			
+			//check which text is the widest
+			var _strW = 0;
+			for (var i = 0; i < array_length(_elem.argTitles); i++) {
+				var _scribId = scribble(_elem.argTitles[i]).starting_format(MENU_FONT, c_white);
+				var _scribW = _scribId.get_width();
+				_strW = (_scribW > _strW) ? _scribW : _strW;
+			}
+			
+			var _x = _startX + _bufferX + _strW/2 + MENU_BUFFER_X;
 			var _y = _startY + elementNum*_bufferY;
 			
 			_createSubShift(_x,	_y, 0);
 			_createSubShift(_x,	_y, 1);
 			_createSubShift(_x,	_y, 2);
 		} break;
+		
 		case MENU_ELEMENT_TYPE.SLIDER: {
+			var _x = _startX + _bufferX;
+			var _y = _startY + elementNum*_bufferY;
 			
+			_createSubSlider(_x, _y);
 		} break;
 	
 	}

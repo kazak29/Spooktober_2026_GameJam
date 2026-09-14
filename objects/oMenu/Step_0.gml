@@ -1,8 +1,12 @@
 if global.midTransition || global.gamePaused exit;
+
 elementSelectedMain = noone;
 elementSelectedSub = noone;
 mouseHoverMain = false;
 mouseHoverSub = false;
+
+if oInputManager.released.confirm mouseClickLock = false;
+var _mouseClickLockCheck = true;
 
 #region small repeating scripts
 	
@@ -17,13 +21,24 @@ mouseHoverSub = false;
 	//check for menu element id when hovering with a mouse (must be called from within object itself)
 	var _elemMouseHoverGet = function(_id){
 		with _id {
+			//special collision
+			if elementData.elemType == MENU_ELEMENT_TYPE.SLIDER {
+				var _x1 = bbox_left		- 64;
+				var _x2 = bbox_right	+ 64;
+				var _y1 = bbox_top		- 32;
+				var _y2 = bbox_bottom	+ 24;
+					
+				return oInputManager.MouseHoverRectangle(_x1,_y1, _x2,_y2);
+			}
+			
+			//regular collision
 			if sprite_exists(sprite_index) {
-				return oInputManager.MouseHoverObjectId(id, false);
+				return oInputManager.MouseHoverObjectId(id);
 			} else {
 				if !variable_instance_exists(id, "scribId") return noone;
 			
 				var _bbox = scribId.get_bbox(strX,strY);
-				if oInputManager.MouseHoverRectangle(_bbox.x0, _bbox.y0, _bbox.x3, _bbox.y3, false) return id;
+				if oInputManager.MouseHoverRectangle(_bbox.x0, _bbox.y0, _bbox.x3, _bbox.y3) return id;
 			}
 			return noone;
 		}
@@ -71,7 +86,11 @@ var _elemsL = array_length(_elems);
 			case MENU_ELEMENT_TYPE.TOGGLE: {
 				elementSelectedSub = _subIds[_elem.arg];
 			} break;
+			case MENU_ELEMENT_TYPE.SLIDER: {
+				elementSelectedSub = _subIds[0];
+			} break;
 		}
+		//shift element highlites whole
 		
 	}
 	
@@ -90,10 +109,9 @@ var _elemsL = array_length(_elems);
 
 //inputs
 var _confirm		= oInputManager.pressed.confirm;
-var _mouseClick		= mouse_check_button_pressed(mb_any);
 var _mouseMain		= _confirm && mouseHoverMain;
 var _mouseSub		= _confirm && mouseHoverSub;
-var _mouseEmpty		= _mouseClick && !mouseHoverMain && !mouseHoverSub;	//clicked empty space on screen
+var _mouseEmpty		= mouse_check_button_pressed(mb_any) && !mouseHoverMain && !mouseHoverSub;	//clicked empty space on screen
 
 //main element confirm logic
 if instance_exists(elementSelectedMain) {
@@ -116,6 +134,7 @@ if instance_exists(elementSelectedMain) {
 	
 		case MENU_ELEMENT_TYPE.TOGGLE: {
 			var _hinput = oInputManager.pressed.right - oInputManager.pressed.left;
+			if (_confirm && !_mouseEmpty && !_mouseSub) _hinput = _elemData.arg ? -1 : 1;
 			if (_hinput != 0) {
 				
 				_elemData.arg += _hinput;
@@ -127,6 +146,7 @@ if instance_exists(elementSelectedMain) {
 	
 		case MENU_ELEMENT_TYPE.SHIFT: {
 			var _hinput = oInputManager.pressed.right - oInputManager.pressed.left;
+			if (_confirm && !_mouseEmpty && !_mouseSub) _hinput = 1;
 			if (_hinput != 0) {
 				
 				_elemData.arg += _hinput;
@@ -139,8 +159,16 @@ if instance_exists(elementSelectedMain) {
 				
 			}
 		} break;
+		
 		case MENU_ELEMENT_TYPE.SLIDER: {
-			
+			var _hinput = oInputManager.held.right - oInputManager.held.left;
+			if (_hinput != 0) {
+				
+				_elemData.arg += _hinput*0.005;
+				_elemData.arg = clamp(_elemData.arg, _elemData.argClamp[0], _elemData.argClamp[1]);
+				_elemScrExecute(_elemData);
+				
+			}
 		} break;
 		
 	}
@@ -189,8 +217,28 @@ if instance_exists(elementSelectedSub) {
 			
 			}
 		} break;
+		
 		case MENU_ELEMENT_TYPE.SLIDER: {
-			
+			if mouseHoverSub && oInputManager.held.confirm && !mouseClickLock {
+				_mouseClickLockCheck = false;
+				
+				elementNum = elementSelectedSub.elementNum;
+				elementSelectedMain = elementSelectedSub.mainId;
+				
+				//get what percentage mouse position is hovering at (from 0 to 1)
+				var _perc = 0;
+				with elementSelectedSub {
+					var _mX = clamp(oInputManager.mouseX, bbox_left, bbox_right);
+					_perc = (_mX - bbox_left)/(bbox_right - bbox_left);
+					
+				}
+				
+				//calculate correct argument from percentage (we can set argClamp to be between different numbers, not just from 0 to 1)
+				_elemData.arg = ((_elemData.argClamp[1] - _elemData.argClamp[0]) * _perc) + _elemData.argClamp[0];
+				_elemData.arg = clamp(_elemData.arg, _elemData.argClamp[0], _elemData.argClamp[1]);
+				_elemScrExecute(_elemData);
+				
+			}
 		} break;
 		
 	}
@@ -205,6 +253,9 @@ if (oInputManager.pressed.cancel) {
 		PageUpdate();
 	}
 }
+
+//locking mouse input
+if mouse_check_button(mb_any) && _mouseClickLockCheck mouseClickLock = true;
 
 //son
 menuPages.settings.elements[0].arg = window_get_fullscreen();
