@@ -90,6 +90,7 @@ var _elemsL = array_length(_elems);
 				elementSelectedSub = _subIds[0];
 			} break;
 		}
+		//shift element highlites whole
 		
 	}
 	
@@ -133,6 +134,7 @@ if instance_exists(elementSelectedMain) {
 	
 		case MENU_ELEMENT_TYPE.TOGGLE: {
 			var _hinput = oInputManager.pressed.right - oInputManager.pressed.left;
+			if (_confirm && !_mouseEmpty && !_mouseSub) _hinput = _elemData.arg ? -1 : 1;
 			if (_hinput != 0) {
 				
 				_elemData.arg += _hinput;
@@ -144,6 +146,7 @@ if instance_exists(elementSelectedMain) {
 	
 		case MENU_ELEMENT_TYPE.SHIFT: {
 			var _hinput = oInputManager.pressed.right - oInputManager.pressed.left;
+			if (_confirm && !_mouseEmpty && !_mouseSub) _hinput = 1;
 			if (_hinput != 0) {
 				
 				_elemData.arg += _hinput;

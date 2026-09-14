@@ -47,12 +47,28 @@ menuPages = {
 				arg:			0,
 				argTitles:		[global.uiData.menuLanguageEng, global.uiData.menuLanguageTur, global.uiData.menuLanguageKaz],
 			},
+			//music volume
+			{
+				title:			global.uiData.menuVolMusic,
+				elemType:		MENU_ELEMENT_TYPE.SLIDER,
+				scr:			MenuVolSound,
+				arg:			global.volMusic,
+				argClamp:		[0,1],
+			},
 			//sound volume
 			{
 				title:			global.uiData.menuVolSound,
 				elemType:		MENU_ELEMENT_TYPE.SLIDER,
 				scr:			MenuVolSound,
 				arg:			global.volSound,
+				argClamp:		[0,1],
+			},
+			//dialogue volume
+			{
+				title:			global.uiData.menuVolDialogue,
+				elemType:		MENU_ELEMENT_TYPE.SLIDER,
+				scr:			MenuVolSound,
+				arg:			global.volTypeWriter,
 				argClamp:		[0,1],
 			},
 			//back to main page

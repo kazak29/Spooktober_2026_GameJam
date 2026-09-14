@@ -33,4 +33,4 @@ draw_sprite(sSliderCircle, _frame, _circleX, _circleY);
 draw_set_font(asset_get_index(MENU_FONT));
 draw_set_halign(fa_left);
 draw_set_valign(fa_middle);
-draw_text_colour(x + sprite_width*1.2, y, $"{round(_circlePerc*100)}%", _c,_c,_c,_c, image_alpha);
+draw_text_colour(x + sprite_width*1.2, y, $"{round(_circlePerc*100)}%", _cText,_cText,_cText,_cText, image_alpha);
