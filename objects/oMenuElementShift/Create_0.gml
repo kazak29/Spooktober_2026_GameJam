@@ -36,7 +36,7 @@ PositionUpdate = function(){
 TextUpdate = function(){
 	if side == 1 {
 		var _text = elementData.argTitles[elementData.arg];
-		scribId = scribble(_text).starting_format(MENU_FONT, c_white).align(fa_left, fa_middle);
+		scribId = scribble(_text).starting_format(MENU_FONT, c_white).align(fa_center, fa_middle);
 		
 		//do NOT update string position
 		MenuSubElementUpdateGeneralPosition(scribId, sprite_index);
@@ -51,7 +51,7 @@ switch side {
 	} break;
 	case 1: {
 		var _text = elementData.argTitles[elementData.arg];
-		scribId = scribble(_text).starting_format(MENU_FONT, c_white).align(fa_left, fa_middle);
+		scribId = scribble(_text).starting_format(MENU_FONT, c_white).align(fa_center, fa_middle);
 		
 		strX = x;
 		strY = y;

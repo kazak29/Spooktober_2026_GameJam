@@ -102,14 +102,25 @@ scribId = scribble(_elem.title).starting_format(MENU_FONT, c_white);
 			_createSubToggle(_x,				_y, false);
 			_createSubToggle(_x + _bufferX*2,	_y, true);
 		} break;
+		
 		case MENU_ELEMENT_TYPE.SHIFT: {
-			var _x = _startX + _bufferX*1.5;
+			
+			//check which text is the widest
+			var _strW = 0;
+			for (var i = 0; i < array_length(_elem.argTitles); i++) {
+				var _scribId = scribble(_elem.argTitles[i]).starting_format(MENU_FONT, c_white);
+				var _scribW = _scribId.get_width();
+				_strW = (_scribW > _strW) ? _scribW : _strW;
+			}
+			
+			var _x = _startX + _bufferX + _strW/2 + MENU_BUFFER_X;
 			var _y = _startY + elementNum*_bufferY;
 			
 			_createSubShift(_x,	_y, 0);
 			_createSubShift(_x,	_y, 1);
 			_createSubShift(_x,	_y, 2);
 		} break;
+		
 		case MENU_ELEMENT_TYPE.SLIDER: {
 			var _x = _startX + _bufferX;
 			var _y = _startY + elementNum*_bufferY;
