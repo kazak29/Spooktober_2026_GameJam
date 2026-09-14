@@ -1,9 +1,8 @@
 event_inherited();
-
 if !instance_exists(oMenu) exit;
 var _page = oMenu.menuPages[$ oMenu.pageName];
-var _elem = _page.elements[elementNum];
 
+var _elem = elementData;
 scribId = scribble(_elem.title).starting_format(FONT_CONSOLE_24, c_white);
 
 #region set parameters based on menu page layout and sprite
@@ -61,7 +60,16 @@ scribId = scribble(_elem.title).starting_format(FONT_CONSOLE_24, c_white);
 	//fast creation
 	var _createSubToggle = function(_x,_y, _side){
 		var _id = instance_create_layer(_x,_y, "System", oMenuElementToggle, {
-			elemId:			id,
+			mainId:			id,
+			elementNum:		elementNum,
+			elementData:	elementData,
+			side:			_side,
+		});
+		array_push(subIds, _id);
+	}
+	var _createSubShift = function(_x,_y, _side){
+		var _id = instance_create_layer(_x,_y, "System", oMenuElementShift, {
+			mainId:			id,
 			elementNum:		elementNum,
 			elementData:	elementData,
 			side:			_side,
@@ -80,12 +88,29 @@ scribId = scribble(_elem.title).starting_format(FONT_CONSOLE_24, c_white);
 			_createSubToggle(_x + _bufferX*2,	_y, true);
 		} break;
 		case MENU_ELEMENT_TYPE.SHIFT: {
+			var _x = _startX + _bufferX*1.5;
+			var _y = _startY + elementNum*_bufferY;
 			
+			_createSubShift(_x,	_y, 0);
+			_createSubShift(_x,	_y, 1);
+			_createSubShift(_x,	_y, 2);
 		} break;
 		case MENU_ELEMENT_TYPE.SLIDER: {
 			
 		} break;
 	
 	}
+	
+#endregion
+#region update sub elements
+	
+	//update shift elements
+	UpdateShift = function(){
+		if elementData.elemType != MENU_ELEMENT_TYPE.SHIFT exit;
+		with subIds[1] TextUpdate();
+		with subIds[0] PositionUpdate();
+		with subIds[2] PositionUpdate();
+	}
+	UpdateShift();	//putting it here instead of inside element creation code for visual convinience
 	
 #endregion
