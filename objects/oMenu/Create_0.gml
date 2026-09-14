@@ -39,7 +39,6 @@ menuPages = {
 				scr:		MenuFullscreen,
 				arg:		window_get_fullscreen(),
 			},
-			/*
 			//language
 			{
 				title:			global.uiData.menuLanguage,
@@ -48,7 +47,6 @@ menuPages = {
 				arg:			0,
 				argTitles:		[global.uiData.menuLanguageEng, global.uiData.menuLanguageTur, global.uiData.menuLanguageKaz],
 			},
-			*/
 			//back to main page
 			{
 				title:		global.uiData.menuBack,
@@ -64,6 +62,8 @@ elementNum = 0;
 
 elementSelectedMain = noone;
 elementSelectedSub = noone;
+mouseHoverMain = false;
+mouseHoverSub = false;
 
 //create every main element on a page as object on screen
 PageUpdate = function(){

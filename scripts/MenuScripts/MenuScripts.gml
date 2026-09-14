@@ -34,6 +34,6 @@
 	}
 
 	function MenuLanguage(_arg){
-	
+		show_debug_message($"language set to: {_arg}");
 	}
 #endregion

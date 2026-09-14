@@ -1,6 +1,8 @@
 if global.midTransition || global.gamePaused exit;
 elementSelectedMain = noone;
 elementSelectedSub = noone;
+mouseHoverMain = false;
+mouseHoverSub = false;
 
 #region small repeating scripts
 	
@@ -27,20 +29,6 @@ elementSelectedSub = noone;
 		}
 	}
 	
-	//change shift argument
-	var _shiftArgChange = function(_val){
-		if instance_exists(elementSelectedMain) {
-			var _elemData = elementSelectedMain.elementData;
-			_elemData.arg += _val;
-				
-			//cycle when out of bounds
-			var _argMax = array_length(_elemData.argTitles);
-			if (_elemData.arg > _argMax)	_elemData.arg = 0;
-			if (_elemData.arg < 0)			_elemData.arg = _argMax;
-			
-		}
-	}
-	
 #endregion
 
 var _page = menuPages[$ pageName];
@@ -58,11 +46,10 @@ var _elemsL = array_length(_elems);
 	}
 	
 	//mouse navigation for main elements
-	var _mouseHoverMain = false;
 	with oMenuElementMain {
 
 		if _elemMouseHoverGet(id) {
-			_mouseHoverMain = true;
+			other.mouseHoverMain = true;
 			other.elementNum = elementNum;
 			break;
 		}
@@ -89,11 +76,10 @@ var _elemsL = array_length(_elems);
 	}
 	
 	//mouse navigation for sub elements
-	var _mouseHoverSub = false;
 	with oMenuElementSub {
 		
 		if _elemMouseHoverGet(id) {
-			_mouseHoverSub = true;
+			other.mouseHoverSub = true;
 			other.elementSelectedSub = id;
 			break;
 		}
@@ -105,9 +91,9 @@ var _elemsL = array_length(_elems);
 //inputs
 var _confirm		= oInputManager.pressed.confirm;
 var _mouseClick		= mouse_check_button_pressed(mb_any);
-var _mouseMain		= _confirm && _mouseHoverMain;
-var _mouseSub		= _confirm && _mouseHoverSub;
-var _mouseEmpty		= _mouseClick && !_mouseHoverMain && !_mouseHoverSub;	//clicked empty space on screen
+var _mouseMain		= _confirm && mouseHoverMain;
+var _mouseSub		= _confirm && mouseHoverSub;
+var _mouseEmpty		= _mouseClick && !mouseHoverMain && !mouseHoverSub;	//clicked empty space on screen
 
 //main element confirm logic
 if instance_exists(elementSelectedMain) {
@@ -140,7 +126,18 @@ if instance_exists(elementSelectedMain) {
 		} break;
 	
 		case MENU_ELEMENT_TYPE.SHIFT: {
-			
+			var _hinput = oInputManager.pressed.right - oInputManager.pressed.left;
+			if (_hinput != 0) {
+				
+				_elemData.arg += _hinput;
+				var _argMax = array_length(_elemData.argTitles) - 1;
+				if (_elemData.arg > _argMax)	_elemData.arg = 0;
+				if (_elemData.arg < 0)			_elemData.arg = _argMax;
+				
+				with elementSelectedMain UpdateShift();
+				_elemScrExecute(_elemData);
+				
+			}
 		} break;
 		case MENU_ELEMENT_TYPE.SLIDER: {
 			
@@ -159,7 +156,7 @@ if instance_exists(elementSelectedSub) {
 			if _mouseSub {
 			
 				elementNum = elementSelectedSub.elementNum;
-				elementSelectedMain = elementSelectedSub.elemId;
+				elementSelectedMain = elementSelectedSub.mainId;
 			
 				_elemData.arg = elementSelectedSub.side;
 				_elemScrExecute(_elemData);
@@ -168,7 +165,29 @@ if instance_exists(elementSelectedSub) {
 		} break;
 	
 		case MENU_ELEMENT_TYPE.SHIFT: {
-		
+			if _mouseSub {
+			
+				elementNum = elementSelectedSub.elementNum;
+				elementSelectedMain = elementSelectedSub.mainId;
+				
+				switch elementSelectedSub.side {
+					case 0: _elemData.arg--; break;
+					case 2: _elemData.arg++; break;
+				}
+				
+				//do not run when clicked on center
+				if elementSelectedSub.side != 1 {
+				
+					var _argMax = array_length(_elemData.argTitles) - 1;
+					if (_elemData.arg > _argMax)	_elemData.arg = 0;
+					if (_elemData.arg < 0)			_elemData.arg = _argMax;
+				
+					with elementSelectedSub.mainId UpdateShift();
+					_elemScrExecute(_elemData);
+					
+				}
+			
+			}
 		} break;
 		case MENU_ELEMENT_TYPE.SLIDER: {
 			

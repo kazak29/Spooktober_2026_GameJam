@@ -80,9 +80,10 @@
 
 #region colors
 	
-	#macro COL_MENU_OPTION_DEFAULT	c_white
-	#macro COL_MENU_OPTION_SELECTED c_yellow
-	#macro COL_MENU_OPTION_DISABLED c_dkgray
+	#macro COL_MENU_OPTION_DEFAULT		c_white
+	#macro COL_MENU_OPTION_SELECTED		c_yellow
+	#macro COL_MENU_OPTION_HOVER		c_orange
+	#macro COL_MENU_OPTION_DISABLED		c_dkgray
 	
 #endregion
 #region menu misc
