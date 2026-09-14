@@ -71,6 +71,9 @@ var _elemsL = array_length(_elems);
 			case MENU_ELEMENT_TYPE.TOGGLE: {
 				elementSelectedSub = _subIds[_elem.arg];
 			} break;
+			case MENU_ELEMENT_TYPE.SLIDER: {
+				elementSelectedSub = _subIds[0];
+			} break;
 		}
 		
 	}
@@ -139,8 +142,16 @@ if instance_exists(elementSelectedMain) {
 				
 			}
 		} break;
+		
 		case MENU_ELEMENT_TYPE.SLIDER: {
-			
+			var _hinput = oInputManager.held.right - oInputManager.held.left;
+			if (_hinput != 0) {
+				
+				_elemData.arg += _hinput*0.005;
+				_elemData.arg = clamp(_elemData.arg, _elemData.argClamp[0], _elemData.argClamp[1]);
+				_elemScrExecute(_elemData);
+				
+			}
 		} break;
 		
 	}

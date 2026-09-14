@@ -1,4 +1,3 @@
-// Inherit the parent event
 event_inherited();
 
 //side: 0 - left, 1 - center, 2 - right
@@ -37,7 +36,7 @@ PositionUpdate = function(){
 TextUpdate = function(){
 	if side == 1 {
 		var _text = elementData.argTitles[elementData.arg];
-		scribId = scribble(_text).starting_format(FONT_CONSOLE_24, c_white).align(fa_left, fa_middle);
+		scribId = scribble(_text).starting_format(MENU_FONT, c_white).align(fa_left, fa_middle);
 		
 		//do NOT update string position
 		MenuSubElementUpdateGeneralPosition(scribId, sprite_index);
@@ -48,17 +47,17 @@ TextUpdate = function(){
 //set first time text
 switch side {
 	case 0: {
-		scribId = scribble("<<").starting_format(FONT_CONSOLE_24, c_white).align(fa_right, fa_middle);
+		scribId = scribble("<<").starting_format(MENU_FONT, c_white).align(fa_right, fa_middle);
 	} break;
 	case 1: {
 		var _text = elementData.argTitles[elementData.arg];
-		scribId = scribble(_text).starting_format(FONT_CONSOLE_24, c_white).align(fa_left, fa_middle);
+		scribId = scribble(_text).starting_format(MENU_FONT, c_white).align(fa_left, fa_middle);
 		
 		strX = x;
 		strY = y;
 		MenuSubElementUpdateGeneralPosition(scribId, sprite_index);
 	} break;
 	case 2: {
-		scribId = scribble(">>").starting_format(FONT_CONSOLE_24, c_white).align(fa_left, fa_middle);
+		scribId = scribble(">>").starting_format(MENU_FONT, c_white).align(fa_left, fa_middle);
 	} break;
 }

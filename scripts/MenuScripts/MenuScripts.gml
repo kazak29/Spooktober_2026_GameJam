@@ -36,4 +36,7 @@
 	function MenuLanguage(_arg){
 		show_debug_message($"language set to: {_arg}");
 	}
+	function MenuVolSound(_arg){
+		global.volSound = _arg;
+	}
 #endregion
