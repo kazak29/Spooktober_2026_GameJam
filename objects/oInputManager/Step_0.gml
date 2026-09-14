@@ -66,7 +66,6 @@ if (gamepad_id >= SLOT_1)
 }
 
 //mouse checks
-using_mouse = false;
 for (var _key = 0; _key < array_length(input_keys); _key++)
 {
     var _key_name = input_keys[_key];

@@ -72,6 +72,7 @@ elementSelectedMain = noone;
 elementSelectedSub = noone;
 mouseHoverMain = false;
 mouseHoverSub = false;
+mouseClickLock = false;
 
 //create every main element on a page as object on screen
 PageUpdate = function(){
