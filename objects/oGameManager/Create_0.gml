@@ -40,3 +40,8 @@
 	global.sceneToPlay = "scene1";              // TODO: Set this to the first scene in the game
 
 #endregion
+#region menu
+	
+	global.menuPages = MenuDataCreate();
+	
+#endregion

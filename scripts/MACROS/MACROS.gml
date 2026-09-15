@@ -23,7 +23,9 @@
 	#macro VIEWPORT_WIDTH  1920
 	#macro VIEWPORT_HEIGHT 1080
 
-	#macro MAX_LAYER_DEPTH -9999
+	#macro MAX_LAYER_DEPTH		-9999
+	#macro MENU_ELEMENT_DEPTH	-9998
+	#macro MENU_DEPTH			-9997
 
 	#macro SYSTEM_LAYER     "System"
 	#macro BACKGROUND_LAYER "Background"
@@ -86,7 +88,10 @@
 	#macro COL_MENU_OPTION_DISABLED		c_dkgray
 	
 #endregion
-#region menu misc
+#region menu
+	
+	#macro MENU_TYPE_TITLE	"menuTitle"
+	#macro MENU_TYPE_PAUSE	"menuPause"
 	
 	#macro MENU_FONT		"fConsol24"
 	#macro MENU_BUFFER_X	64

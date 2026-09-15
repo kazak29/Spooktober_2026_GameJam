@@ -7,6 +7,7 @@
 
 // State machine
 directorState = DirectorStateIdle;
+directorStatePrev = directorState;
 delayTimer = 0;
 
 

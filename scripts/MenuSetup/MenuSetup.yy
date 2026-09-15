@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"MenuSetup",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"MenuSetup",
+  "parent":{
+    "name":"Menu",
+    "path":"folders/Scripts/Menu.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

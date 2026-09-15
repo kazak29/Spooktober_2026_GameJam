@@ -1,4 +1,11 @@
-if global.midTransition || global.gamePaused exit;
+if global.midTransition exit;
+
+//unpause logic
+if oInputManager.pressed.pause && global.gamePaused && pageName == "main" {
+	instance_destroy();
+	with oMenuElement instance_destroy();
+}
+
 
 elementSelectedMain = noone;
 elementSelectedSub = noone;
@@ -22,10 +29,10 @@ var _mouseClickLockCheck = true;
 	var _elemMouseHoverGet = function(_id){
 		with _id {
 			//special collision
-			if elementData.elemType == MENU_ELEMENT_TYPE.SLIDER {
+			if (object_get_parent(object_index) == oMenuElementSub) && (elementData.elemType == MENU_ELEMENT_TYPE.SLIDER) {
 				var _x1 = bbox_left		- 64;
 				var _x2 = bbox_right	+ 64;
-				var _y1 = bbox_top		- 32;
+				var _y1 = bbox_top		- 24;
 				var _y2 = bbox_bottom	+ 24;
 					
 				return oInputManager.MouseHoverRectangle(_x1,_y1, _x2,_y2);
@@ -245,7 +252,7 @@ if instance_exists(elementSelectedSub) {
 }
 
 //cancel logic
-if (oInputManager.pressed.cancel) {
+if oInputManager.pressed.cancel {
 	var _prev = _page.pageNamePrev;
 	if is_string(_prev) && (_prev != "") {
 		pageName = _prev;

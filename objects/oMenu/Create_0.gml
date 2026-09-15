@@ -1,85 +1,7 @@
-//struct of structs, containing arrays of structs
-menuPages = {
-	main: {
-		pageNamePrev: "",
-		layout: MENU_LAYOUT.MAIN,
-		elemSpr: sPlaceholderButton,
-		elements: [
-			//start game
-			{
-				title:		global.uiData.menuStart,
-				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
-				scr:		MenuTransitionStart,
-				arg:		[rmStage, sqFadeOut, sqFadeIn],
-			},
-			//settings page
-			{
-				title:		global.uiData.menuSettings,
-				elemType:	MENU_ELEMENT_TYPE.PAGE_TRANSFER,
-				pageName:	"settings",
-			},
-			//credits
-			{
-				title:		global.uiData.menuCredits,
-				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
-				scr:		MenuTransitionStart,
-				arg:		[rmCredits, sqFadeOut, sqFadeIn],
-			},
-		],
-	},
-	settings: {
-		pageNamePrev: "main",
-		layout: MENU_LAYOUT.SETTINGS,
-		elemSpr: noone,
-		elements: [
-			//fullscreen
-			{
-				title:		global.uiData.menuFullscreen,
-				elemType:	MENU_ELEMENT_TYPE.TOGGLE,
-				scr:		MenuFullscreen,
-				arg:		window_get_fullscreen(),
-			},
-			//language
-			{
-				title:			global.uiData.menuLanguage,
-				elemType:		MENU_ELEMENT_TYPE.SHIFT,
-				scr:			MenuLanguage,
-				arg:			0,
-				argTitles:		[global.uiData.menuLanguageEng, global.uiData.menuLanguageTur, global.uiData.menuLanguageKaz],
-			},
-			//music volume
-			{
-				title:			global.uiData.menuVolMusic,
-				elemType:		MENU_ELEMENT_TYPE.SLIDER,
-				scr:			MenuVolSound,
-				arg:			global.volMusic,
-				argClamp:		[0,1],
-			},
-			//sound volume
-			{
-				title:			global.uiData.menuVolSound,
-				elemType:		MENU_ELEMENT_TYPE.SLIDER,
-				scr:			MenuVolSound,
-				arg:			global.volSound,
-				argClamp:		[0,1],
-			},
-			//dialogue volume
-			{
-				title:			global.uiData.menuVolDialogue,
-				elemType:		MENU_ELEMENT_TYPE.SLIDER,
-				scr:			MenuVolSound,
-				arg:			global.volTypeWriter,
-				argClamp:		[0,1],
-			},
-			//back to main page
-			{
-				title:		global.uiData.menuBack,
-				elemType:	MENU_ELEMENT_TYPE.PAGE_TRANSFER,
-				pageName:	"main",
-			},
-		],
-	},
-};
+depth = MENU_DEPTH;
+
+//set menu page data
+menuPages = global.menuPages[$ menuType] ?? {};
 
 pageName = "main";
 elementNum = 0;
@@ -90,6 +12,18 @@ mouseHoverMain = false;
 mouseHoverSub = false;
 mouseClickLock = false;
 
+//update current values for settings elements
+SettingsDataUpdate = function(_elemData) {
+	var _scr = struct_get(_elemData, "scr");
+	switch _scr {
+		case MenuFullscreen:		_elemData.arg = window_get_fullscreen();	break;
+		case MenuLanguage:			_elemData.arg = _elemData.arg;				break;	//add locale variable here
+		case MenuVolMusic:			_elemData.arg = global.volMusic;			break;
+		case MenuVolSound:			_elemData.arg = global.volSound;			break;
+		case MenuVolTypeWriter:		_elemData.arg = global.volTypeWriter;		break;
+	}
+}
+
 //create every main element on a page as object on screen
 PageUpdate = function(){
 	with oMenuElement instance_destroy();
@@ -97,12 +31,14 @@ PageUpdate = function(){
 	var _elems = menuPages[$ pageName].elements;
 	var _elemsL = array_length(_elems);
 	for (var i = 0; i < _elemsL; i++) {	
+		SettingsDataUpdate(_elems[i]);
+		
 		var _data = {
 			elementNum: i,
 			elementData: _elems[i],
 		};
 		
-		var _id = instance_create_layer(0,0, "System", oMenuElementMain, _data);
+		var _id = instance_create_layer(0,0, SYSTEM_LAYER, oMenuElementMain, _data);
 		_elems[i].elemId = _id;
 	}
 }

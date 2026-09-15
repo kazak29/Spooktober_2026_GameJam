@@ -2,11 +2,13 @@ Key,Text
 menuStart,Start
 menuCredits,Credits
 menuSettings,Settings
+menuResume,Resume
+menuToMain,Main Menu
 menuBack,Back
 menuFullscreen,Fullscreen
 menuVolSound,Sound
 menuVolMusic,Music
-menuVolDialogue,Dialogue Sound Effects
+menuVolTypeWriter,Dialogue Sound Effects
 menuLanguage,Language
 menuLanguageEng,English
 menuLanguageTur,Turkish

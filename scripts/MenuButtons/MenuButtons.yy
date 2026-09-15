@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"MenuScripts",
+  "%Name":"MenuButtons",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"MenuScripts",
+  "name":"MenuButtons",
   "parent":{
     "name":"Menu",
     "path":"folders/Scripts/Menu.yy",

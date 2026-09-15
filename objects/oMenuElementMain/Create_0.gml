@@ -7,13 +7,12 @@ scribId = scribble(_elem.title).starting_format(MENU_FONT, c_white);
 
 #region set parameters based on menu page layout and sprite
 	
-	var _elemsL	= array_length(_page.elements);
-	
 	var _bufferX = MENU_BUFFER_X;
 	var _bufferY = MENU_BUFFER_Y;
-	
 	var _offsetX = 0;
 	var _offsetY = 0;
+	var _startX = 0;
+	var _startY = 0;
 	
 	var _spr = _page.elemSpr;
 	if sprite_exists(_spr) {
@@ -30,18 +29,41 @@ scribId = scribble(_elem.title).starting_format(MENU_FONT, c_white);
 		
 	}
 	
-	var _startX	= VIEWPORT_WIDTH / 2;
-	var _startY	= (VIEWPORT_HEIGHT / 2);// - ((_elemsL-1)/2)*_bufferY;
-	
 	switch _page.layout {
 		
-		case MENU_LAYOUT.MAIN: {
+		case MENU_LAYOUT.TITLE_MAIN: {
+			_startX	= VIEWPORT_WIDTH / 2;
+			_startY	= (VIEWPORT_HEIGHT / 2);
+			
 			strX = _startX;
 			strY = _startY + elementNum*_bufferY;
 			scribId.align(fa_center, fa_middle);
 		} break;
+		case MENU_LAYOUT.TITLE_SETTINGS: {
+			_startX	= VIEWPORT_WIDTH / 2;
+			_startY	= (VIEWPORT_HEIGHT / 2);
+			
+			strX = _startX - _bufferX;
+			strY = _startY + elementNum*_bufferY;
+			scribId.align(fa_right, fa_middle);
+		} break;
 		
-		case MENU_LAYOUT.SETTINGS: {
+		case MENU_LAYOUT.PAUSE_MAIN: {
+			var _elemsL	= array_length(_page.elements);
+			
+			_startX	= VIEWPORT_WIDTH / 2;
+			_startY	= (VIEWPORT_HEIGHT / 2) - ((_elemsL-1)/2)*_bufferY;
+			
+			strX = _startX;
+			strY = _startY + elementNum*_bufferY;
+			scribId.align(fa_center, fa_middle);
+		} break;
+		case MENU_LAYOUT.PAUSE_SETTINGS: {
+			var _elemsL	= array_length(_page.elements);
+			
+			_startX	= VIEWPORT_WIDTH / 2;
+			_startY	= (VIEWPORT_HEIGHT / 2) - ((_elemsL-1)/2)*_bufferY;
+			
 			strX = _startX - _bufferX;
 			strY = _startY + elementNum*_bufferY;
 			scribId.align(fa_right, fa_middle);
