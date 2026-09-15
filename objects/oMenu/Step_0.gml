@@ -1,4 +1,11 @@
-if global.midTransition || global.gamePaused exit;
+if global.midTransition exit;
+
+//unpause logic
+if oInputManager.pressed.pause && global.gamePaused && pageName == "main" {
+	instance_destroy();
+	with oMenuElement instance_destroy();
+}
+
 
 elementSelectedMain = noone;
 elementSelectedSub = noone;
@@ -245,7 +252,7 @@ if instance_exists(elementSelectedSub) {
 }
 
 //cancel logic
-if (oInputManager.pressed.cancel) {
+if oInputManager.pressed.cancel {
 	var _prev = _page.pageNamePrev;
 	if is_string(_prev) && (_prev != "") {
 		pageName = _prev;

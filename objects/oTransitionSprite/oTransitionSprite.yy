@@ -1,21 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"oMenuElementShift",
+  "%Name":"oTransitionSprite",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oMenuElementShift",
+  "name":"oTransitionSprite",
   "overriddenProperties":[],
   "parent":{
-    "name":"Elements",
-    "path":"folders/Objects/RoomControllers/Menu/Elements.yy",
+    "name":"System",
+    "path":"folders/Objects/System.yy",
   },
-  "parentObjectId":{
-    "name":"oMenuElementSub",
-    "path":"objects/oMenuElementSub/oMenuElementSub.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -29,13 +25,14 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[
-    {"$GMObjectProperty":"v2","%Name":"side","filters":[],"listItems":[],"multiselect":false,"name":"side","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.0","varType":0,},
-  ],
+  "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sPixel",
+    "path":"sprites/sPixel/sPixel.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

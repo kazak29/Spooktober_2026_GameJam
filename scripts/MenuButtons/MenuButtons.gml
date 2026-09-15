@@ -24,5 +24,5 @@ function MenuVolTypeWriter(_arg){
 }
 
 function MenuResume(_arg){
-	//unpause
+	PauseDeactivate();
 }

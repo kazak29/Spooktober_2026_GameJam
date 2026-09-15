@@ -1,5 +1,6 @@
 //create the menu page data set - a main struct, from which menu pages will be pulled
 //menu page data is a struct of structs, containing arrays of structs
+//first page must be named main for pause check
 function MenuDataCreate() {
 	return {
 	

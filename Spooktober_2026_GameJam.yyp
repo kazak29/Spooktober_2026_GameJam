@@ -93,6 +93,7 @@
     {"id":{"name":"oMenuElementSub","path":"objects/oMenuElementSub/oMenuElementSub.yy",},},
     {"id":{"name":"oMenuElementToggle","path":"objects/oMenuElementToggle/oMenuElementToggle.yy",},},
     {"id":{"name":"oSplashScreenContoller","path":"objects/oSplashScreenContoller/oSplashScreenContoller.yy",},},
+    {"id":{"name":"oTransitionSprite","path":"objects/oTransitionSprite/oTransitionSprite.yy",},},
     {"id":{"name":"rmCredits","path":"rooms/rmCredits/rmCredits.yy",},},
     {"id":{"name":"rmInit","path":"rooms/rmInit/rmInit.yy",},},
     {"id":{"name":"rmMap","path":"rooms/rmMap/rmMap.yy",},},

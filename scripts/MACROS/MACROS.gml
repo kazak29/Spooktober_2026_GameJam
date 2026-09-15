@@ -23,7 +23,9 @@
 	#macro VIEWPORT_WIDTH  1920
 	#macro VIEWPORT_HEIGHT 1080
 
-	#macro MAX_LAYER_DEPTH -9999
+	#macro MAX_LAYER_DEPTH		-9999
+	#macro MENU_ELEMENT_DEPTH	-9998
+	#macro MENU_DEPTH			-9997
 
 	#macro SYSTEM_LAYER     "System"
 	#macro BACKGROUND_LAYER "Background"
