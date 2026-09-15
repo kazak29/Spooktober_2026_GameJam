@@ -36,7 +36,7 @@ PageUpdate = function(){
 			elementData: _elems[i],
 		};
 		
-		var _id = instance_create_layer(0,0, "System", oMenuElementMain, _data);
+		var _id = instance_create_layer(0,0, SYSTEM_LAYER, oMenuElementMain, _data);
 		_elems[i].elemId = _id;
 	}
 }
