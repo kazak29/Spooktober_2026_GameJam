@@ -82,9 +82,11 @@ for (var _key = 0; _key < array_length(input_keys); _key++)
 	}
 	
 	//mouse position check
-	if (mouseX != mouse_x) || (mouseY != mouse_y) {
-		mouseX = mouse_x;
-		mouseY = mouse_y;
+	var _mX = device_mouse_x_to_gui(0);
+	var _mY = device_mouse_y_to_gui(0);
+	if (mouseX != _mX || mouseY != _mY) {
+		mouseX = _mX;
+		mouseY = _mY;
 		using_gamepad = false;
 		using_mouse = true;
 	}

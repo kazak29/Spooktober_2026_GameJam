@@ -31,8 +31,8 @@ using_gamepad = false;
 
 
 //mouse
-mouseX = mouse_x;
-mouseY = mouse_y;
+mouseX = device_mouse_x_to_gui(0);
+mouseY = device_mouse_y_to_gui(0);
 using_mouse = false;
 
 MouseHoverRectangle = function(_x1,_y1,_x2,_y2, _fresh = true){
