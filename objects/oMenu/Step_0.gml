@@ -265,4 +265,7 @@ if oInputManager.pressed.cancel {
 if mouse_check_button(mb_any) && _mouseClickLockCheck mouseClickLock = true;
 
 //son
-menuPages.settings.elements[0].arg = window_get_fullscreen();
+switch menuType {
+	case MENU_TYPE_TITLE: menuPages.settings.elements[0].arg = window_get_fullscreen(); break;
+	case MENU_TYPE_PAUSE: menuPages.main.elements[0].arg = window_get_fullscreen();		break;
+}

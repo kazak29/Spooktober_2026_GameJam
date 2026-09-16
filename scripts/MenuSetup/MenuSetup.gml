@@ -1,6 +1,5 @@
 //create the menu page data set - a main struct, from which menu pages will be pulled
 //menu page data is a struct of structs, containing arrays of structs
-//first page must be named main for pause check
 function MenuDataCreate() {
 	return {
 	
@@ -9,6 +8,7 @@ function MenuDataCreate() {
 			main: {
 				pageNamePrev: "",
 				layout: MENU_LAYOUT.TITLE_MAIN,
+				font:	FONT_CONSOLE_24,
 				elemSpr: sPlaceholderButton,
 				elements: [
 					//start game
@@ -36,6 +36,7 @@ function MenuDataCreate() {
 			settings: {
 				pageNamePrev: "main",
 				layout: MENU_LAYOUT.TITLE_SETTINGS,
+				font:	FONT_CONSOLE_24,
 				elemSpr: noone,
 				elements: [
 					//fullscreen
@@ -91,34 +92,8 @@ function MenuDataCreate() {
 		menuPause: {
 			main: {
 				pageNamePrev: "",
-				layout: MENU_LAYOUT.PAUSE_MAIN,
-				elemSpr: sPlaceholderButton,
-				elements: [
-					//resume game
-					{
-						title:		global.uiData.menuResume,
-						elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
-						scr:		MenuResume,
-						arg:		[],
-					},
-					//settings page
-					{
-						title:		global.uiData.menuSettings,
-						elemType:	MENU_ELEMENT_TYPE.PAGE_TRANSFER,
-						pageName:	"settings",
-					},
-					//to main
-					{
-						title:		global.uiData.menuToMain,
-						elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
-						scr:		MenuTransitionStart,
-						arg:		[rmTitleScreen, sqFadeOut, sqFadeIn],
-					},
-				],
-			},
-			settings: {
-				pageNamePrev: "main",
-				layout: MENU_LAYOUT.PAUSE_SETTINGS,
+				layout: MENU_LAYOUT.PAUSE,
+				font:	FONT_CONSOLE_16,
 				elemSpr: noone,
 				elements: [
 					//fullscreen
@@ -160,11 +135,12 @@ function MenuDataCreate() {
 						arg:			global.volTypeWriter,
 						argClamp:		[0,1],
 					},
-					//back to main page
+					//to main
 					{
-						title:		global.uiData.menuBack,
-						elemType:	MENU_ELEMENT_TYPE.PAGE_TRANSFER,
-						pageName:	"main",
+						title:		global.uiData.menuToMain,
+						elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+						scr:		MenuTransitionStart,
+						arg:		[rmTitleScreen, sqFadeOut, sqFadeIn],
 					},
 				],
 			},

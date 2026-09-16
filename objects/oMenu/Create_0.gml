@@ -2,8 +2,6 @@ depth = MENU_DEPTH;
 
 //set menu page data
 menuPages = global.menuPages[$ menuType] ?? {};
-
-pageName = "main";
 elementNum = 0;
 
 elementSelectedMain = noone;
