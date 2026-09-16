@@ -6,8 +6,8 @@
   "name":"oMenuElementSub",
   "overriddenProperties":[],
   "parent":{
-    "name":"Menu",
-    "path":"folders/Objects/RoomControllers/Menu.yy",
+    "name":"ElementParents",
+    "path":"folders/Objects/RoomControllers/Menu/ElementParents.yy",
   },
   "parentObjectId":{
     "name":"oMenuElement",

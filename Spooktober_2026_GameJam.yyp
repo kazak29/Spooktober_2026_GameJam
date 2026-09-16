@@ -17,6 +17,7 @@
     {"$GMFolder":"","%Name":"RoomControllers","folderPath":"folders/Objects/RoomControllers.yy","name":"RoomControllers","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Menu","folderPath":"folders/Objects/RoomControllers/Menu.yy","name":"Menu","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Elements","folderPath":"folders/Objects/RoomControllers/Menu/Elements.yy","name":"Elements","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"ElementParents","folderPath":"folders/Objects/RoomControllers/Menu/ElementParents.yy","name":"ElementParents","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"ScreenPlay","folderPath":"folders/Objects/ScreenPlay.yy","name":"ScreenPlay","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"System","folderPath":"folders/Objects/System.yy","name":"System","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Rooms","folderPath":"folders/Rooms.yy","name":"Rooms","resourceType":"GMFolder","resourceVersion":"2.0",},

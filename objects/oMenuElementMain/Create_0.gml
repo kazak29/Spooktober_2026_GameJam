@@ -10,26 +10,17 @@ scribId = scribble(_elem.title).starting_format(strFont, c_white);
 
 #region set parameters based on menu page layout and sprite
 	
-	var _bufferX = MENU_BUFFER_X;
-	var _bufferY = MENU_BUFFER_Y;
-	var _offsetX = 0;
-	var _offsetY = 0;
 	var _startX = 0;
 	var _startY = 0;
+	var _bufferX = MENU_BUFFER_X;
+	var _bufferY = MENU_BUFFER_Y;
 	
 	var _spr = _page.elemSpr;
 	if sprite_exists(_spr) {
-		
 		sprite_index = _spr;
-		var _sprW = sprite_get_width(_spr);
-		var _sprH = sprite_get_height(_spr);
 		
-		_offsetX = sprite_get_xoffset(_spr) - _sprW/2;
-		_offsetY = sprite_get_yoffset(_spr) - _sprH/2;
-		
-		_bufferX += _sprW/2;
-		_bufferY += _sprH/2;
-		
+		_bufferX += sprite_get_width(_spr)/2;
+		_bufferY += sprite_get_height(_spr)/2;
 	}
 	
 	switch _page.layout {
@@ -53,9 +44,11 @@ scribId = scribble(_elem.title).starting_format(strFont, c_white);
 		
 		case MENU_LAYOUT.PAUSE: {
 			var _elemsL	= array_length(_page.elements);
+			_bufferX /= 4;
+			_bufferY /= 2;
 			
-			_startX	= VIEWPORT_WIDTH / 2;
-			_startY	= (VIEWPORT_HEIGHT / 2) - ((_elemsL-1)/2)*_bufferY;
+			_startX	= MENU_PAUSE_H_CENTER;
+			_startY	= MENU_PAUSE_V_TOP - ((_elemsL-1)/2)*_bufferY;
 			
 			strX = _startX - _bufferX;
 			strY = _startY + elementNum*_bufferY;
@@ -64,48 +57,21 @@ scribId = scribble(_elem.title).starting_format(strFont, c_white);
 		
 	}
 	
-	var _bbox = scribId.get_bbox(strX,strY);
-	x = _bbox.left + _bbox.width/2 + _offsetX;
-	y = _bbox.top + _bbox.height/2 + _offsetY;
+	MenuElementUpdateGeneralPosition();
 	
 #endregion
 #region create sub elements
 	
-	//fast creation
-	var _createSubToggle	= function(_x,_y, _side){			//side: 0 - false, 1 - true
-		var _data = {
-			mainId:			id,
-			elementNum:		elementNum,
-			elementData:	elementData,
-			strFont:		strFont,
-			side:			_side,
-		};
+	//fast creation (unique data provided as last argument)
+	var _createSub = function(_x,_y, _obj, _data = {}){
+		with _data {
+			mainId		=	other.id;
+			elementNum	=	other.elementNum;
+			elementData	=	other.elementData;
+			strFont		=	other.strFont;
+		}
 		
-		var _id = instance_create_layer(_x,_y, "System", oMenuElementToggle, _data);
-		array_push(subIds, _id);
-	}
-	var _createSubShift		= function(_x,_y, _side){			//side: 0 - left, 1 - center, 2 - right
-		var _data = {
-			mainId:			id,
-			elementNum:		elementNum,
-			elementData:	elementData,
-			strFont:		strFont,
-			side:			_side,
-		};
-		
-		var _id = instance_create_layer(_x,_y, "System", oMenuElementShift, _data);
-		array_push(subIds, _id);
-	}
-	var _createSubSlider	= function(_x,_y, _length = -1){	//length is in pixels, defaults to sprite width
-		var _data = {
-			mainId:			id,
-			elementNum:		elementNum,
-			elementData:	elementData,
-			strFont:		strFont,
-			sliderLength:	_length,
-		};
-		
-		var _id = instance_create_layer(_x,_y, "System", oMenuElementSlider, _data);
+		var _id = instance_create_layer(_x,_y, "System", _obj, _data);
 		array_push(subIds, _id);
 	}
 	
@@ -116,8 +82,8 @@ scribId = scribble(_elem.title).starting_format(strFont, c_white);
 			var _x = _startX + _bufferX;
 			var _y = _startY + elementNum*_bufferY;
 			
-			_createSubToggle(_x,				_y, false);
-			_createSubToggle(_x + _bufferX*2,	_y, true);
+			_createSub(_x, _y, oMenuElementToggle, {side: false});
+			_createSub(_x, _y, oMenuElementToggle, {side: true });
 		} break;
 		
 		case MENU_ELEMENT_TYPE.SHIFT: {
@@ -133,16 +99,16 @@ scribId = scribble(_elem.title).starting_format(strFont, c_white);
 			var _x = _startX + _bufferX + _strW/2 + MENU_BUFFER_X;
 			var _y = _startY + elementNum*_bufferY;
 			
-			_createSubShift(_x,	_y, 0);
-			_createSubShift(_x,	_y, 1);
-			_createSubShift(_x,	_y, 2);
+			_createSub(_x, _y, oMenuElementShift, {side: 0});
+			_createSub(_x, _y, oMenuElementShift, {side: 1});
+			_createSub(_x, _y, oMenuElementShift, {side: 2});
 		} break;
 		
 		case MENU_ELEMENT_TYPE.SLIDER: {
 			var _x = _startX + _bufferX;
 			var _y = _startY + elementNum*_bufferY;
 			
-			_createSubSlider(_x, _y);
+			_createSub(_x, _y, oMenuElementSlider, {sliderLength: -1});
 		} break;
 	
 	}

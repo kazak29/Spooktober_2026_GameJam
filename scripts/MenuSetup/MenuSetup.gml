@@ -103,14 +103,6 @@ function MenuDataCreate() {
 						scr:		MenuFullscreen,
 						arg:		window_get_fullscreen(),
 					},
-					//language
-					{
-						title:			global.uiData.menuLanguage,
-						elemType:		MENU_ELEMENT_TYPE.SHIFT,
-						scr:			MenuLanguage,
-						arg:			0,
-						argTitles:		[global.uiData.menuLanguageEng, global.uiData.menuLanguageTur, global.uiData.menuLanguageKaz],
-					},
 					//music volume
 					{
 						title:			global.uiData.menuVolMusic,
@@ -151,11 +143,12 @@ function MenuDataCreate() {
 
 
 //menu element position change based on whether a sprite is used or not
-function MenuSubElementUpdateGeneralPosition(_scribId, _spr = noone){
+function MenuElementUpdateGeneralPosition(){
 	var _offsetX = 0;
 	var _offsetY = 0;
+	
+	var _spr = sprite_index;
 	if sprite_exists(_spr) {
-		sprite_index = _spr;
 			
 		var _sprW = sprite_get_width(_spr);
 		var _sprH = sprite_get_height(_spr);
@@ -165,7 +158,7 @@ function MenuSubElementUpdateGeneralPosition(_scribId, _spr = noone){
 	
 	}
 
-	var _bbox = _scribId.get_bbox(strX,strY);
+	var _bbox = scribId.get_bbox(strX,strY);
 	x = _bbox.left + _bbox.width/2 + _offsetX;
 	y = _bbox.top + _bbox.height/2 + _offsetY;
 }
