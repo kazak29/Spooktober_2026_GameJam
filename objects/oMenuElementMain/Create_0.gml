@@ -108,7 +108,7 @@ scribId = scribble(_elem.title).starting_format(strFont, c_white);
 			var _x = _startX + _bufferX;
 			var _y = _startY + elementNum*_bufferY;
 			
-			_createSub(_x, _y, oMenuElementSlider, {sliderLength: -1});
+			_createSub(_x, _y, oMenuElementSlider);
 		} break;
 	
 	}
