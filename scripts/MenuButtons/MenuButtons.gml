@@ -24,5 +24,6 @@ function MenuVolTypeWriter(_arg){
 }
 
 function MenuResume(_arg){
-	PauseDeactivate();
+	with oMenu instance_destroy();
+	with oMenuElement instance_destroy();
 }

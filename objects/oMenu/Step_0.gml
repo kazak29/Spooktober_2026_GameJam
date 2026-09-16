@@ -1,12 +1,4 @@
 if global.midTransition exit;
-
-//unpause logic
-if oInputManager.pressed.pause && global.gamePaused && pageName == "main" {
-	instance_destroy();
-	with oMenuElement instance_destroy();
-}
-
-
 elementSelectedMain = noone;
 elementSelectedSub = noone;
 mouseHoverMain = false;
