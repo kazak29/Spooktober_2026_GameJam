@@ -2,31 +2,25 @@ event_inherited();
 if !instance_exists(oMenu) exit;
 var _page = oMenu.menuPages[$ oMenu.pageName];
 
+strFont = _page.font;
+if !is_string(strFont) || !font_exists(asset_get_index(strFont)) strFont = FONT_CONSOLE_24;
+
 var _elem = elementData;
-scribId = scribble(_elem.title).starting_format(MENU_FONT, c_white);
+scribId = scribble(_elem.title).starting_format(strFont, c_white);
 
 #region set parameters based on menu page layout and sprite
 	
-	var _bufferX = MENU_BUFFER_X;
-	var _bufferY = MENU_BUFFER_Y;
-	var _offsetX = 0;
-	var _offsetY = 0;
 	var _startX = 0;
 	var _startY = 0;
+	var _bufferX = MENU_BUFFER_X;
+	var _bufferY = MENU_BUFFER_Y;
 	
 	var _spr = _page.elemSpr;
 	if sprite_exists(_spr) {
-		
 		sprite_index = _spr;
-		var _sprW = sprite_get_width(_spr);
-		var _sprH = sprite_get_height(_spr);
 		
-		_offsetX = sprite_get_xoffset(_spr) - _sprW/2;
-		_offsetY = sprite_get_yoffset(_spr) - _sprH/2;
-		
-		_bufferX += _sprW/2;
-		_bufferY += _sprH/2;
-		
+		_bufferX += sprite_get_width(_spr)/2;
+		_bufferY += sprite_get_height(_spr)/2;
 	}
 	
 	switch _page.layout {
@@ -48,21 +42,38 @@ scribId = scribble(_elem.title).starting_format(MENU_FONT, c_white);
 			scribId.align(fa_right, fa_middle);
 		} break;
 		
-		case MENU_LAYOUT.PAUSE_MAIN: {
+		
+		case MENU_LAYOUT.PAUSE_TOP: {
 			var _elemsL	= array_length(_page.elements);
+			_bufferX /= 4;
+			_bufferY /= 2;
 			
-			_startX	= VIEWPORT_WIDTH / 2;
-			_startY	= (VIEWPORT_HEIGHT / 2) - ((_elemsL-1)/2)*_bufferY;
+			_startX	= MENU_PAUSE_X;
+			_startY	= MENU_PAUSE_Y;
 			
-			strX = _startX;
+			strX = _startX - _bufferX;
 			strY = _startY + elementNum*_bufferY;
-			scribId.align(fa_center, fa_middle);
+			scribId.align(fa_right, fa_middle);
 		} break;
-		case MENU_LAYOUT.PAUSE_SETTINGS: {
+		case MENU_LAYOUT.PAUSE_MIDDLE: {
 			var _elemsL	= array_length(_page.elements);
+			_bufferX /= 4;
+			_bufferY /= 2;
 			
-			_startX	= VIEWPORT_WIDTH / 2;
-			_startY	= (VIEWPORT_HEIGHT / 2) - ((_elemsL-1)/2)*_bufferY;
+			_startX	= MENU_PAUSE_X;
+			_startY	= MENU_PAUSE_Y - ((_elemsL-1)/2)*_bufferY;
+			
+			strX = _startX - _bufferX;
+			strY = _startY + elementNum*_bufferY;
+			scribId.align(fa_right, fa_middle);
+		} break;
+		case MENU_LAYOUT.PAUSE_BOTTOM: {
+			var _elemsL	= array_length(_page.elements);
+			_bufferX /= 4;
+			_bufferY /= 2;
+			
+			_startX	= MENU_PAUSE_X;
+			_startY	= MENU_PAUSE_Y - ((_elemsL-1))*_bufferY;
 			
 			strX = _startX - _bufferX;
 			strY = _startY + elementNum*_bufferY;
@@ -71,46 +82,32 @@ scribId = scribble(_elem.title).starting_format(MENU_FONT, c_white);
 		
 	}
 	
-	var _bbox = scribId.get_bbox(strX,strY);
-	x = _bbox.left + _bbox.width/2 + _offsetX;
-	y = _bbox.top + _bbox.height/2 + _offsetY;
+	MenuElementPositionUpdate();
 	
 #endregion
 
+#region update sub elements
+	
+	UpdateShift = function(){
+		if elementData.elemType != MENU_ELEMENT_TYPE.SHIFT exit;
+		with subIds[1] TextUpdate();
+		with subIds[0] PositionUpdate();
+		with subIds[2] PositionUpdate();
+	}
+	
+#endregion
 #region create sub elements
 	
-	//fast creation
-	var _createSubToggle	= function(_x,_y, _side){			//side: 0 - false, 1 - true
-		var _data = {
-			mainId:			id,
-			elementNum:		elementNum,
-			elementData:	elementData,
-			side:			_side,
-		};
+	//fast creation (unique data provided as last argument)
+	var _createSub = function(_x,_y, _obj, _data = {}){
+		with _data {
+			mainId		=	other.id;
+			elementNum	=	other.elementNum;
+			elementData	=	other.elementData;
+			strFont		=	other.strFont;
+		}
 		
-		var _id = instance_create_layer(_x,_y, "System", oMenuElementToggle, _data);
-		array_push(subIds, _id);
-	}
-	var _createSubShift		= function(_x,_y, _side){			//side: 0 - left, 1 - center, 2 - right
-		var _data = {
-			mainId:			id,
-			elementNum:		elementNum,
-			elementData:	elementData,
-			side:			_side,
-		};
-		
-		var _id = instance_create_layer(_x,_y, "System", oMenuElementShift, _data);
-		array_push(subIds, _id);
-	}
-	var _createSubSlider	= function(_x,_y, _length = -1){	//length is in pixels, defaults to sprite width
-		var _data = {
-			mainId:			id,
-			elementNum:		elementNum,
-			elementData:	elementData,
-			sliderLength:	_length,
-		};
-		
-		var _id = instance_create_layer(_x,_y, "System", oMenuElementSlider, _data);
+		var _id = instance_create_layer(_x,_y, "System", _obj, _data);
 		array_push(subIds, _id);
 	}
 	
@@ -121,8 +118,8 @@ scribId = scribble(_elem.title).starting_format(MENU_FONT, c_white);
 			var _x = _startX + _bufferX;
 			var _y = _startY + elementNum*_bufferY;
 			
-			_createSubToggle(_x,				_y, false);
-			_createSubToggle(_x + _bufferX*2,	_y, true);
+			_createSub(_x, _y, oMenuElementToggle, {side: false});
+			_createSub(_x, _y, oMenuElementToggle, {side: true });
 		} break;
 		
 		case MENU_ELEMENT_TYPE.SHIFT: {
@@ -130,7 +127,7 @@ scribId = scribble(_elem.title).starting_format(MENU_FONT, c_white);
 			//check which text is the widest
 			var _strW = 0;
 			for (var i = 0; i < array_length(_elem.argTitles); i++) {
-				var _scribId = scribble(_elem.argTitles[i]).starting_format(MENU_FONT, c_white);
+				var _scribId = scribble(_elem.argTitles[i]).starting_format(strFont, c_white);
 				var _scribW = _scribId.get_width();
 				_strW = (_scribW > _strW) ? _scribW : _strW;
 			}
@@ -138,30 +135,20 @@ scribId = scribble(_elem.title).starting_format(MENU_FONT, c_white);
 			var _x = _startX + _bufferX + _strW/2 + MENU_BUFFER_X;
 			var _y = _startY + elementNum*_bufferY;
 			
-			_createSubShift(_x,	_y, 0);
-			_createSubShift(_x,	_y, 1);
-			_createSubShift(_x,	_y, 2);
+			_createSub(_x, _y, oMenuElementShift, {side: 0});
+			_createSub(_x, _y, oMenuElementShift, {side: 1});
+			_createSub(_x, _y, oMenuElementShift, {side: 2});
+			
+			UpdateShift();
 		} break;
 		
 		case MENU_ELEMENT_TYPE.SLIDER: {
 			var _x = _startX + _bufferX;
 			var _y = _startY + elementNum*_bufferY;
 			
-			_createSubSlider(_x, _y);
+			_createSub(_x, _y, oMenuElementSlider);
 		} break;
 	
 	}
-	
-#endregion
-#region update sub elements
-	
-	//update shift elements
-	UpdateShift = function(){
-		if elementData.elemType != MENU_ELEMENT_TYPE.SHIFT exit;
-		with subIds[1] TextUpdate();
-		with subIds[0] PositionUpdate();
-		with subIds[2] PositionUpdate();
-	}
-	UpdateShift();	//putting it here instead of inside element creation code for visual convinience
 	
 #endregion

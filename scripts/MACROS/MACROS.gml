@@ -93,8 +93,10 @@
 	#macro MENU_TYPE_TITLE	"menuTitle"
 	#macro MENU_TYPE_PAUSE	"menuPause"
 	
-	#macro MENU_FONT		"fConsol24"
 	#macro MENU_BUFFER_X	64
 	#macro MENU_BUFFER_Y	80
+	
+	#macro MENU_PAUSE_X	1536
+	#macro MENU_PAUSE_Y	864
 	
 #endregion

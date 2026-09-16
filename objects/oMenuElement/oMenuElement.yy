@@ -9,8 +9,8 @@
   "name":"oMenuElement",
   "overriddenProperties":[],
   "parent":{
-    "name":"Menu",
-    "path":"folders/Objects/RoomControllers/Menu.yy",
+    "name":"ElementParents",
+    "path":"folders/Objects/RoomControllers/Menu/ElementParents.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -31,6 +31,7 @@
     {"$GMObjectProperty":"v2","%Name":"elementData","filters":[],"listItems":[],"multiselect":false,"name":"elementData","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.0","varType":0,},
     {"$GMObjectProperty":"v2","%Name":"strX","filters":[],"listItems":[],"multiselect":false,"name":"strX","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.0","varType":0,},
     {"$GMObjectProperty":"v2","%Name":"strY","filters":[],"listItems":[],"multiselect":false,"name":"strY","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.0","varType":0,},
+    {"$GMObjectProperty":"v2","%Name":"strFont","filters":[],"listItems":[],"multiselect":false,"name":"strFont","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"FONT_CONSOLE_24","varType":4,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

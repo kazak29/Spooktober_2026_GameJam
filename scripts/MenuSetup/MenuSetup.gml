@@ -1,16 +1,17 @@
 //create the menu page data set - a main struct, from which menu pages will be pulled
 //menu page data is a struct of structs, containing arrays of structs
-//first page must be named main for pause check
 function MenuDataCreate() {
 	return {
 	
 		//main menu
 		menuTitle: {
 			main: {
-				pageNamePrev: "",
-				layout: MENU_LAYOUT.TITLE_MAIN,
-				elemSpr: sPlaceholderButton,
-				elements: [
+				pageNamePrev:	"",
+				layout:			MENU_LAYOUT.TITLE_MAIN,
+				font:			FONT_CONSOLE_24,
+				bg:				noone,
+				elemSpr:		sPlaceholderButton,
+				elements:		[
 					//start game
 					{
 						title:		global.uiData.menuStart,
@@ -34,10 +35,12 @@ function MenuDataCreate() {
 				],
 			},
 			settings: {
-				pageNamePrev: "main",
-				layout: MENU_LAYOUT.TITLE_SETTINGS,
-				elemSpr: noone,
-				elements: [
+				pageNamePrev:	"main",
+				layout:			MENU_LAYOUT.TITLE_SETTINGS,
+				font:			FONT_CONSOLE_24,
+				bg:				noone,
+				elemSpr:		noone,
+				elements:		[
 					//fullscreen
 					{
 						title:		global.uiData.menuFullscreen,
@@ -90,35 +93,19 @@ function MenuDataCreate() {
 		//pause menu
 		menuPause: {
 			main: {
-				pageNamePrev: "",
-				layout: MENU_LAYOUT.PAUSE_MAIN,
-				elemSpr: sPlaceholderButton,
-				elements: [
-					//resume game
-					{
-						title:		global.uiData.menuResume,
-						elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
-						scr:		MenuResume,
-						arg:		[],
-					},
-					//settings page
-					{
-						title:		global.uiData.menuSettings,
-						elemType:	MENU_ELEMENT_TYPE.PAGE_TRANSFER,
-						pageName:	"settings",
-					},
-					//to main
-					{
-						title:		global.uiData.menuToMain,
-						elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
-						scr:		MenuTransitionStart,
-						arg:		[rmTitleScreen, sqFadeOut, sqFadeIn],
-					},
-				],
-			},
-			settings: {
-				pageNamePrev: "main",
-				layout: MENU_LAYOUT.PAUSE_SETTINGS,
+				pageNamePrev:	"",
+				layout:			MENU_LAYOUT.PAUSE_MIDDLE,	//will change position around MENU_PAUSE_X and _Y coordinates, which are set as macros
+				font:			FONT_CONSOLE_16,
+				bg:				{
+					active: true,
+					col:	c_blue,
+					alpha:	0.75,
+					
+					x1: MENU_PAUSE_X,
+					x2: MENU_PAUSE_X,
+					y1: MENU_PAUSE_Y,
+					y2: MENU_PAUSE_Y,
+				},
 				elemSpr: noone,
 				elements: [
 					//fullscreen
@@ -127,14 +114,6 @@ function MenuDataCreate() {
 						elemType:	MENU_ELEMENT_TYPE.TOGGLE,
 						scr:		MenuFullscreen,
 						arg:		window_get_fullscreen(),
-					},
-					//language
-					{
-						title:			global.uiData.menuLanguage,
-						elemType:		MENU_ELEMENT_TYPE.SHIFT,
-						scr:			MenuLanguage,
-						arg:			0,
-						argTitles:		[global.uiData.menuLanguageEng, global.uiData.menuLanguageTur, global.uiData.menuLanguageKaz],
 					},
 					//music volume
 					{
@@ -160,11 +139,12 @@ function MenuDataCreate() {
 						arg:			global.volTypeWriter,
 						argClamp:		[0,1],
 					},
-					//back to main page
+					//to main
 					{
-						title:		global.uiData.menuBack,
-						elemType:	MENU_ELEMENT_TYPE.PAGE_TRANSFER,
-						pageName:	"main",
+						title:		global.uiData.menuToMain,
+						elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+						scr:		MenuTransitionStart,
+						arg:		[rmTitleScreen, sqFadeOut, sqFadeIn],
 					},
 				],
 			},
@@ -175,11 +155,12 @@ function MenuDataCreate() {
 
 
 //menu element position change based on whether a sprite is used or not
-function MenuSubElementUpdateGeneralPosition(_scribId, _spr = noone){
+function MenuElementPositionUpdate(){
 	var _offsetX = 0;
 	var _offsetY = 0;
+	
+	var _spr = sprite_index;
 	if sprite_exists(_spr) {
-		sprite_index = _spr;
 			
 		var _sprW = sprite_get_width(_spr);
 		var _sprH = sprite_get_height(_spr);
@@ -189,7 +170,7 @@ function MenuSubElementUpdateGeneralPosition(_scribId, _spr = noone){
 	
 	}
 
-	var _bbox = _scribId.get_bbox(strX,strY);
+	var _bbox = scribId.get_bbox(strX,strY);
 	x = _bbox.left + _bbox.width/2 + _offsetX;
 	y = _bbox.top + _bbox.height/2 + _offsetY;
 }

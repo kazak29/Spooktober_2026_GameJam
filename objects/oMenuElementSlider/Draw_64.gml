@@ -21,16 +21,17 @@ if _selected {
 }
 if _selectedAlone {
 	//check if mouse is over the circle itself
-	var _rad = sprite_get_width(_circleSpr)/2;
+	var _scale = (image_xscale+image_yscale)/2;
+	var _rad = sprite_get_width(_circleSpr)*_scale/2;
 	if oInputManager.MouseHoverCircle(_circleX, _circleY, _rad) {
 		_c = COL_MENU_OPTION_HOVER;
 		_frame = 2;
 	}
 }
 
-draw_sprite(sSliderCircle, _frame, _circleX, _circleY);
+draw_sprite_ext(sSliderCircle, _frame, _circleX, _circleY, image_xscale,image_yscale, 0,c_white,image_alpha);
 
-draw_set_font(asset_get_index(MENU_FONT));
+draw_set_font(asset_get_index(strFont));
 draw_set_halign(fa_left);
 draw_set_valign(fa_middle);
-draw_text_colour(x + sprite_width*1.2, y, $"{round(_circlePerc*100)}%", _cText,_cText,_cText,_cText, image_alpha);
+draw_text_colour(percentX, y, $"{round(_circlePerc*100)}%", _cText,_cText,_cText,_cText, image_alpha);

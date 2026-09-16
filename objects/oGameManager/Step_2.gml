@@ -6,13 +6,18 @@ if oInputManager.pressed.pause {
 		room == rmCredits || 
 		room == rmSplashScreen
 	);
-	var _exceptionMenu = instance_exists(oMenu);		//menu destroys itself when unpausing from there
-	var _exception = _exceptionRoom || _exceptionMenu;
+	var _exception = _exceptionRoom;
 	
 	
 	if (!global.midTransition && !_exception) {
 		
-		if !global.gamePaused PauseActivate(); else PauseDeactivate();
+		var _menuPresent = false;
+		with oMenu {
+			_menuPresent = true;
+			instance_destroy();
+			with oMenuElement instance_destroy();
+		}
+		if !_menuPresent instance_create_layer(0,0, SYSTEM_LAYER, oMenu, {menuType: MENU_TYPE_PAUSE});
 		
 	}
 	

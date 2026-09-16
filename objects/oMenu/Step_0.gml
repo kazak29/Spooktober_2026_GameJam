@@ -1,12 +1,4 @@
 if global.midTransition exit;
-
-//unpause logic
-if oInputManager.pressed.pause && global.gamePaused && pageName == "main" {
-	instance_destroy();
-	with oMenuElement instance_destroy();
-}
-
-
 elementSelectedMain = noone;
 elementSelectedSub = noone;
 mouseHoverMain = false;
@@ -30,10 +22,12 @@ var _mouseClickLockCheck = true;
 		with _id {
 			//special collision
 			if (object_get_parent(object_index) == oMenuElementSub) && (elementData.elemType == MENU_ELEMENT_TYPE.SLIDER) {
-				var _x1 = bbox_left		- 64;
-				var _x2 = bbox_right	+ 64;
-				var _y1 = bbox_top		- 24;
-				var _y2 = bbox_bottom	+ 24;
+				var _scale = (image_xscale+image_yscale)/2;
+				
+				var _x1 = bbox_left		- 64*_scale;
+				var _x2 = bbox_right	+ 64*_scale;
+				var _y1 = bbox_top		- 24*_scale;
+				var _y2 = bbox_bottom	+ 24*_scale;
 					
 				return oInputManager.MouseHoverRectangle(_x1,_y1, _x2,_y2);
 			}
@@ -265,4 +259,7 @@ if oInputManager.pressed.cancel {
 if mouse_check_button(mb_any) && _mouseClickLockCheck mouseClickLock = true;
 
 //son
-menuPages.settings.elements[0].arg = window_get_fullscreen();
+switch menuType {
+	case MENU_TYPE_TITLE: menuPages.settings.elements[0].arg = window_get_fullscreen(); break;
+	case MENU_TYPE_PAUSE: menuPages.main.elements[0].arg = window_get_fullscreen();		break;
+}

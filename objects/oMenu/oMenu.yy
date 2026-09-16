@@ -30,6 +30,7 @@
   "properties":[
     {"$GMObjectProperty":"v2","%Name":"menuType","filters":[],"listItems":[],"multiselect":false,"name":"menuType","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"MENU_TYPE_TITLE","varType":4,},
     {"$GMObjectProperty":"v2","%Name":"menuPages","filters":[],"listItems":[],"multiselect":false,"name":"menuPages","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"{}","varType":4,},
+    {"$GMObjectProperty":"v2","%Name":"pageName","filters":[],"listItems":[],"multiselect":false,"name":"pageName","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"main","varType":2,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

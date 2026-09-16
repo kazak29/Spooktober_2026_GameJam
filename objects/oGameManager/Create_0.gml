@@ -23,11 +23,6 @@
 	global.ambient = {};
 	
 #endregion
-#region general
-
-	global.gamePaused = false;
-	
-#endregion
 #region transition
 
 	global.midTransition = false;
