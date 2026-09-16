@@ -42,13 +42,38 @@ scribId = scribble(_elem.title).starting_format(strFont, c_white);
 			scribId.align(fa_right, fa_middle);
 		} break;
 		
-		case MENU_LAYOUT.PAUSE: {
+		
+		case MENU_LAYOUT.PAUSE_TOP: {
 			var _elemsL	= array_length(_page.elements);
 			_bufferX /= 4;
 			_bufferY /= 2;
 			
-			_startX	= MENU_PAUSE_H_CENTER;
-			_startY	= MENU_PAUSE_V_TOP - ((_elemsL-1)/2)*_bufferY;
+			_startX	= MENU_PAUSE_X;
+			_startY	= MENU_PAUSE_Y;
+			
+			strX = _startX - _bufferX;
+			strY = _startY + elementNum*_bufferY;
+			scribId.align(fa_right, fa_middle);
+		} break;
+		case MENU_LAYOUT.PAUSE_MIDDLE: {
+			var _elemsL	= array_length(_page.elements);
+			_bufferX /= 4;
+			_bufferY /= 2;
+			
+			_startX	= MENU_PAUSE_X;
+			_startY	= MENU_PAUSE_Y - ((_elemsL-1)/2)*_bufferY;
+			
+			strX = _startX - _bufferX;
+			strY = _startY + elementNum*_bufferY;
+			scribId.align(fa_right, fa_middle);
+		} break;
+		case MENU_LAYOUT.PAUSE_BOTTOM: {
+			var _elemsL	= array_length(_page.elements);
+			_bufferX /= 4;
+			_bufferY /= 2;
+			
+			_startX	= MENU_PAUSE_X;
+			_startY	= MENU_PAUSE_Y - ((_elemsL-1))*_bufferY;
 			
 			strX = _startX - _bufferX;
 			strY = _startY + elementNum*_bufferY;
@@ -57,7 +82,18 @@ scribId = scribble(_elem.title).starting_format(strFont, c_white);
 		
 	}
 	
-	MenuElementUpdateGeneralPosition();
+	MenuElementPositionUpdate();
+	
+#endregion
+
+#region update sub elements
+	
+	UpdateShift = function(){
+		if elementData.elemType != MENU_ELEMENT_TYPE.SHIFT exit;
+		with subIds[1] TextUpdate();
+		with subIds[0] PositionUpdate();
+		with subIds[2] PositionUpdate();
+	}
 	
 #endregion
 #region create sub elements
@@ -102,6 +138,8 @@ scribId = scribble(_elem.title).starting_format(strFont, c_white);
 			_createSub(_x, _y, oMenuElementShift, {side: 0});
 			_createSub(_x, _y, oMenuElementShift, {side: 1});
 			_createSub(_x, _y, oMenuElementShift, {side: 2});
+			
+			UpdateShift();
 		} break;
 		
 		case MENU_ELEMENT_TYPE.SLIDER: {
@@ -112,17 +150,5 @@ scribId = scribble(_elem.title).starting_format(strFont, c_white);
 		} break;
 	
 	}
-	
-#endregion
-#region update sub elements
-	
-	//update shift elements
-	UpdateShift = function(){
-		if elementData.elemType != MENU_ELEMENT_TYPE.SHIFT exit;
-		with subIds[1] TextUpdate();
-		with subIds[0] PositionUpdate();
-		with subIds[2] PositionUpdate();
-	}
-	UpdateShift();	//putting it here instead of inside element creation code for visual convinience
 	
 #endregion

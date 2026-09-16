@@ -6,11 +6,12 @@ function MenuDataCreate() {
 		//main menu
 		menuTitle: {
 			main: {
-				pageNamePrev: "",
-				layout: MENU_LAYOUT.TITLE_MAIN,
-				font:	FONT_CONSOLE_24,
-				elemSpr: sPlaceholderButton,
-				elements: [
+				pageNamePrev:	"",
+				layout:			MENU_LAYOUT.TITLE_MAIN,
+				font:			FONT_CONSOLE_24,
+				bg:				noone,
+				elemSpr:		sPlaceholderButton,
+				elements:		[
 					//start game
 					{
 						title:		global.uiData.menuStart,
@@ -34,11 +35,12 @@ function MenuDataCreate() {
 				],
 			},
 			settings: {
-				pageNamePrev: "main",
-				layout: MENU_LAYOUT.TITLE_SETTINGS,
-				font:	FONT_CONSOLE_24,
-				elemSpr: noone,
-				elements: [
+				pageNamePrev:	"main",
+				layout:			MENU_LAYOUT.TITLE_SETTINGS,
+				font:			FONT_CONSOLE_24,
+				bg:				noone,
+				elemSpr:		noone,
+				elements:		[
 					//fullscreen
 					{
 						title:		global.uiData.menuFullscreen,
@@ -91,9 +93,19 @@ function MenuDataCreate() {
 		//pause menu
 		menuPause: {
 			main: {
-				pageNamePrev: "",
-				layout: MENU_LAYOUT.PAUSE,
-				font:	FONT_CONSOLE_16,
+				pageNamePrev:	"",
+				layout:			MENU_LAYOUT.PAUSE_MIDDLE,	//will change position around MENU_PAUSE_X and _Y coordinates, which are set as macros
+				font:			FONT_CONSOLE_16,
+				bg:				{
+					active: true,
+					col:	c_blue,
+					alpha:	0.75,
+					
+					x1: MENU_PAUSE_X,
+					x2: MENU_PAUSE_X,
+					y1: MENU_PAUSE_Y,
+					y2: MENU_PAUSE_Y,
+				},
 				elemSpr: noone,
 				elements: [
 					//fullscreen
@@ -143,7 +155,7 @@ function MenuDataCreate() {
 
 
 //menu element position change based on whether a sprite is used or not
-function MenuElementUpdateGeneralPosition(){
+function MenuElementPositionUpdate(){
 	var _offsetX = 0;
 	var _offsetY = 0;
 	

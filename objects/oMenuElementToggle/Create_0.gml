@@ -5,10 +5,10 @@ if array_length(mainId.subIds) > 0 {
 	var _off = mainId.subIds[0];
 	
 	if sprite_exists(_off.sprite_index) {
-		x += _off.sprite_width*1.5;
+		x += _off.sprite_width*1.8;
 	} else {
-		var _bbox = _off.scribId.get_bbox();
-		x += _bbox.width*1.5;
+		var _bbox = _off.scribId.get_bbox(_off.strX, _off.strY);
+		x += _bbox.width*1.8;
 	}
 }
 
@@ -18,4 +18,4 @@ scribId = scribble(_text).starting_format(strFont, c_white).align(fa_left, fa_mi
 
 strX = x;
 strY = y;
-MenuElementUpdateGeneralPosition();
+MenuElementPositionUpdate();

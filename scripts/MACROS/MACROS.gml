@@ -96,7 +96,7 @@
 	#macro MENU_BUFFER_X	64
 	#macro MENU_BUFFER_Y	80
 	
-	#macro MENU_PAUSE_H_CENTER	1536
-	#macro MENU_PAUSE_V_TOP		864
+	#macro MENU_PAUSE_X	1536
+	#macro MENU_PAUSE_Y	864
 	
 #endregion
