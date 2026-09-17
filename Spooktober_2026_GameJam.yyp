@@ -280,6 +280,7 @@
     {"id":{"name":"sPlaceholderChoice","path":"sprites/sPlaceholderChoice/sPlaceholderChoice.yy",},},
     {"id":{"name":"sPlaceholderMainCharacter","path":"sprites/sPlaceholderMainCharacter/sPlaceholderMainCharacter.yy",},},
     {"id":{"name":"sPlaceholderTitleArt","path":"sprites/sPlaceholderTitleArt/sPlaceholderTitleArt.yy",},},
+    {"id":{"name":"sShay","path":"sprites/sShay/sShay.yy",},},
     {"id":{"name":"sSliderCircle","path":"sprites/sSliderCircle/sSliderCircle.yy",},},
     {"id":{"name":"sSliderLine","path":"sprites/sSliderLine/sSliderLine.yy",},},
     {"id":{"name":"sSplashScreen","path":"sprites/sSplashScreen/sSplashScreen.yy",},},
