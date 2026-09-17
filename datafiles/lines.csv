@@ -1,25 +1,25 @@
 Sequence ID,Line Title,Line Text
+introScene1_line1,Spook,"This week, we moved into a new house with my family."
+introScene1_line1,Spook,Everyone has been so busy unpacking...
+introScene1_line1,Spook,Me?
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
 scene1_dialogue1,Rocket,Hi Kazak!
 scene1_dialogue1,Kazak,Hey Rocket...
 scene1_dialogue1,Rocket,What's wrong?
 scene1_dialogue1,Kazak,It's a long story...
 scene1_prompt1,,What will you say to Kazak?
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
 ,,
 lineSeqTest,Colors,"white white [c_yellow]yellow yellow[/c] white white [rainbow]rainbow rainbow[/rainbow] white white [cycle,241,0,128]cycle text[/cycle] [alpha,0.5]transparent text [alpha,1] white white"
 lineSeqTest,Delay,"normal text normal text [delay, 1000]delayed text delayed text [delay, 500][speed, 3]fast text fast text fast text fast text fast text fast text[/speed] [delay, 2000]normal text normal text"

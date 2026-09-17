@@ -60,6 +60,12 @@
 	#macro FONT_CONSOLE_24 "fConsol24"
 
 #endregion
+#region Characters
+	
+	#macro SPOOK "Spook"
+	#macro SHAY  "Shay"
+	
+#endregion
 #region Screen Play
 	
 	#macro SCENE_FADE_SPEED 0.03
