@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"IntroScene",
+  "%Name":"GetIntroScenes",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"IntroScene",
+  "name":"GetIntroScenes",
   "parent":{
     "name":"Intro",
     "path":"folders/Scripts/Loading/Scenes/Intro.yy",

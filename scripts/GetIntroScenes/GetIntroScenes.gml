@@ -180,8 +180,30 @@ function GetIntroScenes ()
 				introScene7_line4: {
 					nodeType: NodeType.LINE_SEQUENCE,
 					sequenceId: "introScene7_line4",
+					nextNode: "introScene7_spookUpdate2"
+				},
+				introScene7_spookUpdate2: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: SPOOK,
+					expressionFrame: 0,
+					nextNode: "introScene7_line5"
+				},
+				introScene7_line5: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene7_line5",
+					nextNode: "introScene7_spookUpdate3"
+				},
+				introScene7_spookUpdate3: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: SPOOK,
+					expressionFrame: 0,
+					nextNode: "introScene7_line6"
+				},
+				introScene7_line6: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene7_line6",
 					nextNode: noone
-				}
+				},
 			}
 		} // introScene7
 	};

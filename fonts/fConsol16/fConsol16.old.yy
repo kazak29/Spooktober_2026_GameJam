@@ -119,8 +119,8 @@
   "maintainGms1Font":false,
   "name":"fConsol16",
   "parent":{
-    "name":"Dialogue System",
-    "path":"folders/Dialogue System.yy",
+    "name":"Fonts",
+    "path":"folders/Fonts.yy",
   },
   "pointRounding":0,
   "ranges":[
