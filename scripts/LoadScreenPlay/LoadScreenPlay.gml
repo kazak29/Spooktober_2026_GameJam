@@ -85,7 +85,7 @@ function LoadScreenPlay ()
 		}, // introScene5
 		introScene6: {
 			startNode: "introScene6_line1",
-			nextScene: noone,
+			nextScene: "introScene7",
 			background: sBackgroundShayHome,
 			nodes: {
 				introScene6_line1: {
@@ -134,7 +134,34 @@ function LoadScreenPlay ()
 					nextNode: noone
 				}
 			}
-		} // introScene6
+		}, // introScene6
+		introScene7: {
+			startNode: "introScene7_line1",
+			nextScene: noone,
+			background: sBackgroundShayHome,
+			nodes: {
+				introScene7_line1: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene7_line1",
+					nextNode: "introScene7_music1"
+				},
+				introScene7_music1: {
+					nodeType: NodeType.MUSIC,
+					song: sndSuspense,
+					nextNode: "introScene7_spookIn1"
+				},
+				introScene7_spookIn1: {
+					nodeType: NodeType.MAIN_CHARACTER_IN,
+					expressionFrame: 0,
+					nextNode: "introScene7_line2"
+				},
+				introScene7_line2: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene7_line2",
+					nextNode: noone
+				}
+			}
+		} // introScene7
 	};
 	return _sceneData;
 }
