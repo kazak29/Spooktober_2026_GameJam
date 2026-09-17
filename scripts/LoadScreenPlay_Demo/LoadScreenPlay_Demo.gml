@@ -1,5 +1,5 @@
 
-// The screenplay for TESTING
+// The screenplay for TESTING, this can be ignored
 function LoadScreenPlay_Demo()
 {
     var _sceneData = {
