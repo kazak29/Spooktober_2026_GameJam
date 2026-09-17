@@ -84,18 +84,23 @@ function LoadScreenPlay ()
 			}
 		}, // introScene5
 		introScene6: {
-			startNode: "introScene6_spookIn1",
-			nextScene: noone,
+			startNode: "introScene6_line1",
+			nextScene: "introScene7",
 			background: sBackgroundShayHome,
 			nodes: {
-				introScene6_spookIn1: {
-					nodeType: NodeType.MAIN_CHARACTER_IN,
-					expressionFrame: 0,
-					nextNode: "introScene6_line1"
-				},
 				introScene6_line1: {
 					nodeType: NodeType.LINE_SEQUENCE,
 					sequenceId: "introScene6_line1",
+					nextNode: "introScene6_spookIn1"
+				},
+				introScene6_spookIn1: {
+					nodeType: NodeType.MAIN_CHARACTER_IN,
+					expressionFrame: 0,
+					nextNode: "introScene6_line2"
+				},
+				introScene6_line2: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene6_line2",
 					nextNode: "introScene6_shayIn1"
 				},
 				introScene6_shayIn1: {
@@ -103,15 +108,83 @@ function LoadScreenPlay ()
 					charId: SHAY,
 					sprite: sShay,
 					expressionFrame: 0,
-					nextNode: "introScene6_line2"
+					nextNode: "introScene6_line3"
 				},
-				introScene6_line2: {
+				introScene6_line3: {
 					nodeType: NodeType.LINE_SEQUENCE,
-					sequenceId: "introScene6_line2",
+					sequenceId: "introScene6_line3",
+					nextNode: "introScene6_choice1"
+				},
+				introScene6_choice1: {
+					nodeType: NodeType.CHOICE,
+					sequenceId: "introScene6_prompt1",
+					choices: [
+						{ key: "introScene6_prompt1_option1", nextNode: "introScene6_line4" },
+						{ key: "introScene6_prompt1_option2", nextNode: "introScene6_line4" }
+					]
+				},
+				introScene6_line4: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene6_line4",
+					nextNode: "introScene6_music1"
+				},
+				introScene6_music1: {
+					nodeType: NodeType.MUSIC,
+					song: noone,
 					nextNode: noone
 				}
 			}
-		} // introScene6
+		}, // introScene6
+		introScene7: {
+			startNode: "introScene7_line1",
+			nextScene: noone,
+			background: sBackgroundShayHome,
+			nodes: {
+				introScene7_line1: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene7_line1",
+					nextNode: "introScene7_music1"
+				},
+				introScene7_music1: {
+					nodeType: NodeType.MUSIC,
+					song: sndSuspense,
+					nextNode: "introScene7_spookIn1"
+				},
+				introScene7_spookIn1: {
+					nodeType: NodeType.MAIN_CHARACTER_IN,
+					expressionFrame: 0,
+					nextNode: "introScene7_line2"
+				},
+				introScene7_line2: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene7_line2",
+					nextNode: "introScene7_screwdriverIn1"
+				},
+				introScene7_screwdriverIn1: {
+					nodeType: NodeType.CHARACTER_IN,
+					charId: UNKNOWN,
+					sprite: sScrewdriver,
+					expressionFrame: 1,
+					nextNode: "introScene7_line3"
+				},
+				introScene7_line3: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene7_line3",
+					nextNode: "introScene7_spookUpdate1"
+				},
+				introScene7_spookUpdate1: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: SPOOK,
+					expressionFrame: 0,
+					nextNode: "introScene7_line4"
+				},
+				introScene7_line4: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene7_line4",
+					nextNode: noone
+				}
+			}
+		} // introScene7
 	};
 	return _sceneData;
 }
