@@ -1,5 +1,5 @@
 
-function ProcessNode(_nodeId)
+function ProcessNode(_nodeId, _skipDelay = false)
 {
     var _scene = global.screenPlay[$ currentSceneId];
     var _node  = _scene.nodes[$ _nodeId];
@@ -8,15 +8,21 @@ function ProcessNode(_nodeId)
     // ------------------------------------------------------------------
     // NODE DELAY
     // ------------------------------------------------------------------
-    var _defaultDelay = DEFAULT_NODE_DELAY;
-    var _delaySeconds = struct_get(_node, DELAY) ?? _defaultDelay;
-    if (_delaySeconds > 0 && directorState != DirectorStateDelay)
+    if (!_skipDelay)
     {
-        delayTimer = _delaySeconds * game_get_speed(gamespeed_fps);
-        directorState = DirectorStateDelay;
-        return;
+        var _delaySeconds = DEFAULT_NODE_DELAY;
+        if (struct_exists(_node, DELAY)) {
+            _delaySeconds = _node[$ DELAY];
+        }
+        
+        if (_delaySeconds > 0)
+        {
+            delayTimer = _delaySeconds * game_get_speed(gamespeed_fps);
+            directorState = DirectorStateDelay;
+            return; // Pause execution until DirectorStateDelay counts down
+        }
     }
-    delayTimer = 0;
+	delayTimer = 0;
     
     // ------------------------------------------------------------------
     // NODE EXECUTION

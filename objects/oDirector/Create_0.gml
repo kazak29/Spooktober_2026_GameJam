@@ -1,10 +1,4 @@
 
-// Load all data
-
-
-
-
-
 // State machine
 directorState = DirectorStateIdle;
 directorStatePrev = directorState;

@@ -32,7 +32,11 @@ function DirectorStateSceneTransition()
 function DirectorStateDelay()
 {
     delayTimer--;
-    if (delayTimer <= 0) { ProcessNode(currentNodeId); }
+    if (delayTimer <= 0) 
+    { 
+        directorState = DirectorStateIdle;
+        ProcessNode(currentNodeId, true);
+    }
 }
 
 
