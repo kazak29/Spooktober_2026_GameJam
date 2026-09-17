@@ -25,7 +25,7 @@
   ],
   "name":"sScrewdriver",
   "nineSlice":null,
-  "origin":7,
+  "origin":9,
   "parent":{
     "name":"Characters",
     "path":"folders/Sprites/Characters.yy",
@@ -83,7 +83,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":426,
+    "xorigin":300,
     "yorigin":850,
   },
   "swatchColours":null,

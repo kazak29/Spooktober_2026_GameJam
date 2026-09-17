@@ -202,6 +202,56 @@ function GetIntroScenes ()
 				introScene7_line6: {
 					nodeType: NodeType.LINE_SEQUENCE,
 					sequenceId: "introScene7_line6",
+					nextNode: "introScene7_screwdriverOut1"
+				},
+				introScene7_screwdriverOut1: {
+					nodeType: NodeType.CHARACTER_OUT,
+					charId: UNKNOWN,
+					nextNode: "introScene7_line7"
+				},
+				introScene7_line7: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene7_line7",
+					nextNode: "introScene7_music2"
+				},
+				introScene7_music2: {
+					nodeType: NodeType.MUSIC,
+					song: sndStrayRatStrut,
+					nextNode: "introScene7_screwdriverIn2"
+				},
+				introScene7_screwdriverIn2: {
+					nodeType: NodeType.CHARACTER_IN,
+					charId: SCREWDRIVER,
+					sprite: sScrewdriver,
+					expressionFrame: 0,
+					delay: 3,
+					nextNode: "introScene7_line8"
+				},
+				introScene7_line8: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene7_line8",
+					nextNode: "introScene7_screwdriverUpdate1"
+				},
+				introScene7_screwdriverUpdate1: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: SCREWDRIVER,
+					expressionFrame: 2,
+					nextNode: "introScene7_line9"
+				},
+				introScene7_line9: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene7_line9",
+					nextNode: "introScene7_screwdriverUpdate2"
+				},
+				introScene7_screwdriverUpdate2: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: SCREWDRIVER,
+					expressionFrame: 0,
+					nextNode: "introScene7_line10"
+				},
+				introScene7_line10: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene7_line10",
 					nextNode: noone
 				},
 			}

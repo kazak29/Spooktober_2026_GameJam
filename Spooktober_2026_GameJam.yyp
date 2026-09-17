@@ -269,6 +269,7 @@
     {"id":{"name":"__shd_scribble_bake_shadow","path":"shaders/__shd_scribble_bake_shadow/__shd_scribble_bake_shadow.yy",},},
     {"id":{"name":"__shd_scribble","path":"shaders/__shd_scribble/__shd_scribble.yy",},},
     {"id":{"name":"sndSpookTheme","path":"sounds/sndSpookTheme/sndSpookTheme.yy",},},
+    {"id":{"name":"sndStrayRatStrut","path":"sounds/sndStrayRatStrut/sndStrayRatStrut.yy",},},
     {"id":{"name":"sndSuspense","path":"sounds/sndSuspense/sndSuspense.yy",},},
     {"id":{"name":"sBackgroundBlack","path":"sprites/sBackgroundBlack/sBackgroundBlack.yy",},},
     {"id":{"name":"sBackgroundGray","path":"sprites/sBackgroundGray/sBackgroundGray.yy",},},
