@@ -62,8 +62,10 @@
 #endregion
 #region Characters
 	
-	#macro SPOOK "Spook"
-	#macro SHAY  "Shay"
+	#macro SPOOK       "Spook"
+	#macro SHAY        "Shay"
+	#macro UNKNOWN     "???"
+	#macro SCREWDRIVER "Screwdriver"
 	
 #endregion
 #region Screen Play

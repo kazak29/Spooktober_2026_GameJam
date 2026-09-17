@@ -158,6 +158,29 @@ function LoadScreenPlay ()
 				introScene7_line2: {
 					nodeType: NodeType.LINE_SEQUENCE,
 					sequenceId: "introScene7_line2",
+					nextNode: "introScene7_screwdriverIn1"
+				},
+				introScene7_screwdriverIn1: {
+					nodeType: NodeType.CHARACTER_IN,
+					charId: UNKNOWN,
+					sprite: sScrewdriver,
+					expressionFrame: 1,
+					nextNode: "introScene7_line3"
+				},
+				introScene7_line3: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene7_line3",
+					nextNode: "introScene7_spookUpdate1"
+				},
+				introScene7_spookUpdate1: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: SPOOK,
+					expressionFrame: 0,
+					nextNode: "introScene7_line4"
+				},
+				introScene7_line4: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene7_line4",
 					nextNode: noone
 				}
 			}
