@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"LoadUI",
   "parent":{
-    "name":"Loading",
-    "path":"folders/Scripts/Loading.yy",
+    "name":"General",
+    "path":"folders/Scripts/Loading/General.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
