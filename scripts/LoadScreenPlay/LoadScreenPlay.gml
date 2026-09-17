@@ -108,6 +108,19 @@ function LoadScreenPlay ()
 				introScene6_line2: {
 					nodeType: NodeType.LINE_SEQUENCE,
 					sequenceId: "introScene6_line2",
+					nextNode: "introScene6_choice1"
+				},
+				introScene6_choice1: {
+					nodeType: NodeType.CHOICE,
+					sequenceId: "introScene6_prompt1",
+					choices: [
+						{ key: "introScene6_prompt1_option1", nextNode: "introScene6_line3" },
+						{ key: "introScene6_prompt1_option2", nextNode: "introScene6_line3" }
+					]
+				},
+				introScene6_line3: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene6_line3",
 					nextNode: noone
 				}
 			}
