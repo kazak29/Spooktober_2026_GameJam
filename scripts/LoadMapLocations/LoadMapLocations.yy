@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"LoadScreenPlay",
+  "%Name":"LoadMapLocations",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"LoadScreenPlay",
+  "name":"LoadMapLocations",
   "parent":{
-    "name":"Scenes",
-    "path":"folders/Scripts/Loading/Scenes.yy",
+    "name":"Map",
+    "path":"folders/Scripts/Loading/Map.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

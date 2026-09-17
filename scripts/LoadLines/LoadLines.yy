@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"LoadLines",
   "parent":{
-    "name":"Loading",
-    "path":"folders/Scripts/Loading.yy",
+    "name":"Scenes",
+    "path":"folders/Scripts/Loading/Scenes.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
