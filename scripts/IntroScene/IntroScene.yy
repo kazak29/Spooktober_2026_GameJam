@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"LoadLines",
+  "%Name":"IntroScene",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"LoadLines",
+  "name":"IntroScene",
   "parent":{
-    "name":"General",
-    "path":"folders/Scripts/Loading/Scenes/General.yy",
+    "name":"Intro",
+    "path":"folders/Scripts/Loading/Scenes/Intro.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

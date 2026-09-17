@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"LoadScreenPlay_Demo",
   "parent":{
-    "name":"Scenes",
-    "path":"folders/Scripts/Loading/Scenes.yy",
+    "name":"General",
+    "path":"folders/Scripts/Loading/Scenes/General.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
