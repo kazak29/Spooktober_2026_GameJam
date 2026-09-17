@@ -35,8 +35,8 @@ prevMouseY = 0;
 // Auto-managed Character Stage (Max 3)
 stageCharacters = [];
 mainCharacter = {
-    charId: "Rocket",
-    sprite: sPlaceholderMainCharacter,
+    charId: SPOOK,
+    sprite: sSpookPortrait,
 	expressionFrame: 0,
     alpha: MIN_ALPHA,
     targetAlpha: MIN_ALPHA

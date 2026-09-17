@@ -31,8 +31,8 @@
 #endregion
 #region screenplay
 
-	global.screenPlay = LoadScreenPlay_Demo();  // TODO: Switch this out for the actual screenplay
-	global.sceneToPlay = "scene1";              // TODO: Set this to the first scene in the game
+	global.screenPlay = LoadScreenPlay();
+	global.sceneToPlay = "introScene1";
 
 #endregion
 #region menu
