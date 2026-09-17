@@ -92,7 +92,7 @@ function DrawMainCharacterPortrait()
     var _guiH = VIEWPORT_HEIGHT;
     if (mainCharacter.alpha > 0 && sprite_exists(mainCharacter.sprite))
     {
-        var _drawY = _guiH + (sprite_get_height(mainCharacter.sprite) / 3) + mainCharacter.yOffset;
+        var _drawY = _guiH + mainCharacter.yOffset;
         draw_sprite_ext(mainCharacter.sprite, mainCharacter.expressionFrame, 220, _drawY, 1, 1, 0, mainCharacter.blend, mainCharacter.alpha);
     }
 }
