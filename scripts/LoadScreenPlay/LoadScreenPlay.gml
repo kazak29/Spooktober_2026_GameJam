@@ -73,7 +73,7 @@ function LoadScreenPlay ()
 		}, // introScene4
 		introScene5: {
 			startNode: "introScene5_line1",
-			nextScene: noone,
+			nextScene: "introScene6",
 			background: sBackgroundGray,
 			nodes: {
 				introScene5_line1: {
@@ -82,7 +82,36 @@ function LoadScreenPlay ()
 					nextNode: noone
 				}
 			}
-		} // introScene5
+		}, // introScene5
+		introScene6: {
+			startNode: "introScene6_spookIn1",
+			nextScene: noone,
+			background: sBackgroundShayHome,
+			nodes: {
+				introScene6_spookIn1: {
+					nodeType: NodeType.MAIN_CHARACTER_IN,
+					expressionFrame: 0,
+					nextNode: "introScene6_line1"
+				},
+				introScene6_line1: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene6_line1",
+					nextNode: "introScene6_shayIn1"
+				},
+				introScene6_shayIn1: {
+					nodeType: NodeType.CHARACTER_IN,
+					charId: SHAY,
+					sprite: sShay,
+					expressionFrame: 0,
+					nextNode: "introScene6_line2"
+				},
+				introScene6_line2: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene6_line2",
+					nextNode: noone
+				}
+			}
+		} // introScene6
 	};
 	return _sceneData;
 }
