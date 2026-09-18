@@ -102,15 +102,15 @@ function DirectorStateCharacterFade()
 
 function DirectorStateChoice()
 {
-	if (instance_exists(oMenu))
-	{
-		for (var _i = 0; _i < array_length(choices); _i++) {
-			choices[_i].image_index = 0;
-			choices[_i].image_speed = 0;
-		}
-		exit;
-	}
-	
+    if (instance_exists(oMenu))
+    {
+        for (var _i = 0; _i < array_length(choices); _i++) {
+            choices[_i].image_index = 0;
+            choices[_i].image_speed = 0;
+        }
+        exit;
+    }
+    
     var _choiceCount = array_length(choices);
     if (_choiceCount == 0) return;
 
@@ -119,22 +119,21 @@ function DirectorStateChoice()
     // ------------------------------------------------------------------
     var _guiMouseX = device_mouse_x_to_gui(0);
     var _guiMouseY = device_mouse_y_to_gui(0);
-    var _mouseMoved = (device_mouse_x_to_gui(0) != oDirector.prevMouseX || device_mouse_y_to_gui(0) != oDirector.prevMouseY);
     
-    // Store current mouse position on oDirector to track movement
     oDirector.prevMouseX = _guiMouseX;
     oDirector.prevMouseY = _guiMouseY;
 
     var _hoveredIndex = -1;
-    var _w = 400;
-    var _h = 80;
 
     for (var _i = 0; _i < _choiceCount; _i++)
     {
         var _btn = choices[_i];
         if (instance_exists(_btn))
         {
-            // Calculate bounding box matching the GUI draw location (Bottom-Center origin)
+            // Read width and height directly from the instance to match its Create event
+            var _w = _btn.width;
+            var _h = _btn.height;
+
             var _left   = _btn.x - (_w / 2);
             var _right  = _btn.x + (_w / 2);
             var _top    = _btn.y - _h;
@@ -148,7 +147,7 @@ function DirectorStateChoice()
         }
     }
 
-    // Priority: If the mouse is hovering over a button, force currentChoice to match it
+    // Priority: Mouse hover updates selection
     if (_hoveredIndex != -1)
     {
         currentChoice = _hoveredIndex;
@@ -166,13 +165,25 @@ function DirectorStateChoice()
         currentChoice++;
         if (currentChoice >= _choiceCount) currentChoice = 0;
     }
-	
-    for (var _i = 0; _i < _choiceCount; _i++) { choices[_i].image_index = (_i == currentChoice) ? 1 : 0; }
+    
+    // Update sprite frames
+    for (var _i = 0; _i < _choiceCount; _i++) { 
+        choices[_i].image_index = (_i == currentChoice) ? 1 : 0; 
+    }
 
-    // Confirm Selection
+    // ------------------------------------------------------------------
+    // Confirm Selection & Typist Guard
+    // ------------------------------------------------------------------
     var _mouseClicked = mouse_check_button_pressed(mb_left) && (_hoveredIndex != -1);
+    
     if (oInputManager.pressed.confirm || _mouseClicked)
     {
+        if (typist.get_state() < 1)
+        {
+            typist.skip();
+            return;
+        }
+
         var _selectedButton = choices[currentChoice];
         var _targetNode = _selectedButton.nextNode;
 

@@ -19,8 +19,9 @@ function LoadLineData ()
 	{
 		// NOTE: Check the CSV file for which column is which field
 		var _sequenceId      = _grid[# 0, _row];
-        var _lineTitle       = _grid[# 1, _row];
-        var _lineText        = _grid[# 2, _row];
+		var _typewriteSfx    = _grid[# 1, _row];
+        var _lineTitle       = _grid[# 2, _row];
+        var _lineText        = _grid[# 3, _row];
 		
 		if (_sequenceId == "") continue;   // Skip empty lines
 		
@@ -31,6 +32,7 @@ function LoadLineData ()
 		
 		var _lineEntry = {
 			lineTitle: _lineTitle,
+			lineSfx:   _typewriteSfx,
 			lineText:  _lineText
 		};
 		array_push(_lineData[$ _sequenceId], _lineEntry);
