@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"ScribbleAddAllEvents",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ScribbleAddAllEvents",
+  "parent":{
+    "name":"General",
+    "path":"folders/Scripts/Loading/Scenes/General.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
