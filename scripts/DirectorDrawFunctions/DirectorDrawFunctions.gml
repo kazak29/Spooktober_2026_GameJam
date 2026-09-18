@@ -92,7 +92,7 @@ function DrawMainCharacterPortrait()
     var _guiH = VIEWPORT_HEIGHT;
     if (mainCharacter.alpha > 0 && sprite_exists(mainCharacter.sprite))
     {
-        var _drawY = _guiH + mainCharacter.yOffset;
+        var _drawY = _guiH + mainCharacter.yOffset + SPOOK_PORTRAIT_Y_OFFSET;
         draw_sprite_ext(mainCharacter.sprite, mainCharacter.expressionFrame, 220, _drawY, 1, 1, 0, mainCharacter.blend, mainCharacter.alpha);
     }
 }
