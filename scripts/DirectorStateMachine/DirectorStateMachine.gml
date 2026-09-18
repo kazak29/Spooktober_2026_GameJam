@@ -42,7 +42,9 @@ function DirectorStateDelay()
 
 function DirectorStateLineSequence()
 {
-    if (oInputManager.pressed.confirm || mouse_check_button_pressed(mb_left))
+	if (instance_exists(oMenu)) { exit; }
+	
+    if (oInputManager.pressed.confirm /*|| mouse_check_button_pressed(mb_left)*/)
     {
         if (typist.get_state() < 1)
         { 
@@ -100,6 +102,15 @@ function DirectorStateCharacterFade()
 
 function DirectorStateChoice()
 {
+	if (instance_exists(oMenu))
+	{
+		for (var _i = 0; _i < array_length(choices); _i++) {
+			choices[_i].image_index = 0;
+			choices[_i].image_speed = 0;
+		}
+		exit;
+	}
+	
     var _choiceCount = array_length(choices);
     if (_choiceCount == 0) return;
 
