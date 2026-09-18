@@ -23,13 +23,19 @@ function DrawDialogueBox ()
     // ------------------------------------------------------------------
     // DIALOGUE TEXTBOX
     // ------------------------------------------------------------------
-    // Smaller width, offset to the right side of the screen
-    var _boxW   = 1200;
-    var _boxH   = 220;
-    var _boxX   = _guiW - _boxW - 280;
-    var _boxY   = _guiH - _boxH - 60;
+    var _boxW = sprite_get_width(sTextbox);
+    var _boxH = sprite_get_height(sTextbox);
+    
+    // Position: Horizontal center, anchored to the bottom with 20px padding
+    var _boxX = _guiW / 2;
+    var _boxY = _guiH;
 
-    draw_sprite_stretched(sTextbox, 0, _boxX, _boxY, _boxW, _boxH);
+    // Draw main textbox (Bottom-Center origin)
+    draw_sprite(sTextbox, 0, _boxX, _boxY);
+    
+    // Top-Left corner of the textbox calculated for title/body text alignments
+    var _boxLeft = _boxX - (_boxW / 2);
+    var _boxTop  = _boxY - _boxH;
     
     // ------------------------------------------------------------------
     // TITLE BOX
@@ -38,8 +44,8 @@ function DrawDialogueBox ()
     {
         var _titleBoxW = 280;
         var _titleBoxH = 56;
-        var _titleBoxX = _boxX;
-        var _titleBoxY = _boxY - _titleBoxH + 5;
+        var _titleBoxX = _boxLeft + 40;
+        var _titleBoxY = _boxTop - _titleBoxH + 5;
         
         draw_sprite_stretched(sTextboxTitle, 0, _titleBoxX, _titleBoxY, _titleBoxW, _titleBoxH);
         
@@ -52,14 +58,14 @@ function DrawDialogueBox ()
     // ------------------------------------------------------------------
     // DIALOGUE TEXT BODY
     // ------------------------------------------------------------------
-    var _paddingX = 32;
-    var _paddingY = 28;
-    var _textX    = _boxX + _paddingX;
-    var _textY    = _boxY + _paddingY;
+    var _paddingX = (spookUp) ? 300 : 56;
+    var _paddingY = 80;
+    var _textX    = _boxLeft + _paddingX;
+    var _textY    = _boxTop + _paddingY;
     var _maxTextW = _boxW - (_paddingX * 2);
     
     var _scribble = scribble(_bodyText)
-        .starting_format(FONT_CONSOLE_16, c_white)
+        .starting_format(FONT_DIALOGUE_TEXT_BODY, c_black)
         .shadow(c_black, 1)
         .wrap(_maxTextW)
         .draw(_textX, _textY, typist);

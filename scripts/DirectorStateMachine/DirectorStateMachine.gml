@@ -251,6 +251,8 @@ function ClearStage()
     mainCharacter.yOffset = 0;
     mainCharacter.yVelocity = 0;
     mainCharacter.blend = c_white;
+	
+	spookUp = false;
     
     previousSpeaker = "";
 }

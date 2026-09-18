@@ -58,7 +58,9 @@
 	
 	#macro FONT_CONSOLE_16 "fConsol16"
 	#macro FONT_CONSOLE_24 "fConsol24"
-
+	
+	#macro FONT_DIALOGUE_TEXT_BODY "fDialogueTextBody"
+	
 #endregion
 #region Characters
 	

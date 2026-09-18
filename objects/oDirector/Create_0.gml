@@ -41,7 +41,7 @@ mainCharacter = {
     alpha: MIN_ALPHA,
     targetAlpha: MIN_ALPHA
 };
-
+spookUp = false;
 
 
 // Start the scene that was set as a global

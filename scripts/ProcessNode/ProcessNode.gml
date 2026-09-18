@@ -86,6 +86,7 @@ function ProcessNode(_nodeId, _skipDelay = false)
                 mainCharacter.sprite = _node.sprite; 
 				mainCharacter.expressionFrame = _node.expressionFrame;
             }
+			spookUp = true;
             mainCharacter.targetAlpha = MAX_ALPHA;
             directorState = DirectorStateCharacterFade;
             break;
@@ -93,6 +94,7 @@ function ProcessNode(_nodeId, _skipDelay = false)
         
         case NodeType.MAIN_CHARACTER_OUT:
         {
+			spookUp = false;
             mainCharacter.targetAlpha = MIN_ALPHA;
             directorState = DirectorStateCharacterFade;
             break;
