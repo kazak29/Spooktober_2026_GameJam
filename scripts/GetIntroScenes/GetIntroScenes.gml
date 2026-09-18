@@ -36,7 +36,7 @@ function GetIntroScenes ()
 		introScene3: {
 			startNode: "introScene3_spookIn1",
 			nextScene: "introScene4",
-			background: sBackgroundShayHome,
+			background: sBackgroundBlack,
 			nodes: {
 				introScene3_spookIn1: {
 					nodeType: NodeType.MAIN_CHARACTER_IN,
@@ -85,7 +85,7 @@ function GetIntroScenes ()
 		introScene6: {
 			startNode: "introScene6_line1",
 			nextScene: "introScene7",
-			background: sBackgroundShayHome,
+			background: sBackgroundShayRoomDay,
 			nodes: {
 				introScene6_line1: {
 					nodeType: NodeType.LINE_SEQUENCE,
@@ -137,7 +137,7 @@ function GetIntroScenes ()
 		introScene7: {
 			startNode: "introScene7_line1",
 			nextScene: noone,
-			background: sBackgroundShayHome,
+			background: sBackgroundShayRoomNight,
 			nodes: {
 				introScene7_line1: {
 					nodeType: NodeType.LINE_SEQUENCE,
