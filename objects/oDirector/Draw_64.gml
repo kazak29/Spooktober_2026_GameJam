@@ -8,3 +8,8 @@ if (fadeAlpha > MIN_ALPHA)
     draw_set_alpha(MAX_ALPHA);
     draw_set_color(c_white);
 }
+
+
+if global.showDebugUI {
+	draw_text(room_width/2, room_height/2, $"state: {directorState}");
+}

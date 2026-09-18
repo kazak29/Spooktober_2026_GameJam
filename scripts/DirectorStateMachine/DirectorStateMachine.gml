@@ -229,7 +229,7 @@ function AdvanceNode()
     var _activeNode  = _activeScene.nodes[$ currentNodeId];
     
     // More nodes in current scene
-    if (_activeNode.nextNode != noone) 
+    if struct_exists(_activeNode, "nextNode") && (_activeNode.nextNode != noone) 
     { 
         ProcessNode(_activeNode.nextNode); 
     }

@@ -9,5 +9,5 @@ if (currentSceneId != noone)
     directorState == DirectorStateChoice)
 	{ DrawDialogueBox(); }
 	
-	 DrawMainCharacterPortrait();
+	DrawMainCharacterPortrait();
 }
