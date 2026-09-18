@@ -70,6 +70,8 @@
 #endregion
 #region Screen Play
 	
+	#macro SPOOK_PORTRAIT_Y_OFFSET 35
+	
 	#macro SCENE_FADE_SPEED 0.03
 	
 	#macro CHARACTER_FADE_SPEED    0.05

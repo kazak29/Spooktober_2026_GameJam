@@ -275,6 +275,8 @@
     {"id":{"name":"sBackgroundBlack","path":"sprites/sBackgroundBlack/sBackgroundBlack.yy",},},
     {"id":{"name":"sBackgroundGray","path":"sprites/sBackgroundGray/sBackgroundGray.yy",},},
     {"id":{"name":"sBackgroundShayHome","path":"sprites/sBackgroundShayHome/sBackgroundShayHome.yy",},},
+    {"id":{"name":"sBackgroundShayRoomDay","path":"sprites/sBackgroundShayRoomDay/sBackgroundShayRoomDay.yy",},},
+    {"id":{"name":"sBackgroundShayRoomNight","path":"sprites/sBackgroundShayRoomNight/sBackgroundShayRoomNight.yy",},},
     {"id":{"name":"scribble_fallback_bulletpoint","path":"sprites/scribble_fallback_bulletpoint/scribble_fallback_bulletpoint.yy",},},
     {"id":{"name":"sMapLocation","path":"sprites/sMapLocation/sMapLocation.yy",},},
     {"id":{"name":"sPixel","path":"sprites/sPixel/sPixel.yy",},},
