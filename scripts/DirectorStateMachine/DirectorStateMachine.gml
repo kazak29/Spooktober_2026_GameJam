@@ -195,7 +195,7 @@ function DirectorStateChoice()
 
 function StartScene(_sceneId)
 {
-    if (_sceneId == noone || !struct_exists(global.screenPlay, _sceneId))
+    if (_sceneId == noone)
     {
         currentSceneId = noone;
         currentNodeId  = noone;
@@ -231,10 +231,12 @@ function AdvanceNode()
     }
     // Screenplay complete
     else 
-    { 
+    {
         currentSceneId = noone;
         currentNodeId  = noone;
-        directorState  = DirectorStateIdle;
+		directorState  = DirectorStateIdle;
+		currentLineSequence = [];
+		ClearStage();
 		TransitionStart(rmMap, sqFadeOut, sqFadeIn);
     }
 }
