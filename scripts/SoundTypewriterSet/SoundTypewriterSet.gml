@@ -1,0 +1,4 @@
+global.typewriterSfxNames = {
+	spook: [sfxTypewriterSpook],
+	
+}
