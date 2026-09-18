@@ -6,8 +6,8 @@ buttonText = "";
 
 
 
-width = 400;
-height = 80;
+width = 500;
+height = 90;
 
 drawX = x - (width / 2);
 drawY = y - height;
