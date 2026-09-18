@@ -23,12 +23,12 @@ function DrawDialogueBox ()
     // ------------------------------------------------------------------
     // DIALOGUE TEXTBOX
     // ------------------------------------------------------------------
-    var _boxW = 1652;
-    var _boxH = 333;
+    var _boxW = sprite_get_width(sTextbox);
+    var _boxH = sprite_get_height(sTextbox);
     
     // Position: Horizontal center, anchored to the bottom with 20px padding
     var _boxX = _guiW / 2;
-    var _boxY = _guiH - 20;
+    var _boxY = _guiH;
 
     // Draw main textbox (Bottom-Center origin)
     draw_sprite(sTextbox, 0, _boxX, _boxY);
@@ -58,14 +58,14 @@ function DrawDialogueBox ()
     // ------------------------------------------------------------------
     // DIALOGUE TEXT BODY
     // ------------------------------------------------------------------
-    var _paddingX = 48;
-    var _paddingY = 40;
+    var _paddingX = (spookUp) ? 300 : 56;
+    var _paddingY = 80;
     var _textX    = _boxLeft + _paddingX;
     var _textY    = _boxTop + _paddingY;
     var _maxTextW = _boxW - (_paddingX * 2);
     
     var _scribble = scribble(_bodyText)
-        .starting_format("fDialogueText", c_white)
+        .starting_format(FONT_DIALOGUE_TEXT_BODY, c_black)
         .shadow(c_black, 1)
         .wrap(_maxTextW)
         .draw(_textX, _textY, typist);
