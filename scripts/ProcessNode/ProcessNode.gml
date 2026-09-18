@@ -34,6 +34,7 @@ function ProcessNode(_nodeId, _skipDelay = false)
             currentLineSequence = global.lineData[$ _node.sequenceId] ?? [];
             currentLineIndex = 0;
             typist.reset();
+			io_clear();
             directorState = DirectorStateLineSequence;
             break;
         }

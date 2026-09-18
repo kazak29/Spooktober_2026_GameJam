@@ -42,7 +42,7 @@ function DirectorStateDelay()
 
 function DirectorStateLineSequence()
 {
-    if (oInputManager.pressed.confirm || mouse_check_button_pressed(mb_left))
+    if (oInputManager.pressed.confirm /*|| mouse_check_button_pressed(mb_left)*/)
     {
         if (typist.get_state() < 1)
         { 
