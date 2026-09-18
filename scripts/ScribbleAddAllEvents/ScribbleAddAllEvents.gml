@@ -11,9 +11,28 @@ function ScribbleAddAllEvents ()
 	});
 	
 	
+	// VOLUME IS % OF GLOBAL GAIN VARIABLE, from 0 to 500
+	scribble_typists_add_event("typewriter_vol", function(_element, _param_array)
+	{
+		with oDirector {
+			var _vol = _param_array[0];
+			_vol = clamp(_vol, 0, 500);
+		
+			typewriterSound.vol = (global.volTypeWriter * _vol) / 100;
+			TypewriterSoundPlay();
+		}
+		
+	});
 	
-	
-	
-	
+	//DEFAULT PITCH IS 1, BELOW IS SLOWER, ABOVE IS FASTER
+	scribble_typists_add_event("typewriter_pitch", function(_element, _param_array)
+	{
+		with oDirector {
+			typewriterSound.pitchMin = _param_array[0];
+			typewriterSound.pitchMax = _param_array[1];
+			TypewriterSoundPlay();
+		}
+		
+	});
 	
 }

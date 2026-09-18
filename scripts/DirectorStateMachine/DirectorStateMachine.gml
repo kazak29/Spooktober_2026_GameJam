@@ -59,7 +59,7 @@ function DirectorStateLineSequence()
             }
             else
             {
-                typist.reset();
+				TypewriterSoundSet();
             }
         }
     }
