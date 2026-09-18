@@ -195,7 +195,7 @@ function DirectorStateChoice()
 
 function StartScene(_sceneId)
 {
-    if (_sceneId == noone || !struct_exists(global.screenPlay, _sceneId))
+    if (_sceneId == noone)
     {
         currentSceneId = noone;
         currentNodeId  = noone;

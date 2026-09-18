@@ -42,15 +42,15 @@ function DrawDialogueBox ()
     // ------------------------------------------------------------------
     if (_titleText != "")
     {
-        var _titleBoxW = 280;
-        var _titleBoxH = 56;
-        var _titleBoxX = _boxLeft + 40;
-        var _titleBoxY = _boxTop - _titleBoxH + 5;
+        var _titleBoxW = 300;
+        var _titleBoxH = 64;
+        var _titleBoxX = (spookUp) ? _boxLeft + 300 : _boxLeft + 40;
+        var _titleBoxY = _boxTop - (_titleBoxH / 2);
         
-        draw_sprite_stretched(sTextboxTitle, 0, _titleBoxX, _titleBoxY, _titleBoxW, _titleBoxH);
+        draw_sprite_stretched(sChoiceBox, 0, _titleBoxX, _titleBoxY, _titleBoxW, _titleBoxH);
         
         scribble(_titleText)
-            .starting_format(FONT_CONSOLE_16, c_white)
+            .starting_format(FONT_DIALOGUE_TEXT_TITLE, c_black)
             .align(fa_center, fa_middle)
             .draw(_titleBoxX + (_titleBoxW / 2), _titleBoxY + (_titleBoxH / 2));
     }
