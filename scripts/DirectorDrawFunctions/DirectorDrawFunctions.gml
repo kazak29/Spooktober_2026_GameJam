@@ -12,6 +12,8 @@ function DrawSceneBackground ()
 
 function DrawDialogueBox ()
 {
+	if (array_length(currentLineSequence) == 0) { return; }
+	
     var _lineEntry = currentLineSequence[currentLineIndex];
     var _guiW = VIEWPORT_WIDTH;
     var _guiH = VIEWPORT_HEIGHT;
@@ -62,7 +64,7 @@ function DrawDialogueBox ()
     var _paddingY = 80;
     var _textX    = _boxLeft + _paddingX;
     var _textY    = _boxTop + _paddingY;
-    var _maxTextW = _boxW - (_paddingX * 1.5);
+    var _maxTextW = _boxW - (_paddingX * 1.2);
     
     var _scribble = scribble(_bodyText)
         .starting_format(FONT_DIALOGUE_TEXT_BODY, c_black)

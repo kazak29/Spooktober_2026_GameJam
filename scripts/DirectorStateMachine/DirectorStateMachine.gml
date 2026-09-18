@@ -231,10 +231,12 @@ function AdvanceNode()
     }
     // Screenplay complete
     else 
-    { 
+    {
         currentSceneId = noone;
         currentNodeId  = noone;
-        directorState  = DirectorStateIdle;
+		directorState  = DirectorStateIdle;
+		currentLineSequence = [];
+		ClearStage();
 		TransitionStart(rmMap, sqFadeOut, sqFadeIn);
     }
 }
