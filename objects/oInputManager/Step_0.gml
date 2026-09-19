@@ -35,7 +35,7 @@ for (var _key = 0; _key < array_length(input_keys); _key++)
     var _bind = _keybinds[0]; 
     
     if (keyboard_check(_bind))          { held[$ _key_name] = true; }
-    if (keyboard_check_pressed(_bind))  { pressed[$ _key_name] = true; using_gamepad = false; using_mouse = false; } // Switched to keyboard
+    if (keyboard_check_pressed(_bind))  { pressed[$ _key_name] = true; using_gamepad = false; mouse.active = false; } // Switched to keyboard
     if (keyboard_check_released(_bind)) { released[$ _key_name] = true; }
 }
 
@@ -51,7 +51,7 @@ if (gamepad_id >= SLOT_1)
         var _bind = _keybinds[1]; 
         
         if (gamepad_button_check(gamepad_id, _bind))          { held[$ _key_name] = true; }
-        if (gamepad_button_check_pressed(gamepad_id, _bind))  { pressed[$ _key_name] = true; using_gamepad = true; using_mouse = false; } // Switched to gamepad!
+        if (gamepad_button_check_pressed(gamepad_id, _bind))  { pressed[$ _key_name] = true; using_gamepad = true; mouse.active = false; } // Switched to gamepad!
         if (gamepad_button_check_released(gamepad_id, _bind)) { released[$ _key_name] = true; }
     }
     
@@ -65,29 +65,19 @@ if (gamepad_id >= SLOT_1)
     }
 }
 
-//mouse checks
-for (var _key = 0; _key < array_length(input_keys); _key++)
-{
-    var _key_name = input_keys[_key];
-    var _keybinds = input[$ _key_name];
+//mouse button checks
+for (var i = 0; i < array_length(mouseKeyNames); i++){
+    var _keyName = mouseKeyNames[i];
+    var _keyBind = mouseKeys[$ _keyName];
     
-    // Index 2 is always your mouse button in the struct setup
-	var _al = array_length(_keybinds);
-	if (_al >= 3) {
-	    var _bind = _keybinds[2];
-    
-	    if (mouse_check_button(_bind))			{ held[$ _key_name] = true; }
-	    if (mouse_check_button_pressed(_bind))  { pressed[$ _key_name] = true; using_gamepad = false; using_mouse = true; } // Switched to mouse
-	    if (mouse_check_button_released(_bind)) { released[$ _key_name] = true; }
-	}
-	
-	//mouse position check
-	var _mX = device_mouse_x_to_gui(0);
-	var _mY = device_mouse_y_to_gui(0);
-	if (mouseX != _mX || mouseY != _mY) {
-		mouseX = _mX;
-		mouseY = _mY;
-		using_gamepad = false;
-		using_mouse = true;
-	}
+	if (mouse_check_button(_keyBind))			{ mouse.held[$ _keyName] = true; }
+	if (mouse_check_button_pressed(_keyBind))	{ mouse.pressed[$ _keyName] = true; using_gamepad = false; mouse.active = true; } // Switched to mouse
+	if (mouse_check_button_released(_keyBind))	{ mouse.released[$ _keyName] = true; }
+}
+//mouse position check (no longer GUI)
+if (mouse.x != mouse_x || mouse.y != mouse_y) {
+	mouse.x = mouse_x;
+	mouse.y = mouse_y;
+	using_gamepad = false;
+	mouse.active = true;
 }

@@ -23,7 +23,7 @@ if _selectedAlone {
 	//check if mouse is over the circle itself
 	var _scale = (image_xscale+image_yscale)/2;
 	var _rad = sprite_get_width(_circleSpr)*_scale/2;
-	if oInputManager.MouseHoverCircle(_circleX, _circleY, _rad) {
+	if oInputManager.MouseHoverCircle(_circleX, _circleY, _rad) && !oMenu.mouseClickLock {
 		_c = COL_MENU_OPTION_HOVER;
 		_frame = 2;
 	}

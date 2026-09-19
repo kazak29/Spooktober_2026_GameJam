@@ -20,25 +20,24 @@ currentLineSequence = [];
 currentLineIndex = 0;
 
 //typewriter sound
-TypewriterSoundParamsReset = function(){
-	typewriterSound = {
-		ids:		[],
-		vol:		global.volTypeWriter,
-		overlap:	30,
-		pitchMin:	1,
-		pitchMax:	1
-	}
-}
-TypewriterSoundParamsReset();
-
 TypewriterSoundPlay = function(){
 	typist.sound(
 		typewriterSound.ids, 
 		typewriterSound.overlap, 
 		typewriterSound.pitchMin, 
 		typewriterSound.pitchMax, 
-		typewriterSound.vol
+		(global.volTypeWriter * typewriterSound.vol) / 100
 	);
+}
+TypewriterSoundReset = function(){
+	typewriterSound = {
+		ids:		[],
+		vol:		100,	//as % of volTypeWriter
+		overlap:	15,
+		pitchMin:	1,
+		pitchMax:	1
+	}
+	TypewriterSoundPlay(); //stop typewriter sound by overriding it with empty array
 }
 TypewriterSoundSet = function(){
 	var _sounds = global.typewriterSfxNames;
@@ -46,12 +45,11 @@ TypewriterSoundSet = function(){
 	var _ids = struct_get(_sounds, _soundName) ?? [];
 	if !is_array(_ids) _ids = [];
 	
-	TypewriterSoundParamsReset();
+	TypewriterSoundReset();
 	typewriterSound.ids = _ids;
-	
 	TypewriterSoundPlay();
 }
-
+TypewriterSoundReset();
 
 // Speaker tracking for bounce animations
 previousSpeaker = "";

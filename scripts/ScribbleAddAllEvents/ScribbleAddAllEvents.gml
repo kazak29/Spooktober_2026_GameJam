@@ -11,14 +11,14 @@ function ScribbleAddAllEvents ()
 	});
 	
 	
-	// VOLUME IS % OF GLOBAL GAIN VARIABLE, from 0 to 500
+	// VOLUME IS % OF GLOBAL GAIN VARIABLE, FROM 0 TO 500, APPLIED ON PLAY
 	scribble_typists_add_event("typewriter_vol", function(_element, _param_array)
 	{
 		with oDirector {
 			var _vol = _param_array[0];
 			_vol = clamp(_vol, 0, 500);
 		
-			typewriterSound.vol = (global.volTypeWriter * _vol) / 100;
+			typewriterSound.vol = _vol;
 			TypewriterSoundPlay();
 		}
 		
@@ -30,6 +30,16 @@ function ScribbleAddAllEvents ()
 		with oDirector {
 			typewriterSound.pitchMin = _param_array[0];
 			typewriterSound.pitchMax = _param_array[1];
+			TypewriterSoundPlay();
+		}
+		
+	});
+	
+	//DEFAULT OVERLAP IS 15-30ms
+	scribble_typists_add_event("typewriter_overlap", function(_element, _param_array)
+	{
+		with oDirector {
+			typewriterSound.overlap = _param_array[0];
 			TypewriterSoundPlay();
 		}
 		

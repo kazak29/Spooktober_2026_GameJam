@@ -4,8 +4,9 @@ elementSelectedSub = noone;
 mouseHoverMain = false;
 mouseHoverSub = false;
 
-if oInputManager.released.confirm mouseClickLock = false;
+if oInputManager.mouse.released.left mouseClickLock = false;
 var _mouseClickLockCheck = true;
+var _sfxData = [noone, 0];
 
 #region small repeating scripts
 	
@@ -74,6 +75,13 @@ var _elemsL = array_length(_elems);
 	
 	elementSelectedMain = struct_get(_elems[elementNum], "elemId") ?? noone;
 	
+	
+	//exclusively for sound
+	if elementSelectedMainPrev != elementSelectedMain {
+		elementSelectedMainPrev = elementSelectedMain;
+		_sfxData = [sfxUIClick, 100];
+	}
+	
 #endregion
 #region selecting sub element
 	
@@ -106,13 +114,21 @@ var _elemsL = array_length(_elems);
 	
 	}
 	
+	
+	//exclusively for sound
+	if elementSelectedSubPrev != elementSelectedSub {
+		elementSelectedSubPrev = elementSelectedSub;
+		_sfxData = [sfxUIClick, 100];
+	}
+	
 #endregion
 
+
 //inputs
-var _confirm		= oInputManager.pressed.confirm;
-var _mouseMain		= _confirm && mouseHoverMain;
-var _mouseSub		= _confirm && mouseHoverSub;
-var _mouseEmpty		= mouse_check_button_pressed(mb_any) && !mouseHoverMain && !mouseHoverSub;	//clicked empty space on screen
+var _mouseEmpty	= !mouseHoverMain && !mouseHoverSub;	//hovering empty space on screen
+var _pressedMain = oInputManager.pressed.confirm  || (oInputManager.mouse.pressed.left && !mouseHoverSub && !_mouseEmpty);
+var _pressedSub	= oInputManager.mouse.pressed.left && mouseHoverSub;
+var _heldSub	= oInputManager.mouse.held.left && mouseHoverSub && !mouseClickLock;
 
 //main element confirm logic
 if instance_exists(elementSelectedMain) {
@@ -120,34 +136,39 @@ if instance_exists(elementSelectedMain) {
 	switch _elemData.elemType {
 	
 		case MENU_ELEMENT_TYPE.SCRIPT_RUNNER: {
-			if (_confirm && !_mouseEmpty && !_mouseSub) {
+			if _pressedMain {
 				_elemScrExecute(_elemData);
+				_sfxData = [sfxUIClick, 100];
 			}
 		} break;
 		
 		case MENU_ELEMENT_TYPE.PAGE_TRANSFER: {
-			if (_confirm && !_mouseEmpty && !_mouseSub) {
+			if _pressedMain {
 				pageName = _elemData.pageName;
 				elementNum = 0;
 				PageUpdate();
+				_sfxData = [sfxUIClick, 100];
 			}
 		} break;
 	
 		case MENU_ELEMENT_TYPE.TOGGLE: {
 			var _hinput = oInputManager.pressed.right - oInputManager.pressed.left;
-			if (_confirm && !_mouseEmpty && !_mouseSub) _hinput = _elemData.arg ? -1 : 1;
+			if _pressedMain _hinput = _elemData.arg ? -1 : 1;
+			
 			if (_hinput != 0) {
 				
 				_elemData.arg += _hinput;
 				_elemData.arg = clamp(_elemData.arg, 0,1);
 				_elemScrExecute(_elemData);
+				_sfxData = [sfxUIClick, 100];
 			
 			}
 		} break;
 	
 		case MENU_ELEMENT_TYPE.SHIFT: {
 			var _hinput = oInputManager.pressed.right - oInputManager.pressed.left;
-			if (_confirm && !_mouseEmpty && !_mouseSub) _hinput = 1;
+			if _pressedMain _hinput = 1;
+			
 			if (_hinput != 0) {
 				
 				_elemData.arg += _hinput;
@@ -157,6 +178,7 @@ if instance_exists(elementSelectedMain) {
 				
 				with elementSelectedMain UpdateShift();
 				_elemScrExecute(_elemData);
+				_sfxData = [sfxUIClick, 100];
 				
 			}
 		} break;
@@ -182,19 +204,20 @@ if instance_exists(elementSelectedSub) {
 	switch _elemData.elemType {
 	
 		case MENU_ELEMENT_TYPE.TOGGLE: {
-			if _mouseSub {
+			if _pressedSub {
 			
 				elementNum = elementSelectedSub.elementNum;
 				elementSelectedMain = elementSelectedSub.mainId;
 			
 				_elemData.arg = elementSelectedSub.side;
 				_elemScrExecute(_elemData);
+				_sfxData = [sfxUIClick, 100];
 			
 			}
 		} break;
 	
 		case MENU_ELEMENT_TYPE.SHIFT: {
-			if _mouseSub {
+			if _pressedSub {
 			
 				elementNum = elementSelectedSub.elementNum;
 				elementSelectedMain = elementSelectedSub.mainId;
@@ -213,6 +236,7 @@ if instance_exists(elementSelectedSub) {
 				
 					with elementSelectedSub.mainId UpdateShift();
 					_elemScrExecute(_elemData);
+					_sfxData = [sfxUIClick, 100];
 					
 				}
 			
@@ -220,7 +244,7 @@ if instance_exists(elementSelectedSub) {
 		} break;
 		
 		case MENU_ELEMENT_TYPE.SLIDER: {
-			if mouseHoverSub && oInputManager.held.confirm && !mouseClickLock {
+			if _heldSub {
 				_mouseClickLockCheck = false;
 				
 				elementNum = elementSelectedSub.elementNum;
@@ -229,16 +253,14 @@ if instance_exists(elementSelectedSub) {
 				//get what percentage mouse position is hovering at (from 0 to 1)
 				var _perc = 0;
 				with elementSelectedSub {
-					var _mX = clamp(oInputManager.mouseX, bbox_left, bbox_right);
+					var _mX = clamp(oInputManager.mouse.x, bbox_left, bbox_right);
 					_perc = (_mX - bbox_left)/(bbox_right - bbox_left);
-					
 				}
 				
 				//calculate correct argument from percentage (we can set argClamp to be between different numbers, not just from 0 to 1)
 				_elemData.arg = ((_elemData.argClamp[1] - _elemData.argClamp[0]) * _perc) + _elemData.argClamp[0];
 				_elemData.arg = clamp(_elemData.arg, _elemData.argClamp[0], _elemData.argClamp[1]);
 				_elemScrExecute(_elemData);
-				
 			}
 		} break;
 		
@@ -246,17 +268,19 @@ if instance_exists(elementSelectedSub) {
 }
 
 //cancel logic
-if oInputManager.pressed.cancel {
+if oInputManager.pressed.cancel || oInputManager.mouse.pressed.right {
 	var _prev = _page.pageNamePrev;
 	if is_string(_prev) && (_prev != "") {
 		pageName = _prev;
 		elementNum = 0;
 		PageUpdate();
+		_sfxData = [sfxUIClick, 100];
 	}
 }
 
-//locking mouse input
-if mouse_check_button(mb_any) && _mouseClickLockCheck mouseClickLock = true;
+
+if audio_exists(_sfxData[0]) SoundPlay(_sfxData[0], _sfxData[1]);
+if (oInputManager.mouse.held.any && _mouseClickLockCheck) mouseClickLock = true;
 
 //son
 switch menuType {

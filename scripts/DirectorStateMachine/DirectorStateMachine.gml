@@ -55,7 +55,8 @@ function DirectorStateLineSequence()
             currentLineIndex++;
             if (currentLineIndex >= array_length(currentLineSequence))
             {
-                AdvanceNode();
+                TypewriterSoundReset();
+				AdvanceNode();
             }
             else
             {

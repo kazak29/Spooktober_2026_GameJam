@@ -14,7 +14,6 @@
 #region Music / SFX
 
 	#macro AMBIENT_MUSIC "ambientMusic"
-	
 	#macro DEFAULT_VOLUME_PERCENT 60
 
 #endregion

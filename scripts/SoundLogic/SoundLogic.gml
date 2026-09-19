@@ -1,7 +1,7 @@
 #region simple sfx
 
 	//sfx (general)
-	function SoundPlay(_snd, _volPercent = 100, _looping = false){
+	function SoundPlay(_snd, _volPercent = 100, _looping = false, _volGlobal = global.volSound){
 	
 		//stop previous sound
 		if audio_is_playing(_snd) audio_stop_sound(_snd);
@@ -10,7 +10,7 @@
 		_volPercent = clamp(_volPercent, 0, 500);
 	
 		//change gain by percentage
-		var _gain = (global.volSound * _volPercent) / 100;
+		var _gain = (_volGlobal * _volPercent) / 100;
 	
 		//play the sound
 		var _id = audio_play_sound(_snd,1,_looping,_gain);
@@ -209,7 +209,7 @@
 
 #region specific sound commands
 	
-	//this is used for volume changes
+	//this is used for volume changes from menu
 	function VolumeUpdateAmbient(){
 		
 		//change gain
