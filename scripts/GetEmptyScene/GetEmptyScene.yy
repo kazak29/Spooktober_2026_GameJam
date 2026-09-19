@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"ScribbleAddAllEvents",
+  "%Name":"GetEmptyScene",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"ScribbleAddAllEvents",
+  "name":"GetEmptyScene",
   "parent":{
     "name":"General",
-    "path":"folders/Scripts/Loading/General.yy",
+    "path":"folders/Scripts/Loading/Scenes/General.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
