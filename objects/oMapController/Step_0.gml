@@ -17,7 +17,8 @@ var _confirmed = oInputManager.pressed.confirm || _mouseClicked;
 if (_confirmed) {
     if (!_currentLoc.isLocked) {
         show_debug_message("Loading scene: " + string(_currentLoc.activeScene) + " for " + _currentLoc.locationName);
-        // Add room change or scene transition here
+        global.sceneToPlay = _currentLoc.activeScene;
+		TransitionStart(rmStage, sqFadeOut, sqFadeIn);
     } else {
         show_debug_message(_currentLoc.locationName + " is locked!");
     }
