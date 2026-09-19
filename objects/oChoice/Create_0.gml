@@ -3,14 +3,11 @@ nextNode = noone;
 
 buttonText = "";
 
+w = 500;
+h = 90;
 
-
-
-width = 500;
-height = 90;
-
-drawX = x - (width / 2);
-drawY = y - height;
+drawX = x - (w / 2);
+drawY = y - h;
 
 textX = x;
-textY = y - (height / 2);
+textY = y - (h / 2);

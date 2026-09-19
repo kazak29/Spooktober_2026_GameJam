@@ -131,8 +131,8 @@ function DirectorStateChoice()
         if (instance_exists(_btn))
         {
             // Read width and height directly from the instance to match its Create event
-            var _w = _btn.width;
-            var _h = _btn.height;
+            var _w = _btn.w;
+            var _h = _btn.h;
 
             var _left   = _btn.x - (_w / 2);
             var _right  = _btn.x + (_w / 2);
