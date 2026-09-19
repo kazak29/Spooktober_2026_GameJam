@@ -4,7 +4,7 @@ elementSelectedSub = noone;
 mouseHoverMain = false;
 mouseHoverSub = false;
 
-if oInputManager.mouse.released.mbL mouseClickLock = false;
+if oInputManager.mouse.released.left mouseClickLock = false;
 var _mouseClickLockCheck = true;
 
 #region small repeating scripts
@@ -111,9 +111,9 @@ var _elemsL = array_length(_elems);
 
 //inputs
 var _mouseEmpty	= !mouseHoverMain && !mouseHoverSub;	//hovering empty space on screen
-var _pressedMain = oInputManager.pressed.confirm  || (oInputManager.mouse.pressed.mbL && !mouseHoverSub && !_mouseEmpty);
-var _pressedSub	= oInputManager.mouse.pressed.mbL && mouseHoverSub;
-var _heldSub	= oInputManager.mouse.held.mbL && mouseHoverSub && !mouseClickLock;
+var _pressedMain = oInputManager.pressed.confirm  || (oInputManager.mouse.pressed.left && !mouseHoverSub && !_mouseEmpty);
+var _pressedSub	= oInputManager.mouse.pressed.left && mouseHoverSub;
+var _heldSub	= oInputManager.mouse.held.left && mouseHoverSub && !mouseClickLock;
 
 //main element confirm logic
 if instance_exists(elementSelectedMain) {
@@ -247,7 +247,7 @@ if instance_exists(elementSelectedSub) {
 }
 
 //cancel logic
-if oInputManager.pressed.cancel || oInputManager.mouse.pressed.mbR {
+if oInputManager.pressed.cancel || oInputManager.mouse.pressed.right {
 	var _prev = _page.pageNamePrev;
 	if is_string(_prev) && (_prev != "") {
 		pageName = _prev;
@@ -257,7 +257,7 @@ if oInputManager.pressed.cancel || oInputManager.mouse.pressed.mbR {
 }
 
 //locking mouse input
-if (oInputManager.mouse.held.mbA && _mouseClickLockCheck) mouseClickLock = true;
+if (oInputManager.mouse.held.any && _mouseClickLockCheck) mouseClickLock = true;
 
 //son
 switch menuType {

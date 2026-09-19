@@ -32,10 +32,11 @@ using_gamepad = false;
 
 #region mouse
 	mouseKeys = {
-		mbL: mb_left,
-		mbR: mb_right,
-		mbM: mb_middle,
-		mbA: mb_any,
+		left:	mb_left,
+		right:	mb_right,
+		middle: mb_middle,
+		any:	mb_any,
+		none:	mb_none,
 	};
 	mouseKeyNames = struct_get_names(mouseKeys);
 	

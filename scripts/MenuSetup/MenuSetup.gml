@@ -80,6 +80,13 @@ function MenuDataCreate() {
 						arg:			global.volTypeWriter,
 						argClamp:		[0,1],
 					},
+					//reset to default
+					{
+						title:			global.uiData.menuReset,
+						elemType:		MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+						scr:			MenuSettingsReset,
+						arg:			0,
+					},
 					//back to main page
 					{
 						title:		global.uiData.menuBack,
