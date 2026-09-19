@@ -6,6 +6,7 @@ mouseHoverSub = false;
 
 if oInputManager.mouse.released.left mouseClickLock = false;
 var _mouseClickLockCheck = true;
+var _sfxData = [noone, 0];
 
 #region small repeating scripts
 	
@@ -74,6 +75,13 @@ var _elemsL = array_length(_elems);
 	
 	elementSelectedMain = struct_get(_elems[elementNum], "elemId") ?? noone;
 	
+	
+	//exclusively for sound
+	if elementSelectedMainPrev != elementSelectedMain {
+		elementSelectedMainPrev = elementSelectedMain;
+		_sfxData = [sfxUIClick, 100];
+	}
+	
 #endregion
 #region selecting sub element
 	
@@ -106,6 +114,13 @@ var _elemsL = array_length(_elems);
 	
 	}
 	
+	
+	//exclusively for sound
+	if elementSelectedSubPrev != elementSelectedSub {
+		elementSelectedSubPrev = elementSelectedSub;
+		_sfxData = [sfxUIClick, 100];
+	}
+	
 #endregion
 
 
@@ -123,6 +138,7 @@ if instance_exists(elementSelectedMain) {
 		case MENU_ELEMENT_TYPE.SCRIPT_RUNNER: {
 			if _pressedMain {
 				_elemScrExecute(_elemData);
+				_sfxData = [sfxUIClick, 100];
 			}
 		} break;
 		
@@ -131,6 +147,7 @@ if instance_exists(elementSelectedMain) {
 				pageName = _elemData.pageName;
 				elementNum = 0;
 				PageUpdate();
+				_sfxData = [sfxUIClick, 100];
 			}
 		} break;
 	
@@ -143,6 +160,7 @@ if instance_exists(elementSelectedMain) {
 				_elemData.arg += _hinput;
 				_elemData.arg = clamp(_elemData.arg, 0,1);
 				_elemScrExecute(_elemData);
+				_sfxData = [sfxUIClick, 100];
 			
 			}
 		} break;
@@ -160,6 +178,7 @@ if instance_exists(elementSelectedMain) {
 				
 				with elementSelectedMain UpdateShift();
 				_elemScrExecute(_elemData);
+				_sfxData = [sfxUIClick, 100];
 				
 			}
 		} break;
@@ -192,6 +211,7 @@ if instance_exists(elementSelectedSub) {
 			
 				_elemData.arg = elementSelectedSub.side;
 				_elemScrExecute(_elemData);
+				_sfxData = [sfxUIClick, 100];
 			
 			}
 		} break;
@@ -216,6 +236,7 @@ if instance_exists(elementSelectedSub) {
 				
 					with elementSelectedSub.mainId UpdateShift();
 					_elemScrExecute(_elemData);
+					_sfxData = [sfxUIClick, 100];
 					
 				}
 			
@@ -253,10 +274,12 @@ if oInputManager.pressed.cancel || oInputManager.mouse.pressed.right {
 		pageName = _prev;
 		elementNum = 0;
 		PageUpdate();
+		_sfxData = [sfxUIClick, 100];
 	}
 }
 
-//locking mouse input
+
+if audio_exists(_sfxData[0]) SoundPlay(_sfxData[0], _sfxData[1]);
 if (oInputManager.mouse.held.any && _mouseClickLockCheck) mouseClickLock = true;
 
 //son

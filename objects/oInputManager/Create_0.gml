@@ -36,7 +36,7 @@ using_gamepad = false;
 		right:	mb_right,
 		middle: mb_middle,
 		any:	mb_any,
-		none:	mb_none,
+		//adding none in here breaks the mouse.active check
 	};
 	mouseKeyNames = struct_get_names(mouseKeys);
 	

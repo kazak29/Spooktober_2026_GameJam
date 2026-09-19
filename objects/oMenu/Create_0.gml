@@ -3,11 +3,13 @@ depth = MENU_DEPTH;
 menuPages = global.menuPages[$ menuType] ?? {};
 elementNum = 0;
 
-elementSelectedMain = noone;
-elementSelectedSub = noone;
-mouseHoverMain = false;
-mouseHoverSub = false;
-mouseClickLock = false;
+elementSelectedMain		= noone;
+elementSelectedMainPrev	= noone;
+elementSelectedSub		= noone;
+elementSelectedSubPrev	= noone;
+mouseClickLock			= false;
+mouseHoverMain			= false;
+mouseHoverSub			= false;
 
 bg = {
 	active: false,
