@@ -11,6 +11,8 @@ if (currentSceneId != noone)
 	
 	DrawMainCharacterPortrait();
 }
+if (directorState == DirectorStateChoice) { DrawChoices(); }
+
 
 
 // Fade between scenes
@@ -22,9 +24,6 @@ if (fadeAlpha > MIN_ALPHA)
     draw_set_alpha(MAX_ALPHA);
     draw_set_color(c_white);
 }
-
-
-if (directorState == DirectorStateChoice) { DrawChoices(); }
 
 
 if global.showDebugUI {

@@ -3,34 +3,50 @@ function LoadMapLocations ()
 {
 	var _locations = [
 		{
-			locationName: "A",
+			locationName: "Home",
 			mapX: 200,
 			mapY: 150,
-			scenes: [1, 2, 3],
+			scenes: ["emptyScene"],
 			sceneSelectionScript: noone,
 			isLocked: false
 		},
 		{
-			locationName: "B",
+			locationName: "Sewer Bar",
 			mapX: 400,
 			mapY: 180,
-			scenes: [4, 5, 6],
+			scenes: ["emptyScene"],
 			sceneSelectionScript: noone,
 			isLocked: false
 		},
 		{
-			locationName: "C",
+			locationName: "Street",
+			mapX: 450,
+			mapY: 180,
+			scenes: ["emptyScene"],
+			sceneSelectionScript: noone,
+			isLocked: false
+		},
+		{
+			locationName: "House Across (Yard)",
 			mapX: 300,
 			mapY: 600,
-			scenes: [7, 8, 9],
+			scenes: ["emptyScene"],
 			sceneSelectionScript: noone,
 			isLocked: false
 		},
 		{
-			locationName: "D",
+			locationName: "House Across (Front Door)",
 			mapX: 700,
 			mapY: 300,
-			scenes: [10, 11, 12],
+			scenes: ["emptyScene"],
+			sceneSelectionScript: noone,
+			isLocked: false
+		},
+		{
+			locationName: "Light Post",
+			mapX: 800,
+			mapY: 300,
+			scenes: ["emptyScene"],
 			sceneSelectionScript: noone,
 			isLocked: false
 		}

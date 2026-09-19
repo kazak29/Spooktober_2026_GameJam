@@ -83,12 +83,11 @@ function DrawChoices()
 		
 		var _frame = (_i == currentChoice) ? 1 : 0;
 		draw_sprite_stretched(sChoiceBox, _frame, _choice.drawX, _choice.drawY, _choice.w, _choice.h);
-
-		draw_set_font(fDialogueTextBody);
-		draw_set_halign(fa_center);
-		draw_set_valign(fa_middle);
-		draw_set_color(c_black);
-		draw_text(_choice.textX, _choice.textY, _choice.buttonText);
+		
+		scribble(_choice.buttonText)
+            .starting_format(FONT_DIALOGUE_TEXT_TITLE, c_black)
+            .align(fa_center, fa_middle)
+            .draw(_choice.textX, _choice.textY);
 	}
 	
 }

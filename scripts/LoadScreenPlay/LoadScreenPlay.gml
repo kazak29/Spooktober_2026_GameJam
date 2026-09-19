@@ -5,6 +5,7 @@ function LoadScreenPlay ()
     var _screenPlay = {};
 	
 	var _chunks = [
+		GetEmptyScene(),
 		GetIntroScenes()
 		// Locations
 		// Ending
