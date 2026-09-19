@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Elements",
-    "path":"folders/Objects/RoomControllers/Menu/Elements.yy",
+    "path":"folders/Objects/System/Menu/Elements.yy",
   },
   "parentObjectId":{
     "name":"oMenuElementSub",

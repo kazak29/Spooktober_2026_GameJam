@@ -1,5 +1,5 @@
-if oInputManager.pressed.pause {
-	
+#region ui buttons
+
 	var _exceptionRoom = (
 		room == rmInit || 
 		room == rmTitleScreen || 
@@ -11,14 +11,13 @@ if oInputManager.pressed.pause {
 	
 	if (!global.midTransition && !_exception) {
 		
-		var _menuPresent = false;
-		with oMenu {
-			_menuPresent = true;
-			instance_destroy();
-			with oMenuElement instance_destroy();
-		}
-		if !_menuPresent instance_create_layer(0,0, SYSTEM_LAYER, oMenu, {menuType: MENU_TYPE_PAUSE});
+		with oButton active = true;
+		if oInputManager.pressed.pause uiButtonSettings();
+		
+	} else {
+		
+		with oButton active = false;
 		
 	}
-	
-}
+
+#endregion

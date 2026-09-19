@@ -14,5 +14,5 @@ switch _type {
 
 //right most position
 draw_set_font(asset_get_index(strFont));
-percentX = x + sprite_width*1.2;
-borderRight = x + sprite_width*1.2 + string_width($"100%");// + 24*(image_xscale+image_yscale)/2;
+percentShift = sprite_width*1.2;
+borderRight = x + percentShift + string_width($"100%");// + 24*(image_xscale+image_yscale)/2;

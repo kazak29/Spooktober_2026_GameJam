@@ -9,7 +9,3 @@ with bg {
 		}
 	}
 }
-
-if global.showDebugUI {
-	draw_circle_colour(MENU_PAUSE_X, MENU_PAUSE_Y, 4, c_yellow,c_yellow,false);
-}

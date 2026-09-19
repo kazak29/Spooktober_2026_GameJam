@@ -18,4 +18,4 @@ scribId = scribble(_text).starting_format(strFont, c_white).align(fa_left, fa_mi
 
 strX = x;
 strY = y;
-MenuElementPositionUpdate();
+uiElementPositionUpdate();
