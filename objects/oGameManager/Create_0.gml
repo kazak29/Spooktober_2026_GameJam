@@ -1,3 +1,9 @@
+#region shader
+	
+	u_resolution = shader_get_uniform(shdCRT, "u_resolution");
+	u_time = shader_get_uniform(shdCRT, "u_time");
+	
+#endregion
 #region load from files
 
 	global.uiData = LoadUI();

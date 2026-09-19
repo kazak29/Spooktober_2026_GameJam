@@ -28,5 +28,14 @@ draw_set_halign(fa_left);
 	}
 	
 #endregion
+#region CRT Shader
 
+	shader_set(shdCRT);
+	shader_set_uniform_f(u_resolution, display_get_gui_width(), display_get_gui_height());
+	shader_set_uniform_f(u_time, current_time / 1000);
 
+	draw_surface_stretched(application_surface, 0, 0, display_get_gui_width(), display_get_gui_height());
+
+	shader_reset();
+	
+#endregion
