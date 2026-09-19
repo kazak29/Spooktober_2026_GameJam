@@ -270,7 +270,7 @@ if oInputManager.pressed.cancel || oInputManager.mouse.pressed.right {
 }
 
 
-if audio_exists(_sfxData[0]) SoundPlay(_sfxData[0], _sfxData[1]);
+if audio_exists(_sfxData[0]) && !sfxSkip SoundPlay(_sfxData[0], _sfxData[1]); else sfxSkip = false;
 if (oInputManager.mouse.held.any && _mouseClickLockCheck) mouseClickLock = true;
 
 //son

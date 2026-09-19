@@ -21,11 +21,16 @@ with oButton {
 }
 
 with _but {
+	var _sfxData = [noone, 0];
+	if hoverResetCd <= 0 _sfxData = [sfxUIClick, 100];
+	
 	image_index = 1;
 	titleCol = COL_UI_BUTTON_HOVER;
 	hoverResetCd = 5;
 	
 	if oInputManager.mouse.pressed.left {
 		if script_exists(scr) scr();
+		_sfxData = [sfxUIClick, 100];
 	}
+	if audio_exists(_sfxData[0]) SoundPlay(_sfxData[0], _sfxData[1]);
 }

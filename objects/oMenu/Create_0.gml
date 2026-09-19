@@ -11,6 +11,9 @@ mouseClickLock			= false;
 mouseHoverMain			= false;
 mouseHoverSub			= false;
 
+//ductape ass solution
+sfxSkip = true;
+
 bg = {
 	active: false,
 	col:	c_black,
