@@ -209,7 +209,7 @@
 
 #region specific sound commands
 	
-	//this is used for volume changes
+	//this is used for volume changes from menu
 	function VolumeUpdateAmbient(){
 		
 		//change gain

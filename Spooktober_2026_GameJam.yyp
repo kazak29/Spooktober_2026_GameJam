@@ -276,6 +276,7 @@
     {"id":{"name":"__shd_scribble","path":"shaders/__shd_scribble/__shd_scribble.yy",},},
     {"id":{"name":"shdCRT","path":"shaders/shdCRT/shdCRT.yy",},},
     {"id":{"name":"sfxTypewriterSpook","path":"sounds/sfxTypewriterSpook/sfxTypewriterSpook.yy",},},
+    {"id":{"name":"sfxUIClick","path":"sounds/sfxUIClick/sfxUIClick.yy",},},
     {"id":{"name":"sndBarPunk","path":"sounds/sndBarPunk/sndBarPunk.yy",},},
     {"id":{"name":"sndSpookTheme","path":"sounds/sndSpookTheme/sndSpookTheme.yy",},},
     {"id":{"name":"sndStrayRatStrut","path":"sounds/sndStrayRatStrut/sndStrayRatStrut.yy",},},
