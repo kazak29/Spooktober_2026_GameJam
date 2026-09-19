@@ -6,7 +6,7 @@
   "name":"MenuSetup",
   "parent":{
     "name":"Menu",
-    "path":"folders/Scripts/Menu.yy",
+    "path":"folders/Scripts/System/Menu.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -25,6 +25,7 @@
 	#macro MAX_LAYER_DEPTH		-9999
 	#macro MENU_ELEMENT_DEPTH	-9998
 	#macro MENU_DEPTH			-9997
+	#macro UI_BUTTON_DEPTH		-9996
 
 	#macro SYSTEM_LAYER     "System"
 	#macro BACKGROUND_LAYER "Background"
@@ -99,6 +100,9 @@
 	#macro COL_MENU_OPTION_SELECTED		c_yellow
 	#macro COL_MENU_OPTION_HOVER		c_orange
 	#macro COL_MENU_OPTION_DISABLED		c_dkgray
+	
+	#macro COL_UI_BUTTON_DEFAULT		c_white
+	#macro COL_UI_BUTTON_HOVER			c_orange
 	
 #endregion
 #region menu

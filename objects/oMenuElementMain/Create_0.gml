@@ -7,6 +7,7 @@ if !is_string(strFont) || !font_exists(asset_get_index(strFont)) strFont = FONT_
 
 var _elem = elementData;
 scribId = scribble(_elem.title).starting_format(strFont, c_white);
+var _charH = scribble(" ").starting_format(strFont, c_white).get_height();
 
 #region set parameters based on menu page layout and sprite
 	
@@ -48,8 +49,19 @@ scribId = scribble(_elem.title).starting_format(strFont, c_white);
 			_bufferX /= 4;
 			_bufferY /= 2;
 			
-			_startX	= MENU_PAUSE_X;
-			_startY	= MENU_PAUSE_Y;
+			with oButton {
+				if scr == uiButtonSettings {
+					var _x = strX;
+					var _y = strY;
+					if variable_instance_exists(id, "scribId") _y = scribId.get_bbox(strX,strY).bottom;
+					if sprite_exists(sprite_index) _y = bbox_bottom;
+					if oMenu.bg.active _y += oMenu.bg.offset;
+					
+					_startX = _x;
+					_startY = _y + _charH/2;
+					break;
+				}
+			}
 			
 			strX = _startX - _bufferX;
 			strY = _startY + elementNum*_bufferY;
@@ -60,8 +72,13 @@ scribId = scribble(_elem.title).starting_format(strFont, c_white);
 			_bufferX /= 4;
 			_bufferY /= 2;
 			
-			_startX	= MENU_PAUSE_X;
-			_startY	= MENU_PAUSE_Y - ((_elemsL-1)/2)*_bufferY;
+			with oButton {
+				if scr == uiButtonSettings {
+					_startX = strX;
+					_startY = strY - ((_elemsL-1)/2)*_bufferY;
+					break;
+				}
+			}
 			
 			strX = _startX - _bufferX;
 			strY = _startY + elementNum*_bufferY;
@@ -72,8 +89,19 @@ scribId = scribble(_elem.title).starting_format(strFont, c_white);
 			_bufferX /= 4;
 			_bufferY /= 2;
 			
-			_startX	= MENU_PAUSE_X;
-			_startY	= MENU_PAUSE_Y - ((_elemsL-1))*_bufferY;
+			with oButton {
+				if scr == uiButtonSettings {
+					var _x = strX;
+					var _y = strY;
+					if variable_instance_exists(id, "scribId") _y = scribId.get_bbox(strX, strY).top;
+					if sprite_exists(sprite_index) _y = bbox_top;
+					if oMenu.bg.active _y -= oMenu.bg.offset;
+					
+					_startX = _x;
+					_startY = _y - _charH/2 - ((_elemsL-1))*_bufferY;
+					break;
+				}
+			}
 			
 			strX = _startX - _bufferX;
 			strY = _startY + elementNum*_bufferY;
@@ -82,7 +110,7 @@ scribId = scribble(_elem.title).starting_format(strFont, c_white);
 		
 	}
 	
-	MenuElementPositionUpdate();
+	uiElementPositionUpdate();
 	
 #endregion
 

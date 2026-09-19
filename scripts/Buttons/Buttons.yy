@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"MenuButtons",
+  "%Name":"Buttons",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"MenuButtons",
+  "name":"Buttons",
   "parent":{
-    "name":"Menu",
-    "path":"folders/Scripts/System/Menu.yy",
+    "name":"UI",
+    "path":"folders/Scripts/System/UI.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

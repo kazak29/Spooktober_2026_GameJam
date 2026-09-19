@@ -3,6 +3,10 @@ function MenuTransitionStart(_arg){
 	if (_al < 3) show_debug_message("MENU TRANSITION DATA MISSING");
 	
 	AmbientFadeOutAll();
+	if menuType == MENU_TYPE_PAUSE {
+		instance_destroy();
+		with oMenuElement instance_destroy();
+	}
 	TransitionStart(_arg[0], _arg[1], _arg[2]);
 }
 

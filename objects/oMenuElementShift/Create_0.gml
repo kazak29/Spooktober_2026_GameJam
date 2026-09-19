@@ -14,7 +14,7 @@ PositionUpdate = function(){
 				strX = _bbox.left - MENU_BUFFER_X/2;
 				strY = _centerId.strY;
 			}
-			MenuElementPositionUpdate();
+			uiElementPositionUpdate();
 			
 		} break;
 		case 2: {
@@ -28,7 +28,7 @@ PositionUpdate = function(){
 				strX = _bbox.right + MENU_BUFFER_X/2;
 				strY = _centerId.strY;
 			}
-			MenuElementPositionUpdate();
+			uiElementPositionUpdate();
 			
 		} break;
 	}
@@ -39,7 +39,7 @@ TextUpdate = function(){
 		scribId = scribble(_text).starting_format(strFont, c_white).align(fa_center, fa_middle);
 		
 		//do NOT update string position
-		MenuElementPositionUpdate();
+		uiElementPositionUpdate();
 	}
 }
 
@@ -55,7 +55,7 @@ switch side {
 		
 		strX = x;
 		strY = y;
-		MenuElementPositionUpdate();
+		uiElementPositionUpdate();
 	} break;
 	case 2: {
 		scribId = scribble(">>").starting_format(strFont, c_white).align(fa_left, fa_middle);

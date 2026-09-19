@@ -17,6 +17,7 @@ bg = {
 	spr:	noone,
 	imInd:	0,
 	alpha:	1,
+	offset: 16,
 	
 	x1: 0,
 	x2: 0,
@@ -33,11 +34,7 @@ if is_struct(_bg) {
 		spr		= struct_get(_bg, "spr")	?? noone;
 		imInd	= struct_get(_bg, "imInd")	?? 0;
 		alpha	= struct_get(_bg, "alpha")	?? 1;
-		
-		x1		= struct_get(_bg, "x1")		?? 0;
-		x2		= struct_get(_bg, "x2")		?? 0;
-		y1		= struct_get(_bg, "y1")		?? 0;
-		y2		= struct_get(_bg, "y2")		?? 0;
+		offset	= struct_get(_bg, "offset")	?? 16;
 	}
 }
 
@@ -54,7 +51,7 @@ SettingsDataUpdate = function(_elemData){
 
 BackgroundPositionUpdate = function(_elemId){
 	
-	var _offset = 16;
+	var _offset = bg.offset;
 	
 	//check if current positions are bigger than the previous positions
 	var _posCheck = function(_x1,_x2,_y1,_y2){
@@ -115,13 +112,65 @@ PageUpdate = function(){
 		var _id = instance_create_layer(0,0, SYSTEM_LAYER, oMenuElementMain, _data);
 		_elems[i].elemId = _id;
 		
-		if bg.active {
+		#region background borders set
+		
+			//set first bg position
+			if i <= 0 {
+				bg.x1 = _id.x;
+				bg.x2 = _id.x;
+				bg.y1 = _id.y;
+				bg.y2 = _id.y;
+			}
+			
 			var _al = array_length(_id.subIds);
 			for (var j = 0; j < _al; j++) {
 				BackgroundPositionUpdate(_id.subIds[j]);
 			}
 			BackgroundPositionUpdate(_id);
-		}
+			
+		#endregion
 	}
+	
+	#region position correction in case menu is out of bounds
+		
+		var _shiftX = 0;
+		var _shiftY = 0;
+		with bg {
+			if x1 < 0				_shiftX = -x1;
+			if x2 > VIEWPORT_WIDTH	_shiftX = VIEWPORT_WIDTH - x2;
+			if y1 < 0				_shiftY = -y1;
+			if y2 > VIEWPORT_HEIGHT	_shiftY = VIEWPORT_HEIGHT - y2;
+		
+			x1 += _shiftX;
+			x2 += _shiftX;
+			y1 += _shiftY;
+			y2 += _shiftY;
+		}
+		
+		for (var i = 0; i < _elemsL; i++) {
+			var _id = _elems[i].elemId;
+			with _id {
+				
+				//main element position itself
+				x += _shiftX;
+				y += _shiftY;
+				strX += _shiftX;
+				strY += _shiftY;
+				
+				//every sub element position
+				var _al = array_length(_id.subIds);
+				for (var j = 0; j < _al; j++) {
+					with _id.subIds[j] {
+						x += _shiftX;
+						y += _shiftY;
+						strX += _shiftX;
+						strY += _shiftY;
+					}
+				}
+			
+			}
+		}
+		
+	#endregion
 }
 PageUpdate();

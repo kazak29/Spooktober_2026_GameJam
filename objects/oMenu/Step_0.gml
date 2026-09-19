@@ -18,10 +18,10 @@ var _sfxData = [noone, 0];
 		_scr(_arg);
 	}
 	
-	//check for menu element id when hovering with a mouse (must be called from within object itself)
+	//check for menu element id when hovering with a mouse
 	var _elemMouseHoverGet = function(_id){
+		//special collision
 		with _id {
-			//special collision
 			if (object_get_parent(object_index) == oMenuElementSub) && (elementData.elemType == MENU_ELEMENT_TYPE.SLIDER) {
 				var _scale = (image_xscale+image_yscale)/2;
 				
@@ -32,18 +32,9 @@ var _sfxData = [noone, 0];
 					
 				return oInputManager.MouseHoverRectangle(_x1,_y1, _x2,_y2);
 			}
-			
-			//regular collision
-			if sprite_exists(sprite_index) {
-				return oInputManager.MouseHoverObjectId(id);
-			} else {
-				if !variable_instance_exists(id, "scribId") return noone;
-			
-				var _bbox = scribId.get_bbox(strX,strY);
-				if oInputManager.MouseHoverRectangle(_bbox.x0, _bbox.y0, _bbox.x3, _bbox.y3) return id;
-			}
-			return noone;
 		}
+		//regular collision
+		return uiMouseCollision(_id);
 	}
 	
 #endregion
