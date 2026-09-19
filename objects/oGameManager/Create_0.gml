@@ -38,8 +38,8 @@
 #region screenplay
 
 	global.screenPlay = LoadScreenPlay();
-	//global.sceneToPlay = "emptyScene";
-	global.sceneToPlay = "introScene1";
+	global.sceneToPlay = "emptyScene";
+	//global.sceneToPlay = "introScene1";
 
 #endregion
 #region menu

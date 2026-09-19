@@ -7,6 +7,8 @@ locationCount = array_length(locations);
 // Array to hold the created instance references
 locationInstances = [];
 
+
+
 for (var _i = 0; _i < locationCount; _i++)
 {
     var _locationData = locations[_i];
