@@ -16,8 +16,12 @@ var _confirmed = oInputManager.pressed.confirm || _mouseClicked;
 
 if (_confirmed) {
     if (!_currentLoc.isLocked) {
+		// Textlog: Add location selected to the log
+		AddToTextLog({ title: "Location Selected", text: _currentLoc.locationName });
+		show_debug_message(string(global.textLog));
         show_debug_message("Loading scene: " + string(_currentLoc.activeScene) + " for " + _currentLoc.locationName);
-        global.sceneToPlay = _currentLoc.activeScene;
+        
+		global.sceneToPlay = _currentLoc.activeScene;
 		TransitionStart(rmStage, sqFadeOut, sqFadeIn);
     } else {
         show_debug_message(_currentLoc.locationName + " is locked!");

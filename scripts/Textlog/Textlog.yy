@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"LoadLines",
+  "%Name":"Textlog",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"LoadLines",
+  "name":"Textlog",
   "parent":{
-    "name":"General",
-    "path":"folders/Scripts/Loading/General.yy",
+    "name":"Misc",
+    "path":"folders/Scripts/Misc.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -25,10 +25,10 @@ for (var _i = 0; _i < creditsLength; _i++)
 
 
 // Draw Prompt to Exit
-var _returnPrompt = "Press Confirm to Return to Title Screen";
+
 
 draw_set_color(c_gray);
-draw_text(drawX, VIEWPORT_HEIGHT - 60, _returnPrompt);
+draw_text(drawX, VIEWPORT_HEIGHT - 60, returnPrompt);
 
 
 
