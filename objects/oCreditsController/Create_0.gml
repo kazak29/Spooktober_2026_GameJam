@@ -21,6 +21,9 @@ creditEntries = [
 creditsLength = array_length(creditEntries);
 
 
+returnPrompt = "Press [ESCAPE] to Return to Title Screen";
+
+
 drawX      = VIEWPORT_WIDTH / 2;
 drawStartY = VIEWPORT_HEIGHT * 0.25;
 ySpacing   = 36;

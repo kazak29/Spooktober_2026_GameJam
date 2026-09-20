@@ -1,5 +1,5 @@
 
-if (oInputManager.pressed.confirm)
+if (oInputManager.pressed.pause)
 {
     TransitionStart(rmTitleScreen, sqFadeOut, sqFadeIn);
 }
