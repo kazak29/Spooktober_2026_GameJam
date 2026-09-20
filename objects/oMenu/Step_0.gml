@@ -6,7 +6,7 @@ mouseHoverSub = false;
 
 if oInputManager.mouse.released.left mouseClickLock = false;
 var _mouseClickLockCheck = true;
-var _sfxData = [noone, 0];
+var _sfx = "none";
 
 #region small repeating scripts
 	
@@ -51,6 +51,7 @@ var _elemsL = array_length(_elems);
 		elementNum += _pressVer;
 		if (elementNum > _elemsL-1)	{ elementNum = 0;			}
 		if (elementNum < 0)			{ elementNum = _elemsL-1;	}
+		_sfx = "hover";
 	}
 	
 	//mouse navigation for main elements
@@ -66,11 +67,10 @@ var _elemsL = array_length(_elems);
 	
 	elementSelectedMain = struct_get(_elems[elementNum], "elemId") ?? noone;
 	
-	
-	//exclusively for sound
-	if elementSelectedMainPrev != elementSelectedMain {
-		elementSelectedMainPrev = elementSelectedMain;
-		_sfxData = [sfxUIClick, 100];
+	//mouse hover sfx
+	with elementSelectedMain {
+		if (hoverCd <= 0) && other.mouseHoverMain _sfx = "hover";
+		hoverCd = other.mouseHoverCdMax;
 	}
 	
 #endregion
@@ -105,11 +105,10 @@ var _elemsL = array_length(_elems);
 	
 	}
 	
-	
-	//exclusively for sound
-	if elementSelectedSubPrev != elementSelectedSub {
-		elementSelectedSubPrev = elementSelectedSub;
-		_sfxData = [sfxUIClick, 100];
+	//mouse hover sfx
+	with elementSelectedSub {
+		if (hoverCd <= 0) && other.mouseHoverSub _sfx = "hover";
+		hoverCd = other.mouseHoverCdMax;
 	}
 	
 #endregion
@@ -129,7 +128,7 @@ if instance_exists(elementSelectedMain) {
 		case MENU_ELEMENT_TYPE.SCRIPT_RUNNER: {
 			if _pressedMain {
 				_elemScrExecute(_elemData);
-				_sfxData = [sfxUIClick, 100];
+				_sfx = "click";
 			}
 		} break;
 		
@@ -138,7 +137,7 @@ if instance_exists(elementSelectedMain) {
 				pageName = _elemData.pageName;
 				elementNum = 0;
 				PageUpdate();
-				_sfxData = [sfxUIClick, 100];
+				_sfx = "click";
 			}
 		} break;
 	
@@ -151,7 +150,7 @@ if instance_exists(elementSelectedMain) {
 				_elemData.arg += _hinput;
 				_elemData.arg = clamp(_elemData.arg, 0,1);
 				_elemScrExecute(_elemData);
-				_sfxData = [sfxUIClick, 100];
+				_sfx = "click";
 			
 			}
 		} break;
@@ -169,7 +168,7 @@ if instance_exists(elementSelectedMain) {
 				
 				with elementSelectedMain UpdateShift();
 				_elemScrExecute(_elemData);
-				_sfxData = [sfxUIClick, 100];
+				_sfx = "click";
 				
 			}
 		} break;
@@ -202,7 +201,7 @@ if instance_exists(elementSelectedSub) {
 			
 				_elemData.arg = elementSelectedSub.side;
 				_elemScrExecute(_elemData);
-				_sfxData = [sfxUIClick, 100];
+				_sfx = "click";
 			
 			}
 		} break;
@@ -227,7 +226,7 @@ if instance_exists(elementSelectedSub) {
 				
 					with elementSelectedSub.mainId UpdateShift();
 					_elemScrExecute(_elemData);
-					_sfxData = [sfxUIClick, 100];
+					_sfx = "click";
 					
 				}
 			
@@ -265,12 +264,16 @@ if oInputManager.pressed.cancel || oInputManager.mouse.pressed.right {
 		pageName = _prev;
 		elementNum = 0;
 		PageUpdate();
-		_sfxData = [sfxUIClick, 100];
+		_sfx = "click";
 	}
 }
 
 
-if audio_exists(_sfxData[0]) && !sfxSkip SoundPlay(_sfxData[0], _sfxData[1]); else sfxSkip = false;
+switch _sfx {
+	case "hover": uiSfxPlayHover(); break;
+	case "click": uiSfxPlayClick(); break;
+}
+	
 if (oInputManager.mouse.held.any && _mouseClickLockCheck) mouseClickLock = true;
 
 //son

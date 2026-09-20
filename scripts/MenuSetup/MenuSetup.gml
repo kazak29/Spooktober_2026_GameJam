@@ -80,6 +80,13 @@ function MenuDataCreate() {
 						arg:			global.volTypeWriter,
 						argClamp:		[0,1],
 					},
+					//ui sfx flag
+					{
+						title:			global.uiData.menuSfxUI,
+						elemType:		MENU_ELEMENT_TYPE.TOGGLE,
+						scr:			MenuSfxUI,
+						arg:			global.uiSfxActive,
+					},
 					//reset to default
 					{
 						title:			global.uiData.menuReset,
@@ -140,6 +147,13 @@ function MenuDataCreate() {
 						scr:			MenuVolTypeWriter,
 						arg:			global.volTypeWriter,
 						argClamp:		[0,1],
+					},
+					//ui sfx flag
+					{
+						title:			global.uiData.menuSfxUI,
+						elemType:		MENU_ELEMENT_TYPE.TOGGLE,
+						scr:			MenuSfxUI,
+						arg:			global.uiSfxActive,
 					},
 					//to main
 					{

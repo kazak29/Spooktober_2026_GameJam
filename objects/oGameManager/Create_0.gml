@@ -1,7 +1,12 @@
 #region shader
 	
-	u_resolution = shader_get_uniform(shdCRT, "u_resolution");
-	u_time = shader_get_uniform(shdCRT, "u_time");
+	u_resolution	= shader_get_uniform(shdCRT, "u_resolution");
+	u_time			= shader_get_uniform(shdCRT, "u_time");
+	u_mask			= shader_get_uniform(shdCRT, "u_mask");
+	u_mask_scale	= shader_get_uniform(shdCRT, "u_mask_scale");
+	
+	global.mask = 1;
+	global.maskScale = 2;
 	
 	global.crtActive = true;
 	
@@ -29,6 +34,8 @@
 	
 	// Struct for all ambient data (includes music)
 	global.ambient = {};
+	
+	global.uiSfxActive = false;
 	
 #endregion
 #region transition

@@ -32,8 +32,8 @@ function MenuVolSound(_arg){
 	global.volSound = _arg;
 	VolumeUpdateAmbient();
 	
-	if menuType == MENU_TYPE_TITLE && !audio_is_playing(sfxTypewriterSpook) {
-		SoundPlay(sfxTypewriterSpook, 50);
+	if menuType == MENU_TYPE_TITLE && !audio_is_playing(sfxTypewriterDefault) {
+		SoundPlay(sfxTypewriterDefault, 50);
 	}
 }
 function MenuVolTypeWriter(_arg){
@@ -44,6 +44,10 @@ function MenuVolTypeWriter(_arg){
 		SoundPlay(sfxTypewriterSpook, 50, false, global.volTypeWriter);
 	}
 }
+function MenuSfxUI(){
+	global.uiSfxActive = !global.uiSfxActive;
+}
+
 
 function MenuResume(_arg){
 	with oMenu instance_destroy();

@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"sfxUIClick",
+  "%Name":"sfxTypewriterDefault",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,17 +10,17 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.40800452,
+  "duration":0.2159864,
   "exportDir":"",
-  "name":"sfxUIClick",
+  "name":"sfxTypewriterDefault",
   "parent":{
-    "name":"UI",
-    "path":"folders/Sound/SFX/UI.yy",
+    "name":"Typewriter",
+    "path":"folders/Sound/SFX/Typewriter.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sfxUIClick.mp3",
+  "soundFile":"sfxTypewriterDefault.mp3",
   "volume":1.0,
 }

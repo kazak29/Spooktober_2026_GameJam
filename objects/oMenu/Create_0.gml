@@ -4,15 +4,12 @@ menuPages = global.menuPages[$ menuType] ?? {};
 elementNum = 0;
 
 elementSelectedMain		= noone;
-elementSelectedMainPrev	= noone;
 elementSelectedSub		= noone;
-elementSelectedSubPrev	= noone;
 mouseClickLock			= false;
 mouseHoverMain			= false;
 mouseHoverSub			= false;
 
-//ductape ass solution
-sfxSkip = true;
+mouseHoverCdMax = 5;
 
 bg = {
 	active: false,
@@ -49,6 +46,7 @@ SettingsDataUpdate = function(_elemData){
 		case MenuVolMusic:			_elemData.arg = global.volMusic;			break;
 		case MenuVolSound:			_elemData.arg = global.volSound;			break;
 		case MenuVolTypeWriter:		_elemData.arg = global.volTypeWriter;		break;
+		case MenuSfxUI:				_elemData.arg = global.uiSfxActive;			break;
 	}
 }
 
@@ -115,23 +113,23 @@ PageUpdate = function(){
 		var _id = instance_create_layer(0,0, SYSTEM_LAYER, oMenuElementMain, _data);
 		_elems[i].elemId = _id;
 		
-		#region background borders set
-		
+		if i <= 0 {
 			//set first bg position
-			if i <= 0 {
-				bg.x1 = _id.x;
-				bg.x2 = _id.x;
-				bg.y1 = _id.y;
-				bg.y2 = _id.y;
-			}
-			
-			var _al = array_length(_id.subIds);
-			for (var j = 0; j < _al; j++) {
-				BackgroundPositionUpdate(_id.subIds[j]);
-			}
-			BackgroundPositionUpdate(_id);
-			
-		#endregion
+			bg.x1 = _id.x;
+			bg.x2 = _id.x;
+			bg.y1 = _id.y;
+			bg.y2 = _id.y;
+				
+			//lock hover cd
+			_id.hoverCd = mouseHoverCdMax;
+		}
+		
+		// background borders set
+		var _al = array_length(_id.subIds);
+		for (var j = 0; j < _al; j++) {
+			BackgroundPositionUpdate(_id.subIds[j]);
+		}
+		BackgroundPositionUpdate(_id);
 	}
 	
 	#region position correction in case menu is out of bounds

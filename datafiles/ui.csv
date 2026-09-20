@@ -8,13 +8,14 @@ menuBack,Back
 menuFullscreen,Fullscreen
 menuVolSound,Sound
 menuVolMusic,Music
-menuVolTypeWriter,Dialogue Sound Effects
+menuVolTypeWriter,Dialogue SFX
 menuLanguage,Language
 menuLanguageEng,English
 menuLanguageTur,Turkish
 menuLanguageKaz,Kazakh
 menuOn,On
 menuOff,Off
+menuSfxUI,UI SFX
 menuReset,Reset To Default
 buttonSettings,SETTINGS
 buttonTextlog,TEXT LOG

@@ -17,7 +17,7 @@
 		return _id;
 
 	}
-
+	
 	//stop sounds on the spot for any reason
 	function SoundStop(_snd){
 	
