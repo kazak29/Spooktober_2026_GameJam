@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"sfxTypewriterSpook",
+  "%Name":"sfxDoorOpen",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,17 +10,17 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.09376417,
+  "duration":1.2480046,
   "exportDir":"",
-  "name":"sfxTypewriterSpook",
+  "name":"sfxDoorOpen",
   "parent":{
-    "name":"Typewriter",
-    "path":"folders/Sound/SFX/Typewriter.yy",
+    "name":"SFX",
+    "path":"folders/Sound/SFX.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sfxTypewriterSpook.wav",
-  "volume":0.2,
+  "soundFile":"sfxDoorOpen.wav",
+  "volume":1.0,
 }
