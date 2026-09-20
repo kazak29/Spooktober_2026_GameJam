@@ -55,7 +55,7 @@ function DirectorStateLineSequence()
 			// Textlog: Put the line in the log before moving on
 			var _curLineData = currentLineSequence[currentLineIndex];
 			AddToTextLog({ title: _curLineData.lineTitle, text: _curLineData.lineText });
-			show_debug_message(string(global.textLog));
+			//show_debug_message(string(global.textLog));
 			
             currentLineIndex++;
             if (currentLineIndex >= array_length(currentLineSequence))
@@ -193,7 +193,11 @@ function DirectorStateChoice()
         var _selectedButton = choices[currentChoice];
         var _targetNode = _selectedButton.nextNode;
 		
-		//array_push();
+		// Textlog: Add prompt and selected choice to the log
+		var _curLineData = currentLineSequence[currentLineIndex];
+		AddToTextLog({ title: _curLineData.lineTitle, text: _curLineData.lineText });
+		AddToTextLog({ title: "Choice Selected", text: _selectedButton.buttonText });
+		//show_debug_message(string(global.textLog));
 		
         // Clear Options
         for (var _i = 0; _i < _choiceCount; _i++) { instance_destroy(choices[_i]); }
