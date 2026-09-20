@@ -1,3 +1,5 @@
+///@desc all UI interactions must happen before director state machine
+
 //input cheatcode
 if (keyboard_lastchar == "b") keyboard_string = keyboard_lastchar;
 if (keyboard_string == global.cheatcode) {
@@ -14,7 +16,9 @@ if global.cheat {
 //ui buttons
 var _but = noone;
 with oButton {
-	if active && uiMouseCollision(id) {
+	var _exceptionMenu = instance_exists(oMenu) && scr != uiButtonSettings;
+	
+	if active && uiMouseCollision(id) && !_exceptionMenu {
 		_but = id;
 		break;
 	}
@@ -29,6 +33,8 @@ with _but {
 	hoverResetCd = 5;
 	
 	if oInputManager.mouse.pressed.left {
+		oInputManager.mouse.pressed.left = false;
+		
 		if script_exists(scr) scr();
 		_sfxData = [sfxUIClick, 100];
 	}

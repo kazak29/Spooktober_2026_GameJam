@@ -12,7 +12,8 @@
 	if (!global.midTransition && !_exception) {
 		
 		with oButton active = true;
-		if (oInputManager.pressed.pause && !instance_exists(oTextLog)) { uiButtonSettings(); }
+		if oInputManager.pressed.pause								{ SoundPlay(sfxUIClick); uiButtonSettings();	}
+		if oInputManager.pressed.select && !instance_exists(oMenu)	{ SoundPlay(sfxUIClick); uiButtonTextLog();		}
 		
 	} else {
 		

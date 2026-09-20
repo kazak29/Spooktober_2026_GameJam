@@ -1,16 +1,24 @@
 var _buttonSettings = function() {
-	var _x = VIEWPORT_WIDTH - 96;
-	var _y = VIEWPORT_HEIGHT - 64;
-	
 	instance_create_layer(
-		_x,
-		_y,
+		VIEWPORT_WIDTH - 80,
+		VIEWPORT_HEIGHT - 64,
 		SYSTEM_LAYER,
 		oButton,
 		{	
-			sprite_index: sPlaceholderButton,
+			//sprite_index: sPlaceholderButton,
 			scr: uiButtonSettings,
 			title: global.uiData.buttonSettings
+		}
+	);
+	instance_create_layer(
+		VIEWPORT_WIDTH - 80,
+		VIEWPORT_HEIGHT - 128,
+		SYSTEM_LAYER,
+		oButton,
+		{	
+			//sprite_index: sPlaceholderButton,
+			scr: uiButtonTextLog,
+			title: global.uiData.buttonTextlog
 		}
 	);
 }
