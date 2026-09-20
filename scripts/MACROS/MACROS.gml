@@ -69,6 +69,8 @@
 	#macro SHAY        "Shay"
 	#macro UNKNOWN     "???"
 	#macro SCREWDRIVER "Screwdriver"
+	#macro BARRY       "Barry"
+	#macro PRINCESS    "Princess"
 	
 #endregion
 #region Screen Play
