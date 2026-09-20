@@ -20,4 +20,5 @@ if sprite_exists(sprite_index) {
 	image_index		= _frame;
 	draw_self();
 }
+
 scribId.blend(_c, 1).draw(strX, strY);

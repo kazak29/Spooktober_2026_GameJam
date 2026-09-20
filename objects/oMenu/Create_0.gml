@@ -4,15 +4,12 @@ menuPages = global.menuPages[$ menuType] ?? {};
 elementNum = 0;
 
 elementSelectedMain		= noone;
-elementSelectedMainPrev	= noone;
 elementSelectedSub		= noone;
-elementSelectedSubPrev	= noone;
 mouseClickLock			= false;
 mouseHoverMain			= false;
 mouseHoverSub			= false;
 
-//ductape ass solution
-sfxSkip = true;
+mouseHoverCdMax = 5;
 
 bg = {
 	active: false,
@@ -42,13 +39,40 @@ if is_struct(_bg) {
 }
 
 SettingsDataUpdate = function(_elemData){
-	var _scr = struct_get(_elemData, "scr");
-	switch _scr {
-		case MenuFullscreen:		_elemData.arg = window_get_fullscreen();	break;
-		case MenuLanguage:			_elemData.arg = _elemData.arg;				break;	//add locale variable here
-		case MenuVolMusic:			_elemData.arg = global.volMusic;			break;
-		case MenuVolSound:			_elemData.arg = global.volSound;			break;
-		case MenuVolTypeWriter:		_elemData.arg = global.volTypeWriter;		break;
+	var _varName = struct_get(_elemData, "varName") ?? noone;
+	if is_string(_varName) {
+		if variable_global_exists(_varName) {
+			
+			_elemData.arg = variable_global_get(_varName);
+			
+		} else {
+			
+			//special variables
+			switch _varName {
+				default: {
+					
+					//nested struct variables
+					var _varParts = string_split(_varName, ".");
+					var _al = array_length(_varParts);
+					if _al > 0 && variable_global_exists(_varParts[0]) {
+						
+						var _nestedArg = variable_global_get(_varParts[0]);
+						for (var i = 1; i < _al; i++) {
+							_nestedArg = _nestedArg[$ _varParts[i]];
+						}
+						
+						_elemData.arg = _nestedArg;
+						
+					}
+					
+				} break;
+				
+				case "fullscreen": {
+					_elemData.arg = window_get_fullscreen();
+				} break;
+			}
+			
+		}
 	}
 }
 
@@ -115,23 +139,23 @@ PageUpdate = function(){
 		var _id = instance_create_layer(0,0, SYSTEM_LAYER, oMenuElementMain, _data);
 		_elems[i].elemId = _id;
 		
-		#region background borders set
-		
+		if i <= 0 {
 			//set first bg position
-			if i <= 0 {
-				bg.x1 = _id.x;
-				bg.x2 = _id.x;
-				bg.y1 = _id.y;
-				bg.y2 = _id.y;
-			}
-			
-			var _al = array_length(_id.subIds);
-			for (var j = 0; j < _al; j++) {
-				BackgroundPositionUpdate(_id.subIds[j]);
-			}
-			BackgroundPositionUpdate(_id);
-			
-		#endregion
+			bg.x1 = _id.x;
+			bg.x2 = _id.x;
+			bg.y1 = _id.y;
+			bg.y2 = _id.y;
+				
+			//lock hover cd
+			_id.hoverCd = mouseHoverCdMax;
+		}
+		
+		// background borders set
+		var _al = array_length(_id.subIds);
+		for (var j = 0; j < _al; j++) {
+			BackgroundPositionUpdate(_id.subIds[j]);
+		}
+		BackgroundPositionUpdate(_id);
 	}
 	
 	#region position correction in case menu is out of bounds

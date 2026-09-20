@@ -29,3 +29,15 @@ function uiElementPositionUpdate(){
 	x = _bbox.left + _bbox.width/2 + _offsetX;
 	y = _bbox.top + _bbox.height/2 + _offsetY;
 }
+
+//play ui sfx (why did I even bother)
+function uiSfxPlayHover(){
+	
+	if global.uiSfxActive audio_sound_pitch(SoundPlay(sfxUI, 15), 1);
+	
+}
+function uiSfxPlayClick(){
+	
+	if global.uiSfxActive audio_sound_pitch(SoundPlay(sfxUI, 15), 0.5);
+	
+}

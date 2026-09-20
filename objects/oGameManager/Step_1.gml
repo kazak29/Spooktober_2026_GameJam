@@ -10,7 +10,7 @@ if (keyboard_string == global.cheatcode) {
 if global.cheat {
 	
 	if keyboard_check_pressed(vk_tab) global.showDebugUI = !global.showDebugUI;
-	if keyboard_check_pressed(ord("C")) global.crtActive = !global.crtActive;
+	if keyboard_check_pressed(ord("C")) global.crt.active = !global.crt.active;
 	
 }
 
@@ -26,8 +26,8 @@ with oButton {
 }
 
 with _but {
-	var _sfxData = [noone, 0];
-	if hoverResetCd <= 0 _sfxData = [sfxUIClick, 100];
+	var _sfx = "none";
+	if hoverResetCd <= 0 _sfx = "hover";
 	
 	image_index = 1;
 	titleCol = COL_UI_BUTTON_HOVER;
@@ -37,7 +37,11 @@ with _but {
 		oInputManager.mouse.pressed.left = false;	//locks director from progressing with mouse
 		
 		if script_exists(scr) scr();
-		_sfxData = [sfxUIClick, 100];
+		_sfx = "click";
 	}
-	if audio_exists(_sfxData[0]) SoundPlay(_sfxData[0], _sfxData[1]);
+	
+	switch _sfx {
+		case "hover": uiSfxPlayHover(); break;
+		case "click": uiSfxPlayClick(); break;
+	}
 }

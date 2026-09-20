@@ -16,46 +16,29 @@ function MenuTransitionStart(_arg){
 	TransitionStart(_arg[0], _arg[1], _arg[2]);
 }
 
-function MenuFullscreen(_arg){
-	window_set_fullscreen(_arg);
-}
-
-function MenuLanguage(_arg){
-	show_debug_message($"language set to: {_arg}");
-}
-
-function MenuVolMusic(_arg){
-	global.volMusic = _arg;
-	VolumeUpdateAmbient();
-}
-function MenuVolSound(_arg){
-	global.volSound = _arg;
-	VolumeUpdateAmbient();
-	
-	if menuType == MENU_TYPE_TITLE && !audio_is_playing(sfxTypewriterSpook) {
-		SoundPlay(sfxTypewriterSpook, 50);
-	}
-}
-function MenuVolTypeWriter(_arg){
-	global.volTypeWriter = _arg;
-	with oDirector TypewriterSoundPlay();
-	
-	if menuType == MENU_TYPE_TITLE && !audio_is_playing(sfxTypewriterSpook) {
-		SoundPlay(sfxTypewriterSpook, 50, false, global.volTypeWriter);
-	}
-}
-
-function MenuResume(_arg){
-	with oMenu instance_destroy();
-	with oMenuElement instance_destroy();
-}
-
-function MenuSettingsReset(_arg){
+function MenuSettingsReset(){
 	window_set_fullscreen(false);
 	
 	global.volMusic			= 0.5;
 	global.volSound			= 0.5;
 	global.volTypeWriter	= 0.5;
+	
+	global.uiSfxActive		= false;
+	global.crt.active		= true;
+	
+	global.crt = {
+		active:			true,
+		abberation:		0.0015,
+		noise:			0.02,
+		scanlines:		0.04,
+		scanlinesGlow:	0,	
+		mask:			0,	
+		maskScale:		2,	
+		glow:			0,	
+		bright:			1,	
+		flicker:		0.025,
+		roll:			0.05,
+	};
 	
 	with oDirector TypewriterSoundPlay();
 	VolumeUpdateAmbient();

@@ -6,16 +6,82 @@ mouseHoverSub = false;
 
 if oInputManager.mouse.released.left mouseClickLock = false;
 var _mouseClickLockCheck = true;
-var _sfxData = [noone, 0];
+var _sfx = "none";
 
-#region small repeating scripts
+#region repeating scripts
 	
 	//execute a script from element data with set argument(s)
 	var _elemScrExecute = function(_elemData) {
-		var _scr = _elemData.scr;
-		var _arg = _elemData.arg;
+		var _scr = _elemData[$"scr"] ?? noone;
+		var _arg = _elemData[$"arg"] ?? noone;
+		
+		if script_exists(_scr) _scr(_arg);
+	}
+	
+	//execute settings script from element data
+	var _elemSettingSet = function(_elemData) {
+		var _arg		= _elemData[$"arg"];
+		var _varName	= _elemData[$"varName"];
+		
+		if !is_string(_varName) {
+			show_debug_message("settings variable name is not set properly YOU FOOL");
+			exit;
+		}
+		
+		if variable_global_exists(_varName) {
+			variable_global_set(_varName, _arg);
 			
-		_scr(_arg);
+			//additional triggers
+			switch _varName {
+				case "volMusic": {
+					VolumeUpdateAmbient();
+				} break;
+				
+				case "volSound": {
+					VolumeUpdateAmbient();
+					
+					if menuType == MENU_TYPE_TITLE && !audio_is_playing(sfxTypewriterDefault)
+					{ SoundPlay(sfxTypewriterDefault, 50); }
+				} break;
+				
+				case "volTypeWriter": {
+					VolumeUpdateAmbient();
+					with oDirector TypewriterSoundPlay();
+					
+					if menuType == MENU_TYPE_TITLE && !audio_is_playing(sfxTypewriterSpook)
+					{ SoundPlay(sfxTypewriterSpook, 50, false, global.volTypeWriter); }
+				} break;
+				
+			}
+			
+		} else {
+			
+			//special vars
+			switch _varName {
+				default: {
+					
+					//nested struct variables
+					var _varParts = string_split(_varName, ".");
+					var _al = array_length(_varParts)
+					if _al > 0 && variable_global_exists(_varParts[0]) {
+						
+						var _nestedArg = variable_global_get(_varParts[0]);
+						for (var i = 1; i < _al - 1; i++) {
+							_nestedArg = _nestedArg[$ _varParts[i]];
+						}
+						
+						_nestedArg[$ _varParts[_al - 1]] = _arg;
+						
+					}
+					
+				} break;
+				
+				case "fullscreen": {
+					window_set_fullscreen(_arg);
+				} break;
+			}
+			
+		}
 	}
 	
 	//check for menu element id when hovering with a mouse
@@ -51,6 +117,7 @@ var _elemsL = array_length(_elems);
 		elementNum += _pressVer;
 		if (elementNum > _elemsL-1)	{ elementNum = 0;			}
 		if (elementNum < 0)			{ elementNum = _elemsL-1;	}
+		_sfx = "hover";
 	}
 	
 	//mouse navigation for main elements
@@ -66,11 +133,10 @@ var _elemsL = array_length(_elems);
 	
 	elementSelectedMain = struct_get(_elems[elementNum], "elemId") ?? noone;
 	
-	
-	//exclusively for sound
-	if elementSelectedMainPrev != elementSelectedMain {
-		elementSelectedMainPrev = elementSelectedMain;
-		_sfxData = [sfxUIClick, 100];
+	//mouse hover sfx
+	with elementSelectedMain {
+		if (hoverCd <= 0) && other.mouseHoverMain _sfx = "hover";
+		hoverCd = other.mouseHoverCdMax;
 	}
 	
 #endregion
@@ -105,11 +171,10 @@ var _elemsL = array_length(_elems);
 	
 	}
 	
-	
-	//exclusively for sound
-	if elementSelectedSubPrev != elementSelectedSub {
-		elementSelectedSubPrev = elementSelectedSub;
-		_sfxData = [sfxUIClick, 100];
+	//mouse hover sfx
+	with elementSelectedSub {
+		if (hoverCd <= 0) && other.mouseHoverSub _sfx = "hover";
+		hoverCd = other.mouseHoverCdMax;
 	}
 	
 #endregion
@@ -129,7 +194,7 @@ if instance_exists(elementSelectedMain) {
 		case MENU_ELEMENT_TYPE.SCRIPT_RUNNER: {
 			if _pressedMain {
 				_elemScrExecute(_elemData);
-				_sfxData = [sfxUIClick, 100];
+				_sfx = "click";
 			}
 		} break;
 		
@@ -138,7 +203,7 @@ if instance_exists(elementSelectedMain) {
 				pageName = _elemData.pageName;
 				elementNum = 0;
 				PageUpdate();
-				_sfxData = [sfxUIClick, 100];
+				_sfx = "click";
 			}
 		} break;
 	
@@ -150,8 +215,8 @@ if instance_exists(elementSelectedMain) {
 				
 				_elemData.arg += _hinput;
 				_elemData.arg = clamp(_elemData.arg, 0,1);
-				_elemScrExecute(_elemData);
-				_sfxData = [sfxUIClick, 100];
+				_elemSettingSet(_elemData);
+				_sfx = "click";
 			
 			}
 		} break;
@@ -168,8 +233,8 @@ if instance_exists(elementSelectedMain) {
 				if (_elemData.arg < 0)			_elemData.arg = _argMax;
 				
 				with elementSelectedMain UpdateShift();
-				_elemScrExecute(_elemData);
-				_sfxData = [sfxUIClick, 100];
+				_elemSettingSet(_elemData);
+				_sfx = "click";
 				
 			}
 		} break;
@@ -180,7 +245,7 @@ if instance_exists(elementSelectedMain) {
 				
 				_elemData.arg += _hinput*0.005;
 				_elemData.arg = clamp(_elemData.arg, _elemData.argClamp[0], _elemData.argClamp[1]);
-				_elemScrExecute(_elemData);
+				_elemSettingSet(_elemData);
 				
 			}
 		} break;
@@ -201,8 +266,8 @@ if instance_exists(elementSelectedSub) {
 				elementSelectedMain = elementSelectedSub.mainId;
 			
 				_elemData.arg = elementSelectedSub.side;
-				_elemScrExecute(_elemData);
-				_sfxData = [sfxUIClick, 100];
+				_elemSettingSet(_elemData);
+				_sfx = "click";
 			
 			}
 		} break;
@@ -226,8 +291,8 @@ if instance_exists(elementSelectedSub) {
 					if (_elemData.arg < 0)			_elemData.arg = _argMax;
 				
 					with elementSelectedSub.mainId UpdateShift();
-					_elemScrExecute(_elemData);
-					_sfxData = [sfxUIClick, 100];
+					_elemSettingSet(_elemData);
+					_sfx = "click";
 					
 				}
 			
@@ -251,7 +316,7 @@ if instance_exists(elementSelectedSub) {
 				//calculate correct argument from percentage (we can set argClamp to be between different numbers, not just from 0 to 1)
 				_elemData.arg = ((_elemData.argClamp[1] - _elemData.argClamp[0]) * _perc) + _elemData.argClamp[0];
 				_elemData.arg = clamp(_elemData.arg, _elemData.argClamp[0], _elemData.argClamp[1]);
-				_elemScrExecute(_elemData);
+				_elemSettingSet(_elemData);
 			}
 		} break;
 		
@@ -265,12 +330,16 @@ if oInputManager.pressed.cancel || oInputManager.mouse.pressed.right {
 		pageName = _prev;
 		elementNum = 0;
 		PageUpdate();
-		_sfxData = [sfxUIClick, 100];
+		_sfx = "click";
 	}
 }
 
 
-if audio_exists(_sfxData[0]) && !sfxSkip SoundPlay(_sfxData[0], _sfxData[1]); else sfxSkip = false;
+switch _sfx {
+	case "hover": uiSfxPlayHover(); break;
+	case "click": uiSfxPlayClick(); break;
+}
+	
 if (oInputManager.mouse.held.any && _mouseClickLockCheck) mouseClickLock = true;
 
 //son

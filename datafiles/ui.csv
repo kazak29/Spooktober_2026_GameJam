@@ -8,14 +8,30 @@ menuBack,Back
 menuFullscreen,Fullscreen
 menuVolSound,Sound
 menuVolMusic,Music
-menuVolTypeWriter,Dialogue Sound Effects
+menuVolTypeWriter,Dialogue SFX
 menuLanguage,Language
 menuLanguageEng,English
 menuLanguageTur,Turkish
 menuLanguageKaz,Kazakh
 menuOn,On
 menuOff,Off
+menuSfxUI,UI SFX
 menuReset,Reset To Default
+menuCrt,CRT Filter
+menuCrtActive,Enabled
+menuCrtAbberation,Abberation
+menuCrtNoise,Noise
+menuCrtScanlines,Scanlines
+menuCrtScanlinesGlow,Scanlines Glow
+menuCrtMask,Mask
+menuCrtMaskGrille,Grille
+menuCrtMaskDots,Dots
+menuCrtMaskSlot,Slot
+menuCrtMaskScale,Mask Scale
+menuCrtGlow,Inner Glow
+menuCrtBright,Gamma
+menuCrtFlicker,Flicker
+menuCrtRoll,Rolling Band
 buttonSettings,SETTINGS
 buttonTextlog,TEXT LOG
 ,

@@ -43,55 +43,144 @@ function MenuDataCreate() {
 				elements:		[
 					//fullscreen
 					{
-						title:		global.uiData.menuFullscreen,
-						elemType:	MENU_ELEMENT_TYPE.TOGGLE,
-						scr:		MenuFullscreen,
-						arg:		window_get_fullscreen(),
+						title:			global.uiData.menuFullscreen,
+						elemType:		MENU_ELEMENT_TYPE.TOGGLE,
+						varName:		"fullscreen",
 					},
-					//language
-					//{
-					//	title:			global.uiData.menuLanguage,
-					//	elemType:		MENU_ELEMENT_TYPE.SHIFT,
-					//	scr:			MenuLanguage,
-					//	arg:			0,
-					//	argTitles:		[global.uiData.menuLanguageEng, global.uiData.menuLanguageTur, global.uiData.menuLanguageKaz],
-					//},
 					//music volume
 					{
 						title:			global.uiData.menuVolMusic,
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
-						scr:			MenuVolMusic,
-						arg:			global.volMusic,
+						varName:		"volMusic",
 						argClamp:		[0,1],
 					},
 					//sound volume
 					{
 						title:			global.uiData.menuVolSound,
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
-						scr:			MenuVolSound,
-						arg:			global.volSound,
+						varName:		"volSound",
 						argClamp:		[0,1],
 					},
 					//dialogue volume (type writer)
 					{
 						title:			global.uiData.menuVolTypeWriter,
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
-						scr:			MenuVolTypeWriter,
-						arg:			global.volTypeWriter,
+						varName:		"volTypeWriter",
 						argClamp:		[0,1],
+					},
+					//ui sfx flag
+					{
+						title:			global.uiData.menuSfxUI,
+						elemType:		MENU_ELEMENT_TYPE.TOGGLE,
+						varName:		"uiSfxActive",
+					},
+					//crt page
+					{
+						title:			global.uiData.menuCrt,
+						elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
+						pageName:		"crt",
 					},
 					//reset to default
 					{
 						title:			global.uiData.menuReset,
 						elemType:		MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
 						scr:			MenuSettingsReset,
-						arg:			0,
 					},
 					//back to main page
 					{
 						title:		global.uiData.menuBack,
 						elemType:	MENU_ELEMENT_TYPE.PAGE_TRANSFER,
 						pageName:	"main",
+					},
+				],
+			},
+			crt: {
+				pageNamePrev:	"settings",
+				layout:			MENU_LAYOUT.TITLE_SETTINGS,
+				font:			FONT_CONSOLE_24,
+				bg:				noone,
+				elemSpr:		noone,
+				elements:		[
+					//crt filter flag
+					{
+						title:			global.uiData.menuCrtActive,
+						elemType:		MENU_ELEMENT_TYPE.TOGGLE,
+						varName:		"crt.active",
+					},
+					//abberation
+					{
+						title:			global.uiData.menuCrtAbberation,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.abberation",
+						argClamp:		[-0.002, 0.002],
+					},
+					//noise
+					{
+						title:			global.uiData.menuCrtNoise,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.noise",
+						argClamp:		[0, 0.1],
+					},
+					//scanlines
+					{
+						title:			global.uiData.menuCrtScanlines,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.scanlines",
+						argClamp:		[0, 0.1],
+					},
+					//scanlines glow
+					{
+						title:			global.uiData.menuCrtScanlinesGlow,
+						elemType:		MENU_ELEMENT_TYPE.TOGGLE,
+						varName:		"crt.scanlinesGlow",
+					},
+					//mask
+					{
+						title:			global.uiData.menuCrtMask,
+						elemType:		MENU_ELEMENT_TYPE.SHIFT,
+						varName:		"crt.mask",
+						argTitles:		[global.uiData.menuOff, global.uiData.menuCrtMaskGrille, global.uiData.menuCrtMaskDots, global.uiData.menuCrtMaskSlot],
+					},
+					//mask scale
+					{
+						title:			global.uiData.menuCrtMaskScale,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.maskScale",
+						argClamp:		[0, 6],
+					},
+					//glow
+					{
+						title:			global.uiData.menuCrtGlow,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.glow",
+						argClamp:		[0, 1],
+					},
+					//bright
+					{
+						title:			global.uiData.menuCrtBright,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.bright",
+						argClamp:		[0.5, 2],
+					},
+					//flicker
+					{
+						title:			global.uiData.menuCrtFlicker,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.flicker",
+						argClamp:		[0, 0.025],
+					},
+					//roll
+					{
+						title:			global.uiData.menuCrtRoll,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.roll",
+						argClamp:		[0, 0.05],
+					},
+					//back to settings page
+					{
+						title:		global.uiData.menuBack,
+						elemType:	MENU_ELEMENT_TYPE.PAGE_TRANSFER,
+						pageName:	"settings",
 					},
 				],
 			},
@@ -112,34 +201,48 @@ function MenuDataCreate() {
 				elements: [
 					//fullscreen
 					{
-						title:		global.uiData.menuFullscreen,
-						elemType:	MENU_ELEMENT_TYPE.TOGGLE,
-						scr:		MenuFullscreen,
-						arg:		window_get_fullscreen(),
+						title:			global.uiData.menuFullscreen,
+						elemType:		MENU_ELEMENT_TYPE.TOGGLE,
+						varName:		"fullscreen",
 					},
 					//music volume
 					{
 						title:			global.uiData.menuVolMusic,
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
-						scr:			MenuVolMusic,
-						arg:			global.volMusic,
+						varName:		"volMusic",
 						argClamp:		[0,1],
 					},
 					//sound volume
 					{
 						title:			global.uiData.menuVolSound,
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
-						scr:			MenuVolSound,
-						arg:			global.volSound,
+						varName:		"volSound",
 						argClamp:		[0,1],
 					},
 					//dialogue volume (type writer)
 					{
 						title:			global.uiData.menuVolTypeWriter,
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
-						scr:			MenuVolTypeWriter,
-						arg:			global.volTypeWriter,
+						varName:		"volTypeWriter",
 						argClamp:		[0,1],
+					},
+					//ui sfx flag
+					{
+						title:			global.uiData.menuSfxUI,
+						elemType:		MENU_ELEMENT_TYPE.TOGGLE,
+						varName:		"uiSfxActive",
+					},
+					//crt page
+					{
+						title:			global.uiData.menuCrt,
+						elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
+						pageName:		"crt",
+					},
+					//reset to default
+					{
+						title:			global.uiData.menuReset,
+						elemType:		MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+						scr:			MenuSettingsReset,
 					},
 					//to main
 					{
@@ -147,6 +250,100 @@ function MenuDataCreate() {
 						elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
 						scr:		MenuTransitionStart,
 						arg:		[rmTitleScreen, sqFadeOut, sqFadeIn],
+					},
+				],
+			},
+			crt: {
+				pageNamePrev:	"main",
+				layout:			MENU_LAYOUT.PAUSE_BOTTOM,
+				font:			FONT_CONSOLE_16,
+				bg:				{
+					active: true,
+					col:	c_blue,
+					alpha:	0.75,
+				},
+				elemSpr:		noone,
+				elements:		[
+					//crt filter flag
+					{
+						title:			global.uiData.menuCrtActive,
+						elemType:		MENU_ELEMENT_TYPE.TOGGLE,
+						varName:		"crt.active",
+					},
+					//abberation
+					{
+						title:			global.uiData.menuCrtAbberation,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.abberation",
+						argClamp:		[-0.002, 0.002],
+					},
+					//noise
+					{
+						title:			global.uiData.menuCrtNoise,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.noise",
+						argClamp:		[0, 0.1],
+					},
+					//scanlines
+					{
+						title:			global.uiData.menuCrtScanlines,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.scanlines",
+						argClamp:		[0, 0.1],
+					},
+					//scanlines glow
+					{
+						title:			global.uiData.menuCrtScanlinesGlow,
+						elemType:		MENU_ELEMENT_TYPE.TOGGLE,
+						varName:		"crt.scanlinesGlow",
+					},
+					//mask
+					{
+						title:			global.uiData.menuCrtMask,
+						elemType:		MENU_ELEMENT_TYPE.SHIFT,
+						varName:		"crt.mask",
+						argTitles:		[global.uiData.menuOff, global.uiData.menuCrtMaskGrille, global.uiData.menuCrtMaskDots, global.uiData.menuCrtMaskSlot],
+					},
+					//mask scale
+					{
+						title:			global.uiData.menuCrtMaskScale,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.maskScale",
+						argClamp:		[0, 6],
+					},
+					//glow
+					{
+						title:			global.uiData.menuCrtGlow,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.glow",
+						argClamp:		[0, 1],
+					},
+					//bright
+					{
+						title:			global.uiData.menuCrtBright,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.bright",
+						argClamp:		[0.5, 2],
+					},
+					//flicker
+					{
+						title:			global.uiData.menuCrtFlicker,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.flicker",
+						argClamp:		[0, 0.025],
+					},
+					//roll
+					{
+						title:			global.uiData.menuCrtRoll,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.roll",
+						argClamp:		[0, 0.05],
+					},
+					//back
+					{
+						title:		global.uiData.menuBack,
+						elemType:	MENU_ELEMENT_TYPE.PAGE_TRANSFER,
+						pageName:	"main",
 					},
 				],
 			},

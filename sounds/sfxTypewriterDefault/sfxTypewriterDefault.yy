@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sfxTypewriterDefault",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":2,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.2159864,
+  "exportDir":"",
+  "name":"sfxTypewriterDefault",
+  "parent":{
+    "name":"Typewriter",
+    "path":"folders/Sound/SFX/Typewriter.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sfxTypewriterDefault.mp3",
+  "volume":1.0,
+}
