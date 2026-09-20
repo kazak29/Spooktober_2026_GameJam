@@ -9,6 +9,8 @@ windowHeight = 600;
 windowX = (VIEWPORT_WIDTH - windowWidth) / 2;
 windowY = (VIEWPORT_HEIGHT - windowHeight) / 5;
 
+isFirstFrame = true;
+
 
 
 // Pre-calculate the total height of all log entries upon creation

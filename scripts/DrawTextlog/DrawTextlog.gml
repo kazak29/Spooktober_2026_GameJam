@@ -1,6 +1,11 @@
 
 function DrawTextlog()
 {
+	draw_set_color(c_black);
+    draw_set_alpha(0.75);
+    draw_rectangle(0, 0, VIEWPORT_WIDTH, VIEWPORT_HEIGHT, false);
+    draw_set_alpha(MAX_ALPHA);
+	
     draw_sprite_stretched(sChoiceBox, 0, global.textLogInst.windowX, global.textLogInst.windowY, global.textLogInst.windowWidth, global.textLogInst.windowHeight);
 
     // Enable scissor test to clip text rendering strictly inside the window bounds
@@ -37,6 +42,12 @@ function DrawTextlog()
 
     // Update max scroll limit dynamically based on total text height versus box size
     global.textLogInst.maxScrollLimit = max(0, _totalHeight - global.textLogInst.windowHeight + 60);
+
+    // Force snap to the bottom on the very first frame to catch any final line offset mismatches
+    if (global.textLogInst.isFirstFrame) {
+        global.textLogInst.scrollOffset = global.textLogInst.maxScrollLimit;
+        global.textLogInst.isFirstFrame = false;
+    }
 
     // Restore normal GPU state
     gpu_pop_state();

@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"TextlogDraw",
+  "%Name":"DrawTextlog",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"TextlogDraw",
+  "name":"DrawTextlog",
   "parent":{
     "name":"System",
     "path":"folders/Scripts/System.yy",

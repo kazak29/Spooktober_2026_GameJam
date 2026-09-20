@@ -42,33 +42,33 @@ function DirectorStateDelay()
 
 function DirectorStateLineSequence()
 {
-	if (instance_exists(oMenu)) { exit; }
+	if (instance_exists(oMenu) || instance_exists(oTextLog)) { exit; }
 	
-    if (oInputManager.pressed.confirm || oInputManager.mouse.pressed.left)
-    {
-        if (typist.get_state() < 1)
-        { 
-            typist.skip(); 
-        }
-        else
-        {
+	if (oInputManager.pressed.confirm || oInputManager.mouse.pressed.left)
+	{
+	    if (typist.get_state() < 1)
+	    { 
+	        typist.skip(); 
+	    }
+	    else
+	    {
 			// Textlog: Put the line in the log before moving on
 			var _curLineData = currentLineSequence[currentLineIndex];
 			AddToTextLog({ title: _curLineData.lineTitle, text: _curLineData.lineText });
 			//show_debug_message(string(global.textLog));
 			
-            currentLineIndex++;
-            if (currentLineIndex >= array_length(currentLineSequence))
-            {
-                TypewriterSoundReset();
+	        currentLineIndex++;
+	        if (currentLineIndex >= array_length(currentLineSequence))
+	        {
+	            TypewriterSoundReset();
 				AdvanceNode();
-            }
-            else
-            {
+	        }
+	        else
+	        {
 				TypewriterSoundSet();
-            }
-        }
-    }
+	        }
+	    }
+	}
 }
 
 
@@ -108,7 +108,7 @@ function DirectorStateCharacterFade()
 
 function DirectorStateChoice()
 {
-    if (instance_exists(oMenu))
+    if (instance_exists(oMenu) || instance_exists(oTextLog))
     {
         for (var _i = 0; _i < array_length(choices); _i++) {
             choices[_i].image_index = 0;
@@ -154,44 +154,44 @@ function DirectorStateChoice()
     }
 
     // Priority: Mouse hover updates selection
-    if (_hoveredIndex != -1)
-    {
-        currentChoice = _hoveredIndex;
-    }
-    // ------------------------------------------------------------------
-    // Keyboard / Gamepad Navigation
-    // ------------------------------------------------------------------
-    else if (oInputManager.pressed.up)
-    {
-        currentChoice--;
-        if (currentChoice < 0) currentChoice = _choiceCount - 1;
-    }
-    else if (oInputManager.pressed.down)
-    {
-        currentChoice++;
-        if (currentChoice >= _choiceCount) currentChoice = 0;
-    }
+	if (_hoveredIndex != -1)
+	{
+	    currentChoice = _hoveredIndex;
+	}
+	// ------------------------------------------------------------------
+	// Keyboard / Gamepad Navigation
+	// ------------------------------------------------------------------
+	else if (oInputManager.pressed.up)
+	{
+	    currentChoice--;
+	    if (currentChoice < 0) currentChoice = _choiceCount - 1;
+	}
+	else if (oInputManager.pressed.down)
+	{
+	    currentChoice++;
+	    if (currentChoice >= _choiceCount) currentChoice = 0;
+	}
     
-    // Update sprite frames
-    for (var _i = 0; _i < _choiceCount; _i++) { 
-        choices[_i].image_index = (_i == currentChoice) ? 1 : 0; 
-    }
+	// Update sprite frames
+	for (var _i = 0; _i < _choiceCount; _i++) { 
+	    choices[_i].image_index = (_i == currentChoice) ? 1 : 0; 
+	}
 
-    // ------------------------------------------------------------------
-    // Confirm Selection & Typist Guard
-    // ------------------------------------------------------------------
-    var _mouseClicked = mouse_check_button_pressed(mb_left) && (_hoveredIndex != -1);
+	// ------------------------------------------------------------------
+	// Confirm Selection & Typist Guard
+	// ------------------------------------------------------------------
+	var _mouseClicked = mouse_check_button_pressed(mb_left) && (_hoveredIndex != -1);
     
-    if (oInputManager.pressed.confirm || _mouseClicked)
-    {
-        if (typist.get_state() < 1)
-        {
-            typist.skip();
-            return;
-        }
+	if (oInputManager.pressed.confirm || _mouseClicked)
+	{
+	    if (typist.get_state() < 1)
+	    {
+	        typist.skip();
+	        return;
+	    }
 		
-        var _selectedButton = choices[currentChoice];
-        var _targetNode = _selectedButton.nextNode;
+	    var _selectedButton = choices[currentChoice];
+	    var _targetNode = _selectedButton.nextNode;
 		
 		// Textlog: Add prompt and selected choice to the log
 		var _curLineData = currentLineSequence[currentLineIndex];
@@ -199,13 +199,13 @@ function DirectorStateChoice()
 		AddToTextLog({ title: "Choice Selected", text: _selectedButton.buttonText });
 		//show_debug_message(string(global.textLog));
 		
-        // Clear Options
-        for (var _i = 0; _i < _choiceCount; _i++) { instance_destroy(choices[_i]); }
-        choices = [];
-        currentChoice = 0;
+	    // Clear Options
+	    for (var _i = 0; _i < _choiceCount; _i++) { instance_destroy(choices[_i]); }
+	    choices = [];
+	    currentChoice = 0;
 
-        ProcessNode(_targetNode);
-    }
+	    ProcessNode(_targetNode);
+	}
 }
 
 
