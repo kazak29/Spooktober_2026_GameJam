@@ -52,6 +52,11 @@ function DirectorStateLineSequence()
         }
         else
         {
+			// Textlog: Put the line in the log before moving on
+			var _curLineData = currentLineSequence[currentLineIndex];
+			AddToTextLog({ title: _curLineData.lineTitle, text: _curLineData.lineText });
+			show_debug_message(string(global.textLog));
+			
             currentLineIndex++;
             if (currentLineIndex >= array_length(currentLineSequence))
             {
@@ -184,10 +189,12 @@ function DirectorStateChoice()
             typist.skip();
             return;
         }
-
+		
         var _selectedButton = choices[currentChoice];
         var _targetNode = _selectedButton.nextNode;
-
+		
+		//array_push();
+		
         // Clear Options
         for (var _i = 0; _i < _choiceCount; _i++) { instance_destroy(choices[_i]); }
         choices = [];
