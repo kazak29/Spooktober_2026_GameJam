@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"TextlogDraw",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"TextlogDraw",
+  "parent":{
+    "name":"System",
+    "path":"folders/Scripts/System.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -267,6 +267,7 @@
     {"id":{"name":"string_width_scribble_ext","path":"scripts/string_width_scribble_ext/string_width_scribble_ext.yy",},},
     {"id":{"name":"string_width_scribble","path":"scripts/string_width_scribble/string_width_scribble.yy",},},
     {"id":{"name":"Textlog","path":"scripts/Textlog/Textlog.yy",},},
+    {"id":{"name":"TextlogDraw","path":"scripts/TextlogDraw/TextlogDraw.yy",},},
     {"id":{"name":"Transitions","path":"scripts/Transitions/Transitions.yy",},},
     {"id":{"name":"UI","path":"scripts/UI/UI.yy",},},
     {"id":{"name":"Util","path":"scripts/Util/Util.yy",},},

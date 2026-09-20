@@ -42,6 +42,7 @@
 	global.sceneToPlay = FIRST_SCENE;
 	
 	global.textLog = [];
+	global.textLogInst = noone;
 
 #endregion
 #region menu

@@ -123,11 +123,3 @@ function DrawMainCharacterPortrait ()
         draw_sprite_ext(mainCharacter.sprite, mainCharacter.expressionFrame, 220, _drawY, 1, 1, 0, mainCharacter.blend, mainCharacter.alpha);
     }
 }
-
-
-
-function DrawTextlog ()
-{
-	
-	
-}
