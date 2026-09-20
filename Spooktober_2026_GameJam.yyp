@@ -310,6 +310,7 @@
     {"id":{"name":"sPlaceholderTitleArt","path":"sprites/sPlaceholderTitleArt/sPlaceholderTitleArt.yy",},},
     {"id":{"name":"sPogo","path":"sprites/sPogo/sPogo.yy",},},
     {"id":{"name":"sScrewdriver","path":"sprites/sScrewdriver/sScrewdriver.yy",},},
+    {"id":{"name":"sScrollWheel","path":"sprites/sScrollWheel/sScrollWheel.yy",},},
     {"id":{"name":"sShay","path":"sprites/sShay/sShay.yy",},},
     {"id":{"name":"sSliderCircle","path":"sprites/sSliderCircle/sSliderCircle.yy",},},
     {"id":{"name":"sSliderLine","path":"sprites/sSliderLine/sSliderLine.yy",},},

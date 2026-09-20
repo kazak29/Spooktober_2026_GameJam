@@ -15,13 +15,14 @@ function DrawTextlog()
     {
         var _entry = _globalLog[_i];
         
-        // Scribble handles [b] natively for bolding
-        var _formattedText = "[b]" + string(_entry.title) + ":[/b] " + string(_entry.text);
+        var _formattedText = ""; 
+        if (string(_entry.title) == "") { _formattedText = string(_entry.text); }
+        else { _formattedText = string(_entry.title)+": " + string(_entry.text); }
         
         // Build the scribble element with font, color, and wrapping
         var _element = scribble(_formattedText)
             .starting_format(FONT_DIALOGUE_TEXT_BODY, c_black)
-            .wrap(global.textLogInst.windowWidth - 80);
+            .wrap(global.textLogInst.windowWidth - 110);
             
         var _elementHeight = _element.get_height();
         
@@ -39,4 +40,30 @@ function DrawTextlog()
 
     // Restore normal GPU state
     gpu_pop_state();
+    
+    // ==========================================
+    // SCROLLBAR
+    // ==========================================
+    if (global.textLogInst.maxScrollLimit > 0)
+    {
+        var _barWidth = sprite_get_width(sScrollWheel); 
+        var _barX = global.textLogInst.windowX + global.textLogInst.windowWidth - _barWidth - 15;
+        var _barY = global.textLogInst.windowY + 20;
+        var _barHeight = global.textLogInst.windowHeight - 40;
+		
+        // Draw the background track for the scrollbar
+        draw_set_color(c_dkgray);
+        draw_set_alpha(0.5);
+        draw_roundrect_ext(_barX + 4, _barY, _barX + _barWidth - 4, _barY + _barHeight, 4, 4, false);
+        draw_set_alpha(1.0);
+		
+        // Calculate handle size and position based on scroll progress
+        var _scrollRatio = global.textLogInst.windowHeight / _totalHeight;
+        var _handleHeight = max(sprite_get_width(sScrollWheel), _barHeight * _scrollRatio);
+        
+        var _scrollProgress = global.textLogInst.scrollOffset / global.textLogInst.maxScrollLimit;
+        var _handleY = _barY + (_barHeight - _handleHeight) * _scrollProgress;
+		
+        draw_sprite_stretched(sScrollWheel, 0, _barX, _handleY, _barWidth, _handleHeight);
+    }
 }

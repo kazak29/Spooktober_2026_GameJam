@@ -75,7 +75,7 @@
 	
 	#macro FIRST_SCENE "introScene1"
 	
-	#macro MAX_TEXTLOG_CAPACITY 50
+	#macro MAX_TEXTLOG_CAPACITY 100
 	
 	#macro SPOOK_PORTRAIT_Y_OFFSET 35
 	
