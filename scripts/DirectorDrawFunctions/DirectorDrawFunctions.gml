@@ -75,7 +75,7 @@ function DrawDialogueBox ()
 
 
 
-function DrawChoices()
+function DrawChoices ()
 {
 	for (var _i = 0; _i < array_length(choices); _i++)
 	{
@@ -94,7 +94,7 @@ function DrawChoices()
 
 
 
-function DrawCharacterPortraits()
+function DrawCharacterPortraits ()
 {
     var _guiH = VIEWPORT_HEIGHT;
     
@@ -114,7 +114,7 @@ function DrawCharacterPortraits()
 
 
 
-function DrawMainCharacterPortrait()
+function DrawMainCharacterPortrait ()
 {
     var _guiH = VIEWPORT_HEIGHT;
     if (mainCharacter.alpha > 0 && sprite_exists(mainCharacter.sprite))
@@ -122,4 +122,12 @@ function DrawMainCharacterPortrait()
         var _drawY = _guiH + mainCharacter.yOffset + SPOOK_PORTRAIT_Y_OFFSET;
         draw_sprite_ext(mainCharacter.sprite, mainCharacter.expressionFrame, 220, _drawY, 1, 1, 0, mainCharacter.blend, mainCharacter.alpha);
     }
+}
+
+
+
+function DrawTextlog ()
+{
+	
+	
 }

@@ -7,6 +7,11 @@ function MenuTransitionStart(_arg){
 		instance_destroy();
 		with oMenuElement instance_destroy();
 	}
+	
+	// Reset game to the beginning and clear the textlog
+	global.sceneToPlay = FIRST_SCENE;
+	ClearTextLog();
+	
 	TransitionStart(_arg[0], _arg[1], _arg[2]);
 }
 

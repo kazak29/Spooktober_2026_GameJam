@@ -8,5 +8,7 @@ function AddToTextLog (_dataToAdd = {})
 
 function ClearTextLog()
 {
-	array_delete(global.textLog, 0, MAX_TEXTLOG_CAPACITY);
+	if (array_length(global.textLog) != 0) {
+		array_delete(global.textLog, 0, MAX_TEXTLOG_CAPACITY);
+	}
 }
