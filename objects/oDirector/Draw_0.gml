@@ -14,6 +14,11 @@ if (currentSceneId != noone)
 if (directorState == DirectorStateChoice) { DrawChoices(); }
 
 
+if (instance_exists(oTextLog))
+{
+	DrawTextlog();
+}
+
 
 // Fade between scenes
 if (fadeAlpha > MIN_ALPHA)

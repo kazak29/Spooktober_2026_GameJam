@@ -12,7 +12,7 @@
 	if (!global.midTransition && !_exception) {
 		
 		with oButton active = true;
-		if oInputManager.pressed.pause uiButtonSettings();
+		if (oInputManager.pressed.pause && !instance_exists(oTextLog)) { uiButtonSettings(); }
 		
 	} else {
 		

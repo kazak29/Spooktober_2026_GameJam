@@ -75,7 +75,7 @@ function DrawDialogueBox ()
 
 
 
-function DrawChoices()
+function DrawChoices ()
 {
 	for (var _i = 0; _i < array_length(choices); _i++)
 	{
@@ -94,7 +94,7 @@ function DrawChoices()
 
 
 
-function DrawCharacterPortraits()
+function DrawCharacterPortraits ()
 {
     var _guiH = VIEWPORT_HEIGHT;
     
@@ -114,7 +114,7 @@ function DrawCharacterPortraits()
 
 
 
-function DrawMainCharacterPortrait()
+function DrawMainCharacterPortrait ()
 {
     var _guiH = VIEWPORT_HEIGHT;
     if (mainCharacter.alpha > 0 && sprite_exists(mainCharacter.sprite))
