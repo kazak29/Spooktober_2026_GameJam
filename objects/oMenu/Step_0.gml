@@ -58,6 +58,24 @@ var _sfx = "none";
 			
 			//special vars
 			switch _varName {
+				default: {
+					
+					//nested struct variables
+					var _varParts = string_split(_varName, ".");
+					var _al = array_length(_varParts)
+					if _al > 0 && variable_global_exists(_varParts[0]) {
+						
+						var _nestedArg = variable_global_get(_varParts[0]);
+						for (var i = 1; i < _al - 1; i++) {
+							_nestedArg = _nestedArg[$ _varParts[i]];
+						}
+						
+						_nestedArg[$ _varParts[_al - 1]] = _arg;
+						
+					}
+					
+				} break;
+				
 				case "fullscreen": {
 					window_set_fullscreen(_arg);
 				} break;

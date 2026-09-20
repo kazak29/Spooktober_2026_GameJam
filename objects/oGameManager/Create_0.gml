@@ -19,12 +19,12 @@
 		noise:			0.02,	//slider, from 0 to 0.1
 		scanlines:		0.04,	//slider, from 0 to 0.1
 		scanlinesGlow:	0,		//toggle, from 0 to 1
-		mask:			0,		//shift,  from 0 to 3
+		mask:			0,		//shift,  from 0 to 3, 0 off, 1 grille, 2 dots, 3 slot
 		maskScale:		2,		//slider, from 1 to 6
 		glow:			0,		//slider, from 0 to 1
 		bright:			1,		//slider, from 0.5 to 2
-		flicker:		0.025,	//toggle, from 0 to 0.025
-		roll:			0.05,	//toggle, from 0 to 0.05
+		flicker:		0.025,	//slider, from 0 to 0.025
+		roll:			0.05,	//slider, from 0 to 0.05
 	};
 	
 #endregion

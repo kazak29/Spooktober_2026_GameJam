@@ -47,8 +47,26 @@ SettingsDataUpdate = function(_elemData){
 			
 		} else {
 			
-			//special vars
+			//special variables
 			switch _varName {
+				default: {
+					
+					//nested struct variables
+					var _varParts = string_split(_varName, ".");
+					var _al = array_length(_varParts);
+					if _al > 0 && variable_global_exists(_varParts[0]) {
+						
+						var _nestedArg = variable_global_get(_varParts[0]);
+						for (var i = 1; i < _al; i++) {
+							_nestedArg = _nestedArg[$ _varParts[i]];
+						}
+						
+						_elemData.arg = _nestedArg;
+						
+					}
+					
+				} break;
+				
 				case "fullscreen": {
 					_elemData.arg = window_get_fullscreen();
 				} break;

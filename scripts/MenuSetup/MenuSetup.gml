@@ -102,12 +102,80 @@ function MenuDataCreate() {
 				elemSpr:		noone,
 				elements:		[
 					//crt filter flag
-					//{
-					//	title:			global.uiData.menuCrtActive,
-					//	elemType:		MENU_ELEMENT_TYPE.TOGGLE,
-					//	scr:			MenuCrtActive,
-					//	arg:			global.crt.active,
-					//},
+					{
+						title:			global.uiData.menuCrtActive,
+						elemType:		MENU_ELEMENT_TYPE.TOGGLE,
+						varName:		"crt.active",
+					},
+					//abberation
+					{
+						title:			global.uiData.menuCrtAbberation,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.abberation",
+						argClamp:		[-0.002, 0.002],
+					},
+					//noise
+					{
+						title:			global.uiData.menuCrtNoise,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.noise",
+						argClamp:		[0, 0.1],
+					},
+					//scanlines
+					{
+						title:			global.uiData.menuCrtScanlines,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.scanlines",
+						argClamp:		[0, 0.1],
+					},
+					//scanlines glow
+					{
+						title:			global.uiData.menuCrtScanlinesGlow,
+						elemType:		MENU_ELEMENT_TYPE.TOGGLE,
+						varName:		"crt.scanlinesGlow",
+					},
+					//mask
+					{
+						title:			global.uiData.menuCrtMask,
+						elemType:		MENU_ELEMENT_TYPE.SHIFT,
+						varName:		"crt.mask",
+						argTitles:		[global.uiData.menuOff, global.uiData.menuCrtMaskGrille, global.uiData.menuCrtMaskDots, global.uiData.menuCrtMaskSlot],
+					},
+					//mask scale
+					{
+						title:			global.uiData.menuCrtMaskScale,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.maskScale",
+						argClamp:		[0, 6],
+					},
+					//glow
+					{
+						title:			global.uiData.menuCrtGlow,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.glow",
+						argClamp:		[0, 1],
+					},
+					//bright
+					{
+						title:			global.uiData.menuCrtBright,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.bright",
+						argClamp:		[0.5, 2],
+					},
+					//flicker
+					{
+						title:			global.uiData.menuCrtFlicker,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.flicker",
+						argClamp:		[0, 0.025],
+					},
+					//roll
+					{
+						title:			global.uiData.menuCrtRoll,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.roll",
+						argClamp:		[0, 0.05],
+					},
 					//back to settings page
 					{
 						title:		global.uiData.menuBack,
@@ -182,6 +250,100 @@ function MenuDataCreate() {
 						elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
 						scr:		MenuTransitionStart,
 						arg:		[rmTitleScreen, sqFadeOut, sqFadeIn],
+					},
+				],
+			},
+			crt: {
+				pageNamePrev:	"main",
+				layout:			MENU_LAYOUT.PAUSE_BOTTOM,
+				font:			FONT_CONSOLE_16,
+				bg:				{
+					active: true,
+					col:	c_blue,
+					alpha:	0.75,
+				},
+				elemSpr:		noone,
+				elements:		[
+					//crt filter flag
+					{
+						title:			global.uiData.menuCrtActive,
+						elemType:		MENU_ELEMENT_TYPE.TOGGLE,
+						varName:		"crt.active",
+					},
+					//abberation
+					{
+						title:			global.uiData.menuCrtAbberation,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.abberation",
+						argClamp:		[-0.002, 0.002],
+					},
+					//noise
+					{
+						title:			global.uiData.menuCrtNoise,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.noise",
+						argClamp:		[0, 0.1],
+					},
+					//scanlines
+					{
+						title:			global.uiData.menuCrtScanlines,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.scanlines",
+						argClamp:		[0, 0.1],
+					},
+					//scanlines glow
+					{
+						title:			global.uiData.menuCrtScanlinesGlow,
+						elemType:		MENU_ELEMENT_TYPE.TOGGLE,
+						varName:		"crt.scanlinesGlow",
+					},
+					//mask
+					{
+						title:			global.uiData.menuCrtMask,
+						elemType:		MENU_ELEMENT_TYPE.SHIFT,
+						varName:		"crt.mask",
+						argTitles:		[global.uiData.menuOff, global.uiData.menuCrtMaskGrille, global.uiData.menuCrtMaskDots, global.uiData.menuCrtMaskSlot],
+					},
+					//mask scale
+					{
+						title:			global.uiData.menuCrtMaskScale,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.maskScale",
+						argClamp:		[0, 6],
+					},
+					//glow
+					{
+						title:			global.uiData.menuCrtGlow,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.glow",
+						argClamp:		[0, 1],
+					},
+					//bright
+					{
+						title:			global.uiData.menuCrtBright,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.bright",
+						argClamp:		[0.5, 2],
+					},
+					//flicker
+					{
+						title:			global.uiData.menuCrtFlicker,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.flicker",
+						argClamp:		[0, 0.025],
+					},
+					//roll
+					{
+						title:			global.uiData.menuCrtRoll,
+						elemType:		MENU_ELEMENT_TYPE.SLIDER,
+						varName:		"crt.roll",
+						argClamp:		[0, 0.05],
+					},
+					//back
+					{
+						title:		global.uiData.menuBack,
+						elemType:	MENU_ELEMENT_TYPE.PAGE_TRANSFER,
+						pageName:	"main",
 					},
 				],
 			},

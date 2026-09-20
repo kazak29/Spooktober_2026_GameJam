@@ -24,8 +24,11 @@ menuCrtNoise,Noise
 menuCrtScanlines,Scanlines
 menuCrtScanlinesGlow,Scanlines Glow
 menuCrtMask,Mask
+menuCrtMaskGrille,Grille
+menuCrtMaskDots,Dots
+menuCrtMaskSlot,Slot
 menuCrtMaskScale,Mask Scale
-menuCrtGlow,Picture Glow
+menuCrtGlow,Inner Glow
 menuCrtBright,Gamma
 menuCrtFlicker,Flicker
 menuCrtRoll,Rolling Band
