@@ -8,7 +8,7 @@ var _buttonSettings = function() {
 		SYSTEM_LAYER,
 		oButton,
 		{	
-			//sprite_index: sPlaceholderButton,
+			sprite_index: sPlaceholderButton,
 			scr: uiButtonSettings,
 			title: global.uiData.buttonSettings
 		}

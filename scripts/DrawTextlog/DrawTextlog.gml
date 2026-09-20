@@ -51,7 +51,11 @@ function DrawTextlog()
 
     // Restore normal GPU state
     gpu_pop_state();
+	
+	//gpu_set_scissor is bugged and does not reset with gpu_pop (we prob should send in a bug report to yoyo tbh)
+	gpu_set_scissor(0, 0, surface_get_width(application_surface), surface_get_height(application_surface));
     
+	
     // ==========================================
     // SCROLLBAR
     // ==========================================
@@ -77,4 +81,8 @@ function DrawTextlog()
 		
         draw_sprite_stretched(sScrollWheel, 0, _barX, _handleY, _barWidth, _handleHeight);
     }
+	
+	//reset drawing parameters
+	draw_set_color(c_white);
+    draw_set_alpha(1);
 }
