@@ -1,6 +1,18 @@
 
 if (locationCount == 0) { exit; }
 
+
+if (oInputManager.pressed.select && !instance_exists(oMenu))
+{
+	if (!instance_exists(oTextLog)) { global.textLogInst = instance_create_layer(0, 0, SYSTEM_LAYER, oTextLog); }
+	else { instance_destroy(global.textLogInst); }
+}
+
+// Prevent navigation if the log or the menu are up
+if (instance_exists(oTextLog) || instance_exists(oMenu)) { exit; }
+
+
+
 // Menu Navigation
 if (oInputManager.pressed.up) {
     selectedIndex = (selectedIndex - 1 + locationCount) % locationCount;

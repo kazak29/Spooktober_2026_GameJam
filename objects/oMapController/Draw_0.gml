@@ -28,3 +28,5 @@ for (var _i = 0; _i < locationCount; _i++)
         .align(fa_center, fa_middle)
         .draw(_textX, _textY);
 }
+
+if (instance_exists(oTextLog)) { DrawTextlog(); }
