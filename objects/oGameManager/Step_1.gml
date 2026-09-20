@@ -11,16 +11,6 @@ if global.cheat {
 	
 	if keyboard_check_pressed(vk_tab) global.showDebugUI = !global.showDebugUI;
 	if keyboard_check_pressed(ord("C")) global.crt.active = !global.crt.active;
-	if keyboard_check_pressed(ord("1")) global.crt.noise = 0;
-	if keyboard_check_pressed(ord("2")) global.crt.noise = 0.1;
-	if keyboard_check_pressed(ord("3")) global.crt.noise = 0.2;
-	if keyboard_check_pressed(ord("4")) global.crt.noise = 0.3;
-	if keyboard_check_pressed(ord("5")) global.crt.noise = 0.4;
-	if keyboard_check_pressed(ord("6")) global.crt.noise = 0.5;
-	if keyboard_check_pressed(ord("7")) global.crt.noise = 0.6;
-	if keyboard_check_pressed(ord("8")) global.crt.noise = 0.7;
-	if keyboard_check_pressed(ord("9")) global.crt.noise = 0.8;
-	if keyboard_check_pressed(ord("0")) global.crt.noise = 0.9;
 	
 }
 
