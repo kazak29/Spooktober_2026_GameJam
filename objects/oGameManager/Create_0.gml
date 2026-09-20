@@ -39,7 +39,9 @@
 
 	global.screenPlay = LoadScreenPlay();
 	//global.sceneToPlay = "emptyScene";
-	global.sceneToPlay = "introScene1";
+	global.sceneToPlay = FIRST_SCENE;
+	
+	global.textLog = [];
 
 #endregion
 #region menu
