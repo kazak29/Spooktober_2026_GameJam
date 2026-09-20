@@ -14,7 +14,7 @@ if array_length(mainId.subIds) > 0 {
 
 var _text = global.uiData.menuOff;
 if side _text = global.uiData.menuOn;
-scribId = scribble(_text).starting_format(strFont, c_white).align(fa_left, fa_middle);
+scribId = scribble(_text, "toggle").starting_format(strFont, c_white).align(fa_left, fa_middle);
 
 strX = x;
 strY = y;

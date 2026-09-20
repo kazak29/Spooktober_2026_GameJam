@@ -12,7 +12,7 @@ switch scr {
 		title = $"{title}\n[[ENTER/SELECT]";
 	} break;
 }
-scribId = scribble(title).starting_format(titleFont, c_white).align(fa_center, fa_middle);
+scribId = scribble(title, "button").starting_format(titleFont, c_white).align(fa_center, fa_middle);
 
 strX = x;
 strY = y;
