@@ -9,3 +9,10 @@ function uiButtonSettings(){
 	if !_menuPresent instance_create_layer(0,0, SYSTEM_LAYER, oMenu, {menuType: MENU_TYPE_PAUSE});
 	
 }
+
+function uiButtonTextLog(){
+	
+	if (instance_exists(oTextLog)) { instance_destroy(global.textLogInst); }
+	else { global.textLogInst = instance_create_layer(0, 0, SYSTEM_LAYER, oTextLog); }
+	
+}

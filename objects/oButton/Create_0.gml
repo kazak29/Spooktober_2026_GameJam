@@ -6,7 +6,10 @@ hoverResetCd = 0;
 
 switch scr {
 	case uiButtonSettings: {
-		title = $"{title}\n[[ESCAPE]";
+		title = $"{title}\n[[ESCAPE/START]";
+	} break;
+	case uiButtonTextLog: {
+		title = $"{title}\n[[ENTER/SELECT]";
 	} break;
 }
 scribId = scribble(title).starting_format(titleFont, c_white).align(fa_center, fa_middle);
