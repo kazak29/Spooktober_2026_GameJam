@@ -28,15 +28,16 @@ var _charH = scribble(" ").starting_format(strFont, c_white).get_height();
 		
 		case MENU_LAYOUT.TITLE_MAIN: {
 			_startX	= VIEWPORT_WIDTH / 2;
-			_startY	= (VIEWPORT_HEIGHT / 2);
+			_startY	= VIEWPORT_HEIGHT / 2;
 			
 			strX = _startX;
 			strY = _startY + elementNum*_bufferY;
 			scribId.align(fa_center, fa_middle);
 		} break;
 		case MENU_LAYOUT.TITLE_SETTINGS: {
+			var _elemsL	= array_length(_page.elements);
 			_startX	= VIEWPORT_WIDTH / 2;
-			_startY	= (VIEWPORT_HEIGHT / 2);
+			_startY	= VIEWPORT_HEIGHT / 2 - ((_elemsL-1)/6)*_bufferY;
 			
 			strX = _startX - _bufferX;
 			strY = _startY + elementNum*_bufferY;

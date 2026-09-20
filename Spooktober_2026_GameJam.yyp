@@ -292,7 +292,6 @@
     {"id":{"name":"sfxTypewriterDefault","path":"sounds/sfxTypewriterDefault/sfxTypewriterDefault.yy",},},
     {"id":{"name":"sfxTypewriterSpook","path":"sounds/sfxTypewriterSpook/sfxTypewriterSpook.yy",},},
     {"id":{"name":"sfxUI","path":"sounds/sfxUI/sfxUI.yy",},},
-    {"id":{"name":"sfxUIClick","path":"sounds/sfxUIClick/sfxUIClick.yy",},},
     {"id":{"name":"sndBarPunk","path":"sounds/sndBarPunk/sndBarPunk.yy",},},
     {"id":{"name":"sndSpookTheme","path":"sounds/sndSpookTheme/sndSpookTheme.yy",},},
     {"id":{"name":"sndStrayRatStrut","path":"sounds/sndStrayRatStrut/sndStrayRatStrut.yy",},},

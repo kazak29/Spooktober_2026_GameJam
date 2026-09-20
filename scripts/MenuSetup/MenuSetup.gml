@@ -43,62 +43,76 @@ function MenuDataCreate() {
 				elements:		[
 					//fullscreen
 					{
-						title:		global.uiData.menuFullscreen,
-						elemType:	MENU_ELEMENT_TYPE.TOGGLE,
-						scr:		MenuFullscreen,
-						arg:		window_get_fullscreen(),
+						title:			global.uiData.menuFullscreen,
+						elemType:		MENU_ELEMENT_TYPE.TOGGLE,
+						varName:		"fullscreen",
 					},
-					//language
-					//{
-					//	title:			global.uiData.menuLanguage,
-					//	elemType:		MENU_ELEMENT_TYPE.SHIFT,
-					//	scr:			MenuLanguage,
-					//	arg:			0,
-					//	argTitles:		[global.uiData.menuLanguageEng, global.uiData.menuLanguageTur, global.uiData.menuLanguageKaz],
-					//},
 					//music volume
 					{
 						title:			global.uiData.menuVolMusic,
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
-						scr:			MenuVolMusic,
-						arg:			global.volMusic,
+						varName:		"volMusic",
 						argClamp:		[0,1],
 					},
 					//sound volume
 					{
 						title:			global.uiData.menuVolSound,
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
-						scr:			MenuVolSound,
-						arg:			global.volSound,
+						varName:		"volSound",
 						argClamp:		[0,1],
 					},
 					//dialogue volume (type writer)
 					{
 						title:			global.uiData.menuVolTypeWriter,
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
-						scr:			MenuVolTypeWriter,
-						arg:			global.volTypeWriter,
+						varName:		"volTypeWriter",
 						argClamp:		[0,1],
 					},
 					//ui sfx flag
 					{
 						title:			global.uiData.menuSfxUI,
 						elemType:		MENU_ELEMENT_TYPE.TOGGLE,
-						scr:			MenuSfxUI,
-						arg:			global.uiSfxActive,
+						varName:		"uiSfxActive",
+					},
+					//crt page
+					{
+						title:			global.uiData.menuCrt,
+						elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
+						pageName:		"crt",
 					},
 					//reset to default
 					{
 						title:			global.uiData.menuReset,
 						elemType:		MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
 						scr:			MenuSettingsReset,
-						arg:			0,
 					},
 					//back to main page
 					{
 						title:		global.uiData.menuBack,
 						elemType:	MENU_ELEMENT_TYPE.PAGE_TRANSFER,
 						pageName:	"main",
+					},
+				],
+			},
+			crt: {
+				pageNamePrev:	"settings",
+				layout:			MENU_LAYOUT.TITLE_SETTINGS,
+				font:			FONT_CONSOLE_24,
+				bg:				noone,
+				elemSpr:		noone,
+				elements:		[
+					//crt filter flag
+					//{
+					//	title:			global.uiData.menuCrtActive,
+					//	elemType:		MENU_ELEMENT_TYPE.TOGGLE,
+					//	scr:			MenuCrtActive,
+					//	arg:			global.crt.active,
+					//},
+					//back to settings page
+					{
+						title:		global.uiData.menuBack,
+						elemType:	MENU_ELEMENT_TYPE.PAGE_TRANSFER,
+						pageName:	"settings",
 					},
 				],
 			},
@@ -119,41 +133,48 @@ function MenuDataCreate() {
 				elements: [
 					//fullscreen
 					{
-						title:		global.uiData.menuFullscreen,
-						elemType:	MENU_ELEMENT_TYPE.TOGGLE,
-						scr:		MenuFullscreen,
-						arg:		window_get_fullscreen(),
+						title:			global.uiData.menuFullscreen,
+						elemType:		MENU_ELEMENT_TYPE.TOGGLE,
+						varName:		"fullscreen",
 					},
 					//music volume
 					{
 						title:			global.uiData.menuVolMusic,
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
-						scr:			MenuVolMusic,
-						arg:			global.volMusic,
+						varName:		"volMusic",
 						argClamp:		[0,1],
 					},
 					//sound volume
 					{
 						title:			global.uiData.menuVolSound,
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
-						scr:			MenuVolSound,
-						arg:			global.volSound,
+						varName:		"volSound",
 						argClamp:		[0,1],
 					},
 					//dialogue volume (type writer)
 					{
 						title:			global.uiData.menuVolTypeWriter,
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
-						scr:			MenuVolTypeWriter,
-						arg:			global.volTypeWriter,
+						varName:		"volTypeWriter",
 						argClamp:		[0,1],
 					},
 					//ui sfx flag
 					{
 						title:			global.uiData.menuSfxUI,
 						elemType:		MENU_ELEMENT_TYPE.TOGGLE,
-						scr:			MenuSfxUI,
-						arg:			global.uiSfxActive,
+						varName:		"uiSfxActive",
+					},
+					//crt page
+					{
+						title:			global.uiData.menuCrt,
+						elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
+						pageName:		"crt",
+					},
+					//reset to default
+					{
+						title:			global.uiData.menuReset,
+						elemType:		MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+						scr:			MenuSettingsReset,
 					},
 					//to main
 					{

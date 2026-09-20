@@ -44,8 +44,14 @@ function MenuVolTypeWriter(_arg){
 		SoundPlay(sfxTypewriterSpook, 50, false, global.volTypeWriter);
 	}
 }
-function MenuSfxUI(){
-	global.uiSfxActive = !global.uiSfxActive;
+function MenuSfxUI(_arg){
+	global.uiSfxActive = _arg;
+}
+function MenuCrtActive(_arg){
+	global.crt.active = _arg;
+}
+function MenuCrtAbberation(_arg){
+	global.crt.abberation = _arg;
 }
 
 
@@ -54,12 +60,15 @@ function MenuResume(_arg){
 	with oMenuElement instance_destroy();
 }
 
-function MenuSettingsReset(_arg){
+function MenuSettingsReset(){
 	window_set_fullscreen(false);
 	
 	global.volMusic			= 0.5;
 	global.volSound			= 0.5;
 	global.volTypeWriter	= 0.5;
+	
+	global.uiSfxActive		= false;
+	global.crt.active		= true;
 	
 	with oDirector TypewriterSoundPlay();
 	VolumeUpdateAmbient();

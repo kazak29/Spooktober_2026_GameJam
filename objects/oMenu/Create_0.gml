@@ -39,14 +39,22 @@ if is_struct(_bg) {
 }
 
 SettingsDataUpdate = function(_elemData){
-	var _scr = struct_get(_elemData, "scr");
-	switch _scr {
-		case MenuFullscreen:		_elemData.arg = window_get_fullscreen();	break;
-		case MenuLanguage:			_elemData.arg = _elemData.arg;				break;	//add locale variable here
-		case MenuVolMusic:			_elemData.arg = global.volMusic;			break;
-		case MenuVolSound:			_elemData.arg = global.volSound;			break;
-		case MenuVolTypeWriter:		_elemData.arg = global.volTypeWriter;		break;
-		case MenuSfxUI:				_elemData.arg = global.uiSfxActive;			break;
+	var _varName = struct_get(_elemData, "varName") ?? noone;
+	if is_string(_varName) {
+		if variable_global_exists(_varName) {
+			
+			_elemData.arg = variable_global_get(_varName);
+			
+		} else {
+			
+			//special vars
+			switch _varName {
+				case "fullscreen": {
+					_elemData.arg = window_get_fullscreen();
+				} break;
+			}
+			
+		}
 	}
 }
 
