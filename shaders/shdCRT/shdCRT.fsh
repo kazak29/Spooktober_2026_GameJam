@@ -3,8 +3,11 @@ varying vec4 v_vColour;
 
 uniform vec2  u_resolution;
 uniform float u_time;
-uniform float u_mask;         // 0 off, 1 grille, 2 dots, 3 slot
-uniform float u_mask_scale;   // phosphor cell size in screen pixels
+uniform float u_abberation;		//replaces offset for Subtle Color Bleed
+uniform float u_noise;			//replaces multiplier for grain noise
+uniform float u_scanlines;		//replaces multiplier for scanlines
+uniform float u_mask;			// 0 off, 1 grille, 2 dots, 3 slot
+uniform float u_mask_scale;		// phosphor cell size in screen pixels
 
 // Lightweight noise function
 float rand(vec2 co) {
@@ -96,20 +99,21 @@ void main() {
     }
 
     // Subtle Color Bleed
-    float offset = 0.0015;
+    float offset = u_abberation;	//defaut is 0.0015
     float r = texture2D(gm_BaseTexture, vec2(uv.x + offset, uv.y)).r;
     float g = texture2D(gm_BaseTexture, uv).g;
     float b = texture2D(gm_BaseTexture, vec2(uv.x - offset, uv.y)).b;
     vec3 col = vec3(r, g, b);
 
     // Fine Film/Tape Grain
-    float noise = (rand(uv + vec2(u_time)) - 0.5) * 0.02;
+    float noise = (rand(uv + vec2(u_time)) - 0.5) * u_noise;	//default is 0.02
     col += noise;
 
     // Gentle Scanlines
-    float scanline = sin(uv.y * u_resolution.y * 1.0) * 0.04;
+    float scanline = sin(uv.y * u_resolution.y * 1.0) * u_scanlines;	//default is 0.04
     col -= scanline;
 	
+	// mask
 	col = apply_mask(col, gl_FragCoord.xy);
     //col = to_linear(col);
 	
