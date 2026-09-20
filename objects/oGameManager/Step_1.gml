@@ -10,6 +10,7 @@ if (keyboard_string == global.cheatcode) {
 if global.cheat {
 	
 	if keyboard_check_pressed(vk_tab) global.showDebugUI = !global.showDebugUI;
+	if keyboard_check_pressed(ord("C")) global.crtActive = !global.crtActive;
 	
 }
 
@@ -33,7 +34,7 @@ with _but {
 	hoverResetCd = 5;
 	
 	if oInputManager.mouse.pressed.left {
-		oInputManager.mouse.pressed.left = false;
+		oInputManager.mouse.pressed.left = false;	//locks director from progressing with mouse
 		
 		if script_exists(scr) scr();
 		_sfxData = [sfxUIClick, 100];

@@ -3,6 +3,8 @@
 	u_resolution = shader_get_uniform(shdCRT, "u_resolution");
 	u_time = shader_get_uniform(shdCRT, "u_time");
 	
+	global.crtActive = true;
+	
 #endregion
 #region load from files
 
