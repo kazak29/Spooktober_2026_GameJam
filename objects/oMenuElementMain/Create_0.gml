@@ -20,8 +20,8 @@ var _charH = scribble(" ").starting_format(strFont, c_white).get_height();
 	if sprite_exists(_spr) {
 		sprite_index = _spr;
 		
-		bufferX += sprite_get_width(_spr)/2;
-		bufferY += sprite_get_height(_spr)/2;
+		//bufferX += sprite_get_width(_spr)/2;
+		//bufferY += sprite_get_height(_spr)/2;
 	}
 	
 	switch _page.layout {

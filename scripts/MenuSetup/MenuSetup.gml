@@ -10,7 +10,8 @@ function MenuDataCreate() {
 				layout:			MENU_LAYOUT.TITLE_MAIN,
 				font:			FONT_CONSOLE_24,
 				bg:				noone,
-				elemSpr:		sPlaceholderButton,
+				elemSpr:		sChoiceBox,
+				elemSprBuffer:	16,
 				elements:		[
 					//start game
 					{
@@ -39,7 +40,8 @@ function MenuDataCreate() {
 				layout:			MENU_LAYOUT.TITLE_SETTINGS,
 				font:			FONT_CONSOLE_24,
 				bg:				noone,
-				elemSpr:		noone,
+				elemSpr:		sChoiceBox,
+				elemSprBuffer:	16,
 				elements:		[
 					//fullscreen
 					{

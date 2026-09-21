@@ -25,18 +25,6 @@ bg = {
 	y2: 0,
 }
 
-var _bg = menuPages[$ pageName].bg;
-if is_struct(_bg) {
-	with bg {
-		active	= struct_get(_bg, "active") ?? false;
-		col		= struct_get(_bg, "col")	?? c_black;
-		
-		spr		= struct_get(_bg, "spr")	?? noone;
-		imInd	= struct_get(_bg, "imInd")	?? 0;
-		alpha	= struct_get(_bg, "alpha")	?? 1;
-		offset	= struct_get(_bg, "offset")	?? 16;
-	}
-}
 
 SettingsDataUpdate = function(_elemData){
 	var _varName = struct_get(_elemData, "varName") ?? noone;
@@ -126,40 +114,117 @@ BackgroundPositionUpdate = function(_elemId){
 PageUpdate = function(){
 	with oMenuElement instance_destroy();
 	
-	var _elems = menuPages[$ pageName].elements;
+	var _page = menuPages[$ pageName];
+	var _elems = _page.elements;
 	var _elemsL = array_length(_elems);
-	for (var i = 0; i < _elemsL; i++) {	
-		SettingsDataUpdate(_elems[i]);
-		
-		var _data = {
-			elementNum: i,
-			elementData: _elems[i],
-		};
-		
-		var _id = instance_create_layer(0,0, SYSTEM_LAYER, oMenuElementMain, _data);
-		_elems[i].elemId = _id;
-		
-		if i <= 0 {
-			//set first bg position
-			bg.x1 = _id.x;
-			bg.x2 = _id.x;
-			bg.y1 = _id.y;
-			bg.y2 = _id.y;
-				
-			//lock hover cd
-			_id.hoverCd = mouseHoverCdMax;
-		}
-		
-		// background borders set
-		var _al = array_length(_id.subIds);
-		for (var j = 0; j < _al; j++) {
-			BackgroundPositionUpdate(_id.subIds[j]);
-		}
-		BackgroundPositionUpdate(_id);
-	}
 	
-	#region position correction in case menu is out of bounds
+	#region create every menu element w/o sprite
+	
+		for (var i = 0; i < _elemsL; i++) {	
+			SettingsDataUpdate(_elems[i]);
 		
+			var _data = {
+				elementNum: i,
+				elementData: _elems[i],
+			};
+		
+			var _id = instance_create_layer(0,0, SYSTEM_LAYER, oMenuElementMain, _data);
+			_elems[i].elemId = _id;
+		
+			//lock hover cd for first element as page is created
+			if i <= 0 _id.hoverCd = mouseHoverCdMax;
+		
+		}
+		
+	#endregion
+	
+	#region update every element position
+		
+		//update element if has a sprite
+		var _spr		= _page.elemSpr;
+		var _strBuffer	= _page.elemSprBuffer;
+		if sprite_exists(_spr) {
+			//find widest and heighest string
+			var _strW = 0, _strH = 0;
+			for (var i = 0; i < _elemsL; i++) {
+				var _id = _elems[i].elemId;
+			
+				var _scribW = _id.scribId.get_width();
+				_strW = (_scribW > _strW) ? _scribW : _strW;
+			
+				var _scribH = _id.scribId.get_height();
+				_strH = (_scribH > _strH) ? _scribH : _strH;
+			}
+		
+			//update every element if has a sprite
+			for (var i = 0; i < _elemsL; i++) {
+				var _id = _elems[i].elemId;
+			
+				with _id {
+					sprite_index = _spr;
+					image_xscale = (_strW + _strBuffer*2)/sprite_get_width(_spr);
+					image_yscale = (_strH + _strBuffer*2)/sprite_get_height(_spr);
+				
+					//just in case theres ever a horizontal layout? idk
+					var _bufferX = 0, _bufferY = 0;
+					switch _page.layout {
+						case MENU_LAYOUT.TITLE_MAIN:		_bufferY = _strBuffer;	break;
+						case MENU_LAYOUT.TITLE_SETTINGS:	_bufferY = _strBuffer;	break;
+						case MENU_LAYOUT.PAUSE_TOP:			_bufferY = _strBuffer;	break;
+						case MENU_LAYOUT.PAUSE_MIDDLE:		_bufferY = _strBuffer;	break;
+						case MENU_LAYOUT.PAUSE_BOTTOM:		_bufferY = _strBuffer;	break;
+					}
+				
+					strX += _bufferX*i;
+					strY += _bufferY*i;
+				}
+			}
+		}
+		
+		//update every element position
+		for (var i = 0; i < _elemsL; i++) {
+			var _id = _elems[i].elemId;
+			with _id uiElementPositionUpdate();
+		}
+		
+	#endregion
+	
+	#region bg update + out of bounds check
+		
+		var _bg = _page.bg;
+		if is_struct(_bg) {
+			with bg {
+				active	= struct_get(_bg, "active") ?? false;
+				col		= struct_get(_bg, "col")	?? c_black;
+		
+				spr		= struct_get(_bg, "spr")	?? noone;
+				imInd	= struct_get(_bg, "imInd")	?? 0;
+				alpha	= struct_get(_bg, "alpha")	?? 1;
+				offset	= struct_get(_bg, "offset")	?? 16;
+			}
+		}
+		
+		//update bg position
+		for (var i = 0; i < _elemsL; i++) {
+			var _id = _elems[i].elemId;
+			
+			//set first bg position
+			if i <= 0 {
+				bg.x1 = _id.x;
+				bg.x2 = _id.x;
+				bg.y1 = _id.y;
+				bg.y2 = _id.y;
+			}
+		
+			//update bg position for element bboxes
+			var _al = array_length(_id.subIds);
+			for (var j = 0; j < _al; j++) {
+				BackgroundPositionUpdate(_id.subIds[j]);
+			}
+			BackgroundPositionUpdate(_id);
+		}
+		
+		//shift bg when out of bounds
 		var _shiftX = 0;
 		var _shiftY = 0;
 		with bg {
@@ -174,6 +239,7 @@ PageUpdate = function(){
 			y2 += _shiftY;
 		}
 		
+		//shift every element with bg
 		for (var i = 0; i < _elemsL; i++) {
 			var _id = _elems[i].elemId;
 			with _id {
