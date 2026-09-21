@@ -32,7 +32,7 @@ var _charH = scribble(" ").starting_format(strFont, c_white).get_height();
 		case MENU_LAYOUT.TITLE_SETTINGS: {
 			var _elemsL	= array_length(_page.elements);
 			startX	= VIEWPORT_WIDTH / 2;
-			startY	= VIEWPORT_HEIGHT / 2 - ((_elemsL-1)/2)*bufferY;
+			startY	= VIEWPORT_HEIGHT / 2 - (_elemsL/2)*bufferY;
 			
 			strX = startX - bufferX;
 			strY = startY + elementNum*bufferY;
@@ -56,8 +56,8 @@ var _charH = scribble(" ").starting_format(strFont, c_white).get_height();
 					if sprite_exists(sprite_index) _y = bbox_bottom;
 					if oMenu.bg.active _y += oMenu.bg.offset;
 					
-					startX = _x;
-					startY = _y + _charH/2;
+					other.startX = _x;
+					other.startY = _y + _charH/2;
 					break;
 				}
 			}
@@ -76,8 +76,8 @@ var _charH = scribble(" ").starting_format(strFont, c_white).get_height();
 			
 			with oButton {
 				if scr == uiButtonSettings {
-					startX = strX;
-					startY = strY - ((_elemsL-1)/2)*other.bufferY;
+					other.startX = strX;
+					other.startY = strY - ((_elemsL-1)/2)*other.bufferY;
 					break;
 				}
 			}
@@ -102,8 +102,8 @@ var _charH = scribble(" ").starting_format(strFont, c_white).get_height();
 					if sprite_exists(sprite_index) _y = bbox_top;
 					if oMenu.bg.active _y -= oMenu.bg.offset;
 					
-					startX = _x;
-					startY = _y - _charH/2 - ((_elemsL-1))*other.bufferY;
+					other.startX = _x;
+					other.startY = _y - _charH/2 - ((_elemsL-1))*other.bufferY;
 					break;
 				}
 			}

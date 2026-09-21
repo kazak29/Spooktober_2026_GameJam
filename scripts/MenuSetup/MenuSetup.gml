@@ -43,11 +43,15 @@ function MenuDataCreate() {
 				pageNamePrev:	"main",
 				layout:			MENU_LAYOUT.TITLE_SETTINGS,
 				font:			FONT_CONSOLE_24,
-				bg:				noone,
+				bg:				{
+					active: true,
+					offset: 32,
+					sprInd:	sChoiceBox,
+				},
 				spr:			{
 					ind:		sChoiceBox,
 					bufferStrX:	32,
-					bufferStrY: 8,
+					bufferStrY: 16,
 					bufferElem: 0,
 				},
 				elements:		[
@@ -84,6 +88,12 @@ function MenuDataCreate() {
 						elemType:		MENU_ELEMENT_TYPE.TOGGLE,
 						varName:		"uiSfxActive",
 					},
+					//crt filter flag
+					{
+						title:			global.uiData.menuCrtActive,
+						elemType:		MENU_ELEMENT_TYPE.TOGGLE,
+						varName:		"crt.active",
+					},
 					//crt page
 					{
 						title:			global.uiData.menuCrt,
@@ -108,19 +118,18 @@ function MenuDataCreate() {
 				pageNamePrev:	"settings",
 				layout:			MENU_LAYOUT.TITLE_SETTINGS,
 				font:			FONT_CONSOLE_24,
-				bg:				noone,
+				bg:				{
+					active: true,
+					offset: 32,
+					sprInd:	sChoiceBox,
+				},
 				spr:			{
 					ind:		sChoiceBox,
-					bufferStr:	32,
+					bufferStrX:	32,
+					bufferStrY: 8,
 					bufferElem: 0,
 				},
 				elements:		[
-					//crt filter flag
-					{
-						title:			global.uiData.menuCrtActive,
-						elemType:		MENU_ELEMENT_TYPE.TOGGLE,
-						varName:		"crt.active",
-					},
 					//abberation
 					{
 						title:			global.uiData.menuCrtAbberation,
@@ -208,14 +217,10 @@ function MenuDataCreate() {
 				font:			FONT_CONSOLE_16,
 				bg:				{
 					active: true,
-					col:	c_blue,
-					alpha:	0.75,
+					offset: 32,
+					sprInd:	sChoiceBox,
 				},
-				spr:			{
-					ind:		sChoiceBox,
-					bufferStr:	32,
-					bufferElem: 0,
-				},
+				spr:			noone,
 				elements: [
 					//fullscreen
 					{
@@ -250,6 +255,12 @@ function MenuDataCreate() {
 						elemType:		MENU_ELEMENT_TYPE.TOGGLE,
 						varName:		"uiSfxActive",
 					},
+					//crt filter flag
+					{
+						title:			global.uiData.menuCrtActive,
+						elemType:		MENU_ELEMENT_TYPE.TOGGLE,
+						varName:		"crt.active",
+					},
 					//crt page
 					{
 						title:			global.uiData.menuCrt,
@@ -277,21 +288,11 @@ function MenuDataCreate() {
 				font:			FONT_CONSOLE_16,
 				bg:				{
 					active: true,
-					col:	c_blue,
-					alpha:	0.75,
+					offset: 32,
+					sprInd:	sChoiceBox,
 				},
-				spr:			{
-					ind:		sChoiceBox,
-					bufferStr:	32,
-					bufferElem: 0,
-				},
+				spr:			noone,
 				elements:		[
-					//crt filter flag
-					{
-						title:			global.uiData.menuCrtActive,
-						elemType:		MENU_ELEMENT_TYPE.TOGGLE,
-						varName:		"crt.active",
-					},
 					//abberation
 					{
 						title:			global.uiData.menuCrtAbberation,

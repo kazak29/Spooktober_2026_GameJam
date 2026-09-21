@@ -17,8 +17,8 @@ menuOn,On
 menuOff,Off
 menuSfxUI,UI SFX
 menuReset,Reset To Default
-menuCrt,CRT Filter
-menuCrtActive,Enabled
+menuCrt,CRT Parameters
+menuCrtActive,CRT Enabled
 menuCrtAbberation,Abberation
 menuCrtNoise,Noise
 menuCrtScanlines,Scanlines

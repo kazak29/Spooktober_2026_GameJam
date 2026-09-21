@@ -11,20 +11,6 @@ mouseHoverSub			= false;
 
 mouseHoverCdMax = 5;
 
-bg = {
-	active: false,
-	col:	c_black,
-	spr:	noone,
-	imInd:	0,
-	alpha:	1,
-	offset: 16,
-	
-	x1: 0,
-	x2: 0,
-	y1: 0,
-	y2: 0,
-}
-
 
 SettingsDataUpdate = function(_elemData){
 	var _varName = struct_get(_elemData, "varName") ?? noone;
@@ -63,7 +49,28 @@ SettingsDataUpdate = function(_elemData){
 		}
 	}
 }
-
+BackgroundReset = function(){
+	bg = {
+		active: false,
+		col:	c_white,
+		alpha:	1,
+		offset: 0,
+	
+		x1: 0,
+		x2: 0,
+		y1: 0,
+		y2: 0,
+	
+		spr:	{
+			ind: noone,
+			imInd: 0,
+			x: 0,
+			y: 0,
+			scaleX: 1,
+			scaleY: 1,
+		},
+	}
+}
 BackgroundPositionUpdate = function(_elemId){
 	
 	var _offset = bg.offset;
@@ -113,6 +120,7 @@ BackgroundPositionUpdate = function(_elemId){
 //create every main element on a page as object on screen
 PageUpdate = function(){
 	with oMenuElement instance_destroy();
+	BackgroundReset();
 	
 	var _page = menuPages[$ pageName];
 	var _elems = _page.elements;
@@ -209,26 +217,18 @@ PageUpdate = function(){
 			
 		}
 		
-		//update every element position
-		//for (var i = 0; i < _elemsL; i++) {
-		//	var _id = _elems[i].elemId;
-		//	with _id uiElementPositionUpdate();
-		//}
-		
 	#endregion
 	
 	#region bg update + out of bounds check (also through bg)
 		
-		var _bg = _page.bg;
-		if is_struct(_bg) {
+		if is_struct(_page.bg) {
 			with bg {
-				active	= struct_get(_bg, "active") ?? false;
-				col		= struct_get(_bg, "col")	?? c_black;
-		
-				spr		= struct_get(_bg, "spr")	?? noone;
-				imInd	= struct_get(_bg, "imInd")	?? 0;
-				alpha	= struct_get(_bg, "alpha")	?? 1;
-				offset	= struct_get(_bg, "offset")	?? 16;
+				active		= struct_get(_page.bg, "active")	?? active;
+				col			= struct_get(_page.bg, "col")		?? col;
+				alpha		= struct_get(_page.bg, "alpha")		?? alpha;
+				offset		= struct_get(_page.bg, "offset")	?? offset;
+				spr.ind		= struct_get(_page.bg, "sprInd")	?? spr.ind;
+				spr.imInd	= struct_get(_page.bg, "imInd")		?? spr.imInd;
 			}
 		}
 		
@@ -238,10 +238,10 @@ PageUpdate = function(){
 			
 			//set first bg position
 			if i <= 0 {
-				bg.x1 = _id.x;
-				bg.x2 = _id.x;
-				bg.y1 = _id.y;
-				bg.y2 = _id.y;
+				bg.x1 = _id.strX;
+				bg.x2 = _id.strX;
+				bg.y1 = _id.strY;
+				bg.y2 = _id.strY;
 			}
 		
 			//update bg position for element bboxes
@@ -289,6 +289,16 @@ PageUpdate = function(){
 					}
 				}
 			
+			}
+		}
+		
+		//bg sprite params
+		if sprite_exists(bg.spr.ind) {
+			with bg {
+				spr.scaleX = (x2 - x1)/sprite_get_width(spr.ind);
+				spr.scaleY = (y2 - y1)/sprite_get_height(spr.ind);
+				spr.x = x1 + sprite_get_xoffset(spr.ind)*spr.scaleX;
+				spr.y = y1 + sprite_get_yoffset(spr.ind)*spr.scaleY;
 			}
 		}
 		

@@ -7,8 +7,8 @@ if menuType == MENU_TYPE_PAUSE {
 
 with bg {
 	if active {
-		if sprite_exists(spr) {
-			draw_sprite_pos(spr, imInd, x1,y1, x2,y1, x1,y2, x2,y2, alpha)
+		if sprite_exists(spr.ind) {
+			with spr { draw_sprite_ext(ind, imInd, x,y, scaleX, scaleY, 0, other.col, other.alpha); }
 		} else {
 			draw_set_alpha(alpha);
 			draw_rectangle_color(x1,y1,x2,y2, col, col, col, col, false);
