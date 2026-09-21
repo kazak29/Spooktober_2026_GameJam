@@ -10,8 +10,11 @@ function MenuDataCreate() {
 				layout:			MENU_LAYOUT.TITLE_MAIN,
 				font:			FONT_CONSOLE_24,
 				bg:				noone,
-				elemSpr:		sChoiceBox,
-				elemSprBuffer:	16,
+				spr:			{
+					ind:		sChoiceBox,
+					bufferStr:	32,
+					bufferElem: 16,
+				},
 				elements:		[
 					//start game
 					{
@@ -40,8 +43,11 @@ function MenuDataCreate() {
 				layout:			MENU_LAYOUT.TITLE_SETTINGS,
 				font:			FONT_CONSOLE_24,
 				bg:				noone,
-				elemSpr:		sChoiceBox,
-				elemSprBuffer:	16,
+				spr:			{
+					ind:		sChoiceBox,
+					bufferStr:	32,
+					bufferElem: 0,
+				},
 				elements:		[
 					//fullscreen
 					{
@@ -101,7 +107,11 @@ function MenuDataCreate() {
 				layout:			MENU_LAYOUT.TITLE_SETTINGS,
 				font:			FONT_CONSOLE_24,
 				bg:				noone,
-				elemSpr:		noone,
+				spr:			{
+					ind:		sChoiceBox,
+					bufferStr:	32,
+					bufferElem: 0,
+				},
 				elements:		[
 					//crt filter flag
 					{
@@ -199,7 +209,11 @@ function MenuDataCreate() {
 					col:	c_blue,
 					alpha:	0.75,
 				},
-				elemSpr: noone,
+				spr:			{
+					ind:		sChoiceBox,
+					bufferStr:	32,
+					bufferElem: 0,
+				},
 				elements: [
 					//fullscreen
 					{
@@ -264,7 +278,11 @@ function MenuDataCreate() {
 					col:	c_blue,
 					alpha:	0.75,
 				},
-				elemSpr:		noone,
+				spr:			{
+					ind:		sChoiceBox,
+					bufferStr:	32,
+					bufferElem: 0,
+				},
 				elements:		[
 					//crt filter flag
 					{

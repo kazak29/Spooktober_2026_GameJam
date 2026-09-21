@@ -140,10 +140,9 @@ PageUpdate = function(){
 	
 	#region update every element position
 		
-		//update element if has a sprite
-		var _spr		= _page.elemSpr;
-		var _strBuffer	= _page.elemSprBuffer;
-		if sprite_exists(_spr) {
+		var _spr = _page.spr;
+		if is_struct(_spr) {
+			
 			//find widest and heighest string
 			var _strW = 0, _strH = 0;
 			for (var i = 0; i < _elemsL; i++) {
@@ -156,29 +155,30 @@ PageUpdate = function(){
 				_strH = (_scribH > _strH) ? _scribH : _strH;
 			}
 		
-			//update every element if has a sprite
+			//update every element with sprite parameters
 			for (var i = 0; i < _elemsL; i++) {
 				var _id = _elems[i].elemId;
 			
 				with _id {
-					sprite_index = _spr;
-					image_xscale = (_strW + _strBuffer*2)/sprite_get_width(_spr);
-					image_yscale = (_strH + _strBuffer*2)/sprite_get_height(_spr);
-				
+					sprite_index = _spr.ind;
+					image_xscale = (_strW + _spr.bufferStr*2)/sprite_get_width(_spr.ind);
+					image_yscale = (_strH + _spr.bufferStr*2)/sprite_get_height(_spr.ind);
+					
 					//just in case theres ever a horizontal layout? idk
 					var _bufferX = 0, _bufferY = 0;
 					switch _page.layout {
-						case MENU_LAYOUT.TITLE_MAIN:		_bufferY = _strBuffer;	break;
-						case MENU_LAYOUT.TITLE_SETTINGS:	_bufferY = _strBuffer;	break;
-						case MENU_LAYOUT.PAUSE_TOP:			_bufferY = _strBuffer;	break;
-						case MENU_LAYOUT.PAUSE_MIDDLE:		_bufferY = _strBuffer;	break;
-						case MENU_LAYOUT.PAUSE_BOTTOM:		_bufferY = _strBuffer;	break;
+						case MENU_LAYOUT.TITLE_MAIN:		_bufferY = _spr.bufferStr + _spr.bufferElem;	break;
+						case MENU_LAYOUT.TITLE_SETTINGS:	_bufferY = _spr.bufferStr + _spr.bufferElem;	break;
+						case MENU_LAYOUT.PAUSE_TOP:			_bufferY = _spr.bufferStr + _spr.bufferElem;	break;
+						case MENU_LAYOUT.PAUSE_MIDDLE:		_bufferY = _spr.bufferStr + _spr.bufferElem;	break;
+						case MENU_LAYOUT.PAUSE_BOTTOM:		_bufferY = _spr.bufferStr + _spr.bufferElem;	break;
 					}
-				
+					
 					strX += _bufferX*i;
 					strY += _bufferY*i;
 				}
 			}
+			
 		}
 		
 		//update every element position

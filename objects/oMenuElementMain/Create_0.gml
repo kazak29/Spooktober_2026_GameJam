@@ -16,14 +16,6 @@ var _charH = scribble(" ").starting_format(strFont, c_white).get_height();
 	bufferX = MENU_BUFFER_X;
 	bufferY = MENU_BUFFER_Y;
 	
-	var _spr = _page.elemSpr;
-	if sprite_exists(_spr) {
-		sprite_index = _spr;
-		
-		//bufferX += sprite_get_width(_spr)/2;
-		//bufferY += sprite_get_height(_spr)/2;
-	}
-	
 	switch _page.layout {
 		
 		case MENU_LAYOUT.TITLE_MAIN: {
