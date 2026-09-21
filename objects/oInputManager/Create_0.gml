@@ -88,3 +88,4 @@ InputReset = function(){
 		mouse.released[$ _keyName]	= false;
 	}
 }
+InputReset();

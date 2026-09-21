@@ -33,6 +33,8 @@
     {"$GMObjectProperty":"v2","%Name":"strX","filters":[],"listItems":[],"multiselect":false,"name":"strX","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.0","varType":0,},
     {"$GMObjectProperty":"v2","%Name":"strY","filters":[],"listItems":[],"multiselect":false,"name":"strY","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.0","varType":0,},
     {"$GMObjectProperty":"v2","%Name":"strFont","filters":[],"listItems":[],"multiselect":false,"name":"strFont","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"FONT_CONSOLE_24","varType":4,},
+    {"$GMObjectProperty":"v2","%Name":"strAlignH","filters":[],"listItems":[],"multiselect":false,"name":"strAlignH","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"fa_left","varType":4,},
+    {"$GMObjectProperty":"v2","%Name":"strAlignV","filters":[],"listItems":[],"multiselect":false,"name":"strAlignV","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"fa_top","varType":4,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

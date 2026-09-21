@@ -11,32 +11,6 @@ mouseHoverSub			= false;
 
 mouseHoverCdMax = 5;
 
-bg = {
-	active: false,
-	col:	c_black,
-	spr:	noone,
-	imInd:	0,
-	alpha:	1,
-	offset: 16,
-	
-	x1: 0,
-	x2: 0,
-	y1: 0,
-	y2: 0,
-}
-
-var _bg = menuPages[$ pageName].bg;
-if is_struct(_bg) {
-	with bg {
-		active	= struct_get(_bg, "active") ?? false;
-		col		= struct_get(_bg, "col")	?? c_black;
-		
-		spr		= struct_get(_bg, "spr")	?? noone;
-		imInd	= struct_get(_bg, "imInd")	?? 0;
-		alpha	= struct_get(_bg, "alpha")	?? 1;
-		offset	= struct_get(_bg, "offset")	?? 16;
-	}
-}
 
 SettingsDataUpdate = function(_elemData){
 	var _varName = struct_get(_elemData, "varName") ?? noone;
@@ -75,7 +49,28 @@ SettingsDataUpdate = function(_elemData){
 		}
 	}
 }
-
+BackgroundReset = function(){
+	bg = {
+		active: false,
+		col:	c_white,
+		alpha:	1,
+		offset: 0,
+	
+		x1: 0,
+		x2: 0,
+		y1: 0,
+		y2: 0,
+	
+		spr:	{
+			ind: noone,
+			imInd: 0,
+			x: 0,
+			y: 0,
+			scaleX: 1,
+			scaleY: 1,
+		},
+	}
+}
 BackgroundPositionUpdate = function(_elemId){
 	
 	var _offset = bg.offset;
@@ -125,41 +120,139 @@ BackgroundPositionUpdate = function(_elemId){
 //create every main element on a page as object on screen
 PageUpdate = function(){
 	with oMenuElement instance_destroy();
+	BackgroundReset();
 	
-	var _elems = menuPages[$ pageName].elements;
+	var _page = menuPages[$ pageName];
+	var _elems = _page.elements;
 	var _elemsL = array_length(_elems);
-	for (var i = 0; i < _elemsL; i++) {	
-		SettingsDataUpdate(_elems[i]);
-		
-		var _data = {
-			elementNum: i,
-			elementData: _elems[i],
-		};
-		
-		var _id = instance_create_layer(0,0, SYSTEM_LAYER, oMenuElementMain, _data);
-		_elems[i].elemId = _id;
-		
-		if i <= 0 {
-			//set first bg position
-			bg.x1 = _id.x;
-			bg.x2 = _id.x;
-			bg.y1 = _id.y;
-			bg.y2 = _id.y;
-				
-			//lock hover cd
-			_id.hoverCd = mouseHoverCdMax;
-		}
-		
-		// background borders set
-		var _al = array_length(_id.subIds);
-		for (var j = 0; j < _al; j++) {
-			BackgroundPositionUpdate(_id.subIds[j]);
-		}
-		BackgroundPositionUpdate(_id);
-	}
 	
-	#region position correction in case menu is out of bounds
+	#region create every menu element w/o sprite
+	
+		for (var i = 0; i < _elemsL; i++) {	
+			SettingsDataUpdate(_elems[i]);
 		
+			var _data = {
+				elementNum: i,
+				elementData: _elems[i],
+			};
+		
+			var _id = instance_create_layer(0,0, SYSTEM_LAYER, oMenuElementMain, _data);
+			_elems[i].elemId = _id;
+		
+			//lock hover cd for first element as page is created
+			if i <= 0 _id.hoverCd = mouseHoverCdMax;
+		
+		}
+		
+	#endregion
+	
+	#region update every element if using a sprite
+		
+		var _spr = _page.spr;
+		if is_struct(_spr) {
+			
+			//find widest and heighest string
+			var _strW = 0, _strH = 0;
+			for (var i = 0; i < _elemsL; i++) {
+				var _id = _elems[i].elemId;
+			
+				var _scribW = _id.scribId.get_width();
+				_strW = (_scribW > _strW) ? _scribW : _strW;
+			
+				var _scribH = _id.scribId.get_height();
+				_strH = (_scribH > _strH) ? _scribH : _strH;
+			}
+			
+			//add buffer between sprite and string borders
+			_strW += _spr.bufferStrX*2;
+			_strH += _spr.bufferStrY*2;
+					
+			//limit scaling so nineslice don't crop sprite when size too small
+			var _nine = sprite_get_nineslice(_spr.ind);
+			if _nine.enabled {
+				_strW = max(_strW, _nine.left + _nine.right + 1);
+				_strH = max(_strH, _nine.top + _nine.bottom + 1);
+			}
+			
+			//setup scale
+			var _scaleX = _strW/sprite_get_width(_spr.ind);
+			var _scaleY = _strH/sprite_get_height(_spr.ind);
+			
+			//update every element with sprite parameters
+			for (var i = 0; i < _elemsL; i++) {
+				var _id = _elems[i].elemId;
+			
+				with _id {
+					sprite_index = _spr.ind;
+					image_xscale = _scaleX;
+					image_yscale = _scaleY;
+					
+					//setup buffers between elements (switch just in case of future horizontal menu layouts)
+					var _bufferX = 0, _bufferY = 0;
+					switch _page.layout {
+						case MENU_LAYOUT.TITLE_MAIN:		{ _bufferY = _spr.bufferStrY + _spr.bufferElem;		} break;
+						case MENU_LAYOUT.TITLE_SETTINGS:	{ _bufferY = _spr.bufferStrY + _spr.bufferElem; 	} break;
+						case MENU_LAYOUT.PAUSE_TOP:			{ _bufferY = _spr.bufferStrY + _spr.bufferElem; 	} break;
+						case MENU_LAYOUT.PAUSE_MIDDLE:		{ _bufferY = _spr.bufferStrY + _spr.bufferElem; 	} break;
+						case MENU_LAYOUT.PAUSE_BOTTOM:		{ _bufferY = _spr.bufferStrY + _spr.bufferElem; 	} break;
+					}
+					
+					strX += _bufferX*i;
+					strY += _bufferY*i;
+					uiElementPositionUpdate();
+					
+					//shift position when out of bounds
+					var _shiftX = 0, _shiftY = 0;
+					switch strAlignH {
+						case fa_left:	_shiftX = strX - _spr.bufferStrX - bbox_left;	break;
+						case fa_right:	_shiftX = strX + _spr.bufferStrX - bbox_right;	break;
+					}
+					//insert valign switch here
+					x += _shiftX;
+					y += _shiftY;
+					strX += _shiftX;
+					strY += _shiftY;
+				}
+			}
+			
+		}
+		
+	#endregion
+	
+	#region bg update + out of bounds check (also through bg)
+		
+		if is_struct(_page.bg) {
+			with bg {
+				active		= struct_get(_page.bg, "active")	?? active;
+				col			= struct_get(_page.bg, "col")		?? col;
+				alpha		= struct_get(_page.bg, "alpha")		?? alpha;
+				offset		= struct_get(_page.bg, "offset")	?? offset;
+				spr.ind		= struct_get(_page.bg, "sprInd")	?? spr.ind;
+				spr.imInd	= struct_get(_page.bg, "imInd")		?? spr.imInd;
+			}
+		}
+		
+		//update bg position
+		for (var i = 0; i < _elemsL; i++) {
+			var _id = _elems[i].elemId;
+			
+			//set first bg position
+			if i <= 0 {
+				bg.x1 = _id.strX;
+				bg.x2 = _id.strX;
+				bg.y1 = _id.strY;
+				bg.y2 = _id.strY;
+			}
+		
+			//update bg position for element bboxes
+			var _al = array_length(_id.subIds);
+			for (var j = 0; j < _al; j++) {
+				BackgroundPositionUpdate(_id.subIds[j]);
+			}
+			BackgroundPositionUpdate(_id);
+		}
+		
+		//shift bg when out of bounds
 		var _shiftX = 0;
 		var _shiftY = 0;
 		with bg {
@@ -174,6 +267,7 @@ PageUpdate = function(){
 			y2 += _shiftY;
 		}
 		
+		//shift every element with bg
 		for (var i = 0; i < _elemsL; i++) {
 			var _id = _elems[i].elemId;
 			with _id {
@@ -195,6 +289,16 @@ PageUpdate = function(){
 					}
 				}
 			
+			}
+		}
+		
+		//bg sprite params
+		if sprite_exists(bg.spr.ind) {
+			with bg {
+				spr.scaleX = (x2 - x1)/sprite_get_width(spr.ind);
+				spr.scaleY = (y2 - y1)/sprite_get_height(spr.ind);
+				spr.x = x1 + sprite_get_xoffset(spr.ind)*spr.scaleX;
+				spr.y = y1 + sprite_get_yoffset(spr.ind)*spr.scaleY;
 			}
 		}
 		

@@ -9,39 +9,37 @@ var _elem = elementData;
 scribId = scribble(_elem.title, "menuElemMain").starting_format(strFont, c_white);
 var _charH = scribble(" ").starting_format(strFont, c_white).get_height();
 
-#region set parameters based on menu page layout and sprite
+#region set parameters based on menu page layout
 	
-	var _startX = 0;
-	var _startY = 0;
+	startX = 0;
+	startY = 0;
 	bufferX = MENU_BUFFER_X;
 	bufferY = MENU_BUFFER_Y;
-	
-	var _spr = _page.elemSpr;
-	if sprite_exists(_spr) {
-		sprite_index = _spr;
-		
-		bufferX += sprite_get_width(_spr)/2;
-		bufferY += sprite_get_height(_spr)/2;
-	}
 	
 	switch _page.layout {
 		
 		case MENU_LAYOUT.TITLE_MAIN: {
-			_startX	= VIEWPORT_WIDTH / 2;
-			_startY	= VIEWPORT_HEIGHT / 2;
+			startX	= VIEWPORT_WIDTH / 2;
+			startY	= VIEWPORT_HEIGHT / 2;
 			
-			strX = _startX;
-			strY = _startY + elementNum*bufferY;
-			scribId.align(fa_center, fa_middle);
+			strX = startX;
+			strY = startY + elementNum*bufferY;
+			
+			strAlignH = fa_center;
+			strAlignV = fa_middle;
+			scribId.align(strAlignH, strAlignV);
 		} break;
 		case MENU_LAYOUT.TITLE_SETTINGS: {
 			var _elemsL	= array_length(_page.elements);
-			_startX	= VIEWPORT_WIDTH / 2;
-			_startY	= VIEWPORT_HEIGHT / 2 - ((_elemsL-1)/2)*bufferY;
+			startX	= VIEWPORT_WIDTH / 2;
+			startY	= VIEWPORT_HEIGHT / 2 - (_elemsL/2)*bufferY;
 			
-			strX = _startX - bufferX;
-			strY = _startY + elementNum*bufferY;
-			scribId.align(fa_right, fa_middle);
+			strX = startX - bufferX;
+			strY = startY + elementNum*bufferY;
+			
+			strAlignH = fa_right;
+			strAlignV = fa_middle;
+			scribId.align(strAlignH, strAlignV);
 		} break;
 		
 		
@@ -58,15 +56,18 @@ var _charH = scribble(" ").starting_format(strFont, c_white).get_height();
 					if sprite_exists(sprite_index) _y = bbox_bottom;
 					if oMenu.bg.active _y += oMenu.bg.offset;
 					
-					_startX = _x;
-					_startY = _y + _charH/2;
+					other.startX = _x;
+					other.startY = _y + _charH/2;
 					break;
 				}
 			}
 			
-			strX = _startX - bufferX;
-			strY = _startY + elementNum*bufferY;
-			scribId.align(fa_right, fa_middle);
+			strX = startX - bufferX;
+			strY = startY + elementNum*bufferY;
+			
+			strAlignH = fa_right;
+			strAlignV = fa_middle;
+			scribId.align(strAlignH, strAlignV);
 		} break;
 		case MENU_LAYOUT.PAUSE_MIDDLE: {
 			var _elemsL	= array_length(_page.elements);
@@ -75,15 +76,18 @@ var _charH = scribble(" ").starting_format(strFont, c_white).get_height();
 			
 			with oButton {
 				if scr == uiButtonSettings {
-					_startX = strX;
-					_startY = strY - ((_elemsL-1)/2)*other.bufferY;
+					other.startX = strX;
+					other.startY = strY - ((_elemsL-1)/2)*other.bufferY;
 					break;
 				}
 			}
 			
-			strX = _startX - bufferX;
-			strY = _startY + elementNum*bufferY;
-			scribId.align(fa_right, fa_middle);
+			strX = startX - bufferX;
+			strY = startY + elementNum*bufferY;
+			
+			strAlignH = fa_right;
+			strAlignV = fa_middle;
+			scribId.align(strAlignH, strAlignV);
 		} break;
 		case MENU_LAYOUT.PAUSE_BOTTOM: {
 			var _elemsL	= array_length(_page.elements);
@@ -98,20 +102,23 @@ var _charH = scribble(" ").starting_format(strFont, c_white).get_height();
 					if sprite_exists(sprite_index) _y = bbox_top;
 					if oMenu.bg.active _y -= oMenu.bg.offset;
 					
-					_startX = _x;
-					_startY = _y - _charH/2 - ((_elemsL-1))*other.bufferY;
+					other.startX = _x;
+					other.startY = _y - _charH/2 - ((_elemsL-1))*other.bufferY;
 					break;
 				}
 			}
 			
-			strX = _startX - bufferX;
-			strY = _startY + elementNum*bufferY;
-			scribId.align(fa_right, fa_middle);
+			strX = startX - bufferX;
+			strY = startY + elementNum*bufferY;
+			
+			strAlignH = fa_right;
+			strAlignV = fa_middle;
+			scribId.align(strAlignH, strAlignV);
 		} break;
 		
 	}
 	
-	uiElementPositionUpdate();
+	//uiElementPositionUpdate();
 	
 #endregion
 
@@ -144,8 +151,8 @@ var _charH = scribble(" ").starting_format(strFont, c_white).get_height();
 	switch _type {
 		
 		case MENU_ELEMENT_TYPE.TOGGLE: {
-			var _x = _startX + bufferX;
-			var _y = _startY + elementNum*bufferY;
+			var _x = startX + bufferX;
+			var _y = startY + elementNum*bufferY;
 			
 			_createSub(_x, _y, oMenuElementToggle, {side: false});
 			_createSub(_x, _y, oMenuElementToggle, {side: true });
@@ -161,8 +168,8 @@ var _charH = scribble(" ").starting_format(strFont, c_white).get_height();
 				_strW = (_scribW > _strW) ? _scribW : _strW;
 			}
 			
-			var _y = _startY + elementNum*bufferY;
-			var _x = _startX + bufferX;
+			var _y = startY + elementNum*bufferY;
+			var _x = startX + bufferX;
 			_createSub(_x, _y, oMenuElementShift, {side: 0});
 			
 			_x += bufferX/2 + scribble("<<").starting_format(strFont, c_white).get_width() + _strW/2;
@@ -175,8 +182,8 @@ var _charH = scribble(" ").starting_format(strFont, c_white).get_height();
 		} break;
 		
 		case MENU_ELEMENT_TYPE.SLIDER: {
-			var _x = _startX + bufferX;
-			var _y = _startY + elementNum*bufferY;
+			var _x = startX + bufferX;
+			var _y = startY + elementNum*bufferY;
 			
 			_createSub(_x, _y, oMenuElementSlider);
 		} break;

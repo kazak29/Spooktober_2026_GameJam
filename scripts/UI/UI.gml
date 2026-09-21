@@ -12,7 +12,7 @@ function uiMouseCollision(_id){
 	}
 }
 
-//element position change based on whether a sprite is used or not
+//make object position centered in the center of its string
 function uiElementPositionUpdate(){
 	var _offsetX = 0;
 	var _offsetY = 0;
