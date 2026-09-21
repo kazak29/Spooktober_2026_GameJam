@@ -12,7 +12,8 @@ function MenuDataCreate() {
 				bg:				noone,
 				spr:			{
 					ind:		sChoiceBox,
-					bufferStr:	32,
+					bufferStrX:	32,
+					bufferStrY: 32,
 					bufferElem: 16,
 				},
 				elements:		[
@@ -45,7 +46,8 @@ function MenuDataCreate() {
 				bg:				noone,
 				spr:			{
 					ind:		sChoiceBox,
-					bufferStr:	32,
+					bufferStrX:	32,
+					bufferStrY: 8,
 					bufferElem: 0,
 				},
 				elements:		[

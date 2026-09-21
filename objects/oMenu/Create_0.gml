@@ -138,7 +138,7 @@ PageUpdate = function(){
 		
 	#endregion
 	
-	#region update every element position
+	#region update every element if using a sprite
 		
 		var _spr = _page.spr;
 		if is_struct(_spr) {
@@ -154,42 +154,70 @@ PageUpdate = function(){
 				var _scribH = _id.scribId.get_height();
 				_strH = (_scribH > _strH) ? _scribH : _strH;
 			}
-		
+			
+			//add buffer between sprite and string borders
+			_strW += _spr.bufferStrX*2;
+			_strH += _spr.bufferStrY*2;
+					
+			//limit scaling so nineslice don't crop sprite when size too small
+			var _nine = sprite_get_nineslice(_spr.ind);
+			if _nine.enabled {
+				_strW = max(_strW, _nine.left + _nine.right + 1);
+				_strH = max(_strH, _nine.top + _nine.bottom + 1);
+			}
+			
+			//setup scale
+			var _scaleX = _strW/sprite_get_width(_spr.ind);
+			var _scaleY = _strH/sprite_get_height(_spr.ind);
+			
 			//update every element with sprite parameters
 			for (var i = 0; i < _elemsL; i++) {
 				var _id = _elems[i].elemId;
 			
 				with _id {
 					sprite_index = _spr.ind;
-					image_xscale = (_strW + _spr.bufferStr*2)/sprite_get_width(_spr.ind);
-					image_yscale = (_strH + _spr.bufferStr*2)/sprite_get_height(_spr.ind);
+					image_xscale = _scaleX;
+					image_yscale = _scaleY;
 					
-					//just in case theres ever a horizontal layout? idk
+					//setup buffers between elements (switch just in case of future horizontal menu layouts)
 					var _bufferX = 0, _bufferY = 0;
 					switch _page.layout {
-						case MENU_LAYOUT.TITLE_MAIN:		_bufferY = _spr.bufferStr + _spr.bufferElem;	break;
-						case MENU_LAYOUT.TITLE_SETTINGS:	_bufferY = _spr.bufferStr + _spr.bufferElem;	break;
-						case MENU_LAYOUT.PAUSE_TOP:			_bufferY = _spr.bufferStr + _spr.bufferElem;	break;
-						case MENU_LAYOUT.PAUSE_MIDDLE:		_bufferY = _spr.bufferStr + _spr.bufferElem;	break;
-						case MENU_LAYOUT.PAUSE_BOTTOM:		_bufferY = _spr.bufferStr + _spr.bufferElem;	break;
+						case MENU_LAYOUT.TITLE_MAIN:		{ _bufferY = _spr.bufferStrY + _spr.bufferElem;		} break;
+						case MENU_LAYOUT.TITLE_SETTINGS:	{ _bufferY = _spr.bufferStrY + _spr.bufferElem; 	} break;
+						case MENU_LAYOUT.PAUSE_TOP:			{ _bufferY = _spr.bufferStrY + _spr.bufferElem; 	} break;
+						case MENU_LAYOUT.PAUSE_MIDDLE:		{ _bufferY = _spr.bufferStrY + _spr.bufferElem; 	} break;
+						case MENU_LAYOUT.PAUSE_BOTTOM:		{ _bufferY = _spr.bufferStrY + _spr.bufferElem; 	} break;
 					}
 					
 					strX += _bufferX*i;
 					strY += _bufferY*i;
+					uiElementPositionUpdate();
+					
+					//shift position when out of bounds
+					var _shiftX = 0, _shiftY = 0;
+					switch strAlignH {
+						case fa_left:	_shiftX = strX - _spr.bufferStrX - bbox_left;	break;
+						case fa_right:	_shiftX = strX + _spr.bufferStrX - bbox_right;	break;
+					}
+					//insert valign switch here
+					x += _shiftX;
+					y += _shiftY;
+					strX += _shiftX;
+					strY += _shiftY;
 				}
 			}
 			
 		}
 		
 		//update every element position
-		for (var i = 0; i < _elemsL; i++) {
-			var _id = _elems[i].elemId;
-			with _id uiElementPositionUpdate();
-		}
+		//for (var i = 0; i < _elemsL; i++) {
+		//	var _id = _elems[i].elemId;
+		//	with _id uiElementPositionUpdate();
+		//}
 		
 	#endregion
 	
-	#region bg update + out of bounds check
+	#region bg update + out of bounds check (also through bg)
 		
 		var _bg = _page.bg;
 		if is_struct(_bg) {
