@@ -31,6 +31,7 @@ if (_confirmed) {
         //show_debug_message("Loading scene: " + string(_currentLoc.activeScene) + " for " + _currentLoc.locationName);
         
 		global.sceneToPlay = _location.scenes[_location.activeScene];
+		AmbientChange(AMBIENT_MUSIC, noone);
 		TransitionStart(rmStage, sqFadeOut, sqFadeIn);
     } else {
         show_debug_message(_currentLoc.locationName + " is locked!");
