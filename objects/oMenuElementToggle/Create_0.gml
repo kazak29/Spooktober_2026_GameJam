@@ -1,16 +1,16 @@
 event_inherited();
 
 //move from first toggle
-if array_length(mainId.subIds) > 0 {
-	var _off = mainId.subIds[0];
-	
-	if sprite_exists(_off.sprite_index) {
-		x += _off.sprite_width*1.8;
-	} else {
-		var _bbox = _off.scribId.get_bbox(_off.strX, _off.strY);
-		x += _bbox.width*1.8;
-	}
-}
+//if array_length(mainId.subIds) > 0 {
+//	var _off = mainId.subIds[0];
+//	
+//	//if sprite_exists(_off.sprite_index) {
+//	//	x += _off.sprite_width*1.8;
+//	//} else {
+//		var _bbox = _off.scribId.get_bbox(_off.strX, _off.strY);
+//		x += _bbox.width*1.8;
+//	//}
+//}
 
 var _text = global.uiData.menuOff;
 if side _text = global.uiData.menuOn;
@@ -18,4 +18,16 @@ scribId = scribble(_text, "toggle").starting_format(strFont, c_white).align(fa_l
 
 strX = x;
 strY = y;
-uiElementPositionUpdate();
+//uiElementPositionUpdate();
+
+//move from first toggle if no sprite
+if instance_exists(oMenu) {
+	var _spr = oMenu.menuPages[$ oMenu.pageName].spr;
+	if !is_struct(_spr) {
+		
+		var _shift = scribble(global.uiData.menuOff, "toggle").get_width()*1.8;
+		x += _shift;
+		strX += _shift;
+		
+	}
+}

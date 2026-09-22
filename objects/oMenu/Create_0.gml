@@ -163,29 +163,11 @@ PageUpdate = function(){
 				_strH = (_scribH > _strH) ? _scribH : _strH;
 			}
 			
-			//add buffer between sprite and string borders
-			_strW += _spr.bufferStrX*2;
-			_strH += _spr.bufferStrY*2;
-					
-			//limit scaling so nineslice don't crop sprite when size too small
-			var _nine = sprite_get_nineslice(_spr.ind);
-			if _nine.enabled {
-				_strW = max(_strW, _nine.left + _nine.right + 1);
-				_strH = max(_strH, _nine.top + _nine.bottom + 1);
-			}
-			
-			//setup scale
-			var _scaleX = _strW/sprite_get_width(_spr.ind);
-			var _scaleY = _strH/sprite_get_height(_spr.ind);
-			
 			//update every element with sprite parameters
 			for (var i = 0; i < _elemsL; i++) {
 				var _id = _elems[i].elemId;
-			
 				with _id {
-					sprite_index = _spr.ind;
-					image_xscale = _scaleX;
-					image_yscale = _scaleY;
+					uiElementSpriteUpdate(_spr, _strW, _strH);
 					
 					//setup buffers between elements (switch just in case of future horizontal menu layouts)
 					var _bufferX = 0, _bufferY = 0;
@@ -196,7 +178,6 @@ PageUpdate = function(){
 						case MENU_LAYOUT.PAUSE_MIDDLE:		{ _bufferY = _spr.bufferStrY + _spr.bufferElem; 	} break;
 						case MENU_LAYOUT.PAUSE_BOTTOM:		{ _bufferY = _spr.bufferStrY + _spr.bufferElem; 	} break;
 					}
-					
 					strX += _bufferX*i;
 					strY += _bufferY*i;
 					uiElementPositionUpdate();
@@ -207,11 +188,54 @@ PageUpdate = function(){
 						case fa_left:	_shiftX = strX - _spr.bufferStrX - bbox_left;	break;
 						case fa_right:	_shiftX = strX + _spr.bufferStrX - bbox_right;	break;
 					}
-					//insert valign switch here
+					switch strAlignV {
+						case fa_top:	_shiftX = strY - _spr.bufferStrY - bbox_top;	break;
+						case fa_bottom:	_shiftX = strY + _spr.bufferStrY - bbox_bottom;	break;
+					}
 					x += _shiftX;
 					y += _shiftY;
 					strX += _shiftX;
 					strY += _shiftY;
+					
+					//update sub elements
+					var _al = array_length(_id.subIds);
+					for (var j = 0; j < _al; j++) {
+						with _id.subIds[j] {
+							
+							//apply changes based on element type
+							switch _elems[i].elemType {
+								
+								case MENU_ELEMENT_TYPE.TOGGLE: {
+									
+									//move second toggle away from first (if no sprite object does it by itself in create event)
+									if (j > 0) {
+										var _shift = _id.subIds[0].sprite_width*1.8;
+										x += _shift;
+										strX += _shift;
+									}
+									
+									//apply sprite
+									var _subStrW = scribble(global.uiData.menuOff, "toggle").get_width();
+									var _subStrH = scribble(global.uiData.menuOff, "toggle").get_height();
+									uiElementSpriteUpdate(_spr, _subStrW, _subStrH);
+									
+									//move element with buffer
+									strX += _bufferX*i;
+									strY += _bufferY*i;
+									uiElementPositionUpdate();
+								} break;
+								
+								case MENU_ELEMENT_TYPE.SLIDER: {
+									x += _bufferX*i;
+									y += _bufferY*i;
+								} break;
+								
+							}
+							
+							//calculate an out of bounds for sub elements too??? idk
+							
+						}
+					}
 				}
 			}
 			
