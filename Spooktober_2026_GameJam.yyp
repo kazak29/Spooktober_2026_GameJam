@@ -307,6 +307,7 @@
     {"id":{"name":"scribble_fallback_bulletpoint","path":"sprites/scribble_fallback_bulletpoint/scribble_fallback_bulletpoint.yy",},},
     {"id":{"name":"sLamp","path":"sprites/sLamp/sLamp.yy",},},
     {"id":{"name":"sLimes","path":"sprites/sLimes/sLimes.yy",},},
+    {"id":{"name":"sMap","path":"sprites/sMap/sMap.yy",},},
     {"id":{"name":"sMapLocation","path":"sprites/sMapLocation/sMapLocation.yy",},},
     {"id":{"name":"sMoth","path":"sprites/sMoth/sMoth.yy",},},
     {"id":{"name":"sPixel","path":"sprites/sPixel/sPixel.yy",},},

@@ -94,7 +94,7 @@ function GetIntroScenes ()
 				},
 				introScene6_spookIn1: {
 					nodeType: NodeType.MAIN_CHARACTER_IN,
-					expressionFrame: 0,
+					expressionFrame: 6,
 					nextNode: "introScene6_line2"
 				},
 				introScene6_line2: {
@@ -274,13 +274,91 @@ function GetIntroScenes ()
 				introScene7_line12: {
 					nodeType: NodeType.LINE_SEQUENCE,
 					sequenceId: "introScene7_line12",
+					nextNode: "introScene7_spookUpdate6"
+				},
+				introScene7_spookUpdate6: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: SPOOK,
+					expressionFrame: 6,
+					nextNode: "introScene7_line13"
+				},
+				introScene7_line13: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene7_line13",
+					nextNode: "introScene7_spookUpdate7"
+				},
+				introScene7_spookUpdate7: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: SPOOK,
+					expressionFrame: 5,
+					nextNode: "introScene7_line14"
+				},
+				introScene7_line14: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene7_line14",
+					nextNode: "introScene7_spookUpdate8"
+				},
+				introScene7_spookUpdate8: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: SPOOK,
+					expressionFrame: 0,
+					nextNode: "introScene7_line15"
+				},
+				introScene7_line15: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene7_line15",
+					nextNode: "introScene7_screwdriverOut1"
+				},
+				introScene7_screwdriverOut1: {
+					nodeType: NodeType.CHARACTER_OUT,
+					charId: UNKNOWN,
+					nextNode: "introScene7_line16"
+				},
+				introScene7_line16: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene7_line16",
+					nextNode: "introScene7_music2"
+				},
+				introScene7_music2: {
+					nodeType: NodeType.MUSIC,
+					song: sndStrayRatStrut,
+					nextNode: "introScene7_screwdriverIn2"
+				},
+				introScene7_screwdriverIn2: {
+					nodeType: NodeType.CHARACTER_IN,
+					charId: SCREWDRIVER,
+					sprite: sScrewdriver,
+					expressionFrame: 2,
+					delay: 3,
+					nextNode: "introScene7_line17"
+				},
+				introScene7_line17: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene7_line17",
+					nextNode: "introScene7_screwdriverUpdate5"
+				},
+				introScene7_screwdriverUpdate5: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: SCREWDRIVER,
+					expressionFrame: 1,
+					nextNode: "introScene7_line18"
+				},
+				introScene7_line18: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene7_line18",
+					nextNode: "introScene7_screwdriverUpdate6"
+				},
+				introScene7_screwdriverUpdate6: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: SCREWDRIVER,
+					expressionFrame: 0,
+					nextNode: "introScene7_line19"
+				},
+				introScene7_line19: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene7_line19",
 					nextNode: noone
 				}
-				
-				
-				
-				
-				
 			}
 		} // introScene7
 		

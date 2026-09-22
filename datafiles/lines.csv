@@ -1,25 +1,27 @@
 Sequence ID,Typewrite SFX,Line Title,Line Text
+emptyScene_line,,,This is just an empty scene for now.
+,,,
 introScene1_line1,spook,Spook,"This week, we moved into a new house with my family."
 introScene1_line1,spook,Spook,Everyone has been so busy unpacking...
 introScene1_line1,spook,Spook,Me?
 ,,,
-introScene2_line1,,Spook,Nothing much changed for me.
-introScene2_line1,,Spook,"I get a nice view from my new spot, at least..."
-introScene2_line1,,Spook,I am Spook.
+introScene2_line1,spook,Spook,Nothing much changed for me.
+introScene2_line1,spook,Spook,"I get a nice view from my new spot, at least..."
+introScene2_line1,spook,Spook,I am Spook.
 ,,,
-introScene3_line1,,Spook,And this is Shay! My human and my best friend!
-introScene3_line1,,Spook,She seems to be nervous about the new school and everything.
+introScene3_line1,spook,Spook,And this is Shay! My human and my best friend!
+introScene3_line1,spook,Spook,She seems to be nervous about the new school and everything.
 ,,,
-introScene4_line1,,Spook,But I'm here to make her feel better!
-introScene4_line1,,Spook,"My human and I don't have many other friends- and, well, we don't need 'em!"
+introScene4_line1,spook,Spook,But I'm here to make her feel better!
+introScene4_line1,spook,Spook,"My human and I don't have many other friends- and, well, we don't need 'em!"
 ,,,
-introScene5_line1,,Spook,"More importantly, Halloween is around the corner!"
-introScene5_line1,,Spook,The BEST time of the year!
-introScene5_line1,,Spook,I can't wait to spend a calm afternoon watching horror movies with Shay!
+introScene5_line1,spook,Spook,"More importantly, Halloween is around the corner!"
+introScene5_line1,spook,Spook,The BEST time of the year!
+introScene5_line1,spook,Spook,I can't wait to spend a calm afternoon watching horror movies with Shay!
 ,,,
 introScene6_line1,,,"October 30th, Afternoon"
 introScene6_line1,,,You wake up to the sound of arguing...
-introScene6_line2,,Spook,...?
+introScene6_line2,spook,Spook,...?
 introScene6_line2,,Mom,You should go out more often!
 introScene6_line2,,Mom,There are so many kids your age in this neighborhood!
 introScene6_line2,,Mom,Mrs. Dudley said her daughter would love to go trick-or-treating with you!
@@ -45,81 +47,54 @@ introScene6_prompt1,,,Shay sounds upset...
 introScene6_line4,,Shay,"You're right, Spook!"
 introScene6_line4,,Shay,It's Halloween! It's going to be awesome whether they like me or not!
 introScene6_line4,,Shay,And we'll have some candy for our movie too! Isn't that awesome?!
-introScene6_line4,,Spook,Squeak!
+introScene6_line4,spook,Spook,Squeak!
 introScene6_line4,,Shay,"Well said, boy!"
 ,,,
 introScene7_line1,,,"October 30th, Night"
-,,,
-introScene7_line2,,Spook,Squeak?
+introScene7_line2,spook,Spook,Squeak?
 introScene7_line2,,???,"Pssst, kid"
-,,,
-introScene7_line3,,Spook,Who's there?! Show yourself!
+introScene7_line3,spook,Spook,Who's there?! Show yourself!
 introScene7_line3,,???,Down here...
-,,,
 introScene7_line4,,???,Sup?
-,,,
-introScene7_line5,,Spook,Gaaah! Intruder!
-introScene7_line5,,Spook,What are you doing in my house?!
+introScene7_line5,spook,Spook,Gaaah! Intruder!
+introScene7_line5,spook,Spook,What are you doing in my house?!
 introScene7_line5,,???,Your house?
 introScene7_line5,,???,"I thought you only owned that little box you're in, hehe"
-introScene7_line5,,Spook,No! The whole house! It's my human's house and mine!
+introScene7_line5,spook,Spook,No! The whole house! It's my human's house and mine!
 introScene7_line5,,???,That so?
-,,,
 introScene7_line6,,???,"You see, this whole street is mine."
 introScene7_line6,,???,I watched 'em build your little house from dirt and concrete.
 introScene7_line6,,???,And when you lot pack up and move on?
 introScene7_line6,,???,"I'll still be here, heh"
-,,,
-introScene7_line7,,Spook,I am not going to leave!
-introScene7_line7,,Spook,And I'm not a kid! I'm one and a half years old!
-,,,
+introScene7_line7,spook,Spook,I am not going to leave!
+introScene7_line7,spook,Spook,And I'm not a kid! I'm one and a half years old!
 introScene7_line8,,???,Ooooo! The little guy is actually so big!
-,,,
 introScene7_line9,,???,But you are a kid. You know so little of the world.
 introScene7_line9,,???,"And you rely on another to take care of you, no?"
 introScene7_line9,,???,Adults have their own lives. Adults feed themselves. Adults-
-,,,
-introScene7_line10,,Spook,"I get it, I get it!"
-,,,
+introScene7_line10,spook,Spook,"I get it, I get it!"
 introScene7_line11,,???,...Tell you what?
 introScene7_line11,,???,Why don't I open that metallic little box for you and show you how a pest lives?
-introScene7_line11,,Spook,No! Shay would be worried sick!
+introScene7_line11,spook,Spook,No! Shay would be worried sick!
 introScene7_line11,,???,"Heh heh, worry not, friend. Some of us have humans, too."
 introScene7_line11,,???,"We party all night, then crawl back into the cages."
-,,,
 introScene7_line12,,???,"Not me, of course! I'm a free spirit."
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-introScene7_line13,,Spook,You all party at night...?
+introScene7_line13,spook,Spook,You all party at night...?
 introScene7_line13,,???,Well yeah! It's Halloween tomorrow!
 introScene7_line13,,???,"The veil thins, the night is alive, and the critters celebrate! Heh heh heh"
-introScene7_line13,,Spook,There's a HALLOWEEN PARTY?!
-introScene7_line13,,???,"Ooooh, that got your attention? Indeed we do, friend. Indeed we do."
-introScene7_line13,,???,Come with me.
-introScene7_line13,,Spook,But if Shay wakes up...
-introScene7_line13,,???,"Then she will find you in the morning! Live a little, friend! C'mon!"
-introScene7_line13,,Spook,"...Yeah, okay"
-,,,
-introScene7_line14,,???,Yeaaah! Now we're talkin'.
-,,,
-introScene7_line15,,Screwdriver,I'm Screw. Screwdriver.
-introScene7_line15,,Spook,Uh... I'm Spook.
-,,,
-introScene7_line16,,Screwdriver,Wow! So are you spooky then?
-introScene7_line16,,Spook,Ugh... dunno. Are you a screwdriver?
-,,,
-introScene7_line17,,Screwdriver,"Fair point, fair point."
-introScene7_line17,,Spook,...Let's just go before we wake up Shay!
+introScene7_line14,spook,Spook,There's a HALLOWEEN PARTY?!
+introScene7_line14,,???,"Ooooh, that got your attention? Indeed we do, friend. Indeed we do."
+introScene7_line14,,???,Come with me.
+introScene7_line15,spook,Spook,But if Shay wakes up...
+introScene7_line15,,???,"Then she will find you in the morning! Live a little, friend! C'mon!"
+introScene7_line15,spook,Spook,"...Yeah, okay"
+introScene7_line16,,???,"[event=play_sound, sfxCageOpen]Yeaaah! Now we're talkin'."
+introScene7_line17,,Screwdriver,I'm Screw. Screwdriver.
+introScene7_line17,spook,Spook,Uh... I'm Spook.
+introScene7_line18,,Screwdriver,Wow! So are you spooky then?
+introScene7_line18,spook,Spook,Ugh... dunno. Are you a screwdriver?
+introScene7_line19,,Screwdriver,"Fair point, fair point."
+introScene7_line19,spook,Spook,...Let's just go before we wake up Shay!
 ,,,
 ,,,
 ,,,
@@ -137,7 +112,32 @@ introScene7_line17,,Spook,...Let's just go before we wake up Shay!
 ,,,
 ,,,
 ,,,
-emptyScene_line,,,This is just an empty scene for now.
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
 ,,,
 scene1_dialogue1,,,
 scene1_dialogue1,,Rocket,Hi Kazak!
