@@ -16,7 +16,7 @@ for (var _i = 0; _i < locationCount; _i++)
     var _textX = _boxX + (boxWidth / 2);
     var _textY = _boxY + (boxHeight / 2);
     scribble(_location.locationName)
-        .starting_format(fMapLocation, c_black)
+        .starting_format(FONT_MAP_LOCATION, c_black)
         .align(fa_center, fa_middle)
         .draw(_textX, _textY);
 }

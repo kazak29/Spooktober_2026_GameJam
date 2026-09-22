@@ -16,10 +16,9 @@ locationCount = array_length(locations);
 buttonX = VIEWPORT_WIDTH - 600;
 
 
-for (var _i = 0; _i < locationCount; _i++)
-{
-    var _locationData = locations[_i];
-    
+//for (var _i = 0; _i < locationCount; _i++)
+//{
+    //var _locationData = locations[_i];
     // Run script evaluation once at creation if a script exists
     //if (_inst.sceneSelectionScript != noone && script_exists(_inst.sceneSelectionScript))
     //{
@@ -36,5 +35,4 @@ for (var _i = 0; _i < locationCount; _i++)
     //{
     //    _inst.activeScene = _inst.scenes[0]; // Default fallback
     //}
-    
-}
+//}
