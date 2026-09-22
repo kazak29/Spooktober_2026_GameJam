@@ -68,7 +68,7 @@ function DrawDialogueBox ()
     
     var _scribble = scribble(_bodyText)
         .starting_format(FONT_DIALOGUE_TEXT_BODY, c_black)
-        .shadow(c_black, 1)
+        .sdf_shadow(c_black, 0.5, 1,1)
         .wrap(_maxTextW)
         .draw(_textX, _textY, typist);
 }
