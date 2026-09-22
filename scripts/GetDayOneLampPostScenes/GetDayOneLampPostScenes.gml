@@ -126,7 +126,41 @@ function GetDayOneLampPostScenes ()
 					nextNode: noone
 				}
 			}
-		}
+		}, // dayOneLampPostFirstVisit
+		dayOneLampPostSecondVisit: {
+			startNode: "dayOneLampPostSecondVisit_music1",
+			nextScene: noone,
+			background: sBackgroundGray,
+			nodes: {
+				dayOneLampPostSecondVisit_music1: {
+					nodeType: NodeType.MUSIC,
+					song: sndLompTheme,
+					nextNode: "dayOneLampPostSecondVisit_spookIn1"
+				},
+				dayOneLampPostSecondVisit_spookIn1: {
+					nodeType: NodeType.MAIN_CHARACTER_IN,
+					expressionFrame: 0,
+					nextNode: "dayOneLampPostSecondVisit_mothIn1"
+				},
+				dayOneLampPostSecondVisit_mothIn1: {
+					nodeType: NodeType.CHARACTER_IN,
+					charId: MOTH,
+					sprite: sMoth,
+					expressionFrame: 0,
+					nextNode: "dayOneLampPostSecondVisit_line1"
+				},
+				dayOneLampPostSecondVisit_line1: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "dayOneLampPostSecondVisit_line1",
+					nextNode: "dayOneLampPostSecondVisit_music2"
+				},
+				dayOneLampPostSecondVisit_music2: {
+					nodeType: NodeType.MUSIC,
+					song: noone,
+					nextNode: noone
+				}
+			}
+		} // dayOneLampPostSecondVisit
 	};
 	return _sceneData;
 }
