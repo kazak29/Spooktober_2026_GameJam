@@ -3,7 +3,7 @@ nextNode = noone;
 
 buttonText = "";
 
-w = 500;
+w = 600;
 h = 90;
 
 drawX = x - (w / 2);
