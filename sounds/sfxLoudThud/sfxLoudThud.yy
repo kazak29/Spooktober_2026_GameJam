@@ -7,10 +7,10 @@
   },
   "bitDepth":1,
   "channelFormat":0,
-  "compression":0,
+  "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.0,
+  "duration":1.8240136,
   "exportDir":"",
   "name":"sfxLoudThud",
   "parent":{
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"",
+  "soundFile":"sfxLoudThud.mp3",
   "volume":1.0,
 }
