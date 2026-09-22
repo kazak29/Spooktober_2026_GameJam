@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"GetDayOneLampPostScenes",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"GetDayOneLampPostScenes",
+  "parent":{
+    "name":"DayOne",
+    "path":"folders/Scripts/Loading/Scenes/Locations/DayOne.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

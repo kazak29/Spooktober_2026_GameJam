@@ -6,8 +6,11 @@ function LoadScreenPlay ()
 	
 	var _chunks = [
 		GetEmptyScene(),
-		GetIntroScenes()
+		GetIntroScenes(),
 		// Locations
+		
+		
+		GetDayOneLampPostScenes()
 		// Ending
 	];
 	
