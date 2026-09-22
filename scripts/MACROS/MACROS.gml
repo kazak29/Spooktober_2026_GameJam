@@ -70,6 +70,8 @@
 	#macro UNKNOWN     "???"
 	#macro SCREWDRIVER "Screwdriver"
 	#macro BARRY       "Barry"
+	#macro POGO        "Pogo"
+	#macro MOTH        "Moth"
 	#macro PRINCESS    "Princess"
 	
 #endregion

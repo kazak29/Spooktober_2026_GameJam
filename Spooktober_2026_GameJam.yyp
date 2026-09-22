@@ -50,6 +50,8 @@
     {"$GMFolder":"","%Name":"General","folderPath":"folders/Scripts/Loading/Scenes/General.yy","name":"General","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Intro","folderPath":"folders/Scripts/Loading/Scenes/Intro.yy","name":"Intro","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Locations","folderPath":"folders/Scripts/Loading/Scenes/Locations.yy","name":"Locations","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"DayOne","folderPath":"folders/Scripts/Loading/Scenes/Locations/DayOne.yy","name":"DayOne","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"DayTwo","folderPath":"folders/Scripts/Loading/Scenes/Locations/DayTwo.yy","name":"DayTwo","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Misc","folderPath":"folders/Scripts/Misc.yy","name":"Misc","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"ScreenPlay","folderPath":"folders/Scripts/ScreenPlay.yy","name":"ScreenPlay","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Sound","folderPath":"folders/Scripts/Sound.yy","name":"Sound","resourceType":"GMFolder","resourceVersion":"2.0",},
