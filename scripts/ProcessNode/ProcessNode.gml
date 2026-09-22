@@ -80,11 +80,7 @@ function ProcessNode(_nodeId, _skipDelay = false)
         
         case NodeType.MAIN_CHARACTER_IN:
         {
-            if (struct_exists(_node, SPRITE) && sprite_exists(_node.sprite)) 
-            { 
-                mainCharacter.sprite = _node.sprite; 
-				mainCharacter.expressionFrame = _node.expressionFrame;
-            }
+			mainCharacter.expressionFrame = _node.expressionFrame;
 			spookUp = true;
             mainCharacter.targetAlpha = MAX_ALPHA;
             directorState = DirectorStateCharacterFade;
