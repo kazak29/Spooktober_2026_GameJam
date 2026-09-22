@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"GetDayOneShayHomeScenes",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"GetDayOneShayHomeScenes",
+  "parent":{
+    "name":"DayOne",
+    "path":"folders/Scripts/Loading/Scenes/Locations/DayOne.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

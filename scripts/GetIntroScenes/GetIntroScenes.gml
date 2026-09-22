@@ -414,7 +414,7 @@ function GetIntroScenes ()
 				introScene8_spookUpdate1: {
 					nodeType: NodeType.CHARACTER_UPDATE,
 					charId: SPOOK,
-					expressionFrame: 4,
+					expressionFrame: 8,
 					nextNode: "introScene8_line3"
 				},
 				introScene8_line3: {

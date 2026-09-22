@@ -73,6 +73,7 @@
 	#macro POGO        "Pogo"
 	#macro MOTH        "Möth"
 	#macro PRINCESS    "Princess"
+	#macro DIPPER      "Dipper"
 	
 #endregion
 #region Screen Play
