@@ -107,6 +107,12 @@ function GetIntroScenes ()
 					charId: SHAY,
 					sprite: sShay,
 					expressionFrame: 2,
+					nextNode: "introScene6_spookUpdate1"
+				},
+				introScene6_spookUpdate1: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: SPOOK,
+					expressionFrame: 0,
 					nextNode: "introScene6_line3"
 				},
 				introScene6_line3: {
