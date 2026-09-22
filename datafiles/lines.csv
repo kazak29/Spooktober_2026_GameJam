@@ -58,54 +58,36 @@ introScene7_line3,,???,Down here...
 ,,,
 introScene7_line4,,???,Sup?
 ,,,
-,,,
-,,,
-,,,
 introScene7_line5,,Spook,Gaaah! Intruder!
 introScene7_line5,,Spook,What are you doing in my house?!
 introScene7_line5,,???,Your house?
 introScene7_line5,,???,"I thought you only owned that little box you're in, hehe"
 introScene7_line5,,Spook,No! The whole house! It's my human's house and mine!
 introScene7_line5,,???,That so?
-introScene7_line5,,???,"You see, this whole street is mine."
-introScene7_line5,,???,I watched 'em build your little house from dirt and concrete.
-introScene7_line5,,???,And when you lot pack up and move on?
-introScene7_line5,,???,"I'll still be here, heh"
 ,,,
-introScene7_line6,,Spook,I am not going to leave!
-introScene7_line6,,Spook,And I'm not a kid! I'm one and a half years old!
-introScene7_line6,,???,Ooooo! The little guy is actually so big!
-introScene7_line6,,???,But you are a kid. You know so little of the world.
-introScene7_line6,,???,"And you rely on another to take care of you, no?"
-introScene7_line6,,???,Adults have their own lives. Adults feed themselves. Adults-
-introScene7_line6,,Spook,"I get it, I get it!"
-introScene7_line6,,???,...Tell you what?
-introScene7_line6,,???,Why don't I open that metallic little box for you and show you how a pest lives?
-introScene7_line6,,Spook,No! Shay would be worried sick!
-introScene7_line6,,???,"Heh heh, worry not, friend. Some of us have humans, too."
-introScene7_line6,,???,"We party all night, then crawl back into the cages."
-introScene7_line6,,???,"Not me, of course! I'm a free spirit."
+introScene7_line6,,???,"You see, this whole street is mine."
+introScene7_line6,,???,I watched 'em build your little house from dirt and concrete.
+introScene7_line6,,???,And when you lot pack up and move on?
+introScene7_line6,,???,"I'll still be here, heh"
 ,,,
-introScene7_line7,,Spook,You all party at night...?
-introScene7_line7,,???,Well yeah! It's Halloween tomorrow!
-introScene7_line7,,???,"The veil thins, the night is alive, and the critters celebrate! Heh heh heh"
-introScene7_line7,,Spook,There's a HALLOWEEN PARTY?!
-introScene7_line7,,???,"Ooooh, that got your attention? Indeed we do, friend. Indeed we do."
-introScene7_line7,,???,Come with me.
-introScene7_line7,,Spook,But if Shay wakes up...
-introScene7_line7,,???,"Then she will find you in the morning! Live a little, friend! C'mon!"
-introScene7_line7,,Spook,"...Yeah, okay"
+introScene7_line7,,Spook,I am not going to leave!
+introScene7_line7,,Spook,And I'm not a kid! I'm one and a half years old!
 ,,,
-introScene7_line8,,???,Yeaaah! Now we're talkin'.
+introScene7_line8,,???,Ooooo! The little guy is actually so big!
 ,,,
-introScene7_line9,,Screwdriver,I'm Screw. Screwdriver.
-introScene7_line9,,Spook,Uh... I'm Spook.
+introScene7_line9,,???,But you are a kid. You know so little of the world.
+introScene7_line9,,???,"And you rely on another to take care of you, no?"
+introScene7_line9,,???,Adults have their own lives. Adults feed themselves. Adults-
 ,,,
-introScene7_line10,,Screwdriver,Wow! So are you spooky then?
-introScene7_line10,,Spook,Ugh... dunno. Are you a screwdriver?
+introScene7_line10,,Spook,"I get it, I get it!"
 ,,,
-introScene7_line11,,Screwdriver,"Fair point, fair point."
-introScene7_line11,,Spook,...Let's just go before we wake up Shay!
+introScene7_line11,,???,...Tell you what?
+introScene7_line11,,???,Why don't I open that metallic little box for you and show you how a pest lives?
+introScene7_line11,,Spook,No! Shay would be worried sick!
+introScene7_line11,,???,"Heh heh, worry not, friend. Some of us have humans, too."
+introScene7_line11,,???,"We party all night, then crawl back into the cages."
+,,,
+introScene7_line12,,???,"Not me, of course! I'm a free spirit."
 ,,,
 ,,,
 ,,,
@@ -118,8 +100,26 @@ introScene7_line11,,Spook,...Let's just go before we wake up Shay!
 ,,,
 ,,,
 ,,,
+introScene7_line13,,Spook,You all party at night...?
+introScene7_line13,,???,Well yeah! It's Halloween tomorrow!
+introScene7_line13,,???,"The veil thins, the night is alive, and the critters celebrate! Heh heh heh"
+introScene7_line13,,Spook,There's a HALLOWEEN PARTY?!
+introScene7_line13,,???,"Ooooh, that got your attention? Indeed we do, friend. Indeed we do."
+introScene7_line13,,???,Come with me.
+introScene7_line13,,Spook,But if Shay wakes up...
+introScene7_line13,,???,"Then she will find you in the morning! Live a little, friend! C'mon!"
+introScene7_line13,,Spook,"...Yeah, okay"
 ,,,
+introScene7_line14,,???,Yeaaah! Now we're talkin'.
 ,,,
+introScene7_line15,,Screwdriver,I'm Screw. Screwdriver.
+introScene7_line15,,Spook,Uh... I'm Spook.
+,,,
+introScene7_line16,,Screwdriver,Wow! So are you spooky then?
+introScene7_line16,,Spook,Ugh... dunno. Are you a screwdriver?
+,,,
+introScene7_line17,,Screwdriver,"Fair point, fair point."
+introScene7_line17,,Spook,...Let's just go before we wake up Shay!
 ,,,
 ,,,
 ,,,

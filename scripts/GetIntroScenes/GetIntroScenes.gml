@@ -178,7 +178,7 @@ function GetIntroScenes ()
 				},
 				introScene7_screwdriverIn1: {
 					nodeType: NodeType.CHARACTER_IN,
-					 charId: "???",
+					 charId: UNKNOWN,
 					 sprite: sScrewdriver,
 					 expressionFrame: 4,
 					 nextNode: "introScene7_line4"
@@ -186,8 +186,101 @@ function GetIntroScenes ()
 				introScene7_line4: {
 					nodeType: NodeType.LINE_SEQUENCE,
 					sequenceId: "introScene7_line4",
-					nextNode: noone
+					nextNode: "introScene7_spookUpdate2"
 				},
+				introScene7_spookUpdate2: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: SPOOK,
+					expressionFrame: 2,
+					nextNode: "introScene7_line5"
+				},
+				introScene7_line5: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene7_line5",
+					nextNode: "introScene7_screwdriverUpdate1"
+				},
+				introScene7_screwdriverUpdate1: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: UNKNOWN,
+					expressionFrame: 6,
+					nextNode: "introScene7_line6"
+				},
+				introScene7_line6: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene7_line6",
+					nextNode: "introScene7_spookUpdate3"
+				},
+				introScene7_spookUpdate3: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: SPOOK,
+					expressionFrame: 1,
+					nextNode: "introScene7_line7"
+				},
+				introScene7_line7: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene7_line7",
+					nextNode: "introScene7_screwdriverUpdate2"
+				},
+				introScene7_screwdriverUpdate2: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: UNKNOWN,
+					expressionFrame: 5,
+					nextNode: "introScene7_line8"
+				},
+				introScene7_line8: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene7_line8",
+					nextNode: "introScene7_screwdriverUpdate3"
+				},
+				introScene7_screwdriverUpdate3: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: UNKNOWN,
+					expressionFrame: 4,
+					nextNode: "introScene7_line9"
+				},
+				introScene7_line9: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene7_line9",
+					nextNode: "introScene7_spookUpdate4"
+				},
+				introScene7_spookUpdate4: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: SPOOK,
+					expressionFrame: 2,
+					nextNode: "introScene7_line10"
+				},
+				introScene7_line10: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene7_line10",
+					nextNode: "introScene7_spookUpdate5"
+				},
+				introScene7_spookUpdate5: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: SPOOK,
+					expressionFrame: 1,
+					nextNode: "introScene7_line11"
+				},
+				introScene7_line11: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene7_line11",
+					nextNode: "introScene7_screwdriverUpdate4"
+				},
+				introScene7_screwdriverUpdate4: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: UNKNOWN,
+					expressionFrame: 6,
+					nextNode: "introScene7_line12"
+				},
+				introScene7_line12: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene7_line12",
+					nextNode: noone
+				}
+				
+				
+				
+				
+				
 			}
 		} // introScene7
 		
