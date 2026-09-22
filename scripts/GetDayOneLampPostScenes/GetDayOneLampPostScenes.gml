@@ -93,7 +93,7 @@ function GetDayOneLampPostScenes ()
 					nodeType: NodeType.LINE_SEQUENCE,
 					sequenceId: "dayOneLampPostFirstVisit_line5",
 					nextNode: "dayOneLampPostFirstVisit_music4"
-				},
+				}, // Go to end of scene
 				
 				
 				
@@ -102,22 +102,58 @@ function GetDayOneLampPostScenes ()
 					sequenceId: "dayOneLampPostFirstVisit_prompt2",
 					choices: [
 						{ key: "dayOneLampPostFirstVisit_prompt2_option1", nextNode: "dayOneLampPostFirstVisit_music5" },
-						{ key: "dayOneLampPostFirstVisit_prompt2_option2", nextNode: "dayOneLampPostFirstVisit_music4" }
+						{ key: "dayOneLampPostFirstVisit_prompt_exit1", nextNode: "dayOneLampPostFirstVisit_music4" } // Go to end of scene
 					]
 				},
 				dayOneLampPostFirstVisit_music5: {
 					nodeType: NodeType.MUSIC,
 					song: noone,
-					nextNode: noone
+					nextNode: "dayOneLampPostFirstVisit_mothOut3"
 				},
-				
-				
-				
-				
-				
-				
-				
-				
+				dayOneLampPostFirstVisit_mothOut3: {
+					nodeType: NodeType.CHARACTER_OUT,
+					charId: MOTH,
+					delay: 3,
+					nextNode: "dayOneLampPostFirstVisit_mothIn4"
+				},
+				dayOneLampPostFirstVisit_mothIn4: {
+					nodeType: NodeType.CHARACTER_IN,
+					charId: MOTH,
+					sprite: sMoth,
+					expressionFrame: 1,
+					delay: 3,
+					nextNode: "dayOneLampPostFirstVisit_line6"
+				},
+				dayOneLampPostFirstVisit_line6: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "dayOneLampPostFirstVisit_line6",
+					nextNode: "dayOneLampPostFirstVisit_mothOut4"
+				},
+				dayOneLampPostFirstVisit_mothOut4: {
+					nodeType: NodeType.CHARACTER_OUT,
+					charId: MOTH,
+					delay: 3,
+					nextNode: "dayOneLampPostFirstVisit_music6"
+				},
+				dayOneLampPostFirstVisit_music6: {
+					nodeType: NodeType.MUSIC,
+					song: sndLompTheme,
+					nextNode: "dayOneLampPostFirstVisit_mothIn5"
+				},
+				dayOneLampPostFirstVisit_mothIn5: {
+					nodeType: NodeType.CHARACTER_IN,
+					charId: MOTH,
+					sprite: sMoth,
+					expressionFrame: 0,
+					nextNode: "dayOneLampPostFirstVisit_choice3"
+				},
+				dayOneLampPostFirstVisit_choice3: {
+					nodeType: NodeType.CHOICE,
+					sequenceId: "dayOneLampPostFirstVisit_prompt3",
+					choices: [
+						{ key: "dayOneLampPostFirstVisit_prompt_exit1", nextNode: "dayOneLampPostFirstVisit_music4" }, // Go to end of scene
+					]
+				},
 				
 				
 				dayOneLampPostFirstVisit_music4: {
@@ -126,7 +162,41 @@ function GetDayOneLampPostScenes ()
 					nextNode: noone
 				}
 			}
-		}
+		}, // dayOneLampPostFirstVisit
+		dayOneLampPostSecondVisit: {
+			startNode: "dayOneLampPostSecondVisit_music1",
+			nextScene: noone,
+			background: sBackgroundGray,
+			nodes: {
+				dayOneLampPostSecondVisit_music1: {
+					nodeType: NodeType.MUSIC,
+					song: sndLompTheme,
+					nextNode: "dayOneLampPostSecondVisit_spookIn1"
+				},
+				dayOneLampPostSecondVisit_spookIn1: {
+					nodeType: NodeType.MAIN_CHARACTER_IN,
+					expressionFrame: 0,
+					nextNode: "dayOneLampPostSecondVisit_mothIn1"
+				},
+				dayOneLampPostSecondVisit_mothIn1: {
+					nodeType: NodeType.CHARACTER_IN,
+					charId: MOTH,
+					sprite: sMoth,
+					expressionFrame: 0,
+					nextNode: "dayOneLampPostSecondVisit_line1"
+				},
+				dayOneLampPostSecondVisit_line1: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "dayOneLampPostSecondVisit_line1",
+					nextNode: "dayOneLampPostSecondVisit_music2"
+				},
+				dayOneLampPostSecondVisit_music2: {
+					nodeType: NodeType.MUSIC,
+					song: noone,
+					nextNode: noone
+				}
+			}
+		} // dayOneLampPostSecondVisit
 	};
 	return _sceneData;
 }
