@@ -106,7 +106,7 @@ function GetIntroScenes ()
 					nodeType: NodeType.CHARACTER_IN,
 					charId: SHAY,
 					sprite: sShay,
-					expressionFrame: 0,
+					expressionFrame: 2,
 					nextNode: "introScene6_line3"
 				},
 				introScene6_line3: {
@@ -118,9 +118,15 @@ function GetIntroScenes ()
 					nodeType: NodeType.CHOICE,
 					sequenceId: "introScene6_prompt1",
 					choices: [
-						{ key: "introScene6_prompt1_option1", nextNode: "introScene6_line4" },
-						{ key: "introScene6_prompt1_option2", nextNode: "introScene6_line4" }
+						{ key: "introScene6_prompt1_option1", nextNode: "introScene6_shayUpdate1" },
+						{ key: "introScene6_prompt1_option2", nextNode: "introScene6_shayUpdate1" }
 					]
+				},
+				introScene6_shayUpdate1: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: SHAY,
+					expressionFrame: 0,
+					nextNode: "introScene6_line4"
 				},
 				introScene6_line4: {
 					nodeType: NodeType.LINE_SEQUENCE,
@@ -151,107 +157,35 @@ function GetIntroScenes ()
 				},
 				introScene7_spookIn1: {
 					nodeType: NodeType.MAIN_CHARACTER_IN,
-					expressionFrame: 0,
+					expressionFrame: 6,
 					nextNode: "introScene7_line2"
 				},
 				introScene7_line2: {
 					nodeType: NodeType.LINE_SEQUENCE,
 					sequenceId: "introScene7_line2",
-					nextNode: "introScene7_screwdriverIn1"
+					nextNode: "introScene7_spookUpdate1"
 				},
-				introScene7_screwdriverIn1: {
-					nodeType: NodeType.CHARACTER_IN,
-					charId: UNKNOWN,
-					sprite: sScrewdriver,
+				introScene7_spookUpdate1: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: SPOOK,
 					expressionFrame: 1,
 					nextNode: "introScene7_line3"
 				},
 				introScene7_line3: {
 					nodeType: NodeType.LINE_SEQUENCE,
 					sequenceId: "introScene7_line3",
-					nextNode: "introScene7_spookUpdate1"
+					nextNode: "introScene7_screwdriverIn1"
 				},
-				introScene7_spookUpdate1: {
-					nodeType: NodeType.CHARACTER_UPDATE,
-					charId: SPOOK,
-					expressionFrame: 0,
-					nextNode: "introScene7_line4"
+				introScene7_screwdriverIn1: {
+					nodeType: NodeType.CHARACTER_IN,
+					 charId: "???",
+					 sprite: sScrewdriver,
+					 expressionFrame: 4,
+					 nextNode: "introScene7_line4"
 				},
 				introScene7_line4: {
 					nodeType: NodeType.LINE_SEQUENCE,
 					sequenceId: "introScene7_line4",
-					nextNode: "introScene7_spookUpdate2"
-				},
-				introScene7_spookUpdate2: {
-					nodeType: NodeType.CHARACTER_UPDATE,
-					charId: SPOOK,
-					expressionFrame: 0,
-					nextNode: "introScene7_line5"
-				},
-				introScene7_line5: {
-					nodeType: NodeType.LINE_SEQUENCE,
-					sequenceId: "introScene7_line5",
-					nextNode: "introScene7_spookUpdate3"
-				},
-				introScene7_spookUpdate3: {
-					nodeType: NodeType.CHARACTER_UPDATE,
-					charId: SPOOK,
-					expressionFrame: 0,
-					nextNode: "introScene7_line6"
-				},
-				introScene7_line6: {
-					nodeType: NodeType.LINE_SEQUENCE,
-					sequenceId: "introScene7_line6",
-					nextNode: "introScene7_screwdriverOut1"
-				},
-				introScene7_screwdriverOut1: {
-					nodeType: NodeType.CHARACTER_OUT,
-					charId: UNKNOWN,
-					nextNode: "introScene7_line7"
-				},
-				introScene7_line7: {
-					nodeType: NodeType.LINE_SEQUENCE,
-					sequenceId: "introScene7_line7",
-					nextNode: "introScene7_music2"
-				},
-				introScene7_music2: {
-					nodeType: NodeType.MUSIC,
-					song: sndStrayRatStrut,
-					nextNode: "introScene7_screwdriverIn2"
-				},
-				introScene7_screwdriverIn2: {
-					nodeType: NodeType.CHARACTER_IN,
-					charId: SCREWDRIVER,
-					sprite: sScrewdriver,
-					expressionFrame: 0,
-					delay: 3,
-					nextNode: "introScene7_line8"
-				},
-				introScene7_line8: {
-					nodeType: NodeType.LINE_SEQUENCE,
-					sequenceId: "introScene7_line8",
-					nextNode: "introScene7_screwdriverUpdate1"
-				},
-				introScene7_screwdriverUpdate1: {
-					nodeType: NodeType.CHARACTER_UPDATE,
-					charId: SCREWDRIVER,
-					expressionFrame: 2,
-					nextNode: "introScene7_line9"
-				},
-				introScene7_line9: {
-					nodeType: NodeType.LINE_SEQUENCE,
-					sequenceId: "introScene7_line9",
-					nextNode: "introScene7_screwdriverUpdate2"
-				},
-				introScene7_screwdriverUpdate2: {
-					nodeType: NodeType.CHARACTER_UPDATE,
-					charId: SCREWDRIVER,
-					expressionFrame: 0,
-					nextNode: "introScene7_line10"
-				},
-				introScene7_line10: {
-					nodeType: NodeType.LINE_SEQUENCE,
-					sequenceId: "introScene7_line10",
 					nextNode: noone
 				},
 			}
