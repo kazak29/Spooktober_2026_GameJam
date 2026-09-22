@@ -19,37 +19,31 @@ typist.in(TYPIST_SPEED, TYPIST_SMOOTHNESS);
 currentLineSequence = [];
 currentLineIndex = 0;
 
-//typewriter sound
-TypewriterSoundPlay = function(){
-	typist.sound(
-		typewriterSound.ids, 
-		typewriterSound.overlap, 
-		typewriterSound.pitchMin, 
-		typewriterSound.pitchMax, 
-		(global.volTypeWriter * typewriterSound.vol) / 100
-	);
-}
-TypewriterSoundReset = function(){
-	typewriterSound = {
-		ids:		[],
-		vol:		100,	//as % of volTypeWriter
-		overlap:	15,
-		pitchMin:	1,
-		pitchMax:	1
+#region typewriter sound
+	TypewriterSoundPlay = function(){
+		typist.sound(
+			typewriterSound.ids, 
+			typewriterSound.overlap, 
+			typewriterSound.pitchMin, 
+			typewriterSound.pitchMax, 
+			(global.volTypeWriter * typewriterSound.vol) / 100
+		);
 	}
-	TypewriterSoundPlay(); //stop typewriter sound by overriding it with empty array
-}
-TypewriterSoundSet = function(){
-	var _sounds = global.typewriterSfxNames;
-	var _soundName = currentLineSequence[currentLineIndex].lineSfx;
-	var _ids = struct_get(_sounds, _soundName) ?? [];
-	if !is_array(_ids) _ids = [];
+	TypewriterSoundReset = function(){
+		typewriterSound = struct_get(global.dataTypewriterSfx, "none");
+		TypewriterSoundPlay(); //stop typewriter sound by overriding it with empty array
+	}
+	TypewriterSoundSet = function(){
+		var _sounds = global.dataTypewriterSfx;
+		var _soundName = currentLineSequence[currentLineIndex].lineSfx;
+		var _ids = struct_get(_sounds, _soundName) ?? struct_get(_sounds, "none");
+		
+		typewriterSound = variable_clone(_ids);
+		TypewriterSoundPlay();
+	}
 	
 	TypewriterSoundReset();
-	typewriterSound.ids = _ids;
-	TypewriterSoundPlay();
-}
-TypewriterSoundReset();
+#endregion
 
 // Speaker tracking for bounce animations
 previousSpeaker = "";

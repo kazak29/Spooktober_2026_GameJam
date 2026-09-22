@@ -30,6 +30,32 @@ function uiElementPositionUpdate(){
 	y = _bbox.top + _bbox.height/2 + _offsetY;
 }
 
+//apply sprite to a menu element
+function uiElementSpriteUpdate(_sprStruct, _w, _h){
+	var _spr = _sprStruct;
+	
+	//add buffer between sprite and string borders
+	_w += _spr.bufferStrX*2;
+	_h += _spr.bufferStrY*2;
+	
+	//limit scaling so nineslice don't crop sprite when size too small
+	var _nine = sprite_get_nineslice(_spr.ind);
+	if _nine.enabled {
+		_w = max(_w, _nine.left + _nine.right + 1);
+		_h = max(_h, _nine.top + _nine.bottom + 1);
+	}
+			
+	//setup scale
+	var _scaleX = _w/sprite_get_width(_spr.ind);
+	var _scaleY = _h/sprite_get_height(_spr.ind);
+	
+	//update params
+	sprite_index = _spr.ind;
+	image_xscale = _scaleX;
+	image_yscale = _scaleY;
+	
+}
+
 //play ui sfx (why did I even bother)
 function uiSfxPlayHover(){
 	

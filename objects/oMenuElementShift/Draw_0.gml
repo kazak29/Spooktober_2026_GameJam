@@ -14,6 +14,11 @@ if _selectedAlone {
 	_frame = 1;
 }
 
+//sprite used as bg for slider
+if is_struct(spr) {
+	with spr { draw_sprite_ext(ind, _frame, x,y, scaleX, scaleY, 0, c_white, other.image_alpha); }
+}
+
 var _val = _elem.arg;
 if sprite_exists(sprite_index) {
 	_c				= COL_MENU_OPTION_DEFAULT;

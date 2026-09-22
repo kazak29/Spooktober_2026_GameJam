@@ -15,16 +15,16 @@
 	
 	global.crt = {
 		active:			true,
-		abberation:		0.0015,	//slider, from -0.002 to 0.002
+		abberation:		0.0012,	//slider, from -0.002 to 0.002
 		noise:			0.02,	//slider, from 0 to 0.1
 		scanlines:		0.04,	//slider, from 0 to 0.1
 		scanlinesGlow:	0,		//toggle, from 0 to 1
 		mask:			0,		//shift,  from 0 to 3, 0 off, 1 grille, 2 dots, 3 slot
-		maskScale:		2,		//slider, from 1 to 6
-		glow:			0,		//slider, from 0 to 1
-		bright:			1,		//slider, from 0.5 to 2
-		flicker:		0.025,	//slider, from 0 to 0.025
-		roll:			0.05,	//slider, from 0 to 0.05
+		maskScale:		1,		//slider, from 1 to 4
+		glow:			0.05,	//slider, from 0 to 0.5
+		bright:			1,		//slider, from 0.5 to 1.5
+		flicker:		0.02,	//slider, from 0 to 0.03
+		roll:			0.05,	//slider, from 0 to 0.1
 	};
 	
 #endregion
@@ -76,6 +76,3 @@
 	global.menuPages = MenuDataCreate();
 	
 #endregion
-
-// Add all Scribble Events
-ScribbleAddAllEvents();

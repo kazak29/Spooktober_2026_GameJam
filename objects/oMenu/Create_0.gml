@@ -95,7 +95,10 @@ BackgroundPositionUpdate = function(_elemId){
 		
 			//exceptions
 			if object_index == oMenuElementSlider {
-				_x2 = borderRight + _offset;
+				_x1 -= hoverShift.left;
+				_x2 += hoverShift.right;
+				_y1 -= hoverShift.top;
+				_y2 += hoverShift.bottom;
 			}
 			
 			with other _posCheck(_x1,_x2,_y1,_y2);
@@ -163,29 +166,11 @@ PageUpdate = function(){
 				_strH = (_scribH > _strH) ? _scribH : _strH;
 			}
 			
-			//add buffer between sprite and string borders
-			_strW += _spr.bufferStrX*2;
-			_strH += _spr.bufferStrY*2;
-					
-			//limit scaling so nineslice don't crop sprite when size too small
-			var _nine = sprite_get_nineslice(_spr.ind);
-			if _nine.enabled {
-				_strW = max(_strW, _nine.left + _nine.right + 1);
-				_strH = max(_strH, _nine.top + _nine.bottom + 1);
-			}
-			
-			//setup scale
-			var _scaleX = _strW/sprite_get_width(_spr.ind);
-			var _scaleY = _strH/sprite_get_height(_spr.ind);
-			
 			//update every element with sprite parameters
 			for (var i = 0; i < _elemsL; i++) {
 				var _id = _elems[i].elemId;
-			
 				with _id {
-					sprite_index = _spr.ind;
-					image_xscale = _scaleX;
-					image_yscale = _scaleY;
+					uiElementSpriteUpdate(_spr, _strW, _strH);
 					
 					//setup buffers between elements (switch just in case of future horizontal menu layouts)
 					var _bufferX = 0, _bufferY = 0;
@@ -196,7 +181,6 @@ PageUpdate = function(){
 						case MENU_LAYOUT.PAUSE_MIDDLE:		{ _bufferY = _spr.bufferStrY + _spr.bufferElem; 	} break;
 						case MENU_LAYOUT.PAUSE_BOTTOM:		{ _bufferY = _spr.bufferStrY + _spr.bufferElem; 	} break;
 					}
-					
 					strX += _bufferX*i;
 					strY += _bufferY*i;
 					uiElementPositionUpdate();
@@ -207,11 +191,119 @@ PageUpdate = function(){
 						case fa_left:	_shiftX = strX - _spr.bufferStrX - bbox_left;	break;
 						case fa_right:	_shiftX = strX + _spr.bufferStrX - bbox_right;	break;
 					}
-					//insert valign switch here
+					switch strAlignV {
+						case fa_top:	_shiftX = strY - _spr.bufferStrY - bbox_top;	break;
+						case fa_bottom:	_shiftX = strY + _spr.bufferStrY - bbox_bottom;	break;
+					}
 					x += _shiftX;
 					y += _shiftY;
 					strX += _shiftX;
 					strY += _shiftY;
+					
+					//update sub elements
+					var _al = array_length(_id.subIds);
+					for (var j = 0; j < _al; j++) {
+						with _id.subIds[j] {
+							
+							//apply changes based on element type
+							switch _elems[i].elemType {
+								
+								case MENU_ELEMENT_TYPE.TOGGLE: {
+									
+									//move second toggle away from first (if no sprite object does it by itself in create event)
+									if (j > 0) {
+										var _shift = _id.subIds[0].sprite_width*distMult;
+										x += _shift;
+										strX += _shift;
+									}
+									
+									//apply sprite
+									var _subStrW = scribble(global.uiData.menuOff, "toggle").get_width();
+									var _subStrH = scribble(global.uiData.menuOff, "toggle").get_height();
+									uiElementSpriteUpdate(_spr, _subStrW, _subStrH);
+									
+									//move element with buffer
+									strX += _bufferX*i;
+									strY += _bufferY*i;
+									uiElementPositionUpdate();
+								} break;
+								
+								case MENU_ELEMENT_TYPE.SHIFT: {
+									strX += _bufferX*i;
+									strY += _bufferY*i;
+									x = strX;
+									y = strY;
+								} break;
+								
+								case MENU_ELEMENT_TYPE.SLIDER: {
+									x += _bufferX*i;
+									y += _bufferY*i;
+									
+									spr = {};
+									spr.ind = _spr.ind;
+									
+									var _scaleW = (bbox_right - bbox_left + hoverShift.left + hoverShift.right);
+									var _scaleH = (bbox_bottom - bbox_top + hoverShift.top + hoverShift.bottom);
+									
+									//limit scaling so nineslice don't crop sprite when size too small
+									var _nine = sprite_get_nineslice(spr.ind);
+									if _nine.enabled {
+										_scaleW = max(_scaleW, _nine.left + _nine.right + 1);
+										_scaleH = max(_scaleH, _nine.top + _nine.bottom + 1);
+									}
+									
+									spr.scaleX = _scaleW/sprite_get_width(spr.ind);
+									spr.scaleY = _scaleH/sprite_get_height(spr.ind);
+									
+									spr.x = bbox_left - hoverShift.left + sprite_get_xoffset(spr.ind)*spr.scaleX;
+									spr.y = bbox_top - hoverShift.top + sprite_get_yoffset(spr.ind)*spr.scaleY;
+								} break;
+								
+							}
+							
+							//calculate an out of bounds for sub elements too??? idk
+							
+						}
+					}
+					
+					//apply post-postition changes based on element type
+					switch _elems[i].elemType {
+						case MENU_ELEMENT_TYPE.SHIFT: {
+							
+							var _id0 = _id.subIds[0];
+							var _id1 = _id.subIds[1];
+							var _id2 = _id.subIds[2];
+							
+							//select the last shift
+							with _id2 {
+										
+								spr = {};
+								spr.ind = _spr.ind;
+										
+								var _left = _id0.scribId.get_bbox(_id0.strX, _id0.strY).left - _spr.bufferStrX;
+								var _right = _id2.scribId.get_bbox(_id2.strX, _id2.strY).right + _spr.bufferStrX;
+								var _scaleW = _right - _left;
+								var _scaleH = _id1.scribId.get_height() + _spr.bufferStrY*2;
+										
+								//limit scaling so nineslice don't crop sprite when size too small
+								var _nine = sprite_get_nineslice(spr.ind);
+								if _nine.enabled {
+									_scaleW = max(_scaleW, _nine.left + _nine.right + 1);
+									_scaleH = max(_scaleH, _nine.top + _nine.bottom + 1);
+								}
+										
+								spr.scaleX = _scaleW/sprite_get_width(spr.ind);
+								spr.scaleY = _scaleH/sprite_get_height(spr.ind);
+										
+								spr.x = _left + sprite_get_xoffset(spr.ind)*spr.scaleX;
+								spr.y = scribId.get_bbox(strX, strY).top - _spr.bufferStrY + sprite_get_yoffset(spr.ind)*spr.scaleY;
+								
+							}
+							
+						} break;
+					}
+					
+					
 				}
 			}
 			
@@ -286,6 +378,11 @@ PageUpdate = function(){
 						y += _shiftY;
 						strX += _shiftX;
 						strY += _shiftY;
+						
+						if variable_instance_exists(id, "spr") && is_struct(spr) {
+							spr.x += _shiftX;
+							spr.y += _shiftY;
+						}
 					}
 				}
 			

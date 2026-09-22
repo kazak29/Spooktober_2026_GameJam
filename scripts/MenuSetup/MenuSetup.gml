@@ -67,6 +67,8 @@ function MenuDataCreate() {
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
 						varName:		"volMusic",
 						argClamp:		[0,1],
+						whole:			false,
+						style:			MENU_SLIDER_STYLE.PERC_BAR,
 					},
 					//sound volume
 					{
@@ -74,6 +76,8 @@ function MenuDataCreate() {
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
 						varName:		"volSound",
 						argClamp:		[0,1],
+						whole:			false,
+						style:			MENU_SLIDER_STYLE.PERC_BAR,
 					},
 					//dialogue volume (type writer)
 					{
@@ -81,6 +85,8 @@ function MenuDataCreate() {
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
 						varName:		"volTypeWriter",
 						argClamp:		[0,1],
+						whole:			false,
+						style:			MENU_SLIDER_STYLE.PERC_BAR,
 					},
 					//ui sfx flag
 					{
@@ -136,6 +142,8 @@ function MenuDataCreate() {
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
 						varName:		"crt.abberation",
 						argClamp:		[-0.002, 0.002],
+						whole:			false,
+						style:			MENU_SLIDER_STYLE.PERC_SCALE_HUNDRED,
 					},
 					//noise
 					{
@@ -143,6 +151,8 @@ function MenuDataCreate() {
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
 						varName:		"crt.noise",
 						argClamp:		[0, 0.1],
+						whole:			false,
+						style:			MENU_SLIDER_STYLE.PERC_BAR,
 					},
 					//scanlines
 					{
@@ -150,6 +160,8 @@ function MenuDataCreate() {
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
 						varName:		"crt.scanlines",
 						argClamp:		[0, 0.1],
+						whole:			false,
+						style:			MENU_SLIDER_STYLE.PERC_BAR,
 					},
 					//scanlines glow
 					{
@@ -169,35 +181,45 @@ function MenuDataCreate() {
 						title:			global.uiData.menuCrtMaskScale,
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
 						varName:		"crt.maskScale",
-						argClamp:		[0, 6],
+						argClamp:		[1, 4],
+						whole:			true,
+						style:			MENU_SLIDER_STYLE.UNMODIFIED,
 					},
 					//glow
 					{
 						title:			global.uiData.menuCrtGlow,
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
 						varName:		"crt.glow",
-						argClamp:		[0, 1],
+						argClamp:		[0, 0.5],
+						whole:			false,
+						style:			MENU_SLIDER_STYLE.PERC_BAR,
 					},
 					//bright
 					{
 						title:			global.uiData.menuCrtBright,
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
 						varName:		"crt.bright",
-						argClamp:		[0.5, 2],
+						argClamp:		[0.5, 1.5],
+						whole:			false,
+						style:			MENU_SLIDER_STYLE.PERC_SCALE_ROUNDED,
 					},
 					//flicker
 					{
 						title:			global.uiData.menuCrtFlicker,
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
 						varName:		"crt.flicker",
-						argClamp:		[0, 0.025],
+						argClamp:		[0, 0.03],
+						whole:			false,
+						style:			MENU_SLIDER_STYLE.PERC_BAR,
 					},
 					//roll
 					{
 						title:			global.uiData.menuCrtRoll,
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
 						varName:		"crt.roll",
-						argClamp:		[0, 0.05],
+						argClamp:		[0, 0.1],
+						whole:			false,
+						style:			MENU_SLIDER_STYLE.PERC_BAR,
 					},
 					//back to settings page
 					{
@@ -234,6 +256,8 @@ function MenuDataCreate() {
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
 						varName:		"volMusic",
 						argClamp:		[0,1],
+						whole:			false,
+						style:			MENU_SLIDER_STYLE.PERC_BAR,
 					},
 					//sound volume
 					{
@@ -241,6 +265,8 @@ function MenuDataCreate() {
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
 						varName:		"volSound",
 						argClamp:		[0,1],
+						whole:			false,
+						style:			MENU_SLIDER_STYLE.PERC_BAR,
 					},
 					//dialogue volume (type writer)
 					{
@@ -248,6 +274,8 @@ function MenuDataCreate() {
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
 						varName:		"volTypeWriter",
 						argClamp:		[0,1],
+						whole:			false,
+						style:			MENU_SLIDER_STYLE.PERC_BAR,
 					},
 					//ui sfx flag
 					{
@@ -299,6 +327,8 @@ function MenuDataCreate() {
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
 						varName:		"crt.abberation",
 						argClamp:		[-0.002, 0.002],
+						whole:			false,
+						style:			MENU_SLIDER_STYLE.PERC_SCALE_HUNDRED,
 					},
 					//noise
 					{
@@ -306,6 +336,8 @@ function MenuDataCreate() {
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
 						varName:		"crt.noise",
 						argClamp:		[0, 0.1],
+						whole:			false,
+						style:			MENU_SLIDER_STYLE.PERC_BAR,
 					},
 					//scanlines
 					{
@@ -313,6 +345,8 @@ function MenuDataCreate() {
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
 						varName:		"crt.scanlines",
 						argClamp:		[0, 0.1],
+						whole:			false,
+						style:			MENU_SLIDER_STYLE.PERC_BAR,
 					},
 					//scanlines glow
 					{
@@ -332,35 +366,45 @@ function MenuDataCreate() {
 						title:			global.uiData.menuCrtMaskScale,
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
 						varName:		"crt.maskScale",
-						argClamp:		[0, 6],
+						argClamp:		[1, 4],
+						whole:			true,
+						style:			MENU_SLIDER_STYLE.UNMODIFIED,
 					},
 					//glow
 					{
 						title:			global.uiData.menuCrtGlow,
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
 						varName:		"crt.glow",
-						argClamp:		[0, 1],
+						argClamp:		[0, 0.5],
+						whole:			false,
+						style:			MENU_SLIDER_STYLE.PERC_BAR,
 					},
 					//bright
 					{
 						title:			global.uiData.menuCrtBright,
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
 						varName:		"crt.bright",
-						argClamp:		[0.5, 2],
+						argClamp:		[0.5, 1.5],
+						whole:			false,
+						style:			MENU_SLIDER_STYLE.PERC_SCALE_ROUNDED,
 					},
 					//flicker
 					{
 						title:			global.uiData.menuCrtFlicker,
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
 						varName:		"crt.flicker",
-						argClamp:		[0, 0.025],
+						argClamp:		[0, 0.03],
+						whole:			false,
+						style:			MENU_SLIDER_STYLE.PERC_BAR,
 					},
 					//roll
 					{
 						title:			global.uiData.menuCrtRoll,
 						elemType:		MENU_ELEMENT_TYPE.SLIDER,
 						varName:		"crt.roll",
-						argClamp:		[0, 0.05],
+						argClamp:		[0, 0.1],
+						whole:			false,
+						style:			MENU_SLIDER_STYLE.PERC_BAR,
 					},
 					//back
 					{

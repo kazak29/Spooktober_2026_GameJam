@@ -41,7 +41,7 @@ TextUpdate = function(){
 		scribId = scribble(_text, "shift").starting_format(strFont, c_white).align(fa_center, fa_middle);
 		
 		//do NOT update string position
-		uiElementPositionUpdate();
+		//uiElementPositionUpdate();
 	}
 }
 
@@ -61,4 +61,4 @@ switch side {
 		scribId = scribble(">>", "shift").starting_format(strFont, c_white).align(fa_left, fa_middle);
 	} break;
 }
-uiElementPositionUpdate();
+//uiElementPositionUpdate();
