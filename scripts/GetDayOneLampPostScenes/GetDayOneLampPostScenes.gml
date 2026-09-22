@@ -64,6 +64,12 @@ function GetDayOneLampPostScenes ()
 					sprite: sMoth,
 					expressionFrame: 1,
 					delay: 3,
+					nextNode: "dayOneLampPostFirstVisit_spookUpdate1"
+				},
+				dayOneLampPostFirstVisit_spookUpdate1: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: SPOOK,
+					expressionFrame: 8,
 					nextNode: "dayOneLampPostFirstVisit_line4"
 				},
 				dayOneLampPostFirstVisit_line4: {
@@ -122,6 +128,12 @@ function GetDayOneLampPostScenes ()
 					sprite: sMoth,
 					expressionFrame: 1,
 					delay: 3,
+					nextNode: "dayOneLampPostFirstVisit_spookUpdate2"
+				},
+				dayOneLampPostFirstVisit_spookUpdate2: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: SPOOK,
+					expressionFrame: 8,
 					nextNode: "dayOneLampPostFirstVisit_line6"
 				},
 				dayOneLampPostFirstVisit_line6: {
