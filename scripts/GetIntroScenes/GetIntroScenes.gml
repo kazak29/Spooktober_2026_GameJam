@@ -449,12 +449,162 @@ function GetIntroScenes ()
 					nodeType: NodeType.CHARACTER_UPDATE,
 					charId: SPOOK,
 					expressionFrame: 0,
+					nextNode: "introScene8_pogoOut1"
+				},
+				introScene8_pogoOut1: {
+					nodeType: NodeType.CHARACTER_OUT,
+					charId: POGO,
+					nextNode: "introScene8_mothIn1"
+				},
+				introScene8_mothIn1: {
+					nodeType: NodeType.CHARACTER_IN,
+					charId: MOTH,
+					sprite: sMoth,
+					expressionFrame: 0,
+					nextNode: "introScene8_line6"
+				},
+				introScene8_line6: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene8_line6",
+					nextNode: "introScene8_barryUpdate1"
+				},
+				introScene8_barryUpdate1: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: BARRY,
+					expressionFrame: 1,
+					nextNode: "introScene8_line7"
+				},
+				introScene8_line7: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene8_line7",
+					nextNode: "introScene8_screwdriverUpdate1"
+				},
+				introScene8_screwdriverUpdate1: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: SCREWDRIVER,
+					expressionFrame: 1,
+					nextNode: "introScene8_line8"
+				},
+				introScene8_line8: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene8_line8",
+					nextNode: "introScene8_barryOut1"
+				},
+				introScene8_barryOut1: {
+					nodeType: NodeType.CHARACTER_OUT,
+					charId: BARRY,
+					nextNode: "introScene8_pogoIn2"
+				},
+				introScene8_pogoIn2: {
+					nodeType: NodeType.CHARACTER_IN,
+					charId: POGO,
+					sprite: sPogo,
+					expressionFrame: 0,
+					nextNode: "introScene8_line9"
+				},
+				introScene8_line9: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene8_line9",
+					nextNode: "introScene8_screwdriverUpdate2"
+				},
+				introScene8_screwdriverUpdate2: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: SCREWDRIVER,
+					expressionFrame: 0,
+					nextNode: "introScene8_line10"
+				},
+				introScene8_line10: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene8_line10",
+					nextNode: "introScene8_mothOut1"
+				},
+				introScene8_mothOut1: {
+					nodeType: NodeType.CHARACTER_OUT,
+					charId: MOTH,
+					nextNode: "introScene8_line11"
+				},
+				introScene8_line11: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene8_line11",
+					nextNode: "introScene8_screwdriverUpdate3"
+				},
+				introScene8_screwdriverUpdate3: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: SCREWDRIVER,
+					expressionFrame: 2,
+					nextNode: "introScene8_line12"
+				},
+				introScene8_line12: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene8_line12",
+					nextNode: "introScene8_screwdriverOut1"
+				},
+				introScene8_screwdriverOut1: {
+					nodeType: NodeType.CHARACTER_OUT,
+					charId: SCREWDRIVER,
+					nextNode: "introScene8_pogoUpdate2"
+				},
+				introScene8_pogoUpdate2: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: POGO,
+					expressionFrame: 1,
+					nextNode: "introScene8_line13"
+				},
+				introScene8_line13: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene8_line13",
+					nextNode: "introScene8_pogoOut2"
+				},
+				introScene8_pogoOut2: {
+					nodeType: NodeType.CHARACTER_OUT,
+					charId: POGO,
+					nextNode: "introScene8_mothIn2"
+				},
+				introScene8_mothIn2: {
+					nodeType: NodeType.CHARACTER_IN,
+					charId: MOTH,
+					sprite: sMoth,
+					expressionFrame: 0,
+					nextNode: "introScene8_line14"
+				},
+				introScene8_line14: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene8_line14",
+					nextNode: "introScene8_mothOut2"
+				},
+				introScene8_mothOut2: {
+					nodeType: NodeType.CHARACTER_OUT,
+					charId: MOTH,
+					nextNode: "introScene8_barryIn2"
+				},
+				introScene8_barryIn2: {
+					nodeType: NodeType.CHARACTER_IN,
+					charId: "Barry",
+					sprite: sBarry,
+					expressionFrame: 0,
+					nextNode: "introScene8_line15"
+				},
+				introScene8_line15: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene8_line15",
+					nextNode: "introScene8_barryUpdate2"
+				},
+				introScene8_barryUpdate2: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: BARRY,
+					expressionFrame: 1,
+					nextNode: "introScene8_line16"
+				},
+				introScene8_line16: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene8_line16",
+					nextNode: "introScene8_music2"
+				},
+				introScene8_music2: {
+					nodeType: NodeType.MUSIC,
+					song: noone,
 					nextNode: noone
 				}
-				
-				
-				
-				
 			}
 		} // introScene8
 	};

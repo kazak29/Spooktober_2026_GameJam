@@ -22,6 +22,7 @@ function LoadLineData ()
 		var _typewriteSfx    = _grid[# 1, _row];
         var _lineTitle       = _grid[# 2, _row];
         var _lineText        = _grid[# 3, _row];
+		//show_debug_message(string(_lineTitle)+":"+string(_lineText));
 		
 		if (_sequenceId == "") continue;   // Skip empty lines
 		

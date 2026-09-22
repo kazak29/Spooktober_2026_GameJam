@@ -71,7 +71,7 @@
 	#macro SCREWDRIVER "Screwdriver"
 	#macro BARRY       "Barry"
 	#macro POGO        "Pogo"
-	#macro MOTH        "Möth"
+	#macro MOTH        "Moth"
 	#macro PRINCESS    "Princess"
 	
 #endregion
