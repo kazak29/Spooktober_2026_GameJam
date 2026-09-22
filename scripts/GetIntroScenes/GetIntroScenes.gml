@@ -5,7 +5,7 @@ function GetIntroScenes ()
 		introScene1: {
 			startNode: "introScene1_music1",
 			nextScene: "introScene2",
-			background: sBackgroundBlack,
+			background: sBackgroundShayHome,
 			nodes: {
 				introScene1_music1: {
 					nodeType: NodeType.MUSIC,
