@@ -148,7 +148,7 @@ function GetIntroScenes ()
 		}, // introScene6
 		introScene7: {
 			startNode: "introScene7_line1",
-			nextScene: noone,
+			nextScene: "introScene8",
 			background: sBackgroundShayRoomNight,
 			nodes: {
 				introScene7_line1: {
@@ -363,18 +363,100 @@ function GetIntroScenes ()
 				introScene7_line19: {
 					nodeType: NodeType.LINE_SEQUENCE,
 					sequenceId: "introScene7_line19",
+					nextNode: "introScene7_music3"
+				},
+				introScene7_music3: {
+					nodeType: NodeType.MUSIC,
+					song: noone,
 					nextNode: noone
 				}
 			}
-		} // introScene7
-		
-		
-		
-		
-		
-		
-		
-		
+		}, // introScene7
+		introScene8: {
+			startNode: "introScene8_music1",
+			nextScene: noone,
+			background: sBackgroundSewerBar,
+			nodes: {
+				introScene8_music1: {
+					nodeType: NodeType.MUSIC,
+					song: sndBarPunk,
+					nextNode: "introScene8_spookIn1"
+				},
+				introScene8_spookIn1: {
+					nodeType: NodeType.MAIN_CHARACTER_IN,
+					expressionFrame: 0,
+					nextNode: "introScene8_screwdriverIn1"
+				},
+				introScene8_screwdriverIn1: {
+					nodeType: NodeType.CHARACTER_IN,
+					charId: SCREWDRIVER,
+					sprite: sScrewdriver,
+					expressionFrame: 2,
+					nextNode: "introScene8_line1"
+				},
+				introScene8_line1: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene8_line1",
+					nextNode: "introScene8_pogoIn1"
+				},
+				introScene8_pogoIn1: {
+					nodeType: NodeType.CHARACTER_IN,
+					charId: POGO,
+					sprite: sPogo,
+					expressionFrame: 2,
+					nextNode: "introScene8_line2"
+				},
+				introScene8_line2: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene8_line2",
+					nextNode: "introScene8_spookUpdate1"
+				},
+				introScene8_spookUpdate1: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: SPOOK,
+					expressionFrame: 4,
+					nextNode: "introScene8_line3"
+				},
+				introScene8_line3: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene8_line3",
+					nextNode: "introScene8_pogoUpdate1"
+				},
+				introScene8_pogoUpdate1: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: POGO,
+					expressionFrame: 0,
+					nextNode: "introScene8_line4"
+				},
+				introScene8_line4: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene8_line4",
+					nextNode: "introScene8_barryIn1"
+				},
+				introScene8_barryIn1: {
+					nodeType: NodeType.CHARACTER_IN,
+					charId: BARRY,
+					sprite: sBarry,
+					expressionFrame: 1,
+					nextNode: "introScene8_line5"
+				},
+				introScene8_line5: {
+					nodeType: NodeType.LINE_SEQUENCE,
+					sequenceId: "introScene8_line5",
+					nextNode: "introScene8_spookUpdate2"
+				},
+				introScene8_spookUpdate2: {
+					nodeType: NodeType.CHARACTER_UPDATE,
+					charId: SPOOK,
+					expressionFrame: 0,
+					nextNode: noone
+				}
+				
+				
+				
+				
+			}
+		} // introScene8
 	};
 	return _sceneData;
 }
