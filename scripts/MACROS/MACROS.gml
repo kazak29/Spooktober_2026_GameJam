@@ -31,7 +31,6 @@
 	#macro BACKGROUND_LAYER "Background"
 	#macro TRANSITION_LAYER "Transition"
 	#macro CHOICES_LAYER    "Choices"
-	#macro LOCATIONS_LAYER  "Locations"
 
 #endregion
 #region Input Manager
