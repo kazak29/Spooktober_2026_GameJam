@@ -228,6 +228,13 @@ PageUpdate = function(){
 									uiElementPositionUpdate();
 								} break;
 								
+								case MENU_ELEMENT_TYPE.SHIFT: {
+									strX += _bufferX*i;
+									strY += _bufferY*i;
+									x = strX;
+									y = strY;
+								} break;
+								
 								case MENU_ELEMENT_TYPE.SLIDER: {
 									x += _bufferX*i;
 									y += _bufferY*i;
@@ -258,6 +265,45 @@ PageUpdate = function(){
 							
 						}
 					}
+					
+					//apply post-postition changes based on element type
+					switch _elems[i].elemType {
+						case MENU_ELEMENT_TYPE.SHIFT: {
+							
+							var _id0 = _id.subIds[0];
+							var _id1 = _id.subIds[1];
+							var _id2 = _id.subIds[2];
+							
+							//select the last shift
+							with _id2 {
+										
+								spr = {};
+								spr.ind = _spr.ind;
+										
+								var _left = _id0.scribId.get_bbox(_id0.strX, _id0.strY).left - _spr.bufferStrX;
+								var _right = _id2.scribId.get_bbox(_id2.strX, _id2.strY).right + _spr.bufferStrX;
+								var _scaleW = _right - _left;
+								var _scaleH = _id1.scribId.get_height() + _spr.bufferStrY*2;
+										
+								//limit scaling so nineslice don't crop sprite when size too small
+								var _nine = sprite_get_nineslice(spr.ind);
+								if _nine.enabled {
+									_scaleW = max(_scaleW, _nine.left + _nine.right + 1);
+									_scaleH = max(_scaleH, _nine.top + _nine.bottom + 1);
+								}
+										
+								spr.scaleX = _scaleW/sprite_get_width(spr.ind);
+								spr.scaleY = _scaleH/sprite_get_height(spr.ind);
+										
+								spr.x = _left + sprite_get_xoffset(spr.ind)*spr.scaleX;
+								spr.y = scribId.get_bbox(strX, strY).top - _spr.bufferStrY + sprite_get_yoffset(spr.ind)*spr.scaleY;
+								
+							}
+							
+						} break;
+					}
+					
+					
 				}
 			}
 			
