@@ -7,20 +7,21 @@ var _type = oMenu.menuType;
 switch _type {
 	case MENU_TYPE_PAUSE: {
 		image_xscale = 0.5;
-		image_yscale = 0.5;
+		if !is_struct( oMenu.menuPages[$ oMenu.pageName].spr ) {
+			image_yscale = 0.5;
+		}
 	} break;
 }
 
 
 //right most position
 draw_set_font(asset_get_index(strFont));
-percentShift = 64*image_xscale; //sprite_width*1.2;
-//borderRight = x + percentShift + string_width($"100%") + 16*image_xscale;
+percentShift = 64*image_xscale;
 
 //hover zone
 hoverShift = {
 	left:	32*image_xscale,
-	right:	32*image_xscale + percentShift + string_width($"100%"),
+	right:	32*image_xscale + percentShift + string_width($"-100.00%"),
 	top:	24*image_yscale,
 	bottom: 24*image_yscale,
 };

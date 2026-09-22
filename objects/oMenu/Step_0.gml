@@ -315,6 +315,7 @@ if instance_exists(elementSelectedSub) {
 				//calculate correct argument from percentage (we can set argClamp to be between different numbers, not just from 0 to 1)
 				_elemData.arg = ((_elemData.argClamp[1] - _elemData.argClamp[0]) * _perc) + _elemData.argClamp[0];
 				_elemData.arg = clamp(_elemData.arg, _elemData.argClamp[0], _elemData.argClamp[1]);
+				_elemData.arg = _elemData.whole ? round(_elemData.arg) : _elemData.arg;
 				_elemSettingSet(_elemData);
 			}
 		} break;

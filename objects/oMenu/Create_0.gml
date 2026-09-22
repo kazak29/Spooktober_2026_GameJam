@@ -212,7 +212,7 @@ PageUpdate = function(){
 									
 									//move second toggle away from first (if no sprite object does it by itself in create event)
 									if (j > 0) {
-										var _shift = _id.subIds[0].sprite_width*2;
+										var _shift = _id.subIds[0].sprite_width*distMult;
 										x += _shift;
 										strX += _shift;
 									}
@@ -332,6 +332,11 @@ PageUpdate = function(){
 						y += _shiftY;
 						strX += _shiftX;
 						strY += _shiftY;
+						
+						if variable_instance_exists(id, "spr") && is_struct(spr) {
+							spr.x += _shiftX;
+							spr.y += _shiftY;
+						}
 					}
 				}
 			

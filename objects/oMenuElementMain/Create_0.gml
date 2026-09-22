@@ -45,8 +45,8 @@ var _charH = scribble(" ").starting_format(strFont, c_white).get_height();
 		
 		case MENU_LAYOUT.PAUSE_TOP: {
 			var _elemsL	= array_length(_page.elements);
-			bufferX /= 4;
-			bufferY /= 2;
+			if !is_struct(_page.spr) bufferX /= 4; else bufferX /= 2;
+			if !is_struct(_page.spr) bufferY /= 2; else bufferY /= 1;
 			
 			with oButton {
 				if scr == uiButtonSettings {
@@ -71,8 +71,8 @@ var _charH = scribble(" ").starting_format(strFont, c_white).get_height();
 		} break;
 		case MENU_LAYOUT.PAUSE_MIDDLE: {
 			var _elemsL	= array_length(_page.elements);
-			bufferX /= 4;
-			bufferY /= 2;
+			if !is_struct(_page.spr) bufferX /= 4; else bufferX /= 2;
+			if !is_struct(_page.spr) bufferY /= 2; else bufferY /= 1;
 			
 			with oButton {
 				if scr == uiButtonSettings {
@@ -91,8 +91,8 @@ var _charH = scribble(" ").starting_format(strFont, c_white).get_height();
 		} break;
 		case MENU_LAYOUT.PAUSE_BOTTOM: {
 			var _elemsL	= array_length(_page.elements);
-			bufferX /= 4;
-			bufferY /= 2;
+			if !is_struct(_page.spr) bufferX /= 4; else bufferX /= 2;
+			if !is_struct(_page.spr) bufferY /= 2; else bufferY /= 1;
 			
 			with oButton {
 				if scr == uiButtonSettings {
