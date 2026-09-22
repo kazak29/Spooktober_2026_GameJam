@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sndMapTheme",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":1,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":138.69598,
+  "exportDir":"",
+  "name":"sndMapTheme",
+  "parent":{
+    "name":"Music",
+    "path":"folders/Sound/Music.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sndMapTheme.mp3",
+  "volume":1.0,
+}

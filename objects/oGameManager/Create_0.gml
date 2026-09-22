@@ -64,8 +64,8 @@
 #region screenplay
 
 	global.screenPlay = LoadScreenPlay();
-	//global.sceneToPlay = "emptyScene";
 	global.sceneToPlay = FIRST_SCENE;
+	global.lastLocationBackground = sBackgroundBlack;
 	
 	global.textLog = [];
 	global.textLogInst = noone;

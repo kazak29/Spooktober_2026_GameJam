@@ -10,7 +10,6 @@
   },
   "defaultScriptType":1,
   "Folders":[
-    {"$GMFolder":"","%Name":"Archive","folderPath":"folders/Archive.yy","name":"Archive","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Fonts","folderPath":"folders/Fonts.yy","name":"Fonts","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Objects","folderPath":"folders/Objects.yy","name":"Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Map","folderPath":"folders/Objects/Map.yy","name":"Map","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -181,7 +180,6 @@
     {"id":{"name":"LoadScreenPlay_Demo","path":"scripts/LoadScreenPlay_Demo/LoadScreenPlay_Demo.yy",},},
     {"id":{"name":"LoadScreenPlay","path":"scripts/LoadScreenPlay/LoadScreenPlay.yy",},},
     {"id":{"name":"LoadUI","path":"scripts/LoadUI/LoadUI.yy",},},
-    {"id":{"name":"MACROS_old","path":"scripts/MACROS_old/MACROS_old.yy",},},
     {"id":{"name":"MACROS","path":"scripts/MACROS/MACROS.yy",},},
     {"id":{"name":"MenuButtons","path":"scripts/MenuButtons/MenuButtons.yy",},},
     {"id":{"name":"MenuSetup","path":"scripts/MenuSetup/MenuSetup.yy",},},
@@ -293,6 +291,7 @@
     {"id":{"name":"sfxTypewriterSpook","path":"sounds/sfxTypewriterSpook/sfxTypewriterSpook.yy",},},
     {"id":{"name":"sfxUI","path":"sounds/sfxUI/sfxUI.yy",},},
     {"id":{"name":"sndBarPunk","path":"sounds/sndBarPunk/sndBarPunk.yy",},},
+    {"id":{"name":"sndMapTheme","path":"sounds/sndMapTheme/sndMapTheme.yy",},},
     {"id":{"name":"sndSpookTheme","path":"sounds/sndSpookTheme/sndSpookTheme.yy",},},
     {"id":{"name":"sndStrayRatStrut","path":"sounds/sndStrayRatStrut/sndStrayRatStrut.yy",},},
     {"id":{"name":"sndSuspense","path":"sounds/sndSuspense/sndSuspense.yy",},},

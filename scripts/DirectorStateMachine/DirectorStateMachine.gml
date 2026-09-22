@@ -255,6 +255,7 @@ function AdvanceNode()
     // Screenplay complete
     else 
     {
+		global.lastLocationBackground = global.screenPlay[$ currentSceneId].background;
         currentSceneId = noone;
         currentNodeId  = noone;
 		directorState  = DirectorStateIdle;

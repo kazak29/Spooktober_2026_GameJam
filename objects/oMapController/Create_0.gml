@@ -1,4 +1,11 @@
 
+AmbientChange(AMBIENT_MUSIC, sndMapTheme);
+
+marginRight = 10;
+marginTop = 10;
+boxWidth = 550;
+boxHeight = 65;
+
 selectedIndex = 0;
 
 locations = LoadMapLocations();
