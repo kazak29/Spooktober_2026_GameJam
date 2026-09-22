@@ -95,7 +95,10 @@ BackgroundPositionUpdate = function(_elemId){
 		
 			//exceptions
 			if object_index == oMenuElementSlider {
-				_x2 = borderRight + _offset;
+				_x1 -= hoverShift.left;
+				_x2 += hoverShift.right;
+				_y1 -= hoverShift.top;
+				_y2 += hoverShift.bottom;
 			}
 			
 			with other _posCheck(_x1,_x2,_y1,_y2);
@@ -209,7 +212,7 @@ PageUpdate = function(){
 									
 									//move second toggle away from first (if no sprite object does it by itself in create event)
 									if (j > 0) {
-										var _shift = _id.subIds[0].sprite_width*1.8;
+										var _shift = _id.subIds[0].sprite_width*2;
 										x += _shift;
 										strX += _shift;
 									}
@@ -228,6 +231,25 @@ PageUpdate = function(){
 								case MENU_ELEMENT_TYPE.SLIDER: {
 									x += _bufferX*i;
 									y += _bufferY*i;
+									
+									spr = {};
+									spr.ind = _spr.ind;
+									
+									var _scaleW = (bbox_right - bbox_left + hoverShift.left + hoverShift.right);
+									var _scaleH = (bbox_bottom - bbox_top + hoverShift.top + hoverShift.bottom);
+									
+									//limit scaling so nineslice don't crop sprite when size too small
+									var _nine = sprite_get_nineslice(spr.ind);
+									if _nine.enabled {
+										_scaleW = max(_scaleW, _nine.left + _nine.right + 1);
+										_scaleH = max(_scaleH, _nine.top + _nine.bottom + 1);
+									}
+									
+									spr.scaleX = _scaleW/sprite_get_width(spr.ind);
+									spr.scaleY = _scaleH/sprite_get_height(spr.ind);
+									
+									spr.x = bbox_left - hoverShift.left + sprite_get_xoffset(spr.ind)*spr.scaleX;
+									spr.y = bbox_top - hoverShift.top + sprite_get_yoffset(spr.ind)*spr.scaleY;
 								} break;
 								
 							}

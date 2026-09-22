@@ -89,12 +89,10 @@ var _sfx = "none";
 		//special collision
 		with _id {
 			if (object_get_parent(object_index) == oMenuElementSub) && (elementData.elemType == MENU_ELEMENT_TYPE.SLIDER) {
-				var _scale = (image_xscale+image_yscale)/2;
-				
-				var _x1 = bbox_left		- 64*_scale;
-				var _x2 = bbox_right	+ 64*_scale;
-				var _y1 = bbox_top		- 24*_scale;
-				var _y2 = bbox_bottom	+ 24*_scale;
+				var _x1 = bbox_left		- hoverShift.left;
+				var _x2 = bbox_right	+ hoverShift.right;
+				var _y1 = bbox_top		- hoverShift.top;
+				var _y2 = bbox_bottom	+ hoverShift.bottom;
 					
 				return oInputManager.MouseHoverRectangle(_x1,_y1, _x2,_y2);
 			}
@@ -166,6 +164,7 @@ var _elemsL = array_length(_elems);
 		if _elemMouseHoverGet(id) {
 			other.mouseHoverSub = true;
 			other.elementSelectedSub = id;
+			other.elementNum = elementNum;
 			break;
 		}
 	
