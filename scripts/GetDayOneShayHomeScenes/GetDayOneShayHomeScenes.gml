@@ -1,7 +1,14 @@
 function GetDayOneShayHomeScenes ()
 {
 	var _sceneData = {
-		
+		dayOneShayHomeFirstVisit: {
+			
+			
+			
+			
+			
+			
+		} // dayOneShayHomeFirstVisit
 		
 		
 		
