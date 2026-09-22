@@ -14,12 +14,14 @@
   "frames":[
     {"$GMSpriteFrame":"v1","%Name":"41f40060-7703-416a-8e89-b8e301474ec6","name":"41f40060-7703-416a-8e89-b8e301474ec6","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"33777790-6a75-4fb6-8c95-967e03e5316c","name":"33777790-6a75-4fb6-8c95-967e03e5316c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"11b11aa6-09b6-4562-9e2e-4393b58ddd54","name":"11b11aa6-09b6-4562-9e2e-4393b58ddd54","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":128,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"d71b2410-22c0-4f59-a058-24139721e4cc","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"d71b2410-22c0-4f59-a058-24139721e4cc","opacity":35.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"a2004ad9-644f-42da-b8d0-c596cd170657","blendMode":0,"displayName":"default","isLocked":false,"name":"a2004ad9-644f-42da-b8d0-c596cd170657","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"sChoiceBox",
@@ -69,7 +71,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":2.0,
+    "length":3.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -94,6 +96,9 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"33777790-6a75-4fb6-8c95-967e03e5316c","path":"sprites/sChoiceBox/sChoiceBox.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"139e421d-eeab-4d57-a1c6-f27ec6e63a5e","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"11b11aa6-09b6-4562-9e2e-4393b58ddd54","path":"sprites/sChoiceBox/sChoiceBox.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"f8b9724c-080e-49b8-aceb-0f8b821e4c7a","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

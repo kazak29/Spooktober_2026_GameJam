@@ -76,6 +76,3 @@
 	global.menuPages = MenuDataCreate();
 	
 #endregion
-
-// Add all Scribble Events
-ScribbleAddAllEvents();

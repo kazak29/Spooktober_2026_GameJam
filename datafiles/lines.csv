@@ -1,5 +1,5 @@
 Sequence ID,Typewrite SFX,Line Title,Line Text
-emptyScene_line,,,This is just an empty scene for now.
+emptyScene_line,spook,,"This is just an empty scene for[play_sound,sfxCageOpen,20] now."
 ,,,
 introScene1_line1,spook,Spook,"This week, we moved into a new house with my family."
 introScene1_line1,spook,Spook,Everyone has been so busy unpacking...
@@ -38,7 +38,7 @@ introScene6_line2,,Shay,...And can I stay up late to watch the movie...?
 introScene6_line2,,Mom,...Sigh. Yes. Yes you may.
 introScene6_line2,,Shay,"Okaaay. Love you, mom"
 introScene6_line2,,Mom,"Love you too, pumpkin!"
-introScene6_line3,,Shay,"[event=play_sound, sfxDoorClose]Uuuugh!"
+introScene6_line3,,Shay,"[play_sound,sfxDoorClose]Uuuugh!"
 introScene6_line3,,Shay,This is horrible!
 introScene6_line3,,Shay,How am I gonna spend an entire night with people I don't even know?!
 introScene6_line3,,Shay,This is gonna be a disaster!
@@ -88,7 +88,7 @@ introScene7_line14,,???,Come with me.
 introScene7_line15,spook,Spook,But if Shay wakes up...
 introScene7_line15,,???,"Then she will find you in the morning! Live a little, friend! C'mon!"
 introScene7_line15,spook,Spook,"...Yeah, okay"
-introScene7_line16,,???,"[event=play_sound, sfxCageOpen]Yeaaah! Now we're talkin'."
+introScene7_line16,,???,"[play_sound,sfxCageOpen]Yeaaah! Now we're talkin'."
 introScene7_line17,,Screwdriver,I'm Screw. Screwdriver.
 introScene7_line17,spook,Spook,Uh... I'm Spook.
 introScene7_line18,,Screwdriver,Wow! So are you spooky then?
