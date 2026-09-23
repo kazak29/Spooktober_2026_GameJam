@@ -77,19 +77,39 @@ currentNodeId  = noone;
 
 #region new code
 	
+	choice = {
+		spr:	{
+			ind:		sChoiceBox,
+			bufferStrX:	32,
+			bufferStrY: 32,
+			bufferElem: 16,
+		},
+		num:	0,
+		
+		mouseHoverCdMax: 5,
+		mouseHover: false,
+		elements: [],
+	};
+	
 	sceneTarget = "";
+	bg = {
+		sprInd: noone,
+		imInd:	0,
+		alpha:	1,
+		col:	c_white,
+	}
 	
 	BackgroundSet = function(_spr = noone, _imInd = 0, _alpha = 1, _col = c_white){
 		bg = {
-			sprInd: _spr	?? noone,
-			imInd:	_imInd	?? 0,
-			alpha:	_alpha	?? 1,
-			col:	_col	?? c_white,
+			sprInd: _spr,
+			imInd:	_imInd,
+			alpha:	_alpha,
+			col:	_col,
 		}
 	}
-	BackgroundSetTarget = function(_spr = noone, _imInd = 0, _alpha = 1, _col = c_white){
+	BackgroundSetTarget = function(_spr = undefined, _imInd = undefined, _alpha = undefined, _col = undefined){
 		bgTarget = {
-			active: true,
+			active: (_spr != undefined ? true : false),
 			sprInd: _spr	?? noone,
 			imInd:	_imInd	?? 0,
 			alpha:	_alpha	?? 1,

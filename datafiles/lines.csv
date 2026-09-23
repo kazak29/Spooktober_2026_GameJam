@@ -8,14 +8,14 @@ test,Spook,First line
 test,,"char_in,Shay,sShay,0"
 test,,"char_update,Limes,1"
 test,Spook,Second line
-test,,"delay,2"
+test,,"Delay,0"
 test,Spook,Third line!
 test,,"char_update,Spook,6"
 test,Spook,4 line!
 test,Spook,5 line!
+test,,"choice,test1,test"
+,,
 test,,"scene_trans,test1,sBackgroundGray"
-,,
-,,
 ,,
 ,,
 ,,

@@ -185,7 +185,7 @@ PageUpdate = function(){
 					strY += _bufferY*i;
 					uiElementPositionUpdate();
 					
-					//shift position when out of bounds
+					//shift position when out of bounds relative to each other
 					var _shiftX = 0, _shiftY = 0;
 					switch strAlignH {
 						case fa_left:	_shiftX = strX - _spr.bufferStrX - bbox_left;	break;

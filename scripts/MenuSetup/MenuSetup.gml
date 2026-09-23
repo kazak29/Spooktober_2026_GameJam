@@ -415,6 +415,6 @@ function MenuDataCreate() {
 				],
 			},
 		},
-	
+		
 	};
 }

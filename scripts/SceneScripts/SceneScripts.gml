@@ -3,7 +3,6 @@
 	function SceneClear(){
 		with oDirector {
 			lineSkip = false;
-			BackgroundSet();
 			stageCharacters = [];
     
 		    // Reset main character
@@ -26,6 +25,102 @@
 			currentLineSequence = global.lineData[$ _name] ?? [];
 	        currentLineIndex = 0;
 	        LineSet();
+		}
+	}
+	
+	function SceneTransition(_sceneTarget, _sprInd = noone, _imInd = 0, _alpha = 1, _col = c_white){
+		with oDirector {
+			sceneTarget = _sceneTarget;
+	        directorState = DirectorStateIdle;
+			BackgroundSetTarget(_sprInd, _imInd, _alpha, _col);
+			
+			instance_create_layer(0,0, SYSTEM_LAYER, oSceneTransition);
+		}
+	}
+	
+	function ChoiceStart(_names){
+		with oDirector {
+			currentLineIndex--;
+			directorState = DirectorStateChoice;
+			
+			choice.elements = [];
+			var _al = array_length(_names);
+			
+			//position constants
+			var _bufferY = 64; //MENU_BUFFER_Y
+			var _startX = VIEWPORT_WIDTH/2;
+			var _startY = VIEWPORT_HEIGHT/2 - (_al/2)*_bufferY;
+			
+			//create every choice
+			for (var i = 0; i < _al; i++) {
+				var _choice = global.dataChoices[$ _names[i]];
+				array_push(choice.elements, _choice);
+					
+				var _data = {
+					num: i,
+					strFont: FONT_CONSOLE_24,
+					strAlignH: fa_center,
+					strAlignV: fa_middle,
+					scribId: scribble(_choice.title, "choice").starting_format(FONT_CONSOLE_24, c_white).align(fa_center,fa_middle),
+			
+					strX: _startX,
+					strY: _startY + i*_bufferY,
+				};
+					
+				var _id = instance_create_layer(0,0, CHOICES_LAYER, oChoice, _data);
+				_choice.elemId = _id;
+		
+				//lock hover cd for first element as page is created
+				if i <= 0 _id.hoverCd = choice.mouseHoverCdMax;
+			}
+			
+			//update every choice position and sprite
+			var _spr = choice.spr;
+			if is_struct(_spr) {
+			
+				//find widest and heighest string
+				var _strW = 0, _strH = 0;
+				for (var i = 0; i < _al; i++) {
+					var _id = choice.elements[i].elemId;
+			
+					var _scribW = _id.scribId.get_width();
+					_strW = (_scribW > _strW) ? _scribW : _strW;
+			
+					var _scribH = _id.scribId.get_height();
+					_strH = (_scribH > _strH) ? _scribH : _strH;
+				}
+				
+				//update every element with sprite parameters
+				for (var i = 0; i < _al; i++) {
+					var _id = choice.elements[i].elemId;
+					with _id {
+						uiElementSpriteUpdate(_spr, _strW, _strH);
+					
+						//increase distance between elements
+						_bufferY = _spr.bufferStrY + _spr.bufferElem;
+						strY += _bufferY*i;
+						
+						uiElementPositionUpdate();
+						
+						//shift position when out of bounds
+						var _shiftX = 0, _shiftY = 0;
+						switch strAlignH {
+							case fa_left:	_shiftX = strX - _spr.bufferStrX - bbox_left;	break;
+							case fa_right:	_shiftX = strX + _spr.bufferStrX - bbox_right;	break;
+						}
+						switch strAlignV {
+							case fa_top:	_shiftX = strY - _spr.bufferStrY - bbox_top;	break;
+							case fa_bottom:	_shiftX = strY + _spr.bufferStrY - bbox_bottom;	break;
+						}
+						x += _shiftX;
+						y += _shiftY;
+						strX += _shiftX;
+						strY += _shiftY;
+						
+					}
+				}
+				
+			}
 		}
 	}
 	
@@ -62,16 +157,13 @@ with global.dataSceneScripts {
 	// SCENE NAME, BACKGROUND SPRITE, FRAME, ALPHA, COLOR
 	scene_trans = function(_args){
 		with oDirector {
-			sceneTarget = _args[0];
-	        directorState = DirectorStateIdle;
+			var _sceneTarget	= _args[0];
+			var _sprInd			= (array_length(_args) > 1) ? asset_get_index(_args[1]) : undefined;
+			var _imInd			= (array_length(_args) > 2) ? asset_get_index(_args[2]) : 0;
+			var _alpha			= (array_length(_args) > 3) ? asset_get_index(_args[3]) : 1;
+			var _col			= (array_length(_args) > 4) ? asset_get_index(_args[4]) : c_white;
 			
-			instance_create_layer(0,0, SYSTEM_LAYER, oSceneTransition);
-			
-			var _sprInd	= (array_length(_args) > 1) ? asset_get_index(_args[1]) : noone;
-			var _imInd	= (array_length(_args) > 2) ? asset_get_index(_args[2]) : 0;
-			var _alpha	= (array_length(_args) > 3) ? asset_get_index(_args[3]) : 1;
-			var _col	= (array_length(_args) > 4) ? asset_get_index(_args[4]) : c_white;
-			BackgroundSetTarget(_sprInd, _imInd, _alpha, _col);
+			SceneTransition(_sceneTarget, _sprInd, _imInd, _alpha, _col);
 		}
 	};
 	
@@ -186,7 +278,9 @@ with global.dataSceneScripts {
 	};
 	
 	choice = function(_args){
-		
+		with oDirector {
+			ChoiceStart(_args);
+		}
 	};
 	
 	condition = function(_args){

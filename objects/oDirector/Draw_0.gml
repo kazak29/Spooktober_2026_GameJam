@@ -18,7 +18,28 @@ if (currentSceneId != noone)
 	
 	DrawMainCharacterPortrait();
 }
-if (directorState == DirectorStateChoice) { DrawChoices(); }
+//if (directorState == DirectorStateChoice) { DrawChoices(); }
+
+with oChoice {
+	var _selected = (num == other.choice.num);
+
+	var _c = COL_MENU_OPTION_DEFAULT;
+	var _frame = 0;
+	if _selected {
+		_c = COL_MENU_OPTION_SELECTED;
+		_frame = 1;
+	}
+
+	if sprite_exists(sprite_index) {
+	
+		_c = COL_MENU_OPTION_DEFAULT;
+		image_index = _frame;
+		draw_self();
+	
+	}
+
+	scribId.blend(_c, 1).draw(strX, strY);
+}
 
 
 if (instance_exists(oTextLog))
