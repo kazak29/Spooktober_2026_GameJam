@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"sndMapTheme",
+  "%Name":"bgmMapTheme",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -12,7 +12,7 @@
   "conversionMode":0,
   "duration":138.69598,
   "exportDir":"",
-  "name":"sndMapTheme",
+  "name":"bgmMapTheme",
   "parent":{
     "name":"Music",
     "path":"folders/Sound/Music.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sndMapTheme.mp3",
+  "soundFile":"bgmMapTheme.mp3",
   "volume":1.0,
 }

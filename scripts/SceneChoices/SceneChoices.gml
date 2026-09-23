@@ -6,7 +6,7 @@ function ChoiceToScene(_args){
 		var _alpha			= (array_length(_args) > 3) ? _args[3] : 1;
 		var _col			= (array_length(_args) > 4) ? _args[4] : c_white;
 	
-		SceneTransition(_sceneTarget, _sprInd, _imInd, _alpha, _col);
+		SceneTransitionNext(_sceneTarget, _sprInd, _imInd, _alpha, _col);
 	}
 }
 

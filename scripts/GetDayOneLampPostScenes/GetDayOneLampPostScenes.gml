@@ -9,7 +9,7 @@ function GetDayOneLampPostScenes ()
 			nodes: {
 				dayOneLampPostFirstVisit_music1: {
 					nodeType: NodeType.MUSIC,
-					song: sndLompTheme,
+					song: bgmLompTheme,
 					nextNode: "dayOneLampPostFirstVisit_spookIn1"
 				},
 				dayOneLampPostFirstVisit_spookIn1: {
@@ -85,7 +85,7 @@ function GetDayOneLampPostScenes ()
 				},
 				dayOneLampPostFirstVisit_music3: {
 					nodeType: NodeType.MUSIC,
-					song: sndLompTheme,
+					song: bgmLompTheme,
 					nextNode: "dayOneLampPostFirstVisit_mothIn3"
 				},
 				dayOneLampPostFirstVisit_mothIn3: {
@@ -149,7 +149,7 @@ function GetDayOneLampPostScenes ()
 				},
 				dayOneLampPostFirstVisit_music6: {
 					nodeType: NodeType.MUSIC,
-					song: sndLompTheme,
+					song: bgmLompTheme,
 					nextNode: "dayOneLampPostFirstVisit_mothIn5"
 				},
 				dayOneLampPostFirstVisit_mothIn5: {
@@ -182,7 +182,7 @@ function GetDayOneLampPostScenes ()
 			nodes: {
 				dayOneLampPostSecondVisit_music1: {
 					nodeType: NodeType.MUSIC,
-					song: sndLompTheme,
+					song: bgmLompTheme,
 					nextNode: "dayOneLampPostSecondVisit_spookIn1"
 				},
 				dayOneLampPostSecondVisit_spookIn1: {

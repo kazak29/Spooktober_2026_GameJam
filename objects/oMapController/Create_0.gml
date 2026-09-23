@@ -1,5 +1,5 @@
 
-AmbientChange(AMBIENT_MUSIC, sndMapTheme);
+AmbientChange(AMBIENT_MUSIC, bgmMapTheme);
 
 
 

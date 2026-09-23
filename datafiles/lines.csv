@@ -1,44 +1,25 @@
 SCENE NAME,LINE TITLE - ENGLISH,LINE TEXT - ENGLISH
-test,,"bg,sBackgroundShayHome"
-test,,"char_in,Limes,sLimes,0"
-test,Spook,"Ö, or ö, "
-test,Spook,First scene
-test,,"main_char_in,0"
-test,Spook,First line
-test,,"custom_script_stop,SceneCustomScriptTest"
-test,,"music,sndBarPunk"
-test,,"char_in,Shay,sShay,0"
-test,,"char_update,Limes,1"
-test,Spook,Second line
-test,,"Delay,0"
-test,Spook,Third line!
-test,,"char_update,Spook,6"
-test,Spook,4 line!
-test,Spook,5 line!
-test,,"choice,test1,test"
+intro,,"bg_set,sBackgroundShayHome"
+intro,,"music,bgmSpookTheme"
+intro,,"delay,2"
 ,,
-test,,"scene_trans,test1,sBackgroundGray"
+intro,Spook,"This week, we moved into a new house with my family."
+intro,Spook,Everyone has been so busy unpacking...
+intro,Spook,Me?
 ,,
+intro,,"main_char_in,0"
+intro,,"delay,1"
+intro,,"bg,sBackgroundBlack"
+intro,Spook,Nothing much changed for me. 
+intro,Spook,"I get a nice view from my new spot, at least..."
+intro,Spook,I am Spook.
 ,,
+intro,,"char_in,Shay,sShay,0"
+intro,,"delay,1"
+intro,Spook,And this is Shay! My human and my best friend! 
+intro,Spook,She seems to be nervous about the new school and everything.
 ,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-test1,,"[sc_char_in,Shay,sShay,0]"
-test1,Name 1,Second scene!
-test1,,"[sc_char_out,Spook,sSpook,0]"
-test1,Name1,"Second scene, second line!"
-,,
-,,
-lineSeqTest1,Character,"What a pleasant day! I love the sun, and the clouds. What good weather we have today! Yay!"
-lineSeqTest1,Character,"[GuyMove, 1440, 320]NAH THIS SHIT SUCKS!!! I HATE THE SUN, AND THE CLOUDS. WHAT BAD !!! WEATHER !! WE ! HAVE !!!! TODAY."
-,,
-textEffects,Colors,"white white [c_yellow]yellow yellow[/c] white white [rainbow]rainbow rainbow[/rainbow] white white [cycle,241,0,128]custom color cycle text[/cycle] [alpha,0.5]transparent text [alpha,1] white white"
-textEffects,Delay,"normal text normal text [delay, 1000]delayed text delayed text [delay, 500][speed, 3]fast text fast text fast text fast text fast text fast text[/speed] [delay, 1000]delayed text delayed text, [delay, 500]normal text normal text"
-textEffects,Effects,normal text [wave]wave text[/wave] [shake]shake text[/shake] [wobble]wobble text[/wobble] [pulse]pulse text[/pulse] [wheel]wheel text[/wheel] [jitter]jitter text[/jitter] [blink]blink text[/blink] normal text
-textEffects,Font,consolas consolas [fComic] comic sans comic sans [/f] consolas consolas
-textEffects,Sprite,this is a sprite: [sPixel]
+intro,,"[shay holding spook in hand] – we actually already have this sprite, need to import it"
+intro,Spook,But I am here to make her feel better!
+intro,Spook,"Me and my human don't have many other friends- and, well, we don't need 'em!"
+intro,Spook,end of test

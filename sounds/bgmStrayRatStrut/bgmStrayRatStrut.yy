@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"sndLompTheme",
+  "%Name":"bgmStrayRatStrut",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,9 +10,9 @@
   "compression":1,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":91.63202,
+  "duration":82.89599,
   "exportDir":"",
-  "name":"sndLompTheme",
+  "name":"bgmStrayRatStrut",
   "parent":{
     "name":"Music",
     "path":"folders/Sound/Music.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sndLompTheme.mp3",
+  "soundFile":"bgmStrayRatStrut.mp3",
   "volume":1.0,
 }

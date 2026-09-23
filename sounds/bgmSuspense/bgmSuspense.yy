@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"sndSuspense",
+  "%Name":"bgmSuspense",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -12,7 +12,7 @@
   "conversionMode":0,
   "duration":19.248005,
   "exportDir":"",
-  "name":"sndSuspense",
+  "name":"bgmSuspense",
   "parent":{
     "name":"Music",
     "path":"folders/Sound/Music.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sndSuspense.mp3",
+  "soundFile":"bgmSuspense.mp3",
   "volume":1.0,
 }

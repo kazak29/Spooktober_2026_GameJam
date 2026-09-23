@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"sndShayHome",
+  "%Name":"bgmLompTheme",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,9 +10,9 @@
   "compression":1,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":136.968,
+  "duration":91.63202,
   "exportDir":"",
-  "name":"sndShayHome",
+  "name":"bgmLompTheme",
   "parent":{
     "name":"Music",
     "path":"folders/Sound/Music.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sndShayHome.mp3",
+  "soundFile":"bgmLompTheme.mp3",
   "volume":1.0,
 }
