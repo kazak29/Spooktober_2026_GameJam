@@ -140,16 +140,49 @@ with global.dataSceneScripts {
 		}
 	};
 	
+	// FRAME
 	main_char_in = function(_args){
-		
+		with oDirector {
+			mainCharacter.expressionFrame = _args[0];
+			spookUp = true;
+	        mainCharacter.targetAlpha = MAX_ALPHA;
+	        directorState = DirectorStateCharacterFade;
+		}
 	};
 	
+	// NO ARGUMENTS
 	main_char_out = function(_args){
-		
+		with oDirector {
+			spookUp = false;
+            mainCharacter.targetAlpha = MIN_ALPHA;
+            directorState = DirectorStateCharacterFade;
+		}
 	};
 	
+	// CHAR NAME, FRAME
 	char_update = function(_args){
-		
+		with oDirector {
+			var _name = _args[0];
+			var _imInd = _args[1];
+			
+			// Main Character
+		    if (mainCharacter.charId == _name) { mainCharacter.expressionFrame = _imInd; }
+			
+			// Other Characters
+		    else
+		    {
+		        for (var _i = 0; _i < array_length(stageCharacters); _i++)
+		        {
+		            if (stageCharacters[_i].charId == _name)
+		            {
+		                stageCharacters[_i].expressionFrame = _imInd;
+		                break;
+		            }
+		        }
+		    }
+			
+		    LineProgress();
+		}
 	};
 	
 	choice = function(_args){
