@@ -52,21 +52,23 @@ function DirectorStateLineSequence()
 	    }
 	    else
 	    {
-			// Textlog: Put the line in the log before moving on
-			var _curLineData = currentLineSequence[currentLineIndex];
-			AddToTextLog({ title: _curLineData.lineTitle, text: _curLineData.lineText });
-			//show_debug_message(string(global.textLog));
-			
-	        currentLineIndex++;
-	        if (currentLineIndex >= array_length(currentLineSequence))
-	        {
-	            TypewriterSoundReset();
-				AdvanceNode();
-	        }
-	        else
-	        {
-				TypewriterSoundSet();
-	        }
+			LineProgress();
+			//// Textlog: Put the line in the log before moving on
+			//var _curLineData = currentLineSequence[currentLineIndex];
+			//AddToTextLog({ title: _curLineData.lineTitle, text: _curLineData.lineText });
+			////show_debug_message(string(global.textLog));
+			//
+	        //currentLineIndex++;
+			//TypewriterSoundSet();
+	        //if (currentLineIndex >= array_length(currentLineSequence))
+	        //{
+	        //    TypewriterSoundReset();
+			//	//AdvanceNode();
+	        //}
+	        //else
+	        //{
+			//	TypewriterSoundSet();
+	        //}
 	    }
 	}
 }
@@ -101,7 +103,8 @@ function DirectorStateCharacterFade()
         }
         mainCharacter.alpha = mainCharacter.targetAlpha;
         
-        AdvanceNode(); 
+		directorState = DirectorStateLineSequence;
+        //AdvanceNode(); 
     }
 }
 

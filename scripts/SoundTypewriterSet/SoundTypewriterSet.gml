@@ -6,7 +6,7 @@ global.dataTypewriterSfx = {
 		pitchMax:	1,
 		overlap:	0,
 	},
-	spook: {
+	Spook: {
 		ids:		[sfxTypewriterSpook],
 		vol:		100,
 		pitchMin:	1,

@@ -1,9 +1,8 @@
 
 // State machine
-directorState = DirectorStateIdle;
+directorState = DirectorStateLineSequence;
 directorStatePrev = directorState;
 delayTimer = 0;
-
 
 
 // Scene Transition
@@ -35,7 +34,7 @@ currentLineIndex = 0;
 	}
 	TypewriterSoundSet = function(){
 		var _sounds = global.dataTypewriterSfx;
-		var _soundName = currentLineSequence[currentLineIndex].lineSfx;
+		var _soundName = currentLineSequence[currentLineIndex].lineTitle;
 		var _ids = struct_get(_sounds, _soundName) ?? struct_get(_sounds, "none");
 		
 		typewriterSound = variable_clone(_ids);
@@ -73,4 +72,16 @@ spookUp = false;
 // Start the scene that was set as a global
 currentSceneId = global.sceneToPlay;
 currentNodeId  = noone;
-StartScene(currentSceneId);
+//StartScene(currentSceneId);
+
+SceneStart(currentSceneId);
+
+LineProgress = function(){
+	// Textlog: Put the line in the log before moving on
+	var _curLineData = currentLineSequence[currentLineIndex];
+	AddToTextLog({ title: _curLineData.lineTitle, text: _curLineData.lineText });
+	//show_debug_message(string(global.textLog));
+			
+	currentLineIndex++;
+	TypewriterSoundSet();
+}
