@@ -161,5 +161,11 @@ function ProcessNode(_nodeId, _skipDelay = false)
 			break;
 		}
 		
+		case NodeType.SET_NEXT_SCENE: {
+			
+			
+			break;
+		}
+		
     }
 }

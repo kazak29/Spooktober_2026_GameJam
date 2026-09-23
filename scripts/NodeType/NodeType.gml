@@ -14,5 +14,7 @@ enum NodeType
 	CHOICE,
 	CONDITION,
 	
-	MUSIC
+	MUSIC,
+	
+	SET_NEXT_SCENE
 }
