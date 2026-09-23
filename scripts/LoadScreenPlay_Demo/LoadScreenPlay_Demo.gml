@@ -113,7 +113,15 @@ function LoadScreenPlay_Demo()
 				scene2_main_character_exit: {
                     nodeType: NodeType.MAIN_CHARACTER_OUT,
                     nextNode: noone
-                }
+                },
+				
+				
+				scene2_set_next_scene1: {
+					nodeType: NodeType.SET_NEXT_SCENE,
+					newNextScene: "newNextScene",
+					nextNode: noone
+				}
+				
 			}
 		} // scene2
     };

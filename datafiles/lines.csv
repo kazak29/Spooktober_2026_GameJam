@@ -129,6 +129,82 @@ introScene8_line15,,Barry,...
 introScene8_line16,,Barry,"Go on, friend. I'll be here if you need anything."
 introScene8_line16,spook,Spook,Alright... Let's see where this goes.
 ,,,
+dayOneShayHomeFirstVisit_line1,,,Shay is sound asleep. Your cage is warm and inviting.
+dayOneShayHomeFirstVisit_line2,,Screwdriver,"Quitting already, kid?"
+dayOneShayHomeFirstVisit_line3,spook,Spook,Eeeeek!!
+dayOneShayHomeFirstVisit_line3,,Screwdriver,"Wow, you still react the same as before."
+dayOneShayHomeFirstVisit_line3,spook,Spook,Why are you back here?!
+dayOneShayHomeFirstVisit_line3,,Screwdriver,Unfinished... business.
+dayOneShayHomeFirstVisit_line3,,Screwdriver,Why are YOU back here? Night is young! Go explore! Go!
+,,,
+dayOneShayHomeSecondVisit_line1,,Screwdriver,*Singing* When I was... a young boy...
+dayOneShayHomeSecondVisit_line1,,Screwdriver,My father... Took me into the city...
+dayOneShayHomeSecondVisit_line1,,Screwdriver,To see a marching band...~
+dayOneShayHomeSecondVisit_line2,,Screwdriver,Hey! What are you looking at?! Go explore!
+,,,
+dayOneShayHomeThirdVisit_line1,,Screwdriver,I see you're back.
+dayOneShayHomeThirdVisit_prompt1,,Screwdriver,"Not your bedtime yet, is it?"
+,,,
+dayOneShayHomeThirdVisit_line2,,Screwdriver,"For the last time, I am not giving his heart undies back!"
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
 ,,,
 ,,,
 ,,,
@@ -144,46 +220,37 @@ introScene8_line16,spook,Spook,Alright... Let's see where this goes.
 ,,,
 dayOneLampPostFirstVisit_line1,,,A bright light flickers rapidly.
 dayOneLampPostFirstVisit_line1,,,The moth from the bar is glaring into it... mesmerized.
-dayOneLampPostFirstVisit_line2,,Moth,My sweet... My love...
+dayOneLampPostFirstVisit_line2,,Möth,My sweet... My love...
 dayOneLampPostFirstVisit_line2,spook,Spook,Um... Hello?
-dayOneLampPostFirstVisit_line2,,Moth,You see my lover? She is very excited to see me.
+dayOneLampPostFirstVisit_line2,,Möth,You see my lover? She is very excited to see me.
 dayOneLampPostFirstVisit_prompt1,spook,Spook,Uh...
-dayOneLampPostFirstVisit_line3,,Moth,Watch your mouth!
-dayOneLampPostFirstVisit_line4,,Moth,They listen.
-dayOneLampPostFirstVisit_line4,,Moth,They know things about you no one else can ever know.
-dayOneLampPostFirstVisit_line4,,Moth,...
-dayOneLampPostFirstVisit_line4,,Moth,The bright light that mortals are drawn to before death?
-dayOneLampPostFirstVisit_line4,,Moth,"That's the lamp, little mouse."
-dayOneLampPostFirstVisit_line4,,Moth,The lamp will one day reap your soul.
-dayOneLampPostFirstVisit_line4,,Moth,...And
-dayOneLampPostFirstVisit_line4,,Moth,When that light comes...
-dayOneLampPostFirstVisit_line4,,Moth,You are going to wish you respected the lamp some more.
-dayOneLampPostFirstVisit_line5,,Moth,My sweet... My love...
+dayOneLampPostFirstVisit_line3,,Möth,Watch your mouth!
+dayOneLampPostFirstVisit_line4,,Möth,They listen.
+dayOneLampPostFirstVisit_line4,,Möth,They know things about you no one else can ever know.
+dayOneLampPostFirstVisit_line4,,Möth,...
+dayOneLampPostFirstVisit_line4,,Möth,The bright light that mortals are drawn to before death?
+dayOneLampPostFirstVisit_line4,,Möth,"That's the lamp, little mouse."
+dayOneLampPostFirstVisit_line4,,Möth,The lamp will one day reap your soul.
+dayOneLampPostFirstVisit_line4,,Möth,...And
+dayOneLampPostFirstVisit_line4,,Möth,When that light comes...
+dayOneLampPostFirstVisit_line4,,Möth,You are going to wish you respected the lamp some more.
+dayOneLampPostFirstVisit_line5,,Möth,My sweet... My love...
 dayOneLampPostFirstVisit_line5,spook,Spook,...I think I should get going.
-dayOneLampPostFirstVisit_prompt2,,Moth,Pretty... Lamp... Pretty... Lady...
-dayOneLampPostFirstVisit_line6,,Moth,...
-dayOneLampPostFirstVisit_line6,,Moth,"I do not love ""lamps""."
-dayOneLampPostFirstVisit_line6,,Moth,I love MY lamp.
-dayOneLampPostFirstVisit_line6,,Moth,"My lamp, my beloved, my source of light."
-dayOneLampPostFirstVisit_line6,,Moth,She whispers sweet nothings to me all night.
-dayOneLampPostFirstVisit_line6,,Moth,"She would whisper to them to you, too."
-dayOneLampPostFirstVisit_line6,,Moth,If only you listened...
-dayOneLampPostFirstVisit_line6,,Moth,...
-dayOneLampPostFirstVisit_line6,,Moth,But no one ever listens.
-dayOneLampPostFirstVisit_line6,,Moth,So she is only mine. My sweet lamp.
-dayOneLampPostFirstVisit_prompt3,,Moth,My love...
-,,,
-dayOneLampPostSecondVisit_line1,,Moth,My love...
+dayOneLampPostFirstVisit_prompt2,,Möth,Pretty... Lamp... Pretty... Lady...
+dayOneLampPostFirstVisit_line6,,Möth,...
+dayOneLampPostFirstVisit_line6,,Möth,"I do not love ""lamps""."
+dayOneLampPostFirstVisit_line6,,Möth,I love MY lamp.
+dayOneLampPostFirstVisit_line6,,Möth,"My lamp, my beloved, my source of light."
+dayOneLampPostFirstVisit_line6,,Möth,She whispers sweet nothings to me all night.
+dayOneLampPostFirstVisit_line6,,Möth,"She would whisper to them to you, too."
+dayOneLampPostFirstVisit_line6,,Möth,If only you listened...
+dayOneLampPostFirstVisit_line6,,Möth,...
+dayOneLampPostFirstVisit_line6,,Möth,But no one ever listens.
+dayOneLampPostFirstVisit_line6,,Möth,So she is only mine. My sweet lamp.
+dayOneLampPostFirstVisit_prompt3,,Möth,My love...
+dayOneLampPostSecondVisit_line1,,Möth,My love...
 dayOneLampPostSecondVisit_line1,spook,Spook,Uh...
-dayOneLampPostSecondVisit_line1,spook,Spook,I should just go…
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
+dayOneLampPostSecondVisit_line1,spook,Spook,I should just go�
 ,,,
 ,,,
 ,,,
@@ -197,14 +264,8 @@ scene1_dialogue1,,Kazak,Hey Rocket...
 scene1_dialogue1,,Rocket,What's wrong?
 scene1_prompt1,,Kazak,It's a long story...
 ,,,What will you say to Kazak?
-lineSeqTest,,,
 lineSeqTest,,Colors,"white white [c_yellow]yellow yellow[/c] white white [rainbow]rainbow rainbow[/rainbow] white white [cycle,241,0,128]cycle text[/cycle] [alpha,0.5]transparent text [alpha,1] white white"
 lineSeqTest,,Delay,"normal text normal text [delay, 1000]delayed text delayed text [delay, 500][speed, 3]fast text fast text fast text fast text fast text fast text[/speed] [delay, 2000]normal text normal text"
 lineSeqTest,,Effects,normal text [wave]wave text[/wave] [shake]shake text[/shake] [wobble]wobble text[/wobble] [pulse]pulse text[/pulse] [wheel]wheel text[/wheel] [jitter]jitter text[/jitter] [blink]blink text[/blink] normal text
 lineSeqTest,,Font,consolas consolas [fComic] comic sans comic sans [/f] consol consol
 ,,Sprite,this is a sprite: [sPixel]
-lineSeqPrompt1,,,
-,,NPC,What would you like to choose?
-lineSeqTest1,,,
-lineSeqTest1,,Character,"What a pleasant day! I love the sun, and the clouds. What good weather we have today! Yay!"
-,,Character,"[GuyMove, 1440, 320]NAH THIS SHIT SUCKS!!! I HATE THE SUN, AND THE CLOUDS. WHAT BAD !!! WEATHER !! WE ! HAVE !!!! TODAY."

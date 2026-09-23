@@ -63,8 +63,8 @@
 #endregion
 #region screenplay
 
-	global.screenPlay = LoadScreenPlay();
-	global.sceneToPlay = FIRST_SCENE;
+	global.screenPlay = noone; //= LoadScreenPlay();  // <--- Now gets called when the player presses start
+	global.sceneToPlay = noone; //= FIRST_SCENE;      // <--- Now gets set when the player presses start
 	global.lastLocationBackground = sBackgroundBlack;
 	
 	global.textLog = [];

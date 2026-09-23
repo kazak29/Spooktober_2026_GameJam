@@ -9,7 +9,7 @@ function LoadScreenPlay ()
 		GetIntroScenes(),
 		// Locations
 		
-		
+		GetDayOneShayHomeScenes(),
 		GetDayOneLampPostScenes()
 		// Ending
 	];
