@@ -9,9 +9,9 @@ function MenuTransitionStart(_arg){
 	}
 	
 	// Reset game to the beginning and clear the textlog
-	global.sceneToPlay = FIRST_SCENE;
+	//global.sceneToPlay = FIRST_SCENE;
 	//global.sceneToPlay = "introScene8";
-	//global.sceneToPlay = "emptyScene";
+	global.sceneToPlay = "emptyScene";
 	ClearTextLog();
 	if (instance_exists(oTextLog)) { instance_destroy(global.textLogInst); }
 	global.screenPlay = LoadScreenPlay();   // Reset the screenplay

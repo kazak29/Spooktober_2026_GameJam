@@ -164,6 +164,7 @@ function ProcessNode(_nodeId, _skipDelay = false)
 		case NodeType.SET_NEXT_SCENE: {
 			var _newNextScene = _node.newNextScene;
 			global.screenPlay[$ currentSceneId].nextScene = _newNextScene;
+			AdvanceNode();
 			break;
 		}
 		
