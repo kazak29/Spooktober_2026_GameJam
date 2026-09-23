@@ -28,7 +28,19 @@
 		}
 	}
 	
-	function SceneTransitionNext(_sceneTarget, _sprInd = noone, _imInd = 0, _alpha = 1, _col = c_white){
+	function SceneToMap(){
+		with oDirector {
+			global.lastLocationBackground = bg.sprInd;
+	        currentSceneId = noone;
+	        currentNodeId  = noone;
+			directorState  = DirectorStateIdle;
+			currentLineSequence = [];
+			ClearStage();
+			TransitionStart(rmMap, sqFadeOut, sqFadeIn);
+		}
+	}
+	
+	function SceneTransitionNext(_sceneTarget, _sprInd = undefined, _imInd = 0, _alpha = 1, _col = c_white){
 		with oDirector {
 			sceneTarget = _sceneTarget;
 	        directorState = DirectorStateIdle;
@@ -38,7 +50,7 @@
 		}
 	}
 	
-	function SceneTransitionBg(_sprInd = noone, _imInd = 0, _alpha = 1, _col = c_white){
+	function SceneTransitionBg(_sprInd = undefined, _imInd = 0, _alpha = 1, _col = c_white){
 		with oDirector {
 	        directorState = DirectorStateIdle;
 			BackgroundSetTarget(_sprInd, _imInd, _alpha, _col);
@@ -47,7 +59,7 @@
 		}
 	}
 	
-	function SceneTransitionClear(_sprInd = noone, _imInd = 0, _alpha = 1, _col = c_white){
+	function SceneTransitionClear(_sprInd = undefined, _imInd = 0, _alpha = 1, _col = c_white){
 		with oDirector {
 	        directorState = DirectorStateIdle;
 			BackgroundSetTarget(_sprInd, _imInd, _alpha, _col);
@@ -168,7 +180,7 @@
 global.dataSceneScripts = {};
 with global.dataSceneScripts {
 	
-	#region QUICK CHANGES WITH NO TRANSITIONS
+	#region QUICK CHANGES WITH NO DIRECTOR TRANSITIONS
 	
 		// SCENE NAME
 		scene_set = function(_args){
@@ -185,6 +197,11 @@ with global.dataSceneScripts {
 				BackgroundSet(_sprInd, _imInd, _alpha, _col);
 				LineProgress();
 			}
+		};
+		
+		// NO ARGUMENTS
+		map = function(_args){
+			SceneToMap();
 		};
 		
 	#endregion
@@ -209,7 +226,7 @@ with global.dataSceneScripts {
 		// BACKGROUND SPRITE, FRAME, ALPHA, COLOR
 		trans_bg = function(_args){
 			with oDirector {
-				var _sprInd			= asset_get_index(_args[0]);
+				var _sprInd			= (array_length(_args) > 0) ? asset_get_index(_args[0]) : undefined;
 				var _imInd			= (array_length(_args) > 1) ? asset_get_index(_args[1]) : 0;
 				var _alpha			= (array_length(_args) > 2) ? asset_get_index(_args[2]) : 1;
 				var _col			= (array_length(_args) > 3) ? asset_get_index(_args[3]) : c_white;
@@ -222,7 +239,7 @@ with global.dataSceneScripts {
 		// BACKGROUND SPRITE, FRAME, ALPHA, COLOR
 		trans_clear = function(_args){
 			with oDirector {
-				var _sprInd			= asset_get_index(_args[0]);
+				var _sprInd			= (array_length(_args) > 0) ? asset_get_index(_args[0]) : undefined;
 				var _imInd			= (array_length(_args) > 1) ? asset_get_index(_args[1]) : 0;
 				var _alpha			= (array_length(_args) > 2) ? asset_get_index(_args[2]) : 1;
 				var _col			= (array_length(_args) > 3) ? asset_get_index(_args[3]) : c_white;

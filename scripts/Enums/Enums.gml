@@ -1,8 +1,8 @@
 #region scenes
 	enum SCENE_TRANS_TYPE {
-		BACKGROUND,
-		CLEAR,
-		NEXT,
+		BACKGROUND,		//background change
+		CLEAR,			//background change + clear
+		NEXT,			//background change + clear + scene change
 	}
 #endregion
 

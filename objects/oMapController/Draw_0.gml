@@ -1,5 +1,5 @@
 
-draw_sprite(global.lastLocationBackground, 0, 0, 0);
+if sprite_exists(global.lastLocationBackground) draw_sprite(global.lastLocationBackground, 0, 0, 0);
 draw_sprite(sMap, selectedIndex, 0 ,0);
 
 

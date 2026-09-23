@@ -131,7 +131,7 @@ currentNodeId  = noone;
 			TypewriterSoundSet();
 		}
 	}
-	LineProgress = function(){
+	LineProgress = function(_amount = 1){
 		// Textlog: Put the line in the log before moving on
 		var _curLineData = currentLineSequence[currentLineIndex];
 		var _lineTitle = _curLineData.lineTitle;
@@ -140,7 +140,7 @@ currentNodeId  = noone;
 			//show_debug_message(string(global.textLog));
 		}
 			
-		currentLineIndex++;
+		currentLineIndex += _amount;
 		LineSet();
 	}
 
