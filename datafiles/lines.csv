@@ -1,17 +1,17 @@
 SCENE NAME,LINE TITLE - ENGLISH,LINE TEXT - ENGLISH
-test,,"sc_bg,sBackgroundShayHome"
-test,,"sc_char_in,Spook,sSpook,0"
+test,,"bg,sBackgroundShayHome"
+test,,"char_in,Spook,sSpook,0"
+test,,"delay,2"
 test,Spook,"First scene Ö, or ö, "
 test,Shay,First line
-test,,"sc_char_in,Shay,sShay,0"
-test,,"sc_char_out,Spook,sSpook,0"
+test,,"char_in,Shay,sShay,0"
+test,,"char_out,Spook,sSpook,0"
 test,Spook,Second line
-test,,"sc_char_out,Spook,sSpook,0"
+test,,"delay,2"
 test,Spook,Third line!
 test,Spook,4 line!
 test,Spook,5 line!
-,,
-,,
+test,,"scene_trans,test1,sBackgroundGray"
 ,,
 ,,
 ,,

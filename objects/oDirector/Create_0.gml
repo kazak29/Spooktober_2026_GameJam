@@ -77,35 +77,23 @@ currentNodeId  = noone;
 
 #region new code
 	
-	lineSkip = false;
-	LineSkipCheck = function(){
-		var _curLineData = currentLineSequence[currentLineIndex];
-		var _line = _curLineData.lineText;
-		
-		lineSkip = true;
-		var _command = false;
-		var _sl = string_length(_line);
-		for (var i = 1; i <= _sl; i++) {
-			
-			//check assuming a line will never be just a single square bracket [ or ]
-			var _char = string_char_at(_line,i);
-			if !_command && _char != "[" && _char != "]" {
-				lineSkip = false;
-				break;
-			}
-			
-			//check if command
-			if _char == "[" _command = true;
-			if _char == "]" || (_char == "[" && i > 1 && string_char_at(_line,i-1) == "[") _command = false;
+	sceneTarget = "";
+	
+	BackgroundSet = function(_spr = noone, _imInd = 0, _alpha = 1, _col = c_white){
+		bg = {
+			sprInd: _spr	?? noone,
+			imInd:	_imInd	?? 0,
+			alpha:	_alpha	?? 1,
+			col:	_col	?? c_white,
 		}
 	}
-	
-	BackgroundReset = function(){
-		bg = {
-			sprInd: noone,
-			imInd: 0,
-			alpha: 1,
-			col: c_white,
+	BackgroundSetTarget = function(_spr = noone, _imInd = 0, _alpha = 1, _col = c_white){
+		bgTarget = {
+			active: true,
+			sprInd: _spr	?? noone,
+			imInd:	_imInd	?? 0,
+			alpha:	_alpha	?? 1,
+			col:	_col	?? c_white,
 		}
 	}
 	LineSet = function(){
@@ -125,8 +113,11 @@ currentNodeId  = noone;
 	LineProgress = function(){
 		// Textlog: Put the line in the log before moving on
 		var _curLineData = currentLineSequence[currentLineIndex];
-		AddToTextLog({ title: _curLineData.lineTitle, text: _curLineData.lineText });
-		//show_debug_message(string(global.textLog));
+		var _lineTitle = _curLineData.lineTitle;
+		if _lineTitle != "" {
+			AddToTextLog({ title: _curLineData.lineTitle, text: _curLineData.lineText });
+			//show_debug_message(string(global.textLog));
+		}
 			
 		currentLineIndex++;
 		LineSet();

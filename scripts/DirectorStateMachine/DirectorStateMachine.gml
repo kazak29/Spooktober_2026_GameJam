@@ -22,8 +22,10 @@ function DirectorStateSceneTransition()
 
     else if (fadeTarget == MIN_ALPHA && fadeAlpha <= MIN_ALPHA)
     {
-        directorState = DirectorStateIdle;
-        ProcessNode(currentNodeId);
+        //directorState = DirectorStateIdle;
+        //ProcessNode(currentNodeId);
+		SceneStart(sceneTarget);
+		sceneTarget = "";
     }
 }
 

@@ -1,0 +1,1 @@
+if !instance_exists(oDirector) instance_destroy();

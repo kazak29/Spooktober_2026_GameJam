@@ -1,4 +1,37 @@
-#region logic
+#region reusable scene triggers
+	
+	function SceneClear(){
+		with oDirector {
+			lineSkip = false;
+			BackgroundSet();
+			stageCharacters = [];
+    
+		    // Reset main character
+		    mainCharacter.alpha = MIN_ALPHA;
+		    mainCharacter.targetAlpha = MIN_ALPHA;
+		    mainCharacter.yOffset = 0;
+		    mainCharacter.yVelocity = 0;
+		    mainCharacter.blend = c_white;
+	
+			spookUp = false;
+    
+		    previousSpeaker = "";
+		}
+	}
+	
+	function SceneStart(_name){
+		with oDirector {
+			SceneClear();
+			
+			currentLineSequence = global.lineData[$ _name] ?? [];
+	        currentLineIndex = 0;
+	        LineSet();
+		}
+	}
+	
+#endregion
+
+#region csv logic
 	
 	//take a string out of csv and process it
 	function SceneScriptExecute(_str){
@@ -21,28 +54,50 @@
 global.dataSceneScripts = {};
 with global.dataSceneScripts {
 	
-	sc_start = function(_args){
+	// SCENE NAME
+	scene_set = function(_args){
 		SceneStart(_args[0]);
 	};
 	
-	sc_bg = function(_args){
+	// SCENE NAME, BACKGROUND SPRITE, FRAME, ALPHA, COLOR
+	scene_trans = function(_args){
+		with oDirector {
+			sceneTarget = _args[0];
+	        directorState = DirectorStateIdle;
+			
+			instance_create_layer(0,0, SYSTEM_LAYER, oSceneTransition);
+			
+			var _sprInd	= (array_length(_args) > 1) ? asset_get_index(_args[1]) : noone;
+			var _imInd	= (array_length(_args) > 2) ? asset_get_index(_args[2]) : 0;
+			var _alpha	= (array_length(_args) > 3) ? asset_get_index(_args[3]) : 1;
+			var _col	= (array_length(_args) > 4) ? asset_get_index(_args[4]) : c_white;
+			BackgroundSetTarget(_sprInd, _imInd, _alpha, _col);
+		}
+	};
+	
+	// DELAY SECONDS
+	delay = function(_args){
+		var _delay = real(_args[0]);
+		with oDirector {
+			delayTimer = _delay * game_get_speed(gamespeed_fps);
+            directorState = DirectorStateDelay;
+		}
+	};
+	
+	// BACKGROUND SPRITE, FRAME, ALPHA, COLOR
+	bg = function(_args){
 		var _sprInd	= (array_length(_args) > 0) ? asset_get_index(_args[0]) : noone;
 		var _imInd	= (array_length(_args) > 1) ? asset_get_index(_args[1]) : 0;
 		var _alpha	= (array_length(_args) > 2) ? asset_get_index(_args[2]) : 1;
 		var _col	= (array_length(_args) > 3) ? asset_get_index(_args[3]) : c_white;
 		with oDirector {
-			BackgroundReset();
-			with bg {
-				sprInd	= _sprInd;
-				imInd	= _imInd;
-				alpha	= _alpha;
-				col		= _col;
-			}
+			BackgroundSet(_sprInd, _imInd, _alpha, _col);
 			LineProgress();
 		}
 	};
 	
-	sc_char_in = function(_args){
+	// CHARACTER NAME, SPRITE, FRAME
+	char_in = function(_args){
 		var _name	= _args[0];
 		var _sprInd = asset_get_index(_args[1]);
 		var _imInd	= int64(_args[2]);
@@ -66,7 +121,8 @@ with global.dataSceneScripts {
 		}
 	};
 	
-	sc_char_out = function(_args){
+	// CHARACTER NAME, SPRITE
+	char_out = function(_args){
 		var _name	= _args[0];
 		var _sprInd = (array_length(_args) > 1) ? asset_get_index(_args[1]) : noone;
 		
@@ -83,4 +139,29 @@ with global.dataSceneScripts {
 	        directorState = DirectorStateCharacterFade;
 		}
 	};
+	
+	main_char_in = function(_args){
+		
+	};
+	
+	main_char_out = function(_args){
+		
+	};
+	
+	char_update = function(_args){
+		
+	};
+	
+	choice = function(_args){
+		
+	};
+	
+	condition = function(_args){
+		
+	};
+	
+	music = function(_args){
+		
+	};
+	
 }
