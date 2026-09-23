@@ -313,6 +313,7 @@
     {"id":{"name":"sChoiceBox","path":"sprites/sChoiceBox/sChoiceBox.yy",},},
     {"id":{"name":"scribble_fallback_bulletpoint","path":"sprites/scribble_fallback_bulletpoint/scribble_fallback_bulletpoint.yy",},},
     {"id":{"name":"sDipper","path":"sprites/sDipper/sDipper.yy",},},
+    {"id":{"name":"sHamilton","path":"sprites/sHamilton/sHamilton.yy",},},
     {"id":{"name":"sLamp","path":"sprites/sLamp/sLamp.yy",},},
     {"id":{"name":"sLimes","path":"sprites/sLimes/sLimes.yy",},},
     {"id":{"name":"sMap","path":"sprites/sMap/sMap.yy",},},
