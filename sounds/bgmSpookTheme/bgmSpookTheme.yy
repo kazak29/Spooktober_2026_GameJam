@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"sndSpookTheme",
+  "%Name":"bgmSpookTheme",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -12,7 +12,7 @@
   "conversionMode":0,
   "duration":190.10402,
   "exportDir":"",
-  "name":"sndSpookTheme",
+  "name":"bgmSpookTheme",
   "parent":{
     "name":"Music",
     "path":"folders/Sound/Music.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sndSpookTheme.mp3",
+  "soundFile":"bgmSpookTheme.mp3",
   "volume":1.0,
 }

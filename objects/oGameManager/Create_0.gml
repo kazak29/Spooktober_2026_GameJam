@@ -34,6 +34,10 @@
 	global.lineData = LoadLineData();
 	
 #endregion
+#region data creation
+	global.menuPages = MenuDataCreate();
+	global.dataChoices = ChoiceDataCreate();
+#endregion
 #region debug
 	
 	//randomise();
@@ -70,9 +74,4 @@
 	global.textLog = [];
 	global.textLogInst = noone;
 
-#endregion
-#region menu
-	
-	global.menuPages = MenuDataCreate();
-	
 #endregion

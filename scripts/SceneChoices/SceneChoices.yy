@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SceneChoices",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SceneChoices",
+  "parent":{
+    "name":"ScreenPlay",
+    "path":"folders/Scripts/ScreenPlay.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

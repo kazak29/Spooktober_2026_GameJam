@@ -11,7 +11,7 @@ function LoadScreenPlay_Demo()
 				
 				scene1_music: {
 					nodeType: NodeType.MUSIC,
-					song: sndSpookTheme,
+					song: bgmSpookTheme,
 					nextNode: "scene1_main_character_enter"
 				},
 				

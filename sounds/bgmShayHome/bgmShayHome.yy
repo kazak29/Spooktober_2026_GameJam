@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"sndStrayRatStrut",
+  "%Name":"bgmShayHome",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,9 +10,9 @@
   "compression":1,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":82.89599,
+  "duration":136.968,
   "exportDir":"",
-  "name":"sndStrayRatStrut",
+  "name":"bgmShayHome",
   "parent":{
     "name":"Music",
     "path":"folders/Sound/Music.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sndStrayRatStrut.mp3",
+  "soundFile":"bgmShayHome.mp3",
   "volume":1.0,
 }

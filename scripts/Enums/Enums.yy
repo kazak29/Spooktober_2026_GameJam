@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"EnumsMenu",
+  "%Name":"Enums",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"EnumsMenu",
+  "name":"Enums",
   "parent":{
     "name":"Constants",
     "path":"folders/Scripts/Constants.yy",

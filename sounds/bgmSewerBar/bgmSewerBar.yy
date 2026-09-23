@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"sndSewerBar",
+  "%Name":"bgmSewerBar",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -12,7 +12,7 @@
   "conversionMode":0,
   "duration":155.13599,
   "exportDir":"",
-  "name":"sndSewerBar",
+  "name":"bgmSewerBar",
   "parent":{
     "name":"Music",
     "path":"folders/Sound/Music.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sndSewerBar.mp3",
+  "soundFile":"bgmSewerBar.mp3",
   "volume":1.0,
 }

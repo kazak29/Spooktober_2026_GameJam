@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"sndBarPunk",
+  "%Name":"bgmBarPunk",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -12,7 +12,7 @@
   "conversionMode":0,
   "duration":11.352018,
   "exportDir":"",
-  "name":"sndBarPunk",
+  "name":"bgmBarPunk",
   "parent":{
     "name":"Music",
     "path":"folders/Sound/Music.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sndBarPunk.mp3",
+  "soundFile":"bgmBarPunk.mp3",
   "volume":1.0,
 }

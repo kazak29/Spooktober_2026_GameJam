@@ -12,7 +12,7 @@ function MenuDataCreate() {
 				bg:				noone,
 				spr:			{
 					ind:		sChoiceBox,
-					bufferStrX:	32,
+					bufferStrX:	64,
 					bufferStrY: 32,
 					bufferElem: 16,
 				},
@@ -415,6 +415,6 @@ function MenuDataCreate() {
 				],
 			},
 		},
-	
+		
 	};
 }

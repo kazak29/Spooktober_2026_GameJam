@@ -9,7 +9,7 @@ function GetIntroScenes ()
 			nodes: {
 				introScene1_music1: {
 					nodeType: NodeType.MUSIC,
-					song: sndSpookTheme,
+					song: bgmSpookTheme,
 					nextNode: "introScene1_line1"
 				},
 				introScene1_line1: {
@@ -158,7 +158,7 @@ function GetIntroScenes ()
 				},
 				introScene7_music1: {
 					nodeType: NodeType.MUSIC,
-					song: sndSuspense,
+					song: bgmSuspense,
 					nextNode: "introScene7_spookIn1"
 				},
 				introScene7_spookIn1: {
@@ -327,7 +327,7 @@ function GetIntroScenes ()
 				},
 				introScene7_music2: {
 					nodeType: NodeType.MUSIC,
-					song: sndStrayRatStrut,
+					song: bgmStrayRatStrut,
 					nextNode: "introScene7_screwdriverIn2"
 				},
 				introScene7_screwdriverIn2: {
@@ -379,7 +379,7 @@ function GetIntroScenes ()
 			nodes: {
 				introScene8_music1: {
 					nodeType: NodeType.MUSIC,
-					song: sndBarPunk,
+					song: bgmBarPunk,
 					nextNode: "introScene8_spookIn1"
 				},
 				introScene8_spookIn1: {

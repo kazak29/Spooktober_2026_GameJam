@@ -1,5 +1,5 @@
-function MenuTransitionStart(_arg){
-	var _al = array_length(_arg);
+function MenuTransitionStart(_args){
+	var _al = array_length(_args);
 	if (_al < 3) show_debug_message("MENU TRANSITION DATA MISSING");
 	
 	AmbientFadeOutAll();
@@ -11,12 +11,12 @@ function MenuTransitionStart(_arg){
 	// Reset game to the beginning and clear the textlog
 	//global.sceneToPlay = FIRST_SCENE;
 	//global.sceneToPlay = "introScene8";
-	global.sceneToPlay = "emptyScene";
+	global.sceneToPlay = "intro";
 	ClearTextLog();
 	if (instance_exists(oTextLog)) { instance_destroy(global.textLogInst); }
 	global.screenPlay = LoadScreenPlay();   // Reset the screenplay
 	
-	TransitionStart(_arg[0], _arg[1], _arg[2]);
+	TransitionStart(_args[0], _args[1], _args[2]);
 }
 
 function MenuSettingsReset(){

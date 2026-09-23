@@ -8,7 +8,7 @@ function GetDayOneShayHomeScenes ()
 			nodes: {
 				dayOneShayHomeFirstVisit_music1: {
 					nodeType: NodeType.MUSIC,
-					song: sndShayHome,
+					song: bgmShayHome,
 					nextNode: "dayOneShayHomeFirstVisit_spookIn1"
 				},
 				dayOneShayHomeFirstVisit_spookIn1: {
@@ -58,7 +58,7 @@ function GetDayOneShayHomeScenes ()
 			nodes: {
 				dayOneShayHomeSecondVisit_music1: {
 					nodeType: NodeType.MUSIC,
-					song: sndShayHome,
+					song: bgmShayHome,
 					nextNode: "dayOneShayHomeSecondVisit_spookIn1"
 				},
 				dayOneShayHomeSecondVisit_spookIn1: {
@@ -103,7 +103,7 @@ function GetDayOneShayHomeScenes ()
 			nodes: {
 				dayOneShayHomeThirdVisit_music1: {
 					nodeType: NodeType.MUSIC,
-					song: sndShayHome,
+					song: bgmShayHome,
 					nextNode: "dayOneShayHomeThirdVisit_spookIn1"
 				},
 				dayOneShayHomeThirdVisit_spookIn1: {
