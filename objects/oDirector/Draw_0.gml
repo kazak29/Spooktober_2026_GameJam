@@ -12,7 +12,9 @@ if (currentSceneId != noone)
 	
 	if (directorState == DirectorStateLineSequence ||
     directorState == DirectorStateChoice)
-	{ DrawDialogueBox(); }
+	{ 
+		DrawDialogueBox();
+	}
 	
 	DrawMainCharacterPortrait();
 }

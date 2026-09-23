@@ -1,4 +1,3 @@
-
 function DirectorStateIdle()
 {
     // Do Nothing
@@ -32,10 +31,8 @@ function DirectorStateSceneTransition()
 function DirectorStateDelay()
 {
     delayTimer--;
-    if (delayTimer <= 0) 
-    { 
-        directorState = DirectorStateIdle;
-        ProcessNode(currentNodeId, true);
+    if (delayTimer <= 0) { 
+        LineProgress();
     }
 }
 
@@ -43,6 +40,31 @@ function DirectorStateDelay()
 function DirectorStateLineSequence()
 {
 	if (instance_exists(oMenu) || instance_exists(oTextLog)) { exit; }
+	
+	//skip empty lines auto
+	//if typist.get_state() >= 1 {
+	//	var _curLineData = currentLineSequence[currentLineIndex];
+	//	var _line = _curLineData.lineText;
+	//	
+	//	var _skip = true;
+	//	var _command = false;
+	//	var _sl = string_length(_line);
+	//	for (var i = 1; i <= _sl; i++) {
+	//		
+	//		//check assuming a line will never be just a single square bracket [ or ]
+	//		var _char = string_char_at(_line,i);
+	//		if !_command && _char != "[" && _char != "]" {
+	//			_skip = false;
+	//			break;
+	//		}
+	//		
+	//		//check if command
+	//		if _char == "[" _command = true;
+	//		if _char == "]" || (_char == "[" && i > 1 && string_char_at(_line,i-1) == "[") _command = false;
+	//	}
+	//	
+	//	if _skip LineProgress();
+	//}
 	
 	if (oInputManager.pressed.confirm || oInputManager.mouse.pressed.left)
 	{
@@ -103,8 +125,9 @@ function DirectorStateCharacterFade()
         }
         mainCharacter.alpha = mainCharacter.targetAlpha;
         
-		directorState = DirectorStateLineSequence;
+		//directorState = DirectorStateLineSequence;
         //AdvanceNode(); 
+		LineProgress();
     }
 }
 

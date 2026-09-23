@@ -190,6 +190,7 @@
     {"id":{"name":"MenuSetup","path":"scripts/MenuSetup/MenuSetup.yy",},},
     {"id":{"name":"NodeType","path":"scripts/NodeType/NodeType.yy",},},
     {"id":{"name":"ProcessNode","path":"scripts/ProcessNode/ProcessNode.yy",},},
+    {"id":{"name":"SceneScripts","path":"scripts/SceneScripts/SceneScripts.yy",},},
     {"id":{"name":"scribble_add_macro","path":"scripts/scribble_add_macro/scribble_add_macro.yy",},},
     {"id":{"name":"scribble_anim_blink","path":"scripts/scribble_anim_blink/scribble_anim_blink.yy",},},
     {"id":{"name":"scribble_anim_cycle","path":"scripts/scribble_anim_cycle/scribble_anim_cycle.yy",},},

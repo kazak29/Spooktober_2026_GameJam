@@ -1,6 +1,4 @@
-
 UpdateCharacterPortraits();
-
 directorState();
 
 //if (oInputManager.pressed.select && !instance_exists(oMenu))

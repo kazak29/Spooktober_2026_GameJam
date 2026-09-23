@@ -1,16 +1,32 @@
 SCENE NAME,LINE TITLE - ENGLISH,LINE TEXT - ENGLISH
-test,,"[sc_bg,sBackgroundShayHome][sc_char_in,Spook,sSpook,0][sc_line_skip]"
+test,,"sc_bg,sBackgroundShayHome"
+test,,"sc_char_in,Spook,sSpook,0"
 test,Spook,"First scene Ö, or ö, "
 test,Shay,First line
-test,,"[sc_char_in,Shay,sShay,0][sc_line_skip]"
-test,Shay,Second line
-test,,"[sc_char_out,Spook,sSpook,0][sc_line_skip]"
-test,Shay,Third line!
+test,,"sc_char_in,Shay,sShay,0"
+test,,"sc_char_out,Spook,sSpook,0"
+test,Spook,Second line
+test,,"sc_char_out,Spook,sSpook,0"
+test,Spook,Third line!
+test,Spook,4 line!
+test,Spook,5 line!
 ,,
 ,,
-test1,,"[sc_char_in,Shay,sShay,0][sc_line_skip]"
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+test1,,"[sc_char_in,Shay,sShay,0]"
 test1,Name 1,Second scene!
-test1,,"[sc_char_out,Spook,sSpook,0][sc_line_skip]"
+test1,,"[sc_char_out,Spook,sSpook,0]"
 test1,Name1,"Second scene, second line!"
 ,,
 ,,

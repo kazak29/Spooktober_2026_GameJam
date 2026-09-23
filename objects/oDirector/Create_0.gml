@@ -75,22 +75,63 @@ currentNodeId  = noone;
 //StartScene(currentSceneId);
 
 
-BackgroundReset = function(){
-	bg = {
-		sprInd: noone,
-		imInd: 0,
-		alpha: 1,
-		col: c_white,
-	}
-}
-LineProgress = function(){
-	// Textlog: Put the line in the log before moving on
-	var _curLineData = currentLineSequence[currentLineIndex];
-	AddToTextLog({ title: _curLineData.lineTitle, text: _curLineData.lineText });
-	//show_debug_message(string(global.textLog));
+#region new code
+	
+	lineSkip = false;
+	LineSkipCheck = function(){
+		var _curLineData = currentLineSequence[currentLineIndex];
+		var _line = _curLineData.lineText;
+		
+		lineSkip = true;
+		var _command = false;
+		var _sl = string_length(_line);
+		for (var i = 1; i <= _sl; i++) {
 			
-	currentLineIndex++;
-	TypewriterSoundSet();
-}
+			//check assuming a line will never be just a single square bracket [ or ]
+			var _char = string_char_at(_line,i);
+			if !_command && _char != "[" && _char != "]" {
+				lineSkip = false;
+				break;
+			}
+			
+			//check if command
+			if _char == "[" _command = true;
+			if _char == "]" || (_char == "[" && i > 1 && string_char_at(_line,i-1) == "[") _command = false;
+		}
+	}
+	
+	BackgroundReset = function(){
+		bg = {
+			sprInd: noone,
+			imInd: 0,
+			alpha: 1,
+			col: c_white,
+		}
+	}
+	LineSet = function(){
+		var _curLineData = currentLineSequence[currentLineIndex];
+		var _lineTitle = _curLineData.lineTitle;
+		var _lineText = _curLineData.lineText;
+		
+		//check for commands
+		if _lineTitle == "" {
+			var _result = SceneScriptExecute(_lineText);
+			if !_result LineProgress();
+		} else {
+			directorState = DirectorStateLineSequence;
+			TypewriterSoundSet();
+		}
+	}
+	LineProgress = function(){
+		// Textlog: Put the line in the log before moving on
+		var _curLineData = currentLineSequence[currentLineIndex];
+		AddToTextLog({ title: _curLineData.lineTitle, text: _curLineData.lineText });
+		//show_debug_message(string(global.textLog));
+			
+		currentLineIndex++;
+		LineSet();
+	}
 
-SceneStart(currentSceneId);
+	SceneStart(currentSceneId);
+
+#endregion

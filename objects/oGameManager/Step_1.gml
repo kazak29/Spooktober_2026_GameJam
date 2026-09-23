@@ -12,7 +12,7 @@ if global.cheat {
 	if keyboard_check_pressed(vk_tab) global.showDebugUI = !global.showDebugUI;
 	if keyboard_check_pressed(ord("C")) global.crt.active = !global.crt.active;
 	if keyboard_check_pressed(ord("M")) { global.volMusic = 0; global.volSound = 0; global.volTypeWriter = 0; }
-	
+	if keyboard_check_pressed(ord("R")) game_restart();
 }
 
 //ui buttons
