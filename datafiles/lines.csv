@@ -131,16 +131,16 @@ introScene8_line16,spook,Spook,Alright... Let's see where this goes.
 ,,,
 dayOneShayHomeFirstVisit_line1,,,Shay is sound asleep. Your cage is warm and inviting.
 dayOneShayHomeFirstVisit_line2,,Screwdriver,"Quitting already, kid?"
-,,,
-dayOneShayHomeFirstVisit_line3,,Spook,Eeeeek!!
+dayOneShayHomeFirstVisit_line3,spook,Spook,Eeeeek!!
 dayOneShayHomeFirstVisit_line3,,Screwdriver,"Wow, you still react the same as before."
-dayOneShayHomeFirstVisit_line3,,Spook,Why are you back here?!
+dayOneShayHomeFirstVisit_line3,spook,Spook,Why are you back here?!
 dayOneShayHomeFirstVisit_line3,,Screwdriver,Unfinished... business.
 dayOneShayHomeFirstVisit_line3,,Screwdriver,Why are YOU back here? Night is young! Go explore! Go!
 ,,,
-,,,
-,,,
-,,,
+dayOneShayHomeSecondVisit_line1,,Screwdriver,*Singing* When I was... a young boy...
+dayOneShayHomeSecondVisit_line1,,Screwdriver,My father... Took me into the city...
+dayOneShayHomeSecondVisit_line1,,Screwdriver,To see a marching band...~
+dayOneShayHomeSecondVisit_line2,,Screwdriver,Hey! What are you looking at?! Go explore!
 ,,,
 ,,,
 ,,,

@@ -4,7 +4,7 @@ function LoadMapLocations ()
 	var _locations = [
 		{
 			locationName: "Home",
-			scenes: ["dayOneShayHomeFirstVisit"],
+			scenes: ["dayOneShayHomeSecondVisit", "dayOneShayHomeFirstVisit"],
 			activeScene: 0,
 			sceneSelectionScript: noone,
 			isLocked: false
