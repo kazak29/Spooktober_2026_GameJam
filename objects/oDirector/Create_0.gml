@@ -74,8 +74,15 @@ currentSceneId = global.sceneToPlay;
 currentNodeId  = noone;
 //StartScene(currentSceneId);
 
-SceneStart(currentSceneId);
 
+BackgroundReset = function(){
+	bg = {
+		sprInd: noone,
+		imInd: 0,
+		alpha: 1,
+		col: c_white,
+	}
+}
 LineProgress = function(){
 	// Textlog: Put the line in the log before moving on
 	var _curLineData = currentLineSequence[currentLineIndex];
@@ -85,3 +92,5 @@ LineProgress = function(){
 	currentLineIndex++;
 	TypewriterSoundSet();
 }
+
+SceneStart(currentSceneId);

@@ -1,8 +1,26 @@
 #region scene
 	
+	function SceneClear(){
+		with oDirector {
+			BackgroundReset();
+			stageCharacters = [];
+    
+		    // Reset main character
+		    mainCharacter.alpha = MIN_ALPHA;
+		    mainCharacter.targetAlpha = MIN_ALPHA;
+		    mainCharacter.yOffset = 0;
+		    mainCharacter.yVelocity = 0;
+		    mainCharacter.blend = c_white;
+	
+			spookUp = false;
+    
+		    previousSpeaker = "";
+		}
+	}
+	
 	function SceneStart(_name){
 		with oDirector {
-			ClearStage();
+			SceneClear();
 			
 			currentLineSequence = global.lineData[$ _name] ?? [];
 	        currentLineIndex = 0;
@@ -15,7 +33,7 @@
 		SceneStart(_param_array[0]);
 	});
 	
-	scribble_typists_add_event("sc_skip", function(_element, _param_array, _character_index) {
+	scribble_typists_add_event("sc_line_skip", function(_element, _param_array, _character_index) {
 		with oDirector LineProgress();
 	});
 	
@@ -24,9 +42,22 @@
 		
 	});
 	
+	// SPRITE, FRAME, ALPHA, COLOUR
 	scribble_typists_add_event("sc_bg", function(_element, _param_array, _character_index)
 	{
-		
+		var _sprInd	= (array_length(_param_array) > 0) ? asset_get_index(_param_array[0]) : noone;
+		var _imInd	= (array_length(_param_array) > 1) ? asset_get_index(_param_array[1]) : 0;
+		var _alpha	= (array_length(_param_array) > 2) ? asset_get_index(_param_array[2]) : 1;
+		var _col	= (array_length(_param_array) > 3) ? asset_get_index(_param_array[3]) : c_white;
+		with oDirector {
+			BackgroundReset();
+			with bg {
+				sprInd	= _sprInd;
+				imInd	= _imInd;
+				alpha	= _alpha;
+				col		= _col;
+			}
+		}
 	});
 	
 	// CHAR NAME, SPRITE, FRAME
@@ -44,8 +75,8 @@
                     charId:				_name,
                     sprite:				_sprInd,
 					expressionFrame:	_imInd,
-                    alpha:				0,
-                    targetAlpha:		1,
+                    alpha:				MIN_ALPHA,
+                    targetAlpha:		MAX_ALPHA,
                     xPosition:			_spawnX,
                     targetX:			_spawnX,
                 });
@@ -54,9 +85,24 @@
 		}
 	});
 	
+	// CHAR NAME, SPRITE
 	scribble_typists_add_event("sc_char_out", function(_element, _param_array, _character_index)
 	{
+		var _name	= _param_array[0];
+		var _sprInd = (array_length(_param_array) > 1) ? asset_get_index(_param_array[1]) : noone;
 		
+		with oDirector {
+	        for (var _i = 0; _i < array_length(stageCharacters); _i++) {
+	            // Match by NAME (ID) first, fallback to sprite reference
+	            if ((stageCharacters[_i].charId == _name) || 
+	                (stageCharacters[_i].sprite == _sprInd)) 
+				{
+	                stageCharacters[_i].targetAlpha = MIN_ALPHA;
+	                break;
+	            }
+	        }
+	        directorState = DirectorStateCharacterFade;
+		}
 	});
 	
 	scribble_typists_add_event("sc_main_char_in", function(_element, _param_array, _character_index)

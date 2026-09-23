@@ -1,17 +1,17 @@
 SCENE NAME,LINE TITLE - ENGLISH,LINE TEXT - ENGLISH
-test,,"[sc_char_in,Spook,sSpook,0][sc_skip]"
-test,Spook,First scene
-test,,"[sc_start,test1]"
+test,,"[sc_bg,sBackgroundShayHome][sc_char_in,Spook,sSpook,0][sc_line_skip]"
+test,Spook,"First scene Ö, or ö, "
+test,Shay,First line
+test,,"[sc_char_in,Shay,sShay,0][sc_line_skip]"
+test,Shay,Second line
+test,,"[sc_char_out,Spook,sSpook,0][sc_line_skip]"
+test,Shay,Third line!
 ,,
+,,
+test1,,"[sc_char_in,Shay,sShay,0][sc_line_skip]"
 test1,Name 1,Second scene!
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
+test1,,"[sc_char_out,Spook,sSpook,0][sc_line_skip]"
+test1,Name1,"Second scene, second line!"
 ,,
 ,,
 lineSeqTest1,Character,"What a pleasant day! I love the sun, and the clouds. What good weather we have today! Yay!"

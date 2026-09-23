@@ -1,7 +1,12 @@
+if sprite_exists(bg.sprInd) {
+	with bg {
+		draw_sprite_ext(sprInd,imInd, 0,0, 1,1, 0,col,alpha);
+	}
+}
 
 if (currentSceneId != noone)
 {
-	DrawSceneBackground();
+	//DrawSceneBackground();
 	
 	DrawCharacterPortraits();
 	
