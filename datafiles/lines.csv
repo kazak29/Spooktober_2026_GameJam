@@ -129,6 +129,82 @@ introScene8_line15,,Barry,...
 introScene8_line16,,Barry,"Go on, friend. I'll be here if you need anything."
 introScene8_line16,spook,Spook,Alright... Let's see where this goes.
 ,,,
+dayOneShayHomeFirstVisit_line1,,,Shay is sound asleep. Your cage is warm and inviting.
+dayOneShayHomeFirstVisit_line2,,Screwdriver,"Quitting already, kid?"
+,,,
+dayOneShayHomeFirstVisit_line3,,Spook,Eeeeek!!
+dayOneShayHomeFirstVisit_line3,,Screwdriver,"Wow, you still react the same as before."
+dayOneShayHomeFirstVisit_line3,,Spook,Why are you back here?!
+dayOneShayHomeFirstVisit_line3,,Screwdriver,Unfinished... business.
+dayOneShayHomeFirstVisit_line3,,Screwdriver,Why are YOU back here? Night is young! Go explore! Go!
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
 ,,,
 ,,,
 ,,,
@@ -172,18 +248,9 @@ dayOneLampPostFirstVisit_line6,,Möth,...
 dayOneLampPostFirstVisit_line6,,Möth,But no one ever listens.
 dayOneLampPostFirstVisit_line6,,Möth,So she is only mine. My sweet lamp.
 dayOneLampPostFirstVisit_prompt3,,Möth,My love...
-,,,
 dayOneLampPostSecondVisit_line1,,Möth,My love...
 dayOneLampPostSecondVisit_line1,spook,Spook,Uh...
-dayOneLampPostSecondVisit_line1,spook,Spook,I should just go…
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
-,,,
+dayOneLampPostSecondVisit_line1,spook,Spook,I should just go�
 ,,,
 ,,,
 ,,,
@@ -197,14 +264,8 @@ scene1_dialogue1,,Kazak,Hey Rocket...
 scene1_dialogue1,,Rocket,What's wrong?
 scene1_prompt1,,Kazak,It's a long story...
 ,,,What will you say to Kazak?
-lineSeqTest,,,
 lineSeqTest,,Colors,"white white [c_yellow]yellow yellow[/c] white white [rainbow]rainbow rainbow[/rainbow] white white [cycle,241,0,128]cycle text[/cycle] [alpha,0.5]transparent text [alpha,1] white white"
 lineSeqTest,,Delay,"normal text normal text [delay, 1000]delayed text delayed text [delay, 500][speed, 3]fast text fast text fast text fast text fast text fast text[/speed] [delay, 2000]normal text normal text"
 lineSeqTest,,Effects,normal text [wave]wave text[/wave] [shake]shake text[/shake] [wobble]wobble text[/wobble] [pulse]pulse text[/pulse] [wheel]wheel text[/wheel] [jitter]jitter text[/jitter] [blink]blink text[/blink] normal text
 lineSeqTest,,Font,consolas consolas [fComic] comic sans comic sans [/f] consol consol
 ,,Sprite,this is a sprite: [sPixel]
-lineSeqPrompt1,,,
-,,NPC,What would you like to choose?
-lineSeqTest1,,,
-lineSeqTest1,,Character,"What a pleasant day! I love the sun, and the clouds. What good weather we have today! Yay!"
-,,Character,"[GuyMove, 1440, 320]NAH THIS SHIT SUCKS!!! I HATE THE SUN, AND THE CLOUDS. WHAT BAD !!! WEATHER !! WE ! HAVE !!!! TODAY."
