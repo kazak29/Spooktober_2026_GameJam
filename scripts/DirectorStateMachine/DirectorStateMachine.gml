@@ -112,6 +112,11 @@ function DirectorStateCharacterFade()
 function DirectorStateChoice()
 {
 	with choice {
+		
+		//lock input for a couple seconds to stop people who mash buttons skipping dialogue
+		waitCd = Approach(waitCd, 0, 1);
+		if waitCd > 0 exit;
+		
 		mouseHover = false;
 		
 		var _al = array_length(elements);

@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"SceneScripts",
+  "%Name":"SceneLogic",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"SceneScripts",
+  "name":"SceneLogic",
   "parent":{
     "name":"ScreenPlay",
     "path":"folders/Scripts/ScreenPlay.yy",

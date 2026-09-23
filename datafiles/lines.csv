@@ -5,6 +5,8 @@ test,Spook,"Ö, or ö, "
 test,Spook,First scene
 test,,"main_char_in,0"
 test,Spook,First line
+test,,"custom_script_stop,SceneCustomScriptTest"
+test,,"music,sndBarPunk"
 test,,"char_in,Shay,sShay,0"
 test,,"char_update,Limes,1"
 test,Spook,Second line

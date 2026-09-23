@@ -80,10 +80,11 @@ currentNodeId  = noone;
 	choice = {
 		spr:	{
 			ind:		sChoiceBox,
-			bufferStrX:	32,
+			bufferStrX:	64,
 			bufferStrY: 32,
 			bufferElem: 16,
 		},
+		waitCd:	0,
 		num:	0,
 		
 		mouseHoverCdMax: 5,

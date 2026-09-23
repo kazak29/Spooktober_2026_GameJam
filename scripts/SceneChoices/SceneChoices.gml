@@ -14,12 +14,12 @@ function ChoiceDataCreate() {
 	return {
 		
 		test: {
-			title:		global.uiData.menuStart,
+			title:		global.uiData.introScene6_prompt1_option1,
 			scr:		ChoiceToScene,
 			arg:		["test1", sBackgroundBlack],
 		},
 		test1: {
-			title:		global.uiData.menuOff,
+			title:		global.uiData.introScene6_prompt1_option2,
 			scr:		ChoiceToScene,
 			arg:		["test", sBackgroundShayHome],
 		},

@@ -44,6 +44,7 @@
 			directorState = DirectorStateChoice;
 			
 			choice.elements = [];
+			choice.waitCd = 30;
 			var _al = array_length(_names);
 			
 			//position constants
@@ -277,18 +278,42 @@ with global.dataSceneScripts {
 		}
 	};
 	
+	// CHOICE NAMES AS SET IN global.dataChoices
 	choice = function(_args){
 		with oDirector {
 			ChoiceStart(_args);
 		}
 	};
 	
-	condition = function(_args){
-		
+	// --- PROGRESSES LINE FURTHER ---
+	// SCRIPT, ARGS
+	custom_script_continue = function(_args){
+		with oDirector {
+			var _scr = asset_get_index(_args[0]);
+			_args = array_delete(_args, 0, 1);
+			_scr(_args);
+			
+			LineProgress();
+		}
 	};
 	
+	// --- STOPS AT THE CURRENT LINE ---
+	// SCRIPT, ARGS
+	custom_script_stop = function(_args){
+		with oDirector {
+			var _scr = asset_get_index(_args[0]);
+			_args = array_delete(_args, 0, 1);
+			_scr(_args);
+		}
+	};
+	
+	//SOUND NAME
 	music = function(_args){
-		
+		with oDirector {
+			var _song = asset_get_index(_args[0]);
+			AmbientChange(AMBIENT_MUSIC, _song, DEFAULT_VOLUME_PERCENT);
+			LineProgress();
+		}
 	};
 	
 }
