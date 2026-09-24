@@ -207,22 +207,22 @@ introBar,,map
 ,,
 ,,
 ,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
+shayRoom_Day1_Visit1,,"trans_clear,sBackgroundShayRoomNight"
+shayRoom_Day1_Visit1,,"music,bgmShayHome"
+shayRoom_Day1_Visit1,,"main_char_in,0"
+shayRoom_Day1_Visit1,Empty,Shay is sound asleep. Your cage is warm and inviting.
+shayRoom_Day1_Visit1,,"char_in,Screwdriver,sScrewdriver,0"
+shayRoom_Day1_Visit1,Screwdriver,"Quitting already, kid?"
+shayRoom_Day1_Visit1,,"char_update,Spook,8"
+shayRoom_Day1_Visit1,Spook,Eeeek!!!
+shayRoom_Day1_Visit1,,"char_update,Screwdriver,1"
+shayRoom_Day1_Visit1,Screwdriver,Wow! You still react the same!
+shayRoom_Day1_Visit1,Spook,Why are you back here?!
+shayRoom_Day1_Visit1,,"char_update,Screwdriver,0"
+shayRoom_Day1_Visit1,Screwdriver,Unfinished... business. 
+shayRoom_Day1_Visit1,Screwdriver,Why are YOU back here!? Night is young! go explore! go!
+shayRoom_Day1_Visit1,,"music,noone"
+shayRoom_Day1_Visit1,,map
 ,,
 ,,
 ,,
