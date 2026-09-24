@@ -67,6 +67,18 @@
 			
 			
 			
+			shayHome0: {
+				title:		global.uiData.shayHome0,
+				scr:		ChoiceSkipLines,
+				arg:		[2],
+			},
+			shayHome1: {
+				title:		global.uiData.shayHome1,
+				scr:		ChoiceSkipLines,
+				arg:		[3],
+			},
+			
+			
 			
 			
 			
@@ -94,10 +106,6 @@
 				scr:		ChoiceSkipLines,
 				arg:		[3],
 			},
-			
-			
-			
-			
 			lampPost4: {
 				title:		global.uiData.lampPost3,
 				scr:		ChoiceSkipLines,

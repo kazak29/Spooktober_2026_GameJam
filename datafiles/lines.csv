@@ -207,44 +207,66 @@ introBar,,map
 ,,
 ,,
 ,,
-shayRoom_Day1_Visit1,,"trans_clear,sBackgroundShayRoomNight"
-shayRoom_Day1_Visit1,,"music,bgmShayHome"
-shayRoom_Day1_Visit1,,"main_char_in,0"
-shayRoom_Day1_Visit1,Empty,Shay is sound asleep. Your cage is warm and inviting.
-shayRoom_Day1_Visit1,,"char_in,Screwdriver,sScrewdriver,0"
-shayRoom_Day1_Visit1,Screwdriver,"Quitting already, kid?"
-shayRoom_Day1_Visit1,,"char_update,Spook,8"
-shayRoom_Day1_Visit1,Spook,Eeeek!!!
-shayRoom_Day1_Visit1,,"char_update,Screwdriver,1"
-shayRoom_Day1_Visit1,Screwdriver,Wow! You still react the same!
-shayRoom_Day1_Visit1,Spook,Why are you back here?!
-shayRoom_Day1_Visit1,,"char_update,Screwdriver,0"
-shayRoom_Day1_Visit1,Screwdriver,Unfinished... business. 
-shayRoom_Day1_Visit1,Screwdriver,Why are YOU back here!? Night is young! go explore! go!
-shayRoom_Day1_Visit1,,"music,noone"
-shayRoom_Day1_Visit1,,map
+shayHome_Day1_Visit1,,"trans_clear,sBackgroundShayRoomNight"
+shayHome_Day1_Visit1,,"music,bgmShayHome"
+shayHome_Day1_Visit1,,"main_char_in,0"
+shayHome_Day1_Visit1,Empty,Shay is sound asleep. Your cage is warm and inviting.
+shayHome_Day1_Visit1,,"char_in,Screwdriver,sScrewdriver,0"
+shayHome_Day1_Visit1,Screwdriver,"Quitting already, kid?"
+shayHome_Day1_Visit1,,"char_update,Spook,8"
+shayHome_Day1_Visit1,Spook,Eeeek!!!
+shayHome_Day1_Visit1,,"char_update,Screwdriver,1"
+shayHome_Day1_Visit1,Screwdriver,Wow! You still react the same!
+shayHome_Day1_Visit1,Spook,Why are you back here?!
+shayHome_Day1_Visit1,,"char_update,Screwdriver,0"
+shayHome_Day1_Visit1,Screwdriver,Unfinished... business. 
+shayHome_Day1_Visit1,Screwdriver,Why are YOU back here!? Night is young! go explore! Go!
+shayHome_Day1_Visit1,,"music,noone"
+shayHome_Day1_Visit1,,map
 ,,
 ,,
 ,,
+shayHome_Day1_Visit2,,"trans_clear,sBackgroundShayRoomNight"
+shayHome_Day1_Visit2,,"music,bgmShayHome"
+shayHome_Day1_Visit2,,"main_char_in,0"
+shayHome_Day1_Visit2,,"char_in,Screwdriver,sScrewdriver,2"
+shayHome_Day1_Visit2,Screwdriver,*Singing* When I was... a young boy...
+shayHome_Day1_Visit2,Screwdriver,My father... took me into the city...
+shayHome_Day1_Visit2,Screwdriver,To see a marching band...~
+shayHome_Day1_Visit2,,"char_update,Screwdriver,0"
+shayHome_Day1_Visit2,Screwdriver,Hey! What are you looking at?!
+shayHome_Day1_Visit2,Screwdriver,Go explore!
+shayHome_Day1_Visit2,,"music,noone"
+shayHome_Day1_Visit2,,map
 ,,
 ,,
 ,,
+shayHome_Day1_Visit3,,"trans_clear,sBackgroundShayRoomNight"
+shayHome_Day1_Visit3,,"music,bgmShayHome"
+shayHome_Day1_Visit3,,"main_char_in,0"
+shayHome_Day1_Visit3,,"char_in,Screwdriver,sScrewdriver,0"
+shayHome_Day1_Visit3,Screwdriver,I see you're back.
+shayHome_Day1_Visit3,Screwdriver,"Not your bedtime yet, is it?"
+shayHome_Day1_Visit3,,"choice,shayHome0,shayHome1"
+shayHome_Day1_Visit3,,"scene_set,shayHome_Day1_Visit3_Path1"
+shayHome_Day1_Visit3,,"scene_set,shayHome_Day1_Visit3_Path2"
 ,,
+shayHome_Day1_Visit3_Path1,Screwdriver,"For the last time, I'm not giving his heart undies back!"
+shayHome_Day1_Visit3_Path1,Spook,Oh... um... no.
+shayHome_Day1_Visit3_Path1,Spook,He asked me to get some candy in exchange for a drink!
+shayHome_Day1_Visit3_Path1,,"char_update,Screwdriver,1"
+shayHome_Day1_Visit3_Path1,Screwdriver,He's putting a newbie to work?
+shayHome_Day1_Visit3_Path1,Screwdriver,"My, raccoons are indeed greedy, aren't they?"
+shayHome_Day1_Visit3_Path1,,"char_update,Screwdriver,0"
+shayHome_Day1_Visit3_Path1,Screwdriver,"Okay, kid."
+shayHome_Day1_Visit3_Path1,Screwdriver,Let's break into that big fancy house across the street!
+shayHome_Day1_Visit3_Path1,,"music,noone"
+shayHome_Day1_Visit3_Path1,,"trans_scene,shayHome_Day1_Visit3_HouseAcross,sBackgroundGray"
 ,,
+shayHome_Day1_Visit3_Path2,,"music,noone"
+shayHome_Day1_Visit3_Path2,,map
 ,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
+shayHome_Day1_Visit3_HouseAcross,,
 ,,
 ,,
 ,,
