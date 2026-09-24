@@ -102,15 +102,36 @@ LineSet = function(){
 	var _lineTitle = _curLineData.lineTitle;
 	var _lineText = _curLineData.lineText;
 		
-	//introduce 0.5 delay
-		
 	//check for commands
 	if _lineTitle == "" {
-		var _result = SceneScriptExecute(_lineText);
-		if !_result LineProgress();
+		
+		var _lineCommand = SceneCommandCheck(_lineText);
+		if is_string(_lineCommand) {
+			
+			switch _lineCommand {
+				
+				//introduce delay
+				default: {
+					delayTimer = DEFAULT_DELAY * game_get_speed(gamespeed_fps);
+					directorState = DirectorStateCommandDelay;
+				} break;
+				
+				//delay exceptions
+				case "scene_set":	{ SceneCommandExecute(_lineText);	} break;
+				case "scene_clear": { SceneCommandExecute(_lineText);	} break;
+				case "bg_set":		{ SceneCommandExecute(_lineText);	} break;
+				case "map":			{ SceneCommandExecute(_lineText);	} break;
+				case "music":		{ SceneCommandExecute(_lineText);	} break;
+				
+			}
+			
+		} else LineProgress();
+		
 	} else {
+		
 		directorState = DirectorStateLineSequence;
 		TypewriterSoundSet();
+		
 	}
 }
 LineProgress = function(_amount = 1){

@@ -13,6 +13,17 @@ function DirectorStateDelay()
 }
 
 
+function DirectorStateCommandDelay()
+{
+    delayTimer--;
+    if (delayTimer <= 0) { 
+        var _curLineData = currentLineSequence[currentLineIndex];
+		var _lineText = _curLineData.lineText;
+		SceneCommandExecute(_lineText);
+    }
+}
+
+
 function DirectorStateLineSequence()
 {
 	if (instance_exists(oMenu) || instance_exists(oTextLog)) { exit; }

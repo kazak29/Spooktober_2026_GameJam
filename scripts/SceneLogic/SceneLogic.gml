@@ -29,7 +29,7 @@
 	function SceneToMap(){
 		with oDirector {
 			global.lastLocationBackground = bg.sprInd;
-	        currentSceneName = noone;
+	        //currentSceneName = noone;
 			currentLineSequence = [];
 			directorState  = DirectorStateIdle;
 			TransitionStart(rmMap, sqFadeOut, sqFadeIn);
@@ -156,26 +156,40 @@
 
 #region csv logic
 	
-	//take a string out of csv and process it
-	function SceneScriptExecute(_str){
+	//take a string and check if a command exists by that name
+	function SceneCommandCheck(_str){
 		var _args = string_split(_str, ",");
 		if array_length(_args) > 0 {
+			
+			var _scriptName = _args[0];
+			var _script = global.dataSceneCommands[$ _scriptName] ?? noone;
+			
+			if is_method(_script) return _scriptName; else return noone;
+			
+		} else return noone;
+	}
+	
+	//take a string and execute whatever command is there
+	function SceneCommandExecute(_str){
+		var _args = string_split(_str, ",");
+		if array_length(_args) > 0 {
+			
 			var _script = _args[0];
-			_script = global.dataSceneScripts[$ _script] ?? noone;
+			_script = global.dataSceneCommands[$ _script] ?? noone;
 			
 			if is_method(_script) {
 				array_delete(_args, 0, 1);
 				_script(_args);
-				return true;
-			} else return false;
+			}
+			
 		}
 	}
 	
 #endregion
 
-//scripts themselves (actually methods as they are bound to the struct)
-global.dataSceneScripts = {};
-with global.dataSceneScripts {
+//commands (methods that are bound to the struct)
+global.dataSceneCommands = {};
+with global.dataSceneCommands {
 	
 	#region QUICK CHANGES WITH NO DIRECTOR TRANSITIONS
 		

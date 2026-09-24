@@ -1,12 +1,15 @@
 SCENE NAME,LINE TITLE - ENGLISH,LINE TEXT - ENGLISH
 testScene,,"bg_set,sBackgroundGray"
+testScene,,"main_char_in,0"
+testScene,,"char_in,Barry,sBarry,0"
 testScene,Empty,[c_yellow][wave]test test[/wave][/c]test test
+testScene,,map
 testScene,,"condition_flag,day1_clear"
 testScene,,"scene_set,shayHome_Day1_Visit3_Bar_Path4"
 testScene,,"scene_set,shayHome_Day1_Visit3_Bar_Path5"
 testScene,,"condition_flag,day1_clear"
 testScene,,"choice,intro0,intro1"
-testScene,,map
+testScene,,
 ,,
 intro,,"bg_set,sBackgroundShayHome"
 intro,,"music,bgmSpookTheme"
