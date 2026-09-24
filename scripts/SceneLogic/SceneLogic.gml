@@ -387,4 +387,18 @@ with global.dataSceneScripts {
 		}
 	};
 	
+	//CONDITION
+	condition = function(_args){
+		with oDirector {
+			var _scr = asset_get_index(_args[0]);
+			var _conditionTrue = _scr();
+			if (_conditionTrue) { SceneStart(_args[1]); }
+			else { SceneStart(_args[2]); }
+		}
+		
+	}
+	
+	
+	
+	
 }

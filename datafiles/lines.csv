@@ -408,31 +408,31 @@ shayHome_Day1_Visit3_Bar_Path2,Pogo,Woooo!!!!!
 shayHome_Day1_Visit3_Bar_Path2,,"char_update,Barry,4"
 shayHome_Day1_Visit3_Bar_Path2,Barry,Toast!
 shayHome_Day1_Visit3_Bar_Path2,Spook,Happy best holiday ever!
-shayHome_Day1_Visit3_Bar_Path2,,"scene_set,lampPost_Day1_Visit1_Path3"
+shayHome_Day1_Visit3_Bar_Path2,,"scene_set,shayHome_Day1_Visit3_Bar_Path3"
 ,,
+shayHome_Day1_Visit3_Bar_Path3,,"condition,DayOneAllLocationsCleared,shayHome_Day1_Visit3_Bar_Path4,shayHome_Day1_Visit3_Bar_Path5"
 ,,
+shayHome_Day1_Visit3_Bar_Path4,Pogo,"Ahem! I'm calling it a night! Are you going home yet, Spook?"
+shayHome_Day1_Visit3_Bar_Path4,,"choice,shayHome_Day1_Visit3_Bar3"
+shayHome_Day1_Visit3_Bar_Path4,,"scene_set,shayHome_Day1_Visit3_Bar_Path6"
 ,,
+shayHome_Day1_Visit3_Bar_Path5,Pogo,"Ahem! I'm calling it a night! Are you going home yet, Spook?"
+shayHome_Day1_Visit3_Bar_Path5,,"choice,shayHome_Day1_Visit3_Bar3,shayHome_Day1_Visit3_Bar4"
+shayHome_Day1_Visit3_Bar_Path5,,"scene_set,shayHome_Day1_Visit3_Bar_Path6"
+shayHome_Day1_Visit3_Bar_Path5,,"scene_set,shayHome_Day1_Visit3_Bar_Path7"
 ,,
+shayHome_Day1_Visit3_Bar_Path6,Screwdriver,"Well, have a good morning's sleep!"
+shayHome_Day1_Visit3_Bar_Path6,,"char_out,Screwdriver"
+shayHome_Day1_Visit3_Bar_Path6,Pogo,Hope you enjoyed your first night out!
+shayHome_Day1_Visit3_Bar_Path6,,"char_out,Pogo"
+shayHome_Day1_Visit3_Bar_Path6,,"char_update,Barry,1"
+shayHome_Day1_Visit3_Bar_Path6,Barry,"Yeah, gonna stay a bit longer. I got some crow customers visiting at dawn..."
+shayHome_Day1_Visit3_Bar_Path6,Spook,Night!
+shayHome_Day1_Visit3_Bar_Path6,,<TODO: Go to ALL LOCATIONS CLEAR SCENE>
 ,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-shayHome_Day1_Visit3_Bar_Path3,Pogo,"Ahem! I'm calling it a night! Are you going home yet, Spook?"
-shayHome_Day1_Visit3_Bar_Path3,,"choice,shayHome_Day1_Visit3_Bar3,shayHome_Day1_Visit3_Bar4"
-shayHome_Day1_Visit3_Bar_Path3,,"scene_set,lampPost_Day1_Visit1_Path3"
-shayHome_Day1_Visit3_Bar_Path3,,"scene_set,lampPost_Day1_Visit1_Path4"
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
+shayHome_Day1_Visit3_Bar_Path7,,"music,noone"
+shayHome_Day1_Visit3_Bar_Path7,,<TODO: Lock the home location at this point>
+shayHome_Day1_Visit3_Bar_Path7,,map
 ,,
 ,,
 ,,

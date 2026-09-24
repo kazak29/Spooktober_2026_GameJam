@@ -1,5 +1,5 @@
 
 function DayOneAllLocationsCleared ()
 {
-	return true;
+	return false;
 }
