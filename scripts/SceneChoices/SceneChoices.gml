@@ -6,6 +6,14 @@
 			LineProgress(2);
 		}
 	}
+	
+	function ChoiceSkipLines(_args){
+		with oDirector {
+			var _linesToSkip = _args[0];
+			LineProgress(_linesToSkip);
+		}
+	}
+	
 
 	function ChoiceToScene(_args){
 		with oDirector {
@@ -46,17 +54,63 @@
 	function ChoiceDataCreate() {
 		return {
 		
-			introSqueak0: {
-				title:		global.uiData.introScene6_prompt1_option1,
-				scr:		ChoiceDummy,
-				arg:		noone,
+			intro0: {
+				title:		global.uiData.intro0,
+				scr:		ChoiceSkipLines,
+				arg:		[2],
 			},
-			introSqueak1: {
-				title:		global.uiData.introScene6_prompt1_option2,
+			intro1: {
+				title:		global.uiData.intro1,
 				scr:		ChoiceDummy,
-				arg:		noone,
+				arg:		[2],
 			},
-		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			lampPost0: {
+				title:		global.uiData.lampPost0,
+				scr:		ChoiceSkipLines,
+				arg:		[2],
+			},
+			lampPost1: {
+				title:		global.uiData.lampPost1,
+				scr:		ChoiceSkipLines,
+				arg:		[28],
+			},
+			lampPost2: {
+				title:		global.uiData.lampPost2,
+				scr:		ChoiceSkipLines,
+				arg:		[2],
+			},
+			lampPost3: {
+				title:		global.uiData.lampPost3,
+				scr:		ChoiceSkipLines,
+				arg:		[24],
+			},
+			lampPost4: {
+				title:		global.uiData.lampPost3,
+				scr:		ChoiceSkipLines,
+				arg:		[2],
+			}
+			
+			
+			
+			
 		}
 	}
 #endregion

@@ -78,7 +78,7 @@
 #endregion
 #region Screen Play
 	
-	#macro FIRST_SCENE "introScene1"
+	#macro FIRST_SCENE "intro"
 	
 	#macro MAX_TEXTLOG_CAPACITY 100
 	
