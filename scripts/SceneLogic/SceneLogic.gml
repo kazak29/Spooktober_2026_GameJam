@@ -89,10 +89,10 @@
 					
 				var _data = {
 					num: i,
-					strFont: FONT_CONSOLE_24,
+					strFont: FONT_DIALOGUE_TEXT_TITLE,
 					strAlignH: fa_center,
 					strAlignV: fa_middle,
-					scribId: scribble(_choice.title, "choice").starting_format(FONT_CONSOLE_24, c_white).align(fa_center,fa_middle),
+					scribId: scribble(_choice.title, "choice").starting_format(FONT_DIALOGUE_TEXT_TITLE, c_black).align(fa_center,fa_middle),
 			
 					strX: _startX,
 					strY: _startY + i*_bufferY,
@@ -104,6 +104,7 @@
 				//lock hover cd for first element as page is created
 				if i <= 0 _id.hoverCd = choice.mouseHoverCdMax;
 			}
+			choice.num = 0;
 			
 			//update every choice position and sprite
 			var _spr = choice.spr;

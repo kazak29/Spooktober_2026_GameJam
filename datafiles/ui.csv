@@ -35,8 +35,8 @@ menuCrtRoll,Rolling Band
 buttonSettings,SETTINGS
 buttonTextlog,TEXT LOG
 ,
-introScene6_prompt1_option1,Squeak (Reassuringly)
-introScene6_prompt1_option2,Squeak (Hungrily)
+intro0,Squeak (Reassuringly)
+intro1,Squeak (Hungrily)
 ,
 dayOneShayHomeThirdVisit_prompt1_option1,Barry sent me!
 dayOneShayHomeThirdVisit_prompt1_option2,Ugh... No... Bye...
@@ -50,7 +50,7 @@ dayOneShayHomeThirdVisit_prompt1_option2,Ugh... No... Bye...
 ,
 ,
 ,
-dayOneLampPostFirstVisit_prompt1_option1,...That's a lamp post.
-dayOneLampPostFirstVisit_prompt1_option2,Oh. Yes. She is beautiful.
-dayOneLampPostFirstVisit_prompt2_option1,Why do you love lamps so much?
-dayOneLampPostFirstVisit_prompt_exit1,I will give you two some privacy...
+lampPost0,...That's a lamp post.
+lampPost1,Oh. Yes. She is beautiful.
+lampPost2,Why do you love lamps so much?
+lampPost3,I will give you two some privacy...

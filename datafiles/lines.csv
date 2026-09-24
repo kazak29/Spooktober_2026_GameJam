@@ -62,7 +62,7 @@ intro,Shay,How am I gonna spend an entire night with people I don't even know?!
 intro,Shay,This is gonna be a disaster!
 intro,Shay,A bigger disaster than third grade picture day!
 intro,Empty,Shay sounds upset...
-intro,,"choice,introSqueak0,introSqueak1"
+intro,,"choice,intro0,intro1"
 intro,,"char_update,Shay,0"
 intro,Shay,"You're right, Spook!"
 intro,Shay,It's Halloween! It's going to be awesome whether they like me or not!
@@ -209,16 +209,59 @@ intro,,map
 lampPostDayOneVisitOne,,"trans_clear,sBackgroundLampPostNight"
 lampPostDayOneVisitOne,,"music,bgmLompTheme"
 lampPostDayOneVisitOne,,"main_char_in,0"
-lampPostDayOneVisitOne,Empty,A bright light flickers rapidly. The moth from the bar is glaring into it with loving eyes
+lampPostDayOneVisitOne,Empty,A bright light flickers rapidly. The moth from the bar is glaring into it with loving eyes.
 lampPostDayOneVisitOne,,"char_in,Möth,sMoth,0"
 lampPostDayOneVisitOne,Möth,My sweet... My love...
 lampPostDayOneVisitOne,Spook,Um... Hello?
 lampPostDayOneVisitOne,Möth,You see my lover? She is excited to see me.
-lampPostDayOneVisitOne,Spook,"choice,lampPost0,introSqueak1"
-lampPostDayOneVisitOne,,
-lampPostDayOneVisitOne,,
-lampPostDayOneVisitOne,,
-lampPostDayOneVisitOne,,
-lampPostDayOneVisitOne,,
-lampPostDayOneVisitOne,,
-lampPostDayOneVisitOne,,
+lampPostDayOneVisitOne,,"choice,lampPost0,lampPost1"
+lampPostDayOneVisitOne,Möth,Watch your mouth!
+lampPostDayOneVisitOne,Möth,"You want to be smart when speaking of the lamp, little mouse."
+lampPostDayOneVisitOne,,"music,noone"
+lampPostDayOneVisitOne,,"delay,3"
+lampPostDayOneVisitOne,,"char_out,Möth"
+lampPostDayOneVisitOne,,"delay,3"
+lampPostDayOneVisitOne,,"char_in,Möth,sMoth,1"
+lampPostDayOneVisitOne,,"delay,1"
+lampPostDayOneVisitOne,Möth,They listen.
+lampPostDayOneVisitOne,Möth,They know things about you no one else can ever know... 
+lampPostDayOneVisitOne,Möth,The bright light that mortals are drawn to before death?
+lampPostDayOneVisitOne,Möth,...
+lampPostDayOneVisitOne,Möth,"That's the lamp, little mouse."
+lampPostDayOneVisitOne,Möth,The lamp will one day reap your soul.
+lampPostDayOneVisitOne,Möth,...And
+lampPostDayOneVisitOne,Möth,When that day comes?
+lampPostDayOneVisitOne,Möth,You are going to wish you respected the lamp some more.
+lampPostDayOneVisitOne,,"delay,3"
+lampPostDayOneVisitOne,,"music,bgmLompTheme"
+lampPostDayOneVisitOne,,"char_out,Möth"
+lampPostDayOneVisitOne,,"char_in,Möth,sMoth,0"
+lampPostDayOneVisitOne,Möth,My sweet... my love...
+lampPostDayOneVisitOne,Spook,...I think I'll get going. 
+lampPostDayOneVisitOne,,"music,noone"
+lampPostDayOneVisitOne,,map
+lampPostDayOneVisitOne,Möth,Pretty... Lamp... Pretty... Lady.
+lampPostDayOneVisitOne,,"choice,lampPost2,lampPost3"
+lampPostDayOneVisitOne,,"music,noone"
+lampPostDayOneVisitOne,,"delay,3"
+lampPostDayOneVisitOne,,"char_out,Möth"
+lampPostDayOneVisitOne,,"delay,3"
+lampPostDayOneVisitOne,,"char_in,Möth,sMoth,1"
+lampPostDayOneVisitOne,,"delay,1"
+lampPostDayOneVisitOne,Möth,I do not love lamps.
+lampPostDayOneVisitOne,Möth,I love MY lamp.
+lampPostDayOneVisitOne,Möth,"My lamp, my beloved, my source of light."
+lampPostDayOneVisitOne,Möth,She whispers sweet nothings to me all night.
+lampPostDayOneVisitOne,Möth,"She would whisper to you, too."
+lampPostDayOneVisitOne,Möth,If only you listened.
+lampPostDayOneVisitOne,Möth,...
+lampPostDayOneVisitOne,Möth,But no one ever listens.
+lampPostDayOneVisitOne,Möth,"So she is only mine, my sweet lamp."
+lampPostDayOneVisitOne,,"delay,3"
+lampPostDayOneVisitOne,,"music,bgmLompTheme"
+lampPostDayOneVisitOne,,"char_out,Möth"
+lampPostDayOneVisitOne,,"char_in,Möth,sMoth,0"
+lampPostDayOneVisitOne,Möth,My love...
+lampPostDayOneVisitOne,,"choice,lampPost4"
+lampPostDayOneVisitOne,,"music,noone"
+lampPostDayOneVisitOne,,map
