@@ -7,7 +7,7 @@ intro,Spook,Everyone has been so busy unpacking...
 intro,Spook,Me?
 ,,
 intro,,"trans_bg,sBackgroundCageNightSpook"
-intro,,"delay,2"
+intro,,"delay,1"
 intro,,"main_char_in,0"
 intro,Spook,Nothing much changed for me. 
 intro,Spook,"I get a nice view from my new spot, at least..."
@@ -32,7 +32,6 @@ intro,Spook,I can't wait to spend a calm afternoon watching horror movies with S
 intro,,"trans_clear,sBackgroundShayRoomDay"
 intro,Empty,"October 30th, Afternoon"
 intro,Empty,You wake up to the sound of arguing...
-,,
 intro,,"main_char_in,6"
 intro,Spook,...?
 intro,Mom,You should go out more often!
@@ -51,7 +50,6 @@ intro,Shay,...And can I stay up late to watch the movie...?
 intro,Mom,...Sigh. Yes. Yes you may.
 intro,Shay,"Okaaay. Love you, mom"
 intro,Mom,"Love you too, pumpkin!"
-,,
 intro,,"char_in,Shay,sShay,2"
 intro,,"char_update,Spook,0"
 intro,Shay,"[play_sound,sfxDoorClose]Uuuugh!"
@@ -61,7 +59,6 @@ intro,Shay,This is gonna be a disaster!
 intro,Shay,A bigger disaster than third grade picture day!
 intro,Empty,Shay sounds upset...
 intro,,"choice,introSqueak0,introSqueak1"
-,,
 intro,,"char_update,Shay,0"
 intro,Shay,"You're right, Spook!"
 intro,Shay,It's Halloween! It's going to be awesome whether they like me or not!
@@ -72,19 +69,15 @@ intro,,"music,noone"
 ,,
 intro,,"trans_clear,sBackgroundShayRoomNight"
 intro,Empty,"October 30th, Night"
-,,
 intro,,"music,bgmSuspense"
 intro,,"main_char_in,6"
 intro,Spook,Squeak?
 intro,???,"Pssst, kid"
-,,
 intro,,"char_update,Spook,1"
 intro,Spook,Who's there?! Show yourself!
 intro,???,Down here...
-,,
 intro,,"char_in,Unknown,sScrewdriver,4"
 intro,???,Sup?
-,,
 intro,,"char_update,Spook,2"
 intro,Spook,Gaaah! Intruder!
 intro,Spook,What are you doing in my house?!
@@ -92,48 +85,38 @@ intro,???,Your house?
 intro,???,"I thought you only owned that little box you're in, hehe"
 intro,Spook,No! The whole house! It's my human's house and mine!
 intro,???,That so?
-,,
 intro,,"char_update,Unknown,6"
 intro,???,"You see, this whole street is mine."
 intro,???,I watched 'em build your little house from dirt and concrete.
 intro,???,And when you lot pack up and move on?
 intro,???,"I'll still be here, heh"
-,,
 intro,,"char_update,Spook,1"
 intro,Spook,I am not going to leave!
 intro,Spook,And I'm not a kid! I'm one and a half years old!
-,,
 intro,,"char_update,Unknown,5"
 intro,???,Ooooo! The little guy is actually so big!
-,,
 intro,,"char_update,Unknown,4"
 intro,???,But you are a kid. You know so little of the world.
 intro,???,"And you rely on another to take care of you, no?"
 intro,???,Adults have their own lives. Adults feed themselves. Adults-
-,,
 intro,,"char_update,Spook,2"
 intro,Spook,"I get it, I get it!"
-,,
 intro,,"char_update,Spook,1"
 intro,???,...Tell you what?
 intro,???,Why don't I open that metallic little box for you and show you how a pest lives?
 intro,Spook,No! Shay would be worried sick!
 intro,???,"Heh heh, worry not, friend. Some of us have humans, too."
 intro,???,"We party all night, then crawl back into the cages."
-,,
 intro,,"char_update,Unknown,6"
 intro,???,"Not me, of course! I'm a free spirit."
-,,
 intro,,"char_update,Spook,6"
 intro,Spook,You all party at night...?
 intro,???,Well yeah! It's Halloween tomorrow!
 intro,???,"The veil thins, the night is alive, and the critters celebrate! Heh heh heh"
-,,
 intro,,"char_update,Spook,5"
 intro,Spook,There's a HALLOWEEN PARTY?!
 intro,???,"Ooooh, that got your attention? Indeed we do, friend. Indeed we do."
 intro,???,Come with me.
-,,
 intro,,"char_update,Spook,0"
 intro,Spook,But if Shay wakes up...
 intro,???,"Then she will find you in the morning! Live a little, friend! C'mon!"
@@ -149,50 +132,40 @@ intro,,"delay,2"
 intro,,"char_in,Screwdriver,sScrewdriver,2"
 intro,Screwdriver,I'm Screw. Screwdriver.
 intro,Spook,Uh... I'm Spook.
-,,
 intro,,"char_update,Screwdriver,1"
 intro,Screwdriver,Wow! So are you spooky then?
 intro,Spook,Ugh... dunno. Are you a screwdriver?
-,,
 intro,,"char_update,Screwdriver,0"
 intro,Screwdriver,"Fair point, fair point."
 intro,Spook,...Let's just go before we wake up Shay!
-,,
 intro,,"music,noone"
+,,
 intro,,"trans_clear,sBackgroundSewerBar"
 intro,,"music,bgmBarPunk"
 intro,,"main_char_in,0"
 intro,,"char_in,Screwdriver,sScrewdriver,2"
 intro,Screwdriver,Welcome to our little club!
 intro,Screwdriver,"Folks, I got fresh blood!"
-,,
 intro,,"char_in,Pogo,sPogo,2"
 intro,Pogo,Yummy.
-,,
 intro,,"char_update,Spook,8"
 intro,Spook,Eeeeeeek!!!!!!!!!
-,,
 intro,,"char_update,Pogo,0"
 intro,Pogo,"He-he, fear not little one! I don't bite!"
 intro,Pogo,...Almost never!
-,,
 intro,,"char_in,Barry,sBarry,1"
 intro,Barry,"Don't mess with the kid, Pogo!"
 intro,Barry,"Don't worry, she's harmless as a fly!"
 intro,Barry,"I am Barry, the bartender. Pleasure."
-,,
 intro,,"char_update,Spook,0"
 intro,,"char_out,Pogo"
 intro,,"char_in,Möth,sMoth,0"
 intro,Möth,My sweet... My sweet... How I miss my sweet...
-,,
 intro,,"char_update,Barry,1"
 intro,Barry,"Finish your drink, man... Your ""sweet"" is not going anywhere. Literally."
-,,
 intro,,"char_update,Screwdriver,1"
 intro,Screwdriver,Unlike Barry's! BWAHAHAHAHAHA!!!
 intro,Barry,...
-,,
 intro,,"char_out,Barry"
 intro,,"char_in,Pogo,sPogo,0"
 intro,Pogo,Oh c'mon Drivey...
@@ -200,10 +173,8 @@ intro,Pogo,You're the one who hasn't gone on a single date!
 intro,Pogo,Not even once!
 intro,Screwdriver,"Love is a trap, and attachment is a fancy word for a leash!"
 intro,Möth,My sweet is not a leash... My sweet is so bright...
-,,
 intro,,"char_update,Screwdriver,0"
 intro,Screwdriver,Yeah yeah...
-,,
 intro,,"char_out,Möth"
 intro,Screwdriver,"Hey Spook, before I forget, take this."
 intro,Screwdriver,It's a map. Use it if you ever get lost around here!
@@ -211,25 +182,66 @@ intro,Spook,"Oh, thanks Screwdriver!"
 intro,Pogo,That looks a bit...
 intro,Screwdriver,Hm?
 intro,Pogo,...Nothin'!
-,,
 intro,,"char_update,Screwdriver,2"
 intro,Screwdriver,"Well, that's it from me guys. The night is young!"
 intro,Screwdriver,"See ya later, kid!"
-,,
 intro,,"char_out,Screwdriver"
 intro,,"char_update,Pogo,1"
 intro,Pogo,Yup. Gonna go stretch my wings tonight. Byeee~
-,,
 intro,,"char_out,Pogo"
 intro,,"char_in,Möth,sMoth,0"
 intro,Möth,Must return to my lover...
-,,
 intro,,"char_out,Möth"
 intro,,"char_in,Barry,sBarry,0"
 intro,Barry,...
 intro,,"char_update,Barry,1"
 intro,Barry,"Go on, friend. I'll be here if you need anything."
 intro,Spook,Alright... Let's see where this goes.
-,,
 intro,,"music,noone"
+,,
 intro,,map
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+lampPostDayOneVisitOne,,"trans_clear,sBackgroundLampPostNight"
+lampPostDayOneVisitOne,,
