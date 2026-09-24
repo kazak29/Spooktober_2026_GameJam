@@ -6,21 +6,21 @@ intro,Spook,"This week, we moved into a new house with my family."
 intro,Spook,Everyone has been so busy unpacking...
 intro,Spook,Me?
 ,,
-intro,,"trans_bg,sBackgroundGray"
+intro,,"trans_bg,sBackgroundCageNightSpook"
+intro,,"delay,2"
 intro,,"main_char_in,0"
-intro,,"delay,1"
 intro,Spook,Nothing much changed for me. 
 intro,Spook,"I get a nice view from my new spot, at least..."
 intro,Spook,I am Spook.
 ,,
 intro,,"trans_clear,sBackgroundBlack"
 intro,,"char_in,Shay,sShay,0"
+intro,,"main_char_in,0"
 intro,,"delay,1"
 intro,Spook,And this is Shay! My human and my best friend! 
 intro,Spook,She seems to be nervous about the new school and everything.
 ,,
-intro,,"trans_clear,sBackgroundBlack"
-intro,,"main_char_in,0"
+intro,,"trans_clear,sBackgroundSpookInShaysHand"
 intro,Spook,But I am here to make her feel better!
 intro,Spook,"Me and my human don't have many other friends- and, well, we don't need 'em!"
 ,,
