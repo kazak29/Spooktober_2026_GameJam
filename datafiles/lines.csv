@@ -266,7 +266,36 @@ shayHome_Day1_Visit3_Path1,,"trans_scene,shayHome_Day1_Visit3_HouseAcross,sBackg
 shayHome_Day1_Visit3_Path2,,"music,noone"
 shayHome_Day1_Visit3_Path2,,map
 ,,
-shayHome_Day1_Visit3_HouseAcross,,
+shayHome_Day1_Visit3_HouseAcross,,"music,bgmHouseAcross"
+shayHome_Day1_Visit3_HouseAcross,,"main_char_in,0"
+shayHome_Day1_Visit3_HouseAcross,,"char_in,Screwdriver,sScrewdriver,0"
+shayHome_Day1_Visit3_HouseAcross,Screwdriver,"Candy, candy, sweet candy!"
+shayHome_Day1_Visit3_HouseAcross,Spook,Should we be really doing this?
+shayHome_Day1_Visit3_HouseAcross,Screwdriver,Ssshhh... Don't wake the housekeepers!
+shayHome_Day1_Visit3_HouseAcross,Screwdriver,See that puppy over there?
+shayHome_Day1_Visit3_HouseAcross,,"char_in,Princess,sPrincess,4"
+shayHome_Day1_Visit3_HouseAcross,Spook,Yeah?
+shayHome_Day1_Visit3_HouseAcross,Screwdriver,"Yes, warn me if she wakes up. The code word is ""Squeak!"" nyeh heh!"
+shayHome_Day1_Visit3_HouseAcross,,"char_update,Spook,8"
+shayHome_Day1_Visit3_HouseAcross,Spook,Wait-
+shayHome_Day1_Visit3_HouseAcross,,"char_out,Screwdriver"
+shayHome_Day1_Visit3_HouseAcross,Empty,"A well groomed, fluffy dog. Her perfume smells like cinnamon and she is wearing a single pink hair pin."
+shayHome_Day1_Visit3_HouseAcross,,"trans_scene,shayHome_Day1_Visit3_HouseAcross_FadeOut1,sBackgroundBlack"
+,,
+shayHome_Day1_Visit3_HouseAcross_FadeOut1,Empty,Several minutes pass...
+shayHome_Day1_Visit3_HouseAcross_FadeOut1,,"trans_scene,shayHome_Day1_Visit3_HouseAcross_GotCandy,sBackgroundGray"
+,,
+shayHome_Day1_Visit3_HouseAcross_GotCandy,,"main_char_in,0"
+shayHome_Day1_Visit3_HouseAcross_GotCandy,,"char_in,Screwdriver,sScrewdriver,0"
+shayHome_Day1_Visit3_HouseAcross_GotCandy,,"char_in,Princess,sPrincess,4"
+shayHome_Day1_Visit3_HouseAcross_GotCandy,Screwdriver,Got em'! Let's go!
+shayHome_Day1_Visit3_HouseAcross_GotCandy,Princess,Arf...?
+shayHome_Day1_Visit3_HouseAcross_GotCandy,,"char_update,Screwdriver,1"
+shayHome_Day1_Visit3_HouseAcross_GotCandy,Screwdriver,QUICK!!!
+shayHome_Day1_Visit3_HouseAcross_GotCandy,,"trans_scene,shayHome_Day1_Visit3_HouseAcross_FadeOut2,sBackgroundBlack"
+,,
+shayHome_Day1_Visit3_HouseAcross_FadeOut2,Empty,*Barking*[barking_sound]
+shayHome_Day1_Visit3_HouseAcross_FadeOut2,,"delay,3"
 ,,
 ,,
 ,,

@@ -293,6 +293,7 @@
     {"id":{"name":"__shd_scribble","path":"shaders/__shd_scribble/__shd_scribble.yy",},},
     {"id":{"name":"shdCRT","path":"shaders/shdCRT/shdCRT.yy",},},
     {"id":{"name":"bgmBarPunk","path":"sounds/bgmBarPunk/bgmBarPunk.yy",},},
+    {"id":{"name":"bgmHouseAcross","path":"sounds/bgmHouseAcross/bgmHouseAcross.yy",},},
     {"id":{"name":"bgmLompTheme","path":"sounds/bgmLompTheme/bgmLompTheme.yy",},},
     {"id":{"name":"bgmMapTheme","path":"sounds/bgmMapTheme/bgmMapTheme.yy",},},
     {"id":{"name":"bgmSewerBar","path":"sounds/bgmSewerBar/bgmSewerBar.yy",},},
