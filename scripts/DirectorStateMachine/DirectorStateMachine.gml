@@ -4,32 +4,6 @@ function DirectorStateIdle()
 }
 
 
-function DirectorStateSceneTransition()
-{
-    fadeAlpha = Approach(fadeAlpha, fadeTarget, SCENE_FADE_SPEED);
-
-    if (fadeTarget == MAX_ALPHA && fadeAlpha >= MAX_ALPHA)
-    {
-        ClearStage();
-        currentSceneId = nextSceneId;
-        nextSceneId = noone;
-        
-        var _activeScene = global.screenPlay[$ currentSceneId];
-        currentNodeId = _activeScene.startNode;
-        
-        fadeTarget = MIN_ALPHA;
-    }
-
-    else if (fadeTarget == MIN_ALPHA && fadeAlpha <= MIN_ALPHA)
-    {
-        //directorState = DirectorStateIdle;
-        //ProcessNode(currentNodeId);
-		SceneStart(sceneTarget);
-		sceneTarget = "";
-    }
-}
-
-
 function DirectorStateDelay()
 {
     delayTimer--;
@@ -52,22 +26,6 @@ function DirectorStateLineSequence()
 	    else
 	    {
 			LineProgress();
-			//// Textlog: Put the line in the log before moving on
-			//var _curLineData = currentLineSequence[currentLineIndex];
-			//AddToTextLog({ title: _curLineData.lineTitle, text: _curLineData.lineText });
-			////show_debug_message(string(global.textLog));
-			//
-	        //currentLineIndex++;
-			//TypewriterSoundSet();
-	        //if (currentLineIndex >= array_length(currentLineSequence))
-	        //{
-	        //    TypewriterSoundReset();
-			//	//AdvanceNode();
-	        //}
-	        //else
-	        //{
-			//	TypewriterSoundSet();
-	        //}
 	    }
 	}
 }
@@ -101,9 +59,7 @@ function DirectorStateCharacterFade()
             stageCharacters[_i].alpha = stageCharacters[_i].targetAlpha;
         }
         mainCharacter.alpha = mainCharacter.targetAlpha;
-        
-		//directorState = DirectorStateLineSequence;
-        //AdvanceNode(); 
+		
 		LineProgress();
     }
 }
@@ -164,106 +120,6 @@ function DirectorStateChoice()
 		}
 		
 	}
-	
-	
-    //if (instance_exists(oMenu) || instance_exists(oTextLog))
-    //{
-    //    for (var _i = 0; _i < array_length(choices); _i++) {
-    //        choices[_i].image_index = 0;
-    //        choices[_i].image_speed = 0;
-    //    }
-    //    exit;
-    //}
-    //
-    //var _choiceCount = array_length(choices);
-    //if (_choiceCount == 0) return;
-	//
-    //// ------------------------------------------------------------------
-    //// Mouse Hover
-    //// ------------------------------------------------------------------
-    //var _guiMouseX = device_mouse_x_to_gui(0);
-    //var _guiMouseY = device_mouse_y_to_gui(0);
-    //
-    //oDirector.prevMouseX = _guiMouseX;
-    //oDirector.prevMouseY = _guiMouseY;
-	//
-    //var _hoveredIndex = -1;
-	//
-    //for (var _i = 0; _i < _choiceCount; _i++)
-    //{
-    //    var _btn = choices[_i];
-    //    if (instance_exists(_btn))
-    //    {
-    //        // Read width and height directly from the instance to match its Create event
-    //        var _w = _btn.w;
-    //        var _h = _btn.h;
-	//
-    //        var _left   = _btn.x - (_w / 2);
-    //        var _right  = _btn.x + (_w / 2);
-    //        var _top    = _btn.y - _h;
-    //        var _bottom = _btn.y;
-	//
-    //        if (_guiMouseX >= _left && _guiMouseX <= _right && _guiMouseY >= _top && _guiMouseY <= _bottom)
-    //        {
-    //            _hoveredIndex = _i;
-    //            break;
-    //        }
-    //    }
-    //}
-	//
-    //// Priority: Mouse hover updates selection
-	//if (_hoveredIndex != -1)
-	//{
-	//    currentChoice = _hoveredIndex;
-	//}
-	//// ------------------------------------------------------------------
-	//// Keyboard / Gamepad Navigation
-	//// ------------------------------------------------------------------
-	//else if (oInputManager.pressed.up)
-	//{
-	//    currentChoice--;
-	//    if (currentChoice < 0) currentChoice = _choiceCount - 1;
-	//}
-	//else if (oInputManager.pressed.down)
-	//{
-	//    currentChoice++;
-	//    if (currentChoice >= _choiceCount) currentChoice = 0;
-	//}
-    //
-	//// Update sprite frames
-	//for (var _i = 0; _i < _choiceCount; _i++) { 
-	//    choices[_i].image_index = (_i == currentChoice) ? 1 : 0; 
-	//}
-	//
-	//// ------------------------------------------------------------------
-	//// Confirm Selection & Typist Guard
-	//// ------------------------------------------------------------------
-	//var _mouseClicked = mouse_check_button_pressed(mb_left) && (_hoveredIndex != -1);
-    //
-	//if (oInputManager.pressed.confirm || _mouseClicked)
-	//{
-	//    if (typist.get_state() < 1)
-	//    {
-	//        typist.skip();
-	//        return;
-	//    }
-	//	
-	//    var _selectedButton = choices[currentChoice];
-	//    var _targetNode = _selectedButton.nextNode;
-	//	
-	//	// Textlog: Add prompt and selected choice to the log
-	//	var _curLineData = currentLineSequence[currentLineIndex];
-	//	AddToTextLog({ title: _curLineData.lineTitle, text: _curLineData.lineText });
-	//	AddToTextLog({ title: "Choice Selected", text: _selectedButton.buttonText });
-	//	//show_debug_message(string(global.textLog));
-	//	
-	//    // Clear Options
-	//    for (var _i = 0; _i < _choiceCount; _i++) { instance_destroy(choices[_i]); }
-	//    choices = [];
-	//    currentChoice = 0;
-	//
-	//    ProcessNode(_targetNode);
-	//}
 }
 
 
@@ -273,75 +129,6 @@ function DirectorStateChoice()
 // ------------------------------------------------------------------
 // HELPER FUNCTIONS
 // ------------------------------------------------------------------
-
-function StartScene(_sceneId)
-{
-    if (_sceneId == noone)
-    {
-        currentSceneId = noone;
-        currentNodeId  = noone;
-        directorState  = DirectorStateIdle;
-        return;
-    }
-    
-	ClearStage();
-	
-    currentSceneId = _sceneId;
-    var _activeScene = global.screenPlay[$ currentSceneId];
-    ProcessNode(_activeScene.startNode);
-}
-
-
-
-function AdvanceNode()
-{
-    var _activeScene = global.screenPlay[$ currentSceneId];
-    var _activeNode  = _activeScene.nodes[$ currentNodeId];
-    
-    // More nodes in current scene
-    if struct_exists(_activeNode, "nextNode") && (_activeNode.nextNode != noone) 
-    { 
-        ProcessNode(_activeNode.nextNode); 
-    }
-    // Next scene exists
-    else if (_activeScene.nextScene != noone)
-    {
-        nextSceneId = _activeScene.nextScene;
-        fadeTarget = MAX_ALPHA;
-        directorState = DirectorStateSceneTransition;
-    }
-    // Screenplay complete
-    else 
-    {
-		global.lastLocationBackground = global.screenPlay[$ currentSceneId].background;
-        currentSceneId = noone;
-        currentNodeId  = noone;
-		directorState  = DirectorStateIdle;
-		currentLineSequence = [];
-		ClearStage();
-		TransitionStart(rmMap, sqFadeOut, sqFadeIn);
-    }
-}
-
-
-
-function ClearStage()
-{
-    stageCharacters = [];
-    
-    // Reset main character
-    mainCharacter.alpha = MIN_ALPHA;
-    mainCharacter.targetAlpha = MIN_ALPHA;
-    mainCharacter.yOffset = 0;
-    mainCharacter.yVelocity = 0;
-    mainCharacter.blend = c_white;
-	
-	spookUp = false;
-    
-    previousSpeaker = "";
-}
-
-
 
 function UpdateCharacterPortraits()
 {

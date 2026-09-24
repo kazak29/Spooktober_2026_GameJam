@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"ConditionNodeScripts",
+  "%Name":"ConditionScripts",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"ConditionNodeScripts",
+  "name":"ConditionScripts",
   "parent":{
     "name":"Misc",
     "path":"folders/Scripts/Misc.yy",

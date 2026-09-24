@@ -15,7 +15,6 @@ function MenuTransitionStart(_args){
 	
 	ClearTextLog();
 	if (instance_exists(oTextLog)) { instance_destroy(global.textLogInst); }
-	global.screenPlay = LoadScreenPlay();   // Reset the screenplay
 	
 	TransitionStart(_args[0], _args[1], _args[2]);
 }

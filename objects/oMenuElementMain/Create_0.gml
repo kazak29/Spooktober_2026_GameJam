@@ -6,8 +6,8 @@ strFont = _page.font;
 if !is_string(strFont) || !font_exists(asset_get_index(strFont)) strFont = FONT_DIALOGUE_TEXT_TITLE;
 
 var _elem = elementData;
-scribId = scribble(_elem.title, "menuElemMain").starting_format(strFont, c_black);
-var _charH = scribble(" ").starting_format(strFont, c_black).get_height();
+scribId = scribble(_elem.title, "menuElemMain").starting_format(strFont, c_white);
+var _charH = scribble(" ").starting_format(strFont, c_white).get_height();
 
 #region set parameters based on menu page layout
 	
