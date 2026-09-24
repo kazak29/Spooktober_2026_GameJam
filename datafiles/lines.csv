@@ -256,8 +256,9 @@ shayHome_Day1_Visit3,,"scene_set,shayHome_Day1_Visit3_Path2"
 ,,
 shayHome_Day1_Visit3_Path1,,"char_update,Screwdriver,3"
 shayHome_Day1_Visit3_Path1,Screwdriver,"For the last time, I'm not giving his heart undies back!"
+shayHome_Day1_Visit3_Path1,,"char_update,Spook,7"
 shayHome_Day1_Visit3_Path1,Spook,Oh... um... no.
-shayHome_Day1_Visit3_Path1,Spook,He asked me to get some candy in exchange for a drink!
+shayHome_Day1_Visit3_Path1,Spook,He asked me to get some candy in exchange for a drink.
 shayHome_Day1_Visit3_Path1,,"char_update,Screwdriver,1"
 shayHome_Day1_Visit3_Path1,Screwdriver,He's putting a newbie to work?
 shayHome_Day1_Visit3_Path1,Screwdriver,"My, raccoons are indeed greedy, aren't they?"
@@ -362,11 +363,169 @@ shayHome_Day1_Visit3_Bar_Path1,Screwdriver,"Told ya, kid. The bar used to be way
 shayHome_Day1_Visit3_Bar_Path1,Barry,Let's not dig up old skeletons...
 shayHome_Day1_Visit3_Bar_Path1,,"char_update,Screwdriver,2"
 shayHome_Day1_Visit3_Bar_Path1,Screwdriver,Why not Barry? It is past midnight. Officially Hallow's Eve!!!!
-shayHome_Day1_Visit3_Bar_Path1,,
-shayHome_Day1_Visit3_Bar_Path1,,
+shayHome_Day1_Visit3_Bar_Path1,,"char_update,Pogo,0"
+shayHome_Day1_Visit3_Bar_Path1,Pogo,What's a better time to rise from the dead?!
+shayHome_Day1_Visit3_Bar_Path1,,"char_update,Barry,0"
+shayHome_Day1_Visit3_Bar_Path1,Barry,Never! Never is a good time!
+shayHome_Day1_Visit3_Bar_Path1,,"char_update,Screwdriver,0"
+shayHome_Day1_Visit3_Bar_Path1,Screwdriver,Booooorrrrrriiiiiinnng!
+shayHome_Day1_Visit3_Bar_Path1,Spook,"Weird, the vibe suddenly got so depressing."
+shayHome_Day1_Visit3_Bar_Path1,,"scene_set,shayHome_Day1_Visit3_Bar_Path3"
+,,
+shayHome_Day1_Visit3_Bar_Path2,,"char_update,Screwdriver,2"
+shayHome_Day1_Visit3_Bar_Path2,Screwdriver,"Nope! These days I'm hanging out with my gang, the R.A.C."
+shayHome_Day1_Visit3_Bar_Path2,Spook,The what?
+shayHome_Day1_Visit3_Bar_Path2,Screwdriver,"""Rats Against Capitalism""!"
+shayHome_Day1_Visit3_Bar_Path2,Spook,"Wow, okay."
+shayHome_Day1_Visit3_Bar_Path2,,"char_update,Screwdriver,1"
+shayHome_Day1_Visit3_Bar_Path2,Screwdriver,You should join in! We have motorcycles and everything!
+shayHome_Day1_Visit3_Bar_Path2,Spook,But I'm a mouse.
+shayHome_Day1_Visit3_Bar_Path2,Screwdriver,Are you a mouse against capitalism?
+shayHome_Day1_Visit3_Bar_Path2,Spook,I guess I could be...?
+shayHome_Day1_Visit3_Bar_Path2,,"char_update,Screwdriver,2"
+shayHome_Day1_Visit3_Bar_Path2,Screwdriver,GREAT! YOU'RE IN!
+shayHome_Day1_Visit3_Bar_Path2,,"char_update,Spook,7"
+shayHome_Day1_Visit3_Bar_Path2,Spook,...
+shayHome_Day1_Visit3_Bar_Path2,,"char_update,Spook,0"
+shayHome_Day1_Visit3_Bar_Path2,Pogo,Ahem.
+shayHome_Day1_Visit3_Bar_Path2,Pogo,"I still sing sometimes, but not on stage or anything."
+shayHome_Day1_Visit3_Bar_Path2,,"char_update,Screwdriver,0"
+shayHome_Day1_Visit3_Bar_Path2,Screwdriver,I don't even know where the old guitar is... 
+shayHome_Day1_Visit3_Bar_Path2,Screwdriver,Maybe I sold it.
+shayHome_Day1_Visit3_Bar_Path2,,"char_update,Pogo,4"
+shayHome_Day1_Visit3_Bar_Path2,Pogo,You sold it?!
+shayHome_Day1_Visit3_Bar_Path2,Screwdriver,"I mean, dunno. I sold a lot of old stuff to the forest folk... And it's definitely not in my lair."
+shayHome_Day1_Visit3_Bar_Path2,Barry,...Man.
+shayHome_Day1_Visit3_Bar_Path2,Screwdriver,Oh!
+shayHome_Day1_Visit3_Bar_Path2,,"char_update,Barry,0"
+shayHome_Day1_Visit3_Bar_Path2,Barry,Oh?
+shayHome_Day1_Visit3_Bar_Path2,Screwdriver,It's past midnight!
+shayHome_Day1_Visit3_Bar_Path2,,"char_update,Pogo,6"
+shayHome_Day1_Visit3_Bar_Path2,Pogo,WAY past mignight!!!
+shayHome_Day1_Visit3_Bar_Path2,,"char_update,Screwdriver,2"
+shayHome_Day1_Visit3_Bar_Path2,Screwdriver,HAPPY HALLOWEEN!!!
+shayHome_Day1_Visit3_Bar_Path2,Pogo,Woooo!!!!!
+shayHome_Day1_Visit3_Bar_Path2,,"char_update,Barry,4"
+shayHome_Day1_Visit3_Bar_Path2,Barry,Toast!
+shayHome_Day1_Visit3_Bar_Path2,Spook,Happy best holiday ever!
+shayHome_Day1_Visit3_Bar_Path2,,"scene_set,lampPost_Day1_Visit1_Path3"
 ,,
 ,,
-shayHome_Day1_Visit3_Bar_Path2,Screwdriver,"Nope! I am mostly hanging out with my gang, R.A.C."
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+shayHome_Day1_Visit3_Bar_Path3,Pogo,"Ahem! I'm calling it a night! Are you going home yet, Spook?"
+shayHome_Day1_Visit3_Bar_Path3,,"choice,shayHome_Day1_Visit3_Bar3,shayHome_Day1_Visit3_Bar4"
+shayHome_Day1_Visit3_Bar_Path3,,"scene_set,lampPost_Day1_Visit1_Path3"
+shayHome_Day1_Visit3_Bar_Path3,,"scene_set,lampPost_Day1_Visit1_Path4"
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
 ,,
 ,,
 ,,
