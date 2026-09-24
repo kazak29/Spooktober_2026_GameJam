@@ -4,7 +4,7 @@ function LoadMapLocations ()
 	var _locations = [
 		{
 			locationName: "Home",
-			scenes: ["dayOneShayHomeThirdVisit", "dayOneShayHomeFirstVisit","dayOneShayHomeSecondVisit"],
+			scenes: ["shayHome_Day1_Visit3", "shayHome_Day1_Visit1", "shayHome_Day1_Visit2"],
 			activeScene: 0,
 			sceneSelectionScript: noone,
 			isLocked: false
@@ -39,7 +39,7 @@ function LoadMapLocations ()
 		},
 		{
 			locationName: "Light Post",
-			scenes: ["lampPost_Day1_Visit2", "lampPost_Day1_Visit1", ],
+			scenes: ["lampPost_Day1_Visit1", "lampPost_Day1_Visit2"],
 			activeScene: 0,
 			sceneSelectionScript: noone,
 			isLocked: false
