@@ -2,6 +2,7 @@
 	
 	function SceneClear(){
 		with oDirector {
+			//StageClear();
 			lineSkip = false;
 			stageCharacters = [];
     
@@ -35,7 +36,7 @@
 	        currentNodeId  = noone;
 			directorState  = DirectorStateIdle;
 			currentLineSequence = [];
-			ClearStage();
+			//ClearStage();  // Do not clear stage here. We can remove characters separately
 			TransitionStart(rmMap, sqFadeOut, sqFadeIn);
 		}
 	}
