@@ -1,4 +1,8 @@
 SCENE NAME,LINE TITLE - ENGLISH,LINE TEXT - ENGLISH
+testScene,,"bg_set,sBackgroundGray"
+testScene,Empty,This is an empty scene.
+testScene,,map
+,,
 intro,,"bg_set,sBackgroundShayHome"
 intro,,"music,bgmSpookTheme"
 intro,,"delay,2"
@@ -198,50 +202,23 @@ intro,,"char_update,Barry,1"
 intro,Barry,"Go on, friend. I'll be here if you need anything."
 intro,Spook,Alright... Let's see where this goes.
 intro,,"music,noone"
-,,
 intro,,map
 ,,
 ,,
 ,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
 lampPostDayOneVisitOne,,"trans_clear,sBackgroundLampPostNight"
+lampPostDayOneVisitOne,,"music,bgmLompTheme"
+lampPostDayOneVisitOne,,"main_char_in,0"
+lampPostDayOneVisitOne,Empty,A bright light flickers rapidly. The moth from the bar is glaring into it with loving eyes
+lampPostDayOneVisitOne,,"char_in,Möth,sMoth,0"
+lampPostDayOneVisitOne,Möth,My sweet... My love...
+lampPostDayOneVisitOne,Spook,Um... Hello?
+lampPostDayOneVisitOne,Möth,You see my lover? She is excited to see me.
+lampPostDayOneVisitOne,Spook,"choice,lampPost0,introSqueak1"
+lampPostDayOneVisitOne,,
+lampPostDayOneVisitOne,,
+lampPostDayOneVisitOne,,
+lampPostDayOneVisitOne,,
+lampPostDayOneVisitOne,,
+lampPostDayOneVisitOne,,
 lampPostDayOneVisitOne,,
