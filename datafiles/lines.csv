@@ -342,10 +342,11 @@ lampPost_Day1_Visit1_Path4,,map
 ,,
 ,,
 ,,
-,,
-,,
-,,
-,,
-,,
-,,
-lampPostDayOneVisitTwo,,"trans_clear,sBackgroundLampPostNightMoth"
+lampPost_Day1_Visit2,,"trans_clear,sBackgroundLampPostNightMoth"
+lampPost_Day1_Visit2,,"music,bgmLompTheme"
+lampPost_Day1_Visit2,,"main_char_in,0"
+lampPost_Day1_Visit2,Möth,My love...
+lampPost_Day1_Visit2,Spook,Uh...
+lampPost_Day1_Visit2,Spook,I should just go...
+lampPost_Day1_Visit2,,"music,noone"
+lampPost_Day1_Visit2,,map

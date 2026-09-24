@@ -39,7 +39,7 @@ function LoadMapLocations ()
 		},
 		{
 			locationName: "Light Post",
-			scenes: ["lampPost_Day1_Visit1", ""],
+			scenes: ["lampPost_Day1_Visit2", "lampPost_Day1_Visit1", ],
 			activeScene: 0,
 			sceneSelectionScript: noone,
 			isLocked: false
