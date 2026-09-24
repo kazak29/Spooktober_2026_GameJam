@@ -2,7 +2,8 @@ function MenuTransitionStart(_args){
 	var _al = array_length(_args);
 	if (_al < 3) show_debug_message("MENU TRANSITION DATA MISSING");
 	
-	AmbientFadeOutAll();
+	var _targetRoom = _args[0];
+	if (_targetRoom != rmCredits) { AmbientFadeOutAll(); }
 	if menuType == MENU_TYPE_PAUSE {
 		instance_destroy();
 		with oMenuElement instance_destroy();

@@ -11,7 +11,7 @@ intro,Spook,Everyone has been so busy unpacking...
 intro,Spook,Me?
 intro,,"trans_scene,introCage,sBackgroundCageNightSpook"
 ,,
-introCage,,"delay,1"
+introCage,,"delay,2"
 introCage,,"main_char_in,0"
 introCage,Spook,Nothing much changed for me. 
 introCage,Spook,"I get a nice view from my new spot, at least..."
@@ -27,8 +27,9 @@ introShay,,"trans_scene,introShaysHand,sBackgroundSpookInShaysHand"
 ,,
 introShaysHand,Spook,But I am here to make her feel better!
 introShaysHand,Spook,"Me and my human don't have many other friends- and, well, we don't need 'em!"
-introShaysHand,,"trans_scene,introCalendar,sBackgroundGray"
+introShaysHand,,"trans_scene,introCalendar,sBackgroundCalendar"
 ,,
+introCalendar,,"delay,2"
 introCalendar,Spook,"More importantly, Halloween is around the corner!"
 introCalendar,Spook,The BEST time of the year!
 introCalendar,Spook,I can't wait to spend a calm afternoon watching horror movies with Shay!
@@ -166,13 +167,13 @@ introBar,,"char_update,Spook,0"
 introBar,,"char_out,Pogo"
 introBar,,"char_in,Möth,sMoth,0"
 introBar,Möth,My sweet... My sweet... How I miss my sweet...
-introBar,,"char_update,Barry,1"
+introBar,,"char_update,Barry,3"
 introBar,Barry,"Finish your drink, man... Your ""sweet"" is not going anywhere. Literally."
 introBar,,"char_update,Screwdriver,1"
 introBar,Screwdriver,Unlike Barry's! BWAHAHAHAHAHA!!!
 introBar,Barry,...
 introBar,,"char_out,Barry"
-introBar,,"char_in,Pogo,sPogo,0"
+introBar,,"char_in,Pogo,sPogo,8"
 introBar,Pogo,Oh c'mon Drivey...
 introBar,Pogo,You're the one who hasn't gone on a single date!
 introBar,Pogo,Not even once!
@@ -184,8 +185,10 @@ introBar,,"char_out,Möth"
 introBar,Screwdriver,"Hey Spook, before I forget, take this."
 introBar,Screwdriver,It's a map. Use it if you ever get lost around here!
 introBar,Spook,"Oh, thanks Screwdriver!"
+introBar,,"char_update,Pogo,4"
 introBar,Pogo,That looks a bit...
 introBar,Screwdriver,Hm?
+introBar,,"char_update,Pogo,8"
 introBar,Pogo,...Nothin'!
 introBar,,"char_update,Screwdriver,2"
 introBar,Screwdriver,"Well, that's it from me guys. The night is young!"
@@ -290,16 +293,18 @@ shayHome_Day1_Visit3_HouseAcross_GotCandy,,"char_in,Screwdriver,sScrewdriver,0"
 shayHome_Day1_Visit3_HouseAcross_GotCandy,,"char_in,Princess,sPrincess,4"
 shayHome_Day1_Visit3_HouseAcross_GotCandy,Screwdriver,Got em'! Let's go!
 shayHome_Day1_Visit3_HouseAcross_GotCandy,Princess,Arf...?
-shayHome_Day1_Visit3_HouseAcross_GotCandy,,"char_update,Screwdriver,1"
+shayHome_Day1_Visit3_HouseAcross_GotCandy,,"char_update,Screwdriver,3"
+shayHome_Day1_Visit3_HouseAcross_GotCandy,,"char_update,Spook,8"
 shayHome_Day1_Visit3_HouseAcross_GotCandy,Screwdriver,QUICK!!!
 shayHome_Day1_Visit3_HouseAcross_GotCandy,,"trans_scene,shayHome_Day1_Visit3_HouseAcross_FadeOut2,sBackgroundBlack"
 ,,
 shayHome_Day1_Visit3_HouseAcross_FadeOut2,Empty,*Barking*[barking_sound]
+shayHome_Day1_Visit3_HouseAcross_FadeOut2,,"delay,2"
 shayHome_Day1_Visit3_HouseAcross_FadeOut2,,"trans_scene,shayHome_Day1_Visit3_Bar,sBackgroundSewerBar"
 shayHome_Day1_Visit3_HouseAcross_FadeOut2,,"music,noone"
 ,,
 shayHome_Day1_Visit3_Bar,,"music,bgmSewerBar"
-shayHome_Day1_Visit3_Bar,,"main_char_in,0"
+shayHome_Day1_Visit3_Bar,,"main_char_in,8"
 shayHome_Day1_Visit3_Bar,,"char_in,Screwdriver,sScrewdriver,0"
 shayHome_Day1_Visit3_Bar,Spook,Oh my god. Oh my god. Oh my god.
 shayHome_Day1_Visit3_Bar,,"char_update,Screwdriver,2"
@@ -312,8 +317,82 @@ shayHome_Day1_Visit3_Bar,,"char_update,Screwdriver,1"
 shayHome_Day1_Visit3_Bar,Screwdriver,"If anything, I am the thief, OK? You were just my little helper! Don't give yourself all the credit!"
 shayHome_Day1_Visit3_Bar,Spook,AAAAAAAAAAHHHHHHHHHHHHHHHH!!!!!!!!!!
 shayHome_Day1_Visit3_Bar,,"char_in,Barry,sBarry,0"
-shayHome_Day1_Visit3_Bar,,
-shayHome_Day1_Visit3_Bar,,
+shayHome_Day1_Visit3_Bar,Barry,"I'm taking this as ""we got the candy?"""
+shayHome_Day1_Visit3_Bar,Screwdriver,'course we did! Pour the guy a drink now! He clearly needs to chill out!
+shayHome_Day1_Visit3_Bar,,"char_update,Spook,3"
+shayHome_Day1_Visit3_Bar,Spook,Sniff... sniff...
+shayHome_Day1_Visit3_Bar,,"char_in,Pogo,sPogo,8"
+shayHome_Day1_Visit3_Bar,Pogo,BOO!
+shayHome_Day1_Visit3_Bar,Spook,Sniff...
+shayHome_Day1_Visit3_Bar,,"char_update,Pogo,7"
+shayHome_Day1_Visit3_Bar,Pogo,...Bad timing?
+shayHome_Day1_Visit3_Bar,,"char_update,Screwdriver,0"
+shayHome_Day1_Visit3_Bar,Screwdriver,We were just back from... Trick or treatin'. 
+shayHome_Day1_Visit3_Bar,,"char_update,Pogo,6"
+shayHome_Day1_Visit3_Bar,Pogo,"Ooo, exciting!"
+shayHome_Day1_Visit3_Bar,,"char_update,Barry,4"
+shayHome_Day1_Visit3_Bar,Barry,OK! drinks coming up! 
+shayHome_Day1_Visit3_Bar,,"char_update,Spook,0"
+shayHome_Day1_Visit3_Bar,Empty,Everyone joins in for Barry's Special Cider With Crushed Candy and Extra Cream: BSCWCCEC! 
+shayHome_Day1_Visit3_Bar,Empty,"(No, there is no shorter name for it)"
+shayHome_Day1_Visit3_Bar,,"char_update,Pogo,5"
+shayHome_Day1_Visit3_Bar,Pogo,Man... I miss playing together... This bar used to be waaay more lively...
+shayHome_Day1_Visit3_Bar,,"char_update,Barry,3"
+shayHome_Day1_Visit3_Bar,Barry,Harumph...
+shayHome_Day1_Visit3_Bar,,"char_update,Screwdriver,7"
+shayHome_Day1_Visit3_Bar,Screwdriver,"Yeah, too bad we lost our drummer like that..."
+shayHome_Day1_Visit3_Bar,,"choice,shayHome_Day1_Visit3_Bar1,shayHome_Day1_Visit3_Bar2"
+shayHome_Day1_Visit3_Bar,,"scene_set,shayHome_Day1_Visit3_Bar_Path1"
+shayHome_Day1_Visit3_Bar,,"scene_set,shayHome_Day1_Visit3_Bar_Path2"
+,,
+shayHome_Day1_Visit3_Bar_Path1,Pogo,"Haha, no silly!"
+,,
+,,
+,,
+,,
+shayHome_Day1_Visit3_Bar_Path2,Screwdriver,"Nope! I am mostly hanging out with my gang, R.A.C."
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
 ,,
 ,,
 ,,
