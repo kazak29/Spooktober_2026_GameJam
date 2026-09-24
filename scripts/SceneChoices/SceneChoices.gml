@@ -61,17 +61,9 @@
 			},
 			intro1: {
 				title:		global.uiData.intro1,
-				scr:		ChoiceDummy,
+				scr:		ChoiceSkipLines,
 				arg:		[2],
 			},
-			
-			
-			
-			
-			
-			
-			
-			
 			
 			
 			
@@ -90,7 +82,7 @@
 			lampPost1: {
 				title:		global.uiData.lampPost1,
 				scr:		ChoiceSkipLines,
-				arg:		[28],
+				arg:		[3],
 			},
 			lampPost2: {
 				title:		global.uiData.lampPost2,
@@ -100,8 +92,12 @@
 			lampPost3: {
 				title:		global.uiData.lampPost3,
 				scr:		ChoiceSkipLines,
-				arg:		[24],
+				arg:		[3],
 			},
+			
+			
+			
+			
 			lampPost4: {
 				title:		global.uiData.lampPost3,
 				scr:		ChoiceSkipLines,
