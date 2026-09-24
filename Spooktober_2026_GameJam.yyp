@@ -73,6 +73,8 @@
     {"link":"io.gamemaker.sdfshaders-1.0.0","name":"io.gamemaker.sdfshaders-1.0.0","path":"io.gamemaker.sdfshaders-1.0.0.yyp",},
   ],
   "IncludedFiles":[
+    {"$GMIncludedFile":"","%Name":".~lock.lines.csv#","CopyToMask":-1,"filePath":"datafiles","name":".~lock.lines.csv#","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":".~lock.ui.csv#","CopyToMask":-1,"filePath":"datafiles","name":".~lock.ui.csv#","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"lines.csv","CopyToMask":-1,"filePath":"datafiles","name":"lines.csv","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"scribble_license.txt","CopyToMask":-1,"filePath":"datafiles","name":"scribble_license.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"ui.csv","CopyToMask":-1,"filePath":"datafiles","name":"ui.csv","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -176,7 +178,6 @@
     {"id":{"name":"MACROS","path":"scripts/MACROS/MACROS.yy",},},
     {"id":{"name":"MenuButtons","path":"scripts/MenuButtons/MenuButtons.yy",},},
     {"id":{"name":"MenuSetup","path":"scripts/MenuSetup/MenuSetup.yy",},},
-    {"id":{"name":"SceneChoices","path":"scripts/SceneChoices/SceneChoices.yy",},},
     {"id":{"name":"SceneCustomScripts","path":"scripts/SceneCustomScripts/SceneCustomScripts.yy",},},
     {"id":{"name":"SceneFlags","path":"scripts/SceneFlags/SceneFlags.yy",},},
     {"id":{"name":"SceneLogic","path":"scripts/SceneLogic/SceneLogic.yy",},},

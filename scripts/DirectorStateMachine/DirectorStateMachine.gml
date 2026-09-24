@@ -116,12 +116,8 @@ function DirectorStateChoice()
 		var _mouseEmpty	= !mouseHover;	//hovering empty space on screen
 		var _pressedMain = oInputManager.pressed.confirm  || (oInputManager.mouse.pressed.left && !_mouseEmpty);
 		if _pressedMain {
-			var _data = elements[num];
-			var _scr = _data[$"scr"] ?? noone;
-			var _arg = _data[$"arg"] ?? noone;
-			if script_exists(_scr) _scr(_arg);
+			with oDirector { LineProgress(choice.num+2); }
 			_sfx = "click";
-			
 			with oChoice instance_destroy();
 		}
 		
