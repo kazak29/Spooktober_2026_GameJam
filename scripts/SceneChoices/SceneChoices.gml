@@ -77,7 +77,7 @@
 			lampPost1: {
 				title:		global.uiData.lampPost1,
 				scr:		ChoiceSkipLines,
-				arg:		[27],
+				arg:		[28],
 			},
 			lampPost2: {
 				title:		global.uiData.lampPost2,
@@ -87,7 +87,7 @@
 			lampPost3: {
 				title:		global.uiData.lampPost3,
 				scr:		ChoiceSkipLines,
-				arg:		[22],
+				arg:		[24],
 			},
 			lampPost4: {
 				title:		global.uiData.lampPost3,

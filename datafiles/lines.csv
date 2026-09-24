@@ -222,6 +222,7 @@ lampPostDayOneVisitOne,,"delay,3"
 lampPostDayOneVisitOne,,"char_out,Möth"
 lampPostDayOneVisitOne,,"delay,3"
 lampPostDayOneVisitOne,,"char_in,Möth,sMoth,1"
+lampPostDayOneVisitOne,,"char_update,Spook,8"
 lampPostDayOneVisitOne,,"delay,1"
 lampPostDayOneVisitOne,Möth,They listen.
 lampPostDayOneVisitOne,Möth,They know things about you no one else can ever know... 
@@ -247,6 +248,7 @@ lampPostDayOneVisitOne,,"delay,3"
 lampPostDayOneVisitOne,,"char_out,Möth"
 lampPostDayOneVisitOne,,"delay,3"
 lampPostDayOneVisitOne,,"char_in,Möth,sMoth,1"
+lampPostDayOneVisitOne,,"char_update,Spook,8"
 lampPostDayOneVisitOne,,"delay,1"
 lampPostDayOneVisitOne,Möth,I do not love lamps.
 lampPostDayOneVisitOne,Möth,I love MY lamp.
