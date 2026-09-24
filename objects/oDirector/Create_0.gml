@@ -62,7 +62,7 @@ choice = {
 		ind:		sChoiceBox,
 		bufferStrX:	64,
 		bufferStrY: 32,
-		bufferElem: 16,
+		bufferElem: 32,
 	},
 	waitCd:	0,
 	num:	0,

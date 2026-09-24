@@ -1,12 +1,15 @@
 #region scenes
+
 	enum SCENE_TRANS_TYPE {
 		BACKGROUND,		//background change
 		CLEAR,			//background change + clear
 		NEXT,			//background change + clear + scene change
 	}
+	
 #endregion
 
 #region menu
+
 	enum MENU_ELEMENT_TYPE {
 		SCRIPT_RUNNER,
 		PAGE_TRANSFER,
@@ -40,4 +43,5 @@
 	
 		HEIGHT
 	}
+	
 #endregion

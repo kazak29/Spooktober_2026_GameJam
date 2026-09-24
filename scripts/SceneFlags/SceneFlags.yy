@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"SceneFlags",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"SceneFlags",
+  "parent":{
+    "name":"ScreenPlay",
+    "path":"folders/Scripts/ScreenPlay.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

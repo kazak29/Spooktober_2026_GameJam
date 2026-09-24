@@ -76,7 +76,7 @@
 			//position constants
 			var _bufferY = 64; //MENU_BUFFER_Y
 			var _startX = VIEWPORT_WIDTH/2;
-			var _startY = VIEWPORT_HEIGHT/2 - (_al/2)*_bufferY;
+			var _startY = VIEWPORT_HEIGHT/2 - (_al-1)*_bufferY;
 			
 			//create every choice
 			for (var i = 0; i < _al; i++) {
@@ -88,7 +88,7 @@
 					strFont: FONT_DIALOGUE_TEXT_TITLE,
 					strAlignH: fa_center,
 					strAlignV: fa_middle,
-					scribId: scribble(_choice.title, "choice").starting_format(FONT_DIALOGUE_TEXT_TITLE, c_black).align(fa_center,fa_middle),
+					scribId: scribble(_choice.title, "choice").starting_format(FONT_DIALOGUE_TEXT_TITLE, c_white).align(fa_center,fa_middle),
 			
 					strX: _startX,
 					strY: _startY + i*_bufferY,
@@ -178,12 +178,20 @@ global.dataSceneScripts = {};
 with global.dataSceneScripts {
 	
 	#region QUICK CHANGES WITH NO DIRECTOR TRANSITIONS
-	
+		
+		// --- CHANGES SCENE IN 1 FRAME ---
 		// SCENE NAME
 		scene_set = function(_args){
 			SceneStart(_args[0]);
 		};
 		
+		// --- CLEARS SCENE IN 1 FRAME ---
+		// NO ARGUMENTS
+		scene_clear = function(_args){
+			SceneClear();
+		};
+		
+		// --- CHANGES BACKGROUND IN 1 FRAME ---
 		// BACKGROUND SPRITE, FRAME, ALPHA, COLOR
 		bg_set = function(_args){
 			var _sprInd	= (array_length(_args) > 0) ? asset_get_index(_args[0]) : noone;
@@ -196,6 +204,7 @@ with global.dataSceneScripts {
 			}
 		};
 		
+		// --- TRIGGERS TRANSITION TO MAP ---
 		// NO ARGUMENTS
 		map = function(_args){
 			SceneToMap();
@@ -204,7 +213,7 @@ with global.dataSceneScripts {
 	#endregion
 	#region TRANSITIONS
 		
-		// --- TRANSITION TO NEXT SCENE ---
+		// --- TRANSITION + BACKGROUND CHANGE + SCENE CLEAR + NEXT SCENE ---
 		// SCENE NAME, BACKGROUND SPRITE, FRAME, ALPHA, COLOR
 		trans_scene = function(_args){
 			with oDirector {
@@ -218,20 +227,7 @@ with global.dataSceneScripts {
 			}
 		};
 		
-		// --- TRANSITION TO DIFFERENT BACKGROUND WITH NO SCENE CHANGES ---
-		// BACKGROUND SPRITE, FRAME, ALPHA, COLOR
-		trans_bg = function(_args){
-			with oDirector {
-				var _sprInd			= (array_length(_args) > 0) ? asset_get_index(_args[0]) : undefined;
-				var _imInd			= (array_length(_args) > 1) ? asset_get_index(_args[1]) : 0;
-				var _alpha			= (array_length(_args) > 2) ? asset_get_index(_args[2]) : 1;
-				var _col			= (array_length(_args) > 3) ? asset_get_index(_args[3]) : c_white;
-			
-				SceneTransitionBg(_sprInd, _imInd, _alpha, _col);
-			}
-		};
-		
-		// --- TRANSITION TO DIFFERENT BACKGROUND + CLEARING STAGE ---
+		// --- TRANSITION + BACKGROUND CHANGE + SCENE CLEAR ---
 		// BACKGROUND SPRITE, FRAME, ALPHA, COLOR
 		trans_clear = function(_args){
 			with oDirector {
@@ -241,6 +237,19 @@ with global.dataSceneScripts {
 				var _col			= (array_length(_args) > 3) ? asset_get_index(_args[3]) : c_white;
 			
 				SceneTransitionClear(_sprInd, _imInd, _alpha, _col);
+			}
+		};
+		
+		// --- TRANSITION + BACKGROUND CHANGE - NO SCENE CLEAR - NO NEXT SCENE ---
+		// BACKGROUND SPRITE, FRAME, ALPHA, COLOR
+		trans_bg = function(_args){
+			with oDirector {
+				var _sprInd			= (array_length(_args) > 0) ? asset_get_index(_args[0]) : undefined;
+				var _imInd			= (array_length(_args) > 1) ? asset_get_index(_args[1]) : 0;
+				var _alpha			= (array_length(_args) > 2) ? asset_get_index(_args[2]) : 1;
+				var _col			= (array_length(_args) > 3) ? asset_get_index(_args[3]) : c_white;
+			
+				SceneTransitionBg(_sprInd, _imInd, _alpha, _col);
 			}
 		};
 		
@@ -358,7 +367,7 @@ with global.dataSceneScripts {
 			}
 		};
 	
-		// --- STOPS AT THE CURRENT LINE ---
+		// --- STOPS AT THE CURRENT LINE (IF NO CHANGES WITHIN SCRIPT, WILL READ THE COMMAND AS TEXT ON SCREEN) ---
 		// SCRIPT, ARGS
 		custom_script_stop = function(_args){
 			with oDirector {
@@ -367,18 +376,26 @@ with global.dataSceneScripts {
 				_scr(_args);
 			}
 		};
-	
 		
-	
+		// --- CONDITION THAT CHECKS A FLAG ---
 		//CONDITION
-		condition = function(_args){
+		condition_flag = function(_args){
+			with oDirector {
+				if (struct_get(global.flags,_args[0])) { 
+					LineProgress(1); 
+				} else LineProgress(2);
+			}
+		}
+		
+		// --- CONDITION THAT CHECKS A CUSTOM SCRIPT ---
+		//CONDITION
+		condition_script = function(_args){
 			with oDirector {
 				var _scr = asset_get_index(_args[0]);
-				var _conditionTrue = _scr();
-				if (_conditionTrue) { SceneStart(_args[1]); }
-				else { SceneStart(_args[2]); }
+				if _scr() { 
+					LineProgress(1); 
+				} else LineProgress(2);
 			}
-		
 		}
 		
 	#endregion
