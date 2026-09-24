@@ -295,7 +295,30 @@ shayHome_Day1_Visit3_HouseAcross_GotCandy,Screwdriver,QUICK!!!
 shayHome_Day1_Visit3_HouseAcross_GotCandy,,"trans_scene,shayHome_Day1_Visit3_HouseAcross_FadeOut2,sBackgroundBlack"
 ,,
 shayHome_Day1_Visit3_HouseAcross_FadeOut2,Empty,*Barking*[barking_sound]
-shayHome_Day1_Visit3_HouseAcross_FadeOut2,,"delay,3"
+shayHome_Day1_Visit3_HouseAcross_FadeOut2,,"trans_scene,shayHome_Day1_Visit3_Bar,sBackgroundSewerBar"
+shayHome_Day1_Visit3_HouseAcross_FadeOut2,,"music,noone"
+,,
+shayHome_Day1_Visit3_Bar,,"music,bgmSewerBar"
+shayHome_Day1_Visit3_Bar,,"main_char_in,0"
+shayHome_Day1_Visit3_Bar,,"char_in,Screwdriver,sScrewdriver,0"
+shayHome_Day1_Visit3_Bar,Spook,Oh my god. Oh my god. Oh my god.
+shayHome_Day1_Visit3_Bar,,"char_update,Screwdriver,2"
+shayHome_Day1_Visit3_Bar,Screwdriver,"Whoa, calm down kid! Wasn't that a RUSH???"
+shayHome_Day1_Visit3_Bar,,"char_update,Spook,4"
+shayHome_Day1_Visit3_Bar,Spook,I'm a THIEF!!! WHAT IS SHAY GOING TO SAY!??
+shayHome_Day1_Visit3_Bar,,"char_update,Screwdriver,0"
+shayHome_Day1_Visit3_Bar,Screwdriver,"Woah there, kiddo. "
+shayHome_Day1_Visit3_Bar,,"char_update,Screwdriver,1"
+shayHome_Day1_Visit3_Bar,Screwdriver,"If anything, I am the thief, OK? You were just my little helper! Don't give yourself all the credit!"
+shayHome_Day1_Visit3_Bar,Spook,AAAAAAAAAAHHHHHHHHHHHHHHHH!!!!!!!!!!
+shayHome_Day1_Visit3_Bar,,"char_in,Barry,sBarry,0"
+shayHome_Day1_Visit3_Bar,,
+shayHome_Day1_Visit3_Bar,,
+,,
+,,
+,,
+,,
+,,
 ,,
 ,,
 ,,
