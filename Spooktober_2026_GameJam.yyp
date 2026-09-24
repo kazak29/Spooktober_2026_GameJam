@@ -312,6 +312,7 @@
     {"id":{"name":"sBackgroundCageNightSpook","path":"sprites/sBackgroundCageNightSpook/sBackgroundCageNightSpook.yy",},},
     {"id":{"name":"sBackgroundGray","path":"sprites/sBackgroundGray/sBackgroundGray.yy",},},
     {"id":{"name":"sBackgroundLampPostNight","path":"sprites/sBackgroundLampPostNight/sBackgroundLampPostNight.yy",},},
+    {"id":{"name":"sBackgroundLampPostNightMoth","path":"sprites/sBackgroundLampPostNightMoth/sBackgroundLampPostNightMoth.yy",},},
     {"id":{"name":"sBackgroundSewerBar","path":"sprites/sBackgroundSewerBar/sBackgroundSewerBar.yy",},},
     {"id":{"name":"sBackgroundShayHome","path":"sprites/sBackgroundShayHome/sBackgroundShayHome.yy",},},
     {"id":{"name":"sBackgroundShayRoomDay","path":"sprites/sBackgroundShayRoomDay/sBackgroundShayRoomDay.yy",},},

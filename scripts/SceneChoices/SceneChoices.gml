@@ -69,6 +69,19 @@
 			
 			
 			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			lampPost0: {
 				title:		global.uiData.lampPost0,
 				scr:		ChoiceSkipLines,
