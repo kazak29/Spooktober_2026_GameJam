@@ -2,6 +2,7 @@
 	
 	function SceneClear(){
 		with oDirector {
+			//StageClear();
 			lineSkip = false;
 			stageCharacters = [];
     
@@ -20,8 +21,6 @@
 	
 	function SceneStart(_name){
 		with oDirector {
-			SceneClear();
-			
 			currentLineSequence = global.lineData[$ _name] ?? [];
 	        currentLineIndex = 0;
 	        LineSet();
@@ -35,7 +34,6 @@
 	        currentNodeId  = noone;
 			directorState  = DirectorStateIdle;
 			currentLineSequence = [];
-			ClearStage();
 			TransitionStart(rmMap, sqFadeOut, sqFadeIn);
 		}
 	}
