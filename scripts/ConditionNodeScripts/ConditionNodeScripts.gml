@@ -1,6 +1,5 @@
 
-// Placeholder Example Script
-function InventoryContainsCheese ()
+function DayOneAllLocationsCleared ()
 {
 	return false;
 }

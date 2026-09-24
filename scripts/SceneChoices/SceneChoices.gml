@@ -90,8 +90,16 @@
 				scr:		ChoiceSkipLines,
 				arg:		[3],
 			},
-			
-			
+			shayHome_Day1_Visit3_Bar3: {
+				title:		global.uiData.shayHome_Day1_Visit3_Bar3,
+				scr:		ChoiceSkipLines,
+				arg:		[2],
+			},
+			shayHome_Day1_Visit3_Bar4: {
+				title:		global.uiData.shayHome_Day1_Visit3_Bar4,
+				scr:		ChoiceSkipLines,
+				arg:		[3],
+			},
 			
 			
 			
