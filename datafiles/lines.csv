@@ -139,10 +139,12 @@ intro,Spook,But if Shay wakes up...
 intro,???,"Then she will find you in the morning! Live a little, friend! C'mon!"
 intro,Spook,"...Yeah, okay"
 ,,
-intro,,"char_out,Unknown"
+intro,,"trans_clear,sBackgroundBlack"
 intro,???,"[play_sound,sfxCageOpen]Yeaaah! Now we're talkin'."
 ,,
+intro,,"trans_clear,sBackgroundCageNight"
 intro,,"music,bgmStrayRatStrut"
+intro,,"main_char_in,0"
 intro,,"delay,2"
 intro,,"char_in,Screwdriver,sScrewdriver,2"
 intro,Screwdriver,I'm Screw. Screwdriver.
