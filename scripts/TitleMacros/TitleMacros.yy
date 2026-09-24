@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"SceneChoices",
+  "%Name":"TitleMacros",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"SceneChoices",
+  "name":"TitleMacros",
   "parent":{
-    "name":"ScreenPlay",
-    "path":"folders/Scripts/ScreenPlay.yy",
+    "name":"Misc",
+    "path":"folders/Scripts/Misc.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

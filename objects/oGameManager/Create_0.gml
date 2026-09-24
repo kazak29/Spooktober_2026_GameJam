@@ -36,7 +36,6 @@
 #endregion
 #region data creation
 	global.menuPages = MenuDataCreate();
-	global.dataChoices = ChoiceDataCreate();
 #endregion
 #region debug
 	

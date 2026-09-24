@@ -67,6 +67,7 @@
 	function ChoiceStart(_names){
 		with oDirector {
 			currentLineIndex--;
+			typist.skip();
 			directorState = DirectorStateChoice;
 			
 			choice.elements = [];
@@ -80,22 +81,24 @@
 			
 			//create every choice
 			for (var i = 0; i < _al; i++) {
-				var _choice = global.dataChoices[$ _names[i]];
-				array_push(choice.elements, _choice);
+				var _choice = global.uiData[$ _names[i]] ?? _names[i];	//default to string itself if not found in ui data
+				
+				array_push(choice.elements, {title: _choice});
+				var _choiceData = array_last(choice.elements);
 					
 				var _data = {
 					num: i,
 					strFont: FONT_DIALOGUE_TEXT_TITLE,
 					strAlignH: fa_center,
 					strAlignV: fa_middle,
-					scribId: scribble(_choice.title, "choice").starting_format(FONT_DIALOGUE_TEXT_TITLE, c_white).align(fa_center,fa_middle),
+					scribId: scribble(_choice, "choice").starting_format(FONT_DIALOGUE_TEXT_TITLE, c_white).align(fa_center,fa_middle),
 			
 					strX: _startX,
 					strY: _startY + i*_bufferY,
 				};
 					
 				var _id = instance_create_layer(0,0, CHOICES_LAYER, oChoice, _data);
-				_choice.elemId = _id;
+				_choiceData.elemId = _id;
 		
 				//lock hover cd for first element as page is created
 				if i <= 0 _id.hoverCd = choice.mouseHoverCdMax;
