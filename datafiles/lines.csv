@@ -254,6 +254,7 @@ shayHome_Day1_Visit3,,"choice,shayHome0,shayHome1"
 shayHome_Day1_Visit3,,"scene_set,shayHome_Day1_Visit3_Path1"
 shayHome_Day1_Visit3,,"scene_set,shayHome_Day1_Visit3_Path2"
 ,,
+shayHome_Day1_Visit3_Path1,,"char_update,Screwdriver,3"
 shayHome_Day1_Visit3_Path1,Screwdriver,"For the last time, I'm not giving his heart undies back!"
 shayHome_Day1_Visit3_Path1,Spook,Oh... um... no.
 shayHome_Day1_Visit3_Path1,Spook,He asked me to get some candy in exchange for a drink!
@@ -289,8 +290,8 @@ shayHome_Day1_Visit3_HouseAcross_FadeOut1,Empty,Several minutes pass...
 shayHome_Day1_Visit3_HouseAcross_FadeOut1,,"trans_scene,shayHome_Day1_Visit3_HouseAcross_GotCandy,sBackgroundGray"
 ,,
 shayHome_Day1_Visit3_HouseAcross_GotCandy,,"main_char_in,0"
-shayHome_Day1_Visit3_HouseAcross_GotCandy,,"char_in,Screwdriver,sScrewdriver,0"
 shayHome_Day1_Visit3_HouseAcross_GotCandy,,"char_in,Princess,sPrincess,4"
+shayHome_Day1_Visit3_HouseAcross_GotCandy,,"char_in,Screwdriver,sScrewdriver,8"
 shayHome_Day1_Visit3_HouseAcross_GotCandy,Screwdriver,Got em'! Let's go!
 shayHome_Day1_Visit3_HouseAcross_GotCandy,Princess,Arf...?
 shayHome_Day1_Visit3_HouseAcross_GotCandy,,"char_update,Screwdriver,3"
@@ -345,27 +346,27 @@ shayHome_Day1_Visit3_Bar,,"choice,shayHome_Day1_Visit3_Bar1,shayHome_Day1_Visit3
 shayHome_Day1_Visit3_Bar,,"scene_set,shayHome_Day1_Visit3_Bar_Path1"
 shayHome_Day1_Visit3_Bar,,"scene_set,shayHome_Day1_Visit3_Bar_Path2"
 ,,
+shayHome_Day1_Visit3_Bar_Path1,,"char_update,Pogo,6"
 shayHome_Day1_Visit3_Bar_Path1,Pogo,"Haha, no silly!"
-,,
-,,
+shayHome_Day1_Visit3_Bar_Path1,,"char_update,Pogo,5"
+shayHome_Day1_Visit3_Bar_Path1,Pogo,They are just...
+shayHome_Day1_Visit3_Bar_Path1,Pogo,Not our drummer anymore.
+shayHome_Day1_Visit3_Bar_Path1,Pogo,I guess that is better than dead.
+shayHome_Day1_Visit3_Bar_Path1,Screwdriver,"You ""guess""?"
+shayHome_Day1_Visit3_Bar_Path1,,"char_update,Pogo,6"
+shayHome_Day1_Visit3_Bar_Path1,Pogo,Mhm!
+shayHome_Day1_Visit3_Bar_Path1,Barry,Dead to us anyway...
+shayHome_Day1_Visit3_Bar_Path1,Spook,Wow... What is that about?
+shayHome_Day1_Visit3_Bar_Path1,,"char_update,Screwdriver,0"
+shayHome_Day1_Visit3_Bar_Path1,Screwdriver,"Told ya, kid. The bar used to be way livelier."
+shayHome_Day1_Visit3_Bar_Path1,Barry,Let's not dig up old skeletons...
+shayHome_Day1_Visit3_Bar_Path1,,"char_update,Screwdriver,2"
+shayHome_Day1_Visit3_Bar_Path1,Screwdriver,Why not Barry? It is past midnight. Officially Hallow's Eve!!!!
+shayHome_Day1_Visit3_Bar_Path1,,
+shayHome_Day1_Visit3_Bar_Path1,,
 ,,
 ,,
 shayHome_Day1_Visit3_Bar_Path2,Screwdriver,"Nope! I am mostly hanging out with my gang, R.A.C."
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
 ,,
 ,,
 ,,
