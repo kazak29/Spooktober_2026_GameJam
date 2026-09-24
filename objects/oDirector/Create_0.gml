@@ -117,11 +117,15 @@ LineSet = function(){
 				} break;
 				
 				//delay exceptions
-				case "scene_set":	{ SceneCommandExecute(_lineText);	} break;
-				case "scene_clear": { SceneCommandExecute(_lineText);	} break;
-				case "bg_set":		{ SceneCommandExecute(_lineText);	} break;
-				case "map":			{ SceneCommandExecute(_lineText);	} break;
-				case "music":		{ SceneCommandExecute(_lineText);	} break;
+				case "scene_set":				{ SceneCommandExecute(_lineText);	} break;
+				case "scene_clear":				{ SceneCommandExecute(_lineText);	} break;
+				case "bg_set":					{ SceneCommandExecute(_lineText);	} break;
+				case "map":						{ SceneCommandExecute(_lineText);	} break;
+				case "music":					{ SceneCommandExecute(_lineText);	} break;
+				case "condition_flag":			{ SceneCommandExecute(_lineText);	} break;
+				case "condition_script":		{ SceneCommandExecute(_lineText);	} break;
+				case "custom_script_continue":	{ SceneCommandExecute(_lineText);	} break;
+				case "custom_script_stop":		{ SceneCommandExecute(_lineText);	} break;
 				
 			}
 			
