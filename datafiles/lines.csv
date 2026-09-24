@@ -73,6 +73,7 @@ introShayRoomDay,Shay,A bigger disaster than third grade picture day!
 introShayRoomDay,Empty,Shay sounds upset...
 introShayRoomDay,,"choice,intro0,intro1"
 introShayRoomDay,,"char_update,Shay,0"
+introShayRoomDay,,"char_update,Shay,0"
 introShayRoomDay,Shay,"You're right, Spook!"
 introShayRoomDay,Shay,It's Halloween! It's going to be awesome whether they like me or not!
 introShayRoomDay,Shay,And we'll have some candy for our movie too! Isn't that awesome?!
@@ -656,7 +657,7 @@ lampPost_Day1_Visit1_Path3,,"music,bgmLompTheme"
 lampPost_Day1_Visit1_Path3,,"char_out,Möth"
 lampPost_Day1_Visit1_Path3,,"char_in,Möth,sMoth,0"
 lampPost_Day1_Visit1_Path3,Möth,My love...
-lampPost_Day1_Visit1_Path3,,"choice,lampPost4"
+lampPost_Day1_Visit1_Path3,,"choice,lampPost3"
 lampPost_Day1_Visit1_Path3,,"music,noone"
 lampPost_Day1_Visit1_Path3,,map
 ,,

@@ -10,8 +10,8 @@ function DrawDialogueBox ()
     var _titleText = _lineEntry.lineTitle ?? "";
     var _bodyText  = _lineEntry.lineText ?? "";
     
-	//replace the word Empty for an empty line (we can use any keyword here as well)
-	_titleText = string_replace_all(_titleText, "Empty", "");
+	//replace title for macros
+	_titleText = TitleMacrosCheck(_titleText);
 	
     // ------------------------------------------------------------------
     // DIALOGUE TEXTBOX

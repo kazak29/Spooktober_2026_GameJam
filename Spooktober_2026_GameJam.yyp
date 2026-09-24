@@ -73,8 +73,6 @@
     {"link":"io.gamemaker.sdfshaders-1.0.0","name":"io.gamemaker.sdfshaders-1.0.0","path":"io.gamemaker.sdfshaders-1.0.0.yyp",},
   ],
   "IncludedFiles":[
-    {"$GMIncludedFile":"","%Name":".~lock.lines.csv#","CopyToMask":-1,"filePath":"datafiles","name":".~lock.lines.csv#","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-    {"$GMIncludedFile":"","%Name":".~lock.ui.csv#","CopyToMask":-1,"filePath":"datafiles","name":".~lock.ui.csv#","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"lines.csv","CopyToMask":-1,"filePath":"datafiles","name":"lines.csv","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"scribble_license.txt","CopyToMask":-1,"filePath":"datafiles","name":"scribble_license.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"ui.csv","CopyToMask":-1,"filePath":"datafiles","name":"ui.csv","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -264,6 +262,7 @@
     {"id":{"name":"string_width_scribble_ext","path":"scripts/string_width_scribble_ext/string_width_scribble_ext.yy",},},
     {"id":{"name":"string_width_scribble","path":"scripts/string_width_scribble/string_width_scribble.yy",},},
     {"id":{"name":"Textlog","path":"scripts/Textlog/Textlog.yy",},},
+    {"id":{"name":"TitleMacros","path":"scripts/TitleMacros/TitleMacros.yy",},},
     {"id":{"name":"Transitions","path":"scripts/Transitions/Transitions.yy",},},
     {"id":{"name":"UI","path":"scripts/UI/UI.yy",},},
     {"id":{"name":"Util","path":"scripts/Util/Util.yy",},},

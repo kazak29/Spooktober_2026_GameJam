@@ -121,11 +121,12 @@ LineSet = function(){
 				case "scene_clear":				{ SceneCommandExecute(_lineText);	} break;
 				case "bg_set":					{ SceneCommandExecute(_lineText);	} break;
 				case "map":						{ SceneCommandExecute(_lineText);	} break;
-				case "music":					{ SceneCommandExecute(_lineText);	} break;
+				case "choice":					{ SceneCommandExecute(_lineText);	} break;
 				case "condition_flag":			{ SceneCommandExecute(_lineText);	} break;
 				case "condition_script":		{ SceneCommandExecute(_lineText);	} break;
 				case "custom_script_continue":	{ SceneCommandExecute(_lineText);	} break;
 				case "custom_script_stop":		{ SceneCommandExecute(_lineText);	} break;
+				case "music":					{ SceneCommandExecute(_lineText);	} break;
 				
 			}
 			
@@ -138,13 +139,15 @@ LineSet = function(){
 		
 	}
 }
-LineProgress = function(_amount = 1){
+LineProgress = function(_amount = 1, _textlog = false){
 	// Textlog: Put the line in the log before moving on
-	var _curLineData = currentLineSequence[currentLineIndex];
-	var _lineTitle = _curLineData.lineTitle;
-	if _lineTitle != "" {
-		AddToTextLog({ title: _curLineData.lineTitle, text: _curLineData.lineText });
-		//show_debug_message(string(global.textLog));
+	if _textlog {
+		var _curLineData = currentLineSequence[currentLineIndex];
+		var _lineTitle = _curLineData.lineTitle;
+		if _lineTitle != "" {
+			AddToTextLog({ title: _curLineData.lineTitle, text: _curLineData.lineText });
+			//show_debug_message(string(global.textLog));
+		}
 	}
 			
 	currentLineIndex += _amount;

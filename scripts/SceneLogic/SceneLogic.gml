@@ -67,6 +67,7 @@
 	function ChoiceStart(_names){
 		with oDirector {
 			currentLineIndex--;
+			typist.skip();
 			directorState = DirectorStateChoice;
 			
 			choice.elements = [];
