@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"LoadScreenPlay",
+  "%Name":"SceneFlags",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"LoadScreenPlay",
+  "name":"SceneFlags",
   "parent":{
-    "name":"Scenes",
-    "path":"folders/Scripts/Loading/Scenes.yy",
+    "name":"ScreenPlay",
+    "path":"folders/Scripts/ScreenPlay.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

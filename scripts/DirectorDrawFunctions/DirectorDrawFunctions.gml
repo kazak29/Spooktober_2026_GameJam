@@ -1,15 +1,3 @@
-
-function DrawSceneBackground ()
-{
-	if (!struct_exists(global.screenPlay, currentSceneId)) { return; }
-	
-	var _activeScene = global.screenPlay[$ currentSceneId];
-	var _background  = _activeScene.background ?? noone;
-	if (sprite_exists(_background)) { draw_sprite(_background, 0, 0, 0); }
-}
-
-
-
 function DrawDialogueBox ()
 {
 	if (array_length(currentLineSequence) == 0) { return; }
@@ -23,7 +11,7 @@ function DrawDialogueBox ()
     var _bodyText  = _lineEntry.lineText ?? "";
     
 	//replace the word Empty for an empty line (we can use any keyword here as well)
-	string_replace_all(_titleText, "Empty", "");
+	_titleText = string_replace_all(_titleText, "Empty", "");
 	
     // ------------------------------------------------------------------
     // DIALOGUE TEXTBOX
@@ -74,25 +62,6 @@ function DrawDialogueBox ()
         .sdf_shadow(c_black, 0.5, 1,1)
         .wrap(_maxTextW)
         .draw(_textX, _textY, typist);
-}
-
-
-
-function DrawChoices ()
-{
-	for (var _i = 0; _i < array_length(choices); _i++)
-	{
-		var _choice = choices[_i];
-		
-		var _frame = (_i == currentChoice) ? 1 : 0;
-		draw_sprite_stretched(sChoiceBox, _frame, _choice.drawX, _choice.drawY, _choice.w, _choice.h);
-		
-		scribble(_choice.buttonText)
-            .starting_format(FONT_DIALOGUE_TEXT_TITLE, c_black)
-            .align(fa_center, fa_middle)
-            .draw(_choice.textX, _choice.textY);
-	}
-	
 }
 
 

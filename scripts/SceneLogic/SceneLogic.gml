@@ -2,8 +2,6 @@
 	
 	function SceneClear(){
 		with oDirector {
-			//StageClear();
-			lineSkip = false;
 			stageCharacters = [];
     
 		    // Reset main character
@@ -21,6 +19,7 @@
 	
 	function SceneStart(_name){
 		with oDirector {
+			currentSceneName = _name;
 			currentLineSequence = global.lineData[$ _name] ?? [];
 	        currentLineIndex = 0;
 	        LineSet();
@@ -30,10 +29,9 @@
 	function SceneToMap(){
 		with oDirector {
 			global.lastLocationBackground = bg.sprInd;
-	        currentSceneId = noone;
-	        currentNodeId  = noone;
-			directorState  = DirectorStateIdle;
+	        //currentSceneName = noone;
 			currentLineSequence = [];
+			directorState  = DirectorStateIdle;
 			TransitionStart(rmMap, sqFadeOut, sqFadeIn);
 		}
 	}
@@ -78,7 +76,7 @@
 			//position constants
 			var _bufferY = 64; //MENU_BUFFER_Y
 			var _startX = VIEWPORT_WIDTH/2;
-			var _startY = VIEWPORT_HEIGHT/2 - (_al/2)*_bufferY;
+			var _startY = VIEWPORT_HEIGHT/2 - (_al-1)*_bufferY;
 			
 			//create every choice
 			for (var i = 0; i < _al; i++) {
@@ -90,7 +88,7 @@
 					strFont: FONT_DIALOGUE_TEXT_TITLE,
 					strAlignH: fa_center,
 					strAlignV: fa_middle,
-					scribId: scribble(_choice.title, "choice").starting_format(FONT_DIALOGUE_TEXT_TITLE, c_black).align(fa_center,fa_middle),
+					scribId: scribble(_choice.title, "choice").starting_format(FONT_DIALOGUE_TEXT_TITLE, c_white).align(fa_center,fa_middle),
 			
 					strX: _startX,
 					strY: _startY + i*_bufferY,
@@ -158,34 +156,56 @@
 
 #region csv logic
 	
-	//take a string out of csv and process it
-	function SceneScriptExecute(_str){
+	//take a string and check if a command exists by that name
+	function SceneCommandCheck(_str){
 		var _args = string_split(_str, ",");
 		if array_length(_args) > 0 {
+			
+			var _scriptName = _args[0];
+			var _script = global.dataSceneCommands[$ _scriptName] ?? noone;
+			
+			if is_method(_script) return _scriptName; else return noone;
+			
+		} else return noone;
+	}
+	
+	//take a string and execute whatever command is there
+	function SceneCommandExecute(_str){
+		var _args = string_split(_str, ",");
+		if array_length(_args) > 0 {
+			
 			var _script = _args[0];
-			_script = global.dataSceneScripts[$ _script] ?? noone;
+			_script = global.dataSceneCommands[$ _script] ?? noone;
 			
 			if is_method(_script) {
 				array_delete(_args, 0, 1);
 				_script(_args);
-				return true;
-			} else return false;
+			}
+			
 		}
 	}
 	
 #endregion
 
-//scripts themselves (actually methods as they are bound to the struct)
-global.dataSceneScripts = {};
-with global.dataSceneScripts {
+//commands (methods that are bound to the struct)
+global.dataSceneCommands = {};
+with global.dataSceneCommands {
 	
 	#region QUICK CHANGES WITH NO DIRECTOR TRANSITIONS
-	
+		
+		// --- CHANGES SCENE IN 1 FRAME ---
 		// SCENE NAME
 		scene_set = function(_args){
 			SceneStart(_args[0]);
 		};
 		
+		// --- CLEARS SCENE IN 1 FRAME ---
+		// NO ARGUMENTS
+		scene_clear = function(_args){
+			SceneClear();
+		};
+		
+		// --- CHANGES BACKGROUND IN 1 FRAME ---
 		// BACKGROUND SPRITE, FRAME, ALPHA, COLOR
 		bg_set = function(_args){
 			var _sprInd	= (array_length(_args) > 0) ? asset_get_index(_args[0]) : noone;
@@ -198,16 +218,16 @@ with global.dataSceneScripts {
 			}
 		};
 		
+		// --- TRIGGERS TRANSITION TO MAP ---
 		// NO ARGUMENTS
 		map = function(_args){
 			SceneToMap();
 		};
 		
 	#endregion
-	
 	#region TRANSITIONS
 		
-		// --- TRANSITION TO NEXT SCENE ---
+		// --- TRANSITION + BACKGROUND CHANGE + SCENE CLEAR + NEXT SCENE ---
 		// SCENE NAME, BACKGROUND SPRITE, FRAME, ALPHA, COLOR
 		trans_scene = function(_args){
 			with oDirector {
@@ -221,20 +241,7 @@ with global.dataSceneScripts {
 			}
 		};
 		
-		// --- TRANSITION TO DIFFERENT BACKGROUND WITH NO SCENE CHANGES ---
-		// BACKGROUND SPRITE, FRAME, ALPHA, COLOR
-		trans_bg = function(_args){
-			with oDirector {
-				var _sprInd			= (array_length(_args) > 0) ? asset_get_index(_args[0]) : undefined;
-				var _imInd			= (array_length(_args) > 1) ? asset_get_index(_args[1]) : 0;
-				var _alpha			= (array_length(_args) > 2) ? asset_get_index(_args[2]) : 1;
-				var _col			= (array_length(_args) > 3) ? asset_get_index(_args[3]) : c_white;
-			
-				SceneTransitionBg(_sprInd, _imInd, _alpha, _col);
-			}
-		};
-		
-		// --- TRANSITION TO DIFFERENT BACKGROUND + CLEARING STAGE ---
+		// --- TRANSITION + BACKGROUND CHANGE + SCENE CLEAR ---
 		// BACKGROUND SPRITE, FRAME, ALPHA, COLOR
 		trans_clear = function(_args){
 			with oDirector {
@@ -247,158 +254,185 @@ with global.dataSceneScripts {
 			}
 		};
 		
+		// --- TRANSITION + BACKGROUND CHANGE - NO SCENE CLEAR - NO NEXT SCENE ---
+		// BACKGROUND SPRITE, FRAME, ALPHA, COLOR
+		trans_bg = function(_args){
+			with oDirector {
+				var _sprInd			= (array_length(_args) > 0) ? asset_get_index(_args[0]) : undefined;
+				var _imInd			= (array_length(_args) > 1) ? asset_get_index(_args[1]) : 0;
+				var _alpha			= (array_length(_args) > 2) ? asset_get_index(_args[2]) : 1;
+				var _col			= (array_length(_args) > 3) ? asset_get_index(_args[3]) : c_white;
+			
+				SceneTransitionBg(_sprInd, _imInd, _alpha, _col);
+			}
+		};
+		
 	#endregion
+	#region characters
 	
-	
-	
-	// DELAY SECONDS
-	delay = function(_args){
-		var _delay = real(_args[0]);
-		with oDirector {
-			delayTimer = _delay * game_get_speed(gamespeed_fps);
-            directorState = DirectorStateDelay;
-		}
-	};
-	
-	// CHARACTER NAME, SPRITE, FRAME
-	char_in = function(_args){
-		var _name	= _args[0];
-		var _sprInd = asset_get_index(_args[1]);
-		var _imInd	= (array_length(_args) > 2) ? int64(_args[2]) : 0;
+		// CHARACTER NAME, SPRITE, FRAME
+		char_in = function(_args){
+			var _name	= _args[0];
+			var _sprInd = asset_get_index(_args[1]);
+			var _imInd	= (array_length(_args) > 2) ? int64(_args[2]) : 0;
 		
-		with oDirector {
-			if (array_length(stageCharacters) < MAX_STAGE_CHARACTERS) {
-	            var _newCount = array_length(stageCharacters) + 1;
-	            var _spawnX   = VIEWPORT_WIDTH * (_newCount / (_newCount + 1));
+			with oDirector {
+				if (array_length(stageCharacters) < MAX_STAGE_CHARACTERS) {
+		            var _newCount = array_length(stageCharacters) + 1;
+		            var _spawnX   = VIEWPORT_WIDTH * (_newCount / (_newCount + 1));
 				
-	            array_push(stageCharacters, {
-                    charId:				_name,
-                    sprite:				_sprInd,
-					expressionFrame:	_imInd,
-                    alpha:				MIN_ALPHA,
-                    targetAlpha:		MAX_ALPHA,
-                    xPosition:			_spawnX,
-                    targetX:			_spawnX,
-                });
-	        }
-	        directorState = DirectorStateCharacterFade;
-		}
-	};
+		            array_push(stageCharacters, {
+	                    charId:				_name,
+	                    sprite:				_sprInd,
+						expressionFrame:	_imInd,
+	                    alpha:				MIN_ALPHA,
+	                    targetAlpha:		MAX_ALPHA,
+	                    xPosition:			_spawnX,
+	                    targetX:			_spawnX,
+	                });
+		        }
+		        directorState = DirectorStateCharacterFade;
+			}
+		};
 	
-	// CHARACTER NAME, SPRITE
-	char_out = function(_args){
-		var _name	= _args[0];
-		var _sprInd = (array_length(_args) > 1) ? asset_get_index(_args[1]) : noone;
+		// CHARACTER NAME, SPRITE
+		char_out = function(_args){
+			var _name	= _args[0];
+			var _sprInd = (array_length(_args) > 1) ? asset_get_index(_args[1]) : noone;
 		
-		with oDirector {
-	        for (var _i = 0; _i < array_length(stageCharacters); _i++) {
-	            // Match by NAME (ID) first, fallback to sprite reference
-	            if ((stageCharacters[_i].charId == _name) || 
-	                (stageCharacters[_i].sprite == _sprInd)) 
-				{
-	                stageCharacters[_i].targetAlpha = MIN_ALPHA;
-	                break;
-	            }
-	        }
-	        directorState = DirectorStateCharacterFade;
-		}
-	};
-	
-	// FRAME
-	main_char_in = function(_args){
-		with oDirector {
-			mainCharacter.expressionFrame = _args[0];
-			spookUp = true;
-	        mainCharacter.targetAlpha = MAX_ALPHA;
-	        directorState = DirectorStateCharacterFade;
-		}
-	};
-	
-	// NO ARGUMENTS
-	main_char_out = function(_args){
-		with oDirector {
-			spookUp = false;
-            mainCharacter.targetAlpha = MIN_ALPHA;
-            directorState = DirectorStateCharacterFade;
-		}
-	};
-	
-	// CHAR NAME, FRAME
-	char_update = function(_args){
-		with oDirector {
-			var _name = _args[0];
-			var _imInd = _args[1];
-			
-			// Main Character
-		    if (mainCharacter.charId == _name) { mainCharacter.expressionFrame = _imInd; }
-			
-			// Other Characters
-		    else
-		    {
-		        for (var _i = 0; _i < array_length(stageCharacters); _i++)
-		        {
-		            if (stageCharacters[_i].charId == _name)
-		            {
-		                stageCharacters[_i].expressionFrame = _imInd;
+			with oDirector {
+		        for (var _i = 0; _i < array_length(stageCharacters); _i++) {
+		            // Match by NAME (ID) first, fallback to sprite reference
+		            if ((stageCharacters[_i].charId == _name) || 
+		                (stageCharacters[_i].sprite == _sprInd)) 
+					{
+		                stageCharacters[_i].targetAlpha = MIN_ALPHA;
 		                break;
 		            }
 		        }
-		    }
+		        directorState = DirectorStateCharacterFade;
+			}
+		};
+	
+		// FRAME
+		main_char_in = function(_args){
+			with oDirector {
+				mainCharacter.expressionFrame = _args[0];
+				spookUp = true;
+		        mainCharacter.targetAlpha = MAX_ALPHA;
+		        directorState = DirectorStateCharacterFade;
+			}
+		};
+	
+		// NO ARGUMENTS
+		main_char_out = function(_args){
+			with oDirector {
+				spookUp = false;
+	            mainCharacter.targetAlpha = MIN_ALPHA;
+	            directorState = DirectorStateCharacterFade;
+			}
+		};
+	
+		// CHAR NAME, FRAME
+		char_update = function(_args){
+			with oDirector {
+				var _name = _args[0];
+				var _imInd = _args[1];
 			
-		    LineProgress();
-		}
-	};
-	
-	// CHOICE NAMES AS SET IN global.dataChoices
-	choice = function(_args){
-		with oDirector {
-			ChoiceStart(_args);
-		}
-	};
-	
-	// --- PROGRESSES LINE FURTHER ---
-	// SCRIPT, ARGS
-	custom_script_continue = function(_args){
-		with oDirector {
-			var _scr = asset_get_index(_args[0]);
-			_args = array_delete(_args, 0, 1);
-			_scr(_args);
+				// Main Character
+			    if (mainCharacter.charId == _name) { mainCharacter.expressionFrame = _imInd; }
 			
-			LineProgress();
-		}
-	};
+				// Other Characters
+			    else
+			    {
+			        for (var _i = 0; _i < array_length(stageCharacters); _i++)
+			        {
+			            if (stageCharacters[_i].charId == _name)
+			            {
+			                stageCharacters[_i].expressionFrame = _imInd;
+			                break;
+			            }
+			        }
+			    }
+			
+			    LineProgress();
+			}
+		};
+		
+	#endregion
+	#region triggers
 	
-	// --- STOPS AT THE CURRENT LINE ---
-	// SCRIPT, ARGS
-	custom_script_stop = function(_args){
-		with oDirector {
-			var _scr = asset_get_index(_args[0]);
-			_args = array_delete(_args, 0, 1);
-			_scr(_args);
-		}
-	};
+		// CHOICE NAMES AS SET IN global.dataChoices
+		choice = function(_args){
+			with oDirector {
+				ChoiceStart(_args);
+			}
+		};
 	
-	//SOUND NAME
-	music = function(_args){
-		with oDirector {
-			var _song = asset_get_index(_args[0]);
-			AmbientChange(AMBIENT_MUSIC, _song, DEFAULT_VOLUME_PERCENT);
-			LineProgress();
-		}
-	};
+		// --- PROGRESSES LINE FURTHER ---
+		// SCRIPT, ARGS
+		custom_script_continue = function(_args){
+			with oDirector {
+				var _scr = asset_get_index(_args[0]);
+				_args = array_delete(_args, 0, 1);
+				_scr(_args);
+			
+				LineProgress();
+			}
+		};
 	
-	//CONDITION
-	condition = function(_args){
-		with oDirector {
-			var _scr = asset_get_index(_args[0]);
-			var _conditionTrue = _scr();
-			if (_conditionTrue) { SceneStart(_args[1]); }
-			else { SceneStart(_args[2]); }
+		// --- STOPS AT THE CURRENT LINE (IF NO CHANGES WITHIN SCRIPT, WILL READ THE COMMAND AS TEXT ON SCREEN) ---
+		// SCRIPT, ARGS
+		custom_script_stop = function(_args){
+			with oDirector {
+				var _scr = asset_get_index(_args[0]);
+				_args = array_delete(_args, 0, 1);
+				_scr(_args);
+			}
+		};
+		
+		// --- CONDITION THAT CHECKS A FLAG ---
+		//CONDITION
+		condition_flag = function(_args){
+			with oDirector {
+				if (struct_get(global.flags,_args[0])) { 
+					LineProgress(1); 
+				} else LineProgress(2);
+			}
 		}
 		
-	}
+		// --- CONDITION THAT CHECKS A CUSTOM SCRIPT ---
+		//CONDITION
+		condition_script = function(_args){
+			with oDirector {
+				var _scr = asset_get_index(_args[0]);
+				if _scr() { 
+					LineProgress(1); 
+				} else LineProgress(2);
+			}
+		}
+		
+	#endregion
+	#region misc
 	
-	
-	
+		// DELAY SECONDS
+		delay = function(_args){
+			var _delay = real(_args[0]);
+			with oDirector {
+				delayTimer = _delay * game_get_speed(gamespeed_fps);
+	            directorState = DirectorStateDelay;
+			}
+		};
+		
+		//SOUND NAME
+		music = function(_args){
+			with oDirector {
+				var _song = asset_get_index(_args[0]);
+				AmbientChange(AMBIENT_MUSIC, _song, DEFAULT_VOLUME_PERCENT);
+				LineProgress();
+			}
+		};
+		
+	#endregion
 	
 }

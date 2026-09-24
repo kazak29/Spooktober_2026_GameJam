@@ -1,7 +1,15 @@
 SCENE NAME,LINE TITLE - ENGLISH,LINE TEXT - ENGLISH
 testScene,,"bg_set,sBackgroundGray"
-testScene,Empty,.
+testScene,,"main_char_in,0"
+testScene,,"char_in,Barry,sBarry,0"
+testScene,Empty,[c_yellow][wave]test test[/wave][/c]test test
 testScene,,map
+testScene,,"condition_flag,day1_clear"
+testScene,,"scene_set,shayHome_Day1_Visit3_Bar_Path4"
+testScene,,"scene_set,shayHome_Day1_Visit3_Bar_Path5"
+testScene,,"condition_flag,day1_clear"
+testScene,,"choice,intro0,intro1"
+testScene,,
 ,,
 intro,,"bg_set,sBackgroundShayHome"
 intro,,"music,bgmSpookTheme"
@@ -57,7 +65,7 @@ introShayRoomDay,Shay,"Okaaay. Love you, mom"
 introShayRoomDay,Mom,"Love you too, pumpkin!"
 introShayRoomDay,,"char_in,Shay,sShay,2"
 introShayRoomDay,,"char_update,Spook,0"
-introShayRoomDay,Shay,"[play_sound,sfxDoorClose]Uuuugh!"
+introShayRoomDay,Shay,"[sound,sfxDoorClose]Uuuugh!"
 introShayRoomDay,Shay,This is horrible!
 introShayRoomDay,Shay,How am I gonna spend an entire night with people I don't even know?!
 introShayRoomDay,Shay,This is gonna be a disaster!
@@ -129,7 +137,7 @@ introShayRoomNight,Spook,"...Yeah, okay"
 introShayRoomNight,,"trans_scene,introCageOpen,sBackgroundBlack"
 ,,
 introCageOpen,,"trans_clear,sBackgroundBlack"
-introCageOpen,???,"[play_sound,sfxCageOpen]Yeaaah! Now we're talkin'."
+introCageOpen,???,"[sound,sfxCageOpen]Yeaaah! Now we're talkin'."
 introCageOpen,,"trans_scene,introScrewdriver,sBackgroundCageNight"
 ,,
 introScrewdriver,,"music,bgmStrayRatStrut"
@@ -410,7 +418,9 @@ shayHome_Day1_Visit3_Bar_Path2,Barry,Toast!
 shayHome_Day1_Visit3_Bar_Path2,Spook,Happy best holiday ever!
 shayHome_Day1_Visit3_Bar_Path2,,"scene_set,shayHome_Day1_Visit3_Bar_Path3"
 ,,
-shayHome_Day1_Visit3_Bar_Path3,,"condition,DayOneAllLocationsCleared,shayHome_Day1_Visit3_Bar_Path4,shayHome_Day1_Visit3_Bar_Path5"
+shayHome_Day1_Visit3_Bar_Path3,,"condition_flag,day1_clear"
+shayHome_Day1_Visit3_Bar_Path3,,"scene_set,shayHome_Day1_Visit3_Bar_Path4"
+shayHome_Day1_Visit3_Bar_Path3,,"scene_set,shayHome_Day1_Visit3_Bar_Path5"
 ,,
 shayHome_Day1_Visit3_Bar_Path4,Pogo,"Ahem! I'm calling it a night! Are you going home yet, Spook?"
 shayHome_Day1_Visit3_Bar_Path4,,"choice,shayHome_Day1_Visit3_Bar3"

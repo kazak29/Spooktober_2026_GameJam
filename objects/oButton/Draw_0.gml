@@ -7,5 +7,5 @@ if active {
 	
 	}
 
-	scribId.blend(_c, 1).draw(strX, strY);
+	scribId.blend(_c, 1).sdf_outline(c_black,1).draw(strX, strY);
 }

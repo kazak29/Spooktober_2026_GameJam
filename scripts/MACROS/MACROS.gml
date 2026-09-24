@@ -90,7 +90,7 @@
 	#macro CHARACTER_BOUNCE_HEIGHT   -6
 	#macro CHARACTER_BOUNCE_SPEED   0.5
 	
-	#macro DEFAULT_NODE_DELAY 0.5
+	#macro DEFAULT_DELAY 0.5
 	
 	#macro MAX_STAGE_CHARACTERS 3
 	
@@ -105,7 +105,7 @@
 
 #region colors
 	
-	#macro COL_MENU_OPTION_DEFAULT		c_white
+	#macro COL_MENU_OPTION_DEFAULT		c_black
 	#macro COL_MENU_OPTION_SELECTED		c_yellow
 	#macro COL_MENU_OPTION_HOVER		c_orange
 	#macro COL_MENU_OPTION_DISABLED		c_dkgray

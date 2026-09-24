@@ -4,9 +4,8 @@ if sprite_exists(bg.sprInd) {
 	}
 }
 
-if (currentSceneId != noone)
+if (currentSceneName != noone)
 {
-	//DrawSceneBackground();
 	
 	DrawCharacterPortraits();
 	
@@ -18,7 +17,6 @@ if (currentSceneId != noone)
 	
 	DrawMainCharacterPortrait();
 }
-//if (directorState == DirectorStateChoice) { DrawChoices(); }
 
 with oChoice {
 	var _selected = (num == other.choice.num);
@@ -47,16 +45,6 @@ if (instance_exists(oTextLog))
 	DrawTextlog();
 }
 
-
-// Fade between scenes
-//if (fadeAlpha > MIN_ALPHA)
-//{
-//    draw_set_color(c_black);
-//    draw_set_alpha(fadeAlpha);
-//    draw_rectangle(0, 0, VIEWPORT_WIDTH, VIEWPORT_HEIGHT, false);
-//    draw_set_alpha(MAX_ALPHA);
-//    draw_set_color(c_white);
-//}
 with oSceneTransition {
 	draw_set_color(c_black);
     draw_set_alpha(alpha);
