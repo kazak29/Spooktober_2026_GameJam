@@ -590,14 +590,14 @@ houseAcross_Day1_Visit1_Path2,,map
 ,,
 ,,
 ,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
+houseAcross_Day1_Visit2,,"trans_clear,sBackgroundGray"
+houseAcross_Day1_Visit2,,"music,bgmHouseAcross"
+houseAcross_Day1_Visit2,,"main_char_in,0"
+houseAcross_Day1_Visit2,,"char_in,Giant Rabbit,sDipper,0"
+houseAcross_Day1_Visit2,Giant Rabbit,Snorrr
+houseAcross_Day1_Visit2,Spook,Can't get in this time...
+houseAcross_Day1_Visit2,Spook,Maybe I should try again during the day.
+houseAcross_Day1_Visit2,,map
 ,,
 ,,
 ,,
