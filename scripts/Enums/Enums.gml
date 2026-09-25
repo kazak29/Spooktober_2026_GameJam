@@ -7,7 +7,20 @@
 	}
 	
 #endregion
+#region map locations
 
+	enum MAP_LOCATION {
+		HOME,
+		BAR,
+		STREET,
+		HOUSE_ACROSS_YARD,
+		HOUSE_ACROSS_FRONT,
+		LAMP,
+	
+		HEIGHT
+	}
+	
+#endregion
 #region menu
 
 	enum MENU_ELEMENT_TYPE {

@@ -46,6 +46,7 @@
 	
 	global.gamePaused = false;
 	global.menuPages = MenuDataCreate();
+	global.dataMapLocations = MapDataCreate();
 	
 #endregion
 #region sound

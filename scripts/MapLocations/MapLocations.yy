@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"LoadMapLocations",
+  "%Name":"MapLocations",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"LoadMapLocations",
+  "name":"MapLocations",
   "parent":{
     "name":"Map",
     "path":"folders/Scripts/Loading/Map.yy",

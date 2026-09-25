@@ -1,39 +1,51 @@
-
-//if (oInputManager.pressed.select && !instance_exists(oMenu))
-//{
-//	if (!instance_exists(oTextLog)) { global.textLogInst = instance_create_layer(0, 0, SYSTEM_LAYER, oTextLog); }
-//	else { instance_destroy(global.textLogInst); }
-//}
-
-// Prevent navigation if the log or the menu are up
-if (instance_exists(oTextLog) || instance_exists(oMenu)) { exit; }
+if global.midTransition || global.gamePaused exit;
+mouseHover = false;
+var _locsL = array_length(locs);
+var _sfx = "";
 
 
-
-// Menu Navigation
-if (oInputManager.pressed.up) {
-    selectedIndex = (selectedIndex - 1 + locationCount) % locationCount;
-}
-if (oInputManager.pressed.down) {
-    selectedIndex = (selectedIndex + 1) % locationCount;
+var _numUpdate = function(_amount){
+	numProgress(_amount);
+	while !locCheck(num) numProgress(_amount);
 }
 
-var _location = locations[selectedIndex];
+//discreet navigation
+var _pressV = oInputManager.pressed.down - oInputManager.pressed.up;
+var _pressH = oInputManager.pressed.right - oInputManager.pressed.left;
+if _pressV != 0 || _pressH != 0 {
+	_numUpdate(_pressV);
+	_numUpdate(_pressH);
+	_sfx = "hover";
+}
 
-//var _mouseClicked = position_meeting(mouse_x, mouse_y, _location) && mouse_check_button_pressed(mb_left);
-var _confirmed = oInputManager.pressed.confirm; //|| _mouseClicked;
+//mouse hover
+for (var i = 0; i < _locsL; i++) {
+	with locs[i] {
+		if other.locCheck(i) && oInputManager.MouseHoverRectangle(x1,y1,x2,y2) {
+			if (other.num != i) _sfx = "hover";
+			other.num = i;
+			other.mouseHover = true;
+		}
+	}
+}
 
-if (_confirmed) {
-    if (!_location.isLocked) {
-		// Textlog: Add location selected to the log
-		AddToTextLog({ title: "Location Selected", text: _location.locationName });
-		//show_debug_message(string(global.textLog));
-        //show_debug_message("Loading scene: " + string(_currentLoc.activeScene) + " for " + _currentLoc.locationName);
-        
-		global.sceneToPlay = _location.scenes[_location.activeScene];
-		AmbientChange(AMBIENT_MUSIC, noone);
-		TransitionStart(rmStage, sqFadeOut, sqFadeIn);
-    } else {
-        show_debug_message(_currentLoc.locationName + " is locked!");
-    }
+//inputs
+var _pressed = oInputManager.pressed.confirm  || (oInputManager.mouse.pressed.left && mouseHover);
+if _pressed {
+	
+	var _scene = locs[num].scene;
+	//_scene = string_split(_scene,","); add choices here maybe probably someday later
+	
+	AddToTextLog({ title: "Location Selected", text: locs[num].title });
+	AmbientChange(AMBIENT_MUSIC, noone);
+	
+	global.sceneToPlay = _scene;
+	TransitionStart(rmStage, sqFadeOut, sqFadeIn);
+	
+	_sfx = "click";
+}
+		
+switch _sfx {
+	case "hover": uiSfxPlayHover(); break;
+	case "click": uiSfxPlayClick(); break;
 }

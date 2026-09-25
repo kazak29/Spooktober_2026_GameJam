@@ -1,35 +1,19 @@
 AmbientChange(AMBIENT_MUSIC, bgmMapTheme);
+num = 0;
+mouseHover = false;
 
-marginRight = 10;
-marginTop = 10;
-boxWidth = 100;
-boxHeight = 30;
+locs = [];
+with global.dataMapLocations {
+	other.locs = [home, bar, street, houseAcrossYard, houseAcrossFront, lamp];
+}
 
-selectedIndex = 0;
+locCheck = function(_num){
+	if is_string(locs[_num].scene) && !locs[_num].locked return true;
+	return false;
+}
 
-locations = LoadMapLocations();
-locationCount = array_length(locations);
-
-buttonX = VIEWPORT_WIDTH - 600;
-
-
-//for (var _i = 0; _i < locationCount; _i++)
-//{
-    //var _locationData = locations[_i];
-    // Run script evaluation once at creation if a script exists
-    //if (_inst.sceneSelectionScript != noone && script_exists(_inst.sceneSelectionScript))
-    //{
-    //    var _sceneIndex = script_execute(_inst.sceneSelectionScript);
-        
-        // Clamp bounds safety check
-    //    if (_sceneIndex >= 0 && _sceneIndex < array_length(_inst.scenes)) {
-    //        _inst.activeScene = _inst.scenes[_sceneIndex];
-    //    } else {
-    //        _inst.activeScene = _inst.scenes[0];
-    //    }
-    //}
-    //else if (array_length(_inst.scenes) > 0)
-    //{
-    //    _inst.activeScene = _inst.scenes[0]; // Default fallback
-    //}
-//}
+numProgress = function(_amount){
+	num += _amount;
+	if (num > array_length(locs) - 1)	{ num = 0;						}
+	if (num < 0)						{ num = array_length(locs) - 1;	}
+}
