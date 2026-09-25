@@ -1,3 +1,5 @@
+global.gamePaused = false;
+
 var _buttonSettings = function() {
 	instance_create_layer(
 		VIEWPORT_WIDTH - 80,
