@@ -32,14 +32,14 @@ function LoadMapLocations ()
 		},
 		{
 			locationName: "House Across (Front)",
-			scenes: ["emptyScene"],
+			scenes: ["houseAcross_Day1_Visit1", "houseAcross_Day1_Visit2"],
 			activeScene: 0,
 			sceneSelectionScript: noone,
 			isLocked: false
 		},
 		{
 			locationName: "Light Post",
-			scenes: ["lampPost_Day1_Visit1", "lampPost_Day1_Visit2"],
+			scenes: ["lampPost_Day1_Visit2", "lampPost_Day1_Visit1"],
 			activeScene: 0,
 			sceneSelectionScript: noone,
 			isLocked: false

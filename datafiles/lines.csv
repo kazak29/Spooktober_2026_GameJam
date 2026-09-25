@@ -1,4 +1,7 @@
 SCENE NAME,LINE TITLE - ENGLISH,LINE TEXT - ENGLISH
+rocketTestScene,Empty,.
+rocketTestScene,,map
+,,
 testScene,,"bg_set,sBackgroundGray"
 testScene,,"main_char_in,0"
 testScene,,"char_in,Barry,sBarry,0"
@@ -280,7 +283,7 @@ shayHome_Day1_Visit3_Path1,,"trans_scene,shayHome_Day1_Visit3_HouseAcross,sBackg
 shayHome_Day1_Visit3_Path2,,"music,noone"
 shayHome_Day1_Visit3_Path2,,map
 ,,
-shayHome_Day1_Visit3_HouseAcross,,"music,bgmHouseAcross"
+shayHome_Day1_Visit3_HouseAcross,,"music,bgmHouseAcrossSneakIn"
 shayHome_Day1_Visit3_HouseAcross,,"main_char_in,0"
 shayHome_Day1_Visit3_HouseAcross,,"char_in,Screwdriver,sScrewdriver,0"
 shayHome_Day1_Visit3_HouseAcross,Screwdriver,"Candy, candy, sweet candy!"
@@ -309,7 +312,7 @@ shayHome_Day1_Visit3_HouseAcross_GotCandy,,"char_update,Spook,8"
 shayHome_Day1_Visit3_HouseAcross_GotCandy,Screwdriver,QUICK!!!
 shayHome_Day1_Visit3_HouseAcross_GotCandy,,"trans_scene,shayHome_Day1_Visit3_HouseAcross_FadeOut2,sBackgroundBlack"
 ,,
-shayHome_Day1_Visit3_HouseAcross_FadeOut2,Empty,*Barking*[barking_sound]
+shayHome_Day1_Visit3_HouseAcross_FadeOut2,Empty,"*Barking*[sound,sfxPrincessBark]"
 shayHome_Day1_Visit3_HouseAcross_FadeOut2,,"delay,2"
 shayHome_Day1_Visit3_HouseAcross_FadeOut2,,"trans_scene,shayHome_Day1_Visit3_Bar,sBackgroundSewerBar"
 shayHome_Day1_Visit3_HouseAcross_FadeOut2,,"music,noone"
@@ -446,7 +449,21 @@ shayHome_Day1_Visit3_Bar_Path7,,<TODO: Lock the home location at this point>
 shayHome_Day1_Visit3_Bar_Path7,,map
 ,,
 ,,
+,,"trans_clear,sBackgroundSewerBar"
+sewerBar_Day1_Visit1,,"music,bgmSewerBar"
+sewerBar_Day1_Visit1,,"main_char_in,0"
+sewerBar_Day1_Visit1,,"char_in,Barry,sBarry,0"
+sewerBar_Day1_Visit1,Barry,Hey kid.
+sewerBar_Day1_Visit1,Barry,"It's your first night out, hm? Are you excited?"
+sewerBar_Day1_Visit1,,"choice,sewerBar0,sewerBar1"
+sewerBar_Day1_Visit1,,"scene_set,sewerBar_Day1_Visit1_Path1"
+sewerBar_Day1_Visit1,,"scene_set,sewerBar_Day1_Visit1_Path2"
 ,,
+sewerBar_Day1_Visit1_Path1,Barry,"That's okay, friend."
+sewerBar_Day1_Visit1_Path1,Barry,"The streets might seem dangerous at night, but for us pests, it's full of danger during the day, too."
+sewerBar_Day1_Visit1_Path1,,
+sewerBar_Day1_Visit1_Path1,,
+sewerBar_Day1_Visit1_Path1,,
 ,,
 ,,
 ,,
@@ -459,6 +476,7 @@ shayHome_Day1_Visit3_Bar_Path7,,map
 ,,
 ,,
 ,,
+sewerBar_Day1_Visit1_Path2,,
 ,,
 ,,
 ,,
@@ -568,26 +586,41 @@ shayHome_Day1_Visit3_Bar_Path7,,map
 ,,
 ,,
 ,,
+houseAcross_Day1_Visit1,,"trans_clear,sBackgroundGray"
+houseAcross_Day1_Visit1,,"music,bgmHouseAcross"
+houseAcross_Day1_Visit1,,"main_char_in,0"
+houseAcross_Day1_Visit1,Spook,Whoa! What a large house!
+houseAcross_Day1_Visit1,???,Snorrrrrr
+houseAcross_Day1_Visit1,,"char_in,Giant Rabbit,sDipper,0"
+houseAcross_Day1_Visit1,Giant Rabbit,Snorrrrrrrrrrrr
+houseAcross_Day1_Visit1,,"char_update,Spook,8"
+houseAcross_Day1_Visit1,Spook,WHOA! WHAT A LARGE RABBIT!
+houseAcross_Day1_Visit1,Spook,Um...
+houseAcross_Day1_Visit1,,"choice,houseAcross0,houseAcross1"
+houseAcross_Day1_Visit1,,"scene_set,houseAcross_Day1_Visit1_Path1"
+houseAcross_Day1_Visit1,,"scene_set,houseAcross_Day1_Visit1_Path2"
 ,,
+houseAcross_Day1_Visit1_Path1,,"char_update,Spook,0"
+houseAcross_Day1_Visit1_Path1,Spook,"Excuse me, um, Mr. Rabbit? Could you please move aside?"
+houseAcross_Day1_Visit1_Path1,Giant Rabbit,Snorrrrrrr
+houseAcross_Day1_Visit1_Path1,Empty,"You try to push him, but the rabbit doesn't move an inch!"
+houseAcross_Day1_Visit1_Path1,,"choice,houseAcross1"
+houseAcross_Day1_Visit1_Path1,,"scene_set,houseAcross_Day1_Visit1_Path2"
 ,,
+houseAcross_Day1_Visit1_Path2,Empty,"You try every window you can climb to, but the house seems heavily guarded!"
+houseAcross_Day1_Visit1_Path2,Empty,"Maybe try again during the day, when the rabbit is awake."
+houseAcross_Day1_Visit1_Path2,,map
 ,,
 ,,
 ,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
+houseAcross_Day1_Visit2,,"trans_clear,sBackgroundGray"
+houseAcross_Day1_Visit2,,"music,bgmHouseAcross"
+houseAcross_Day1_Visit2,,"main_char_in,0"
+houseAcross_Day1_Visit2,,"char_in,Giant Rabbit,sDipper,0"
+houseAcross_Day1_Visit2,Giant Rabbit,Snorrr
+houseAcross_Day1_Visit2,Spook,Can't get in this time...
+houseAcross_Day1_Visit2,Spook,Maybe I should try again during the day.
+houseAcross_Day1_Visit2,,map
 ,,
 ,,
 ,,
