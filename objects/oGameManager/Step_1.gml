@@ -18,9 +18,9 @@ if global.cheat {
 //ui buttons
 var _but = noone;
 with oButton {
-	var _exceptionMenu = instance_exists(oMenu) && scr != uiButtonSettings;
+	//var _exceptionMenu = instance_exists(oMenu) && scr != uiButtonSettings;	onlu if menu is above button itself
 	
-	if active && uiMouseCollision(id) && !_exceptionMenu {
+	if active && uiMouseCollision(id) {
 		_but = id;
 		break;
 	}
