@@ -6,11 +6,11 @@ testScene,,"bg_set,sBackgroundGray"
 testScene,,"main_char_in,0"
 testScene,,"char_in,Barry,sBarry,0"
 testScene,Empty,[c_yellow][wave]test test[/wave][/c]test test
-testScene,,"choice,intro0,intro1"
+testScene,,map
+testScene,,
+testScene,,"choice,intro0,intro1,shayHome0,shayHome1"
 testScene,,"trans_scene,shayHome_Day1_Visit3_Path1"
 testScene,,"trans_bg,shayHome_Day1_Visit3_Path2"
-testScene,,
-testScene,,
 testScene,,
 testScene,,
 ,,

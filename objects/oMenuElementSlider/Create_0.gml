@@ -21,7 +21,7 @@ percentShift = 64*image_xscale;
 //hover zone
 hoverShift = {
 	left:	32*image_xscale,
-	right:	32*image_xscale + percentShift + string_width($"-100.00%"),
+	right:	32*image_xscale + percentShift + string_width($"-100%"),
 	top:	24*image_yscale,
 	bottom: 24*image_yscale,
 };
