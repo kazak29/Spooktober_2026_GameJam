@@ -32,7 +32,7 @@ function LoadMapLocations ()
 		},
 		{
 			locationName: "House Across (Front)",
-			scenes: ["houseAcross_Day1_Visit2", "houseAcross_Day1_Visit1"],
+			scenes: ["houseAcross_Day1_Visit1", "houseAcross_Day1_Visit2"],
 			activeScene: 0,
 			sceneSelectionScript: noone,
 			isLocked: false

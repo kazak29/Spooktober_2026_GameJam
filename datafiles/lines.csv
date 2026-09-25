@@ -449,11 +449,34 @@ shayHome_Day1_Visit3_Bar_Path7,,<TODO: Lock the home location at this point>
 shayHome_Day1_Visit3_Bar_Path7,,map
 ,,
 ,,
+,,"trans_clear,sBackgroundSewerBar"
+sewerBar_Day1_Visit1,,"music,bgmSewerBar"
+sewerBar_Day1_Visit1,,"main_char_in,0"
+sewerBar_Day1_Visit1,,"char_in,Barry,sBarry,0"
+sewerBar_Day1_Visit1,Barry,Hey kid.
+sewerBar_Day1_Visit1,Barry,"It's your first night out, hm? Are you excited?"
+sewerBar_Day1_Visit1,,"choice,sewerBar0,sewerBar1"
+sewerBar_Day1_Visit1,,"scene_set,sewerBar_Day1_Visit1_Path1"
+sewerBar_Day1_Visit1,,"scene_set,sewerBar_Day1_Visit1_Path2"
+,,
+sewerBar_Day1_Visit1_Path1,Barry,"That's okay, friend."
+sewerBar_Day1_Visit1_Path1,Barry,"The streets might seem dangerous at night, but for us pests, it's full of danger during the day, too."
+sewerBar_Day1_Visit1_Path1,,
+sewerBar_Day1_Visit1_Path1,,
+sewerBar_Day1_Visit1_Path1,,
 ,,
 ,,
 ,,
 ,,
 ,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+sewerBar_Day1_Visit1_Path2,,
 ,,
 ,,
 ,,
@@ -598,29 +621,6 @@ houseAcross_Day1_Visit2,Giant Rabbit,Snorrr
 houseAcross_Day1_Visit2,Spook,Can't get in this time...
 houseAcross_Day1_Visit2,Spook,Maybe I should try again during the day.
 houseAcross_Day1_Visit2,,map
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
 ,,
 ,,
 ,,
