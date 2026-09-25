@@ -194,6 +194,45 @@
 global.dataSceneCommands = {};
 with global.dataSceneCommands {
 	
+	#region map
+	
+		// --- TRIGGERS TRANSITION TO MAP ---
+		// NO ARGUMENTS
+		map = function(_args){
+			SceneToMap();
+		};
+		
+		// --- SET TARGET SCENE FOR A MAP LOCATION ---
+		// LOCATION NAME - AS SET IN global.dataMapLocations, SCENE NAME
+		map_scene = function(_args){
+			var _locName = _args[0];
+			var _sceneName = _args[1];
+			
+			global.dataMapLocations[$ _locName].scene = _sceneName;
+			with oDirector { LineProgress(); }
+		};
+		
+		// --- SET VISITED FLAG, WHICH CHANGES DEFAULT LOCATION COLOR ---
+		// LOCATION NAME, SCENE NAME
+		map_visited = function(_args){
+			var _locName = _args[0];
+			var _visited = _args[1];
+			
+			global.dataMapLocations[$ _locName].visited = (_visited == ("true" || "1"));
+			with oDirector { LineProgress(); }
+		}
+		
+		// --- SET LOCKED FLAG ---
+		// LOCATION NAME, SCENE NAME
+		map_lock = function(_args){
+			var _locName = _args[0];
+			var _lock = _args[1];
+			
+			global.dataMapLocations[$ _locName].locked = (_lock == ("true" || "1"));
+			with oDirector { LineProgress(); }
+		}
+		
+	#endregion
 	#region QUICK CHANGES WITH NO DIRECTOR TRANSITIONS
 		
 		// --- CHANGES SCENE IN 1 FRAME ---
@@ -219,12 +258,6 @@ with global.dataSceneCommands {
 				BackgroundSet(_sprInd, _imInd, _alpha, _col);
 				LineProgress();
 			}
-		};
-		
-		// --- TRIGGERS TRANSITION TO MAP ---
-		// NO ARGUMENTS
-		map = function(_args){
-			SceneToMap();
 		};
 		
 	#endregion

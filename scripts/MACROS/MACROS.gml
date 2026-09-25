@@ -111,6 +111,11 @@
 	#macro COL_UI_BUTTON_DEFAULT		c_white
 	#macro COL_UI_BUTTON_HOVER			c_orange
 	
+	#macro COL_MAP_DEFAULT				c_white
+	#macro COL_MAP_LOCKED				c_black
+	#macro COL_MAP_VISITED				c_dkgray
+	#macro COL_MAP_HOVER				c_red
+	
 #endregion
 #region menu
 	

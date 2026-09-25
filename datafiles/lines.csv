@@ -7,12 +7,14 @@ testScene,,"main_char_in,0"
 testScene,,"char_in,Barry,sBarry,0"
 testScene,Empty,[c_yellow][wave]test test[/wave][/c]test test
 testScene,,map
-testScene,,
-testScene,,"choice,intro0,intro1,shayHome0,shayHome1"
-testScene,,"trans_scene,shayHome_Day1_Visit3_Path1"
-testScene,,"trans_bg,shayHome_Day1_Visit3_Path2"
-testScene,,
-testScene,,
+,,
+testScene1,,"map_scene,home,rocketTestScene"
+testScene1,,"map_visited,bar,true"
+testScene1,,"map_lock,street,true"
+testScene1,Empty,test scene 1
+testScene1,,map
+testScene1,,
+testScene1,,
 ,,
 intro,,"bg_set,sBackgroundShayHome"
 intro,,"music,bgmSpookTheme"

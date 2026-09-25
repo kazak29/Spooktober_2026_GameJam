@@ -35,6 +35,13 @@ menuCrtRoll,Rolling Band
 buttonSettings,SETTINGS
 buttonTextlog,TEXT LOG
 ,
+mapHome,Home
+mapBar,Sewer Bar
+mapHouseAcrossYard,House Across – Yard
+mapHouseAcrossFront,House Across – Front
+mapStreet,Main Street
+mapLamp,Lamp Post
+,
 intro0,Squeak (Reassuringly)
 intro1,Squeak (Hungrily)
 ,

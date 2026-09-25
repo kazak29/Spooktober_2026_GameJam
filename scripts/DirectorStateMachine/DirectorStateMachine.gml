@@ -111,8 +111,7 @@ function DirectorStateChoice()
 		}
 		
 		//inputs
-		var _mouseEmpty	= !mouseHover;	//hovering empty space on screen
-		var _pressedMain = oInputManager.pressed.confirm  || (oInputManager.mouse.pressed.left && !_mouseEmpty);
+		var _pressedMain = oInputManager.pressed.confirm  || (oInputManager.mouse.pressed.left && mouseHover);
 		if _pressedMain {
 			with oDirector {
 				AddToTextLog({ title: "Choice Selected", text: choice.elements[choice.num].title }); 
