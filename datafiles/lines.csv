@@ -1,4 +1,7 @@
 SCENE NAME,LINE TITLE - ENGLISH,LINE TEXT - ENGLISH
+rocketTestScene,Empty,.
+rocketTestScene,,map
+,,
 testScene,,"bg_set,sBackgroundGray"
 testScene,,"main_char_in,0"
 testScene,,"char_in,Barry,sBarry,0"
@@ -280,7 +283,7 @@ shayHome_Day1_Visit3_Path1,,"trans_scene,shayHome_Day1_Visit3_HouseAcross,sBackg
 shayHome_Day1_Visit3_Path2,,"music,noone"
 shayHome_Day1_Visit3_Path2,,map
 ,,
-shayHome_Day1_Visit3_HouseAcross,,"music,bgmHouseAcross"
+shayHome_Day1_Visit3_HouseAcross,,"music,bgmHouseAcrossSneakIn"
 shayHome_Day1_Visit3_HouseAcross,,"main_char_in,0"
 shayHome_Day1_Visit3_HouseAcross,,"char_in,Screwdriver,sScrewdriver,0"
 shayHome_Day1_Visit3_HouseAcross,Screwdriver,"Candy, candy, sweet candy!"
@@ -560,8 +563,7 @@ shayHome_Day1_Visit3_Bar_Path7,,map
 ,,
 ,,
 ,,
-,,
-,,
+houseAcross_Day1_Visit1,,"trans_clear,sBackgroundGray"
 ,,
 ,,
 ,,
