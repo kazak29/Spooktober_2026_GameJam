@@ -365,7 +365,7 @@ with global.dataSceneCommands {
 	#endregion
 	#region triggers
 	
-		// CHOICE NAMES AS SET IN global.dataChoices
+		// BUTTON NAMES AS SET IN global.uiData
 		choice = function(_args){
 			with oDirector {
 				ChoiceStart(_args);

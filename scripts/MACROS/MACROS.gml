@@ -94,8 +94,6 @@
 	
 	#macro MAX_STAGE_CHARACTERS 3
 	
-	#macro CHOICE_Y_SPACING 100
-	
 	#macro DELAY        "delay"
 	#macro SPRITE       "sprite"
 	#macro CHARACTERS   "characters"
@@ -108,7 +106,7 @@
 	#macro COL_MENU_OPTION_DEFAULT		c_black
 	#macro COL_MENU_OPTION_SELECTED		c_yellow
 	#macro COL_MENU_OPTION_HOVER		c_orange
-	#macro COL_MENU_OPTION_DISABLED		c_dkgray
+	#macro COL_MENU_OPTION_DISABLED		c_gray
 	
 	#macro COL_UI_BUTTON_DEFAULT		c_white
 	#macro COL_UI_BUTTON_HOVER			c_orange

@@ -43,11 +43,13 @@ function MenuDataCreate() {
 				pageNamePrev:	"main",
 				layout:			MENU_LAYOUT.TITLE_SETTINGS,
 				font:			FONT_CONSOLE_24,
-				bg:				{
-					active: true,
-					offset: 32,
-					sprInd:	sChoiceBox,
-				},
+				bg: noone,
+				//bg:				{
+				//	active: true,
+				//	offset: 32,
+				//	sprInd:	sChoiceBox,
+				//},
+				//spr: noone,
 				spr:			{
 					ind:		sChoiceBox,
 					bufferStrX:	32,
@@ -124,15 +126,17 @@ function MenuDataCreate() {
 				pageNamePrev:	"settings",
 				layout:			MENU_LAYOUT.TITLE_SETTINGS,
 				font:			FONT_CONSOLE_24,
-				bg:				{
-					active: true,
-					offset: 32,
-					sprInd:	sChoiceBox,
-				},
+				bg: noone,
+				//bg:				{
+				//	active: true,
+				//	offset: 32,
+				//	sprInd:	sChoiceBox,
+				//},
+				//spr: noone,
 				spr:			{
 					ind:		sChoiceBox,
 					bufferStrX:	32,
-					bufferStrY: 8,
+					bufferStrY: 16,
 					bufferElem: 0,
 				},
 				elements:		[

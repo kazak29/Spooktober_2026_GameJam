@@ -5,8 +5,7 @@ directorStatePrev = directorState;
 delayTimer = 0;
 
 // Line Sequence
-typist = scribble_typist();
-typist.in(TYPIST_SPEED, TYPIST_SMOOTHNESS);
+typist = scribble_typist().in(TYPIST_SPEED, TYPIST_SMOOTHNESS);
 currentLineSequence = [];
 currentLineIndex = 0;
 

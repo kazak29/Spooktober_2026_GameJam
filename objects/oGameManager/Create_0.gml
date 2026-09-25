@@ -1,3 +1,11 @@
+#region debug
+	
+	//randomise();
+	global.cheat = true;
+	global.cheatcode = "bees";
+	global.showDebugUI = false;
+
+#endregion
 #region shader
 	
 	u_resolution		= shader_get_uniform(shdCRT, "u_resolution");
@@ -34,16 +42,11 @@
 	global.lineData = LoadLineData();
 	
 #endregion
-#region data creation
-	global.menuPages = MenuDataCreate();
-#endregion
-#region debug
+#region general
 	
-	//randomise();
-	global.cheat = true;
-	global.cheatcode = "bees";
-	global.showDebugUI = false;
-
+	global.gamePaused = false;
+	global.menuPages = MenuDataCreate();
+	
 #endregion
 #region sound
 	

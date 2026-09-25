@@ -1,7 +1,4 @@
-
 AmbientChange(AMBIENT_MUSIC, bgmMapTheme);
-
-
 
 marginRight = 10;
 marginTop = 10;

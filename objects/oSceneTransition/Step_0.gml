@@ -1,3 +1,5 @@
+if global.midTransition || global.gamePaused exit;
+
 switch state {
 	case "Appear": {
 		

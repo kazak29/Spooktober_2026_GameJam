@@ -26,8 +26,6 @@ function DirectorStateCommandDelay()
 
 function DirectorStateLineSequence()
 {
-	if (instance_exists(oMenu) || instance_exists(oTextLog)) { exit; }
-	
 	if (oInputManager.pressed.confirm || oInputManager.mouse.pressed.left)
 	{
 	    if (typist.get_state() < 1)
