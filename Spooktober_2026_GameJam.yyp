@@ -293,6 +293,7 @@
     {"id":{"name":"sfxDoorClose","path":"sounds/sfxDoorClose/sfxDoorClose.yy",},},
     {"id":{"name":"sfxDoorOpen","path":"sounds/sfxDoorOpen/sfxDoorOpen.yy",},},
     {"id":{"name":"sfxLoudThud","path":"sounds/sfxLoudThud/sfxLoudThud.yy",},},
+    {"id":{"name":"sfxPrincessBark","path":"sounds/sfxPrincessBark/sfxPrincessBark.yy",},},
     {"id":{"name":"sfxSpookHungry","path":"sounds/sfxSpookHungry/sfxSpookHungry.yy",},},
     {"id":{"name":"sfxTypewriterDefault","path":"sounds/sfxTypewriterDefault/sfxTypewriterDefault.yy",},},
     {"id":{"name":"sfxTypewriterSpook","path":"sounds/sfxTypewriterSpook/sfxTypewriterSpook.yy",},},
