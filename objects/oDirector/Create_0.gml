@@ -9,6 +9,15 @@ typist = scribble_typist().in(TYPIST_SPEED, TYPIST_SMOOTHNESS);
 currentLineSequence = [];
 currentLineIndex = 0;
 
+//textbox
+textboxAlpha = 1;
+textboxAlphaSpd = 0.05;
+TextboxHide = function(){
+	textboxAlpha = 0;
+	typist.pause();
+}
+TextboxHide(); //hide for room transitions
+
 #region typewriter sound
 	TypewriterSoundPlay = function(){
 		typist.sound(

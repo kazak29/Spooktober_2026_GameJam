@@ -26,6 +26,10 @@ function DirectorStateCommandDelay()
 
 function DirectorStateLineSequence()
 {
+	//reveal textbox
+	textboxAlpha = Approach(textboxAlpha, 1, textboxAlphaSpd);
+	if textboxAlpha >= 1 typist.unpause();
+	
 	if (oInputManager.pressed.confirm || oInputManager.mouse.pressed.left)
 	{
 	    if (typist.get_state() < 1)

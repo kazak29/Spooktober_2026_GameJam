@@ -11,10 +11,10 @@ testScene,,map
 testScene1,,"map_scene,home,rocketTestScene"
 testScene1,,"map_visited,bar,true"
 testScene1,,"map_lock,street,true"
-testScene1,Empty,test scene 1
+testScene1,Empty,test scene 1 [c_yellow] yellow text [/c]
+testScene1,,"trans_bg,sBackgroundGray"
+testScene1,Empty,test scene 1 line 2
 testScene1,,map
-testScene1,,
-testScene1,,
 ,,
 intro,,"bg_set,sBackgroundShayHome"
 intro,,"music,bgmSpookTheme"
