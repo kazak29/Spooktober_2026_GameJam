@@ -257,7 +257,8 @@ shayHome_Day1_Visit1,Screwdriver,Wow! You still react the same!
 shayHome_Day1_Visit1,Spook,Why are you back here?!
 shayHome_Day1_Visit1,,"char_update,Screwdriver,0"
 shayHome_Day1_Visit1,Screwdriver,Unfinished... business. 
-shayHome_Day1_Visit1,Screwdriver,Why are YOU back here!? Night is young! go explore! Go!
+shayHome_Day1_Visit1,Screwdriver,Why are YOU back here!? Night is young! Go explore! Go!
+shayHome_Day1_Visit1,,"map_scene,home,shayHome_Day1_Visit2"
 shayHome_Day1_Visit1,,"music,noone"
 shayHome_Day1_Visit1,,map
 ,,
@@ -485,8 +486,8 @@ sewerBar_Day1_Visit1,Barry,Hey kid.
 sewerBar_Day1_Visit1,Barry,"It's your first night out, hm? Are you excited?"
 sewerBar_Day1_Visit1,,"choice,sewerBar0,sewerBar1"
 sewerBar_Day1_Visit1,,"scene_set,sewerBar_Day1_Visit1_Path1"
-,,"scene_set,sewerBar_Day1_Visit1_Path2"
-sewerBar_Day1_Visit1_Path1,,
+sewerBar_Day1_Visit1,,"scene_set,sewerBar_Day1_Visit1_Path2"
+,,
 sewerBar_Day1_Visit1_Path1,Barry,"That's okay, friend."
 sewerBar_Day1_Visit1_Path1,Barry,"The streets might seem dangerous at night, but for us pests, it's full of danger during the day, too."
 sewerBar_Day1_Visit1_Path1,,"char_update,Barry,2"
@@ -498,8 +499,8 @@ sewerBar_Day1_Visit1_Path1,Barry,"Now now, don't let me talk your ear off. You w
 sewerBar_Day1_Visit1_Path1,,"choice,sewerBar2,sewerBar3,sewerBar4"
 sewerBar_Day1_Visit1_Path1,,"scene_set,sewerBar_Day1_Visit1_Path2"
 sewerBar_Day1_Visit1_Path1,,"scene_set,sewerBar_Day1_Visit1_Path3"
-,,"scene_set,sewerBar_Day1_Visit1_Path4"
-sewerBar_Day1_Visit1_Path2,,
+sewerBar_Day1_Visit1_Path1,,"scene_set,sewerBar_Day1_Visit1_Path4"
+,,
 sewerBar_Day1_Visit1_Path2,Barry,"Of course, friend."
 sewerBar_Day1_Visit1_Path2,Barry,"We don't even serve poop, most days!"
 sewerBar_Day1_Visit1_Path2,,"char_update,Spook,8"
@@ -734,3 +735,139 @@ lampPost_Day1_Visit2,Spook,Uh...
 lampPost_Day1_Visit2,Spook,I should just go...
 lampPost_Day1_Visit2,,"music,noone"
 lampPost_Day1_Visit2,,map
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+p2intro,,"scene_bg_clear,sBackgroundBlack"
+p2intro,Shay,"Ok, almost ready, almost ready..."
+p2intro,,"music,bgmShayHome"
+p2intro,,"trans_change,false,sBackgroundShayRoomDay"
+p2intro,,"main_char_in,7"
+p2intro,Spook,Yawwwwwwn...
+p2intro,,"char_in,Shay,sShay,3"
+p2intro,Shay,HEY SPOOK!!!!!
+p2intro,,"char_update,Spook,5"
+p2intro,Spook,!!!
+p2intro,Shay,What do you think?
+p2intro,,"choice,p2intro0,p2intro1"
+p2intro,,"scene_set,p2introPath1"
+p2intro,,"scene_set,p2introPath2"
+,,
+p2introPath1,Shay,"I know, right!?"
+p2introPath1,Shay,I am getting better at making costumes!
+p2introPath1,Shay,"Last year was... Well, goblin wasn't the best idea."
+p2introPath1,Shay,Everyone kept asking if I was Shrek!
+p2introPath1,,"scene_set,p2introAh"
+,,
+p2introPath2,Shay,"Oh, I know you wanted me to be the giant cheese instead!"
+p2introPath2,,"char_update,Spook,3"
+p2introPath2,,"delay,0.5"
+p2introPath2,Shay,"...Maybe next year, ok?"
+p2introPath2,,"scene_set,p2introAh"
+,,
+p2introAh,Shay,Ah- before I forget! Here is yours!!!
+p2introAh,,main_char_out
+p2introAh,Empty,"You equipped ""Spook'o lantern"" Costume!"
+p2introAh,,"main_char_in,0"
+p2introAh,Empty,"Sorry, costume is still in the works!"
+p2introAh,,"delay,0.6"
+p2introAh,Mom,Honey! We are leaving in five!
+p2introAh,Shay,"Oh, right! "
+p2introAh,Shay,We somehow ran out of Halloween candy...
+p2introAh,Shay,I swear I didn't eat all of it! But I can't convince mom....
+p2introAh,,"char_out,Shay"
+p2introAh,Shay,"[sound,sfxDoorOpen] Protect the house from the spirits while I am gone, Spook!"
+p2introAh,,"sound,sfxDoorClose"
+p2introAh,Spook,Alright... This is my chance to go out for a little while!
+p2introAh,Spook,Let's see...
+p2introAh,,"custom_script_cont,MapDataUpdatePart2"
+p2introAh,,map
+,,
+,,
+p2home1,,"scene_bg_clear,sBackgroundShayRoomDay"
+p2home1,,"music,bgmShayHome"
+p2home1,,"main_char_in,0"
+p2home1,Spook,Shay is still away...
+p2home1,Spook,I can explore some more!
+p2home1,Spook,"Or... I can abandon those guys and just stay with Shay, just like I wanted from the start!"
+p2home1,Spook,They probably won't miss me anyway...
+p2home1,,"char_update,Spook,3"
+p2home1,Spook,...is what I would've said if this game was finished!
+p2home1,,"char_update,Spook,0"
+p2home1,Spook,"Unfortunately, we ran out of time so it's a just single road for me, at least for now."
+p2home1,Spook,To the party!
+p2home1,,"music,noone"
+p2home1,,"trans_scene,endingPartyBad"
+,,
+endingPartyBad,,"scene_bg_clear,sBackgroundSewerBar"
+endingPartyBad,Empty,You climb down the Sewer.
+endingPartyBad,Empty,"Few other animals are inside. There is low, darkwave music coming out of an old little speaker..."
+endingPartyBad,,"music,bgmBarPunk"
+endingPartyBad,,"main_char_in,0"
+endingPartyBad,,"char_in,Screwdriver,sScrewdriver,0"
+endingPartyBad,Screwdriver,Sup kid?
+endingPartyBad,Spook,Oh! You aren't dressed...?
+endingPartyBad,,"char_update,Screwdriver,2"
+endingPartyBad,Screwdriver,Didn't get the time! Was fixing up the place half of the time.
+endingPartyBad,Spook,Oooh! Where are the others?
+endingPartyBad,,"char_update,Screwdriver,0"
+endingPartyBad,Screwdriver,"Well, Pogo thought the party was too boring. She went to read somewhere."
+endingPartyBad,,"char_update,Screwdriver,7"
+endingPartyBad,Screwdriver,"Can't blame her, dude. This is like a college dorm party."
+endingPartyBad,Spook,A... what?
+endingPartyBad,,"char_update,Screwdriver,0"
+endingPartyBad,Screwdriver,"Well. They usually suck, is all you gotta know."
+endingPartyBad,Spook,Oooh...
+endingPartyBad,,"char_update,Screwdriver,2"
+endingPartyBad,Screwdriver,"Yeah, well. Thanks for comin'."
+endingPartyBad,Screwdriver,We'll do better next year! 
+endingPartyBad,,"char_update,Screwdriver,1"
+endingPartyBad,Screwdriver,"Or, you know, you could always go back in time and try to help or somethin'."
+endingPartyBad,Spook,I could WHAT?
+endingPartyBad,Screwdriver,He-he.
+endingPartyBad,,"char_update,Screwdriver,0"
+endingPartyBad,Screwdriver,Just kiddin'. We didn't make other endings yet.
+endingPartyBad,,"char_update,Screwdriver,2"
+endingPartyBad,Screwdriver,"Happy Halloween, kid. Try to enjoy!"
+endingPartyBad,,main_char_out
+endingPartyBad,,"char_out,Screwdriver"
+endingPartyBad,Empty,"You eat some candy and chat with a few drunken critters, and go home early..."
+endingPartyBad,,"trans_change,true,sBackgroundShayRoomNight"
+endingPartyBad,,"music,bgmSpookTheme"
+endingPartyBad,Empty,At least Shay comes in not so long after!
+endingPartyBad,,"main_char_in,0"
+endingPartyBad,,"char_in,Shay,sShay,3"
+endingPartyBad,Shay,Hi Spooky-boo!
+endingPartyBad,Shay,"My, that was EXHAUSTING!"
+endingPartyBad,Shay,I am never going outside again!!!! Ugh!!!
+endingPartyBad,,"trans_change,true,sBackgroundBlack"
+endingPartyBad,Shay,"Well, nevermind."
+endingPartyBad,Shay,It's time to watch some zombie rats!
+endingPartyBad,,"trans_scene,endingShayCredits"
+,,
+,,
+endingShayCredits,,<HERE IS WATCHING TV>
