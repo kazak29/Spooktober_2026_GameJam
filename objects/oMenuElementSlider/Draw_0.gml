@@ -17,7 +17,7 @@ if is_struct(spr) {
 	with spr { draw_sprite_ext(ind, _frame, x,y, scaleX, scaleY, 0, c_white, other.image_alpha); }
 }
 
-var _circleSpr = sSliderCircle;
+//slider itself
 draw_self();
 
 //calculate current slider value as percentage between min and max values set in data
@@ -28,14 +28,14 @@ var _circleY = y;
 if _selectedAlone {
 	//check if mouse is over the circle itself
 	var _scale = (image_xscale+image_yscale)/2;
-	var _rad = sprite_get_width(_circleSpr)*_scale/2;
+	var _rad = sprite_get_width(sprCircle)*_scale/2;
 	if oInputManager.MouseHoverCircle(_circleX, _circleY, _rad) && !oMenu.mouseClickLock {
 		_c = COL_MENU_OPTION_HOVER;
 		_frame = 2;
 	}
 }
 
-draw_sprite_ext(sSliderCircle, _frame, _circleX, _circleY, image_xscale,image_yscale, 0,c_white,image_alpha);
+draw_sprite_ext(sprCircle, _frame, _circleX, _circleY, image_xscale,image_yscale, 0,c_white,image_alpha);
 
 //calculate how to represent the value
 var _num = $"{_circlePerc}";

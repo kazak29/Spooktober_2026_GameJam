@@ -1,5 +1,6 @@
 event_inherited();
-sprite_index = sSliderLine;
+sprCircle = sSliderCircleMouse;
+sprite_index = sSliderLineColor;
 image_alpha = 1;
 
 if !instance_exists(oMenu) exit;
