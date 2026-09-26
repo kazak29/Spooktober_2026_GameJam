@@ -39,5 +39,3 @@ for (var i = 0; i < array_length(locs); i++) {
 //        .align(fa_center, fa_middle)
 //        .draw(_textX, _textY);
 //}
-//
-//if (instance_exists(oTextLog)) { DrawTextlog(); }

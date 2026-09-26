@@ -39,12 +39,6 @@ with oChoice {
 	scribId.blend(_c, 1).draw(strX, strY);
 }
 
-
-if (instance_exists(oTextLog))
-{
-	DrawTextlog();
-}
-
 with oSceneTransition {
 	draw_set_color(c_black);
     draw_set_alpha(alpha);
