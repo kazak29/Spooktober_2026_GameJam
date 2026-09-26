@@ -2,7 +2,7 @@ function MapDataCreate() {
 	return {
 		home: {
 			title: global.uiData.mapHome,	//only for textlog
-			scene: "testScene1",
+			scene: "shayHome_Day1_Visit1",
 		
 			visited:	false,				//grays-out, but still able to visit
 			locked:		false,				//skips location hovering entirely
@@ -16,7 +16,7 @@ function MapDataCreate() {
 		},
 		bar: {
 			title: global.uiData.mapBar,
-			scene: "testScene1",
+			scene: "sewerBar_Day1_Visit1",
 		
 			visited:	false,
 			locked:		false,
@@ -60,7 +60,7 @@ function MapDataCreate() {
 		},
 		houseAcrossFront: {
 			title: global.uiData.mapHouseAcrossFront,
-			scene: "testScene1",
+			scene: "houseAcross_Day1_Visit1",
 		
 			visited:	false,
 			locked:		false,
@@ -73,7 +73,7 @@ function MapDataCreate() {
 		},
 		lamp: {
 			title: global.uiData.mapLamp,
-			scene: "testScene1",
+			scene: "lampPost_Day1_Visit1",
 		
 			visited:	false,
 			locked:		false,

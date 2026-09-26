@@ -42,6 +42,11 @@ mapHouseAcrossFront,House Across – Front
 mapStreet,Main Street
 mapLamp,Lamp Post
 ,
+leave,Leave
+,
+,
+,
+,
 intro0,Squeak (Reassuringly)
 intro1,Squeak (Hungrily)
 ,
@@ -55,10 +60,10 @@ shayHome_Day1_Visit3_Bar4,I wanna explore some more!
 ,
 sewerBar0,I'm a bit nervous.
 sewerBar1,Party! Party! The night is ours!
-,
-,
-,
-,
+sewerBar2,Is this bar even hygenic...?
+sewerBar3,Yes!!! Pour me a strong one!
+sewerBar4,Um...maybe warm milk?
+sewerBar5,"It's not that bad, actually."
 ,
 ,
 ,
