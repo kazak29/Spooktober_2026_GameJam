@@ -451,7 +451,8 @@ shayHome_Day1_Visit3_Bar_Path7,,<TODO: Lock the home location at this point>
 shayHome_Day1_Visit3_Bar_Path7,,map
 ,,
 ,,
-,,"trans_clear,sBackgroundSewerBar"
+,,
+sewerBar_Day1_Visit1,,"trans_clear,sBackgroundSewerBar"
 sewerBar_Day1_Visit1,,"music,bgmSewerBar"
 sewerBar_Day1_Visit1,,"main_char_in,0"
 sewerBar_Day1_Visit1,,"char_in,Barry,sBarry,0"
@@ -459,42 +460,41 @@ sewerBar_Day1_Visit1,Barry,Hey kid.
 sewerBar_Day1_Visit1,Barry,"It's your first night out, hm? Are you excited?"
 sewerBar_Day1_Visit1,,"choice,sewerBar0,sewerBar1"
 sewerBar_Day1_Visit1,,"scene_set,sewerBar_Day1_Visit1_Path1"
-sewerBar_Day1_Visit1,,"scene_set,sewerBar_Day1_Visit1_Path2"
-,,
+,,"scene_set,sewerBar_Day1_Visit1_Path2"
+sewerBar_Day1_Visit1_Path1,,
 sewerBar_Day1_Visit1_Path1,Barry,"That's okay, friend."
 sewerBar_Day1_Visit1_Path1,Barry,"The streets might seem dangerous at night, but for us pests, it's full of danger during the day, too."
-sewerBar_Day1_Visit1_Path1,,
-sewerBar_Day1_Visit1_Path1,,
-sewerBar_Day1_Visit1_Path1,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
+sewerBar_Day1_Visit1_Path1,,"char_update,Barry,2"
+sewerBar_Day1_Visit1_Path1,Barry,That's why we learn to look after one other!
+sewerBar_Day1_Visit1_Path1,Barry,I remember when Drivey and Pogo were just kids...
+sewerBar_Day1_Visit1_Path1,Barry,"Ahh, gettin' emotional."
+sewerBar_Day1_Visit1_Path1,,"char_update,Barry,1"
+sewerBar_Day1_Visit1_Path1,Barry,"Now now, don't let me talk your ear off. You want a drink?"
+sewerBar_Day1_Visit1_Path1,,"choice,sewerBar2,sewerBar3,sewerBar4"
+sewerBar_Day1_Visit1_Path1,,"scene_set,sewerBar_Day1_Visit1_Path2"
+sewerBar_Day1_Visit1_Path1,,"scene_set,sewerBar_Day1_Visit1_Path3"
+,,"scene_set,sewerBar_Day1_Visit1_Path4"
 sewerBar_Day1_Visit1_Path2,,
+sewerBar_Day1_Visit1_Path2,Barry,"Of course, friend."
+sewerBar_Day1_Visit1_Path2,Barry,"We don't even serve poop, most days!"
+sewerBar_Day1_Visit1_Path2,,"char_update,Spook,8"
+sewerBar_Day1_Visit1_Path2,Spook,Yuck!!!
+sewerBar_Day1_Visit1_Path2,,"char_update,Barry,4"
+sewerBar_Day1_Visit1_Path2,Barry,Just messin' with you!
+sewerBar_Day1_Visit1_Path2,,"char_update,Barry,1"
+sewerBar_Day1_Visit1_Path2,Barry,"But no, it may not be for pet standards."
+sewerBar_Day1_Visit1_Path2,Barry,"So, you know, feel free to leave."
+sewerBar_Day1_Visit1_Path2,,"choice,sewerBar5,leave"
+sewerBar_Day1_Visit1_Path2,,
+sewerBar_Day1_Visit1_Path2,,"scene_set,sewerBar_Day1_Visit1_Path4"
+,,
+,,
+sewerBar_Day1_Visit1_Path3,,
 ,,
 ,,
 ,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
+sewerBar_Day1_Visit1_Path,,"music,noone"
+sewerBar_Day1_Visit1_Path,,map
 ,,
 ,,
 ,,
