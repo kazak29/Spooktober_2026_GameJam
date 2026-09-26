@@ -282,7 +282,7 @@ with global.dataSceneCommands {
 		// NO ARGUMENTS
 		trans_change = function(_args){
 			with oDirector {
-				var _clear			= (array_length(_args) > 0) ? (_args[0] == "true" || _args[0] == "1")	: true;
+				var _clear			= (array_length(_args) > 0) ? (_args[0] == "true" || _args[0] == "1")	: false;
 				var _sprInd			= (array_length(_args) > 1) ? asset_get_index(_args[1])					: undefined;
 				var _imInd			= (array_length(_args) > 2) ? asset_get_index(_args[2])					: 0;
 				var _alpha			= (array_length(_args) > 3) ? asset_get_index(_args[3])					: 1;
