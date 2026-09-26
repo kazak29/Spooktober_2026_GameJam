@@ -24,7 +24,7 @@ function DrawDialogueBox ()
     var _boxY = _guiH;
 
     // Draw main textbox (Bottom-Center origin)
-	draw_set_alpha(textboxAlpha);
+	draw_set_alpha(textbox.alpha);
     draw_sprite(sTextbox, 0, _boxX, _boxY);
 	draw_set_alpha(1);
     
@@ -42,14 +42,14 @@ function DrawDialogueBox ()
         var _titleBoxX = (spookUp) ? _boxLeft + 300 : _boxLeft + 40;
         var _titleBoxY = _boxTop - (_titleBoxH / 2);
         
-		draw_set_alpha(textboxAlpha);
+		draw_set_alpha(textbox.alpha);
         draw_sprite_stretched(sChoiceBox, 0, _titleBoxX, _titleBoxY, _titleBoxW, _titleBoxH);
 		draw_set_alpha(1);
         
         scribble(_titleText)
             .starting_format(FONT_DIALOGUE_TEXT_TITLE, c_black)
             .align(fa_center, fa_middle)
-			.blend(c_white,textboxAlpha)
+			.blend(c_white,textbox.alpha)
             .draw(_titleBoxX + (_titleBoxW / 2), _titleBoxY + (_titleBoxH / 2));
     }
     
@@ -66,7 +66,7 @@ function DrawDialogueBox ()
         .starting_format(FONT_DIALOGUE_TEXT_BODY, c_black)
         .sdf_shadow(c_black, 0.5, 1,1)
         .wrap(_maxTextW)
-		.blend(c_white,textboxAlpha)
+		.blend(c_white,textbox.alpha)
         .draw(_textX, _textY, typist);
 }
 

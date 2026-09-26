@@ -10,7 +10,7 @@ if (currentSceneName != noone)
 	DrawCharacterPortraits();
 	
 	if (directorState == DirectorStateLineSequence ||
-    directorState == DirectorStateChoice) && (textboxAlpha > 0)
+    directorState == DirectorStateChoice) && (textbox.alpha > 0)
 	{ 
 		DrawDialogueBox();
 	}

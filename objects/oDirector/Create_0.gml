@@ -10,10 +10,12 @@ currentLineSequence = [];
 currentLineIndex = 0;
 
 //textbox
-textboxAlpha = 1;
-textboxAlphaSpd = 0.05;
+textbox = {
+	alpha: 1,
+	alphaSpd: 0.05,
+};
 TextboxHide = function(){
-	textboxAlpha = 0;
+	textbox.alpha = 0;
 	typist.pause();
 }
 TextboxHide(); //hide for room transitions
