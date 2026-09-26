@@ -10,7 +10,7 @@ if (currentSceneName != noone)
 	DrawCharacterPortraits();
 	
 	if (directorState == DirectorStateLineSequence ||
-    directorState == DirectorStateChoice)
+    directorState == DirectorStateChoice) && (textbox.alpha > 0)
 	{ 
 		DrawDialogueBox();
 	}
@@ -37,12 +37,6 @@ with oChoice {
 	}
 
 	scribId.blend(_c, 1).draw(strX, strY);
-}
-
-
-if (instance_exists(oTextLog))
-{
-	DrawTextlog();
 }
 
 with oSceneTransition {

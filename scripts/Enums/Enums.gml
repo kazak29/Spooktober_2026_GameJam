@@ -1,12 +1,3 @@
-#region scenes
-
-	enum SCENE_TRANS_TYPE {
-		BACKGROUND,		//background change
-		CLEAR,			//background change + clear
-		NEXT,			//background change + clear + scene change
-	}
-	
-#endregion
 #region map locations
 
 	enum MAP_LOCATION {

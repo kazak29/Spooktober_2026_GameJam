@@ -9,6 +9,17 @@ typist = scribble_typist().in(TYPIST_SPEED, TYPIST_SMOOTHNESS);
 currentLineSequence = [];
 currentLineIndex = 0;
 
+//textbox
+textbox = {
+	alpha: 1,
+	alphaSpd: 0.05,
+};
+TextboxHide = function(){
+	textbox.alpha = 0;
+	typist.pause();
+}
+TextboxHide(); //hide for room transitions
+
 #region typewriter sound
 	TypewriterSoundPlay = function(){
 		typist.sound(
@@ -51,6 +62,21 @@ mainCharacter = {
 };
 spookUp = false;
 
+
+SceneClear = function(){
+	stageCharacters = [];
+    
+	// Reset main character
+	mainCharacter.alpha = MIN_ALPHA;
+	mainCharacter.targetAlpha = MIN_ALPHA;
+	mainCharacter.yOffset = 0;
+	mainCharacter.yVelocity = 0;
+	mainCharacter.blend = c_white;
+	
+	spookUp = false;
+    
+	previousSpeaker = "";
+}
 
 // Start the scene that was set as a global
 currentSceneName = global.sceneToPlay;
@@ -118,7 +144,8 @@ LineSet = function(){
 				//delay exceptions
 				case "scene_set":				{ SceneCommandExecute(_lineText);	} break;
 				case "scene_clear":				{ SceneCommandExecute(_lineText);	} break;
-				case "bg_set":					{ SceneCommandExecute(_lineText);	} break;
+				case "scene_bg":				{ SceneCommandExecute(_lineText);	} break;
+				case "scene_bg_clear":			{ SceneCommandExecute(_lineText);	} break;
 				case "choice":					{ SceneCommandExecute(_lineText);	} break;
 				case "condition_flag":			{ SceneCommandExecute(_lineText);	} break;
 				case "condition_script":		{ SceneCommandExecute(_lineText);	} break;

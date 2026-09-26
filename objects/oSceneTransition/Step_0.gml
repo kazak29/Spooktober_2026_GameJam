@@ -14,10 +14,15 @@ switch state {
 					bgTarget.active = false;
 				}
 				
-				//perform specific tasks
-				switch other.transType {
-					case SCENE_TRANS_TYPE.CLEAR:	SceneClear(); break;
-					case SCENE_TRANS_TYPE.NEXT:		SceneClear(); break;
+				//clear scene
+				if other.clear SceneClear();
+				
+				//start new scene
+				if other.nextScene {
+					SceneStart(sceneTarget);
+					sceneTarget = "";
+				} else {
+					LineProgress();
 				}
 				
 			}
@@ -31,20 +36,7 @@ switch state {
 	case "Dissapear": {
 		
 		alpha = Approach(alpha, MIN_ALPHA, SCENE_FADE_SPEED);
-	    if alpha <= MIN_ALPHA {
-			
-			with oDirector {
-				
-				//continue director
-				switch other.transType {
-					default: { LineProgress(); } break;
-					case SCENE_TRANS_TYPE.NEXT: { SceneStart(sceneTarget); sceneTarget = ""; } break;
-				}
-				
-			}
-			
-			instance_destroy();
-		}
+	    if alpha <= MIN_ALPHA instance_destroy();
 		
 	} break;
 }

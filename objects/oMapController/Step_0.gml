@@ -27,6 +27,7 @@ for (var i = 0; i < _locsL; i++) {
 			other.mouseHover = true;
 		}
 	}
+	if mouseHover break;
 }
 
 //inputs
@@ -41,6 +42,9 @@ if _pressed {
 	
 	global.sceneToPlay = _scene;
 	TransitionStart(rmStage, sqFadeOut, sqFadeIn);
+	
+	//auto visited flag update (do we need it?)
+	locs[num].visited = true;
 	
 	_sfx = "click";
 }

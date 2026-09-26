@@ -1,3 +1,5 @@
+depth = MENU_DEPTH;
+
 
 scrollOffset = 0;
 maxScrollLimit = 0;

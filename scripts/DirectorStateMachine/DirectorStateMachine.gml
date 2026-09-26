@@ -25,9 +25,10 @@ function DirectorStateCommandDelay()
 
 
 function DirectorStateLineSequence()
-{
+{	
 	if (oInputManager.pressed.confirm || oInputManager.mouse.pressed.left)
 	{
+		textbox.alpha = 1;
 	    if (typist.get_state() < 1)
 	    { 
 	        typist.skip(); 

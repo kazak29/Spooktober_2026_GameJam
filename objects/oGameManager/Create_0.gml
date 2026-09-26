@@ -46,7 +46,6 @@
 	
 	global.gamePaused = false;
 	global.menuPages = MenuDataCreate();
-	global.dataMapLocations = MapDataCreate();
 	
 #endregion
 #region sound
@@ -70,10 +69,12 @@
 #endregion
 #region screenplay
 
-	global.sceneToPlay = noone; //= FIRST_SCENE;      // <--- Now gets set when the player presses start
-	global.lastLocationBackground = sBackgroundBlack;
+	global.sceneToPlay = noone;
+	global.lastLocationBackground = noone;
 	
 	global.textLog = [];
 	global.textLogInst = noone;
-
+	
+	global.dataMapLocations = MapDataCreate();
+	
 #endregion

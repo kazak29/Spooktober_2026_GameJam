@@ -1,20 +1,13 @@
 #region reusable scene triggers
 	
-	function SceneClear(){
-		with oDirector {
-			stageCharacters = [];
-    
-		    // Reset main character
-		    mainCharacter.alpha = MIN_ALPHA;
-		    mainCharacter.targetAlpha = MIN_ALPHA;
-		    mainCharacter.yOffset = 0;
-		    mainCharacter.yVelocity = 0;
-		    mainCharacter.blend = c_white;
+	function ScreenPlayReset(){
+		global.sceneToPlay = noone;
+		global.lastLocationBackground = noone;
 	
-			spookUp = false;
-    
-		    previousSpeaker = "";
-		}
+		global.textLog = [];
+		global.textLogInst = noone;
+	
+		global.dataMapLocations = MapDataCreate();
 	}
 	
 	function SceneStart(_name){
@@ -28,7 +21,7 @@
 	
 	function SceneToMap(){
 		with oDirector {
-			global.lastLocationBackground = bg.sprInd;
+			global.lastLocationBackground = variable_clone(bg);
 	        //currentSceneName = noone;
 			currentLineSequence = [];
 			directorState  = DirectorStateIdle;
@@ -36,31 +29,21 @@
 		}
 	}
 	
-	function SceneTransitionNext(_sceneTarget, _sprInd = undefined, _imInd = 0, _alpha = 1, _col = c_white){
+	function SceneTransitionNext(_sceneTarget, _clear = false, _sprInd = undefined, _imInd = 0, _alpha = 1, _col = c_white){
 		with oDirector {
 			sceneTarget = _sceneTarget;
 	        directorState = DirectorStateIdle;
 			BackgroundSetTarget(_sprInd, _imInd, _alpha, _col);
 			
-			instance_create_layer(0,0, SYSTEM_LAYER, oSceneTransition, {transType: SCENE_TRANS_TYPE.NEXT});
+			instance_create_layer(0,0, SYSTEM_LAYER, oSceneTransition, {clear: _clear, nextScene: true});
 		}
 	}
-	
-	function SceneTransitionBg(_sprInd = undefined, _imInd = 0, _alpha = 1, _col = c_white){
+	function SceneTransitionChange(_clear = false, _sprInd = undefined, _imInd = 0, _alpha = 1, _col = c_white){
 		with oDirector {
 	        directorState = DirectorStateIdle;
 			BackgroundSetTarget(_sprInd, _imInd, _alpha, _col);
 			
-			instance_create_layer(0,0, SYSTEM_LAYER, oSceneTransition, {transType: SCENE_TRANS_TYPE.BACKGROUND});
-		}
-	}
-	
-	function SceneTransitionClear(_sprInd = undefined, _imInd = 0, _alpha = 1, _col = c_white){
-		with oDirector {
-	        directorState = DirectorStateIdle;
-			BackgroundSetTarget(_sprInd, _imInd, _alpha, _col);
-			
-			instance_create_layer(0,0, SYSTEM_LAYER, oSceneTransition, {transType: SCENE_TRANS_TYPE.CLEAR});
+			instance_create_layer(0,0, SYSTEM_LAYER, oSceneTransition, {clear: _clear});
 		}
 	}
 	
@@ -244,12 +227,15 @@ with global.dataSceneCommands {
 		// --- CLEARS SCENE IN 1 FRAME ---
 		// NO ARGUMENTS
 		scene_clear = function(_args){
-			SceneClear();
+			with oDirector {
+				SceneClear();
+				LineProgress();
+			}
 		};
 		
 		// --- CHANGES BACKGROUND IN 1 FRAME ---
 		// BACKGROUND SPRITE, FRAME, ALPHA, COLOR
-		bg_set = function(_args){
+		scene_bg = function(_args){
 			var _sprInd	= (array_length(_args) > 0) ? asset_get_index(_args[0]) : noone;
 			var _imInd	= (array_length(_args) > 1) ? asset_get_index(_args[1]) : 0;
 			var _alpha	= (array_length(_args) > 2) ? asset_get_index(_args[2]) : 1;
@@ -260,46 +246,49 @@ with global.dataSceneCommands {
 			}
 		};
 		
+		// --- COMBINE BACKGROUND AND CLEAR ---
+		// BACKGROUND SPRITE, FRAME, ALPHA, COLOR
+		scene_bg_clear = function(_args){
+			var _sprInd	= (array_length(_args) > 0) ? asset_get_index(_args[0]) : noone;
+			var _imInd	= (array_length(_args) > 1) ? asset_get_index(_args[1]) : 0;
+			var _alpha	= (array_length(_args) > 2) ? asset_get_index(_args[2]) : 1;
+			var _col	= (array_length(_args) > 3) ? asset_get_index(_args[3]) : c_white;
+			with oDirector {
+				SceneClear();
+				BackgroundSet(_sprInd, _imInd, _alpha, _col);
+				LineProgress();
+			}
+		};
+		
 	#endregion
 	#region TRANSITIONS
 		
-		// --- TRANSITION + BACKGROUND CHANGE + SCENE CLEAR + NEXT SCENE ---
-		// SCENE NAME, BACKGROUND SPRITE, FRAME, ALPHA, COLOR
+		// --- TRANSITION + NEXT SCENE + SCENE CLEAR + BACKGROUND CHANGE ---
+		// SCENE NAME, CLEAR FLAG, BACKGROUND SPRITE, FRAME, ALPHA, COLOR
 		trans_scene = function(_args){
 			with oDirector {
 				var _sceneTarget	= _args[0];
-				var _sprInd			= (array_length(_args) > 1) ? asset_get_index(_args[1]) : undefined;
-				var _imInd			= (array_length(_args) > 2) ? asset_get_index(_args[2]) : 0;
-				var _alpha			= (array_length(_args) > 3) ? asset_get_index(_args[3]) : 1;
-				var _col			= (array_length(_args) > 4) ? asset_get_index(_args[4]) : c_white;
-			
-				SceneTransitionNext(_sceneTarget, _sprInd, _imInd, _alpha, _col);
+				var _clear			= (array_length(_args) > 1) ? (_args[1] == ("true" || "1")) : true;
+				var _sprInd			= (array_length(_args) > 2) ? asset_get_index(_args[2])		: undefined;
+				var _imInd			= (array_length(_args) > 3) ? asset_get_index(_args[3])		: 0;
+				var _alpha			= (array_length(_args) > 4) ? asset_get_index(_args[4])		: 1;
+				var _col			= (array_length(_args) > 5) ? asset_get_index(_args[5])		: c_white;
+				
+				SceneTransitionNext(_sceneTarget, _clear, _sprInd, _imInd, _alpha, _col);
 			}
 		};
 		
-		// --- TRANSITION + BACKGROUND CHANGE + SCENE CLEAR ---
-		// BACKGROUND SPRITE, FRAME, ALPHA, COLOR
-		trans_clear = function(_args){
+		// --- TRANSITION + SCENE CLEAR + BACKGROUND CHANGE ---
+		// NO ARGUMENTS
+		trans_change = function(_args){
 			with oDirector {
-				var _sprInd			= (array_length(_args) > 0) ? asset_get_index(_args[0]) : undefined;
-				var _imInd			= (array_length(_args) > 1) ? asset_get_index(_args[1]) : 0;
-				var _alpha			= (array_length(_args) > 2) ? asset_get_index(_args[2]) : 1;
-				var _col			= (array_length(_args) > 3) ? asset_get_index(_args[3]) : c_white;
-			
-				SceneTransitionClear(_sprInd, _imInd, _alpha, _col);
-			}
-		};
-		
-		// --- TRANSITION + BACKGROUND CHANGE - NO SCENE CLEAR - NO NEXT SCENE ---
-		// BACKGROUND SPRITE, FRAME, ALPHA, COLOR
-		trans_bg = function(_args){
-			with oDirector {
-				var _sprInd			= (array_length(_args) > 0) ? asset_get_index(_args[0]) : undefined;
-				var _imInd			= (array_length(_args) > 1) ? asset_get_index(_args[1]) : 0;
-				var _alpha			= (array_length(_args) > 2) ? asset_get_index(_args[2]) : 1;
-				var _col			= (array_length(_args) > 3) ? asset_get_index(_args[3]) : c_white;
-			
-				SceneTransitionBg(_sprInd, _imInd, _alpha, _col);
+				var _clear			= (array_length(_args) > 0) ? (_args[0] == ("true" || "1")) : true;
+				var _sprInd			= (array_length(_args) > 1) ? asset_get_index(_args[1])		: undefined;
+				var _imInd			= (array_length(_args) > 2) ? asset_get_index(_args[2])		: 0;
+				var _alpha			= (array_length(_args) > 3) ? asset_get_index(_args[3])		: 1;
+				var _col			= (array_length(_args) > 4) ? asset_get_index(_args[4])		: c_white;
+				
+				SceneTransitionChange(_clear, _sprInd, _imInd, _alpha, _col);
 			}
 		};
 		
