@@ -201,7 +201,7 @@ with global.dataSceneCommands {
 			var _locName = _args[0];
 			var _visited = _args[1];
 			
-			global.dataMapLocations[$ _locName].visited = (_visited == ("true" || "1"));
+			global.dataMapLocations[$ _locName].visited = (_visited == "true" || _visited == "1");
 			with oDirector { LineProgress(); }
 		}
 		
@@ -211,7 +211,7 @@ with global.dataSceneCommands {
 			var _locName = _args[0];
 			var _lock = _args[1];
 			
-			global.dataMapLocations[$ _locName].locked = (_lock == ("true" || "1"));
+			global.dataMapLocations[$ _locName].locked = (_lock == "true" || _lock == "1");
 			with oDirector { LineProgress(); }
 		}
 		
@@ -268,11 +268,11 @@ with global.dataSceneCommands {
 		trans_scene = function(_args){
 			with oDirector {
 				var _sceneTarget	= _args[0];
-				var _clear			= (array_length(_args) > 1) ? (_args[1] == ("true" || "1")) : true;
-				var _sprInd			= (array_length(_args) > 2) ? asset_get_index(_args[2])		: undefined;
-				var _imInd			= (array_length(_args) > 3) ? asset_get_index(_args[3])		: 0;
-				var _alpha			= (array_length(_args) > 4) ? asset_get_index(_args[4])		: 1;
-				var _col			= (array_length(_args) > 5) ? asset_get_index(_args[5])		: c_white;
+				var _clear			= (array_length(_args) > 1) ? (_args[1] == "true" || _args[1] == "1")	: true;
+				var _sprInd			= (array_length(_args) > 2) ? asset_get_index(_args[2])					: undefined;
+				var _imInd			= (array_length(_args) > 3) ? asset_get_index(_args[3])					: 0;
+				var _alpha			= (array_length(_args) > 4) ? asset_get_index(_args[4])					: 1;
+				var _col			= (array_length(_args) > 5) ? asset_get_index(_args[5])					: c_white;
 				
 				SceneTransitionNext(_sceneTarget, _clear, _sprInd, _imInd, _alpha, _col);
 			}
@@ -282,11 +282,11 @@ with global.dataSceneCommands {
 		// NO ARGUMENTS
 		trans_change = function(_args){
 			with oDirector {
-				var _clear			= (array_length(_args) > 0) ? (_args[0] == ("true" || "1")) : true;
-				var _sprInd			= (array_length(_args) > 1) ? asset_get_index(_args[1])		: undefined;
-				var _imInd			= (array_length(_args) > 2) ? asset_get_index(_args[2])		: 0;
-				var _alpha			= (array_length(_args) > 3) ? asset_get_index(_args[3])		: 1;
-				var _col			= (array_length(_args) > 4) ? asset_get_index(_args[4])		: c_white;
+				var _clear			= (array_length(_args) > 0) ? (_args[0] == "true" || _args[0] == "1")	: true;
+				var _sprInd			= (array_length(_args) > 1) ? asset_get_index(_args[1])					: undefined;
+				var _imInd			= (array_length(_args) > 2) ? asset_get_index(_args[2])					: 0;
+				var _alpha			= (array_length(_args) > 3) ? asset_get_index(_args[3])					: 1;
+				var _col			= (array_length(_args) > 4) ? asset_get_index(_args[4])					: c_white;
 				
 				SceneTransitionChange(_clear, _sprInd, _imInd, _alpha, _col);
 			}
@@ -394,9 +394,9 @@ with global.dataSceneCommands {
 			}
 		};
 	
-		// --- PROGRESSES LINE FURTHER ---
+		// --- TRIGGER A SCRIPT BY NAME --- PROGRESSES LINE FURTHER ---
 		// SCRIPT, ARGS
-		custom_script_continue = function(_args){
+		custom_script_cont = function(_args){
 			with oDirector {
 				var _scr = asset_get_index(_args[0]);
 				_args = array_delete(_args, 0, 1);
@@ -406,7 +406,7 @@ with global.dataSceneCommands {
 			}
 		};
 	
-		// --- STOPS AT THE CURRENT LINE (IF NO CHANGES WITHIN SCRIPT, WILL READ THE COMMAND AS TEXT ON SCREEN) ---
+		// --- TRIGGER A SCRIPT BY NAME --- STOPS AT THE CURRENT LINE (IF NO CHANGES WITHIN SCRIPT, WILL READ THE COMMAND AS TEXT ON SCREEN) ---
 		// SCRIPT, ARGS
 		custom_script_stop = function(_args){
 			with oDirector {
@@ -449,11 +449,26 @@ with global.dataSceneCommands {
 			}
 		};
 		
-		//SOUND NAME
+		//BGM NAME
 		music = function(_args){
 			with oDirector {
 				var _song = asset_get_index(_args[0]);
-				AmbientChange(AMBIENT_MUSIC, _song, DEFAULT_VOLUME_PERCENT);
+				var _fadeIn		= (array_length(_args) > 1) ? real(_args[1]) : 2500;
+				var _fadeOut	= (array_length(_args) > 2) ? real(_args[2]) : 1000;
+				var _volPercent = (array_length(_args) > 3) ? real(_args[3]) : DEFAULT_VOLUME_PERCENT;
+				AmbientChange(AMBIENT_MUSIC, _song, _volPercent, true, _fadeIn, _fadeOut);
+				LineProgress();
+			}
+		};
+		
+		//SFX NAME
+		sound = function(_args){
+			with oDirector {
+				var _snd = asset_get_index(_args[0]);
+				var _volPercent = (array_length(_args) > 1) ? real(_args[1]) : 100;
+				var _looping	= (array_length(_args) > 2) ? (_args[2] == "true" || _args[2] == "1") : false;
+				SoundPlay(_snd, _volPercent, _looping);
+		
 				LineProgress();
 			}
 		};
