@@ -13,6 +13,10 @@ for (var i = 0; i < array_length(locs); i++) {
 		}
 		
 		draw_sprite_ext(sMapLocations,i, 0,0,1,1,0, _c,other.image_alpha);
+		
+		if global.showDebugUI {
+			draw_sprite_stretched(sBorder,0, x1,y1, (x2-x1), (y2-y1));
+		}
 	}
 }
 

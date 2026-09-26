@@ -37,7 +37,7 @@ function MapDataCreate() {
 				ind: sMapHoverStreet,
 				imInd: 0,
 				col: c_white,
-				alpha: 1,
+				alpha: 0.45,
 			},
 		
 			x1: 450,
