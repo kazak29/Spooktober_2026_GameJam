@@ -2,52 +2,69 @@ SCENE NAME,LINE TITLE - ENGLISH,LINE TEXT - ENGLISH
 rocketTestScene,Empty,.
 rocketTestScene,,map
 ,,
-testScene,,"bg_set,sBackgroundGray"
-testScene,,"main_char_in,0"
+testScene,,"scene_bg,sBackgroundGray"
 testScene,,"char_in,Barry,sBarry,0"
 testScene,Empty,[c_yellow][wave]test test[/wave][/c]test test
+testScene,,scene_clear
+testScene,Empty,test test 1
+testScene,,"main_char_in,0"
+testScene,Empty,test test 2
+testScene,,"trans_scene,testScene1"
+testScene,Empty,test test 3
 testScene,,map
 ,,
 testScene1,,"map_scene,home,rocketTestScene"
 testScene1,,"map_visited,bar,true"
 testScene1,,"map_lock,street,true"
+testScene1,,"char_in,Barry,sBarry,0"
 testScene1,Empty,test scene 1 [c_yellow] yellow text [/c]
-testScene1,,"trans_bg,sBackgroundGray"
+testScene1,,"trans_change,false,sBackgroundGray"
 testScene1,Empty,test scene 1 line 2
+testScene1,,"trans_change,true"
+testScene1,Empty,test scene 1 line 3
+testScene1,,"char_in,Barry,sBarry,0"
+testScene1,Empty,test scene 1 line 4
+testScene1,,"trans_scene,testScene,true,sBackgroundShayHome"
+testScene1,Empty,test scene 1 line 5
 testScene1,,map
 ,,
-intro,,"bg_set,sBackgroundShayHome"
+intro,,"scene_bg,sBackgroundShayHome"
 intro,,"music,bgmSpookTheme"
 intro,,"delay,2"
 intro,Spook,"This week, we moved into a new house with my family."
 intro,Spook,Everyone has been so busy unpacking...
 intro,Spook,Me?
-intro,,"trans_scene,introCage,sBackgroundCageNightSpook"
+intro,,"trans_scene,introCage"
 ,,
+introCage,,"scene_bg,sBackgroundCageNightSpook"
 introCage,,"delay,2"
 introCage,,"main_char_in,0"
 introCage,Spook,Nothing much changed for me. 
 introCage,Spook,"I get a nice view from my new spot, at least..."
 introCage,Spook,I am Spook.
-introCage,,"trans_scene,introShay,sBackgroundBlack"
+introCage,,"trans_scene,introShay"
 ,,
+introShay,,"scene_bg_clear,sBackgroundBlack"
 introShay,,"char_in,Shay,sShay,0"
 introShay,,"main_char_in,0"
 introShay,,"delay,1"
 introShay,Spook,And this is Shay! My human and my best friend! 
 introShay,Spook,She seems to be nervous about the new school and everything.
-introShay,,"trans_scene,introShaysHand,sBackgroundSpookInShaysHand"
+introShay,,"trans_scene,introShaysHand"
 ,,
+introShaysHand,,"scene_bg_clear,sBackgroundSpookInShaysHand"
 introShaysHand,Spook,But I am here to make her feel better!
 introShaysHand,Spook,"Me and my human don't have many other friends- and, well, we don't need 'em!"
-introShaysHand,,"trans_scene,introCalendar,sBackgroundCalendar"
+introShaysHand,,"trans_scene,introCalendar"
 ,,
+introCalendar,,"scene_bg_clear,sBackgroundCalendar"
 introCalendar,,"delay,2"
 introCalendar,Spook,"More importantly, Halloween is around the corner!"
 introCalendar,Spook,The BEST time of the year!
 introCalendar,Spook,I can't wait to spend a calm afternoon watching horror movies with Shay!
-introCalendar,,"trans_scene,introShayRoomDay,sBackgroundShayRoomDay"
+introCalendar,,"trans_scene,introShayRoomDay"
 ,,
+introShayRoomDay,,"scene_bg_clear,sBackgroundShayRoomDay"
 introShayRoomDay,Empty,"October 30th, Afternoon"
 introShayRoomDay,Empty,You wake up to the sound of arguing...
 introShayRoomDay,,"main_char_in,6"
@@ -85,8 +102,9 @@ introShayRoomDay,Shay,And we'll have some candy for our movie too! Isn't that aw
 introShayRoomDay,Spook,Squeak!
 introShayRoomDay,Shay,"Well said, boy!"
 introShayRoomDay,,"music,noone"
-introShayRoomDay,,"trans_scene,introShayRoomNight,sBackgroundShayRoomNight"
+introShayRoomDay,,"trans_scene,introShayRoomNight"
 ,,
+introShayRoomNight,,"scene_bg_clear,sBackgroundShayRoomNight"
 introShayRoomNight,Empty,"October 30th, Night"
 introShayRoomNight,,"music,bgmSuspense"
 introShayRoomNight,,"main_char_in,6"
@@ -140,12 +158,13 @@ introShayRoomNight,,"char_update,Spook,0"
 introShayRoomNight,Spook,But if Shay wakes up...
 introShayRoomNight,???,"Then she will find you in the morning! Live a little, friend! C'mon!"
 introShayRoomNight,Spook,"...Yeah, okay"
-introShayRoomNight,,"trans_scene,introCageOpen,sBackgroundBlack"
+introShayRoomNight,,"trans_scene,introCageOpen"
 ,,
-introCageOpen,,"trans_clear,sBackgroundBlack"
+introCageOpen,,"scene_bg_clear,sBackgroundBlack"
 introCageOpen,???,"[sound,sfxCageOpen]Yeaaah! Now we're talkin'."
-introCageOpen,,"trans_scene,introScrewdriver,sBackgroundCageNight"
+introCageOpen,,"trans_scene,introScrewdriver"
 ,,
+introScrewdriver,,"scene_bg_clear,sBackgroundCageNight"
 introScrewdriver,,"music,bgmStrayRatStrut"
 introScrewdriver,,"main_char_in,0"
 introScrewdriver,,"delay,2"
@@ -159,8 +178,9 @@ introScrewdriver,,"char_update,Screwdriver,0"
 introScrewdriver,Screwdriver,"Fair point, fair point."
 introScrewdriver,Spook,...Let's just go before we wake up Shay!
 introScrewdriver,,"music,noone"
-introScrewdriver,,"trans_scene,introBar,sBackgroundSewerBar"
+introScrewdriver,,"trans_scene,introBar"
 ,,
+introBar,,"scene_bg_clear,sBackgroundSewerBar"
 introBar,,"music,bgmBarPunk"
 introBar,,"main_char_in,0"
 introBar,,"char_in,Screwdriver,sScrewdriver,2"
@@ -224,7 +244,7 @@ introBar,,map
 ,,
 ,,
 ,,
-shayHome_Day1_Visit1,,"trans_clear,sBackgroundShayRoomNight"
+shayHome_Day1_Visit1,,"scene_bg_clear,sBackgroundShayRoomNight"
 shayHome_Day1_Visit1,,"music,bgmShayHome"
 shayHome_Day1_Visit1,,"main_char_in,0"
 shayHome_Day1_Visit1,Empty,Shay is sound asleep. Your cage is warm and inviting.
@@ -243,7 +263,7 @@ shayHome_Day1_Visit1,,map
 ,,
 ,,
 ,,
-shayHome_Day1_Visit2,,"trans_clear,sBackgroundShayRoomNight"
+shayHome_Day1_Visit2,,"scene_bg_clear,sBackgroundShayRoomNight"
 shayHome_Day1_Visit2,,"music,bgmShayHome"
 shayHome_Day1_Visit2,,"main_char_in,0"
 shayHome_Day1_Visit2,,"char_in,Screwdriver,sScrewdriver,2"
@@ -258,7 +278,7 @@ shayHome_Day1_Visit2,,map
 ,,
 ,,
 ,,
-shayHome_Day1_Visit3,,"trans_clear,sBackgroundShayRoomNight"
+shayHome_Day1_Visit3,,"scene_bg_clear,sBackgroundShayRoomNight"
 shayHome_Day1_Visit3,,"music,bgmShayHome"
 shayHome_Day1_Visit3,,"main_char_in,0"
 shayHome_Day1_Visit3,,"char_in,Screwdriver,sScrewdriver,0"
@@ -280,11 +300,12 @@ shayHome_Day1_Visit3_Path1,,"char_update,Screwdriver,0"
 shayHome_Day1_Visit3_Path1,Screwdriver,"Okay, kid."
 shayHome_Day1_Visit3_Path1,Screwdriver,Let's break into that big fancy house across the street!
 shayHome_Day1_Visit3_Path1,,"music,noone"
-shayHome_Day1_Visit3_Path1,,"trans_scene,shayHome_Day1_Visit3_HouseAcross,sBackgroundGray"
+shayHome_Day1_Visit3_Path1,,"trans_scene,shayHome_Day1_Visit3_HouseAcross"
 ,,
 shayHome_Day1_Visit3_Path2,,"music,noone"
 shayHome_Day1_Visit3_Path2,,map
 ,,
+shayHome_Day1_Visit3_HouseAcross,,"scene_bg_clear,sBackgroundGray"
 shayHome_Day1_Visit3_HouseAcross,,"music,bgmHouseAcrossSneakIn"
 shayHome_Day1_Visit3_HouseAcross,,"main_char_in,0"
 shayHome_Day1_Visit3_HouseAcross,,"char_in,Screwdriver,sScrewdriver,0"
@@ -299,11 +320,13 @@ shayHome_Day1_Visit3_HouseAcross,,"char_update,Spook,8"
 shayHome_Day1_Visit3_HouseAcross,Spook,Wait-
 shayHome_Day1_Visit3_HouseAcross,,"char_out,Screwdriver"
 shayHome_Day1_Visit3_HouseAcross,Empty,"A well groomed, fluffy dog. Her perfume smells like cinnamon and she is wearing a single pink hair pin."
-shayHome_Day1_Visit3_HouseAcross,,"trans_scene,shayHome_Day1_Visit3_HouseAcross_FadeOut1,sBackgroundBlack"
+shayHome_Day1_Visit3_HouseAcross,,"trans_scene,shayHome_Day1_Visit3_HouseAcross_FadeOut1"
 ,,
+shayHome_Day1_Visit3_HouseAcross_FadeOut1,,"scene_bg_clear,sBackgroundBlack"
 shayHome_Day1_Visit3_HouseAcross_FadeOut1,Empty,Several minutes pass...
-shayHome_Day1_Visit3_HouseAcross_FadeOut1,,"trans_scene,shayHome_Day1_Visit3_HouseAcross_GotCandy,sBackgroundGray"
+shayHome_Day1_Visit3_HouseAcross_FadeOut1,,"trans_scene,shayHome_Day1_Visit3_HouseAcross_GotCandy"
 ,,
+shayHome_Day1_Visit3_HouseAcross_GotCandy,,"scene_bg_clear,sBackgroundGray"
 shayHome_Day1_Visit3_HouseAcross_GotCandy,,"main_char_in,0"
 shayHome_Day1_Visit3_HouseAcross_GotCandy,,"char_in,Princess,sPrincess,4"
 shayHome_Day1_Visit3_HouseAcross_GotCandy,,"char_in,Screwdriver,sScrewdriver,8"
@@ -312,13 +335,15 @@ shayHome_Day1_Visit3_HouseAcross_GotCandy,Princess,Arf...?
 shayHome_Day1_Visit3_HouseAcross_GotCandy,,"char_update,Screwdriver,3"
 shayHome_Day1_Visit3_HouseAcross_GotCandy,,"char_update,Spook,8"
 shayHome_Day1_Visit3_HouseAcross_GotCandy,Screwdriver,QUICK!!!
-shayHome_Day1_Visit3_HouseAcross_GotCandy,,"trans_scene,shayHome_Day1_Visit3_HouseAcross_FadeOut2,sBackgroundBlack"
+shayHome_Day1_Visit3_HouseAcross_GotCandy,,"trans_scene,shayHome_Day1_Visit3_HouseAcross_FadeOut2"
 ,,
+shayHome_Day1_Visit3_HouseAcross_FadeOut2,,"scene_bg_clear,sBackgroundBlack"
 shayHome_Day1_Visit3_HouseAcross_FadeOut2,Empty,"*Barking*[sound,sfxPrincessBark]"
 shayHome_Day1_Visit3_HouseAcross_FadeOut2,,"delay,2"
-shayHome_Day1_Visit3_HouseAcross_FadeOut2,,"trans_scene,shayHome_Day1_Visit3_Bar,sBackgroundSewerBar"
+shayHome_Day1_Visit3_HouseAcross_FadeOut2,,"trans_scene,shayHome_Day1_Visit3_Bar"
 shayHome_Day1_Visit3_HouseAcross_FadeOut2,,"music,noone"
 ,,
+shayHome_Day1_Visit3_Bar,,"scene_bg_clear,sBackgroundSewerBar"
 shayHome_Day1_Visit3_Bar,,"music,bgmSewerBar"
 shayHome_Day1_Visit3_Bar,,"main_char_in,8"
 shayHome_Day1_Visit3_Bar,,"char_in,Screwdriver,sScrewdriver,0"
@@ -452,7 +477,7 @@ shayHome_Day1_Visit3_Bar_Path7,,map
 ,,
 ,,
 ,,
-sewerBar_Day1_Visit1,,"trans_clear,sBackgroundSewerBar"
+sewerBar_Day1_Visit1,,"scene_bg_clear,sBackgroundSewerBar"
 sewerBar_Day1_Visit1,,"music,bgmSewerBar"
 sewerBar_Day1_Visit1,,"main_char_in,0"
 sewerBar_Day1_Visit1,,"char_in,Barry,sBarry,0"
@@ -588,7 +613,7 @@ sewerBar_Day1_Visit1_Path,,map
 ,,
 ,,
 ,,
-houseAcross_Day1_Visit1,,"trans_clear,sBackgroundGray"
+houseAcross_Day1_Visit1,,"scene_bg_clear,sBackgroundGray"
 houseAcross_Day1_Visit1,,"music,bgmHouseAcross"
 houseAcross_Day1_Visit1,,"main_char_in,0"
 houseAcross_Day1_Visit1,Spook,Whoa! What a large house!
@@ -615,7 +640,7 @@ houseAcross_Day1_Visit1_Path2,,map
 ,,
 ,,
 ,,
-houseAcross_Day1_Visit2,,"trans_clear,sBackgroundGray"
+houseAcross_Day1_Visit2,,"scene_bg_clear,sBackgroundGray"
 houseAcross_Day1_Visit2,,"music,bgmHouseAcross"
 houseAcross_Day1_Visit2,,"main_char_in,0"
 houseAcross_Day1_Visit2,,"char_in,Giant Rabbit,sDipper,0"
@@ -626,11 +651,11 @@ houseAcross_Day1_Visit2,,map
 ,,
 ,,
 ,,
-lampPost_Day1_Visit1,,"trans_clear,sBackgroundLampPostNightMoth"
+lampPost_Day1_Visit1,,"scene_bg_clear,sBackgroundLampPostNightMoth"
 lampPost_Day1_Visit1,,"music,bgmLompTheme"
 lampPost_Day1_Visit1,,"main_char_in,0"
 lampPost_Day1_Visit1,Empty,A bright light flickers rapidly. The moth from the bar is glaring into it with loving eyes.
-lampPost_Day1_Visit1,,"trans_bg,sBackgroundLampPostNight"
+lampPost_Day1_Visit1,,"trans_change,false,sBackgroundLampPostNight"
 lampPost_Day1_Visit1,,"char_in,Möth,sMoth,0"
 lampPost_Day1_Visit1,Möth,My sweet... My love...
 lampPost_Day1_Visit1,Spook,Um... Hello?
@@ -701,7 +726,7 @@ lampPost_Day1_Visit1_Path4,,map
 ,,
 ,,
 ,,
-lampPost_Day1_Visit2,,"trans_clear,sBackgroundLampPostNightMoth"
+lampPost_Day1_Visit2,,"scene_bg_clear,sBackgroundLampPostNightMoth"
 lampPost_Day1_Visit2,,"music,bgmLompTheme"
 lampPost_Day1_Visit2,,"main_char_in,0"
 lampPost_Day1_Visit2,Möth,My love...

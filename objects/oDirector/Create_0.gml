@@ -63,6 +63,21 @@ mainCharacter = {
 spookUp = false;
 
 
+SceneClear = function(){
+	stageCharacters = [];
+    
+	// Reset main character
+	mainCharacter.alpha = MIN_ALPHA;
+	mainCharacter.targetAlpha = MIN_ALPHA;
+	mainCharacter.yOffset = 0;
+	mainCharacter.yVelocity = 0;
+	mainCharacter.blend = c_white;
+	
+	spookUp = false;
+    
+	previousSpeaker = "";
+}
+
 // Start the scene that was set as a global
 currentSceneName = global.sceneToPlay;
 sceneTarget = "";
@@ -129,7 +144,8 @@ LineSet = function(){
 				//delay exceptions
 				case "scene_set":				{ SceneCommandExecute(_lineText);	} break;
 				case "scene_clear":				{ SceneCommandExecute(_lineText);	} break;
-				case "bg_set":					{ SceneCommandExecute(_lineText);	} break;
+				case "scene_bg":				{ SceneCommandExecute(_lineText);	} break;
+				case "scene_bg_clear":			{ SceneCommandExecute(_lineText);	} break;
 				case "choice":					{ SceneCommandExecute(_lineText);	} break;
 				case "condition_flag":			{ SceneCommandExecute(_lineText);	} break;
 				case "condition_script":		{ SceneCommandExecute(_lineText);	} break;
