@@ -21,7 +21,7 @@ function MenuDataCreate() {
 					{
 						title:		global.uiData.menuStart,
 						elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
-						scr:		MenuTransitionStart,
+						scr:		MenuGameStart,
 						arg:		[rmStage, sqFadeOut, sqFadeIn],
 					},
 					//settings page

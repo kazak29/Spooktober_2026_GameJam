@@ -2,7 +2,7 @@
 	
 	function ScreenPlayReset(){
 		global.sceneToPlay = noone;
-		global.lastLocationBackground = sBackgroundBlack;
+		global.lastLocationBackground = noone;
 	
 		global.textLog = [];
 		global.textLogInst = noone;
@@ -38,7 +38,7 @@
 	
 	function SceneToMap(){
 		with oDirector {
-			global.lastLocationBackground = bg.sprInd;
+			global.lastLocationBackground = variable_clone(bg);
 	        //currentSceneName = noone;
 			currentLineSequence = [];
 			directorState  = DirectorStateIdle;

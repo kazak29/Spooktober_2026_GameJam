@@ -1,4 +1,4 @@
-function MenuTransitionStart(_args){
+function MenuGameStart(_args){
 	var _al = array_length(_args);
 	if (_al < 3) show_debug_message("MENU TRANSITION DATA MISSING");
 	
@@ -17,6 +17,20 @@ function MenuTransitionStart(_args){
 	//global.sceneToPlay = FIRST_SCENE;
 	global.sceneToPlay = "testScene";
 	//global.sceneToPlay = "rocketTestScene";
+	
+	TransitionStart(_args[0], _args[1], _args[2]);
+}
+
+function MenuTransitionStart(_args){
+	var _targetRoom = _args[0];
+	if (_targetRoom != rmCredits) { AmbientFadeOutAll(); }
+	//if menuType == MENU_TYPE_PAUSE {
+	//	instance_destroy();
+	//	with oMenuElement instance_destroy();
+	//}
+	
+	ClearTextLog();
+	if (instance_exists(oTextLog)) { instance_destroy(global.textLogInst); }
 	
 	TransitionStart(_args[0], _args[1], _args[2]);
 }

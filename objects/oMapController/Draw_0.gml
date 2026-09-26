@@ -1,4 +1,10 @@
-if sprite_exists(global.lastLocationBackground) draw_sprite(global.lastLocationBackground, 0, 0, 0);
+var _bg = global.lastLocationBackground;
+if is_struct(_bg) && sprite_exists(_bg.sprInd) {
+	with _bg {
+		draw_sprite_ext(sprInd,imInd, 0,0, 1,1, 0,col,alpha);
+	}
+}
+
 draw_sprite(sMap, 0, 0,0);
 
 for (var i = 0; i < array_length(locs); i++) {
