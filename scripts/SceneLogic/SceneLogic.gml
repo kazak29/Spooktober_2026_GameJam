@@ -1,5 +1,15 @@
 #region reusable scene triggers
 	
+	function ScreenPlayReset(){
+		global.sceneToPlay = noone;
+		global.lastLocationBackground = sBackgroundBlack;
+	
+		global.textLog = [];
+		global.textLogInst = noone;
+	
+		global.dataMapLocations = MapDataCreate();
+	}
+	
 	function SceneClear(){
 		with oDirector {
 			stageCharacters = [];

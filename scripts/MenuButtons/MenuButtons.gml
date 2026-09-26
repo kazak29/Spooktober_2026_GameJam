@@ -9,13 +9,14 @@ function MenuTransitionStart(_args){
 		with oMenuElement instance_destroy();
 	}
 	
-	// Reset game to the beginning and clear the textlog
+	ClearTextLog();
+	if (instance_exists(oTextLog)) { instance_destroy(global.textLogInst); }
+	
+	ScreenPlayReset();
+	
 	//global.sceneToPlay = FIRST_SCENE;
 	global.sceneToPlay = "testScene";
 	//global.sceneToPlay = "rocketTestScene";
-	
-	ClearTextLog();
-	if (instance_exists(oTextLog)) { instance_destroy(global.textLogInst); }
 	
 	TransitionStart(_args[0], _args[1], _args[2]);
 }
