@@ -292,6 +292,16 @@ with global.dataSceneCommands {
 			}
 		};
 		
+		// --- TRANSITION TO OTHER ROOM ---
+		//ROOM NAME, SEQUENCE OUT, SEQUENCE IN
+		trans_room = function(_args){
+			with oDirector {
+				var _sqOut	= (array_length(_args) > 1) ? asset_get_index(_args[1])	: sqFadeOut;
+				var _sqIn	= (array_length(_args) > 2) ? asset_get_index(_args[2])	: sqFadeIn;
+				TransitionStart(asset_get_index(_args[0]), _sqOut, _sqIn);
+			}
+		};
+		
 	#endregion
 	#region characters
 	

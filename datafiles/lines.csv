@@ -813,15 +813,30 @@ p2home1,,"music,bgmShayHome"
 p2home1,,"main_char_in,0"
 p2home1,Spook,Shay is still away...
 p2home1,Spook,I can explore some more!
-p2home1,Spook,"Or... I can abandon those guys and just stay with Shay, just like I wanted from the start!"
+p2home1,Spook,"Or... I can abandon those guys and stay with Shay, just like I wanted from the start!"
 p2home1,Spook,They probably won't miss me anyway...
 p2home1,,"char_update,Spook,3"
 p2home1,Spook,...is what I would've said if this game was finished!
 p2home1,,"char_update,Spook,0"
-p2home1,Spook,"Unfortunately, we ran out of time so it's a just single road for me, at least for now."
-p2home1,Spook,To the party!
-p2home1,,"music,noone"
-p2home1,,"trans_scene,endingPartyBad"
+p2home1,Spook,"Unfortunately, we ran out of time to make a second chapter."
+p2home1,,"condition_flag,candy_quest_complete"
+p2home1,,"scene_set,p2home1Path1"
+p2home1,,"scene_set,p2home1Path2"
+,,
+p2home1Path1,,"char_update,Spook,6"
+p2home1Path1,Spook,Let's see if my help with stealing that candy amounted to anything.
+p2home1Path1,,"char_update,Spook,0"
+p2home1Path1,Spook,To the party!
+p2home1Path1,,"music,noone"
+p2home1Path1,,"trans_scene,endingPartyOkay"
+,,
+p2home1Path2,,"char_update,Spook,6"
+p2home1Path2,Spook,"I hope those guys still managed to prepare a good party, despite me not helping them at all..."
+p2home1Path2,,"char_update,Spook,0"
+p2home1Path2,Spook,I guess it's time to find out!
+p2home1Path2,,"music,noone"
+p2home1Path2,,"trans_scene,endingPartyBad"
+,,
 ,,
 endingPartyBad,,"scene_bg_clear,sBackgroundSewerBar"
 endingPartyBad,Empty,You climb down the Sewer.
@@ -850,7 +865,7 @@ endingPartyBad,Screwdriver,"Or, you know, you could always go back in time and t
 endingPartyBad,Spook,I could WHAT?
 endingPartyBad,Screwdriver,He-he.
 endingPartyBad,,"char_update,Screwdriver,0"
-endingPartyBad,Screwdriver,Just kiddin'. We didn't make other endings yet.
+endingPartyBad,Screwdriver,Just kiddin'.
 endingPartyBad,,"char_update,Screwdriver,2"
 endingPartyBad,Screwdriver,"Happy Halloween, kid. Try to enjoy!"
 endingPartyBad,,main_char_out
@@ -870,4 +885,8 @@ endingPartyBad,Shay,It's time to watch some zombie rats!
 endingPartyBad,,"trans_scene,endingShayCredits"
 ,,
 ,,
-endingShayCredits,,<HERE IS WATCHING TV>
+endingShayCredits,,"trans_room,rmCredits"
+,,
+,,
+endingPartyOkay,Spook,Man
+endingPartyOkay,,"trans_scene,endingShayCredits"
