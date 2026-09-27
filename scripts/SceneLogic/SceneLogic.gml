@@ -8,6 +8,7 @@
 		global.textLogInst = noone;
 	
 		global.dataMapLocations = MapDataCreate();
+		global.flags = FlagsCreate();
 	}
 	
 	function SceneStart(_name){
@@ -292,6 +293,16 @@ with global.dataSceneCommands {
 			}
 		};
 		
+		// --- TRANSITION TO OTHER ROOM ---
+		//ROOM NAME, SEQUENCE OUT, SEQUENCE IN
+		trans_room = function(_args){
+			with oDirector {
+				var _sqOut	= (array_length(_args) > 1) ? asset_get_index(_args[1])	: sqFadeOut;
+				var _sqIn	= (array_length(_args) > 2) ? asset_get_index(_args[2])	: sqFadeIn;
+				TransitionStart(asset_get_index(_args[0]), _sqOut, _sqIn);
+			}
+		};
+		
 	#endregion
 	#region characters
 	
@@ -465,7 +476,7 @@ with global.dataSceneCommands {
 		sound = function(_args){
 			with oDirector {
 				var _snd = asset_get_index(_args[0]);
-				var _volPercent = (array_length(_args) > 1) ? real(_args[1]) : 100;
+				var _volPercent = (array_length(_args) > 1) ? real(_args[1]) : DEFAULT_VOLUME_PERCENT;
 				var _looping	= (array_length(_args) > 2) ? (_args[2] == "true" || _args[2] == "1") : false;
 				SoundPlay(_snd, _volPercent, _looping);
 		

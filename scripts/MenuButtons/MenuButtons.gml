@@ -2,8 +2,9 @@ function MenuGameStart(_args){
 	AmbientFadeOutAll();
 	ScreenPlayReset();
 	
-	//global.sceneToPlay = FIRST_SCENE;
-	global.sceneToPlay = "p2introAh"; //"testScene";
+	
+	global.sceneToPlay = FIRST_SCENE;
+	//global.sceneToPlay = "p2intro"; //"testScene";
 	//global.sceneToPlay = "rocketTestScene";
 	
 	TransitionStart(_args[0], _args[1], _args[2]);
