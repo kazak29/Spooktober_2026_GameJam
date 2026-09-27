@@ -476,7 +476,7 @@ with global.dataSceneCommands {
 		sound = function(_args){
 			with oDirector {
 				var _snd = asset_get_index(_args[0]);
-				var _volPercent = (array_length(_args) > 1) ? real(_args[1]) : 100;
+				var _volPercent = (array_length(_args) > 1) ? real(_args[1]) : DEFAULT_VOLUME_PERCENT;
 				var _looping	= (array_length(_args) > 2) ? (_args[2] == "true" || _args[2] == "1") : false;
 				SoundPlay(_snd, _volPercent, _looping);
 		

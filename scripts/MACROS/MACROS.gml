@@ -114,7 +114,8 @@
 	#macro COL_MAP_DEFAULT				c_white
 	#macro COL_MAP_LOCKED				c_black
 	#macro COL_MAP_VISITED				c_dkgray
-	#macro COL_MAP_HOVER				c_red
+	#macro COL_MAP_HOVER				#F5555D
+	#macro COL_MAP_HOVER_MOUSE			c_red
 	
 #endregion
 #region menu

@@ -15,6 +15,7 @@ for (var i = 0; i < array_length(locs); i++) {
 		
 		if other.num == i {
 			_c = COL_MAP_HOVER;
+			if other.mouseHover _c = COL_MAP_HOVER_MOUSE;
 			if is_struct(sprHover) with sprHover { draw_sprite_ext(ind,imInd, 0,0, 1,1,0, col, alpha); }
 		}
 		
