@@ -8,6 +8,7 @@
 		global.textLogInst = noone;
 	
 		global.dataMapLocations = MapDataCreate();
+		global.flags = FlagsCreate();
 	}
 	
 	function SceneStart(_name){
