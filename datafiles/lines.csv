@@ -244,6 +244,7 @@ introBar,,map
 ,,
 ,,
 ,,
+shayHome_Day1_Visit1,,"map_scene,home,shayHome_Day1_Visit2"
 shayHome_Day1_Visit1,,"scene_bg_clear,sBackgroundShayRoomNight"
 shayHome_Day1_Visit1,,"music,bgmShayHome"
 shayHome_Day1_Visit1,,"main_char_in,0"
@@ -258,7 +259,6 @@ shayHome_Day1_Visit1,Spook,Why are you back here?!
 shayHome_Day1_Visit1,,"char_update,Screwdriver,0"
 shayHome_Day1_Visit1,Screwdriver,Unfinished... business. 
 shayHome_Day1_Visit1,Screwdriver,Why are YOU back here!? Night is young! Go explore! Go!
-shayHome_Day1_Visit1,,"map_scene,home,shayHome_Day1_Visit2"
 shayHome_Day1_Visit1,,"music,noone"
 shayHome_Day1_Visit1,,map
 ,,
@@ -279,6 +279,7 @@ shayHome_Day1_Visit2,,map
 ,,
 ,,
 ,,
+shayHome_Day1_Visit3,,"map_scene,home,shayHome_Day1_Visit3_2"
 shayHome_Day1_Visit3,,"scene_bg_clear,sBackgroundShayRoomNight"
 shayHome_Day1_Visit3,,"music,bgmShayHome"
 shayHome_Day1_Visit3,,"main_char_in,0"
@@ -289,6 +290,18 @@ shayHome_Day1_Visit3,,"choice,shayHome0,shayHome1"
 shayHome_Day1_Visit3,,"scene_set,shayHome_Day1_Visit3_Path1"
 shayHome_Day1_Visit3,,"scene_set,shayHome_Day1_Visit3_Path2"
 ,,
+shayHome_Day1_Visit3_2,,"scene_bg_clear,sBackgroundShayRoomNight"
+shayHome_Day1_Visit3_2,,"music,bgmShayHome"
+shayHome_Day1_Visit3_2,,"main_char_in,0"
+shayHome_Day1_Visit3_2,,"char_in,Screwdriver,sScrewdriver,0"
+shayHome_Day1_Visit3_2,Screwdriver,Hey!
+shayHome_Day1_Visit3_2,Screwdriver,You wanna tell me something?
+shayHome_Day1_Visit3_2,,"choice,shayHome0,shayHome1"
+shayHome_Day1_Visit3_2,,"scene_set,shayHome_Day1_Visit3_Path1"
+shayHome_Day1_Visit3_2,,"scene_set,shayHome_Day1_Visit3_Path2"
+,,
+shayHome_Day1_Visit3_Path1,,"map_lock,home,true"
+shayHome_Day1_Visit3_Path1,,"flag_set,candy_quest_complete,true"
 shayHome_Day1_Visit3_Path1,,"char_update,Screwdriver,3"
 shayHome_Day1_Visit3_Path1,Screwdriver,"For the last time, I'm not giving his heart undies back!"
 shayHome_Day1_Visit3_Path1,,"char_update,Spook,7"
@@ -303,6 +316,7 @@ shayHome_Day1_Visit3_Path1,Screwdriver,Let's break into that big fancy house acr
 shayHome_Day1_Visit3_Path1,,"music,noone"
 shayHome_Day1_Visit3_Path1,,"trans_scene,shayHome_Day1_Visit3_HouseAcross"
 ,,
+shayHome_Day1_Visit3_Path2,Screwdriver,Hey!
 shayHome_Day1_Visit3_Path2,,"music,noone"
 shayHome_Day1_Visit3_Path2,,map
 ,,
@@ -472,122 +486,216 @@ shayHome_Day1_Visit3_Bar_Path6,Barry,"Yeah, gonna stay a bit longer. I got some 
 shayHome_Day1_Visit3_Bar_Path6,Spook,Night!
 shayHome_Day1_Visit3_Bar_Path6,,<TODO: Go to ALL LOCATIONS CLEAR SCENE>
 ,,
+shayHome_Day1_Visit3_Bar_Path7,,"char_update,Screwdriver,2"
+shayHome_Day1_Visit3_Bar_Path7,Screwdriver,"Wow, someone is becoming a real night owl! Heh."
+shayHome_Day1_Visit3_Bar_Path7,,"char_update,Pogo,0"
+shayHome_Day1_Visit3_Bar_Path7,Pogo,"Nights are a perfect time to wander about. It builds confidence, little mouse."
+shayHome_Day1_Visit3_Bar_Path7,,"char_update,Barry,1"
+shayHome_Day1_Visit3_Bar_Path7,Barry,"Happy hunting, friend."
 shayHome_Day1_Visit3_Bar_Path7,,"music,noone"
-shayHome_Day1_Visit3_Bar_Path7,,<TODO: Lock the home location at this point>
 shayHome_Day1_Visit3_Bar_Path7,,map
 ,,
 ,,
 ,,
-sewerBar_Day1_Visit1,,"scene_bg_clear,sBackgroundSewerBar"
-sewerBar_Day1_Visit1,,"music,bgmSewerBar"
-sewerBar_Day1_Visit1,,"main_char_in,0"
-sewerBar_Day1_Visit1,,"char_in,Barry,sBarry,0"
-sewerBar_Day1_Visit1,Barry,Hey kid.
-sewerBar_Day1_Visit1,Barry,"It's your first night out, hm? Are you excited?"
-sewerBar_Day1_Visit1,,"choice,sewerBar0,sewerBar1"
-sewerBar_Day1_Visit1,,"scene_set,sewerBar_Day1_Visit1_Path1"
-sewerBar_Day1_Visit1,,"scene_set,sewerBar_Day1_Visit1_Path2"
-,,
-sewerBar_Day1_Visit1_Path1,Barry,"That's okay, friend."
-sewerBar_Day1_Visit1_Path1,Barry,"The streets might seem dangerous at night, but for us pests, it's full of danger during the day, too."
-sewerBar_Day1_Visit1_Path1,,"char_update,Barry,2"
-sewerBar_Day1_Visit1_Path1,Barry,That's why we learn to look after one other!
-sewerBar_Day1_Visit1_Path1,Barry,I remember when Drivey and Pogo were just kids...
-sewerBar_Day1_Visit1_Path1,Barry,"Ahh, gettin' emotional."
-sewerBar_Day1_Visit1_Path1,,"char_update,Barry,1"
-sewerBar_Day1_Visit1_Path1,Barry,"Now now, don't let me talk your ear off. You want a drink?"
-sewerBar_Day1_Visit1_Path1,,"choice,sewerBar2,sewerBar3,sewerBar4"
-sewerBar_Day1_Visit1_Path1,,"scene_set,sewerBar_Day1_Visit1_Path2"
-sewerBar_Day1_Visit1_Path1,,"scene_set,sewerBar_Day1_Visit1_Path3"
-sewerBar_Day1_Visit1_Path1,,"scene_set,sewerBar_Day1_Visit1_Path4"
-,,
-sewerBar_Day1_Visit1_Path2,Barry,"Of course, friend."
-sewerBar_Day1_Visit1_Path2,Barry,"We don't even serve poop, most days!"
-sewerBar_Day1_Visit1_Path2,,"char_update,Spook,8"
-sewerBar_Day1_Visit1_Path2,Spook,Yuck!!!
-sewerBar_Day1_Visit1_Path2,,"char_update,Barry,4"
-sewerBar_Day1_Visit1_Path2,Barry,Just messin' with you!
-sewerBar_Day1_Visit1_Path2,,"char_update,Barry,1"
-sewerBar_Day1_Visit1_Path2,Barry,"But no, it may not be for pet standards."
-sewerBar_Day1_Visit1_Path2,Barry,"So, you know, feel free to leave."
-sewerBar_Day1_Visit1_Path2,,"choice,sewerBar5,leave"
-sewerBar_Day1_Visit1_Path2,,
-sewerBar_Day1_Visit1_Path2,,"scene_set,sewerBar_Day1_Visit1_Path4"
-,,
-,,
-sewerBar_Day1_Visit1_Path3,,
-,,
-,,
-,,
-sewerBar_Day1_Visit1_Path,,"music,noone"
-sewerBar_Day1_Visit1_Path,,map
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
+bar1,,"map_scene,bar,bar2"
+bar1,,"scene_bg_clear,sBackgroundSewerBar"
+bar1,,"music,bgmSewerBar"
+bar1,,"main_char_in,0"
+bar1,,"char_in,Barry,sBarry,0"
+bar1,Barry,Hey kid.
+bar1,Barry,"It's your first night out, hm? Are you excited?"
+bar1,,"choice,barNervous,barParty"
+bar1,,"scene_set,bar1Nervours"
+bar1,,"scene_set,bar1Party"
+,,
+bar1Nervours,Barry,"That's okay, friend."
+bar1Nervours,Barry,"The streets might seem dangerous at night, but for us pests, it's full of danger during the day, too."
+bar1Nervours,,"char_update,Barry,2"
+bar1Nervours,Barry,That's why we learn to look after one other!
+bar1Nervours,Barry,I remember when Drivey and Pogo were just kids...
+bar1Nervours,Barry,"Ahh, gettin' emotional."
+bar1Nervours,,"char_update,Barry,1"
+bar1Nervours,Barry,"Now now, don't let me talk your ear off. You want a drink?"
+bar1Nervours,,"choice,barHygenic,barStrong,barMilk"
+bar1Nervours,,"scene_set,bar1Hygenic"
+bar1Nervours,,"scene_set,bar1Strong"
+bar1Nervours,,"scene_set,bar1Milk"
+,,
+bar1Party,,"char_update,Barry,4"
+bar1Party,Barry,That's the spirit!
+bar1Party,Barry,"Still, be careful, alright?"
+bar1Party,Barry,"We look after each other, but the careless don't live long out in the streets.. heh."
+bar1Party,,"char_update,Spook,5"
+bar1Party,Spook,"Yeah, yeah! "
+bar1Party,,"char_update,Barry,1"
+bar1Party,Barry,"So, what can I get you then?"
+bar1Party,,"char_update,Spook,0"
+bar1Party,Spook,What's good here?
+bar1Party,Barry,"Hmm, perhaps some Cider?"
+bar1Party,,"char_update,Spook,5"
+bar1Party,Spook,Cider!
+bar1Party,Barry,What can you offer in return?
+bar1Party,,"char_update,Spook,6"
+bar1Party,Spook,Offer... in... return?
+bar1Party,,"char_update,Barry,4"
+bar1Party,Barry,Yeah!
+bar1Party,Barry,"Barry's no charity, buddy. Or else it would be called... Barrity...."
+bar1Party,,"char_update,Spook,5"
+bar1Party,Spook,...But I got no money!
+bar1Party,Barry,Money? Don't be silly!
+bar1Party,,"char_update,Barry,0"
+bar1Party,Barry,"Look. How about you help me restock the Halloween candy, and I make you my special drink?"
+bar1Party,,"choice,barErrands,barCandy"
+bar1Party,,"scene_set,bar1Errands"
+bar1Party,,"scene_set,bar1Candy"
+,,
+bar1Hygenic,Barry,"Of course, friend."
+bar1Hygenic,Barry,"We don't even serve poop, most days!"
+bar1Hygenic,,"char_update,Spook,8"
+bar1Hygenic,Spook,Yuck!!!
+bar1Hygenic,,"char_update,Barry,4"
+bar1Hygenic,Barry,Just messin' with you!
+bar1Hygenic,,"char_update,Barry,1"
+bar1Hygenic,Barry,"But no, it may not be for pet standards."
+bar1Hygenic,Barry,"So, you know, feel free to leave."
+bar1Hygenic,,"char_update,Spook,0"
+bar1Hygenic,Spook,Well...
+bar1Hygenic,,"choice,barNotBad,leave"
+bar1Hygenic,,"scene_set,bar1NotBad"
+bar1Hygenic,,"scene_set,bar1Leave"
+,,
+bar1NotBad,,"char_update,Spook,0"
+bar1NotBad,Barry,Well thank you very much. I sure try to keep it that way!
+bar1NotBad,Spook,I guess a single drink wouldn't hurt.
+bar1NotBad,Barry,In the mood for something specific?
+bar1NotBad,,"choice,barStrong,barMilk"
+bar1NotBad,,"scene_set,bar1Strong"
+bar1NotBad,,"scene_set,bar1Milk"
+,,
+bar1Leave,,"flag_set,candy_quest_fail,true"
+bar1Leave,,map
+,,
+,,
+bar1Strong,,"char_update,Barry,0"
+bar1Strong,Barry,Woah there friend!
+bar1Strong,Barry,"Eager for a night out, are you not?"
+bar1Strong,,"char_update,Barry,4"
+bar1Strong,Barry,Tell you what?
+bar1Strong,Barry,"In this community, we earn what we get!"
+bar1Strong,Barry,"How about you help me restock some Halloween candy, and then we toast together?"
+bar1Strong,,"choice,barErrands,barCandy"
+bar1Strong,,"scene_set,bar1Errands"
+bar1Strong,,"scene_set,bar1Candy"
+,,
+bar1Milk,,"char_update,Barry,0"
+bar1Milk,Barry,Whoa there buddy!
+bar1Milk,Barry,"This is a bar, not the grocery store!"
+bar1Milk,,"char_update,Spook,6"
+bar1Milk,Spook,What do you have then?
+bar1Milk,,"char_update,Barry,1"
+bar1Milk,Barry,"Well... Cider. Cheese, candy, leftover food, oat, rotten fruit...."
+bar1Milk,,"char_update,Spook,7"
+bar1Milk,Spook,...
+bar1Milk,,"char_update,Spook,0"
+bar1Milk,Spook,...I think I'll pass.
+bar1Milk,,"char_update,Barry,4"
+bar1Milk,Barry,No fun!
+bar1Milk,Barry,"Tell you what, If you can help me restock the Halloween candy, I can make you my special drink."
+bar1Milk,Barry,What'dya say?
+bar1Milk,,"choice,barErrands,barCandy"
+bar1Milk,,"scene_set,bar1Errands"
+bar1Milk,,"scene_set,bar1Candy"
+,,
+,,
+bar1Errands,,"char_update,Barry,1"
+bar1Errands,Barry,"Well, you order a drink, you pay, friend!"
+bar1Errands,Barry,Do you have something else to pay with?
+bar1Errands,,"char_update,Spook,0"
+bar1Errands,Spook,...No.
+bar1Errands,Barry,Screwdriver brings all kinds of things.
+bar1Errands,Barry,"Food, mostly."
+bar1Errands,Barry,"But also music, books, small furniture, even human money..."
+bar1Errands,,"char_update,Spook,1"
+bar1Errands,Spook,That's THIEVERY!!!!!
+bar1Errands,Barry,Hmm. Yes. 
+bar1Errands,,"char_update,Barry,4"
+bar1Errands,Barry,"Yes, it is."
+bar1Errands,,"char_update,Spook,0"
+bar1Errands,Barry,"So, you are in?"
+bar1Errands,,"choice,barNuh,barOkay"
+bar1Errands,,"scene_set,bar1Nuh"
+bar1Errands,,"scene_set,bar1Okay"
+,,
+bar1Candy,,"char_update,Barry,1"
+bar1Candy,Barry,"Trash, streets, more trash..."
+bar1Candy,Barry,...A fridge.
+bar1Candy,Barry,Know what? Try catching up with Screwdriver. He can show you a trick or two!
+bar1Candy,Spook,Hmm...
+bar1Candy,,"map_scene,home,shayHome_Day1_Visit3"
+bar1Candy,,"flag_set,candy_quest_start,true"
+bar1Candy,,map
+,,
+,,
+bar1Nuh,,"char_update,Barry,1"
+bar1Nuh,Barry,"Your call, kid!"
+bar1Nuh,Barry,"More for ther rest of us, heh."
+bar1Nuh,,"flag_set,candy_quest_fail,true"
+bar1Nuh,,map
+,,
+bar1Okay,,"char_update,Barry,0"
+bar1Okay,Barry,A mouse of action!
+bar1Okay,Spook,But where do I get the candy from?
+bar1Okay,Barry,"All kinds of places, friend! "
+bar1Okay,Barry,"Your human, another human, the candy shop..."
+bar1Okay,Barry,Know what? Go find Screwdriver. He is a professional looter afterall.
+bar1Okay,Spook,"Yeah, okay..."
+bar1Okay,,"char_update,Barry,1"
+bar1Okay,Barry,Happy trick or treatin'!
+bar1Okay,,"map_scene,home,shayHome_Day1_Visit3"
+bar1Okay,,"flag_set,candy_quest_start,true"
+bar1Okay,,map
+,,
+,,
+bar2,,"map_scene,bar,bar3"
+bar2,,"scene_bg_clear,sBackgroundSewerBar"
+bar2,,"music,bgmSewerBar"
+bar2,,"main_char_in,0"
+bar2,,"char_in,Barry,sBarry,0"
+bar2,Barry,"Hey, kid. Didn't you want to go out and explore?"
+bar2,Spook,I know. Just wanted to hang out in here a bit more!
+bar2,Barry,"Sure, be my guest."
+bar2,,"char_update,Barry,1"
+bar2,Spook,...
+bar2,,"delay,0.2"
+bar2,Barry,...
+bar2,,"delay,0.2"
+bar2,Spook,...
+bar2,,"delay,0.2"
+bar2,Barry,...
+bar2,,"delay,0.2"
+bar2,Spook,Soooo... why do they call it Foggy Hallow?
+bar2,Barry,Cause there's fog.
+bar2,,"char_update,Spook,5"
+bar2,Spook,Ooh.
+bar2,Barry,...
+bar2,Spook,"Well, I better be going then!"
+bar2,,"char_update,Barry,10"
+bar2,Barry,"Have a nice night, kid!"
+bar2,,map
+,,
+bar3,,"scene_bg_clear,sBackgroundSewerBar"
+bar3,,"music,bgmSewerBar"
+bar3,,"main_char_in,0"
+bar3,,"char_in,Barry,sBarry,0"
+bar3,Barry,"Hey, kid. Forgot something?"
+bar3,Spook,"No, I just like the place!"
+bar3,,"char_update,Barry,10"
+bar3,Barry,Appreciate it. But you shouldn't waste time on an old timer like me.
+bar3,Barry,"Go out and make some friends, kid!"
+bar3,,"char_update,Spook,5"
+bar3,Spook,Aw...
+bar3,Barry,"I insist. Cmon, go out there!"
+bar3,,map
 ,,
 ,,
 ,,

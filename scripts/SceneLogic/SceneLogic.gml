@@ -448,6 +448,15 @@ with global.dataSceneCommands {
 			}
 		}
 		
+		// --- SET FLAG ---
+		//FLAG NAME, BOOL
+		flag_set = function(_args){
+			with oDirector {
+				global.flags[$ _args[0]] = (_args[1] == "true" || _args[1] == "1");
+				LineProgress();
+			}
+		}
+		
 	#endregion
 	#region misc
 	

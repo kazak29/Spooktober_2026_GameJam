@@ -16,7 +16,7 @@ function MapDataCreate() {
 		},
 		bar: {
 			title: global.uiData.mapBar,
-			scene: "sewerBar_Day1_Visit1",
+			scene: "bar1",
 		
 			visited:	false,
 			locked:		false,

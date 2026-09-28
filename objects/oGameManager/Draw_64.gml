@@ -41,6 +41,7 @@ draw_set_halign(fa_left);
 		draw_text(VIEWPORT_WIDTH,	96+15*1,	$"CRT: {global.crt.active}");
 		draw_text(VIEWPORT_WIDTH,	96+15*3,	$"Candy Quest Start: {global.flags.candy_quest_start}");
 		draw_text(VIEWPORT_WIDTH,	96+15*4,	$"Candy Quest Complete: {global.flags.candy_quest_complete}");
+		draw_text(VIEWPORT_WIDTH,	96+15*5,	$"Candy Quest Fail: {global.flags.candy_quest_fail}");
 		draw_set_halign(fa_left);
 	}
 	
