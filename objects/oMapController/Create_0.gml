@@ -17,3 +17,4 @@ numProgress = function(_amount){
 	if (num > array_length(locs) - 1)	{ num = 0;						}
 	if (num < 0)						{ num = array_length(locs) - 1;	}
 }
+while !locCheck(num) numProgress(1);

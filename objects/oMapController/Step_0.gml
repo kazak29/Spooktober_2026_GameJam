@@ -34,6 +34,9 @@ for (var i = 0; i < _locsL; i++) {
 var _pressed = oInputManager.pressed.confirm  || (oInputManager.mouse.pressed.left && mouseHover);
 if _pressed {
 	
+	//auto visited flag update (do we need it?)
+	locs[num].visited = true;
+	
 	var _scene = locs[num].scene;
 	//_scene = string_split(_scene,","); add choices here maybe probably someday later
 	
@@ -42,9 +45,6 @@ if _pressed {
 	
 	global.sceneToPlay = _scene;
 	TransitionStart(rmStage, sqFadeOut, sqFadeIn);
-	
-	//auto visited flag update (do we need it?)
-	locs[num].visited = true;
 	
 	_sfx = "click";
 }

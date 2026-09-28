@@ -16,7 +16,7 @@ function MapDataCreate() {
 		},
 		bar: {
 			title: global.uiData.mapBar,
-			scene: "sewerBar_Day1_Visit1",
+			scene: "bar1",
 		
 			visited:	false,
 			locked:		false,
@@ -29,7 +29,7 @@ function MapDataCreate() {
 		},
 		street: {
 			title: global.uiData.mapStreet,
-			scene: "testScene1",
+			scene: "testSceneEmpty",
 		
 			visited:	false,
 			locked:		false,
@@ -47,7 +47,7 @@ function MapDataCreate() {
 		},
 		houseAcrossYard: {
 			title: global.uiData.mapHouseAcrossYard,
-			scene: "testScene1",
+			scene: "testSceneEmpty",
 		
 			visited:	false,
 			locked:		false,
@@ -60,7 +60,7 @@ function MapDataCreate() {
 		},
 		houseAcrossFront: {
 			title: global.uiData.mapHouseAcrossFront,
-			scene: "houseAcross_Day1_Visit1",
+			scene: "testSceneEmpty", //"houseAcross_Day1_Visit1",
 		
 			visited:	false,
 			locked:		false,
@@ -73,7 +73,7 @@ function MapDataCreate() {
 		},
 		lamp: {
 			title: global.uiData.mapLamp,
-			scene: "lampPost_Day1_Visit1",
+			scene: "testSceneEmpty", //"lampPost_Day1_Visit1",
 		
 			visited:	false,
 			locked:		false,

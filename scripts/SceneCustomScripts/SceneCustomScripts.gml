@@ -1,3 +1,15 @@
 function SceneCustomScriptTest(){
 	show_debug_message("it works!");
 }
+function Part1ClearCheck(){
+	var _locs = global.dataMapLocations;
+	var _names = struct_get_names(_locs);
+	
+	for (var i = 0; i < array_length(_names); i++) {
+		if (_names[i] != "home" && !_locs[$ _names[i]].visited) {
+			global.flags.day1_clear = false;
+			exit;
+		}
+	}
+	global.flags.day1_clear = true;
+}

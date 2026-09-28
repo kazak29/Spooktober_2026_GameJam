@@ -156,6 +156,7 @@ LineSet = function(){
 				case "map_scene":				{ SceneCommandExecute(_lineText);	} break;
 				case "map_visited":				{ SceneCommandExecute(_lineText);	} break;
 				case "map_lock":				{ SceneCommandExecute(_lineText);	} break;
+				case "flag_set":				{ SceneCommandExecute(_lineText);	} break;
 				
 			}
 			

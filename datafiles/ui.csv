@@ -58,15 +58,16 @@ shayHome_Day1_Visit3_Bar2,So... Do you guys not play at all anymore?
 shayHome_Day1_Visit3_Bar3,"Yeah, I'm tired..."
 shayHome_Day1_Visit3_Bar4,I wanna explore some more!
 ,
-sewerBar0,I'm a bit nervous.
-sewerBar1,Party! Party! The night is ours!
-sewerBar2,Is this bar even hygenic...?
-sewerBar3,Yes!!! Pour me a strong one!
-sewerBar4,Um...maybe warm milk?
-sewerBar5,"It's not that bad, actually."
-,
-,
-,
+barNervous,I'm a bit nervous.
+barParty,Party! Party! The night is ours!
+barHygenic,Is this bar even hygenic...?
+barStrong,Yes!!! Pour me a strong one!
+barMilk,Um...maybe warm milk?
+barNotBad,"It's not that bad, actually."
+barErrands,You want me to run your errands!?
+barCandy,Where do I even find candy?
+barNuh,Nu-uh! Keep your stolen drink!
+barOkay,Ooookay....
 ,
 ,
 houseAcross0,Poke the rabbit
@@ -112,5 +113,5 @@ lampPost3,I will give you two some privacy...
 ,
 ,
 ,
-p2intro0,Squeak Approvingly
-p2intro1,Squeak Disapprovingly
+p2introApprove,Squeak Approvingly
+p2introDisapprove,Squeak Disapprovingly

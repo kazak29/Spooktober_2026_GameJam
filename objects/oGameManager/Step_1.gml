@@ -16,6 +16,15 @@ if global.cheat {
 	
 	if keyboard_check_pressed(ord("1")) global.flags.candy_quest_complete = false;
 	if keyboard_check_pressed(ord("2")) global.flags.candy_quest_complete = true;
+	if keyboard_check_pressed(ord("3")) global.flags.candy_quest_fail = false;
+	if keyboard_check_pressed(ord("4")) global.flags.candy_quest_fail = true;
+	
+	if keyboard_check_pressed(ord("V")) {
+		var _names = struct_get_names(global.dataMapLocations);
+		for (var i = 0; i < array_length(_names); i++) {
+			if _names[i] != "home" global.dataMapLocations[$ _names[i]].visited = true;
+		}
+	}
 }
 
 //ui buttons

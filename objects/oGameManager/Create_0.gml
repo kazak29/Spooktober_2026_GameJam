@@ -76,5 +76,7 @@
 	global.textLogInst = noone;
 	
 	global.dataMapLocations = MapDataCreate();
+	global.flags = FlagsCreate();
+	global.chapter = 0;
 	
 #endregion
