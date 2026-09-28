@@ -9,6 +9,7 @@
 	
 		global.dataMapLocations = MapDataCreate();
 		global.flags = FlagsCreate();
+		global.chapter = 0;
 	}
 	
 	function SceneStart(_name){
@@ -22,15 +23,40 @@
 	
 	function SceneToMap(){
 		with oDirector {
-			global.lastLocationBackground = variable_clone(bg);
-	        //currentSceneName = noone;
-			currentLineSequence = [];
-			directorState  = DirectorStateIdle;
-			TransitionStart(rmMap, sqFadeOut, sqFadeIn);
+			
+			var _questFlag = false;
+			switch global.chapter {
+				case 0: _questFlag = global.flags.candy_quest_complete || global.flags.candy_quest_fail;			break;
+				case 1: _questFlag = global.flags.princess_quest_complete || global.flags.princess_quest_fail;		break;
+			}
+			
+			//check all locations done
+			var _locs = global.dataMapLocations;
+			var _names = struct_get_names(_locs);
+			for (var i = 0; i < array_length(_names); i++) {
+				if (_names[i] != "home" && !_locs[$ _names[i]].visited || !_questFlag) {
+					
+					//go to map
+					global.lastLocationBackground = variable_clone(bg);
+					currentLineSequence = [];
+					directorState  = DirectorStateIdle;
+					TransitionStart(rmMap, sqFadeOut, sqFadeIn);
+					
+					exit;
+				}
+			}
+			
+			//skip map, go to ending
+			AmbientChange(AMBIENT_MUSIC, noone, DEFAULT_VOLUME_PERCENT,true, 2500,3000);
+			switch global.chapter {
+				case 0: SceneTransitionNext("p1EndIntro"); break;
+				case 1: SceneTransitionNext("p2EndIntro"); break;
+			}
+			
 		}
 	}
 	
-	function SceneTransitionNext(_sceneTarget, _clear = false, _sprInd = undefined, _imInd = 0, _alpha = 1, _col = c_white){
+	function SceneTransitionNext(_sceneTarget, _clear = true, _sprInd = undefined, _imInd = 0, _alpha = 1, _col = c_white){
 		with oDirector {
 			sceneTarget = _sceneTarget;
 	        directorState = DirectorStateIdle;

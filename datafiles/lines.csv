@@ -28,6 +28,9 @@ testScene1,,"trans_scene,testScene,true,sBackgroundShayHome"
 testScene1,Empty,test scene 1 line 5
 testScene1,,map
 ,,
+testSceneEmpty,Empy,...
+testSceneEmpty,,map
+,,
 intro,,"scene_bg,sBackgroundShayHome"
 intro,,"music,bgmSpookTheme"
 intro,,"delay,2"
@@ -301,6 +304,7 @@ shayHome_Day1_Visit3_2,,"scene_set,shayHome_Day1_Visit3_Path1"
 shayHome_Day1_Visit3_2,,"scene_set,shayHome_Day1_Visit3_Path2"
 ,,
 shayHome_Day1_Visit3_Path1,,"map_lock,home,true"
+shayHome_Day1_Visit3_Path1,,"custom_script_cont,Part1ClearCheck"
 shayHome_Day1_Visit3_Path1,,"flag_set,candy_quest_complete,true"
 shayHome_Day1_Visit3_Path1,,"char_update,Screwdriver,3"
 shayHome_Day1_Visit3_Path1,Screwdriver,"For the last time, I'm not giving his heart undies back!"
@@ -469,7 +473,7 @@ shayHome_Day1_Visit3_Bar_Path3,,"scene_set,shayHome_Day1_Visit3_Bar_Path4"
 shayHome_Day1_Visit3_Bar_Path3,,"scene_set,shayHome_Day1_Visit3_Bar_Path5"
 ,,
 shayHome_Day1_Visit3_Bar_Path4,Pogo,"Ahem! I'm calling it a night! Are you going home yet, Spook?"
-shayHome_Day1_Visit3_Bar_Path4,,"choice,shayHome_Day1_Visit3_Bar3"
+shayHome_Day1_Visit3_Bar_Path4,Spook,"Yeah, I am tired..."
 shayHome_Day1_Visit3_Bar_Path4,,"scene_set,shayHome_Day1_Visit3_Bar_Path6"
 ,,
 shayHome_Day1_Visit3_Bar_Path5,Pogo,"Ahem! I'm calling it a night! Are you going home yet, Spook?"
@@ -484,12 +488,12 @@ shayHome_Day1_Visit3_Bar_Path6,,"char_out,Pogo"
 shayHome_Day1_Visit3_Bar_Path6,,"char_update,Barry,1"
 shayHome_Day1_Visit3_Bar_Path6,Barry,"Yeah, gonna stay a bit longer. I got some crow customers visiting at dawn..."
 shayHome_Day1_Visit3_Bar_Path6,Spook,Night!
-shayHome_Day1_Visit3_Bar_Path6,,<TODO: Go to ALL LOCATIONS CLEAR SCENE>
+shayHome_Day1_Visit3_Bar_Path6,,"trans_scene,p1End"
 ,,
 shayHome_Day1_Visit3_Bar_Path7,,"char_update,Screwdriver,2"
 shayHome_Day1_Visit3_Bar_Path7,Screwdriver,"Wow, someone is becoming a real night owl! Heh."
 shayHome_Day1_Visit3_Bar_Path7,,"char_update,Pogo,0"
-shayHome_Day1_Visit3_Bar_Path7,Pogo,"Nights are a perfect time to wander about. It builds confidence, little mouse."
+shayHome_Day1_Visit3_Bar_Path7,Pogo,"Nights are a perfect time to wander about. Good choice, little mouse!"
 shayHome_Day1_Visit3_Bar_Path7,,"char_update,Barry,1"
 shayHome_Day1_Visit3_Bar_Path7,Barry,"Happy hunting, friend."
 shayHome_Day1_Visit3_Bar_Path7,,"music,noone"
@@ -849,76 +853,80 @@ lampPost_Day1_Visit2,,map
 ,,
 ,,
 ,,
+p1EndIntro,,"scene_bg_clear,sBackgroundBlack"
+p1EndIntro,,"main_char_in,0"
+p1EndIntro,Spook,I am feeling sleepy...
+p1EndIntro,Spook,Maybe it's time to call it a day...
+p1EndIntro,,"trans_scene,p1End"
+,,
+p1End,,"scene_bg_clear,sBackgroundShayRoomNight"
+p1End,,"music,bgmSpookTheme"
+p1End,,"main_char_in,0"
+p1End,Spook,Shay is still sound asleep....
+p1End,Spook,"Man, I feel a bit bad."
+p1End,,"char_update,Spook,5"
+p1End,Spook,But...I did it! I went out by myself and didn't even worry Shay!!!
+p1End,,main_char_out
+p1End,Empty,"[sound,sfxCageOpen]You climb to your bed, made of soft bedding."
+p1End,Spook,Ahhhh! My bed! I love my bed!!!!
+p1End,Empty,"Goodnight, little mouse..."
+p1End,,"delay,1"
+p1End,,"music,noone,2500,3000"
+p1End,,"trans_scene,p2Intro"
 ,,
 ,,
 ,,
 ,,
+p2Intro,,"scene_bg_clear,sBackgroundBlack"
+p2Intro,,"delay,2"
+p2Intro,Shay,"Ok, almost ready, almost ready..."
+p2Intro,,"music,bgmShayHome"
+p2Intro,,"trans_change,false,sBackgroundShayRoomDay"
+p2Intro,,"main_char_in,7"
+p2Intro,Spook,Yawwwwwwn...
+p2Intro,,"char_in,Shay,sShay,3"
+p2Intro,Shay,HEY SPOOK!!!!!
+p2Intro,,"char_update,Spook,5"
+p2Intro,Spook,!!!
+p2Intro,Shay,What do you think?
+p2Intro,,"choice,p2introApprove,p2introDisapprove"
+p2Intro,,"scene_set,p2IntroAprrove"
+p2Intro,,"scene_set,p2introDisapprove"
 ,,
+p2IntroAprrove,,"char_update,Shay,4"
+p2IntroAprrove,Shay,"I know, right!?"
+p2IntroAprrove,,"char_update,Shay,3"
+p2IntroAprrove,Shay,I am getting better at making costumes!
+p2IntroAprrove,Shay,"Last year was... Well, goblin wasn't the best idea."
+p2IntroAprrove,Shay,Everyone kept asking if I was Shrek!
+p2IntroAprrove,,"scene_set,p2IntroAh"
 ,,
+p2introDisapprove,Shay,"Oh, I know you wanted me to be the giant cheese instead!"
+p2introDisapprove,,"char_update,Spook,3"
+p2introDisapprove,,"delay,0.5"
+p2introDisapprove,Shay,"...Maybe next year, ok?"
+p2introDisapprove,,"scene_set,p2IntroAh"
 ,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-p2intro,,"scene_bg_clear,sBackgroundBlack"
-p2intro,Shay,"Ok, almost ready, almost ready..."
-p2intro,,"music,bgmShayHome"
-p2intro,,"trans_change,false,sBackgroundShayRoomDay"
-p2intro,,"main_char_in,7"
-p2intro,Spook,Yawwwwwwn...
-p2intro,,"char_in,Shay,sShay,3"
-p2intro,Shay,HEY SPOOK!!!!!
-p2intro,,"char_update,Spook,5"
-p2intro,Spook,!!!
-p2intro,Shay,What do you think?
-p2intro,,"choice,p2intro0,p2intro1"
-p2intro,,"scene_set,p2introPath1"
-p2intro,,"scene_set,p2introPath2"
-,,
-p2introPath1,,"char_update,Shay,4"
-p2introPath1,Shay,"I know, right!?"
-p2introPath1,,"char_update,Shay,3"
-p2introPath1,Shay,I am getting better at making costumes!
-p2introPath1,Shay,"Last year was... Well, goblin wasn't the best idea."
-p2introPath1,Shay,Everyone kept asking if I was Shrek!
-p2introPath1,,"scene_set,p2introAh"
-,,
-p2introPath2,Shay,"Oh, I know you wanted me to be the giant cheese instead!"
-p2introPath2,,"char_update,Spook,3"
-p2introPath2,,"delay,0.5"
-p2introPath2,Shay,"...Maybe next year, ok?"
-p2introPath2,,"scene_set,p2introAh"
-,,
-p2introAh,,"char_update,Shay,4"
-p2introAh,Shay,Ah- before I forget! Here is yours!!!
-p2introAh,,main_char_out
-p2introAh,Empty,"You equipped ""Spook'o lantern"" Costume!"
-p2introAh,,"main_char_in,0"
-p2introAh,Empty,"Sorry, costume is still in the works!"
-p2introAh,,"delay,0.3"
-p2introAh,Mom,Honey! We are leaving in five!
-p2introAh,,"char_update,Shay,3"
-p2introAh,Shay,"Oh, right! "
-p2introAh,Shay,We somehow ran out of Halloween candy...
-p2introAh,Shay,I swear I didn't eat all of it! But I can't convince mom....
-p2introAh,,"char_out,Shay"
-p2introAh,Shay,"[sound,sfxDoorOpen] Protect the house from the spirits while I am gone, Spook!"
-p2introAh,,"sound,sfxDoorClose"
-p2introAh,,"delay,0.1"
-p2introAh,Spook,Alright... This is my chance to go out for a little while!
-p2introAh,Spook,Let's see...
-p2introAh,,"custom_script_cont,MapDataUpdatePart2"
-p2introAh,,map
+p2IntroAh,,"char_update,Shay,4"
+p2IntroAh,Shay,Ah- before I forget! Here is yours!!!
+p2IntroAh,,main_char_out
+p2IntroAh,Empty,"You equipped ""Spook'o lantern"" Costume!"
+p2IntroAh,,"main_char_in,0"
+p2IntroAh,Empty,"Sorry, costume is still in the works!"
+p2IntroAh,,"delay,0.3"
+p2IntroAh,Mom,Honey! We are leaving in five!
+p2IntroAh,,"char_update,Shay,3"
+p2IntroAh,Shay,"Oh, right! "
+p2IntroAh,Shay,We somehow ran out of Halloween candy...
+p2IntroAh,Shay,I swear I didn't eat all of it! But I can't convince mom....
+p2IntroAh,,"char_out,Shay"
+p2IntroAh,Shay,"[sound,sfxDoorOpen] Protect the house from the spirits while I am gone, Spook!"
+p2IntroAh,,"sound,sfxDoorClose"
+p2IntroAh,,"delay,0.1"
+p2IntroAh,Spook,Alright... This is my chance to go out for a little while!
+p2IntroAh,Spook,Let's see...
+p2IntroAh,,"custom_script_cont,MapDataUpdatePart2"
+p2IntroAh,,map
 ,,
 ,,
 p2home1,,"scene_bg_clear,sBackgroundShayRoomDay"
