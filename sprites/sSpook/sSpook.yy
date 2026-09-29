@@ -2,9 +2,9 @@
   "$GMSprite":"v2",
   "%Name":"sSpook",
   "bboxMode":0,
-  "bbox_bottom":622,
-  "bbox_left":31,
-  "bbox_right":579,
+  "bbox_bottom":684,
+  "bbox_left":80,
+  "bbox_right":824,
   "bbox_top":135,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -13,6 +13,7 @@
   "For3D":false,
   "frames":[
     {"$GMSpriteFrame":"v1","%Name":"450ffa08-ac38-40fc-b4d3-416e6e38e2e7","name":"450ffa08-ac38-40fc-b4d3-416e6e38e2e7","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"fd5ed3c1-c8b6-4d29-a098-31a3de8b5285","name":"fd5ed3c1-c8b6-4d29-a098-31a3de8b5285","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -49,7 +50,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":1.0,
+    "length":2.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -71,11 +72,14 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"450ffa08-ac38-40fc-b4d3-416e6e38e2e7","path":"sprites/sSpook/sSpook.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"f9bc1bcc-09ea-47b8-a624-5b8f8edd57a0","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"fd5ed3c1-c8b6-4d29-a098-31a3de8b5285","path":"sprites/sSpook/sSpook.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"bd4c4b5b-0284-4673-96de-6a50074ea97f","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":324,
+    "xorigin":430,
     "yorigin":700,
   },
   "swatchColours":null,
@@ -86,5 +90,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":648,
+  "width":860,
 }
