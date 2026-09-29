@@ -15,24 +15,12 @@
 #region menu
 
 	enum MENU_ELEMENT_TYPE {
+		BACK,
 		SCRIPT_RUNNER,
 		PAGE_TRANSFER,
 		SLIDER,
 		SHIFT,
 		TOGGLE,
-	
-		HEIGHT
-	}
-
-	enum MENU_LAYOUT {
-		TITLE_MAIN,
-		TITLE_SETTINGS,
-	
-		PAUSE_TOP,
-		PAUSE_MIDDLE,
-		PAUSE_BOTTOM,
-	
-		CHOICE,
 	
 		HEIGHT
 	}

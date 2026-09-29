@@ -45,7 +45,7 @@
 #region general
 	
 	global.gamePaused = false;
-	global.menuPages = MenuDataCreate();
+	global.menuElements = DataMenuElementsCreate();
 	
 #endregion
 #region sound

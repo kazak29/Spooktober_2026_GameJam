@@ -11,7 +11,7 @@ function uiButtonSettings(){
 		global.gamePaused = true;
 		with oDirector typist.pause();
 		
-		instance_create_layer(0,0, SYSTEM_LAYER, oMenu, {menuType: MENU_TYPE_PAUSE});
+		MenuCreate("pauseSettings");
 	}
 }
 
