@@ -37,9 +37,11 @@ TextboxHide(); //hide for room transitions
 	TypewriterSoundSet = function(){
 		var _sounds = global.dataTypewriterSfx;
 		var _soundName = currentLineSequence[currentLineIndex].lineTitle;
-		var _ids = struct_get(_sounds, _soundName) ?? struct_get(_sounds, "none");
+		_soundName = string_replace(_soundName,"ö","o");
 		
-		typewriterSound = variable_clone(_ids);
+		var _soundData = struct_get(_sounds, _soundName) ?? struct_get(_sounds, "none");
+		
+		typewriterSound = variable_clone(_soundData);
 		TypewriterSoundPlay();
 	}
 	

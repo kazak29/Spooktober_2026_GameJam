@@ -9,9 +9,50 @@ global.dataTypewriterSfx = {
 	Spook: {
 		ids:		[sfxTypewriterSpook],
 		vol:		100,
-		pitchMin:	1,
-		pitchMax:	1,
+		pitchMin:	1.2,
+		pitchMax:	1.2,
+		overlap:	20,
+	},
+	Screwdriver: {
+		ids:		[sfxTypewriterSpook],
+		vol:		100,
+		pitchMin:	0.8,
+		pitchMax:	0.8,
+		overlap:	20,
+	},
+	Pogo: {
+		ids:		[sfxTypewriterSpook],
+		vol:		100,
+		pitchMin:	0.8,
+		pitchMax:	0.8,
+		overlap:	20,
+	},
+	Barry: {
+		ids:		[sfxTypewriterSpook],
+		vol:		100,
+		pitchMin:	0.6,
+		pitchMax:	0.6,
 		overlap:	10,
 	},
-	
+	Moth: {
+		ids:		[sfxTypewriterSpook],
+		vol:		100,
+		pitchMin:	0.4,
+		pitchMax:	0.4,
+		overlap:	0,
+	},
+	Shay: {
+		ids:		[sfxTypewriterSpook],
+		vol:		100,
+		pitchMin:	1.1,
+		pitchMax:	1.1,
+		overlap:	10,
+	},
+	Empty: {
+		ids:		[sfxTypewriterSpook],
+		vol:		100,
+		pitchMin:	0.5,
+		pitchMax:	0.5,
+		overlap:	0,
+	},
 }
