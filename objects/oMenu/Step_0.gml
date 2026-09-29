@@ -133,7 +133,7 @@ if instance_exists(main.elemId) {
 					_hinput = oInputManager.pressed.right - oInputManager.pressed.left;
 					_elemData.arg = round(_elemData.arg + _hinput);
 				} else {
-					_elemData.arg += _hinput*0.005;
+					_elemData.arg += _hinput*((_elemData.argClamp[1] - _elemData.argClamp[0])/200);//*0.005;
 				}		
 				_elemData.arg = clamp(_elemData.arg, _elemData.argClamp[0], _elemData.argClamp[1]);
 				MenuSettingSet(_elemData);
