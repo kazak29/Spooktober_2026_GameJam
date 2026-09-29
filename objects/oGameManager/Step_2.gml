@@ -12,8 +12,8 @@
 	if (!global.midTransition && !_exception) {
 		
 		with oButton active = true;
-		if oInputManager.pressed.pause	{ uiSfxPlayClick(); uiButtonSettings(); }
-		if oInputManager.pressed.select	{ uiSfxPlayClick(); uiButtonTextLog();	}
+		if oInputManager.pressed.pause && !instance_exists(oMenu)	{ uiSfxPlayClick(); uiButtonSettings(); }
+		if oInputManager.pressed.select								{ uiSfxPlayClick(); uiButtonTextLog();	}
 		
 	} else {
 		

@@ -1,17 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"oMenuElementMain",
+  "%Name":"oMenuBlueprintElementMain",
   "eventList":[],
   "managed":true,
-  "name":"oMenuElementMain",
+  "name":"oMenuBlueprintElementMain",
   "overriddenProperties":[],
   "parent":{
-    "name":"Element",
-    "path":"folders/Objects/System/Menu/Element.yy",
+    "name":"Blueprints",
+    "path":"folders/Objects/System/Menu/Blueprints.yy",
   },
   "parentObjectId":{
-    "name":"oMenuElement",
-    "path":"objects/oMenuElement/oMenuElement.yy",
+    "name":"oMenuBlueprintElement",
+    "path":"objects/oMenuBlueprintElement/oMenuBlueprintElement.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sBorder",
+    "path":"sprites/sBorder/sBorder.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

@@ -1,17 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"oMenu",
+  "%Name":"oMenuBlueprint",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oMenu",
+  "name":"oMenuBlueprint",
   "overriddenProperties":[],
   "parent":{
-    "name":"Menu",
-    "path":"folders/Objects/System/Menu.yy",
+    "name":"Blueprints",
+    "path":"folders/Objects/System/Menu/Blueprints.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -29,11 +27,15 @@
   "physicsStartAwake":true,
   "properties":[
     {"$GMObjectProperty":"v2","%Name":"menuName","filters":[],"listItems":[],"multiselect":false,"name":"menuName","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":2,},
+    {"$GMObjectProperty":"v2","%Name":"menuNamePrev","filters":[],"listItems":[],"multiselect":false,"name":"menuNamePrev","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":2,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sBorder",
+    "path":"sprites/sBorder/sBorder.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
