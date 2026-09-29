@@ -31,7 +31,7 @@ testScene1,,map
 testSceneEmpty,Empy,...
 testSceneEmpty,,map
 ,,
-intro,,"scene_bg,sBackgroundShayHome"
+intro,,"scene_bg,sBackgroundShayRoomDay"
 intro,,"music,bgmSpookTheme"
 intro,,"delay,2"
 intro,Spook,"This week, we moved into a new house with my family."
@@ -325,7 +325,7 @@ shayHome_Day1_Visit3_Path2,Screwdriver,Hey!
 shayHome_Day1_Visit3_Path2,,"music,noone"
 shayHome_Day1_Visit3_Path2,,map
 ,,
-shayHome_Day1_Visit3_HouseAcross,,"scene_bg_clear,sBackgroundGray"
+shayHome_Day1_Visit3_HouseAcross,,"scene_bg_clear,sBackgroundShayHome"
 shayHome_Day1_Visit3_HouseAcross,,"music,bgmHouseAcrossSneakIn"
 shayHome_Day1_Visit3_HouseAcross,,"main_char_in,0"
 shayHome_Day1_Visit3_HouseAcross,,"char_in,Screwdriver,sScrewdriver,0"
@@ -346,7 +346,7 @@ shayHome_Day1_Visit3_HouseAcross_FadeOut1,,"scene_bg_clear,sBackgroundBlack"
 shayHome_Day1_Visit3_HouseAcross_FadeOut1,Empty,Several minutes pass...
 shayHome_Day1_Visit3_HouseAcross_FadeOut1,,"trans_scene,shayHome_Day1_Visit3_HouseAcross_GotCandy"
 ,,
-shayHome_Day1_Visit3_HouseAcross_GotCandy,,"scene_bg_clear,sBackgroundGray"
+shayHome_Day1_Visit3_HouseAcross_GotCandy,,"scene_bg_clear,sBackgroundShayHome"
 shayHome_Day1_Visit3_HouseAcross_GotCandy,,"main_char_in,0"
 shayHome_Day1_Visit3_HouseAcross_GotCandy,,"char_in,Princess,sPrincess,4"
 shayHome_Day1_Visit3_HouseAcross_GotCandy,,"char_in,Screwdriver,sScrewdriver,8"
@@ -1043,7 +1043,7 @@ street2Scifi,,"scene_set,street1Questions"
 ,,
 ,,
 houseAcross_Day1_Visit1,,"map_scene,houseAcrossFront,houseAcross_Day1_Visit2"
-houseAcross_Day1_Visit1,,"scene_bg_clear,sBackgroundGray"
+houseAcross_Day1_Visit1,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
 houseAcross_Day1_Visit1,,"music,bgmHouseAcross"
 houseAcross_Day1_Visit1,,"main_char_in,0"
 houseAcross_Day1_Visit1,Spook,Whoa! What a large house!
@@ -1072,7 +1072,7 @@ houseAcross_Day1_Visit1_Path2,,map
 ,,
 ,,
 houseAcross_Day1_Visit1_Candy,,"map_scene,houseAcrossFront,houseAcross_Day1_Visit2"
-houseAcross_Day1_Visit1_Candy,,"scene_bg_clear,sBackgroundGray"
+houseAcross_Day1_Visit1_Candy,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
 houseAcross_Day1_Visit1_Candy,,"music,bgmHouseAcross"
 houseAcross_Day1_Visit1_Candy,,"main_char_in,0"
 houseAcross_Day1_Visit1_Candy,Spook,I wonder if that dog woke up. We shouldn't have caused so much trouble just to get some drinks!
@@ -1111,7 +1111,7 @@ houseAcross_Day1_Visit1_Candy_Path2,,map
 ,,
 ,,
 ,,
-houseAcross_Day1_Visit2,,"scene_bg_clear,sBackgroundGray"
+houseAcross_Day1_Visit2,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
 houseAcross_Day1_Visit2,,"music,bgmHouseAcross"
 houseAcross_Day1_Visit2,,"main_char_in,0"
 houseAcross_Day1_Visit2,,"char_in,Giant Rabbit,sDipper,0"

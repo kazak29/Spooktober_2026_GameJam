@@ -38,6 +38,7 @@ TextboxHide(); //hide for room transitions
 		var _sounds = global.dataTypewriterSfx;
 		var _soundName = currentLineSequence[currentLineIndex].lineTitle;
 		_soundName = string_replace(_soundName,"ö","o");
+		if _soundName == "???" _soundName = "Screwdriver";
 		
 		var _soundData = struct_get(_sounds, _soundName) ?? struct_get(_sounds, "none");
 		
