@@ -13,3 +13,8 @@ function Part1ClearCheck(){
 	}
 	global.flags.day1_clear = true;
 }
+function Part1HouseAcrossFrontCheck(){
+	if !global.dataMapLocations.houseAcrossFront.visited {
+		global.dataMapLocations.houseAcrossFront.scene = "houseAcross_Day1_Visit1_Candy";
+	}
+}

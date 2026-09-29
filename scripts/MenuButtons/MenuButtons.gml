@@ -3,9 +3,9 @@ function MenuGameStart(_args){
 	ScreenPlayReset();
 	
 	
-	//global.sceneToPlay = FIRST_SCENE;
-	//global.sceneToPlay = "p1End";
-	global.sceneToPlay = "rocketTestScene";
+	global.sceneToPlay = FIRST_SCENE;
+	//global.sceneToPlay = "lampPost_Day1_Visit1";
+	//global.sceneToPlay = "rocketTestScene";
 	
 	TransitionStart(_args[0], _args[1], _args[2]);
 }

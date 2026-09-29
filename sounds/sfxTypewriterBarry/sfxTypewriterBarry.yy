@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sfxTypewriterBarry",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":2,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":0.12501134,
+  "exportDir":"",
+  "name":"sfxTypewriterBarry",
+  "parent":{
+    "name":"Typewriter",
+    "path":"folders/Sound/SFX/Typewriter.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sfxTypewriterBarry.wav",
+  "volume":1.0,
+}

@@ -37,9 +37,12 @@ TextboxHide(); //hide for room transitions
 	TypewriterSoundSet = function(){
 		var _sounds = global.dataTypewriterSfx;
 		var _soundName = currentLineSequence[currentLineIndex].lineTitle;
-		var _ids = struct_get(_sounds, _soundName) ?? struct_get(_sounds, "none");
+		_soundName = string_replace(_soundName,"ö","o");
+		if _soundName == "???" _soundName = "Screwdriver";
 		
-		typewriterSound = variable_clone(_ids);
+		var _soundData = struct_get(_sounds, _soundName) ?? struct_get(_sounds, "none");
+		
+		typewriterSound = variable_clone(_soundData);
 		TypewriterSoundPlay();
 	}
 	
@@ -149,7 +152,7 @@ LineSet = function(){
 				case "choice":					{ SceneCommandExecute(_lineText);	} break;
 				case "condition_flag":			{ SceneCommandExecute(_lineText);	} break;
 				case "condition_script":		{ SceneCommandExecute(_lineText);	} break;
-				case "custom_script_continue":	{ SceneCommandExecute(_lineText);	} break;
+				case "custom_script_cont":		{ SceneCommandExecute(_lineText);	} break;
 				case "custom_script_stop":		{ SceneCommandExecute(_lineText);	} break;
 				case "music":					{ SceneCommandExecute(_lineText);	} break;
 				case "map":						{ SceneCommandExecute(_lineText);	} break;

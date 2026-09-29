@@ -31,7 +31,7 @@ testScene1,,map
 testSceneEmpty,Empy,...
 testSceneEmpty,,map
 ,,
-intro,,"scene_bg,sBackgroundShayHome"
+intro,,"scene_bg,sBackgroundShayRoomDay"
 intro,,"music,bgmSpookTheme"
 intro,,"delay,2"
 intro,Spook,"This week, we moved into a new house with my family."
@@ -305,6 +305,7 @@ shayHome_Day1_Visit3_2,,"scene_set,shayHome_Day1_Visit3_Path2"
 ,,
 shayHome_Day1_Visit3_Path1,,"map_lock,home,true"
 shayHome_Day1_Visit3_Path1,,"custom_script_cont,Part1ClearCheck"
+shayHome_Day1_Visit3_Path1,,"custom_script_cont,Part1HouseAcrossFrontCheck"
 shayHome_Day1_Visit3_Path1,,"flag_set,candy_quest_complete,true"
 shayHome_Day1_Visit3_Path1,,"char_update,Screwdriver,3"
 shayHome_Day1_Visit3_Path1,Screwdriver,"For the last time, I'm not giving his heart undies back!"
@@ -324,7 +325,7 @@ shayHome_Day1_Visit3_Path2,Screwdriver,Hey!
 shayHome_Day1_Visit3_Path2,,"music,noone"
 shayHome_Day1_Visit3_Path2,,map
 ,,
-shayHome_Day1_Visit3_HouseAcross,,"scene_bg_clear,sBackgroundGray"
+shayHome_Day1_Visit3_HouseAcross,,"scene_bg_clear,sBackgroundShayHome"
 shayHome_Day1_Visit3_HouseAcross,,"music,bgmHouseAcrossSneakIn"
 shayHome_Day1_Visit3_HouseAcross,,"main_char_in,0"
 shayHome_Day1_Visit3_HouseAcross,,"char_in,Screwdriver,sScrewdriver,0"
@@ -345,7 +346,7 @@ shayHome_Day1_Visit3_HouseAcross_FadeOut1,,"scene_bg_clear,sBackgroundBlack"
 shayHome_Day1_Visit3_HouseAcross_FadeOut1,Empty,Several minutes pass...
 shayHome_Day1_Visit3_HouseAcross_FadeOut1,,"trans_scene,shayHome_Day1_Visit3_HouseAcross_GotCandy"
 ,,
-shayHome_Day1_Visit3_HouseAcross_GotCandy,,"scene_bg_clear,sBackgroundGray"
+shayHome_Day1_Visit3_HouseAcross_GotCandy,,"scene_bg_clear,sBackgroundShayHome"
 shayHome_Day1_Visit3_HouseAcross_GotCandy,,"main_char_in,0"
 shayHome_Day1_Visit3_HouseAcross_GotCandy,,"char_in,Princess,sPrincess,4"
 shayHome_Day1_Visit3_HouseAcross_GotCandy,,"char_in,Screwdriver,sScrewdriver,8"
@@ -1041,7 +1042,8 @@ street2Scifi,,"scene_set,street1Questions"
 ,,
 ,,
 ,,
-houseAcross_Day1_Visit1,,"scene_bg_clear,sBackgroundGray"
+houseAcross_Day1_Visit1,,"map_scene,houseAcrossFront,houseAcross_Day1_Visit2"
+houseAcross_Day1_Visit1,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
 houseAcross_Day1_Visit1,,"music,bgmHouseAcross"
 houseAcross_Day1_Visit1,,"main_char_in,0"
 houseAcross_Day1_Visit1,Spook,Whoa! What a large house!
@@ -1062,13 +1064,54 @@ houseAcross_Day1_Visit1_Path1,Empty,"You try to push him, but the rabbit doesn't
 houseAcross_Day1_Visit1_Path1,,"choice,houseAcross1"
 houseAcross_Day1_Visit1_Path1,,"scene_set,houseAcross_Day1_Visit1_Path2"
 ,,
+houseAcross_Day1_Visit1_Path2,,main_char_out
+houseAcross_Day1_Visit1_Path2,,"char_out,Giant Rabbit"
 houseAcross_Day1_Visit1_Path2,Empty,"You try every window you can climb to, but the house seems heavily guarded!"
 houseAcross_Day1_Visit1_Path2,Empty,"Maybe try again during the day, when the rabbit is awake."
 houseAcross_Day1_Visit1_Path2,,map
 ,,
 ,,
+houseAcross_Day1_Visit1_Candy,,"map_scene,houseAcrossFront,houseAcross_Day1_Visit2"
+houseAcross_Day1_Visit1_Candy,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
+houseAcross_Day1_Visit1_Candy,,"music,bgmHouseAcross"
+houseAcross_Day1_Visit1_Candy,,"main_char_in,0"
+houseAcross_Day1_Visit1_Candy,Spook,I wonder if that dog woke up. We shouldn't have caused so much trouble just to get some drinks!
+houseAcross_Day1_Visit1_Candy,Spook,"At least, that's what I should've said..."
+houseAcross_Day1_Visit1_Candy,???,Snorrrrrr
+houseAcross_Day1_Visit1_Candy,,"char_in,Giant Rabbit,sDipper,0"
+houseAcross_Day1_Visit1_Candy,Giant Rabbit,Snorrrrrrrrrrrr
+houseAcross_Day1_Visit1_Candy,,"char_update,Spook,6"
+houseAcross_Day1_Visit1_Candy,Spook,That rabbit is still sleeping?
+houseAcross_Day1_Visit1_Candy,Spook,Um...
+houseAcross_Day1_Visit1_Candy,,"choice,houseAcross0,houseAcross1"
+houseAcross_Day1_Visit1_Candy,,"scene_set,houseAcross_Day1_Visit1_Candy_Path1"
+houseAcross_Day1_Visit1_Candy,,"scene_set,houseAcross_Day1_Visit1_Candy_Path2"
 ,,
-houseAcross_Day1_Visit2,,"scene_bg_clear,sBackgroundGray"
+houseAcross_Day1_Visit1_Candy_Path1,Spook,Hmm...
+houseAcross_Day1_Visit1_Candy_Path1,Giant Rabbit,snore...
+houseAcross_Day1_Visit1_Candy_Path1,,"char_update,Spook,5"
+houseAcross_Day1_Visit1_Candy_Path1,Spook,Hey! Mr. rabbit! Are you asleep?
+houseAcross_Day1_Visit1_Candy_Path1,Giant Rabbit,"*Somehow, even louder snore...*"
+houseAcross_Day1_Visit1_Candy_Path1,Spook,Well... I guess I can come in?
+houseAcross_Day1_Visit1_Candy_Path1,Empty,"You try to push him, but the rabbit doesn't move an inch!"
+houseAcross_Day1_Visit1_Candy_Path1,Spook,Huh. That is one way to guard a door.
+houseAcross_Day1_Visit1_Candy_Path1,Spook,"Maybe I should try the other entrance, just like last time."
+houseAcross_Day1_Visit1_Candy_Path1,,"choice,houseAcross1"
+houseAcross_Day1_Visit1_Candy_Path1,,"scene_set,houseAcross_Day1_Visit1_Candy_Path2"
+,,
+houseAcross_Day1_Visit1_Candy_Path2,,"char_update,Spook,0"
+houseAcross_Day1_Visit1_Candy_Path2,,"char_out,Giant Rabbit"
+houseAcross_Day1_Visit1_Candy_Path2,Empty,"You try to enter through the underground gateway again, but it is nowhere to be found."
+houseAcross_Day1_Visit1_Candy_Path2,Spook,"It's... not here anymore! Wait, is this the right side of the house? I can't remember..."
+houseAcross_Day1_Visit1_Candy_Path2,Empty,"You searched again, to no avail."
+houseAcross_Day1_Visit1_Candy_Path2,Spook,This is impossible! I'm clearly not fit to be a burglar!
+houseAcross_Day1_Visit1_Candy_Path2,Spook,I should just ask Screwdriver to show me the hidden entrance again later...
+houseAcross_Day1_Visit1_Candy_Path2,,map
+,,
+,,
+,,
+,,
+houseAcross_Day1_Visit2,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
 houseAcross_Day1_Visit2,,"music,bgmHouseAcross"
 houseAcross_Day1_Visit2,,"main_char_in,0"
 houseAcross_Day1_Visit2,,"char_in,Giant Rabbit,sDipper,0"
@@ -1079,6 +1122,7 @@ houseAcross_Day1_Visit2,,map
 ,,
 ,,
 ,,
+lampPost_Day1_Visit1,,"map_scene,lamp,lampPost_Day1_Visit2"
 lampPost_Day1_Visit1,,"scene_bg_clear,sBackgroundLampPostNightMoth"
 lampPost_Day1_Visit1,,"music,bgmLompTheme"
 lampPost_Day1_Visit1,,"main_char_in,0"
@@ -1179,13 +1223,16 @@ p1End,,"music,bgmSpookTheme"
 p1End,,"main_char_in,0"
 p1End,Spook,Shay is still sound asleep....
 p1End,Spook,"Man, I feel a bit bad."
-p1End,,"char_update,Spook,5"
+p1End,,"char_update,Spook,9"
 p1End,Spook,But...I did it! I went out by myself and didn't even worry Shay!!!
-p1End,,main_char_out
+p1End,,"trans_change,true,sBackgroundBlack"
 p1End,Empty,"[sound,sfxCageOpen]You climb to your bed, made of soft bedding."
+p1End,,"trans_change,true,sBackgroundCageNightSpook"
+p1End,,"char_in,Spook,sSpook,1"
 p1End,Spook,Ahhhh! My bed! I love my bed!!!!
+p1End,,"char_out,Spook"
 p1End,Empty,"Goodnight, little mouse..."
-p1End,,"delay,1"
+p1End,,"delay,2"
 p1End,,"music,noone,2500,3000"
 p1End,,"trans_scene,p2Intro"
 ,,
@@ -1210,35 +1257,39 @@ p2Intro,,"scene_set,p2introDisapprove"
 ,,
 p2IntroAprrove,,"char_update,Shay,4"
 p2IntroAprrove,Shay,"I know, right!?"
-p2IntroAprrove,,"char_update,Shay,3"
+p2IntroAprrove,,"char_update,Shay,5"
 p2IntroAprrove,Shay,I am getting better at making costumes!
 p2IntroAprrove,Shay,"Last year was... Well, goblin wasn't the best idea."
 p2IntroAprrove,Shay,Everyone kept asking if I was Shrek!
 p2IntroAprrove,,"scene_set,p2IntroAh"
 ,,
+p2introDisapprove,,"char_update,Shay,7"
 p2introDisapprove,Shay,"Oh, I know you wanted me to be the giant cheese instead!"
 p2introDisapprove,,"char_update,Spook,3"
 p2introDisapprove,,"delay,0.5"
+p2introDisapprove,,"char_update,Shay,3"
 p2introDisapprove,Shay,"...Maybe next year, ok?"
 p2introDisapprove,,"scene_set,p2IntroAh"
 ,,
-p2IntroAh,,"char_update,Shay,4"
+p2IntroAh,,"char_update,Shay,5"
 p2IntroAh,Shay,Ah- before I forget! Here is yours!!!
 p2IntroAh,,main_char_out
 p2IntroAh,Empty,"You equipped ""Spook'o lantern"" Costume!"
-p2IntroAh,,"main_char_in,0"
-p2IntroAh,Empty,"Sorry, costume is still in the works!"
+p2IntroAh,,"main_char_in,10"
 p2IntroAh,,"delay,0.3"
 p2IntroAh,Mom,Honey! We are leaving in five!
-p2IntroAh,,"char_update,Shay,3"
+p2IntroAh,,"char_update,Shay,6"
 p2IntroAh,Shay,"Oh, right! "
 p2IntroAh,Shay,We somehow ran out of Halloween candy...
+p2IntroAh,,"char_update,Shay,7"
 p2IntroAh,Shay,I swear I didn't eat all of it! But I can't convince mom....
 p2IntroAh,,"char_out,Shay"
 p2IntroAh,Shay,"[sound,sfxDoorOpen] Protect the house from the spirits while I am gone, Spook!"
 p2IntroAh,,"sound,sfxDoorClose"
 p2IntroAh,,"delay,0.1"
 p2IntroAh,Spook,Alright... This is my chance to go out for a little while!
+p2IntroAh,,main_char_out
+p2IntroAh,,"main_char_in,0"
 p2IntroAh,Spook,Let's see...
 p2IntroAh,,"custom_script_cont,MapDataUpdatePart2"
 p2IntroAh,,map
@@ -1279,7 +1330,7 @@ endingPartyBad,Empty,You climb down the Sewer.
 endingPartyBad,,"trans_change,false,sBackgroundSewerBar"
 endingPartyBad,Empty,"Few other animals are inside. There is low, darkwave music coming out of an old little speaker..."
 endingPartyBad,,"music,bgmBarPunk"
-endingPartyBad,,"main_char_in,0"
+endingPartyBad,,"main_char_in,10"
 endingPartyBad,,"char_in,Screwdriver,sScrewdriver,0"
 endingPartyBad,Screwdriver,Sup kid?
 endingPartyBad,Spook,Oh! You aren't dressed...?
@@ -1311,27 +1362,33 @@ endingPartyBad,Empty,"You eat some candy and chat with a few drunken critters, a
 endingPartyBad,,"trans_change,true,sBackgroundShayRoomNight"
 endingPartyBad,,"music,bgmSpookTheme"
 endingPartyBad,Empty,At least Shay comes in not so long after!
-endingPartyBad,,"main_char_in,0"
+endingPartyBad,,"main_char_in,10"
 endingPartyBad,,"char_in,Shay,sShay,3"
 endingPartyBad,Shay,Hi Spooky-boo!
+endingPartyBad,,"char_update,Shay,6"
 endingPartyBad,Shay,"My, that was EXHAUSTING!"
+endingPartyBad,,"char_update,Shay,7"
 endingPartyBad,Shay,I am never going outside again!!!! Ugh!!!
-endingPartyBad,,"trans_change,false,sBackgroundBlack"
+endingPartyBad,,"char_update,Shay,5"
 endingPartyBad,Shay,"Well, nevermind."
+endingPartyBad,,"music,bgmTitleTheme"
+endingPartyBad,,"trans_change,false,sBackgroundBlack"
 endingPartyBad,Shay,It's time to watch some zombie rats!
-endingPartyBad,,"trans_scene,endingShayCredits"
+endingPartyBad,Spook,Squeak!
+endingPartyBad,,"trans_change,true"
+endingPartyBad,,"trans_room,rmCredits"
 ,,
 ,,
-endingShayCredits,,"trans_room,rmCredits"
+,,
 ,,
 ,,
 endingPartyOkay,,"scene_bg_clear,sBackgroundBlack"
 endingPartyOkay,Empty,The nighttime comes....
 endingPartyOkay,,"music,bgmTitleTheme"
 endingPartyOkay,,"trans_change,true,sBackgroundSewerBar"
-endingPartyOkay,,"char_in,Screwdriver,sScrewdriver,2"
+endingPartyOkay,,"char_in,Screwdriver,sScrewdriver,12"
 endingPartyOkay,Screwdriver,Hiya kid!
-endingPartyOkay,,"main_char_in,5"
+endingPartyOkay,,"main_char_in,10"
 endingPartyOkay,Spook,PARTY!!!!
 endingPartyOkay,,"char_in,Pogo,sPogo,3"
 endingPartyOkay,Pogo,PARTY!!!!
@@ -1339,37 +1396,40 @@ endingPartyOkay,,"char_update,Pogo,2"
 endingPartyOkay,,"char_in,Barry,sBarry,5"
 endingPartyOkay,Barry,Cheers.
 endingPartyOkay,,"char_out,Screwdriver"
-endingPartyOkay,,"char_in,Möth,sMoth,0"
+endingPartyOkay,,"char_in,Möth,sMoth,2"
 endingPartyOkay,Möth,LAMP.
 endingPartyOkay,,"char_out,Möth"
-endingPartyOkay,,"char_in,Screwdriver,sScrewdriver,0"
+endingPartyOkay,,"char_in,Screwdriver,sScrewdriver,11"
 endingPartyOkay,Screwdriver,"Yeah, that about covers it."
-endingPartyOkay,,"char_update,Spook,0"
 endingPartyOkay,,"char_update,Barry,8"
 endingPartyOkay,Barry,Time to drink some BSCWCCEC!
 endingPartyOkay,,"char_update,Pogo,1"
 endingPartyOkay,Pogo,"Yay, BSCWCCEC!"
-endingPartyOkay,,"char_update,Spook,6"
 endingPartyOkay,Spook,"Where is your costume, Pogo?"
 endingPartyOkay,,"char_update,Pogo,8"
 endingPartyOkay,Pogo,Oh. Sweetie. I am a Halloween decoration aaaallll year long!
 endingPartyOkay,Spook,Hm...
-endingPartyOkay,,"char_update,Screwdriver,1"
+endingPartyOkay,,"char_update,Screwdriver,12"
 endingPartyOkay,Screwdriver,You could be like. Double-bat.
 endingPartyOkay,,"char_update,Pogo,4"
 endingPartyOkay,Pogo,How so?
 endingPartyOkay,Screwdriver,Bat suit. On your bat skin.
-endingPartyOkay,,"char_update,Spook,0"
 endingPartyOkay,,"char_update,Barry,9"
 endingPartyOkay,Barry,Woooow.
 endingPartyOkay,,"char_update,Pogo,6"
 endingPartyOkay,Pogo,I'll do frankenstein next year!
 endingPartyOkay,,"char_out,Screwdriver"
-endingPartyOkay,,"char_in,Möth,sMoth,0"
+endingPartyOkay,,"char_in,Möth,sMoth,2"
 endingPartyOkay,Möth,Like my costume?
 endingPartyOkay,Spook,Um! Yeah! Lamp!
-endingPartyOkay,Möth,Lamp.
-endingPartyOkay,,"trans_scene,endingPartyCredits"
-,,
-,,
-endingPartyCredits,,"trans_room,rmCredits"
+endingPartyOkay,Möth,LAMP.
+endingPartyOkay,,"char_update,Barry,6"
+endingPartyOkay,Barry,"Alright. Cheers, everyone!"
+endingPartyOkay,,"char_update,Pogo,1"
+endingPartyOkay,Pogo,Cheers!
+endingPartyOkay,,"char_out,Möth"
+endingPartyOkay,,"char_in,Screwdriver,sScrewdriver,12"
+endingPartyOkay,Screwdriver,Yeah!!!
+endingPartyOkay,Spook,Wohoo!
+endingPartyOkay,,"delay,1"
+endingPartyOkay,,"trans_room,rmCredits"
