@@ -305,6 +305,7 @@ shayHome_Day1_Visit3_2,,"scene_set,shayHome_Day1_Visit3_Path2"
 ,,
 shayHome_Day1_Visit3_Path1,,"map_lock,home,true"
 shayHome_Day1_Visit3_Path1,,"custom_script_cont,Part1ClearCheck"
+shayHome_Day1_Visit3_Path1,,"custom_script_cont,Part1HouseAcrossFrontCheck"
 shayHome_Day1_Visit3_Path1,,"flag_set,candy_quest_complete,true"
 shayHome_Day1_Visit3_Path1,,"char_update,Screwdriver,3"
 shayHome_Day1_Visit3_Path1,Screwdriver,"For the last time, I'm not giving his heart undies back!"
@@ -1041,6 +1042,7 @@ street2Scifi,,"scene_set,street1Questions"
 ,,
 ,,
 ,,
+houseAcross_Day1_Visit1,,"map_scene,houseAcrossFront,houseAcross_Day1_Visit2"
 houseAcross_Day1_Visit1,,"scene_bg_clear,sBackgroundGray"
 houseAcross_Day1_Visit1,,"music,bgmHouseAcross"
 houseAcross_Day1_Visit1,,"main_char_in,0"
@@ -1062,9 +1064,50 @@ houseAcross_Day1_Visit1_Path1,Empty,"You try to push him, but the rabbit doesn't
 houseAcross_Day1_Visit1_Path1,,"choice,houseAcross1"
 houseAcross_Day1_Visit1_Path1,,"scene_set,houseAcross_Day1_Visit1_Path2"
 ,,
+houseAcross_Day1_Visit1_Path2,,main_char_out
+houseAcross_Day1_Visit1_Path2,,"char_out,Giant Rabbit"
 houseAcross_Day1_Visit1_Path2,Empty,"You try every window you can climb to, but the house seems heavily guarded!"
 houseAcross_Day1_Visit1_Path2,Empty,"Maybe try again during the day, when the rabbit is awake."
 houseAcross_Day1_Visit1_Path2,,map
+,,
+,,
+houseAcross_Day1_Visit1_Candy,,"map_scene,houseAcrossFront,houseAcross_Day1_Visit2"
+houseAcross_Day1_Visit1_Candy,,"scene_bg_clear,sBackgroundGray"
+houseAcross_Day1_Visit1_Candy,,"music,bgmHouseAcross"
+houseAcross_Day1_Visit1_Candy,,"main_char_in,0"
+houseAcross_Day1_Visit1_Candy,Spook,I wonder if that dog woke up. We shouldn't have caused so much trouble just to get some drinks!
+houseAcross_Day1_Visit1_Candy,Spook,"At least, that's what I should've said..."
+houseAcross_Day1_Visit1_Candy,???,Snorrrrrr
+houseAcross_Day1_Visit1_Candy,,"char_in,Giant Rabbit,sDipper,0"
+houseAcross_Day1_Visit1_Candy,Giant Rabbit,Snorrrrrrrrrrrr
+houseAcross_Day1_Visit1_Candy,,"char_update,Spook,6"
+houseAcross_Day1_Visit1_Candy,Spook,That rabbit is still sleeping?
+houseAcross_Day1_Visit1_Candy,Spook,Um...
+houseAcross_Day1_Visit1_Candy,,"choice,houseAcross0,houseAcross1"
+houseAcross_Day1_Visit1_Candy,,"scene_set,houseAcross_Day1_Visit1_Candy_Path1"
+houseAcross_Day1_Visit1_Candy,,"scene_set,houseAcross_Day1_Visit1_Candy_Path2"
+,,
+houseAcross_Day1_Visit1_Candy_Path1,Spook,Hmm...
+houseAcross_Day1_Visit1_Candy_Path1,Giant Rabbit,snore...
+houseAcross_Day1_Visit1_Candy_Path1,,"char_update,Spook,5"
+houseAcross_Day1_Visit1_Candy_Path1,Spook,Hey! Mr. rabbit! Are you asleep?
+houseAcross_Day1_Visit1_Candy_Path1,Giant Rabbit,"*Somehow, even louder snore...*"
+houseAcross_Day1_Visit1_Candy_Path1,Spook,Well... I guess I can come in?
+houseAcross_Day1_Visit1_Candy_Path1,Empty,"You try to push him, but the rabbit doesn't move an inch!"
+houseAcross_Day1_Visit1_Candy_Path1,Spook,Huh. That is one way to guard a door.
+houseAcross_Day1_Visit1_Candy_Path1,Spook,"Maybe I should try the other entrance, just like last time."
+houseAcross_Day1_Visit1_Candy_Path1,,"choice,houseAcross1"
+houseAcross_Day1_Visit1_Candy_Path1,,"scene_set,houseAcross_Day1_Visit1_Candy_Path2"
+,,
+houseAcross_Day1_Visit1_Candy_Path2,,"char_update,Spook,0"
+houseAcross_Day1_Visit1_Candy_Path2,,"char_out,Giant Rabbit"
+houseAcross_Day1_Visit1_Candy_Path2,Empty,"You try to enter through the underground gateway again, but it is nowhere to be found."
+houseAcross_Day1_Visit1_Candy_Path2,Spook,"It's... not here anymore! Wait, is this the right side of the house? I can't remember..."
+houseAcross_Day1_Visit1_Candy_Path2,Empty,"You searched again, to no avail."
+houseAcross_Day1_Visit1_Candy_Path2,Spook,This is impossible! I'm clearly not fit to be a burglar!
+houseAcross_Day1_Visit1_Candy_Path2,Spook,I should just ask Screwdriver to show me the hidden entrance again later...
+houseAcross_Day1_Visit1_Candy_Path2,,map
+,,
 ,,
 ,,
 ,,
@@ -1079,6 +1122,7 @@ houseAcross_Day1_Visit2,,map
 ,,
 ,,
 ,,
+lampPost_Day1_Visit1,,"map_scene,lamp,lampPost_Day1_Visit2"
 lampPost_Day1_Visit1,,"scene_bg_clear,sBackgroundLampPostNightMoth"
 lampPost_Day1_Visit1,,"music,bgmLompTheme"
 lampPost_Day1_Visit1,,"main_char_in,0"

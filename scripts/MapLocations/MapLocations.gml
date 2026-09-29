@@ -60,7 +60,7 @@ function MapDataCreate() {
 		},
 		houseAcrossFront: {
 			title: global.uiData.mapHouseAcrossFront,
-			scene: "testSceneEmpty", //"houseAcross_Day1_Visit1",
+			scene: "houseAcross_Day1_Visit1",
 		
 			visited:	false,
 			locked:		false,
@@ -73,7 +73,7 @@ function MapDataCreate() {
 		},
 		lamp: {
 			title: global.uiData.mapLamp,
-			scene: "testSceneEmpty", //"lampPost_Day1_Visit1",
+			scene: "lampPost_Day1_Visit1",
 		
 			visited:	false,
 			locked:		false,
