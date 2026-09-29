@@ -10,5 +10,11 @@ function FlagsCreate() {
 		princess_quest_start:		false,
 		princess_quest_complete:	false,
 		princess_quest_fail:		false,
+		
+		streetGenreHorror:			false,
+		streetGenreScifi:			false,
+		streetQuestionYourself:		false,
+		streetQuestionTown:			false,
+		streetQuestionBar:			false,
 	};
 }
