@@ -29,7 +29,7 @@ function MapDataCreate() {
 		},
 		street: {
 			title: global.uiData.mapStreet,
-			scene: "testSceneEmpty",
+			scene: "street1",
 		
 			visited:	false,
 			locked:		false,

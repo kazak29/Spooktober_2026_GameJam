@@ -12,7 +12,8 @@ if (currentSceneName != noone)
 	if (directorState == DirectorStateLineSequence ||
     directorState == DirectorStateChoice) && (textbox.alpha > 0)
 	{ 
-		DrawDialogueBox();
+		if currentLineSequence[currentLineIndex].lineTitle != ""
+		 { DrawDialogueBox(); }
 	}
 	
 	DrawMainCharacterPortrait();
