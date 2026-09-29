@@ -10,7 +10,7 @@
   "compression":1,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":82.89599,
+  "duration":163.29599,
   "exportDir":"",
   "name":"bgmStrayRatStrut",
   "parent":{
