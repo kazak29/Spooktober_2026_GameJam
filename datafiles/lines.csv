@@ -271,9 +271,9 @@ shayHome_Day1_Visit2,,"scene_bg_clear,sBackgroundShayRoomNight"
 shayHome_Day1_Visit2,,"music,bgmShayHome"
 shayHome_Day1_Visit2,,"main_char_in,0"
 shayHome_Day1_Visit2,,"char_in,Screwdriver,sScrewdriver,2"
-shayHome_Day1_Visit2,Screwdriver,*Singing* When I was... a young boy...
-shayHome_Day1_Visit2,Screwdriver,My father... took me into the city...
-shayHome_Day1_Visit2,Screwdriver,To see a marching band...~
+shayHome_Day1_Visit2,Screwdriver,[wave]When I was... a young boy...[/wave]
+shayHome_Day1_Visit2,Screwdriver,[wave]My father... took me into the city...[/wave]
+shayHome_Day1_Visit2,Screwdriver,[wave]To see a marching band...~[/wave]
 shayHome_Day1_Visit2,,"char_update,Screwdriver,0"
 shayHome_Day1_Visit2,Screwdriver,Hey! What are you looking at?!
 shayHome_Day1_Visit2,Screwdriver,Go explore!
@@ -358,7 +358,7 @@ shayHome_Day1_Visit3_HouseAcross_GotCandy,Screwdriver,QUICK!!!
 shayHome_Day1_Visit3_HouseAcross_GotCandy,,"trans_scene,shayHome_Day1_Visit3_HouseAcross_FadeOut2"
 ,,
 shayHome_Day1_Visit3_HouseAcross_FadeOut2,,"scene_bg_clear,sBackgroundBlack"
-shayHome_Day1_Visit3_HouseAcross_FadeOut2,Empty,"*Barking*[sound,sfxPrincessBark]"
+shayHome_Day1_Visit3_HouseAcross_FadeOut2,Empty,"[sound,sfxPrincessBark][tw,none][shake]*Barking*[/shake]"
 shayHome_Day1_Visit3_HouseAcross_FadeOut2,,"delay,2"
 shayHome_Day1_Visit3_HouseAcross_FadeOut2,,"trans_scene,shayHome_Day1_Visit3_Bar"
 shayHome_Day1_Visit3_HouseAcross_FadeOut2,,"music,noone"
@@ -764,8 +764,10 @@ street1LostNo,,"scene_set,street1Questions"
 ,,
 ,,
 ,,
-street1Questions,,"char_update,Pogo,0"
 street1Questions,,"char_update,Spook,0"
+street1Questions,Spook,So...
+street1Questions,,"char_update,Pogo,0"
+street1Questions,Pogo,Hm?
 street1Questions,,"choice,street1QuestionYourself,street1QuestionTown,street1QuestionBar"
 street1Questions,,"scene_set,street1QuestionYourself"
 street1Questions,,"scene_set,street1QuestionTown"
@@ -783,15 +785,15 @@ street1QuestionYourself,,"char_update,Spook,9"
 street1QuestionYourself,Spook,Maybe you will meet a vampire during Halloween!
 street1QuestionYourself,,"char_update,Pogo,6"
 street1QuestionYourself,Pogo,Oh that would be WONDERFUL!
-street1QuestionYourself,,"char_update,Pogo,4"
+street1QuestionYourself,,"char_update,Pogo,8"
 street1QuestionYourself,Pogo,But what if they have a taste for mouses-
 street1QuestionYourself,,"char_update,Spook,8"
 street1QuestionYourself,Spook,QUIT JOKING ABOUT THAT!!!!
-street1QuestionYourself,,"char_update,Pogo,1"
+street1QuestionYourself,,"char_update,Pogo,0"
 street1QuestionYourself,Pogo,"Alright, alright..."
 street1QuestionYourself,,"char_update,Spook,0"
 street1QuestionYourself,Pogo,"Well, I always wanted to be a singer as a little girl!"
-street1QuestionYourself,,"char_update,Pogo,6"
+street1QuestionYourself,,"char_update,Pogo,1"
 street1QuestionYourself,Pogo,"I used to sing towards the mountains, so my voice would echo. It felt like a whole stage!"
 street1QuestionYourself,Spook,Don't you sing anymore?
 street1QuestionYourself,,"char_update,Pogo,0"
@@ -1265,7 +1267,7 @@ houseAcross_Day1_Visit1_Candy_Path1,Spook,Hmm...
 houseAcross_Day1_Visit1_Candy_Path1,Giant Rabbit,snore...
 houseAcross_Day1_Visit1_Candy_Path1,,"char_update,Spook,5"
 houseAcross_Day1_Visit1_Candy_Path1,Spook,Hey! Mr. rabbit! Are you asleep?
-houseAcross_Day1_Visit1_Candy_Path1,Giant Rabbit,"*Somehow, even louder snore...*"
+houseAcross_Day1_Visit1_Candy_Path1,Giant Rabbit,"[shake]Somehow, even louder snore...[/shake]"
 houseAcross_Day1_Visit1_Candy_Path1,Spook,Well... I guess I can come in?
 houseAcross_Day1_Visit1_Candy_Path1,Empty,"You try to push him, but the rabbit doesn't move an inch!"
 houseAcross_Day1_Visit1_Candy_Path1,Spook,Huh. That is one way to guard a door.
