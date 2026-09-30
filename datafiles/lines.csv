@@ -31,7 +31,7 @@ testScene1,,map
 testSceneEmpty,Empty,...
 testSceneEmpty,,map
 ,,
-intro,,"scene_bg,sBackgroundShayRoomDay"
+intro,,"scene_bg,sBackgroundShayHome"
 intro,,"music,bgmSpookTheme"
 intro,,"delay,2"
 intro,Spook,"This week, we moved into a new house with my family."
