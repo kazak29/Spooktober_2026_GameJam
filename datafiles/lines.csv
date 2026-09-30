@@ -1052,6 +1052,24 @@ yard_Day1_Visit1,Spook,Brrr!!!
 yard_Day1_Visit1,???,Visitor! Small one! Approach!
 yard_Day1_Visit1,,"char_update,Spook,6"
 yard_Day1_Visit1,Spook,Huh?
+yard_Day1_Visit1,,"char_in,Hamster,sHamilton,5"
+yard_Day1_Visit1,Hamster,"Approach, small hamster!"
+yard_Day1_Visit1,,"char_update,Spook,0"
+yard_Day1_Visit1,Spook,"I'm not a hamster, I'm a mouse."
+yard_Day1_Visit1,Hamster,"Well, everyone always calls *me* a mouse!"
+yard_Day1_Visit1,,"choice,yard0,yard1,yard2"
+yard_Day1_Visit1,,"scene_set,yard_Day1_Visit1_Path1"
+yard_Day1_Visit1,,"scene_set,yard_Day1_Visit1_Path2"
+yard_Day1_Visit1,,"scene_set,yard_Day1_Visit1_Path3"
+,,
+yard_Day1_Visit1_Path1,,"char_update,Hamster,0"
+yard_Day1_Visit1_Path1,Hamster,I guess you are right. I never met a mouse.
+yard_Day1_Visit1_Path1,Spook,Never? But you hang out outside.
+yard_Day1_Visit1_Path1,Hamster,I'm... out..side?
+yard_Day1_Visit1_Path1,,"choice,yard3,yard4,yard5"
+yard_Day1_Visit1_Path1,,"scene_set,yard_Day1_Visit1_Path4"
+yard_Day1_Visit1_Path1,,"scene_set,yard_Day1_Visit1_Path5"
+yard_Day1_Visit1_Path1,,"scene_set,yard_Day1_Visit1_Path6"
 ,,
 ,,
 ,,
@@ -1059,24 +1077,6 @@ yard_Day1_Visit1,Spook,Huh?
 ,,
 ,,
 ,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-yard_Day1_Visit1_Path1,,
 ,,
 yard_Day1_Visit1_Path2,,
 ,,
