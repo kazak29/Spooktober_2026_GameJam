@@ -1507,7 +1507,7 @@ endingPartyBad,,"trans_room,rmCredits"
 endingPartyOkay,,"scene_bg_clear,sBackgroundBlack"
 endingPartyOkay,Empty,The nighttime comes....
 endingPartyOkay,,"music,bgmTitleTheme"
-endingPartyOkay,,"trans_change,true,sBackgroundSewerBar"
+endingPartyOkay,,"trans_change,true,sBackgroundSewerBarParty"
 endingPartyOkay,,"char_in,Screwdriver,sScrewdriver,12"
 endingPartyOkay,Screwdriver,Hiya kid!
 endingPartyOkay,,"main_char_in,10"
