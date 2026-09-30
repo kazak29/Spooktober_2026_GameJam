@@ -1093,32 +1093,32 @@ yard_Day1_Visit1_Path3,Spook,Cool. So I will see you there...?
 yard_Day1_Visit1_Path3,Hamster,"You will, you will..."
 yard_Day1_Visit1_Path3,,"scene_set,yard_Day1_Visit1_Path11"
 ,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-yard_Day1_Visit1_Path4,,
+yard_Day1_Visit1_Path4,Hamster,Of course I do!
+yard_Day1_Visit1_Path4,Hamster,I am home where my beloved human is!
+yard_Day1_Visit1_Path4,Spook,"I have a human, too!"
+yard_Day1_Visit1_Path4,Hamster,Then why are *you* outside?
+yard_Day1_Visit1_Path4,Spook,We're both outside!
+yard_Day1_Visit1_Path4,Hamster,WHAT??
+yard_Day1_Visit1_Path4,,"char_update,Spook,7"
+yard_Day1_Visit1_Path4,Spook,...Dude. I don't get it. Aren't you with those sewer punks? 
+yard_Day1_Visit1_Path4,Hamster,The what now?
+yard_Day1_Visit1_Path4,,"char_update,Spook,0"
+yard_Day1_Visit1_Path4,Spook,Sewer- uh-
+yard_Day1_Visit1_Path4,Spook,"...It's a secret, I guess."
+yard_Day1_Visit1_Path4,Hamster,Huh...
+yard_Day1_Visit1_Path4,Hamster,"Well, whatever! Still! You are in my home!"
+yard_Day1_Visit1_Path4,,"char_update,Spook,7"
+yard_Day1_Visit1_Path4,Spook,...And?
+yard_Day1_Visit1_Path4,Hamster,Uh... Just so we;re clear! You know!
+yard_Day1_Visit1_Path4,,"choice,yard6,yard7"
+yard_Day1_Visit1_Path4,,"scene_set,yard_Day1_Visit1_Path7"
+yard_Day1_Visit1_Path4,,"scene_set,yard_Day1_Visit1_Path8"
 ,,
 yard_Day1_Visit1_Path5,,
+,,
+,,
+,,
+,,
 ,,
 yard_Day1_Visit1_Path6,,
 ,,
@@ -1133,6 +1133,25 @@ yard_Day1_Visit1_Path10,,
 yard_Day1_Visit1_Path11,,"char_out,Hamster"
 yard_Day1_Visit1_Path11,Spook,...What just happened?
 yard_Day1_Visit1_Path11,,map
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
 ,,
 ,,
 ,,
