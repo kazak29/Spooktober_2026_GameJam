@@ -3,9 +3,9 @@ function MenuGameStart(_args){
 	ScreenPlayReset();
 	
 	
-	//global.sceneToPlay = FIRST_SCENE;
+	global.sceneToPlay = FIRST_SCENE;
 	//global.sceneToPlay = "endingPartyBad"; //"testScene";
-	global.sceneToPlay = "rocketTestScene";
+	//global.sceneToPlay = "rocketTestScene";
 	
 	TransitionStart(_args[0], _args[1], _args[2]);
 }

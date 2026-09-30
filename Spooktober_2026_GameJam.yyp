@@ -85,7 +85,6 @@
   },
   "name":"Spooktober_2026_GameJam",
   "resources":[
-    {"id":{"name":"fComic","path":"fonts/fComic/fComic.yy",},},
     {"id":{"name":"fConsol16","path":"fonts/fConsol16/fConsol16.yy",},},
     {"id":{"name":"fConsol24","path":"fonts/fConsol24/fConsol24.yy",},},
     {"id":{"name":"fDialogueTextBody","path":"fonts/fDialogueTextBody/fDialogueTextBody.yy",},},
