@@ -10,6 +10,13 @@
 		SoundPlay(_snd, _volPercent, _looping);
 	});
 	
+	// CHARACTER NAME AS SET IN global.dataTypewriterSfx
+	scribble_typists_add_event("tw", function(_element, _param_array)
+	{
+		with oDirector {
+			TypewriterSoundSet(_param_array[0]);
+		}
+	});
 	
 	// VOLUME - IS A % OF GLOBAL GAIN VARIABLE, FROM 0 TO 500, APPLIED ON PLAY
 	scribble_typists_add_event("tw_sfx_vol", function(_element, _param_array)

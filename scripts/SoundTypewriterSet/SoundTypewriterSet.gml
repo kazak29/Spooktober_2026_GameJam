@@ -62,4 +62,11 @@ global.dataTypewriterSfx = {
 		pitchMax:	0.5,
 		overlap:	0,
 	},
+	Hamster: {
+		ids:		[sfxTypewriterSpook],
+		vol:		100,
+		pitchMin:	1.1,
+		pitchMax:	1.1,
+		overlap:	30,
+	},
 }
