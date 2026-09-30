@@ -90,7 +90,6 @@
     {"id":{"name":"fConsol24","path":"fonts/fConsol24/fConsol24.yy",},},
     {"id":{"name":"fDialogueTextBody","path":"fonts/fDialogueTextBody/fDialogueTextBody.yy",},},
     {"id":{"name":"fDialogueTextTitle","path":"fonts/fDialogueTextTitle/fDialogueTextTitle.yy",},},
-    {"id":{"name":"fMapLocation","path":"fonts/fMapLocation/fMapLocation.yy",},},
     {"id":{"name":"fTitle","path":"fonts/fTitle/fTitle.yy",},},
     {"id":{"name":"scribble_fallback_font","path":"fonts/scribble_fallback_font/scribble_fallback_font.yy",},},
     {"id":{"name":"oButton","path":"objects/oButton/oButton.yy",},},
