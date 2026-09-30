@@ -1,5 +1,6 @@
 Key,Text
 menuStart,Start
+menuEnd,Exit
 menuCredits,Credits
 menuSettings,Settings
 menuResume,Resume
@@ -41,6 +42,9 @@ mapHouseAcrossYard,House Across - Yard
 mapHouseAcrossFront,House Across - Front
 mapStreet,Main Street
 mapLamp,Lamp Post
+,
+mapReminder,Go home and talk to Screwdriver!
+,
 ,
 leave,Leave
 ,
@@ -104,17 +108,17 @@ houseAcross1,Try another entrance
 ,
 ,
 ,
-yard0,"Well, *I* never called you a mouse!"
-yard1,You'd be lucky to be called a mouse!
-yard2,Sorry about that.
+yard1Called,"Well, [shake]I[/shake] never called you a mouse!"
+yard1Lucky,You'd be lucky to be called a mouse!
+yard1Sorry,Sorry about that.
 ,
-yard3,Do you not know where you are...?
-yard4,Yes. this is outside. Very much.
-yard5,Why aren't you in a cage anyways?
+yard1Where,Do you not know where you are...?
+yard1Outside,Yes. this is outside. Very much.
+yard1Cage,Why aren't you in a cage anyways?
 ,
-yard6,Do you live in a cage then..?
-yard7,But... shouldn't you be inside a hamster ball...?
-,
+yard1LiveCage,Do you live in a cage then..?
+yard1Ball,But... shouldn't you be inside a hamster ball...?
+yard1Enclosure,Okay..why aren't you in your enclosure?
 ,
 ,
 ,

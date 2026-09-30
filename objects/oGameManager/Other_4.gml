@@ -26,8 +26,8 @@ var _buttonSettings = function() {
 }
 
 switch room {
-	case rmInit:		{	global.dataMenu = DataMenuSetup();	room_goto(rmTitleScreen);	}	break;
-	case rmStage:		{	_buttonSettings();												}	break;
-	case rmMap:			{	_buttonSettings();												}	break;
-	case rmTitleScreen:	{	MenuCreate("titleMain");										}	break;
+	case rmInit:		{	global.dataMenu = DataMenuSetup();	room_goto(rmTitleScreen);							}	break;
+	case rmStage:		{	_buttonSettings();																		}	break;
+	case rmMap:			{	_buttonSettings();																		}	break;
+	case rmTitleScreen:	{	if (os_type == os_gxgames) MenuCreate("titleMain"); else MenuCreate("titleMainWin");	}	break;
 }

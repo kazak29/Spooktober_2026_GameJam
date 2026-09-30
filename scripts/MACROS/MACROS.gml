@@ -60,7 +60,6 @@
 	
 	#macro FONT_DIALOGUE_TEXT_TITLE "fDialogueTextTitle"
 	#macro FONT_DIALOGUE_TEXT_BODY  "fDialogueTextBody"
-	#macro FONT_MAP_LOCATION        "fMapLocation"
 	
 #endregion
 #region Characters

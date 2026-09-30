@@ -34,11 +34,14 @@ TextboxHide(); //hide for room transitions
 		typewriterSound = struct_get(global.dataTypewriterSfx, "none");
 		TypewriterSoundPlay(); //stop typewriter sound by overriding it with empty array
 	}
-	TypewriterSoundSet = function(){
+	TypewriterSoundSet = function(_name = noone){
 		var _sounds = global.dataTypewriterSfx;
 		var _soundName = currentLineSequence[currentLineIndex].lineTitle;
+		
 		_soundName = string_replace(_soundName,"ö","o");
-		if _soundName == "???" _soundName = "Screwdriver";
+		if _soundName == "???"			_soundName = "Screwdriver";
+		if _soundName == "Giant Rabbit"	_soundName = "Empty";
+		if is_string(_name) _soundName = _name;
 		
 		var _soundData = struct_get(_sounds, _soundName) ?? struct_get(_sounds, "none");
 		

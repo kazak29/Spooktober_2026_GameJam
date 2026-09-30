@@ -1,7 +1,7 @@
 #region debug
 	
 	//randomise();
-	global.cheat = true;
+	global.cheat = false;
 	global.cheatcode = "bees";
 	global.showDebugUI = false;
 

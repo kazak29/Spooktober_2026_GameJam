@@ -47,7 +47,7 @@ function MapDataCreate() {
 		},
 		houseAcrossYard: {
 			title: global.uiData.mapHouseAcrossYard,
-			scene: "yard_Day1_Visit1",
+			scene: "yard1",
 		
 			visited:	false,
 			locked:		false,

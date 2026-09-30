@@ -1,4 +1,17 @@
 if global.midTransition exit;
+
+//exit menu if pressed on empty space
+if (oInputManager.mouse.pressed.any &&
+	!oInputManager.MouseHoverObjectBool(id) &&
+	room != rmTitleScreen)
+{
+	uiSfxPlayClick();
+	uiButtonSettings();
+	with oInputManager InputReset();
+	exit;
+}
+
+
 if oInputManager.mouse.released.left mouseClickLock = false;
 ElemSelectReset();
 

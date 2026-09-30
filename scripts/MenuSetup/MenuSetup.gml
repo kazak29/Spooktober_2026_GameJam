@@ -28,6 +28,23 @@ function DataMenuElementsCreate(){
 				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
 				menuName:		"titleCrt",
 			},
+			
+			pageSettingsWin: {
+				title:			"menuSettings",
+				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
+				menuName:		"titleSettingsWin",
+			},
+			pageCrtTitleWin: {
+				title:			"menuCrt",
+				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
+				menuName:		"titleCrtWin",
+			},
+			gameEnd: {
+				title:			"menuEnd",
+				elemType:		MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				scr:			game_end,
+				arg:			0,
+			},
 		#endregion
 		#region settings
 			fullscreen: {
