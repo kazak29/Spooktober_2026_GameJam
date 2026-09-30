@@ -350,6 +350,7 @@
     {"id":{"name":"sTextbox","path":"sprites/sTextbox/sTextbox.yy",},},
     {"id":{"name":"sTextboxTest","path":"sprites/sTextboxTest/sTextboxTest.yy",},},
     {"id":{"name":"sTextboxTitle","path":"sprites/sTextboxTitle/sTextboxTitle.yy",},},
+    {"id":{"name":"sTitleScreen","path":"sprites/sTitleScreen/sTitleScreen.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",

@@ -28,7 +28,7 @@ testScene1,,"trans_scene,testScene,true,sBackgroundShayHome"
 testScene1,Empty,test scene 1 line 5
 testScene1,,map
 ,,
-testSceneEmpty,Empy,...
+testSceneEmpty,Empty,...
 testSceneEmpty,,map
 ,,
 intro,,"scene_bg,sBackgroundShayRoomDay"
@@ -1039,6 +1039,128 @@ street2Scifi,,"char_in,Pogo,sPogo,1"
 street2Scifi,Pogo,"""The day after tomorrow, we are leaving for sure, Candide!"""
 street2Scifi,,"scene_set,street1Questions"
 ,,
+,,
+,,
+yard_Day1_Visit1,,"map_scene,houseAcrossYard,yard_Day1_Visit2"
+yard_Day1_Visit1,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
+yard_Day1_Visit1,,"music,bgmHouseAcross"
+yard_Day1_Visit1,,"main_char_in,0"
+yard_Day1_Visit1,Empty,The air smells like cinnamon and apple pie. Autumn leaves drift by.
+yard_Day1_Visit1,Empty,...
+yard_Day1_Visit1,Empty,"The wind howls, suddenly colder. "
+yard_Day1_Visit1,Spook,Brrr!!!
+yard_Day1_Visit1,???,Visitor! Small one! Approach!
+yard_Day1_Visit1,,"char_update,Spook,6"
+yard_Day1_Visit1,Spook,Huh?
+yard_Day1_Visit1,,"char_in,Hamster,sHamilton,5"
+yard_Day1_Visit1,Hamster,"Approach, small hamster!"
+yard_Day1_Visit1,,"char_update,Spook,0"
+yard_Day1_Visit1,Spook,"I'm not a hamster, I'm a mouse."
+yard_Day1_Visit1,Hamster,"Well, everyone always calls *me* a mouse!"
+yard_Day1_Visit1,,"choice,yard0,yard1,yard2"
+yard_Day1_Visit1,,"scene_set,yard_Day1_Visit1_Path1"
+yard_Day1_Visit1,,"scene_set,yard_Day1_Visit1_Path2"
+yard_Day1_Visit1,,"scene_set,yard_Day1_Visit1_Path3"
+,,
+yard_Day1_Visit1_Path1,,"char_update,Hamster,0"
+yard_Day1_Visit1_Path1,Hamster,I guess you are right. I never met a mouse.
+yard_Day1_Visit1_Path1,Spook,Never? But you hang out outside.
+yard_Day1_Visit1_Path1,Hamster,I'm... out..side?
+yard_Day1_Visit1_Path1,,"choice,yard3,yard4,yard5"
+yard_Day1_Visit1_Path1,,"scene_set,yard_Day1_Visit1_Path4"
+yard_Day1_Visit1_Path1,,"scene_set,yard_Day1_Visit1_Path5"
+yard_Day1_Visit1_Path1,,"scene_set,yard_Day1_Visit1_Path6"
+,,
+yard_Day1_Visit1_Path2,,"char_update,Hamster,2"
+yard_Day1_Visit1_Path2,Hamster,LUCKY!!!?
+yard_Day1_Visit1_Path2,Hamster,Arrogant little pest!!!!!
+yard_Day1_Visit1_Path2,Hamster,You don't even have cheek pockets! 
+yard_Day1_Visit1_Path2,Spook,Don't need em!
+yard_Day1_Visit1_Path2,Spook,"It's disgusting to carry food like that, okay!?"
+yard_Day1_Visit1_Path2,Hamster,"CURSES ON YOU!!!! CURSES ON YOUR CHEESE, YOUR BURROWS, THE LAND OF YOUR OWNERS! CURSES!!!"
+yard_Day1_Visit1_Path2,,"scene_set,yard_Day1_Visit1_Path11"
+,,
+yard_Day1_Visit1_Path3,Spook,I know the difference between a mouse and a hamster!
+yard_Day1_Visit1_Path3,Hamster,"Good, good, smart little rodent! "
+yard_Day1_Visit1_Path3,,"char_update,Spook,7"
+yard_Day1_Visit1_Path3,Spook,Uh... Sooo...
+yard_Day1_Visit1_Path3,,"char_update,Spook,0"
+yard_Day1_Visit1_Path3,Spook,Are you gonna join the Halloween party?
+yard_Day1_Visit1_Path3,Hamster,Is... Is it... HALLOW'S EVE?!
+yard_Day1_Visit1_Path3,Spook,Mhm...
+yard_Day1_Visit1_Path3,Hamster,Why of course! Of course I will!
+yard_Day1_Visit1_Path3,Spook,Cool. So I will see you there...?
+yard_Day1_Visit1_Path3,Hamster,"You will, you will..."
+yard_Day1_Visit1_Path3,,"scene_set,yard_Day1_Visit1_Path11"
+,,
+yard_Day1_Visit1_Path4,Hamster,Of course I do!
+yard_Day1_Visit1_Path4,Hamster,I am home where my beloved human is!
+yard_Day1_Visit1_Path4,Spook,"I have a human, too!"
+yard_Day1_Visit1_Path4,Hamster,Then why are *you* outside?
+yard_Day1_Visit1_Path4,Spook,We're both outside!
+yard_Day1_Visit1_Path4,Hamster,WHAT??
+yard_Day1_Visit1_Path4,,"char_update,Spook,7"
+yard_Day1_Visit1_Path4,Spook,...Dude. I don't get it. Aren't you with those sewer punks? 
+yard_Day1_Visit1_Path4,Hamster,The what now?
+yard_Day1_Visit1_Path4,,"char_update,Spook,0"
+yard_Day1_Visit1_Path4,Spook,Sewer- uh-
+yard_Day1_Visit1_Path4,Spook,"...It's a secret, I guess."
+yard_Day1_Visit1_Path4,Hamster,Huh...
+yard_Day1_Visit1_Path4,Hamster,"Well, whatever! Still! You are in my home!"
+yard_Day1_Visit1_Path4,,"char_update,Spook,7"
+yard_Day1_Visit1_Path4,Spook,...And?
+yard_Day1_Visit1_Path4,Hamster,Uh... Just so we;re clear! You know!
+yard_Day1_Visit1_Path4,,"choice,yard6,yard7"
+yard_Day1_Visit1_Path4,,"scene_set,yard_Day1_Visit1_Path7"
+yard_Day1_Visit1_Path4,,"scene_set,yard_Day1_Visit1_Path8"
+,,
+yard_Day1_Visit1_Path5,,
+,,
+,,
+,,
+,,
+,,
+yard_Day1_Visit1_Path6,,
+,,
+yard_Day1_Visit1_Path7,,
+,,
+yard_Day1_Visit1_Path8,,
+,,
+yard_Day1_Visit1_Path9,,
+,,
+yard_Day1_Visit1_Path10,,
+,,
+yard_Day1_Visit1_Path11,,"char_out,Hamster"
+yard_Day1_Visit1_Path11,Spook,...What just happened?
+yard_Day1_Visit1_Path11,,map
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+yard_Day1_Visit2,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
+yard_Day1_Visit2,,"music,bgmHouseAcross"
+yard_Day1_Visit2,,"main_char_in,0"
+yard_Day1_Visit2,Spook,I blinked and that hamster just took off!
+yard_Day1_Visit2,Spook,Weird...
+yard_Day1_Visit2,,map
 ,,
 ,,
 ,,
