@@ -28,7 +28,7 @@ testScene1,,"trans_scene,testScene,true,sBackgroundShayHome"
 testScene1,Empty,test scene 1 line 5
 testScene1,,map
 ,,
-testSceneEmpty,Empy,...
+testSceneEmpty,Empty,...
 testSceneEmpty,,map
 ,,
 intro,,"scene_bg,sBackgroundShayRoomDay"
@@ -1039,6 +1039,73 @@ street2Scifi,,"char_in,Pogo,sPogo,1"
 street2Scifi,Pogo,"""The day after tomorrow, we are leaving for sure, Candide!"""
 street2Scifi,,"scene_set,street1Questions"
 ,,
+,,
+,,
+yard_Day1_Visit1,,"map_scene,houseAcrossYard,yard_Day1_Visit2"
+yard_Day1_Visit1,,"scene_bg_clear,sBackgroundGray"
+yard_Day1_Visit1,,"music,bgmHouseAcross"
+yard_Day1_Visit1,,"main_char_in,0"
+yard_Day1_Visit1,Empty,The air smells like cinnamon and apple pie. Autumn leaves drift by.
+yard_Day1_Visit1,Empty,...
+yard_Day1_Visit1,Empty,"The wind howls, suddenly colder. "
+yard_Day1_Visit1,Spook,Brrr!!!
+yard_Day1_Visit1,???,Visitor! Small one! Approach!
+yard_Day1_Visit1,,"char_update,Spook,6"
+yard_Day1_Visit1,Spook,Huh?
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+yard_Day1_Visit1_Path1,,
+,,
+yard_Day1_Visit1_Path2,,
+,,
+yard_Day1_Visit1_Path3,,
+,,
+yard_Day1_Visit1_Path4,,
+,,
+yard_Day1_Visit1_Path5,,
+,,
+yard_Day1_Visit1_Path6,,
+,,
+yard_Day1_Visit1_Path7,,
+,,
+yard_Day1_Visit1_Path8,,
+,,
+yard_Day1_Visit1_Path9,,
+,,
+yard_Day1_Visit1_Path10,,
+,,
+yard_Day1_Visit1_Path11,,
+,,
+,,
+,,
+yard_Day1_Visit2,,"scene_bg_clear,sBackgroundShayRoomNight"
+yard_Day1_Visit2,,"music,bgmHouseAcross"
+yard_Day1_Visit2,,"main_char_in,0"
+yard_Day1_Visit2,Spook,I blinked and that hamster just took off!
+yard_Day1_Visit2,Spook,Weird...
+yard_Day1_Visit2,,map
 ,,
 ,,
 ,,
