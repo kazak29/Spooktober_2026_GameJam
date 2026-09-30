@@ -86,7 +86,7 @@ introShayRoomDay,Mom,"Well, I'm sure you can watch your movie after you go trick
 introShayRoomDay,Mom,"Come on, Shay. It's going to be fun!"
 introShayRoomDay,Shay,...And can I stay up late to watch the movie...?
 introShayRoomDay,Mom,...Sigh. Yes. Yes you may.
-introShayRoomDay,Shay,"Okaaay. Love you, mom"
+introShayRoomDay,Shay,"Okaaay. Love you, mom."
 introShayRoomDay,Mom,"Love you too, pumpkin!"
 introShayRoomDay,,"char_in,Shay,sShay,2"
 introShayRoomDay,,"char_update,Spook,0"
@@ -108,7 +108,7 @@ introShayRoomDay,,"music,noone"
 introShayRoomDay,,"trans_scene,introShayRoomNight"
 ,,
 introShayRoomNight,,"scene_bg_clear,sBackgroundShayRoomNight"
-introShayRoomNight,Empty,"October 30th, Night"
+introShayRoomNight,Empty,"October 30th, Night."
 introShayRoomNight,,"music,bgmSuspense"
 introShayRoomNight,,"main_char_in,6"
 introShayRoomNight,Spook,Squeak?
@@ -129,7 +129,7 @@ introShayRoomNight,,"char_update,Unknown,6"
 introShayRoomNight,???,"You see, this whole street is mine."
 introShayRoomNight,???,I watched 'em build your little house from dirt and concrete.
 introShayRoomNight,???,And when you lot pack up and move on?
-introShayRoomNight,???,"I'll still be here, heh"
+introShayRoomNight,???,"I'll still be here, heh."
 introShayRoomNight,,"char_update,Spook,1"
 introShayRoomNight,Spook,I am not going to leave!
 introShayRoomNight,Spook,And I'm not a kid! I'm one and a half years old!
