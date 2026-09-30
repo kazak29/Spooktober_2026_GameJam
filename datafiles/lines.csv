@@ -325,7 +325,7 @@ shayHome_Day1_Visit3_Path2,Screwdriver,Hey!
 shayHome_Day1_Visit3_Path2,,"music,noone"
 shayHome_Day1_Visit3_Path2,,map
 ,,
-shayHome_Day1_Visit3_HouseAcross,,"scene_bg_clear,sBackgroundShayHome"
+shayHome_Day1_Visit3_HouseAcross,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
 shayHome_Day1_Visit3_HouseAcross,,"music,bgmHouseAcrossSneakIn"
 shayHome_Day1_Visit3_HouseAcross,,"main_char_in,0"
 shayHome_Day1_Visit3_HouseAcross,,"char_in,Screwdriver,sScrewdriver,0"
