@@ -303,7 +303,7 @@ shayHome_Day1_Visit3_2,,"choice,shayHome0,shayHome1"
 shayHome_Day1_Visit3_2,,"scene_set,shayHome_Day1_Visit3_Path1"
 shayHome_Day1_Visit3_2,,"scene_set,shayHome_Day1_Visit3_Path2"
 ,,
-shayHome_Day1_Visit3_Path1,,"map_lock,home,true"
+shayHome_Day1_Visit3_Path1,,"map_scene,home,homeSkip"
 shayHome_Day1_Visit3_Path1,,"custom_script_cont,Part1ClearCheck"
 shayHome_Day1_Visit3_Path1,,"custom_script_cont,Part1HouseAcrossFrontCheck"
 shayHome_Day1_Visit3_Path1,,"flag_set,candy_quest_complete,true"
@@ -346,7 +346,7 @@ shayHome_Day1_Visit3_HouseAcross_FadeOut1,,"scene_bg_clear,sBackgroundBlack"
 shayHome_Day1_Visit3_HouseAcross_FadeOut1,Empty,Several minutes pass...
 shayHome_Day1_Visit3_HouseAcross_FadeOut1,,"trans_scene,shayHome_Day1_Visit3_HouseAcross_GotCandy"
 ,,
-shayHome_Day1_Visit3_HouseAcross_GotCandy,,"scene_bg_clear,sBackgroundShayHome"
+shayHome_Day1_Visit3_HouseAcross_GotCandy,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
 shayHome_Day1_Visit3_HouseAcross_GotCandy,,"main_char_in,0"
 shayHome_Day1_Visit3_HouseAcross_GotCandy,,"char_in,Princess,sPrincess,4"
 shayHome_Day1_Visit3_HouseAcross_GotCandy,,"char_in,Screwdriver,sScrewdriver,8"
@@ -500,6 +500,15 @@ shayHome_Day1_Visit3_Bar_Path7,Barry,"Happy hunting, friend."
 shayHome_Day1_Visit3_Bar_Path7,,"music,noone"
 shayHome_Day1_Visit3_Bar_Path7,,map
 ,,
+homeSkip,,"scene_bg_clear,sBackgroundCageNight"
+homeSkip,,"music,bgmShayHome"
+homeSkip,,"main_char_in,0"
+homeSkip,Spook,"Oh, my bed. My beautiful bed."
+homeSkip,,"char_update,Spook,6"
+homeSkip,Spook,Should I go to sleep now?
+homeSkip,,"choice,shayHomeSkip,shayHomeExplore"
+homeSkip,,"trans_scene,p1EndIntro"
+homeSkip,,map
 ,,
 ,,
 bar1,,"map_scene,bar,bar2"
