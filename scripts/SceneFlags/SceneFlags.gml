@@ -1,8 +1,5 @@
 function FlagsCreate() {
 	return {
-		day1_clear: false,
-		day2_clear: false,
-	
 		candy_quest_start:		false,
 		candy_quest_complete:	false,
 		candy_quest_fail:		false,

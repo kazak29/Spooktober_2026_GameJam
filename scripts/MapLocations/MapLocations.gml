@@ -2,7 +2,7 @@ function MapDataCreate() {
 	return {
 		home: {
 			title: global.uiData.mapHome,	//only for textlog
-			scene: "shayHome_Day1_Visit1",
+			scene: "p1Home1",
 		
 			visited:	false,				//grays-out, but still able to visit
 			locked:		false,				//skips location hovering entirely
@@ -16,7 +16,7 @@ function MapDataCreate() {
 		},
 		bar: {
 			title: global.uiData.mapBar,
-			scene: "bar1",
+			scene: "p1Bar1",
 		
 			visited:	false,
 			locked:		false,
@@ -29,7 +29,7 @@ function MapDataCreate() {
 		},
 		street: {
 			title: global.uiData.mapStreet,
-			scene: "street1",
+			scene: "p1Street1",
 		
 			visited:	false,
 			locked:		false,
@@ -45,9 +45,9 @@ function MapDataCreate() {
 			y1: 360,
 			y2: 830,
 		},
-		houseAcrossYard: {
-			title: global.uiData.mapHouseAcrossYard,
-			scene: "yard1",
+		yard: {
+			title: global.uiData.mapYard,
+			scene: "p1Yard1",
 		
 			visited:	false,
 			locked:		false,
@@ -58,9 +58,9 @@ function MapDataCreate() {
 			y1: 100,
 			y2: 350,
 		},
-		houseAcrossFront: {
-			title: global.uiData.mapHouseAcrossFront,
-			scene: "houseAcross_Day1_Visit1",
+		front: {
+			title: global.uiData.mapFront,
+			scene: "p1Front1",
 		
 			visited:	false,
 			locked:		false,
@@ -73,7 +73,7 @@ function MapDataCreate() {
 		},
 		lamp: {
 			title: global.uiData.mapLamp,
-			scene: "lampPost_Day1_Visit1",
+			scene: "p1Lamp1",
 		
 			visited:	false,
 			locked:		false,
@@ -89,25 +89,25 @@ function MapDataCreate() {
 
 function MapDataUpdatePart2(){
 	with global.dataMapLocations {
-		home.scene				= "p2home1";
+		home.scene				= "p2Home1";
 		bar.scene				= "testScene1";
 		street.scene			= "testScene1";
-		houseAcrossYard.scene	= "testScene1";
-		houseAcrossFront.scene	= "testScene1";
+		yard.scene				= "testScene1";
+		front.scene				= "testScene1";
 		lamp.scene				= "testScene1";
 		
 		home.visited				= false;
 		bar.visited					= false;
 		street.visited				= false;
-		houseAcrossYard.visited		= false;
-		houseAcrossFront.visited	= false;
+		yard.visited				= false;
+		front.visited				= false;
 		lamp.visited				= false;
 		
 		home.locked					= false;
 		bar.locked					= true;
 		street.locked				= true;
-		houseAcrossYard.locked		= true;
-		houseAcrossFront.locked		= true;
+		yard.locked					= true;
+		front.locked				= true;
 		lamp.locked					= true;
 	}
 }
