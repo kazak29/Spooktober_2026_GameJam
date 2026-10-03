@@ -1042,171 +1042,171 @@ p1Street2Scifi,,"scene_set,p1Street1Questions"
 ,,
 ,,
 ,,
-yard1,,"map_scene,houseAcrossYard,yard2"
-yard1,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
-yard1,,"music,bgmHouseAcross"
-yard1,,"main_char_in,0"
-yard1,Empty,The air smells like cinnamon and apple pie. Autumn leaves drift by.
-yard1,Empty,...
-yard1,Empty,"The wind howls, suddenly colder. "
-yard1,Spook,Brrr!!!
-yard1,???,"[tw,Hamster]Visitor! Small one! Approach!"
-yard1,,"char_update,Spook,6"
-yard1,Spook,Huh?
-yard1,,"char_in,Hamster,sHamilton,5"
-yard1,Hamster,"Approach, small hamster!"
-yard1,,"char_update,Spook,0"
-yard1,Spook,"I'm not a hamster, I'm a mouse."
-yard1,Hamster,"Well, everyone always calls [shake]me[/shake] a mouse!"
-yard1,,"choice,yard1Called,yard1Lucky,yard1Sorry"
-yard1,,"scene_set,yard1Called"
-yard1,,"scene_set,yard1Lucky"
-yard1,,"scene_set,yard1Sorry"
+p1Yard1,,"map_scene,houseAcrossYard,yard2"
+p1Yard1,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
+p1Yard1,,"music,bgmHouseAcross"
+p1Yard1,,"main_char_in,0"
+p1Yard1,Empty,The air smells like cinnamon and apple pie. Autumn leaves drift by.
+p1Yard1,Empty,...
+p1Yard1,Empty,"The wind howls, suddenly colder. "
+p1Yard1,Spook,Brrr!!!
+p1Yard1,???,"[tw,Hamster]Visitor! Small one! Approach!"
+p1Yard1,,"char_update,Spook,6"
+p1Yard1,Spook,Huh?
+p1Yard1,,"char_in,Hamster,sHamilton,5"
+p1Yard1,Hamster,"Approach, small hamster!"
+p1Yard1,,"char_update,Spook,0"
+p1Yard1,Spook,"I'm not a hamster, I'm a mouse."
+p1Yard1,Hamster,"Well, everyone always calls [shake]me[/shake] a mouse!"
+p1Yard1,,"choice,p1Yard1Called,p1Yard1Lucky,p1Yard1Sorry"
+p1Yard1,,"scene_set,p1Yard1Called"
+p1Yard1,,"scene_set,p1Yard1Lucky"
+p1Yard1,,"scene_set,p1Yard1Sorry"
 ,,
-yard1Called,,"char_update,Hamster,0"
-yard1Called,Hamster,I guess you are right. I never met a mouse.
-yard1Called,Spook,Never? But you hang out outside!
-yard1Called,,"char_update,Hamster,3"
-yard1Called,Hamster,I'm... out..side?
-yard1Called,,"choice,yard1Where,yard1Outside,yard1Cage"
-yard1Called,,"scene_set,yard1Where"
-yard1Called,,"scene_set,yard1Outside"
-yard1Called,,"scene_set,yard1Cage"
-,,
-,,
-yard1Where,,"char_update,Hamster,0"
-yard1Where,Hamster,Of course I do!
-yard1Where,Hamster,I am home where my beloved human is!
-yard1Where,Spook,"I have a human, too!"
-yard1Where,Hamster,Then why are [shake]YOU[/shake] outside?
-yard1Where,Spook,We're both outside!
-yard1Where,,"char_update,Hamster,2"
-yard1Where,Hamster,WHAT??
-yard1Where,,"char_update,Spook,7"
-yard1Where,Spook,...Dude. I don't get it. Aren't you with those sewer punks? 
-yard1Where,,"char_update,Hamster,3"
-yard1Where,Hamster,The what now?
-yard1Where,,"char_update,Spook,0"
-yard1Where,Spook,Sewer- uh-
-yard1Where,Spook,"...It's a secret, I guess."
-yard1Where,Hamster,Huh...
-yard1Where,,"char_update,Hamster,0"
-yard1Where,Hamster,"Well, whatever! Still! You are in my home!"
-yard1Where,,"char_update,Spook,7"
-yard1Where,Spook,...And?
-yard1Where,Hamster,Uh... Just so we're clear! You know!
-yard1Where,,"choice,yard1LiveCage,yard1Ball"
-yard1Where,,"scene_set,yard1LiveCage"
-yard1Where,,"scene_set,yard1Ball"
-,,
-yard1Outside,,"char_update,Hamster,0"
-yard1Outside,Hamster,Oh my! You are right!
-yard1Outside,,"char_update,Hamster,2"
-yard1Outside,Hamster,What are we doing here?!!!
-yard1Outside,,"char_update,Spook,5"
-yard1Outside,Spook,"I don't know, man! "
-yard1Outside,Spook,You were here when I walked in!
-yard1Outside,,"char_update,Hamster,4"
-yard1Outside,Hamster,[shake]AAAAAAAAAAHHHHHHH![/shake]
-yard1Outside,Spook,Don't freak out!
-yard1Outside,,"char_update,Hamster,2"
-yard1Outside,Hamster,[shake]YOU[/shake] don't freak out miss!
-yard1Outside,,"char_update,Spook,2"
-yard1Outside,Spook,I am a boy!!!!!
-yard1Outside,Hamster,[shake]SO WHAT!!!!![/shake]
-yard1Outside,,"scene_set,yard1Whatever"
-,,
-yard1Cage,,"char_update,Hamster,2"
-yard1Cage,Hamster,First of all! Hamsters aren't fit for a cage!
-yard1Cage,,"char_update,Hamster,0"
-yard1Cage,Hamster,"We are burrowers and we require deep bedding that won't spill out and plenty of textures to live comfortable, long lives!"
-yard1Cage,,"choice,yard1Enclosure,yard1Ball"
-yard1Cage,,"scene_set,yard1Enclosure"
-yard1Cage,,"scene_set,yard1Ball"
-,,
-yard1LiveCage,,"char_update,Hamster,2"
-yard1LiveCage,Hamster,Hamsters aren't fit for a cage!
-yard1LiveCage,Hamster,"We are burrowers and we require deep bedding that won't spill out and plenty of textures to live comfortable, long lives!"
-yard1LiveCage,,"char_update,Spook,5"
-yard1LiveCage,Spook,"I see, I see..."
-yard1LiveCage,,"char_update,Spook,6"
-yard1LiveCage,Spook,"Then why aren't you- well, in your enclosure?"
-yard1LiveCage,,"char_update,Hamster,4"
-yard1LiveCage,Hamster,How [shake]DARE[/shake] you stand on [shake]MY[/shake] land and question [shake]ME[/shake]!
-yard1LiveCage,,"char_update,Hamster,2"
-yard1LiveCage,Hamster,Arrogant mouse!
-yard1LiveCage,,"scene_set,yard1Whatever"
-,,
-yard1Ball,,"char_update,Hamster,4"
-yard1Ball,Hamster,[shake]SCANDALOUS!!! DISGUSTING!!![/shake]
-yard1Ball,Hamster,Hamster balls are horrific machines of torture that will disorient and rob sensory of a roaming hamster!
-yard1Ball,Hamster,We roam! We chew! We are free! [shake]OPRESSOR![/shake]
-yard1Ball,,"char_update,Spook,5"
-yard1Ball,Spook,"Sorry, sorry, geez..."
-yard1Ball,,"char_update,Hamster,2"
-yard1Ball,Hamster,"And [shake]YOU[/shake] could be in a hamster ball, too! Since when pet mice are such free spirits!"
-yard1Ball,Spook,It's called a hamster ball! Not a mouse ball!
-yard1Ball,Hamster,"Well? And I know of a thing called a ""mouse trap."" Do you just walk into it because of that?"
-yard1Ball,,"scene_set,yard1Whatever"
+p1Yard1Called,,"char_update,Hamster,0"
+p1Yard1Called,Hamster,I guess you are right. I never met a mouse.
+p1Yard1Called,Spook,Never? But you hang out outside!
+p1Yard1Called,,"char_update,Hamster,3"
+p1Yard1Called,Hamster,I'm... out..side?
+p1Yard1Called,,"choice,p1Yard1Where,p1Yard1Outside,p1Yard1Cage"
+p1Yard1Called,,"scene_set,p1Yard1Where"
+p1Yard1Called,,"scene_set,p1Yard1Outside"
+p1Yard1Called,,"scene_set,p1Yard1Cage"
 ,,
 ,,
-yard1Enclosure,,"char_update,Hamster,3"
-yard1Enclosure,Hamster,I... I am not sure!
-yard1Enclosure,Hamster,I was there a while ago.
-yard1Enclosure,,"char_update,Hamster,1"
-yard1Enclosure,Hamster,Oh! I know! 
-yard1Enclosure,Hamster,I am waiting for my human to come back!
-yard1Enclosure,Hamster,So she can find me here!
-yard1Enclosure,,"char_update,Spook,6"
-yard1Enclosure,Spook,Where'd she go?
-yard1Enclosure,,"char_update,Hamster,3"
-yard1Enclosure,Hamster,Somewhere... close... I am sure.
-yard1Enclosure,,"char_update,Hamster,4"
-yard1Enclosure,Hamster,"But hey now! What's with the line of questioning, punk!"
-yard1Enclosure,,"char_update,Hamster,2"
-yard1Enclosure,Hamster,This is my yard! You will treat me with respect!
-yard1Enclosure,,"scene_set,yard1Whatever"
+p1Yard1Where,,"char_update,Hamster,0"
+p1Yard1Where,Hamster,Of course I do!
+p1Yard1Where,Hamster,I am home where my beloved human is!
+p1Yard1Where,Spook,"I have a human, too!"
+p1Yard1Where,Hamster,Then why are [shake]YOU[/shake] outside?
+p1Yard1Where,Spook,We're both outside!
+p1Yard1Where,,"char_update,Hamster,2"
+p1Yard1Where,Hamster,WHAT??
+p1Yard1Where,,"char_update,Spook,7"
+p1Yard1Where,Spook,...Dude. I don't get it. Aren't you with those sewer punks? 
+p1Yard1Where,,"char_update,Hamster,3"
+p1Yard1Where,Hamster,The what now?
+p1Yard1Where,,"char_update,Spook,0"
+p1Yard1Where,Spook,Sewer- uh-
+p1Yard1Where,Spook,"...It's a secret, I guess."
+p1Yard1Where,Hamster,Huh...
+p1Yard1Where,,"char_update,Hamster,0"
+p1Yard1Where,Hamster,"Well, whatever! Still! You are in my home!"
+p1Yard1Where,,"char_update,Spook,7"
+p1Yard1Where,Spook,...And?
+p1Yard1Where,Hamster,Uh... Just so we're clear! You know!
+p1Yard1Where,,"choice,p1Yard1LiveCage,p1Yard1Ball"
+p1Yard1Where,,"scene_set,p1Yard1LiveCage"
+p1Yard1Where,,"scene_set,p1Yard1Ball"
+,,
+p1Yard1Outside,,"char_update,Hamster,0"
+p1Yard1Outside,Hamster,Oh my! You are right!
+p1Yard1Outside,,"char_update,Hamster,2"
+p1Yard1Outside,Hamster,What are we doing here?!!!
+p1Yard1Outside,,"char_update,Spook,5"
+p1Yard1Outside,Spook,"I don't know, man! "
+p1Yard1Outside,Spook,You were here when I walked in!
+p1Yard1Outside,,"char_update,Hamster,4"
+p1Yard1Outside,Hamster,[shake]AAAAAAAAAAHHHHHHH![/shake]
+p1Yard1Outside,Spook,Don't freak out!
+p1Yard1Outside,,"char_update,Hamster,2"
+p1Yard1Outside,Hamster,[shake]YOU[/shake] don't freak out miss!
+p1Yard1Outside,,"char_update,Spook,2"
+p1Yard1Outside,Spook,I am a boy!!!!!
+p1Yard1Outside,Hamster,[shake]SO WHAT!!!!![/shake]
+p1Yard1Outside,,"scene_set,p1Yard1Whatever"
+,,
+p1Yard1Cage,,"char_update,Hamster,2"
+p1Yard1Cage,Hamster,First of all! Hamsters aren't fit for a cage!
+p1Yard1Cage,,"char_update,Hamster,0"
+p1Yard1Cage,Hamster,"We are burrowers and we require deep bedding that won't spill out and plenty of textures to live comfortable, long lives!"
+p1Yard1Cage,,"choice,p1Yard1Enclosure,p1Yard1Ball"
+p1Yard1Cage,,"scene_set,p1Yard1Enclosure"
+p1Yard1Cage,,"scene_set,p1Yard1Ball"
+,,
+p1Yard1LiveCage,,"char_update,Hamster,2"
+p1Yard1LiveCage,Hamster,Hamsters aren't fit for a cage!
+p1Yard1LiveCage,Hamster,"We are burrowers and we require deep bedding that won't spill out and plenty of textures to live comfortable, long lives!"
+p1Yard1LiveCage,,"char_update,Spook,5"
+p1Yard1LiveCage,Spook,"I see, I see..."
+p1Yard1LiveCage,,"char_update,Spook,6"
+p1Yard1LiveCage,Spook,"Then why aren't you- well, in your enclosure?"
+p1Yard1LiveCage,,"char_update,Hamster,4"
+p1Yard1LiveCage,Hamster,How [shake]DARE[/shake] you stand on [shake]MY[/shake] land and question [shake]ME[/shake]!
+p1Yard1LiveCage,,"char_update,Hamster,2"
+p1Yard1LiveCage,Hamster,Arrogant mouse!
+p1Yard1LiveCage,,"scene_set,p1Yard1Whatever"
+,,
+p1Yard1Ball,,"char_update,Hamster,4"
+p1Yard1Ball,Hamster,[shake]SCANDALOUS!!! DISGUSTING!!![/shake]
+p1Yard1Ball,Hamster,Hamster balls are horrific machines of torture that will disorient and rob sensory of a roaming hamster!
+p1Yard1Ball,Hamster,We roam! We chew! We are free! [shake]OPRESSOR![/shake]
+p1Yard1Ball,,"char_update,Spook,5"
+p1Yard1Ball,Spook,"Sorry, sorry, geez..."
+p1Yard1Ball,,"char_update,Hamster,2"
+p1Yard1Ball,Hamster,"And [shake]YOU[/shake] could be in a hamster ball, too! Since when pet mice are such free spirits!"
+p1Yard1Ball,Spook,It's called a hamster ball! Not a mouse ball!
+p1Yard1Ball,Hamster,"Well? And I know of a thing called a ""mouse trap."" Do you just walk into it because of that?"
+p1Yard1Ball,,"scene_set,p1Yard1Whatever"
 ,,
 ,,
-yard1Lucky,,"char_update,Hamster,2"
-yard1Lucky,Hamster,LUCKY!!!?
-yard1Lucky,Hamster,Arrogant little pest!!!!!
-yard1Lucky,,"char_update,Hamster,4"
-yard1Lucky,Hamster,You don't even have cheek pockets! 
-yard1Lucky,,"char_update,Spook,1"
-yard1Lucky,Spook,Don't need em!
-yard1Lucky,,"char_update,Spook,2"
-yard1Lucky,Spook,"It's disgusting to carry food like that, okay!?"
-yard1Lucky,,"char_update,Hamster,6"
-yard1Lucky,Hamster,"[shake]CURSES ON YOU!!!! CURSES ON YOUR CHEESE, YOUR BURROWS, THE LAND OF YOUR OWNERS! CURSES!!![shake]"
-yard1Lucky,,"scene_set,yard1Disappear"
-,,
-yard1Sorry,Spook,I know the difference between a mouse and a hamster!
-yard1Sorry,,"char_update,Hamster,1"
-yard1Sorry,Hamster,"Good, good, smart little rodent! "
-yard1Sorry,,"char_update,Spook,7"
-yard1Sorry,Spook,Uh... Sooo...
-yard1Sorry,,"char_update,Spook,0"
-yard1Sorry,Spook,Are you gonna join the Halloween party?
-yard1Sorry,,"char_update,Hamster,5"
-yard1Sorry,Hamster,Is... Is it... [wave]HALLOW'S EVE?![/wave]
-yard1Sorry,Spook,Mhm...
-yard1Sorry,,"char_update,Hamster,1"
-yard1Sorry,Hamster,"Why, of course! Of course I will!"
-yard1Sorry,Spook,Cool. So I will see you there...?
-yard1Sorry,Hamster,"You will, you will..."
-yard1Sorry,,"scene_set,yard1Disappear"
+p1Yard1Enclosure,,"char_update,Hamster,3"
+p1Yard1Enclosure,Hamster,I... I am not sure!
+p1Yard1Enclosure,Hamster,I was there a while ago.
+p1Yard1Enclosure,,"char_update,Hamster,1"
+p1Yard1Enclosure,Hamster,Oh! I know! 
+p1Yard1Enclosure,Hamster,I am waiting for my human to come back!
+p1Yard1Enclosure,Hamster,So she can find me here!
+p1Yard1Enclosure,,"char_update,Spook,6"
+p1Yard1Enclosure,Spook,Where'd she go?
+p1Yard1Enclosure,,"char_update,Hamster,3"
+p1Yard1Enclosure,Hamster,Somewhere... close... I am sure.
+p1Yard1Enclosure,,"char_update,Hamster,4"
+p1Yard1Enclosure,Hamster,"But hey now! What's with the line of questioning, punk!"
+p1Yard1Enclosure,,"char_update,Hamster,2"
+p1Yard1Enclosure,Hamster,This is my yard! You will treat me with respect!
+p1Yard1Enclosure,,"scene_set,p1Yard1Whatever"
 ,,
 ,,
-yard1Whatever,,"char_update,Spook,7"
-yard1Whatever,Spook,Ugh... Whatever.
-yard1Whatever,Spook,"You talk so much, man..."
-yard1Whatever,,"scene_set,yard1Disappear"
+p1Yard1Lucky,,"char_update,Hamster,2"
+p1Yard1Lucky,Hamster,LUCKY!!!?
+p1Yard1Lucky,Hamster,Arrogant little pest!!!!!
+p1Yard1Lucky,,"char_update,Hamster,4"
+p1Yard1Lucky,Hamster,You don't even have cheek pockets! 
+p1Yard1Lucky,,"char_update,Spook,1"
+p1Yard1Lucky,Spook,Don't need em!
+p1Yard1Lucky,,"char_update,Spook,2"
+p1Yard1Lucky,Spook,"It's disgusting to carry food like that, okay!?"
+p1Yard1Lucky,,"char_update,Hamster,6"
+p1Yard1Lucky,Hamster,"[shake]CURSES ON YOU!!!! CURSES ON YOUR CHEESE, YOUR BURROWS, THE LAND OF YOUR OWNERS! CURSES!!![shake]"
+p1Yard1Lucky,,"scene_set,p1Yard1Disappear"
 ,,
-yard1Disappear,,"char_out,Hamster"
-yard1Disappear,,"char_update,Spook,8"
-yard1Disappear,Spook,...What just happened?
-yard1Disappear,,map
+p1Yard1Sorry,Spook,I know the difference between a mouse and a hamster!
+p1Yard1Sorry,,"char_update,Hamster,1"
+p1Yard1Sorry,Hamster,"Good, good, smart little rodent! "
+p1Yard1Sorry,,"char_update,Spook,7"
+p1Yard1Sorry,Spook,Uh... Sooo...
+p1Yard1Sorry,,"char_update,Spook,0"
+p1Yard1Sorry,Spook,Are you gonna join the Halloween party?
+p1Yard1Sorry,,"char_update,Hamster,5"
+p1Yard1Sorry,Hamster,Is... Is it... [wave]HALLOW'S EVE?![/wave]
+p1Yard1Sorry,Spook,Mhm...
+p1Yard1Sorry,,"char_update,Hamster,1"
+p1Yard1Sorry,Hamster,"Why, of course! Of course I will!"
+p1Yard1Sorry,Spook,Cool. So I will see you there...?
+p1Yard1Sorry,Hamster,"You will, you will..."
+p1Yard1Sorry,,"scene_set,p1Yard1Disappear"
+,,
+,,
+p1Yard1Whatever,,"char_update,Spook,7"
+p1Yard1Whatever,Spook,Ugh... Whatever.
+p1Yard1Whatever,Spook,"You talk so much, man..."
+p1Yard1Whatever,,"scene_set,p1Yard1Disappear"
+,,
+p1Yard1Disappear,,"char_out,Hamster"
+p1Yard1Disappear,,"char_update,Spook,8"
+p1Yard1Disappear,Spook,...What just happened?
+p1Yard1Disappear,,map
 ,,
 yard2,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
 yard2,,"music,bgmHouseAcross"

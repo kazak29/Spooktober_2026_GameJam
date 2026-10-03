@@ -42,13 +42,13 @@ mapHouseAcrossYard,House Across - Yard
 mapHouseAcrossFront,House Across - Front
 mapStreet,Main Street
 mapLamp,Lamp Post
-,
 mapReminder,Go home and talk to Screwdriver!
 ,
 ,
 ,
 intro0,Squeak (Reassuringly)
 intro1,Squeak (Hungrily)
+,
 ,
 p1HomeQuestBarry,Barry sent me!
 p1HomeQuestBye,Ugh... No... Bye...
@@ -74,6 +74,7 @@ p1Bar1Candy,Where do I even find candy?
 p1Bar1Nuh,Nu-uh! Keep your stolen drink!
 p1Bar1Okay,Ooookay....
 ,
+,
 p1Street1LostYes,"Honestly, yes."
 p1Street1LostNo,Not at all! No!
 p1Street1LostAll,Aren't we all lost?
@@ -96,53 +97,27 @@ p1Street1Scifi,Sci-Fi!
 p1Street1HuntingFunny,That's not funny!
 ,
 ,
+p1Yard1Called,"Well, [shake]I[/shake] never called you a mouse!"
+p1Yard1Lucky,You'd be lucky to be called a mouse!
+p1Yard1Sorry,Sorry about that.
 ,
+p1Yard1Where,Do you not know where you are...?
+p1Yard1Outside,Yes. this is outside. Very much.
+p1Yard1Cage,Why aren't you in a cage anyways?
 ,
-,
-,
-,
+p1Yard1LiveCage,Do you live in a cage then..?
+p1Yard1Ball,But... shouldn't you be inside a hamster ball...?
+p1Yard1Enclosure,Okay..why aren't you in your enclosure?
 ,
 ,
 houseAcross0,Poke the rabbit
 houseAcross1,Try another entrance
 ,
 ,
-,
-,
-yard1Called,"Well, [shake]I[/shake] never called you a mouse!"
-yard1Lucky,You'd be lucky to be called a mouse!
-yard1Sorry,Sorry about that.
-,
-yard1Where,Do you not know where you are...?
-yard1Outside,Yes. this is outside. Very much.
-yard1Cage,Why aren't you in a cage anyways?
-,
-yard1LiveCage,Do you live in a cage then..?
-yard1Ball,But... shouldn't you be inside a hamster ball...?
-yard1Enclosure,Okay..why aren't you in your enclosure?
-,
-,
-,
-,
-,
-,
-,
-,
 lampPost0,...That's a lamp post.
 lampPost1,Oh. Yes. She is beautiful.
 lampPost2,Why do you love lamps so much?
 lampPost3,I will give you two some privacy...
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
 ,
 ,
 ,
