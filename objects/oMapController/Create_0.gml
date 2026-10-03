@@ -4,7 +4,7 @@ mouseHover = false;
 
 locs = [];
 with global.dataMapLocations {
-	other.locs = [home, houseAcrossYard, houseAcrossFront, lamp, bar, street];
+	other.locs = [home, yard, front, lamp, bar, street];
 }
 
 locCheck = function(_num){

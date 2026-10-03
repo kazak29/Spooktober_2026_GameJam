@@ -1,6 +1,7 @@
 function SceneCustomScriptTest(){
 	show_debug_message("it works!");
 }
+
 function Part1ClearCheck(){
 	var _locs = global.dataMapLocations;
 	var _names = struct_get_names(_locs);
@@ -11,9 +12,4 @@ function Part1ClearCheck(){
 		}
 	}
 	return true;
-}
-function Part1HouseAcrossFrontCheck(){
-	if !global.dataMapLocations.houseAcrossFront.visited {
-		global.dataMapLocations.houseAcrossFront.scene = "houseAcross_Day1_Visit1_Candy";
-	}
 }

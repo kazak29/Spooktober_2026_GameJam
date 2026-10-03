@@ -38,8 +38,8 @@ buttonTextlog,TEXT LOG
 ,
 mapHome,Home
 mapBar,Sewer Bar
-mapHouseAcrossYard,House Across - Yard
-mapHouseAcrossFront,House Across - Front
+mapYard,House Across - Yard
+mapFront,House Across - Front
 mapStreet,Main Street
 mapLamp,Lamp Post
 mapReminder,Go home and talk to Screwdriver!
@@ -110,8 +110,8 @@ p1Yard1Ball,But... shouldn't you be inside a hamster ball...?
 p1Yard1Enclosure,Okay..why aren't you in your enclosure?
 ,
 ,
-houseAcross0,Poke the rabbit
-houseAcross1,Try another entrance
+p1Front1Poke,Poke the rabbit
+p1Front1Another,Try another entrance
 ,
 ,
 lampPost0,...That's a lamp post.

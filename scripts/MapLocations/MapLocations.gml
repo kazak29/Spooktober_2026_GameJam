@@ -45,8 +45,8 @@ function MapDataCreate() {
 			y1: 360,
 			y2: 830,
 		},
-		houseAcrossYard: {
-			title: global.uiData.mapHouseAcrossYard,
+		yard: {
+			title: global.uiData.mapYard,
 			scene: "p1Yard1",
 		
 			visited:	false,
@@ -58,9 +58,9 @@ function MapDataCreate() {
 			y1: 100,
 			y2: 350,
 		},
-		houseAcrossFront: {
-			title: global.uiData.mapHouseAcrossFront,
-			scene: "houseAcross_Day1_Visit1",
+		front: {
+			title: global.uiData.mapFront,
+			scene: "p1Front1",
 		
 			visited:	false,
 			locked:		false,
@@ -92,22 +92,22 @@ function MapDataUpdatePart2(){
 		home.scene				= "p2home1";
 		bar.scene				= "testScene1";
 		street.scene			= "testScene1";
-		houseAcrossYard.scene	= "testScene1";
-		houseAcrossFront.scene	= "testScene1";
+		yard.scene				= "testScene1";
+		front.scene				= "testScene1";
 		lamp.scene				= "testScene1";
 		
 		home.visited				= false;
 		bar.visited					= false;
 		street.visited				= false;
-		houseAcrossYard.visited		= false;
-		houseAcrossFront.visited	= false;
+		yard.visited				= false;
+		front.visited				= false;
 		lamp.visited				= false;
 		
 		home.locked					= false;
 		bar.locked					= true;
 		street.locked				= true;
-		houseAcrossYard.locked		= true;
-		houseAcrossFront.locked		= true;
+		yard.locked					= true;
+		front.locked				= true;
 		lamp.locked					= true;
 	}
 }
