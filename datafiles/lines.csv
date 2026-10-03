@@ -16,6 +16,8 @@ kazakTestScene,,map
 testMap,Empty,...
 testMap,,map
 ,,
+,,
+,,
 intro,,"scene_bg,sBackgroundShayHome"
 intro,,"music,bgmSpookTheme"
 intro,,"delay,2"
@@ -81,7 +83,7 @@ introShayRoomDay,Shay,How am I gonna spend an entire night with people I don't e
 introShayRoomDay,Shay,This is gonna be a disaster!
 introShayRoomDay,Shay,A bigger disaster than third grade picture day!
 introShayRoomDay,Empty,Shay sounds upset...
-introShayRoomDay,,"choice,intro0,intro1"
+introShayRoomDay,,"choice,introReassure,introHungry"
 introShayRoomDay,,"char_update,Shay,0"
 introShayRoomDay,,"char_update,Shay,0"
 introShayRoomDay,Shay,"You're right, Spook!"
@@ -492,7 +494,7 @@ p1HomeSkip,Spook,"Oh, my bed. My beautiful bed."
 p1HomeSkip,,"char_update,Spook,6"
 p1HomeSkip,Spook,Should I go to sleep now?
 p1HomeSkip,,"choice,p1HomeSkipSleep,p1HomeSkipExplore"
-p1HomeSkip,,"trans_scene,p1EndIntro"
+p1HomeSkip,,"trans_scene,p1End"
 p1HomeSkip,,map
 ,,
 ,,
@@ -1292,90 +1294,89 @@ p1Front2,,map
 ,,
 ,,
 ,,
-lampPost_Day1_Visit1,,"map_scene,lamp,lampPost_Day1_Visit2"
-lampPost_Day1_Visit1,,"scene_bg_clear,sBackgroundLampPostNightMoth"
-lampPost_Day1_Visit1,,"music,bgmLompTheme"
-lampPost_Day1_Visit1,,"main_char_in,0"
-lampPost_Day1_Visit1,Empty,A bright light flickers rapidly. The moth from the bar is glaring into it with loving eyes.
-lampPost_Day1_Visit1,,"trans_change,false,sBackgroundLampPostNight"
-lampPost_Day1_Visit1,,"char_in,Möth,sMoth,0"
-lampPost_Day1_Visit1,Möth,My sweet... My love...
-lampPost_Day1_Visit1,Spook,Um... Hello?
-lampPost_Day1_Visit1,Möth,You see my lover? She is excited to see me.
-lampPost_Day1_Visit1,,"choice,lampPost0,lampPost1"
-lampPost_Day1_Visit1,,"scene_set,lampPost_Day1_Visit1_Path1"
-lampPost_Day1_Visit1,,"scene_set,lampPost_Day1_Visit1_Path2"
+p1Lamp1,,"map_scene,lamp,p1Lamp2"
+p1Lamp1,,"scene_bg_clear,sBackgroundLampPostNightMoth"
+p1Lamp1,,"music,bgmLompTheme"
+p1Lamp1,,"main_char_in,0"
+p1Lamp1,Empty,A bright light flickers rapidly. The moth from the bar is glaring into it with loving eyes.
+p1Lamp1,,"trans_change,false,sBackgroundLampPostNight"
+p1Lamp1,,"char_in,Möth,sMoth,0"
+p1Lamp1,Möth,My sweet... My love...
+p1Lamp1,Spook,Um... Hello?
+p1Lamp1,Möth,You see my lover? She is excited to see me.
+p1Lamp1,,"choice,p1Lamp1ThatsALamp,p1Lamp1Beautiful"
+p1Lamp1,,"scene_set,p1Lamp1ThatsALamp"
+p1Lamp1,,"scene_set,p1Lamp1Beautiful"
 ,,
-lampPost_Day1_Visit1_Path1,Möth,Watch your mouth!
-lampPost_Day1_Visit1_Path1,Möth,"You want to be smart when speaking of the lamp, little mouse."
-lampPost_Day1_Visit1_Path1,,"music,noone"
-lampPost_Day1_Visit1_Path1,,"delay,3"
-lampPost_Day1_Visit1_Path1,,"char_out,Möth"
-lampPost_Day1_Visit1_Path1,,"delay,3"
-lampPost_Day1_Visit1_Path1,,"char_in,Möth,sMoth,1"
-lampPost_Day1_Visit1_Path1,,"char_update,Spook,8"
-lampPost_Day1_Visit1_Path1,,"delay,1"
-lampPost_Day1_Visit1_Path1,Möth,They listen.
-lampPost_Day1_Visit1_Path1,Möth,They know things about you no one else can ever know... 
-lampPost_Day1_Visit1_Path1,Möth,The bright light that mortals are drawn to before death?
-lampPost_Day1_Visit1_Path1,Möth,...
-lampPost_Day1_Visit1_Path1,Möth,"That's the lamp, little mouse."
-lampPost_Day1_Visit1_Path1,Möth,The lamp will one day reap your soul.
-lampPost_Day1_Visit1_Path1,Möth,...And
-lampPost_Day1_Visit1_Path1,Möth,When that day comes?
-lampPost_Day1_Visit1_Path1,Möth,You are going to wish you respected the lamp some more.
-lampPost_Day1_Visit1_Path1,,"delay,3"
-lampPost_Day1_Visit1_Path1,,"music,bgmLompTheme"
-lampPost_Day1_Visit1_Path1,,"char_out,Möth"
-lampPost_Day1_Visit1_Path1,,"char_in,Möth,sMoth,0"
-lampPost_Day1_Visit1_Path1,Möth,My sweet... my love...
-lampPost_Day1_Visit1_Path1,Spook,...I think I'll get going. 
-lampPost_Day1_Visit1_Path1,,"music,noone"
-lampPost_Day1_Visit1_Path1,,map
+p1Lamp1ThatsALamp,Möth,Watch your mouth!
+p1Lamp1ThatsALamp,Möth,"You want to be smart when speaking of the lamp, little mouse."
+p1Lamp1ThatsALamp,,"music,noone"
+p1Lamp1ThatsALamp,,"delay,3"
+p1Lamp1ThatsALamp,,"char_out,Möth"
+p1Lamp1ThatsALamp,,"delay,3"
+p1Lamp1ThatsALamp,,"char_in,Möth,sMoth,1"
+p1Lamp1ThatsALamp,,"char_update,Spook,8"
+p1Lamp1ThatsALamp,,"delay,1"
+p1Lamp1ThatsALamp,Möth,They listen.
+p1Lamp1ThatsALamp,Möth,They know things about you no one else can ever know... 
+p1Lamp1ThatsALamp,Möth,The bright light that mortals are drawn to before death?
+p1Lamp1ThatsALamp,Möth,...
+p1Lamp1ThatsALamp,Möth,"That's the lamp, little mouse."
+p1Lamp1ThatsALamp,Möth,The lamp will one day reap your soul.
+p1Lamp1ThatsALamp,Möth,...And
+p1Lamp1ThatsALamp,Möth,When that day comes?
+p1Lamp1ThatsALamp,Möth,You are going to wish you respected the lamp some more.
+p1Lamp1ThatsALamp,,"delay,3"
+p1Lamp1ThatsALamp,,"music,bgmLompTheme"
+p1Lamp1ThatsALamp,,"char_out,Möth"
+p1Lamp1ThatsALamp,,"char_in,Möth,sMoth,0"
+p1Lamp1ThatsALamp,Möth,My sweet... my love...
+p1Lamp1ThatsALamp,Spook,...I think I'll get going. 
+p1Lamp1ThatsALamp,,"music,noone"
+p1Lamp1ThatsALamp,,map
 ,,
-lampPost_Day1_Visit1_Path2,Möth,Pretty... Lamp... Pretty... Lady.
-lampPost_Day1_Visit1_Path2,,"choice,lampPost2,lampPost3"
-lampPost_Day1_Visit1_Path2,,"scene_set,lampPost_Day1_Visit1_Path3"
-lampPost_Day1_Visit1_Path2,,"scene_set,lampPost_Day1_Visit1_Path4"
+p1Lamp1Beautiful,Möth,Pretty... Lamp... Pretty... Lady.
+p1Lamp1Beautiful,,"choice,p1Lamp1Love,p1Lamp1Privacy"
+p1Lamp1Beautiful,,"scene_set,p1Lamp1Love"
+p1Lamp1Beautiful,,"scene_set,p1Lamp1Privacy"
 ,,
-lampPost_Day1_Visit1_Path3,,"music,noone"
-lampPost_Day1_Visit1_Path3,,"delay,3"
-lampPost_Day1_Visit1_Path3,,"char_out,Möth"
-lampPost_Day1_Visit1_Path3,,"delay,3"
-lampPost_Day1_Visit1_Path3,,"char_in,Möth,sMoth,1"
-lampPost_Day1_Visit1_Path3,,"char_update,Spook,8"
-lampPost_Day1_Visit1_Path3,,"delay,1"
-lampPost_Day1_Visit1_Path3,Möth,I do not love lamps.
-lampPost_Day1_Visit1_Path3,Möth,I love MY lamp.
-lampPost_Day1_Visit1_Path3,Möth,"My lamp, my beloved, my source of light."
-lampPost_Day1_Visit1_Path3,Möth,She whispers sweet nothings to me all night.
-lampPost_Day1_Visit1_Path3,Möth,"She would whisper to you, too."
-lampPost_Day1_Visit1_Path3,Möth,If only you listened.
-lampPost_Day1_Visit1_Path3,Möth,...
-lampPost_Day1_Visit1_Path3,Möth,But no one ever listens.
-lampPost_Day1_Visit1_Path3,Möth,"So she is only mine, my sweet lamp."
-lampPost_Day1_Visit1_Path3,,"delay,3"
-lampPost_Day1_Visit1_Path3,,"music,bgmLompTheme"
-lampPost_Day1_Visit1_Path3,,"char_out,Möth"
-lampPost_Day1_Visit1_Path3,,"char_in,Möth,sMoth,0"
-lampPost_Day1_Visit1_Path3,Möth,My love...
-lampPost_Day1_Visit1_Path3,,"choice,lampPost3"
-lampPost_Day1_Visit1_Path3,,"music,noone"
-lampPost_Day1_Visit1_Path3,,map
+p1Lamp1Love,,"music,noone"
+p1Lamp1Love,,"delay,3"
+p1Lamp1Love,,"char_out,Möth"
+p1Lamp1Love,,"delay,3"
+p1Lamp1Love,,"char_in,Möth,sMoth,1"
+p1Lamp1Love,,"char_update,Spook,8"
+p1Lamp1Love,,"delay,1"
+p1Lamp1Love,Möth,I do not love lamps.
+p1Lamp1Love,Möth,I love MY lamp.
+p1Lamp1Love,Möth,"My lamp, my beloved, my source of light."
+p1Lamp1Love,Möth,She whispers sweet nothings to me all night.
+p1Lamp1Love,Möth,"She would whisper to you, too."
+p1Lamp1Love,Möth,If only you listened.
+p1Lamp1Love,Möth,...
+p1Lamp1Love,Möth,But no one ever listens.
+p1Lamp1Love,Möth,"So she is only mine, my sweet lamp."
+p1Lamp1Love,,"delay,3"
+p1Lamp1Love,,"music,bgmLompTheme"
+p1Lamp1Love,,"char_out,Möth"
+p1Lamp1Love,,"char_in,Möth,sMoth,0"
+p1Lamp1Love,Möth,My love...
+p1Lamp1Love,Spook,I will give you two some privacy...
+p1Lamp1Love,,"scene_set,p1Lamp1Privacy"
 ,,
-lampPost_Day1_Visit1_Path4,,"music,noone"
-lampPost_Day1_Visit1_Path4,,map
-,,
+p1Lamp1Privacy,,"music,noone"
+p1Lamp1Privacy,,map
 ,,
 ,,
-lampPost_Day1_Visit2,,"scene_bg_clear,sBackgroundLampPostNightMoth"
-lampPost_Day1_Visit2,,"music,bgmLompTheme"
-lampPost_Day1_Visit2,,"main_char_in,0"
-lampPost_Day1_Visit2,Möth,My love...
-lampPost_Day1_Visit2,Spook,Uh...
-lampPost_Day1_Visit2,Spook,I should just go...
-lampPost_Day1_Visit2,,"music,noone"
-lampPost_Day1_Visit2,,map
+,,
+p1Lamp2,,"scene_bg_clear,sBackgroundLampPostNightMoth"
+p1Lamp2,,"music,bgmLompTheme"
+p1Lamp2,,"main_char_in,0"
+p1Lamp2,Möth,My love...
+p1Lamp2,Spook,Uh...
+p1Lamp2,Spook,I should just go...
+p1Lamp2,,"music,noone"
+p1Lamp2,,map
 ,,
 ,,
 ,,
@@ -1421,9 +1422,9 @@ p2Intro,Shay,HEY SPOOK!!!!!
 p2Intro,,"char_update,Spook,5"
 p2Intro,Spook,!!!
 p2Intro,Shay,What do you think?
-p2Intro,,"choice,p2introApprove,p2introDisapprove"
+p2Intro,,"choice,p2IntroApprove,p2IntroDisapprove"
 p2Intro,,"scene_set,p2IntroAprrove"
-p2Intro,,"scene_set,p2introDisapprove"
+p2Intro,,"scene_set,p2IntroDisapprove"
 ,,
 p2IntroAprrove,,"char_update,Shay,4"
 p2IntroAprrove,Shay,"I know, right!?"
@@ -1433,13 +1434,13 @@ p2IntroAprrove,Shay,"Last year was... Well, goblin wasn't the best idea."
 p2IntroAprrove,Shay,Everyone kept asking if I was Shrek!
 p2IntroAprrove,,"scene_set,p2IntroAh"
 ,,
-p2introDisapprove,,"char_update,Shay,7"
-p2introDisapprove,Shay,"Oh, I know you wanted me to be the giant cheese instead!"
-p2introDisapprove,,"char_update,Spook,3"
-p2introDisapprove,,"delay,0.5"
-p2introDisapprove,,"char_update,Shay,3"
-p2introDisapprove,Shay,"...Maybe next year, ok?"
-p2introDisapprove,,"scene_set,p2IntroAh"
+p2IntroDisapprove,,"char_update,Shay,7"
+p2IntroDisapprove,Shay,"Oh, I know you wanted me to be the giant cheese instead!"
+p2IntroDisapprove,,"char_update,Spook,3"
+p2IntroDisapprove,,"delay,0.5"
+p2IntroDisapprove,,"char_update,Shay,3"
+p2IntroDisapprove,Shay,"...Maybe next year, ok?"
+p2IntroDisapprove,,"scene_set,p2IntroAh"
 ,,
 p2IntroAh,,"char_update,Shay,5"
 p2IntroAh,Shay,Ah- before I forget! Here is yours!!!
@@ -1465,34 +1466,34 @@ p2IntroAh,,"custom_script_cont,MapDataUpdatePart2"
 p2IntroAh,,map
 ,,
 ,,
-p2home1,,"scene_bg_clear,sBackgroundShayRoomDay"
-p2home1,,"music,bgmShayHome"
-p2home1,,"main_char_in,0"
-p2home1,Spook,Shay is still away...
-p2home1,Spook,I can explore some more!
-p2home1,Spook,"Or... I can abandon those guys and stay with Shay, just like I wanted from the start!"
-p2home1,Spook,They probably won't miss me anyway...
-p2home1,,"char_update,Spook,3"
-p2home1,Spook,...is what I would've said if this game was finished!
-p2home1,,"char_update,Spook,0"
-p2home1,Spook,"Unfortunately, we ran out of time to make a second chapter."
-p2home1,,"condition_flag,candy_quest_complete"
-p2home1,,"scene_set,p2home1Path1"
-p2home1,,"scene_set,p2home1Path2"
+p2Home1,,"scene_bg_clear,sBackgroundShayRoomDay"
+p2Home1,,"music,bgmShayHome"
+p2Home1,,"main_char_in,0"
+p2Home1,Spook,Shay is still away...
+p2Home1,Spook,I can explore some more!
+p2Home1,Spook,"Or... I can abandon those guys and stay with Shay, just like I wanted from the start!"
+p2Home1,Spook,They probably won't miss me anyway...
+p2Home1,,"char_update,Spook,3"
+p2Home1,Spook,...is what I would've said if this game was finished!
+p2Home1,,"char_update,Spook,0"
+p2Home1,Spook,"Unfortunately, we ran out of time to make a second chapter."
+p2Home1,,"condition_flag,candy_quest_complete"
+p2Home1,,"scene_set,p2Home1Path1"
+p2Home1,,"scene_set,p2Home1Path2"
 ,,
-p2home1Path1,,"char_update,Spook,6"
-p2home1Path1,Spook,Let's see if my help with stealing that candy amounted to anything.
-p2home1Path1,,"char_update,Spook,0"
-p2home1Path1,Spook,To the party!
-p2home1Path1,,"music,noone"
-p2home1Path1,,"trans_scene,endingPartyOkay"
+p2Home1Path1,,"char_update,Spook,6"
+p2Home1Path1,Spook,Let's see if my help with stealing that candy amounted to anything.
+p2Home1Path1,,"char_update,Spook,0"
+p2Home1Path1,Spook,To the party!
+p2Home1Path1,,"music,noone"
+p2Home1Path1,,"trans_scene,endingPartyOkay"
 ,,
-p2home1Path2,,"char_update,Spook,6"
-p2home1Path2,Spook,"I hope those guys still managed to prepare a good party, despite me not helping them at all..."
-p2home1Path2,,"char_update,Spook,0"
-p2home1Path2,Spook,I guess it's time to find out!
-p2home1Path2,,"music,noone"
-p2home1Path2,,"trans_scene,endingPartyBad"
+p2Home1Path2,,"char_update,Spook,6"
+p2Home1Path2,Spook,"I hope those guys still managed to prepare a good party, despite me not helping them at all..."
+p2Home1Path2,,"char_update,Spook,0"
+p2Home1Path2,Spook,I guess it's time to find out!
+p2Home1Path2,,"music,noone"
+p2Home1Path2,,"trans_scene,endingPartyBad"
 ,,
 ,,
 endingPartyBad,,"scene_bg_clear,sBackgroundBlack"

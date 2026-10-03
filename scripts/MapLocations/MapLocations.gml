@@ -73,7 +73,7 @@ function MapDataCreate() {
 		},
 		lamp: {
 			title: global.uiData.mapLamp,
-			scene: "lampPost_Day1_Visit1",
+			scene: "p1Lamp1",
 		
 			visited:	false,
 			locked:		false,
@@ -89,7 +89,7 @@ function MapDataCreate() {
 
 function MapDataUpdatePart2(){
 	with global.dataMapLocations {
-		home.scene				= "p2home1";
+		home.scene				= "p2Home1";
 		bar.scene				= "testScene1";
 		street.scene			= "testScene1";
 		yard.scene				= "testScene1";

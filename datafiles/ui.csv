@@ -46,8 +46,8 @@ mapReminder,Go home and talk to Screwdriver!
 ,
 ,
 ,
-intro0,Squeak (Reassuringly)
-intro1,Squeak (Hungrily)
+introReassure,Squeak (Reassuringly)
+introHungry,Squeak (Hungrily)
 ,
 ,
 p1HomeQuestBarry,Barry sent me!
@@ -114,12 +114,12 @@ p1Front1Poke,Poke the rabbit
 p1Front1Another,Try another entrance
 ,
 ,
-lampPost0,...That's a lamp post.
-lampPost1,Oh. Yes. She is beautiful.
-lampPost2,Why do you love lamps so much?
-lampPost3,I will give you two some privacy...
+p1Lamp1ThatsALamp,...That's a lamp post.
+p1Lamp1Beautiful,Oh. Yes. She is beautiful.
+p1Lamp1Love,Why do you love lamps so much?
+p1Lamp1Privacy,I will give you two some privacy...
 ,
 ,
 ,
-p2introApprove,Squeak Approvingly
-p2introDisapprove,Squeak Disapprovingly
+p2IntroApprove,Squeak Approvingly
+p2IntroDisapprove,Squeak Disapprovingly
