@@ -54,7 +54,7 @@ p1HomeQuestBarry,Barry sent me!
 p1HomeQuestBye,Ugh... No... Bye...
 ,
 p1HomeQuestBarDead,Your drummer's dead?!
-p1HomeQuestBarPlay,So... Do you guys not play at all anymore?
+p1HomeQuestBarPlay,So... do you guys not play at all anymore?
 p1HomeQuestBarTired,"Yeah, I'm tired..."
 p1HomeQuestBarExplore,I wanna explore some more!
 ,
@@ -63,16 +63,16 @@ p1HomeSkipExplore,Continue exploring!
 ,
 ,
 p1Bar1Nervous,I'm a bit nervous.
-p1Bar1Party,Party! Party! The night is ours!
+p1Bar1Party,[wave]Party! Party! The night is ours![/wave]
 p1Bar1Hygenic,Is this bar even hygenic...?
-p1Bar1Strong,Yes!!! Pour me a strong one!
-p1Bar1Milk,Um...maybe warm milk?
+p1Bar1Strong,[shake]Yes!!![/shake] Pour me a strong one!
+p1Bar1Milk,Um... maybe warm milk?
 p1Bar1NotBad,"It's not that bad, actually."
 p1Bar1Leave,Leave
 p1Bar1Errands,You want me to run your errands!?
 p1Bar1Candy,Where do I even find candy?
-p1Bar1Nuh,Nu-uh! Keep your stolen drink!
-p1Bar1Okay,Ooookay....
+p1Bar1Nuh,[shake]Nu-uh![/shake] Keep your stolen drink!
+p1Bar1Okay,[wave]Ooookay....[/wave]
 ,
 ,
 p1Street1LostYes,"Honestly, yes."
