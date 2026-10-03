@@ -240,18 +240,19 @@ introBar,,map
 p1Home1,,"map_scene,home,p1Home2"
 p1Home1,,"scene_bg_clear,sBackgroundShayRoomNight"
 p1Home1,,"music,bgmShayHome"
-p1Home1,,"main_char_in,0"
 p1Home1,Empty,Shay is sound asleep. Your cage is warm and inviting.
+p1Home1,,"main_char_in,0"
 p1Home1,,"char_in,Screwdriver,sScrewdriver,0"
 p1Home1,Screwdriver,"Quitting already, kid?"
 p1Home1,,"char_update,Spook,8"
-p1Home1,Spook,Eeeek!!!
+p1Home1,Spook,[shake]Eeeek!!![/shake]
 p1Home1,,"char_update,Screwdriver,1"
 p1Home1,Screwdriver,Wow! You still react the same!
 p1Home1,Spook,Why are you back here?!
 p1Home1,,"char_update,Screwdriver,0"
 p1Home1,Screwdriver,Unfinished... business. 
-p1Home1,Screwdriver,Why are YOU back here!? Night is young! Go explore! Go!
+p1Home1,Screwdriver,Why are [shake]YOU[/shake] back here!?
+p1Home1,Screwdriver,Night is young! Go explore! Go!
 p1Home1,,"music,noone"
 p1Home1,,map
 ,,
@@ -285,7 +286,7 @@ p1HomeQuest2,,"scene_bg_clear,sBackgroundShayRoomNight"
 p1HomeQuest2,,"music,bgmShayHome"
 p1HomeQuest2,,"main_char_in,0"
 p1HomeQuest2,,"char_in,Screwdriver,sScrewdriver,0"
-p1HomeQuest2,Screwdriver,Hey!
+p1HomeQuest2,Screwdriver,Hey! Why do you keep coming back here?
 p1HomeQuest2,Screwdriver,You wanna tell me something?
 p1HomeQuest2,,"choice,p1HomeQuestBarry,p1HomeQuestBye"
 p1HomeQuest2,,"scene_set,p1HomeQuestIntro"
@@ -315,13 +316,15 @@ p1HomeQuestIntro,,"trans_scene,p1HomeQuestHouseAcross"
 p1HomeQuestHouseAcross,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
 p1HomeQuestHouseAcross,,"music,bgmHouseAcrossSneakIn"
 p1HomeQuestHouseAcross,,"main_char_in,0"
-p1HomeQuestHouseAcross,,"char_in,Screwdriver,sScrewdriver,0"
-p1HomeQuestHouseAcross,Screwdriver,"Candy, candy, sweet candy!"
-p1HomeQuestHouseAcross,Spook,Should we be really doing this?
+p1HomeQuestHouseAcross,,"char_in,Screwdriver,sScrewdriver,2"
+p1HomeQuestHouseAcross,Screwdriver,"[wave]Candy, candy, sweet candy![/wave]"
+p1HomeQuestHouseAcross,Spook,Should we really be doing this?
+p1HomeQuestHouseAcross,,"char_update,Screwdriver,0"
 p1HomeQuestHouseAcross,Screwdriver,Ssshhh... Don't wake the housekeepers!
 p1HomeQuestHouseAcross,Screwdriver,See that puppy over there?
 p1HomeQuestHouseAcross,,"char_in,Princess,sPrincess,4"
 p1HomeQuestHouseAcross,Spook,Yeah?
+p1HomeQuestHouseAcross,,"char_update,Screwdriver,1"
 p1HomeQuestHouseAcross,Screwdriver,"Yes, warn me if she wakes up. The code word is ""Squeak!"" nyeh heh!"
 p1HomeQuestHouseAcross,,"char_update,Spook,8"
 p1HomeQuestHouseAcross,Spook,Wait-
@@ -341,7 +344,7 @@ p1HomeQuestHouseAcrossGotCandy,Screwdriver,Got em'! Let's go!
 p1HomeQuestHouseAcrossGotCandy,Princess,Arf...?
 p1HomeQuestHouseAcrossGotCandy,,"char_update,Screwdriver,3"
 p1HomeQuestHouseAcrossGotCandy,,"char_update,Spook,8"
-p1HomeQuestHouseAcrossGotCandy,Screwdriver,QUICK!!!
+p1HomeQuestHouseAcrossGotCandy,Screwdriver,[shake]QUICK!!![/shake]
 p1HomeQuestHouseAcrossGotCandy,,"trans_scene,p1HomeQuestHouseAcrossFadeOut2"
 ,,
 p1HomeQuestHouseAcrossFadeOut2,,"scene_bg_clear,sBackgroundBlack"
@@ -354,37 +357,37 @@ p1HomeQuestBar,,"scene_bg_clear,sBackgroundSewerBar"
 p1HomeQuestBar,,"music,bgmSewerBar"
 p1HomeQuestBar,,"main_char_in,8"
 p1HomeQuestBar,,"char_in,Screwdriver,sScrewdriver,0"
-p1HomeQuestBar,Spook,Oh my god. Oh my god. Oh my god.
+p1HomeQuestBar,Spook,[shake]Oh my god. Oh my god. Oh my god.[/shake]
 p1HomeQuestBar,,"char_update,Screwdriver,2"
-p1HomeQuestBar,Screwdriver,"Whoa, calm down kid! Wasn't that a RUSH???"
+p1HomeQuestBar,Screwdriver,"Whoa, calm down kid! Wasn't that a [shake]RUSH???[/shake]"
 p1HomeQuestBar,,"char_update,Spook,4"
-p1HomeQuestBar,Spook,I'm a THIEF!!! WHAT IS SHAY GOING TO SAY!??
+p1HomeQuestBar,Spook,[shake]I'M A THIEF!!! WHAT IS SHAY GOING TO SAY!??[/shake]
 p1HomeQuestBar,,"char_update,Screwdriver,0"
 p1HomeQuestBar,Screwdriver,"Woah there, kiddo. "
 p1HomeQuestBar,,"char_update,Screwdriver,1"
-p1HomeQuestBar,Screwdriver,"If anything, I am the thief, OK? You were just my little helper! Don't give yourself all the credit!"
-p1HomeQuestBar,Spook,AAAAAAAAAAHHHHHHHHHHHHHHHH!!!!!!!!!!
+p1HomeQuestBar,Screwdriver,"If anything, [shake]I'm[/shake] the thief, OK? You were just my little helper! Don't give yourself all the credit!"
+p1HomeQuestBar,Spook,[shake]AAAAAAAAAAHHHHHHHHHHHHHHHH!!!!!!!!!![/shake]
 p1HomeQuestBar,,"char_in,Barry,sBarry,0"
-p1HomeQuestBar,Barry,"I'm taking this as ""we got the candy?"""
+p1HomeQuestBar,Barry,"I'm taking this as ""we got the candy""?"
 p1HomeQuestBar,Screwdriver,'course we did! Pour the guy a drink now! He clearly needs to chill out!
 p1HomeQuestBar,,"char_update,Spook,3"
-p1HomeQuestBar,Spook,Sniff... sniff...
+p1HomeQuestBar,Spook,[shake]Sniff... sniff...[/shake]
 p1HomeQuestBar,,"char_in,Pogo,sPogo,8"
-p1HomeQuestBar,Pogo,BOO!
-p1HomeQuestBar,Spook,Sniff...
+p1HomeQuestBar,Pogo,[shake]BOO![/shake]
+p1HomeQuestBar,Spook,[shake]Sniff...[/shake]
 p1HomeQuestBar,,"char_update,Pogo,7"
 p1HomeQuestBar,Pogo,...Bad timing?
 p1HomeQuestBar,,"char_update,Screwdriver,0"
 p1HomeQuestBar,Screwdriver,We were just back from... Trick or treatin'. 
 p1HomeQuestBar,,"char_update,Pogo,6"
-p1HomeQuestBar,Pogo,"Ooo, exciting!"
+p1HomeQuestBar,Pogo,"[wave]Ooo,[/wave] exciting!"
 p1HomeQuestBar,,"char_update,Barry,4"
-p1HomeQuestBar,Barry,OK! drinks coming up! 
+p1HomeQuestBar,Barry,Okay! Drinks coming up! 
 p1HomeQuestBar,,"char_update,Spook,0"
 p1HomeQuestBar,Empty,Everyone joins in for Barry's Special Cider With Crushed Candy and Extra Cream: BSCWCCEC! 
 p1HomeQuestBar,Empty,"(No, there is no shorter name for it)"
 p1HomeQuestBar,,"char_update,Pogo,5"
-p1HomeQuestBar,Pogo,Man... I miss playing together... This bar used to be waaay more lively...
+p1HomeQuestBar,Pogo,Man... I miss playing together... This bar used to be [wave]waaay[/wave] more lively...
 p1HomeQuestBar,,"char_update,Barry,3"
 p1HomeQuestBar,Barry,Harumph...
 p1HomeQuestBar,,"char_update,Screwdriver,7"
@@ -399,7 +402,7 @@ p1HomeQuestBarDead,,"char_update,Pogo,5"
 p1HomeQuestBarDead,Pogo,They are just...
 p1HomeQuestBarDead,Pogo,Not our drummer anymore.
 p1HomeQuestBarDead,Pogo,I guess that is better than dead.
-p1HomeQuestBarDead,Screwdriver,"You ""guess""?"
+p1HomeQuestBarDead,Screwdriver,"You ""[shake]guess[/shake]""?"
 p1HomeQuestBarDead,,"char_update,Pogo,6"
 p1HomeQuestBarDead,Pogo,Mhm!
 p1HomeQuestBarDead,Barry,Dead to us anyway...
@@ -408,13 +411,13 @@ p1HomeQuestBarDead,,"char_update,Screwdriver,0"
 p1HomeQuestBarDead,Screwdriver,"Told ya, kid. The bar used to be way livelier."
 p1HomeQuestBarDead,Barry,Let's not dig up old skeletons...
 p1HomeQuestBarDead,,"char_update,Screwdriver,2"
-p1HomeQuestBarDead,Screwdriver,Why not Barry? It is past midnight. Officially Hallow's Eve!!!!
+p1HomeQuestBarDead,Screwdriver,Why not Barry? It is past midnight. Officially [shake]Hallow's Eve!!!![/shake]
 p1HomeQuestBarDead,,"char_update,Pogo,0"
 p1HomeQuestBarDead,Pogo,What's a better time to rise from the dead?!
 p1HomeQuestBarDead,,"char_update,Barry,0"
 p1HomeQuestBarDead,Barry,Never! Never is a good time!
 p1HomeQuestBarDead,,"char_update,Screwdriver,0"
-p1HomeQuestBarDead,Screwdriver,Booooorrrrrriiiiiinnng!
+p1HomeQuestBarDead,Screwdriver,[wave]Booooorrrrrriiiiiinnng![/wave]
 p1HomeQuestBarDead,Spook,"Weird, the vibe suddenly got so depressing."
 p1HomeQuestBarDead,,"scene_set,p1HomeQuestBarClearCheck"
 ,,
@@ -429,7 +432,7 @@ p1HomeQuestBarPlay,Spook,But I'm a mouse.
 p1HomeQuestBarPlay,Screwdriver,Are you a mouse against capitalism?
 p1HomeQuestBarPlay,Spook,I guess I could be...?
 p1HomeQuestBarPlay,,"char_update,Screwdriver,2"
-p1HomeQuestBarPlay,Screwdriver,GREAT! YOU'RE IN!
+p1HomeQuestBarPlay,Screwdriver,[shake]GREAT! YOU'RE IN![/shake]
 p1HomeQuestBarPlay,,"char_update,Spook,7"
 p1HomeQuestBarPlay,Spook,...
 p1HomeQuestBarPlay,,"char_update,Spook,0"
@@ -447,10 +450,10 @@ p1HomeQuestBarPlay,,"char_update,Barry,0"
 p1HomeQuestBarPlay,Barry,Oh?
 p1HomeQuestBarPlay,Screwdriver,It's past midnight!
 p1HomeQuestBarPlay,,"char_update,Pogo,6"
-p1HomeQuestBarPlay,Pogo,WAY past mignight!!!
+p1HomeQuestBarPlay,Pogo,[shake]WAY[/shake] past mignight!!!
 p1HomeQuestBarPlay,,"char_update,Screwdriver,2"
-p1HomeQuestBarPlay,Screwdriver,HAPPY HALLOWEEN!!!
-p1HomeQuestBarPlay,Pogo,Woooo!!!!!
+p1HomeQuestBarPlay,Screwdriver,[wave]HAPPY HALLOWEEN!!![/wave]
+p1HomeQuestBarPlay,Pogo,[wave]Woooo!!!!![/wave]
 p1HomeQuestBarPlay,,"char_update,Barry,4"
 p1HomeQuestBarPlay,Barry,Toast!
 p1HomeQuestBarPlay,Spook,Happy best holiday ever!
@@ -490,7 +493,7 @@ p1HomeQuestBarExplore,,map
 p1HomeSkip,,"scene_bg_clear,sBackgroundCageNight"
 p1HomeSkip,,"music,bgmShayHome"
 p1HomeSkip,,"main_char_in,0"
-p1HomeSkip,Spook,"Oh, my bed. My beautiful bed."
+p1HomeSkip,Spook,"Oh, my bed. My [wave]beautiful[/wave] bed."
 p1HomeSkip,,"char_update,Spook,6"
 p1HomeSkip,Spook,Should I go to sleep now?
 p1HomeSkip,,"choice,p1HomeSkipSleep,p1HomeSkipExplore"
@@ -526,14 +529,14 @@ p1Bar1Nervous,,"scene_set,p1Bar1Milk"
 p1Bar1Party,,"char_update,Barry,4"
 p1Bar1Party,Barry,That's the spirit!
 p1Bar1Party,Barry,"Still, be careful, alright?"
-p1Bar1Party,Barry,"We look after each other, but the careless don't live long out in the streets.. heh."
+p1Bar1Party,Barry,"We look after each other, but the careless don't live long out in the streets... heh."
 p1Bar1Party,,"char_update,Spook,5"
 p1Bar1Party,Spook,"Yeah, yeah! "
 p1Bar1Party,,"char_update,Barry,1"
 p1Bar1Party,Barry,"So, what can I get you then?"
 p1Bar1Party,,"char_update,Spook,0"
 p1Bar1Party,Spook,What's good here?
-p1Bar1Party,Barry,"Hmm, perhaps some Cider?"
+p1Bar1Party,Barry,"Hmm, perhaps some cider?"
 p1Bar1Party,,"char_update,Spook,5"
 p1Bar1Party,Spook,Cider!
 p1Bar1Party,Barry,What can you offer in return?
@@ -543,7 +546,7 @@ p1Bar1Party,,"char_update,Barry,4"
 p1Bar1Party,Barry,Yeah!
 p1Bar1Party,Barry,"Barry's no charity, buddy. Or else it would be called... Barrity...."
 p1Bar1Party,,"char_update,Spook,5"
-p1Bar1Party,Spook,...But I got no money!
+p1Bar1Party,Spook,But I got no money!
 p1Bar1Party,Barry,Money? Don't be silly!
 p1Bar1Party,,"char_update,Barry,0"
 p1Bar1Party,Barry,"Look. How about you help me restock the Halloween candy, and I make you my special drink?"
@@ -554,7 +557,7 @@ p1Bar1Party,,"scene_set,p1Bar1Candy"
 p1Bar1Hygenic,Barry,"Of course, friend."
 p1Bar1Hygenic,Barry,"We don't even serve poop, most days!"
 p1Bar1Hygenic,,"char_update,Spook,8"
-p1Bar1Hygenic,Spook,Yuck!!!
+p1Bar1Hygenic,Spook,[shake]Yuck!!![/shake]
 p1Bar1Hygenic,,"char_update,Barry,4"
 p1Bar1Hygenic,Barry,Just messin' with you!
 p1Bar1Hygenic,,"char_update,Barry,1"
@@ -579,7 +582,7 @@ p1Bar1Leave,,map
 ,,
 ,,
 p1Bar1Strong,,"char_update,Barry,0"
-p1Bar1Strong,Barry,Woah there friend!
+p1Bar1Strong,Barry,"Woah there, friend!"
 p1Bar1Strong,Barry,"Eager for a night out, are you not?"
 p1Bar1Strong,,"char_update,Barry,4"
 p1Bar1Strong,Barry,Tell you what?
@@ -590,12 +593,12 @@ p1Bar1Strong,,"scene_set,p1Bar1Errands"
 p1Bar1Strong,,"scene_set,p1Bar1Candy"
 ,,
 p1Bar1Milk,,"char_update,Barry,0"
-p1Bar1Milk,Barry,Whoa there buddy!
+p1Bar1Milk,Barry,"Whoa there, buddy!"
 p1Bar1Milk,Barry,"This is a bar, not the grocery store!"
 p1Bar1Milk,,"char_update,Spook,6"
 p1Bar1Milk,Spook,What do you have then?
 p1Bar1Milk,,"char_update,Barry,1"
-p1Bar1Milk,Barry,"Well... Cider. Cheese, candy, leftover food, oat, rotten fruit...."
+p1Bar1Milk,Barry,"Well, cider... cheese, candy, leftover food, oat, rotten fruit...."
 p1Bar1Milk,,"char_update,Spook,7"
 p1Bar1Milk,Spook,...
 p1Bar1Milk,,"char_update,Spook,0"
@@ -618,12 +621,12 @@ p1Bar1Errands,Barry,Screwdriver brings all kinds of things.
 p1Bar1Errands,Barry,"Food, mostly."
 p1Bar1Errands,Barry,"But also music, books, small furniture, even human money..."
 p1Bar1Errands,,"char_update,Spook,1"
-p1Bar1Errands,Spook,That's THIEVERY!!!!!
+p1Bar1Errands,Spook,That's [shake]THIEVERY!!!!![/shake]
 p1Bar1Errands,Barry,Hmm. Yes. 
 p1Bar1Errands,,"char_update,Barry,4"
 p1Bar1Errands,Barry,"Yes, it is."
 p1Bar1Errands,,"char_update,Spook,0"
-p1Bar1Errands,Barry,"So, you are in?"
+p1Bar1Errands,Barry,"So, are you in?"
 p1Bar1Errands,,"choice,p1Bar1Nuh,p1Bar1Okay"
 p1Bar1Errands,,"scene_set,p1Bar1Nuh"
 p1Bar1Errands,,"scene_set,p1Bar1Okay"
@@ -644,12 +647,13 @@ p1Bar1Nuh,Barry,"More for ther rest of us, heh."
 p1Bar1Nuh,,"flag_set,candy_quest_fail,true"
 p1Bar1Nuh,,map
 ,,
-p1Bar1Okay,,"char_update,Barry,0"
+p1Bar1Okay,,"char_update,Barry,1"
 p1Bar1Okay,Barry,A mouse of action!
 p1Bar1Okay,Spook,But where do I get the candy from?
+p1Bar1Okay,,"char_update,Barry,0"
 p1Bar1Okay,Barry,"All kinds of places, friend! "
 p1Bar1Okay,Barry,"Your human, another human, the candy shop..."
-p1Bar1Okay,Barry,Know what? Go find Screwdriver. He is a professional looter afterall.
+p1Bar1Okay,Barry,"Know what? Go find Screwdriver. He is a professional looter, afterall."
 p1Bar1Okay,Spook,"Yeah, okay..."
 p1Bar1Okay,,"char_update,Barry,1"
 p1Bar1Okay,Barry,Happy trick or treatin'!
@@ -676,9 +680,10 @@ p1Bar2,,"delay,0.2"
 p1Bar2,Barry,...
 p1Bar2,,"delay,0.2"
 p1Bar2,Spook,Soooo... why do they call it Foggy Hallow?
+p1Bar2,,"delay,0.2"
 p1Bar2,Barry,Cause there's fog.
 p1Bar2,,"char_update,Spook,5"
-p1Bar2,Spook,Ooh.
+p1Bar2,Spook,Oh.
 p1Bar2,Barry,...
 p1Bar2,Spook,"Well, I better be going then!"
 p1Bar2,,"char_update,Barry,10"
@@ -696,7 +701,7 @@ p1Bar3,Barry,Appreciate it. But you shouldn't waste time on an old timer like me
 p1Bar3,Barry,"Go out and make some friends, kid!"
 p1Bar3,,"char_update,Spook,5"
 p1Bar3,Spook,Aw...
-p1Bar3,Barry,"I insist. Cmon, go out there!"
+p1Bar3,Barry,"I insist. C'mon, go out there!"
 p1Bar3,,map
 ,,
 ,,
@@ -747,7 +752,7 @@ p1Street1KindOf,,"scene_set,p1Street1Questions"
 ,,
 ,,
 p1Street1LostNo,,"char_update,Pogo,8"
-p1Street1LostNo,Pogo,"Oooh, you know your streets, hm?"
+p1Street1LostNo,Pogo,"[wave]Oooh,[/wave] you know your streets, hm?"
 p1Street1LostNo,Pogo,Wonderful! Wonderful!
 p1Street1LostNo,,"char_update,Pogo,1"
 p1Street1LostNo,Pogo,Though there is no shame in being lost!
@@ -757,7 +762,7 @@ p1Street1LostNo,Pogo,"Where to next, then?"
 p1Street1LostNo,,"char_update,Spook,5"
 p1Street1LostNo,Spook,...Somewhere.
 p1Street1LostNo,,"char_update,Pogo,8"
-p1Street1LostNo,Pogo,That's where I am going! Hihihi...
+p1Street1LostNo,Pogo,That's where I am going! [wave]Hihihi...[/wave]
 p1Street1LostNo,,"scene_set,p1Street1Questions"
 ,,
 ,,
@@ -781,11 +786,11 @@ p1Street1QuestionYourself,Pogo,"And Dracula is my biggest crush, big time. Too b
 p1Street1QuestionYourself,,"char_update,Spook,9"
 p1Street1QuestionYourself,Spook,Maybe you will meet a vampire during Halloween!
 p1Street1QuestionYourself,,"char_update,Pogo,6"
-p1Street1QuestionYourself,Pogo,Oh that would be WONDERFUL!
+p1Street1QuestionYourself,Pogo,Oh that would be [wave]WONDERFUL![/wave]
 p1Street1QuestionYourself,,"char_update,Pogo,8"
 p1Street1QuestionYourself,Pogo,But what if they have a taste for mouses-
 p1Street1QuestionYourself,,"char_update,Spook,8"
-p1Street1QuestionYourself,Spook,QUIT JOKING ABOUT THAT!!!!
+p1Street1QuestionYourself,Spook,[shake]QUIT JOKING ABOUT THAT!!!![/shake]
 p1Street1QuestionYourself,,"char_update,Pogo,0"
 p1Street1QuestionYourself,Pogo,"Alright, alright..."
 p1Street1QuestionYourself,,"char_update,Spook,0"
@@ -794,7 +799,7 @@ p1Street1QuestionYourself,,"char_update,Pogo,1"
 p1Street1QuestionYourself,Pogo,"I used to sing towards the mountains, so my voice would echo. It felt like a whole stage!"
 p1Street1QuestionYourself,Spook,Don't you sing anymore?
 p1Street1QuestionYourself,,"char_update,Pogo,0"
-p1Street1QuestionYourself,Pogo,"Hm...Been a while, no. But I could say I accomplished a dream in a way."
+p1Street1QuestionYourself,Pogo,"Hm... Been a while, no. But I could say I accomplished a dream in a way."
 p1Street1QuestionYourself,Pogo,"Now I am content with just being a little night dweller, hanging out with my friends!"
 p1Street1QuestionYourself,,"choice,p1Street1Sing,p1Street1Work"
 p1Street1QuestionYourself,,"scene_set,p1Street1Sing"
@@ -808,21 +813,23 @@ p1Street1Sing,,"char_update,Pogo,0"
 p1Street1Sing,Pogo,...Dunno. Passion and inspiration are rare to find. Back then things were... different. 
 p1Street1Sing,,"char_update,Spook,5"
 p1Street1Sing,Spook,"But ""nothing easy is ever amazing"" or something, right!?"
+p1Street1Sing,,"char_update,Pogo,6"
 p1Street1Sing,Pogo,Hehe. Perhaps little one. Perhaps.
 p1Street1Sing,,map
 ,,
 p1Street1Work,,"char_update,Pogo,1"
-p1Street1Work,Pogo,RIGHT!???
+p1Street1Work,Pogo,[shake]RIGHT!???[/shake]
 p1Street1Work,,"char_update,Pogo,0"
 p1Street1Work,Pogo,"Am not worried about you at all, kid."
-p1Street1Work,Pogo,You will do juuuuust fine among us!
+p1Street1Work,,"char_update,Pogo,1"
+p1Street1Work,Pogo,You will do [wave]juuuuust[/wave] fine among us!
 p1Street1Work,,map
 ,,
 ,,
 p1Street1QuestionTown,,"flag_set,streetQuestionTown,true"
 p1Street1QuestionTown,,"char_update,Pogo,8"
 p1Street1QuestionTown,Pogo,Ohoho!
-p1Street1QuestionTown,Pogo,You wanna know the tales of the ancient fog?
+p1Street1QuestionTown,Pogo,You wanna know the tales of the [shake]ancient fog?[/shake]
 p1Street1QuestionTown,,"char_update,Spook,6"
 p1Street1QuestionTown,Spook,Um... Yes? Is it [wave]always[/wave] foggy or something?
 p1Street1QuestionTown,Pogo,You could say that...
@@ -834,9 +841,8 @@ p1Street1QuestionTown,Pogo,"And if you walk a little away, you can actually see 
 p1Street1QuestionTown,Pogo,The fog travels through streets like branches of veins. They say it follows the roots underground.
 p1Street1QuestionTown,Spook,...But why?
 p1Street1QuestionTown,Pogo,"Beats me, friend! Maybe there is something lurking right under our feet."
-p1Street1QuestionTown,,"char_update,Spook,8"
 p1Street1QuestionTown,,"char_update,Pogo,8"
-p1Street1QuestionTown,Pogo,Feeding on the fog...
+p1Street1QuestionTown,Pogo,[shake]Feeding on the fog...[/shake]
 p1Street1QuestionTown,,"char_update,Spook,8"
 p1Street1QuestionTown,Spook,...
 p1Street1QuestionTown,Spook,Are you messing with me?
@@ -875,12 +881,12 @@ p1Street1QuestionBar,Spook,"Yeah! Shay loves bats! She never kills bugs, too!"
 p1Street1QuestionBar,,"char_update,Pogo,1"
 p1Street1QuestionBar,Pogo,"Oh my. You got a special human, don't you? What a lucky mouse!"
 p1Street1QuestionBar,,"char_update,Spook,9"
-p1Street1QuestionBar,Spook,Mhm! Shay's the best!
+p1Street1QuestionBar,Spook,[wave]Mhm![/wave] Shay's the best!
 p1Street1QuestionBar,,map
 ,,
 ,,
 p1Street1LostAll,,"char_update,Pogo,1"
-p1Street1LostAll,Pogo,"Wowzie, okay, Chesire cat!"
+p1Street1LostAll,Pogo,"[wave]Wowzie,[/wave] okay, Chesire cat!"
 p1Street1LostAll,,"char_update,Spook,5"
 p1Street1LostAll,Spook,You've read Alice??
 p1Street1LostAll,Pogo,"Mmm, yes-yes. A classic truly. Up there with Poe in my favorite book-list!"
@@ -913,7 +919,7 @@ p1Street1ReadTaught,Pogo,We used to write lyrics to songs together.
 p1Street1ReadTaught,Pogo,They definitely sounded better once we knew about letters. Heheh!
 p1Street1ReadTaught,,"char_update,Spook,5"
 p1Street1ReadTaught,Spook,You were in a band!?
-p1Street1ReadTaught,Pogo,Ssssh! It's top secret!
+p1Street1ReadTaught,Pogo,[wave]Ssssh![/wave] It's top secret!
 p1Street1ReadTaught,Pogo,Now I am just a gal who loves books.
 p1Street1ReadTaught,Spook,My human reads to me sometimes!
 p1Street1ReadTaught,,"char_update,Pogo,1"
@@ -921,17 +927,17 @@ p1Street1ReadTaught,Pogo,"Ooh, how sweet."
 p1Street1ReadTaught,,"scene_set,p1Street1Genre"
 ,,
 p1Street1ReadHunting,,"char_update,Pogo,8"
-p1Street1ReadHunting,Pogo,"""Hunting or something"", hm?"
-p1Street1ReadHunting,Pogo,Well. Of course. Who doesn't love a  little mouse juice after a good horror book....
+p1Street1ReadHunting,Pogo,"[wave]""Hunting or something"",[/wave] hm?"
+p1Street1ReadHunting,Pogo,Well. Of course. Who doesn't love a little [shake]mouse juice[/shake] after a good horror book....
 p1Street1ReadHunting,,"choice,p1Street1HuntingFunny,p1Street1Books"
 p1Street1ReadHunting,,"scene_set,p1Street1HuntingFunny"
 p1Street1ReadHunting,,"scene_set,p1Street1Books"
 ,,
 p1Street1HuntingFunny,,"char_update,Spook,8"
-p1Street1HuntingFunny,,"delay,0.5"
-p1Street1HuntingFunny,Pogo,But it is....
+p1Street1HuntingFunny,,"delay,0.15"
+p1Street1HuntingFunny,Pogo,[wave]But it is....[/wave]
 p1Street1HuntingFunny,,"char_update,Spook,4"
-p1Street1HuntingFunny,,"delay,1"
+p1Street1HuntingFunny,Spook,Stop it!
 p1Street1HuntingFunny,Pogo,"Heh. I'll leave you be, little one."
 p1Street1HuntingFunny,,map
 ,,
@@ -953,7 +959,7 @@ p1Street1Genre,,"scene_set,p1Street1Scifi"
 p1Street1Horror,,"map_scene,street,p1Street2Horror"
 p1Street1Horror,,"flag_set,streetGenreHorror,true"
 p1Street1Horror,,"char_update,Pogo,6"
-p1Street1Horror,Pogo,"Ooh, we will just be besties!!! How exciting!!!"
+p1Street1Horror,Pogo,"Ooh, we will just be besties!!! [wave]How exciting!!![/wave]"
 p1Street1Horror,Pogo,"Y'know, we could read some books together!"
 p1Street1Horror,Pogo,You wouldn't believe how many of them people throw away or just leave behind!
 p1Street1Horror,Pogo,Barry has a whole library at this point!
@@ -965,29 +971,29 @@ p1Street1Horror,Pogo,But definitely do hit me up when you want a new book to rea
 p1Street1Horror,,map
 ,,
 p1Street1Fairy,,"char_update,Pogo,6"
-p1Street1Fairy,Pogo,Aww!
+p1Street1Fairy,Pogo,[wave]Aww![/wave]
 p1Street1Fairy,,"char_update,Pogo,8"
 p1Street1Fairy,Pogo,"Y'know, most fairytales hide darker stories behind them..."
 p1Street1Fairy,,"char_update,Pogo,0"
 p1Street1Fairy,Pogo,Think of the little red! A stranger followed the little girl home.
 p1Street1Fairy,Pogo,He found her grandma because of her. 
 p1Street1Fairy,,"char_update,Pogo,1"
-p1Street1Fairy,Pogo,Ate her alive! 
+p1Street1Fairy,Pogo,[shake]Ate her alive![/shake]
 p1Street1Fairy,,"char_update,Spook,8"
 p1Street1Fairy,Pogo,No one thinks about the part where the sick old lady screamed and cried out in terror!
 p1Street1Fairy,,"char_update,Pogo,8"
-p1Street1Fairy,Pogo,And that wolf? How big that mouth had to open? How many teeth did he have? That was no wolf.
-p1Street1Fairy,Pogo,Everyone who lived long enough in a forest knows shadows lurk out there! 
-p1Street1Fairy,Pogo,"Way worse things than wolves! Way worse, truly...."
+p1Street1Fairy,Pogo,And that wolf? How big that mouth had to open? How many teeth did he have? [shake]That was no wolf.[/shake]
+p1Street1Fairy,Pogo,Everyone who lived long enough in a forest knows that shadows lurk out there! 
+p1Street1Fairy,Pogo,"[shake]Way worse[/shake] things than wolves! [shake]Way worse, truly...[/shake]"
 p1Street1Fairy,Spook,...
 p1Street1Fairy,,"delay,1"
 p1Street1Fairy,,"char_update,Pogo,1"
-p1Street1Fairy,Pogo,BWAHAHAHA! But this isn't a forest! This is our street!
+p1Street1Fairy,Pogo,[shake]BWAHAHAHA![/shake] But this isn't a forest! This is our street!
 p1Street1Fairy,Pogo,"Go at ease, little one."
 p1Street1Fairy,,map
 ,,
 p1Street1Romance,,"char_update,Pogo,6"
-p1Street1Romance,Pogo,Oooo! You like a good story?
+p1Street1Romance,Pogo,[wave]Oooo![/wave] You like a good story?
 p1Street1Romance,,"char_update,Pogo,1"
 p1Street1Romance,Pogo,"Me too! From time to time, I suppose."
 p1Street1Romance,Pogo,Me and Drivey sometimes read trashy romance for fun! 
@@ -1003,10 +1009,10 @@ p1Street1Scifi,Pogo,"Ooh, little space mouse! Hehe!"
 p1Street1Scifi,Pogo,"Doesn't everything feel like a sci-fi novel, when you think about it? "
 p1Street1Scifi,,"char_update,Pogo,0"
 p1Street1Scifi,Pogo,"I mean, humans get all excited, because, oh my god- a flying object we can't identify!"
-p1Street1Scifi,Pogo,What IF we could shoot lasers from guns!?
+p1Street1Scifi,Pogo,What [shake]IF[/shake] we could shoot lasers from guns!?
 p1Street1Scifi,,"char_update,Pogo,4"
 p1Street1Scifi,Pogo,"...Then again, everything they made seems equally impossible."
-p1Street1Scifi,Pogo,I just don't get why a car isn't as exciting as a spaceship. Different metal? It can FLY? So what? Heh.
+p1Street1Scifi,Pogo,I just don't get why a car isn't as exciting as a spaceship. Different metal? It can [shake]FLY[/shake]? So what? Heh.
 p1Street1Scifi,,"char_update,Spook,7"
 p1Street1Scifi,Spook,...
 p1Street1Scifi,,"char_update,Pogo,0"
@@ -1041,10 +1047,10 @@ p1Street2Scifi,,"scene_set,p1Street1Questions"
 p1Yard1,,"map_scene,yard,p1Yard2"
 p1Yard1,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
 p1Yard1,,"music,bgmHouseAcross"
-p1Yard1,,"main_char_in,0"
 p1Yard1,Empty,The air smells like cinnamon and apple pie. Autumn leaves drift by.
 p1Yard1,Empty,...
 p1Yard1,Empty,"The wind howls, suddenly colder. "
+p1Yard1,,"main_char_in,0"
 p1Yard1,Spook,Brrr!!!
 p1Yard1,???,"[tw,Hamster]Visitor! Small one! Approach!"
 p1Yard1,,"char_update,Spook,6"
@@ -1063,7 +1069,7 @@ p1Yard1Called,,"char_update,Hamster,0"
 p1Yard1Called,Hamster,I guess you are right. I never met a mouse.
 p1Yard1Called,Spook,Never? But you hang out outside!
 p1Yard1Called,,"char_update,Hamster,3"
-p1Yard1Called,Hamster,I'm... out..side?
+p1Yard1Called,Hamster,I'm... out... side?
 p1Yard1Called,,"choice,p1Yard1Where,p1Yard1Outside,p1Yard1Cage"
 p1Yard1Called,,"scene_set,p1Yard1Where"
 p1Yard1Called,,"scene_set,p1Yard1Outside"
@@ -1077,7 +1083,7 @@ p1Yard1Where,Spook,"I have a human, too!"
 p1Yard1Where,Hamster,Then why are [shake]YOU[/shake] outside?
 p1Yard1Where,Spook,We're both outside!
 p1Yard1Where,,"char_update,Hamster,2"
-p1Yard1Where,Hamster,WHAT??
+p1Yard1Where,Hamster,[shake]WHAT??[/shake]
 p1Yard1Where,,"char_update,Spook,7"
 p1Yard1Where,Spook,...Dude. I don't get it. Aren't you with those sewer punks? 
 p1Yard1Where,,"char_update,Hamster,3"
@@ -1136,7 +1142,7 @@ p1Yard1LiveCage,,"scene_set,p1Yard1Whatever"
 p1Yard1Ball,,"char_update,Hamster,4"
 p1Yard1Ball,Hamster,[shake]SCANDALOUS!!! DISGUSTING!!![/shake]
 p1Yard1Ball,Hamster,Hamster balls are horrific machines of torture that will disorient and rob sensory of a roaming hamster!
-p1Yard1Ball,Hamster,We roam! We chew! We are free! [shake]OPRESSOR![/shake]
+p1Yard1Ball,Hamster,[shake]We roam! We chew! We are free! Opressor![/shake]
 p1Yard1Ball,,"char_update,Spook,5"
 p1Yard1Ball,Spook,"Sorry, sorry, geez..."
 p1Yard1Ball,,"char_update,Hamster,2"
@@ -1165,7 +1171,7 @@ p1Yard1Enclosure,,"scene_set,p1Yard1Whatever"
 ,,
 ,,
 p1Yard1Lucky,,"char_update,Hamster,2"
-p1Yard1Lucky,Hamster,LUCKY!!!?
+p1Yard1Lucky,Hamster,[shake]LUCKY!!!?[/shake]
 p1Yard1Lucky,Hamster,Arrogant little pest!!!!!
 p1Yard1Lucky,,"char_update,Hamster,4"
 p1Yard1Lucky,Hamster,You don't even have cheek pockets! 
@@ -1195,7 +1201,7 @@ p1Yard1Sorry,,"scene_set,p1Yard1Disappear"
 ,,
 ,,
 p1Yard1Whatever,,"char_update,Spook,7"
-p1Yard1Whatever,Spook,Ugh... Whatever.
+p1Yard1Whatever,Spook,[shake]Ugh...[/shake] Whatever.
 p1Yard1Whatever,Spook,"You talk so much, man..."
 p1Yard1Whatever,,"scene_set,p1Yard1Disappear"
 ,,
@@ -1222,11 +1228,11 @@ p1Front1Default,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
 p1Front1Default,,"music,bgmHouseAcross"
 p1Front1Default,,"main_char_in,0"
 p1Front1Default,Spook,Whoa! What a large house!
-p1Front1Default,???,"[tw,Empty]Snorrrrrr"
+p1Front1Default,???,"[tw,Empty][b]Snorrrrrr[/b]"
 p1Front1Default,,"char_in,Giant Rabbit,sDipper,0"
-p1Front1Default,Giant Rabbit,Snorrrrrrrrrrrr
+p1Front1Default,Giant Rabbit,[b]Snorrrrrrrrrrrr[/b]
 p1Front1Default,,"char_update,Spook,8"
-p1Front1Default,Spook,WHOA! WHAT A LARGE RABBIT!
+p1Front1Default,Spook,[shake]WHOA! WHAT A LARGE RABBIT![/shake]
 p1Front1Default,Spook,Um...
 p1Front1Default,,"choice,p1Front1Poke,p1Front1Another"
 p1Front1Default,,"scene_set,p1Front1DefaultPoke"
@@ -1234,7 +1240,7 @@ p1Front1Default,,"scene_set,p1Front1DefaultAnother"
 ,,
 p1Front1DefaultPoke,,"char_update,Spook,0"
 p1Front1DefaultPoke,Spook,"Excuse me, um, Mr. Rabbit? Could you please move aside?"
-p1Front1DefaultPoke,Giant Rabbit,Snorrrrrrr
+p1Front1DefaultPoke,Giant Rabbit,[b]Snorrrrrrr[/b]
 p1Front1DefaultPoke,Empty,"You try to push him, but the rabbit doesn't move an inch!"
 p1Front1DefaultPoke,Spook,"Hmm, I'll just try another entrance."
 p1Front1DefaultPoke,,"scene_set,p1Front1DefaultAnother"
@@ -1252,9 +1258,9 @@ p1Front1Candy,,"music,bgmHouseAcross"
 p1Front1Candy,,"main_char_in,0"
 p1Front1Candy,Spook,I wonder if that dog woke up. We shouldn't have caused so much trouble just to get some drinks!
 p1Front1Candy,Spook,"At least, that's what I should've said..."
-p1Front1Candy,???,Snorrrrrr
+p1Front1Candy,???,"[tw,Empty][b]Snorrrrrr[/b]"
 p1Front1Candy,,"char_in,Giant Rabbit,sDipper,0"
-p1Front1Candy,Giant Rabbit,Snorrrrrrrrrrrr
+p1Front1Candy,Giant Rabbit,[b]Snorrrrrrrrrrrr[/b]
 p1Front1Candy,,"char_update,Spook,6"
 p1Front1Candy,Spook,That rabbit is still sleeping?
 p1Front1Candy,Spook,Um...
@@ -1263,21 +1269,25 @@ p1Front1Candy,,"scene_set,p1Front1CandyPoke"
 p1Front1Candy,,"scene_set,p1Front1CandyAnother"
 ,,
 p1Front1CandyPoke,Spook,Hmm...
-p1Front1CandyPoke,Giant Rabbit,snore...
+p1Front1CandyPoke,Giant Rabbit,[b]Snore...[/b]
 p1Front1CandyPoke,,"char_update,Spook,5"
 p1Front1CandyPoke,Spook,Hey! Mr. rabbit! Are you asleep?
-p1Front1CandyPoke,Giant Rabbit,"[shake]Somehow, even louder snore...[/shake]"
+p1Front1CandyPoke,Giant Rabbit,"[shake][b]Somehow, even louder snore...[/b][/shake]"
 p1Front1CandyPoke,Spook,Well... I guess I can come in?
 p1Front1CandyPoke,Empty,"You try to push him, but the rabbit doesn't move an inch!"
 p1Front1CandyPoke,Spook,Huh. That is one way to guard a door.
 p1Front1CandyPoke,Spook,"Maybe I should try the other entrance, just like last time."
 p1Front1CandyPoke,,"scene_set,p1Front1CandyAnother"
 ,,
-p1Front1CandyAnother,,"char_update,Spook,0"
+p1Front1CandyAnother,,main_char_out
 p1Front1CandyAnother,,"char_out,Giant Rabbit"
 p1Front1CandyAnother,Empty,"You try to enter through the underground gateway again, but it is nowhere to be found."
-p1Front1CandyAnother,Spook,"It's... not here anymore! Wait, is this the right side of the house? I can't remember..."
+p1Front1CandyAnother,,"main_char_in,0"
+p1Front1CandyAnother,Spook,It's... not here anymore!
+p1Front1CandyAnother,Spook,"Wait, is this the right side of the house? I can't remember..."
+p1Front1CandyAnother,,main_char_out
 p1Front1CandyAnother,Empty,"You searched again, to no avail."
+p1Front1CandyAnother,,"main_char_in,0"
 p1Front1CandyAnother,Spook,This is impossible! I'm clearly not fit to be a burglar!
 p1Front1CandyAnother,Spook,I should just ask Screwdriver to show me the hidden entrance again later...
 p1Front1CandyAnother,,map
@@ -1287,7 +1297,7 @@ p1Front2,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
 p1Front2,,"music,bgmHouseAcross"
 p1Front2,,"main_char_in,0"
 p1Front2,,"char_in,Giant Rabbit,sDipper,0"
-p1Front2,Giant Rabbit,Snorrr
+p1Front2,Giant Rabbit,[b]Snorrr[/b]
 p1Front2,Spook,Can't get in this time...
 p1Front2,Spook,Maybe I should try again during the day.
 p1Front2,,map
@@ -1308,7 +1318,7 @@ p1Lamp1,,"choice,p1Lamp1ThatsALamp,p1Lamp1Beautiful"
 p1Lamp1,,"scene_set,p1Lamp1ThatsALamp"
 p1Lamp1,,"scene_set,p1Lamp1Beautiful"
 ,,
-p1Lamp1ThatsALamp,Möth,Watch your mouth!
+p1Lamp1ThatsALamp,Möth,[shake]Watch your mouth![/shake]
 p1Lamp1ThatsALamp,Möth,"You want to be smart when speaking of the lamp, little mouse."
 p1Lamp1ThatsALamp,,"music,noone"
 p1Lamp1ThatsALamp,,"delay,3"
@@ -1348,7 +1358,7 @@ p1Lamp1Love,,"char_in,Möth,sMoth,1"
 p1Lamp1Love,,"char_update,Spook,8"
 p1Lamp1Love,,"delay,1"
 p1Lamp1Love,Möth,I do not love lamps.
-p1Lamp1Love,Möth,I love MY lamp.
+p1Lamp1Love,Möth,I love [shake]MY[/shake] lamp.
 p1Lamp1Love,Möth,"My lamp, my beloved, my source of light."
 p1Lamp1Love,Möth,She whispers sweet nothings to me all night.
 p1Lamp1Love,Möth,"She would whisper to you, too."
@@ -1392,15 +1402,15 @@ p1EndIntro,,"trans_scene,p1End"
 p1End,,"scene_bg_clear,sBackgroundShayRoomNight"
 p1End,,"music,bgmSpookTheme"
 p1End,,"main_char_in,0"
-p1End,Spook,Shay is still sound asleep....
+p1End,Spook,Shay is still sound asleep...
 p1End,Spook,"Man, I feel a bit bad."
 p1End,,"char_update,Spook,9"
-p1End,Spook,But...I did it! I went out by myself and didn't even worry Shay!!!
+p1End,Spook,But... I did it! I went out by myself and didn't even worry Shay!!!
 p1End,,"trans_change,true,sBackgroundBlack"
 p1End,Empty,"[sound,sfxCageOpen]You climb to your bed, made of soft bedding."
 p1End,,"trans_change,true,sBackgroundCageNightSpook"
 p1End,,"char_in,Spook,sSpook,1"
-p1End,Spook,Ahhhh! My bed! I love my bed!!!!
+p1End,Spook,Ahhhh! My bed! I [wave]love[/wave] my bed!!!!
 p1End,,"char_out,Spook"
 p1End,Empty,"Goodnight, little mouse..."
 p1End,,"delay,2"
@@ -1416,11 +1426,11 @@ p2Intro,Shay,"Ok, almost ready, almost ready..."
 p2Intro,,"music,bgmShayHome"
 p2Intro,,"trans_change,false,sBackgroundShayRoomDay"
 p2Intro,,"main_char_in,7"
-p2Intro,Spook,Yawwwwwwn...
+p2Intro,Spook,[wave]Yawwwwwwn...[/wave]
 p2Intro,,"char_in,Shay,sShay,3"
-p2Intro,Shay,HEY SPOOK!!!!!
+p2Intro,Shay,[shake]HEY SPOOK!!!!![/shake]
 p2Intro,,"char_update,Spook,5"
-p2Intro,Spook,!!!
+p2Intro,Spook,[shake]!!![/shake]
 p2Intro,Shay,What do you think?
 p2Intro,,"choice,p2IntroApprove,p2IntroDisapprove"
 p2Intro,,"scene_set,p2IntroAprrove"
@@ -1438,11 +1448,11 @@ p2IntroDisapprove,,"char_update,Shay,7"
 p2IntroDisapprove,Shay,"Oh, I know you wanted me to be the giant cheese instead!"
 p2IntroDisapprove,,"char_update,Spook,3"
 p2IntroDisapprove,,"delay,0.5"
-p2IntroDisapprove,,"char_update,Shay,3"
+p2IntroDisapprove,,"char_update,Shay,5"
 p2IntroDisapprove,Shay,"...Maybe next year, ok?"
 p2IntroDisapprove,,"scene_set,p2IntroAh"
 ,,
-p2IntroAh,,"char_update,Shay,5"
+p2IntroAh,,"char_update,Shay,3"
 p2IntroAh,Shay,Ah- before I forget! Here is yours!!!
 p2IntroAh,,main_char_out
 p2IntroAh,Empty,"You equipped ""Spook'o lantern"" Costume!"
@@ -1453,9 +1463,9 @@ p2IntroAh,,"char_update,Shay,6"
 p2IntroAh,Shay,"Oh, right! "
 p2IntroAh,Shay,We somehow ran out of Halloween candy...
 p2IntroAh,,"char_update,Shay,7"
-p2IntroAh,Shay,I swear I didn't eat all of it! But I can't convince mom....
+p2IntroAh,Shay,I swear I didn't eat all of it! But I can't convince mom...
 p2IntroAh,,"char_out,Shay"
-p2IntroAh,Shay,"[sound,sfxDoorOpen] Protect the house from the spirits while I am gone, Spook!"
+p2IntroAh,Shay,"[sound,sfxDoorOpen]Protect the house from the spirits while I am gone, Spook!"
 p2IntroAh,,"sound,sfxDoorClose"
 p2IntroAh,,"delay,0.1"
 p2IntroAh,Spook,Alright... This is my chance to go out for a little while!
@@ -1521,7 +1531,7 @@ endingPartyBad,Screwdriver,"Yeah, well. Thanks for comin'."
 endingPartyBad,Screwdriver,We'll do better next year! 
 endingPartyBad,,"char_update,Screwdriver,1"
 endingPartyBad,Screwdriver,"Or, you know, you could always go back in time and try to help or somethin'."
-endingPartyBad,Spook,I could WHAT?
+endingPartyBad,Spook,I could [shake]WHAT?[/shake]
 endingPartyBad,Screwdriver,He-he.
 endingPartyBad,,"char_update,Screwdriver,0"
 endingPartyBad,Screwdriver,Just kiddin'.
@@ -1537,14 +1547,14 @@ endingPartyBad,,"main_char_in,10"
 endingPartyBad,,"char_in,Shay,sShay,3"
 endingPartyBad,Shay,Hi Spooky-boo!
 endingPartyBad,,"char_update,Shay,6"
-endingPartyBad,Shay,"My, that was EXHAUSTING!"
+endingPartyBad,Shay,"My, that was [shake]EXHAUSTING![/shake]"
 endingPartyBad,,"char_update,Shay,7"
-endingPartyBad,Shay,I am never going outside again!!!! Ugh!!!
+endingPartyBad,Shay,I am never going outside again!!!! [shake]Ugh!!![/shake]
 endingPartyBad,,"char_update,Shay,5"
 endingPartyBad,Shay,"Well, nevermind."
 endingPartyBad,,"music,bgmTitleTheme"
 endingPartyBad,,"trans_change,false,sBackgroundBlack"
-endingPartyBad,Shay,It's time to watch some zombie rats!
+endingPartyBad,Shay,It's time to watch some [wave]zombie rats![/wave]
 endingPartyBad,Spook,Squeak!
 endingPartyBad,,"trans_change,true"
 endingPartyBad,,"trans_room,rmCredits"
@@ -1560,9 +1570,9 @@ endingPartyOkay,,"trans_change,true,sBackgroundSewerBarParty"
 endingPartyOkay,,"char_in,Screwdriver,sScrewdriver,12"
 endingPartyOkay,Screwdriver,Hiya kid!
 endingPartyOkay,,"main_char_in,10"
-endingPartyOkay,Spook,PARTY!!!!
+endingPartyOkay,Spook,[shake]PARTY!!!![/shake]
 endingPartyOkay,,"char_in,Pogo,sPogo,3"
-endingPartyOkay,Pogo,PARTY!!!!
+endingPartyOkay,Pogo,[shake]PARTY!!!![/shake]
 endingPartyOkay,,"char_update,Pogo,2"
 endingPartyOkay,,"char_in,Barry,sBarry,5"
 endingPartyOkay,Barry,Cheers.
@@ -1575,10 +1585,10 @@ endingPartyOkay,Screwdriver,"Yeah, that about covers it."
 endingPartyOkay,,"char_update,Barry,8"
 endingPartyOkay,Barry,Time to drink some BSCWCCEC!
 endingPartyOkay,,"char_update,Pogo,1"
-endingPartyOkay,Pogo,"Yay, BSCWCCEC!"
+endingPartyOkay,Pogo,"[wave]Yay, BSCWCCEC![/wave]"
 endingPartyOkay,Spook,"Where is your costume, Pogo?"
 endingPartyOkay,,"char_update,Pogo,8"
-endingPartyOkay,Pogo,Oh. Sweetie. I am a Halloween decoration aaaallll year long!
+endingPartyOkay,Pogo,Oh. Sweetie. I am a Halloween decoration [wave]aaaallll[/wave] year long!
 endingPartyOkay,Spook,Hm...
 endingPartyOkay,,"char_update,Screwdriver,12"
 endingPartyOkay,Screwdriver,You could be like. Double-bat.
@@ -1586,9 +1596,9 @@ endingPartyOkay,,"char_update,Pogo,4"
 endingPartyOkay,Pogo,How so?
 endingPartyOkay,Screwdriver,Bat suit. On your bat skin.
 endingPartyOkay,,"char_update,Barry,9"
-endingPartyOkay,Barry,Woooow.
+endingPartyOkay,Barry,[wave]Woooow.[/wave]
 endingPartyOkay,,"char_update,Pogo,6"
-endingPartyOkay,Pogo,I'll do frankenstein next year!
+endingPartyOkay,Pogo,I'll do Frankenstein next year!
 endingPartyOkay,,"char_out,Screwdriver"
 endingPartyOkay,,"char_in,Möth,sMoth,2"
 endingPartyOkay,Möth,Like my costume?
@@ -1597,10 +1607,10 @@ endingPartyOkay,Möth,LAMP.
 endingPartyOkay,,"char_update,Barry,6"
 endingPartyOkay,Barry,"Alright. Cheers, everyone!"
 endingPartyOkay,,"char_update,Pogo,1"
-endingPartyOkay,Pogo,Cheers!
+endingPartyOkay,Pogo,[wave]Cheers![/wave]
 endingPartyOkay,,"char_out,Möth"
 endingPartyOkay,,"char_in,Screwdriver,sScrewdriver,12"
 endingPartyOkay,Screwdriver,Yeah!!!
-endingPartyOkay,Spook,Wohoo!
+endingPartyOkay,Spook,[wave]Wohoo![/wave]
 endingPartyOkay,,"delay,1"
 endingPartyOkay,,"trans_room,rmCredits"
