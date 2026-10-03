@@ -25,6 +25,11 @@ if global.cheat {
 			if _names[i] != "home" global.dataMapLocations[$ _names[i]].visited = true;
 		}
 	}
+	
+	if keyboard_check_pressed(ord("Q")) {
+		global.dataMapLocations.home.scene = "p1HomeQuest";
+		with oDirector { LineProgress(); }
+	}
 }
 
 //ui buttons

@@ -7,11 +7,10 @@ function Part1ClearCheck(){
 	
 	for (var i = 0; i < array_length(_names); i++) {
 		if (_names[i] != "home" && !_locs[$ _names[i]].visited) {
-			global.flags.day1_clear = false;
-			exit;
+			return false;
 		}
 	}
-	global.flags.day1_clear = true;
+	return true;
 }
 function Part1HouseAcrossFrontCheck(){
 	if !global.dataMapLocations.houseAcrossFront.visited {

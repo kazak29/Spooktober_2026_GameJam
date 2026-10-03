@@ -48,20 +48,20 @@ mapReminder,Go home and talk to Screwdriver!
 ,
 leave,Leave
 ,
-shayHomeSkip,Go to sleep.
-shayHomeExplore,Continue exploring!
+p1HomeSkip,Go to sleep.
+p1HomeExplore,Continue exploring!
 ,
 ,
 intro0,Squeak (Reassuringly)
 intro1,Squeak (Hungrily)
 ,
-shayHome0,Barry sent me!
-shayHome1,Ugh... No... Bye...
+p1HomeBarry,Barry sent me!
+p1HomeBye,Ugh... No... Bye...
 ,
-shayHome_Day1_Visit3_Bar1,Your drummer's dead?!
-shayHome_Day1_Visit3_Bar2,So... Do you guys not play at all anymore?
-shayHome_Day1_Visit3_Bar3,"Yeah, I'm tired..."
-shayHome_Day1_Visit3_Bar4,I wanna explore some more!
+p1HomeQuestBarDead,Your drummer's dead?!
+p1HomeQuestBarPlay,So... Do you guys not play at all anymore?
+p1HomeQuestBarTired,"Yeah, I'm tired..."
+p1HomeQuestBarExplore,I wanna explore some more!
 ,
 barNervous,I'm a bit nervous.
 barParty,Party! Party! The night is ours!

@@ -2,7 +2,7 @@ function MapDataCreate() {
 	return {
 		home: {
 			title: global.uiData.mapHome,	//only for textlog
-			scene: "shayHome_Day1_Visit1",
+			scene: "p1Home1",
 		
 			visited:	false,				//grays-out, but still able to visit
 			locked:		false,				//skips location hovering entirely

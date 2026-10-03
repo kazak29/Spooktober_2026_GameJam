@@ -2,34 +2,19 @@ SCENE NAME,LINE TITLE - ENGLISH,LINE TEXT - ENGLISH
 rocketTestScene,Empty,.
 rocketTestScene,,map
 ,,
-testScene,,"scene_bg,sBackgroundGray"
-testScene,,"char_in,Barry,sBarry,0"
-testScene,Empty,[b]test test[/b] test test
-testScene,,scene_clear
-testScene,Empty,test test 1
-testScene,,"main_char_in,0"
-testScene,Empty,test test 2
-testScene,,"trans_scene,testScene1"
-testScene,Empty,test test 3
-testScene,,map
+kazakTestScene,,"scene_bg,sBackgroundGray"
+kazakTestScene,,"char_in,Barry,sBarry,0"
+kazakTestScene,Empty,[b]test test[/b] test test
+kazakTestScene,,scene_clear
+kazakTestScene,Empty,test test 1
+kazakTestScene,,"main_char_in,0"
+kazakTestScene,Empty,test test 2
+kazakTestScene,,"trans_scene,testScene1"
+kazakTestScene,Empty,test test 3
+kazakTestScene,,map
 ,,
-testScene1,,"map_scene,home,rocketTestScene"
-testScene1,,"map_visited,bar,true"
-testScene1,,"map_lock,street,true"
-testScene1,,"char_in,Barry,sBarry,0"
-testScene1,Empty,test scene 1 [c_yellow] yellow text [/c]
-testScene1,,"trans_change,false,sBackgroundGray"
-testScene1,Empty,test scene 1 line 2
-testScene1,,"trans_change,true"
-testScene1,Empty,test scene 1 line 3
-testScene1,,"char_in,Barry,sBarry,0"
-testScene1,Empty,test scene 1 line 4
-testScene1,,"trans_scene,testScene,true,sBackgroundShayHome"
-testScene1,Empty,test scene 1 line 5
-testScene1,,map
-,,
-testSceneEmpty,Empty,...
-testSceneEmpty,,map
+testMap,Empty,...
+testMap,,map
 ,,
 intro,,"scene_bg,sBackgroundShayHome"
 intro,,"music,bgmSpookTheme"
@@ -250,268 +235,269 @@ introBar,,map
 ,,
 ,,
 ,,
-shayHome_Day1_Visit1,,"map_scene,home,shayHome_Day1_Visit2"
-shayHome_Day1_Visit1,,"scene_bg_clear,sBackgroundShayRoomNight"
-shayHome_Day1_Visit1,,"music,bgmShayHome"
-shayHome_Day1_Visit1,,"main_char_in,0"
-shayHome_Day1_Visit1,Empty,Shay is sound asleep. Your cage is warm and inviting.
-shayHome_Day1_Visit1,,"char_in,Screwdriver,sScrewdriver,0"
-shayHome_Day1_Visit1,Screwdriver,"Quitting already, kid?"
-shayHome_Day1_Visit1,,"char_update,Spook,8"
-shayHome_Day1_Visit1,Spook,Eeeek!!!
-shayHome_Day1_Visit1,,"char_update,Screwdriver,1"
-shayHome_Day1_Visit1,Screwdriver,Wow! You still react the same!
-shayHome_Day1_Visit1,Spook,Why are you back here?!
-shayHome_Day1_Visit1,,"char_update,Screwdriver,0"
-shayHome_Day1_Visit1,Screwdriver,Unfinished... business. 
-shayHome_Day1_Visit1,Screwdriver,Why are YOU back here!? Night is young! Go explore! Go!
-shayHome_Day1_Visit1,,"music,noone"
-shayHome_Day1_Visit1,,map
+p1Home1,,"map_scene,home,p1Home2"
+p1Home1,,"scene_bg_clear,sBackgroundShayRoomNight"
+p1Home1,,"music,bgmShayHome"
+p1Home1,,"main_char_in,0"
+p1Home1,Empty,Shay is sound asleep. Your cage is warm and inviting.
+p1Home1,,"char_in,Screwdriver,sScrewdriver,0"
+p1Home1,Screwdriver,"Quitting already, kid?"
+p1Home1,,"char_update,Spook,8"
+p1Home1,Spook,Eeeek!!!
+p1Home1,,"char_update,Screwdriver,1"
+p1Home1,Screwdriver,Wow! You still react the same!
+p1Home1,Spook,Why are you back here?!
+p1Home1,,"char_update,Screwdriver,0"
+p1Home1,Screwdriver,Unfinished... business. 
+p1Home1,Screwdriver,Why are YOU back here!? Night is young! Go explore! Go!
+p1Home1,,"music,noone"
+p1Home1,,map
 ,,
 ,,
 ,,
-shayHome_Day1_Visit2,,"scene_bg_clear,sBackgroundShayRoomNight"
-shayHome_Day1_Visit2,,"music,bgmShayHome"
-shayHome_Day1_Visit2,,"main_char_in,0"
-shayHome_Day1_Visit2,,"char_in,Screwdriver,sScrewdriver,2"
-shayHome_Day1_Visit2,Screwdriver,[wave]When I was... a young boy...[/wave]
-shayHome_Day1_Visit2,Screwdriver,[wave]My father... took me into the city...[/wave]
-shayHome_Day1_Visit2,Screwdriver,[wave]To see a marching band...~[/wave]
-shayHome_Day1_Visit2,,"char_update,Screwdriver,0"
-shayHome_Day1_Visit2,Screwdriver,Hey! What are you looking at?!
-shayHome_Day1_Visit2,Screwdriver,Go explore!
-shayHome_Day1_Visit2,,"music,noone"
-shayHome_Day1_Visit2,,map
+p1Home2,,"scene_bg_clear,sBackgroundShayRoomNight"
+p1Home2,,"music,bgmShayHome"
+p1Home2,,"main_char_in,0"
+p1Home2,,"char_in,Screwdriver,sScrewdriver,2"
+p1Home2,Screwdriver,[wave]When I was... a young boy...[/wave]
+p1Home2,Screwdriver,[wave]My father... took me into the city...[/wave]
+p1Home2,Screwdriver,[wave]To see a marching band...~[/wave]
+p1Home2,,"char_update,Screwdriver,0"
+p1Home2,Screwdriver,Hey! What are you looking at?!
+p1Home2,Screwdriver,Go explore!
+p1Home2,,"music,noone"
+p1Home2,,map
 ,,
 ,,
 ,,
-shayHome_Day1_Visit3,,"map_scene,home,shayHome_Day1_Visit3_2"
-shayHome_Day1_Visit3,,"scene_bg_clear,sBackgroundShayRoomNight"
-shayHome_Day1_Visit3,,"music,bgmShayHome"
-shayHome_Day1_Visit3,,"main_char_in,0"
-shayHome_Day1_Visit3,,"char_in,Screwdriver,sScrewdriver,0"
-shayHome_Day1_Visit3,Screwdriver,I see you're back.
-shayHome_Day1_Visit3,Screwdriver,"Not your bedtime yet, is it?"
-shayHome_Day1_Visit3,,"choice,shayHome0,shayHome1"
-shayHome_Day1_Visit3,,"scene_set,shayHome_Day1_Visit3_Path1"
-shayHome_Day1_Visit3,,"scene_set,shayHome_Day1_Visit3_Path2"
+p1HomeQuest,,"map_scene,home,p1HomeQuest2"
+p1HomeQuest,,"scene_bg_clear,sBackgroundShayRoomNight"
+p1HomeQuest,,"music,bgmShayHome"
+p1HomeQuest,,"main_char_in,0"
+p1HomeQuest,,"char_in,Screwdriver,sScrewdriver,0"
+p1HomeQuest,Screwdriver,I see you're back.
+p1HomeQuest,Screwdriver,"Not your bedtime yet, is it?"
+p1HomeQuest,,"choice,p1HomeBarry,p1HomeBye"
+p1HomeQuest,,"scene_set,p1HomeQuestIntro"
+p1HomeQuest,,"scene_set,p1HomeQuestCancel"
 ,,
-shayHome_Day1_Visit3_2,,"scene_bg_clear,sBackgroundShayRoomNight"
-shayHome_Day1_Visit3_2,,"music,bgmShayHome"
-shayHome_Day1_Visit3_2,,"main_char_in,0"
-shayHome_Day1_Visit3_2,,"char_in,Screwdriver,sScrewdriver,0"
-shayHome_Day1_Visit3_2,Screwdriver,Hey!
-shayHome_Day1_Visit3_2,Screwdriver,You wanna tell me something?
-shayHome_Day1_Visit3_2,,"choice,shayHome0,shayHome1"
-shayHome_Day1_Visit3_2,,"scene_set,shayHome_Day1_Visit3_Path1"
-shayHome_Day1_Visit3_2,,"scene_set,shayHome_Day1_Visit3_Path2"
+p1HomeQuest2,,"scene_bg_clear,sBackgroundShayRoomNight"
+p1HomeQuest2,,"music,bgmShayHome"
+p1HomeQuest2,,"main_char_in,0"
+p1HomeQuest2,,"char_in,Screwdriver,sScrewdriver,0"
+p1HomeQuest2,Screwdriver,Hey!
+p1HomeQuest2,Screwdriver,You wanna tell me something?
+p1HomeQuest2,,"choice,p1HomeBarry,p1HomeBye"
+p1HomeQuest2,,"scene_set,p1HomeQuestIntro"
+p1HomeQuest2,,"scene_set,p1HomeQuestCancel"
 ,,
-shayHome_Day1_Visit3_Path1,,"map_scene,home,homeSkip"
-shayHome_Day1_Visit3_Path1,,"custom_script_cont,Part1ClearCheck"
-shayHome_Day1_Visit3_Path1,,"custom_script_cont,Part1HouseAcrossFrontCheck"
-shayHome_Day1_Visit3_Path1,,"flag_set,candy_quest_complete,true"
-shayHome_Day1_Visit3_Path1,,"char_update,Screwdriver,3"
-shayHome_Day1_Visit3_Path1,Screwdriver,"For the last time, I'm not giving his heart undies back!"
-shayHome_Day1_Visit3_Path1,,"char_update,Spook,7"
-shayHome_Day1_Visit3_Path1,Spook,Oh... um... no.
-shayHome_Day1_Visit3_Path1,Spook,He asked me to get some candy in exchange for a drink.
-shayHome_Day1_Visit3_Path1,,"char_update,Screwdriver,1"
-shayHome_Day1_Visit3_Path1,Screwdriver,He's putting a newbie to work?
-shayHome_Day1_Visit3_Path1,Screwdriver,"My, raccoons are indeed greedy, aren't they?"
-shayHome_Day1_Visit3_Path1,,"char_update,Screwdriver,0"
-shayHome_Day1_Visit3_Path1,Screwdriver,"Okay, kid."
-shayHome_Day1_Visit3_Path1,Screwdriver,Let's break into that big fancy house across the street!
-shayHome_Day1_Visit3_Path1,,"music,noone"
-shayHome_Day1_Visit3_Path1,,"trans_scene,shayHome_Day1_Visit3_HouseAcross"
+p1HomeQuestCancel,Screwdriver,Hey!
+p1HomeQuestCancel,,"music,noone"
+p1HomeQuestCancel,,map
 ,,
-shayHome_Day1_Visit3_Path2,Screwdriver,Hey!
-shayHome_Day1_Visit3_Path2,,"music,noone"
-shayHome_Day1_Visit3_Path2,,map
 ,,
-shayHome_Day1_Visit3_HouseAcross,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
-shayHome_Day1_Visit3_HouseAcross,,"music,bgmHouseAcrossSneakIn"
-shayHome_Day1_Visit3_HouseAcross,,"main_char_in,0"
-shayHome_Day1_Visit3_HouseAcross,,"char_in,Screwdriver,sScrewdriver,0"
-shayHome_Day1_Visit3_HouseAcross,Screwdriver,"Candy, candy, sweet candy!"
-shayHome_Day1_Visit3_HouseAcross,Spook,Should we be really doing this?
-shayHome_Day1_Visit3_HouseAcross,Screwdriver,Ssshhh... Don't wake the housekeepers!
-shayHome_Day1_Visit3_HouseAcross,Screwdriver,See that puppy over there?
-shayHome_Day1_Visit3_HouseAcross,,"char_in,Princess,sPrincess,4"
-shayHome_Day1_Visit3_HouseAcross,Spook,Yeah?
-shayHome_Day1_Visit3_HouseAcross,Screwdriver,"Yes, warn me if she wakes up. The code word is ""Squeak!"" nyeh heh!"
-shayHome_Day1_Visit3_HouseAcross,,"char_update,Spook,8"
-shayHome_Day1_Visit3_HouseAcross,Spook,Wait-
-shayHome_Day1_Visit3_HouseAcross,,"char_out,Screwdriver"
-shayHome_Day1_Visit3_HouseAcross,Empty,"A well groomed, fluffy dog. Her perfume smells like cinnamon and she is wearing a single pink hair pin."
-shayHome_Day1_Visit3_HouseAcross,,"trans_scene,shayHome_Day1_Visit3_HouseAcross_FadeOut1"
+p1HomeQuestIntro,,"map_scene,home,p1HomeSkip"
+p1HomeQuestIntro,,"custom_script_cont,Part1ClearCheck"
+p1HomeQuestIntro,,"custom_script_cont,Part1HouseAcrossFrontCheck"
+p1HomeQuestIntro,,"flag_set,candy_quest_complete,true"
+p1HomeQuestIntro,,"char_update,Screwdriver,3"
+p1HomeQuestIntro,Screwdriver,"For the last time, I'm not giving his heart undies back!"
+p1HomeQuestIntro,,"char_update,Spook,7"
+p1HomeQuestIntro,Spook,Oh... um... no.
+p1HomeQuestIntro,Spook,He asked me to get some candy in exchange for a drink.
+p1HomeQuestIntro,,"char_update,Screwdriver,1"
+p1HomeQuestIntro,Screwdriver,He's putting a newbie to work?
+p1HomeQuestIntro,Screwdriver,"My, raccoons are indeed greedy, aren't they?"
+p1HomeQuestIntro,,"char_update,Screwdriver,0"
+p1HomeQuestIntro,Screwdriver,"Okay, kid."
+p1HomeQuestIntro,Screwdriver,Let's break into that big fancy house across the street!
+p1HomeQuestIntro,,"music,noone"
+p1HomeQuestIntro,,"trans_scene,p1HomeQuestHouseAcross"
 ,,
-shayHome_Day1_Visit3_HouseAcross_FadeOut1,,"scene_bg_clear,sBackgroundBlack"
-shayHome_Day1_Visit3_HouseAcross_FadeOut1,Empty,Several minutes pass...
-shayHome_Day1_Visit3_HouseAcross_FadeOut1,,"trans_scene,shayHome_Day1_Visit3_HouseAcross_GotCandy"
+p1HomeQuestHouseAcross,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
+p1HomeQuestHouseAcross,,"music,bgmHouseAcrossSneakIn"
+p1HomeQuestHouseAcross,,"main_char_in,0"
+p1HomeQuestHouseAcross,,"char_in,Screwdriver,sScrewdriver,0"
+p1HomeQuestHouseAcross,Screwdriver,"Candy, candy, sweet candy!"
+p1HomeQuestHouseAcross,Spook,Should we be really doing this?
+p1HomeQuestHouseAcross,Screwdriver,Ssshhh... Don't wake the housekeepers!
+p1HomeQuestHouseAcross,Screwdriver,See that puppy over there?
+p1HomeQuestHouseAcross,,"char_in,Princess,sPrincess,4"
+p1HomeQuestHouseAcross,Spook,Yeah?
+p1HomeQuestHouseAcross,Screwdriver,"Yes, warn me if she wakes up. The code word is ""Squeak!"" nyeh heh!"
+p1HomeQuestHouseAcross,,"char_update,Spook,8"
+p1HomeQuestHouseAcross,Spook,Wait-
+p1HomeQuestHouseAcross,,"char_out,Screwdriver"
+p1HomeQuestHouseAcross,Empty,"A well groomed, fluffy dog. Her perfume smells like cinnamon and she is wearing a single pink hair pin."
+p1HomeQuestHouseAcross,,"trans_scene,p1HomeQuestHouseAcrossFadeOut1"
 ,,
-shayHome_Day1_Visit3_HouseAcross_GotCandy,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
-shayHome_Day1_Visit3_HouseAcross_GotCandy,,"main_char_in,0"
-shayHome_Day1_Visit3_HouseAcross_GotCandy,,"char_in,Princess,sPrincess,4"
-shayHome_Day1_Visit3_HouseAcross_GotCandy,,"char_in,Screwdriver,sScrewdriver,8"
-shayHome_Day1_Visit3_HouseAcross_GotCandy,Screwdriver,Got em'! Let's go!
-shayHome_Day1_Visit3_HouseAcross_GotCandy,Princess,Arf...?
-shayHome_Day1_Visit3_HouseAcross_GotCandy,,"char_update,Screwdriver,3"
-shayHome_Day1_Visit3_HouseAcross_GotCandy,,"char_update,Spook,8"
-shayHome_Day1_Visit3_HouseAcross_GotCandy,Screwdriver,QUICK!!!
-shayHome_Day1_Visit3_HouseAcross_GotCandy,,"trans_scene,shayHome_Day1_Visit3_HouseAcross_FadeOut2"
+p1HomeQuestHouseAcrossFadeOut1,,"scene_bg_clear,sBackgroundBlack"
+p1HomeQuestHouseAcrossFadeOut1,Empty,Several minutes pass...
+p1HomeQuestHouseAcrossFadeOut1,,"trans_scene,p1HomeQuestHouseAcrossGotCandy"
 ,,
-shayHome_Day1_Visit3_HouseAcross_FadeOut2,,"scene_bg_clear,sBackgroundBlack"
-shayHome_Day1_Visit3_HouseAcross_FadeOut2,Empty,"[sound,sfxPrincessBark][tw,none][shake]*Barking*[/shake]"
-shayHome_Day1_Visit3_HouseAcross_FadeOut2,,"delay,2"
-shayHome_Day1_Visit3_HouseAcross_FadeOut2,,"trans_scene,shayHome_Day1_Visit3_Bar"
-shayHome_Day1_Visit3_HouseAcross_FadeOut2,,"music,noone"
+p1HomeQuestHouseAcrossGotCandy,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
+p1HomeQuestHouseAcrossGotCandy,,"main_char_in,0"
+p1HomeQuestHouseAcrossGotCandy,,"char_in,Princess,sPrincess,4"
+p1HomeQuestHouseAcrossGotCandy,,"char_in,Screwdriver,sScrewdriver,8"
+p1HomeQuestHouseAcrossGotCandy,Screwdriver,Got em'! Let's go!
+p1HomeQuestHouseAcrossGotCandy,Princess,Arf...?
+p1HomeQuestHouseAcrossGotCandy,,"char_update,Screwdriver,3"
+p1HomeQuestHouseAcrossGotCandy,,"char_update,Spook,8"
+p1HomeQuestHouseAcrossGotCandy,Screwdriver,QUICK!!!
+p1HomeQuestHouseAcrossGotCandy,,"trans_scene,p1HomeQuestHouseAcrossFadeOut2"
 ,,
-shayHome_Day1_Visit3_Bar,,"scene_bg_clear,sBackgroundSewerBar"
-shayHome_Day1_Visit3_Bar,,"music,bgmSewerBar"
-shayHome_Day1_Visit3_Bar,,"main_char_in,8"
-shayHome_Day1_Visit3_Bar,,"char_in,Screwdriver,sScrewdriver,0"
-shayHome_Day1_Visit3_Bar,Spook,Oh my god. Oh my god. Oh my god.
-shayHome_Day1_Visit3_Bar,,"char_update,Screwdriver,2"
-shayHome_Day1_Visit3_Bar,Screwdriver,"Whoa, calm down kid! Wasn't that a RUSH???"
-shayHome_Day1_Visit3_Bar,,"char_update,Spook,4"
-shayHome_Day1_Visit3_Bar,Spook,I'm a THIEF!!! WHAT IS SHAY GOING TO SAY!??
-shayHome_Day1_Visit3_Bar,,"char_update,Screwdriver,0"
-shayHome_Day1_Visit3_Bar,Screwdriver,"Woah there, kiddo. "
-shayHome_Day1_Visit3_Bar,,"char_update,Screwdriver,1"
-shayHome_Day1_Visit3_Bar,Screwdriver,"If anything, I am the thief, OK? You were just my little helper! Don't give yourself all the credit!"
-shayHome_Day1_Visit3_Bar,Spook,AAAAAAAAAAHHHHHHHHHHHHHHHH!!!!!!!!!!
-shayHome_Day1_Visit3_Bar,,"char_in,Barry,sBarry,0"
-shayHome_Day1_Visit3_Bar,Barry,"I'm taking this as ""we got the candy?"""
-shayHome_Day1_Visit3_Bar,Screwdriver,'course we did! Pour the guy a drink now! He clearly needs to chill out!
-shayHome_Day1_Visit3_Bar,,"char_update,Spook,3"
-shayHome_Day1_Visit3_Bar,Spook,Sniff... sniff...
-shayHome_Day1_Visit3_Bar,,"char_in,Pogo,sPogo,8"
-shayHome_Day1_Visit3_Bar,Pogo,BOO!
-shayHome_Day1_Visit3_Bar,Spook,Sniff...
-shayHome_Day1_Visit3_Bar,,"char_update,Pogo,7"
-shayHome_Day1_Visit3_Bar,Pogo,...Bad timing?
-shayHome_Day1_Visit3_Bar,,"char_update,Screwdriver,0"
-shayHome_Day1_Visit3_Bar,Screwdriver,We were just back from... Trick or treatin'. 
-shayHome_Day1_Visit3_Bar,,"char_update,Pogo,6"
-shayHome_Day1_Visit3_Bar,Pogo,"Ooo, exciting!"
-shayHome_Day1_Visit3_Bar,,"char_update,Barry,4"
-shayHome_Day1_Visit3_Bar,Barry,OK! drinks coming up! 
-shayHome_Day1_Visit3_Bar,,"char_update,Spook,0"
-shayHome_Day1_Visit3_Bar,Empty,Everyone joins in for Barry's Special Cider With Crushed Candy and Extra Cream: BSCWCCEC! 
-shayHome_Day1_Visit3_Bar,Empty,"(No, there is no shorter name for it)"
-shayHome_Day1_Visit3_Bar,,"char_update,Pogo,5"
-shayHome_Day1_Visit3_Bar,Pogo,Man... I miss playing together... This bar used to be waaay more lively...
-shayHome_Day1_Visit3_Bar,,"char_update,Barry,3"
-shayHome_Day1_Visit3_Bar,Barry,Harumph...
-shayHome_Day1_Visit3_Bar,,"char_update,Screwdriver,7"
-shayHome_Day1_Visit3_Bar,Screwdriver,"Yeah, too bad we lost our drummer like that..."
-shayHome_Day1_Visit3_Bar,,"choice,shayHome_Day1_Visit3_Bar1,shayHome_Day1_Visit3_Bar2"
-shayHome_Day1_Visit3_Bar,,"scene_set,shayHome_Day1_Visit3_Bar_Path1"
-shayHome_Day1_Visit3_Bar,,"scene_set,shayHome_Day1_Visit3_Bar_Path2"
+p1HomeQuestHouseAcrossFadeOut2,,"scene_bg_clear,sBackgroundBlack"
+p1HomeQuestHouseAcrossFadeOut2,Empty,"[sound,sfxPrincessBark][tw,none][shake]*Barking*[/shake]"
+p1HomeQuestHouseAcrossFadeOut2,,"delay,2"
+p1HomeQuestHouseAcrossFadeOut2,,"trans_scene,p1HomeQuestBar"
+p1HomeQuestHouseAcrossFadeOut2,,"music,noone"
 ,,
-shayHome_Day1_Visit3_Bar_Path1,,"char_update,Pogo,6"
-shayHome_Day1_Visit3_Bar_Path1,Pogo,"Haha, no silly!"
-shayHome_Day1_Visit3_Bar_Path1,,"char_update,Pogo,5"
-shayHome_Day1_Visit3_Bar_Path1,Pogo,They are just...
-shayHome_Day1_Visit3_Bar_Path1,Pogo,Not our drummer anymore.
-shayHome_Day1_Visit3_Bar_Path1,Pogo,I guess that is better than dead.
-shayHome_Day1_Visit3_Bar_Path1,Screwdriver,"You ""guess""?"
-shayHome_Day1_Visit3_Bar_Path1,,"char_update,Pogo,6"
-shayHome_Day1_Visit3_Bar_Path1,Pogo,Mhm!
-shayHome_Day1_Visit3_Bar_Path1,Barry,Dead to us anyway...
-shayHome_Day1_Visit3_Bar_Path1,Spook,Wow... What is that about?
-shayHome_Day1_Visit3_Bar_Path1,,"char_update,Screwdriver,0"
-shayHome_Day1_Visit3_Bar_Path1,Screwdriver,"Told ya, kid. The bar used to be way livelier."
-shayHome_Day1_Visit3_Bar_Path1,Barry,Let's not dig up old skeletons...
-shayHome_Day1_Visit3_Bar_Path1,,"char_update,Screwdriver,2"
-shayHome_Day1_Visit3_Bar_Path1,Screwdriver,Why not Barry? It is past midnight. Officially Hallow's Eve!!!!
-shayHome_Day1_Visit3_Bar_Path1,,"char_update,Pogo,0"
-shayHome_Day1_Visit3_Bar_Path1,Pogo,What's a better time to rise from the dead?!
-shayHome_Day1_Visit3_Bar_Path1,,"char_update,Barry,0"
-shayHome_Day1_Visit3_Bar_Path1,Barry,Never! Never is a good time!
-shayHome_Day1_Visit3_Bar_Path1,,"char_update,Screwdriver,0"
-shayHome_Day1_Visit3_Bar_Path1,Screwdriver,Booooorrrrrriiiiiinnng!
-shayHome_Day1_Visit3_Bar_Path1,Spook,"Weird, the vibe suddenly got so depressing."
-shayHome_Day1_Visit3_Bar_Path1,,"scene_set,shayHome_Day1_Visit3_Bar_Path3"
+p1HomeQuestBar,,"scene_bg_clear,sBackgroundSewerBar"
+p1HomeQuestBar,,"music,bgmSewerBar"
+p1HomeQuestBar,,"main_char_in,8"
+p1HomeQuestBar,,"char_in,Screwdriver,sScrewdriver,0"
+p1HomeQuestBar,Spook,Oh my god. Oh my god. Oh my god.
+p1HomeQuestBar,,"char_update,Screwdriver,2"
+p1HomeQuestBar,Screwdriver,"Whoa, calm down kid! Wasn't that a RUSH???"
+p1HomeQuestBar,,"char_update,Spook,4"
+p1HomeQuestBar,Spook,I'm a THIEF!!! WHAT IS SHAY GOING TO SAY!??
+p1HomeQuestBar,,"char_update,Screwdriver,0"
+p1HomeQuestBar,Screwdriver,"Woah there, kiddo. "
+p1HomeQuestBar,,"char_update,Screwdriver,1"
+p1HomeQuestBar,Screwdriver,"If anything, I am the thief, OK? You were just my little helper! Don't give yourself all the credit!"
+p1HomeQuestBar,Spook,AAAAAAAAAAHHHHHHHHHHHHHHHH!!!!!!!!!!
+p1HomeQuestBar,,"char_in,Barry,sBarry,0"
+p1HomeQuestBar,Barry,"I'm taking this as ""we got the candy?"""
+p1HomeQuestBar,Screwdriver,'course we did! Pour the guy a drink now! He clearly needs to chill out!
+p1HomeQuestBar,,"char_update,Spook,3"
+p1HomeQuestBar,Spook,Sniff... sniff...
+p1HomeQuestBar,,"char_in,Pogo,sPogo,8"
+p1HomeQuestBar,Pogo,BOO!
+p1HomeQuestBar,Spook,Sniff...
+p1HomeQuestBar,,"char_update,Pogo,7"
+p1HomeQuestBar,Pogo,...Bad timing?
+p1HomeQuestBar,,"char_update,Screwdriver,0"
+p1HomeQuestBar,Screwdriver,We were just back from... Trick or treatin'. 
+p1HomeQuestBar,,"char_update,Pogo,6"
+p1HomeQuestBar,Pogo,"Ooo, exciting!"
+p1HomeQuestBar,,"char_update,Barry,4"
+p1HomeQuestBar,Barry,OK! drinks coming up! 
+p1HomeQuestBar,,"char_update,Spook,0"
+p1HomeQuestBar,Empty,Everyone joins in for Barry's Special Cider With Crushed Candy and Extra Cream: BSCWCCEC! 
+p1HomeQuestBar,Empty,"(No, there is no shorter name for it)"
+p1HomeQuestBar,,"char_update,Pogo,5"
+p1HomeQuestBar,Pogo,Man... I miss playing together... This bar used to be waaay more lively...
+p1HomeQuestBar,,"char_update,Barry,3"
+p1HomeQuestBar,Barry,Harumph...
+p1HomeQuestBar,,"char_update,Screwdriver,7"
+p1HomeQuestBar,Screwdriver,"Yeah, too bad we lost our drummer like that..."
+p1HomeQuestBar,,"choice,p1HomeQuestBarDead,p1HomeQuestBarPlay"
+p1HomeQuestBar,,"scene_set,p1HomeQuestBarDead"
+p1HomeQuestBar,,"scene_set,p1HomeQuestBarPlay"
 ,,
-shayHome_Day1_Visit3_Bar_Path2,,"char_update,Screwdriver,2"
-shayHome_Day1_Visit3_Bar_Path2,Screwdriver,"Nope! These days I'm hanging out with my gang, the R.A.C."
-shayHome_Day1_Visit3_Bar_Path2,Spook,The what?
-shayHome_Day1_Visit3_Bar_Path2,Screwdriver,"""Rats Against Capitalism""!"
-shayHome_Day1_Visit3_Bar_Path2,Spook,"Wow, okay."
-shayHome_Day1_Visit3_Bar_Path2,,"char_update,Screwdriver,1"
-shayHome_Day1_Visit3_Bar_Path2,Screwdriver,You should join in! We have motorcycles and everything!
-shayHome_Day1_Visit3_Bar_Path2,Spook,But I'm a mouse.
-shayHome_Day1_Visit3_Bar_Path2,Screwdriver,Are you a mouse against capitalism?
-shayHome_Day1_Visit3_Bar_Path2,Spook,I guess I could be...?
-shayHome_Day1_Visit3_Bar_Path2,,"char_update,Screwdriver,2"
-shayHome_Day1_Visit3_Bar_Path2,Screwdriver,GREAT! YOU'RE IN!
-shayHome_Day1_Visit3_Bar_Path2,,"char_update,Spook,7"
-shayHome_Day1_Visit3_Bar_Path2,Spook,...
-shayHome_Day1_Visit3_Bar_Path2,,"char_update,Spook,0"
-shayHome_Day1_Visit3_Bar_Path2,Pogo,Ahem.
-shayHome_Day1_Visit3_Bar_Path2,Pogo,"I still sing sometimes, but not on stage or anything."
-shayHome_Day1_Visit3_Bar_Path2,,"char_update,Screwdriver,0"
-shayHome_Day1_Visit3_Bar_Path2,Screwdriver,I don't even know where the old guitar is... 
-shayHome_Day1_Visit3_Bar_Path2,Screwdriver,Maybe I sold it.
-shayHome_Day1_Visit3_Bar_Path2,,"char_update,Pogo,4"
-shayHome_Day1_Visit3_Bar_Path2,Pogo,You sold it?!
-shayHome_Day1_Visit3_Bar_Path2,Screwdriver,"I mean, dunno. I sold a lot of old stuff to the forest folk... And it's definitely not in my lair."
-shayHome_Day1_Visit3_Bar_Path2,Barry,...Man.
-shayHome_Day1_Visit3_Bar_Path2,Screwdriver,Oh!
-shayHome_Day1_Visit3_Bar_Path2,,"char_update,Barry,0"
-shayHome_Day1_Visit3_Bar_Path2,Barry,Oh?
-shayHome_Day1_Visit3_Bar_Path2,Screwdriver,It's past midnight!
-shayHome_Day1_Visit3_Bar_Path2,,"char_update,Pogo,6"
-shayHome_Day1_Visit3_Bar_Path2,Pogo,WAY past mignight!!!
-shayHome_Day1_Visit3_Bar_Path2,,"char_update,Screwdriver,2"
-shayHome_Day1_Visit3_Bar_Path2,Screwdriver,HAPPY HALLOWEEN!!!
-shayHome_Day1_Visit3_Bar_Path2,Pogo,Woooo!!!!!
-shayHome_Day1_Visit3_Bar_Path2,,"char_update,Barry,4"
-shayHome_Day1_Visit3_Bar_Path2,Barry,Toast!
-shayHome_Day1_Visit3_Bar_Path2,Spook,Happy best holiday ever!
-shayHome_Day1_Visit3_Bar_Path2,,"scene_set,shayHome_Day1_Visit3_Bar_Path3"
+p1HomeQuestBarDead,,"char_update,Pogo,6"
+p1HomeQuestBarDead,Pogo,"Haha, no silly!"
+p1HomeQuestBarDead,,"char_update,Pogo,5"
+p1HomeQuestBarDead,Pogo,They are just...
+p1HomeQuestBarDead,Pogo,Not our drummer anymore.
+p1HomeQuestBarDead,Pogo,I guess that is better than dead.
+p1HomeQuestBarDead,Screwdriver,"You ""guess""?"
+p1HomeQuestBarDead,,"char_update,Pogo,6"
+p1HomeQuestBarDead,Pogo,Mhm!
+p1HomeQuestBarDead,Barry,Dead to us anyway...
+p1HomeQuestBarDead,Spook,Wow... What is that about?
+p1HomeQuestBarDead,,"char_update,Screwdriver,0"
+p1HomeQuestBarDead,Screwdriver,"Told ya, kid. The bar used to be way livelier."
+p1HomeQuestBarDead,Barry,Let's not dig up old skeletons...
+p1HomeQuestBarDead,,"char_update,Screwdriver,2"
+p1HomeQuestBarDead,Screwdriver,Why not Barry? It is past midnight. Officially Hallow's Eve!!!!
+p1HomeQuestBarDead,,"char_update,Pogo,0"
+p1HomeQuestBarDead,Pogo,What's a better time to rise from the dead?!
+p1HomeQuestBarDead,,"char_update,Barry,0"
+p1HomeQuestBarDead,Barry,Never! Never is a good time!
+p1HomeQuestBarDead,,"char_update,Screwdriver,0"
+p1HomeQuestBarDead,Screwdriver,Booooorrrrrriiiiiinnng!
+p1HomeQuestBarDead,Spook,"Weird, the vibe suddenly got so depressing."
+p1HomeQuestBarDead,,"scene_set,p1HomeQuestBarClearCheck"
 ,,
-shayHome_Day1_Visit3_Bar_Path3,,"condition_flag,day1_clear"
-shayHome_Day1_Visit3_Bar_Path3,,"scene_set,shayHome_Day1_Visit3_Bar_Path4"
-shayHome_Day1_Visit3_Bar_Path3,,"scene_set,shayHome_Day1_Visit3_Bar_Path5"
+p1HomeQuestBarPlay,,"char_update,Screwdriver,2"
+p1HomeQuestBarPlay,Screwdriver,"Nope! These days I'm hanging out with my gang, the R.A.C."
+p1HomeQuestBarPlay,Spook,The what?
+p1HomeQuestBarPlay,Screwdriver,"""Rats Against Capitalism""!"
+p1HomeQuestBarPlay,Spook,"Wow, okay."
+p1HomeQuestBarPlay,,"char_update,Screwdriver,1"
+p1HomeQuestBarPlay,Screwdriver,You should join in! We have motorcycles and everything!
+p1HomeQuestBarPlay,Spook,But I'm a mouse.
+p1HomeQuestBarPlay,Screwdriver,Are you a mouse against capitalism?
+p1HomeQuestBarPlay,Spook,I guess I could be...?
+p1HomeQuestBarPlay,,"char_update,Screwdriver,2"
+p1HomeQuestBarPlay,Screwdriver,GREAT! YOU'RE IN!
+p1HomeQuestBarPlay,,"char_update,Spook,7"
+p1HomeQuestBarPlay,Spook,...
+p1HomeQuestBarPlay,,"char_update,Spook,0"
+p1HomeQuestBarPlay,Pogo,Ahem.
+p1HomeQuestBarPlay,Pogo,"I still sing sometimes, but not on stage or anything."
+p1HomeQuestBarPlay,,"char_update,Screwdriver,0"
+p1HomeQuestBarPlay,Screwdriver,I don't even know where the old guitar is... 
+p1HomeQuestBarPlay,Screwdriver,Maybe I sold it.
+p1HomeQuestBarPlay,,"char_update,Pogo,4"
+p1HomeQuestBarPlay,Pogo,You sold it?!
+p1HomeQuestBarPlay,Screwdriver,"I mean, dunno. I sold a lot of old stuff to the forest folk... And it's definitely not in my lair."
+p1HomeQuestBarPlay,Barry,...Man.
+p1HomeQuestBarPlay,Screwdriver,Oh!
+p1HomeQuestBarPlay,,"char_update,Barry,0"
+p1HomeQuestBarPlay,Barry,Oh?
+p1HomeQuestBarPlay,Screwdriver,It's past midnight!
+p1HomeQuestBarPlay,,"char_update,Pogo,6"
+p1HomeQuestBarPlay,Pogo,WAY past mignight!!!
+p1HomeQuestBarPlay,,"char_update,Screwdriver,2"
+p1HomeQuestBarPlay,Screwdriver,HAPPY HALLOWEEN!!!
+p1HomeQuestBarPlay,Pogo,Woooo!!!!!
+p1HomeQuestBarPlay,,"char_update,Barry,4"
+p1HomeQuestBarPlay,Barry,Toast!
+p1HomeQuestBarPlay,Spook,Happy best holiday ever!
+p1HomeQuestBarPlay,,"scene_set,p1HomeQuestBarClearCheck"
 ,,
-shayHome_Day1_Visit3_Bar_Path4,Pogo,"Ahem! I'm calling it a night! Are you going home yet, Spook?"
-shayHome_Day1_Visit3_Bar_Path4,Spook,"Yeah, I am tired..."
-shayHome_Day1_Visit3_Bar_Path4,,"scene_set,shayHome_Day1_Visit3_Bar_Path6"
+p1HomeQuestBarClearCheck,,"condition_script,Part1ClearCheck"
+p1HomeQuestBarClearCheck,,"scene_set,p1HomeQuestBarCleared"
+p1HomeQuestBarClearCheck,,"scene_set,p1HomeQuestBarNotCleared"
 ,,
-shayHome_Day1_Visit3_Bar_Path5,Pogo,"Ahem! I'm calling it a night! Are you going home yet, Spook?"
-shayHome_Day1_Visit3_Bar_Path5,,"choice,shayHome_Day1_Visit3_Bar3,shayHome_Day1_Visit3_Bar4"
-shayHome_Day1_Visit3_Bar_Path5,,"scene_set,shayHome_Day1_Visit3_Bar_Path6"
-shayHome_Day1_Visit3_Bar_Path5,,"scene_set,shayHome_Day1_Visit3_Bar_Path7"
+p1HomeQuestBarCleared,Pogo,"Ahem! I'm calling it a night! Are you going home yet, Spook?"
+p1HomeQuestBarCleared,Spook,"Yeah, I am tired..."
+p1HomeQuestBarCleared,,"scene_set,p1HomeQuestBarTired"
 ,,
-shayHome_Day1_Visit3_Bar_Path6,Screwdriver,"Well, have a good morning's sleep!"
-shayHome_Day1_Visit3_Bar_Path6,,"char_out,Screwdriver"
-shayHome_Day1_Visit3_Bar_Path6,Pogo,Hope you enjoyed your first night out!
-shayHome_Day1_Visit3_Bar_Path6,,"char_out,Pogo"
-shayHome_Day1_Visit3_Bar_Path6,,"char_update,Barry,1"
-shayHome_Day1_Visit3_Bar_Path6,Barry,"Yeah, gonna stay a bit longer. I got some crow customers visiting at dawn..."
-shayHome_Day1_Visit3_Bar_Path6,Spook,Night!
-shayHome_Day1_Visit3_Bar_Path6,,"trans_scene,p1End"
+p1HomeQuestBarNotCleared,Pogo,"Ahem! I'm calling it a night! Are you going home yet, Spook?"
+p1HomeQuestBarNotCleared,,"choice,p1HomeQuestBarTired,p1HomeQuestBarExplore"
+p1HomeQuestBarNotCleared,,"scene_set,p1HomeQuestBarTired"
+p1HomeQuestBarNotCleared,,"scene_set,p1HomeQuestBarExplore"
 ,,
-shayHome_Day1_Visit3_Bar_Path7,,"char_update,Screwdriver,2"
-shayHome_Day1_Visit3_Bar_Path7,Screwdriver,"Wow, someone is becoming a real night owl! Heh."
-shayHome_Day1_Visit3_Bar_Path7,,"char_update,Pogo,0"
-shayHome_Day1_Visit3_Bar_Path7,Pogo,"Nights are a perfect time to wander about. Good choice, little mouse!"
-shayHome_Day1_Visit3_Bar_Path7,,"char_update,Barry,1"
-shayHome_Day1_Visit3_Bar_Path7,Barry,"Happy hunting, friend."
-shayHome_Day1_Visit3_Bar_Path7,,"music,noone"
-shayHome_Day1_Visit3_Bar_Path7,,map
+p1HomeQuestBarTired,Screwdriver,"Well, have a good morning's sleep!"
+p1HomeQuestBarTired,,"char_out,Screwdriver"
+p1HomeQuestBarTired,Pogo,Hope you enjoyed your first night out!
+p1HomeQuestBarTired,,"char_out,Pogo"
+p1HomeQuestBarTired,,"char_update,Barry,1"
+p1HomeQuestBarTired,Barry,"Yeah, gonna stay a bit longer. I got some crow customers visiting at dawn..."
+p1HomeQuestBarTired,Spook,Night!
+p1HomeQuestBarTired,,"trans_scene,p1End"
 ,,
-homeSkip,,"scene_bg_clear,sBackgroundCageNight"
-homeSkip,,"music,bgmShayHome"
-homeSkip,,"main_char_in,0"
-homeSkip,Spook,"Oh, my bed. My beautiful bed."
-homeSkip,,"char_update,Spook,6"
-homeSkip,Spook,Should I go to sleep now?
-homeSkip,,"choice,shayHomeSkip,shayHomeExplore"
-homeSkip,,"trans_scene,p1EndIntro"
-homeSkip,,map
+p1HomeQuestBarExplore,,"char_update,Screwdriver,2"
+p1HomeQuestBarExplore,Screwdriver,"Wow, someone is becoming a real night owl! Heh."
+p1HomeQuestBarExplore,,"char_update,Pogo,0"
+p1HomeQuestBarExplore,Pogo,"Nights are a perfect time to wander about. Good choice, little mouse!"
+p1HomeQuestBarExplore,,"char_update,Barry,1"
+p1HomeQuestBarExplore,Barry,"Happy hunting, friend."
+p1HomeQuestBarExplore,,"music,noone"
+p1HomeQuestBarExplore,,map
+,,
+p1HomeSkip,,"scene_bg_clear,sBackgroundCageNight"
+p1HomeSkip,,"music,bgmShayHome"
+p1HomeSkip,,"main_char_in,0"
+p1HomeSkip,Spook,"Oh, my bed. My beautiful bed."
+p1HomeSkip,,"char_update,Spook,6"
+p1HomeSkip,Spook,Should I go to sleep now?
+p1HomeSkip,,"choice,p1HomeSkip,p1HomeExplore"
+p1HomeSkip,,"trans_scene,p1EndIntro"
+p1HomeSkip,,map
 ,,
 ,,
 bar1,,"map_scene,bar,bar2"
@@ -648,7 +634,7 @@ bar1Candy,Barry,"Trash, streets, more trash..."
 bar1Candy,Barry,...A fridge.
 bar1Candy,Barry,Know what? Try catching up with Screwdriver. He can show you a trick or two!
 bar1Candy,Spook,Hmm...
-bar1Candy,,"map_scene,home,shayHome_Day1_Visit3"
+bar1Candy,,"map_scene,home,p1HomeQuest"
 bar1Candy,,"flag_set,candy_quest_start,true"
 bar1Candy,,map
 ,,
@@ -668,7 +654,7 @@ bar1Okay,Barry,Know what? Go find Screwdriver. He is a professional looter after
 bar1Okay,Spook,"Yeah, okay..."
 bar1Okay,,"char_update,Barry,1"
 bar1Okay,Barry,Happy trick or treatin'!
-bar1Okay,,"map_scene,home,shayHome_Day1_Visit3"
+bar1Okay,,"map_scene,home,p1HomeQuest"
 bar1Okay,,"flag_set,candy_quest_start,true"
 bar1Okay,,map
 ,,
