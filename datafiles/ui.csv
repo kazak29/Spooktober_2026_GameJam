@@ -46,33 +46,33 @@ mapLamp,Lamp Post
 mapReminder,Go home and talk to Screwdriver!
 ,
 ,
-leave,Leave
-,
-p1HomeSkip,Go to sleep.
-p1HomeExplore,Continue exploring!
-,
 ,
 intro0,Squeak (Reassuringly)
 intro1,Squeak (Hungrily)
 ,
-p1HomeBarry,Barry sent me!
-p1HomeBye,Ugh... No... Bye...
+p1HomeQuestBarry,Barry sent me!
+p1HomeQuestBye,Ugh... No... Bye...
 ,
 p1HomeQuestBarDead,Your drummer's dead?!
 p1HomeQuestBarPlay,So... Do you guys not play at all anymore?
 p1HomeQuestBarTired,"Yeah, I'm tired..."
 p1HomeQuestBarExplore,I wanna explore some more!
 ,
-barNervous,I'm a bit nervous.
-barParty,Party! Party! The night is ours!
-barHygenic,Is this bar even hygenic...?
-barStrong,Yes!!! Pour me a strong one!
-barMilk,Um...maybe warm milk?
-barNotBad,"It's not that bad, actually."
-barErrands,You want me to run your errands!?
-barCandy,Where do I even find candy?
-barNuh,Nu-uh! Keep your stolen drink!
-barOkay,Ooookay....
+p1HomeSkipSleep,Go to sleep.
+p1HomeSkipExplore,Continue exploring!
+,
+,
+p1Bar1Nervous,I'm a bit nervous.
+p1Bar1Party,Party! Party! The night is ours!
+p1Bar1Hygenic,Is this bar even hygenic...?
+p1Bar1Strong,Yes!!! Pour me a strong one!
+p1Bar1Milk,Um...maybe warm milk?
+p1Bar1NotBad,"It's not that bad, actually."
+p1Bar1Leave,Leave
+p1Bar1Errands,You want me to run your errands!?
+p1Bar1Candy,Where do I even find candy?
+p1Bar1Nuh,Nu-uh! Keep your stolen drink!
+p1Bar1Okay,Ooookay....
 ,
 street1LostYes,"Honestly, yes."
 street1LostNo,Not at all! No!

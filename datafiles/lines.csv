@@ -277,7 +277,7 @@ p1HomeQuest,,"main_char_in,0"
 p1HomeQuest,,"char_in,Screwdriver,sScrewdriver,0"
 p1HomeQuest,Screwdriver,I see you're back.
 p1HomeQuest,Screwdriver,"Not your bedtime yet, is it?"
-p1HomeQuest,,"choice,p1HomeBarry,p1HomeBye"
+p1HomeQuest,,"choice,p1HomeQuestBarry,p1HomeQuestBye"
 p1HomeQuest,,"scene_set,p1HomeQuestIntro"
 p1HomeQuest,,"scene_set,p1HomeQuestCancel"
 ,,
@@ -287,7 +287,7 @@ p1HomeQuest2,,"main_char_in,0"
 p1HomeQuest2,,"char_in,Screwdriver,sScrewdriver,0"
 p1HomeQuest2,Screwdriver,Hey!
 p1HomeQuest2,Screwdriver,You wanna tell me something?
-p1HomeQuest2,,"choice,p1HomeBarry,p1HomeBye"
+p1HomeQuest2,,"choice,p1HomeQuestBarry,p1HomeQuestBye"
 p1HomeQuest2,,"scene_set,p1HomeQuestIntro"
 p1HomeQuest2,,"scene_set,p1HomeQuestCancel"
 ,,
@@ -495,210 +495,211 @@ p1HomeSkip,,"main_char_in,0"
 p1HomeSkip,Spook,"Oh, my bed. My beautiful bed."
 p1HomeSkip,,"char_update,Spook,6"
 p1HomeSkip,Spook,Should I go to sleep now?
-p1HomeSkip,,"choice,p1HomeSkip,p1HomeExplore"
+p1HomeSkip,,"choice,p1HomeSkipSleep,p1HomeSkipExplore"
 p1HomeSkip,,"trans_scene,p1EndIntro"
 p1HomeSkip,,map
 ,,
 ,,
-bar1,,"map_scene,bar,bar2"
-bar1,,"scene_bg_clear,sBackgroundSewerBar"
-bar1,,"music,bgmSewerBar"
-bar1,,"main_char_in,0"
-bar1,,"char_in,Barry,sBarry,0"
-bar1,Barry,Hey kid.
-bar1,Barry,"It's your first night out, hm? Are you excited?"
-bar1,,"choice,barNervous,barParty"
-bar1,,"scene_set,bar1Nervours"
-bar1,,"scene_set,bar1Party"
+p1Bar1,,"map_scene,bar,p1Bar2"
+p1Bar1,,"scene_bg_clear,sBackgroundSewerBar"
+p1Bar1,,"music,bgmSewerBar"
+p1Bar1,,"main_char_in,0"
+p1Bar1,,"char_in,Barry,sBarry,0"
+p1Bar1,Barry,Hey kid.
+p1Bar1,Barry,"It's your first night out, hm? Are you excited?"
+p1Bar1,,"choice,p1Bar1Nervous,p1Bar1Party"
+p1Bar1,,"scene_set,p1Bar1Nervous"
+p1Bar1,,"scene_set,p1Bar1Party"
 ,,
-bar1Nervours,Barry,"That's okay, friend."
-bar1Nervours,Barry,"The streets might seem dangerous at night, but for us pests, it's full of danger during the day, too."
-bar1Nervours,,"char_update,Barry,2"
-bar1Nervours,Barry,That's why we learn to look after one other!
-bar1Nervours,Barry,I remember when Drivey and Pogo were just kids...
-bar1Nervours,Barry,"Ahh, gettin' emotional."
-bar1Nervours,,"char_update,Barry,1"
-bar1Nervours,Barry,"Now now, don't let me talk your ear off. You want a drink?"
-bar1Nervours,,"choice,barHygenic,barStrong,barMilk"
-bar1Nervours,,"scene_set,bar1Hygenic"
-bar1Nervours,,"scene_set,bar1Strong"
-bar1Nervours,,"scene_set,bar1Milk"
+p1Bar1Nervous,Barry,"That's okay, friend."
+p1Bar1Nervous,Barry,"The streets might seem dangerous at night, but for us pests, it's full of danger during the day, too."
+p1Bar1Nervous,,"char_update,Barry,2"
+p1Bar1Nervous,Barry,That's why we learn to look after one other!
+p1Bar1Nervous,Barry,I remember when Drivey and Pogo were just kids...
+p1Bar1Nervous,Barry,"Ahh, gettin' emotional."
+p1Bar1Nervous,,"char_update,Barry,1"
+p1Bar1Nervous,Barry,"Now now, don't let me talk your ear off. You want a drink?"
+p1Bar1Nervous,,"choice,p1Bar1Hygenic,p1Bar1Strong,p1Bar1Milk"
+p1Bar1Nervous,,"scene_set,p1Bar1Hygenic"
+p1Bar1Nervous,,"scene_set,p1Bar1Strong"
+p1Bar1Nervous,,"scene_set,p1Bar1Milk"
 ,,
-bar1Party,,"char_update,Barry,4"
-bar1Party,Barry,That's the spirit!
-bar1Party,Barry,"Still, be careful, alright?"
-bar1Party,Barry,"We look after each other, but the careless don't live long out in the streets.. heh."
-bar1Party,,"char_update,Spook,5"
-bar1Party,Spook,"Yeah, yeah! "
-bar1Party,,"char_update,Barry,1"
-bar1Party,Barry,"So, what can I get you then?"
-bar1Party,,"char_update,Spook,0"
-bar1Party,Spook,What's good here?
-bar1Party,Barry,"Hmm, perhaps some Cider?"
-bar1Party,,"char_update,Spook,5"
-bar1Party,Spook,Cider!
-bar1Party,Barry,What can you offer in return?
-bar1Party,,"char_update,Spook,6"
-bar1Party,Spook,Offer... in... return?
-bar1Party,,"char_update,Barry,4"
-bar1Party,Barry,Yeah!
-bar1Party,Barry,"Barry's no charity, buddy. Or else it would be called... Barrity...."
-bar1Party,,"char_update,Spook,5"
-bar1Party,Spook,...But I got no money!
-bar1Party,Barry,Money? Don't be silly!
-bar1Party,,"char_update,Barry,0"
-bar1Party,Barry,"Look. How about you help me restock the Halloween candy, and I make you my special drink?"
-bar1Party,,"choice,barErrands,barCandy"
-bar1Party,,"scene_set,bar1Errands"
-bar1Party,,"scene_set,bar1Candy"
+p1Bar1Party,,"char_update,Barry,4"
+p1Bar1Party,Barry,That's the spirit!
+p1Bar1Party,Barry,"Still, be careful, alright?"
+p1Bar1Party,Barry,"We look after each other, but the careless don't live long out in the streets.. heh."
+p1Bar1Party,,"char_update,Spook,5"
+p1Bar1Party,Spook,"Yeah, yeah! "
+p1Bar1Party,,"char_update,Barry,1"
+p1Bar1Party,Barry,"So, what can I get you then?"
+p1Bar1Party,,"char_update,Spook,0"
+p1Bar1Party,Spook,What's good here?
+p1Bar1Party,Barry,"Hmm, perhaps some Cider?"
+p1Bar1Party,,"char_update,Spook,5"
+p1Bar1Party,Spook,Cider!
+p1Bar1Party,Barry,What can you offer in return?
+p1Bar1Party,,"char_update,Spook,6"
+p1Bar1Party,Spook,Offer... in... return?
+p1Bar1Party,,"char_update,Barry,4"
+p1Bar1Party,Barry,Yeah!
+p1Bar1Party,Barry,"Barry's no charity, buddy. Or else it would be called... Barrity...."
+p1Bar1Party,,"char_update,Spook,5"
+p1Bar1Party,Spook,...But I got no money!
+p1Bar1Party,Barry,Money? Don't be silly!
+p1Bar1Party,,"char_update,Barry,0"
+p1Bar1Party,Barry,"Look. How about you help me restock the Halloween candy, and I make you my special drink?"
+p1Bar1Party,,"choice,p1Bar1Errands,p1Bar1Candy"
+p1Bar1Party,,"scene_set,p1Bar1Errands"
+p1Bar1Party,,"scene_set,p1Bar1Candy"
 ,,
-bar1Hygenic,Barry,"Of course, friend."
-bar1Hygenic,Barry,"We don't even serve poop, most days!"
-bar1Hygenic,,"char_update,Spook,8"
-bar1Hygenic,Spook,Yuck!!!
-bar1Hygenic,,"char_update,Barry,4"
-bar1Hygenic,Barry,Just messin' with you!
-bar1Hygenic,,"char_update,Barry,1"
-bar1Hygenic,Barry,"But no, it may not be for pet standards."
-bar1Hygenic,Barry,"So, you know, feel free to leave."
-bar1Hygenic,,"char_update,Spook,0"
-bar1Hygenic,Spook,Well...
-bar1Hygenic,,"choice,barNotBad,leave"
-bar1Hygenic,,"scene_set,bar1NotBad"
-bar1Hygenic,,"scene_set,bar1Leave"
+p1Bar1Hygenic,Barry,"Of course, friend."
+p1Bar1Hygenic,Barry,"We don't even serve poop, most days!"
+p1Bar1Hygenic,,"char_update,Spook,8"
+p1Bar1Hygenic,Spook,Yuck!!!
+p1Bar1Hygenic,,"char_update,Barry,4"
+p1Bar1Hygenic,Barry,Just messin' with you!
+p1Bar1Hygenic,,"char_update,Barry,1"
+p1Bar1Hygenic,Barry,"But no, it may not be for pet standards."
+p1Bar1Hygenic,Barry,"So, you know, feel free to leave."
+p1Bar1Hygenic,,"char_update,Spook,0"
+p1Bar1Hygenic,Spook,Well...
+p1Bar1Hygenic,,"choice,p1Bar1NotBad,p1Bar1Leave"
+p1Bar1Hygenic,,"scene_set,p1Bar1NotBad"
+p1Bar1Hygenic,,"scene_set,p1Bar1Leave"
 ,,
-bar1NotBad,,"char_update,Spook,0"
-bar1NotBad,Barry,Well thank you very much. I sure try to keep it that way!
-bar1NotBad,Spook,I guess a single drink wouldn't hurt.
-bar1NotBad,Barry,In the mood for something specific?
-bar1NotBad,,"choice,barStrong,barMilk"
-bar1NotBad,,"scene_set,bar1Strong"
-bar1NotBad,,"scene_set,bar1Milk"
+p1Bar1NotBad,,"char_update,Spook,0"
+p1Bar1NotBad,Barry,Well thank you very much. I sure try to keep it that way!
+p1Bar1NotBad,Spook,I guess a single drink wouldn't hurt.
+p1Bar1NotBad,Barry,In the mood for something specific?
+p1Bar1NotBad,,"choice,p1Bar1Strong,p1Bar1Milk"
+p1Bar1NotBad,,"scene_set,p1Bar1Strong"
+p1Bar1NotBad,,"scene_set,p1Bar1Milk"
 ,,
-bar1Leave,,"flag_set,candy_quest_fail,true"
-bar1Leave,,map
-,,
-,,
-bar1Strong,,"char_update,Barry,0"
-bar1Strong,Barry,Woah there friend!
-bar1Strong,Barry,"Eager for a night out, are you not?"
-bar1Strong,,"char_update,Barry,4"
-bar1Strong,Barry,Tell you what?
-bar1Strong,Barry,"In this community, we earn what we get!"
-bar1Strong,Barry,"How about you help me restock some Halloween candy, and then we toast together?"
-bar1Strong,,"choice,barErrands,barCandy"
-bar1Strong,,"scene_set,bar1Errands"
-bar1Strong,,"scene_set,bar1Candy"
-,,
-bar1Milk,,"char_update,Barry,0"
-bar1Milk,Barry,Whoa there buddy!
-bar1Milk,Barry,"This is a bar, not the grocery store!"
-bar1Milk,,"char_update,Spook,6"
-bar1Milk,Spook,What do you have then?
-bar1Milk,,"char_update,Barry,1"
-bar1Milk,Barry,"Well... Cider. Cheese, candy, leftover food, oat, rotten fruit...."
-bar1Milk,,"char_update,Spook,7"
-bar1Milk,Spook,...
-bar1Milk,,"char_update,Spook,0"
-bar1Milk,Spook,...I think I'll pass.
-bar1Milk,,"char_update,Barry,4"
-bar1Milk,Barry,No fun!
-bar1Milk,Barry,"Tell you what, If you can help me restock the Halloween candy, I can make you my special drink."
-bar1Milk,Barry,What'dya say?
-bar1Milk,,"choice,barErrands,barCandy"
-bar1Milk,,"scene_set,bar1Errands"
-bar1Milk,,"scene_set,bar1Candy"
+p1Bar1Leave,,"flag_set,candy_quest_fail,true"
+p1Bar1Leave,,map
 ,,
 ,,
-bar1Errands,,"char_update,Barry,1"
-bar1Errands,Barry,"Well, you order a drink, you pay, friend!"
-bar1Errands,Barry,Do you have something else to pay with?
-bar1Errands,,"char_update,Spook,0"
-bar1Errands,Spook,...No.
-bar1Errands,Barry,Screwdriver brings all kinds of things.
-bar1Errands,Barry,"Food, mostly."
-bar1Errands,Barry,"But also music, books, small furniture, even human money..."
-bar1Errands,,"char_update,Spook,1"
-bar1Errands,Spook,That's THIEVERY!!!!!
-bar1Errands,Barry,Hmm. Yes. 
-bar1Errands,,"char_update,Barry,4"
-bar1Errands,Barry,"Yes, it is."
-bar1Errands,,"char_update,Spook,0"
-bar1Errands,Barry,"So, you are in?"
-bar1Errands,,"choice,barNuh,barOkay"
-bar1Errands,,"scene_set,bar1Nuh"
-bar1Errands,,"scene_set,bar1Okay"
+p1Bar1Strong,,"char_update,Barry,0"
+p1Bar1Strong,Barry,Woah there friend!
+p1Bar1Strong,Barry,"Eager for a night out, are you not?"
+p1Bar1Strong,,"char_update,Barry,4"
+p1Bar1Strong,Barry,Tell you what?
+p1Bar1Strong,Barry,"In this community, we earn what we get!"
+p1Bar1Strong,Barry,"How about you help me restock some Halloween candy, and then we toast together?"
+p1Bar1Strong,,"choice,p1Bar1Errands,p1Bar1Candy"
+p1Bar1Strong,,"scene_set,p1Bar1Errands"
+p1Bar1Strong,,"scene_set,p1Bar1Candy"
 ,,
-bar1Candy,,"char_update,Barry,1"
-bar1Candy,Barry,"Trash, streets, more trash..."
-bar1Candy,Barry,...A fridge.
-bar1Candy,Barry,Know what? Try catching up with Screwdriver. He can show you a trick or two!
-bar1Candy,Spook,Hmm...
-bar1Candy,,"map_scene,home,p1HomeQuest"
-bar1Candy,,"flag_set,candy_quest_start,true"
-bar1Candy,,map
-,,
-,,
-bar1Nuh,,"char_update,Barry,1"
-bar1Nuh,Barry,"Your call, kid!"
-bar1Nuh,Barry,"More for ther rest of us, heh."
-bar1Nuh,,"flag_set,candy_quest_fail,true"
-bar1Nuh,,map
-,,
-bar1Okay,,"char_update,Barry,0"
-bar1Okay,Barry,A mouse of action!
-bar1Okay,Spook,But where do I get the candy from?
-bar1Okay,Barry,"All kinds of places, friend! "
-bar1Okay,Barry,"Your human, another human, the candy shop..."
-bar1Okay,Barry,Know what? Go find Screwdriver. He is a professional looter afterall.
-bar1Okay,Spook,"Yeah, okay..."
-bar1Okay,,"char_update,Barry,1"
-bar1Okay,Barry,Happy trick or treatin'!
-bar1Okay,,"map_scene,home,p1HomeQuest"
-bar1Okay,,"flag_set,candy_quest_start,true"
-bar1Okay,,map
+p1Bar1Milk,,"char_update,Barry,0"
+p1Bar1Milk,Barry,Whoa there buddy!
+p1Bar1Milk,Barry,"This is a bar, not the grocery store!"
+p1Bar1Milk,,"char_update,Spook,6"
+p1Bar1Milk,Spook,What do you have then?
+p1Bar1Milk,,"char_update,Barry,1"
+p1Bar1Milk,Barry,"Well... Cider. Cheese, candy, leftover food, oat, rotten fruit...."
+p1Bar1Milk,,"char_update,Spook,7"
+p1Bar1Milk,Spook,...
+p1Bar1Milk,,"char_update,Spook,0"
+p1Bar1Milk,Spook,...I think I'll pass.
+p1Bar1Milk,,"char_update,Barry,4"
+p1Bar1Milk,Barry,No fun!
+p1Bar1Milk,Barry,"Tell you what, If you can help me restock the Halloween candy, I can make you my special drink."
+p1Bar1Milk,Barry,What'dya say?
+p1Bar1Milk,,"choice,p1Bar1Errands,p1Bar1Candy"
+p1Bar1Milk,,"scene_set,p1Bar1Errands"
+p1Bar1Milk,,"scene_set,p1Bar1Candy"
 ,,
 ,,
-bar2,,"map_scene,bar,bar3"
-bar2,,"scene_bg_clear,sBackgroundSewerBar"
-bar2,,"music,bgmSewerBar"
-bar2,,"main_char_in,0"
-bar2,,"char_in,Barry,sBarry,0"
-bar2,Barry,"Hey, kid. Didn't you want to go out and explore?"
-bar2,Spook,I know. Just wanted to hang out in here a bit more!
-bar2,Barry,"Sure, be my guest."
-bar2,,"char_update,Barry,1"
-bar2,Spook,...
-bar2,,"delay,0.2"
-bar2,Barry,...
-bar2,,"delay,0.2"
-bar2,Spook,...
-bar2,,"delay,0.2"
-bar2,Barry,...
-bar2,,"delay,0.2"
-bar2,Spook,Soooo... why do they call it Foggy Hallow?
-bar2,Barry,Cause there's fog.
-bar2,,"char_update,Spook,5"
-bar2,Spook,Ooh.
-bar2,Barry,...
-bar2,Spook,"Well, I better be going then!"
-bar2,,"char_update,Barry,10"
-bar2,Barry,"Have a nice night, kid!"
-bar2,,map
+p1Bar1Errands,,"char_update,Barry,1"
+p1Bar1Errands,Barry,"Well, you order a drink, you pay, friend!"
+p1Bar1Errands,Barry,Do you have something else to pay with?
+p1Bar1Errands,,"char_update,Spook,0"
+p1Bar1Errands,Spook,...No.
+p1Bar1Errands,Barry,Screwdriver brings all kinds of things.
+p1Bar1Errands,Barry,"Food, mostly."
+p1Bar1Errands,Barry,"But also music, books, small furniture, even human money..."
+p1Bar1Errands,,"char_update,Spook,1"
+p1Bar1Errands,Spook,That's THIEVERY!!!!!
+p1Bar1Errands,Barry,Hmm. Yes. 
+p1Bar1Errands,,"char_update,Barry,4"
+p1Bar1Errands,Barry,"Yes, it is."
+p1Bar1Errands,,"char_update,Spook,0"
+p1Bar1Errands,Barry,"So, you are in?"
+p1Bar1Errands,,"choice,p1Bar1Nuh,p1Bar1Okay"
+p1Bar1Errands,,"scene_set,p1Bar1Nuh"
+p1Bar1Errands,,"scene_set,p1Bar1Okay"
 ,,
-bar3,,"scene_bg_clear,sBackgroundSewerBar"
-bar3,,"music,bgmSewerBar"
-bar3,,"main_char_in,0"
-bar3,,"char_in,Barry,sBarry,0"
-bar3,Barry,"Hey, kid. Forgot something?"
-bar3,Spook,"No, I just like the place!"
-bar3,,"char_update,Barry,10"
-bar3,Barry,Appreciate it. But you shouldn't waste time on an old timer like me.
-bar3,Barry,"Go out and make some friends, kid!"
-bar3,,"char_update,Spook,5"
-bar3,Spook,Aw...
-bar3,Barry,"I insist. Cmon, go out there!"
-bar3,,map
+p1Bar1Candy,,"char_update,Barry,1"
+p1Bar1Candy,Barry,"Trash, streets, more trash..."
+p1Bar1Candy,Barry,...A fridge.
+p1Bar1Candy,Barry,Know what? Try catching up with Screwdriver. He can show you a trick or two!
+p1Bar1Candy,Spook,Hmm...
+p1Bar1Candy,,"map_scene,home,p1HomeQuest"
+p1Bar1Candy,,"flag_set,candy_quest_start,true"
+p1Bar1Candy,,map
+,,
+,,
+p1Bar1Nuh,,"char_update,Barry,1"
+p1Bar1Nuh,Barry,"Your call, kid!"
+p1Bar1Nuh,Barry,"More for ther rest of us, heh."
+p1Bar1Nuh,,"flag_set,candy_quest_fail,true"
+p1Bar1Nuh,,map
+,,
+p1Bar1Okay,,"char_update,Barry,0"
+p1Bar1Okay,Barry,A mouse of action!
+p1Bar1Okay,Spook,But where do I get the candy from?
+p1Bar1Okay,Barry,"All kinds of places, friend! "
+p1Bar1Okay,Barry,"Your human, another human, the candy shop..."
+p1Bar1Okay,Barry,Know what? Go find Screwdriver. He is a professional looter afterall.
+p1Bar1Okay,Spook,"Yeah, okay..."
+p1Bar1Okay,,"char_update,Barry,1"
+p1Bar1Okay,Barry,Happy trick or treatin'!
+p1Bar1Okay,,"map_scene,home,p1HomeQuest"
+p1Bar1Okay,,"flag_set,candy_quest_start,true"
+p1Bar1Okay,,map
+,,
+,,
+p1Bar2,,"map_scene,bar,p1Bar3"
+p1Bar2,,"scene_bg_clear,sBackgroundSewerBar"
+p1Bar2,,"music,bgmSewerBar"
+p1Bar2,,"main_char_in,0"
+p1Bar2,,"char_in,Barry,sBarry,0"
+p1Bar2,Barry,"Hey, kid. Didn't you want to go out and explore?"
+p1Bar2,Spook,I know. Just wanted to hang out in here a bit more!
+p1Bar2,Barry,"Sure, be my guest."
+p1Bar2,,"char_update,Barry,1"
+p1Bar2,Spook,...
+p1Bar2,,"delay,0.2"
+p1Bar2,Barry,...
+p1Bar2,,"delay,0.2"
+p1Bar2,Spook,...
+p1Bar2,,"delay,0.2"
+p1Bar2,Barry,...
+p1Bar2,,"delay,0.2"
+p1Bar2,Spook,Soooo... why do they call it Foggy Hallow?
+p1Bar2,Barry,Cause there's fog.
+p1Bar2,,"char_update,Spook,5"
+p1Bar2,Spook,Ooh.
+p1Bar2,Barry,...
+p1Bar2,Spook,"Well, I better be going then!"
+p1Bar2,,"char_update,Barry,10"
+p1Bar2,Barry,"Have a nice night, kid!"
+p1Bar2,,map
+,,
+p1Bar3,,"scene_bg_clear,sBackgroundSewerBar"
+p1Bar3,,"music,bgmSewerBar"
+p1Bar3,,"main_char_in,0"
+p1Bar3,,"char_in,Barry,sBarry,0"
+p1Bar3,Barry,"Hey, kid. Forgot something?"
+p1Bar3,Spook,"No, I just like the place!"
+p1Bar3,,"char_update,Barry,10"
+p1Bar3,Barry,Appreciate it. But you shouldn't waste time on an old timer like me.
+p1Bar3,Barry,"Go out and make some friends, kid!"
+p1Bar3,,"char_update,Spook,5"
+p1Bar3,Spook,Aw...
+p1Bar3,Barry,"I insist. Cmon, go out there!"
+p1Bar3,,map
+,,
 ,,
 ,,
 street1,,"map_scene,street,street2Other"
