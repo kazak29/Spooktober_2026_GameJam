@@ -73,8 +73,6 @@
     {"link":"io.gamemaker.sdfshaders-1.0.0","name":"io.gamemaker.sdfshaders-1.0.0","path":"io.gamemaker.sdfshaders-1.0.0.yyp",},
   ],
   "IncludedFiles":[
-    {"$GMIncludedFile":"","%Name":".~lock.lines.csv#","CopyToMask":-1,"filePath":"datafiles","name":".~lock.lines.csv#","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-    {"$GMIncludedFile":"","%Name":".~lock.ui.csv#","CopyToMask":-1,"filePath":"datafiles","name":".~lock.ui.csv#","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"lines.csv","CopyToMask":-1,"filePath":"datafiles","name":"lines.csv","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"scribble_license.txt","CopyToMask":-1,"filePath":"datafiles","name":"scribble_license.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"shader_license.txt","CopyToMask":-1,"filePath":"datafiles","name":"shader_license.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -90,6 +88,7 @@
     {"id":{"name":"fConsol16","path":"fonts/fConsol16/fConsol16.yy",},},
     {"id":{"name":"fConsol24","path":"fonts/fConsol24/fConsol24.yy",},},
     {"id":{"name":"fDialogueTextBody","path":"fonts/fDialogueTextBody/fDialogueTextBody.yy",},},
+    {"id":{"name":"fDialogueTextBodyBold","path":"fonts/fDialogueTextBodyBold/fDialogueTextBodyBold.yy",},},
     {"id":{"name":"fDialogueTextTitle","path":"fonts/fDialogueTextTitle/fDialogueTextTitle.yy",},},
     {"id":{"name":"fTitle","path":"fonts/fTitle/fTitle.yy",},},
     {"id":{"name":"scribble_fallback_font","path":"fonts/scribble_fallback_font/scribble_fallback_font.yy",},},

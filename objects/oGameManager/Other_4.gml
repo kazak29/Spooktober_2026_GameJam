@@ -25,9 +25,9 @@ var _buttonSettings = function() {
 	);
 }
 
-switch room {
-	case rmInit:		{	global.dataMenu = DataMenuSetup();	room_goto(rmSplashScreen);							}	break;
-	case rmStage:		{	_buttonSettings();																		}	break;
-	case rmMap:			{	_buttonSettings();																		}	break;
-	case rmTitleScreen:	{	if (os_type == os_gxgames) MenuCreate("titleMain"); else MenuCreate("titleMainWin");	}	break;
+switch room {													//room_goto(rmTitleScreen);
+	case rmInit:		{	global.dataMenu = DataMenuSetup();		MenuGameStart([rmStage, sqFadeOut, sqFadeIn]);			}	break;
+	case rmStage:		{	_buttonSettings();																				}	break;
+	case rmMap:			{	_buttonSettings();																				}	break;
+	case rmTitleScreen:	{	if (os_type == os_gxgames) MenuCreate("titleMain"); else MenuCreate("titleMainWin");			}	break;
 }

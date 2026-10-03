@@ -1,3 +1,9 @@
+#region misc
+	
+	scribble_font_set_style_family("fDialogueTextBody","fDialogueTextBodyBold",undefined,undefined);
+	
+#endregion
+
 #region sound
 	
 	// SOUND, VOLUME, LOOP
