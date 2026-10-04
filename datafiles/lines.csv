@@ -771,9 +771,19 @@ p1Street1Questions,Spook,So...
 p1Street1Questions,,"char_update,Pogo,0"
 p1Street1Questions,Pogo,Hm?
 p1Street1Questions,,"choice,p1Street1QuestionYourself,p1Street1QuestionTown,p1Street1QuestionBar"
-p1Street1Questions,,"scene_set,p1Street1QuestionYourself"
-p1Street1Questions,,"scene_set,p1Street1QuestionTown"
-p1Street1Questions,,"scene_set,p1Street1QuestionBar"
+p1Street1Questions,,"scene_set,p1Street1QuestionYourselfCheck"
+p1Street1Questions,,"scene_set,p1Street1QuestionTownCheck"
+p1Street1Questions,,"scene_set,p1Street1QuestionBarCheck"
+,,
+,,
+p1Street1QuestionYourselfCheck,,"condition_flag,streetQuestionYourself"
+p1Street1QuestionYourselfCheck,,"scene_set,p1Street1QuestionYourselfAsked"
+p1Street1QuestionYourselfCheck,,"scene_set,p1Street1QuestionYourself"
+,,
+p1Street1QuestionYourselfAsked,Pogo,"Oh my, aren't you too interested in me?"
+p1Street1QuestionYourselfAsked,Spook,I just wanna hear your story again!
+p1Street1QuestionYourselfAsked,Pogo,"Oh, well."
+p1Street1QuestionYourselfAsked,,"scene_set,p1Street1QuestionYourself"
 ,,
 p1Street1QuestionYourself,,"flag_set,streetQuestionYourself,true"
 p1Street1QuestionYourself,Pogo,Hm hm... Let's see....
@@ -826,7 +836,14 @@ p1Street1Work,Pogo,You will do [wave]juuuuust[/wave] fine among us!
 p1Street1Work,,map
 ,,
 ,,
-p1Street1QuestionTown,,"flag_set,streetQuestionTown,true"
+p1Street1QuestionTownCheck,,"condition_flag,streetQuestionTown"
+p1Street1QuestionTownCheck,,"scene_set,p1Street1QuestionTownAsked"
+p1Street1QuestionTownCheck,,"scene_set,p1Street1QuestionTown"
+,,
+p1Street1QuestionTownAsked,Pogo,"Hmm, didn't you get [wave]really[/wave] scared last time you asked this?"
+p1Street1QuestionTownAsked,Spook,I'm just... a little curious again!
+p1Street1QuestionTownAsked,,"scene_set,p1Street1QuestionTown"
+,,
 p1Street1QuestionTown,,"char_update,Pogo,8"
 p1Street1QuestionTown,Pogo,Ohoho!
 p1Street1QuestionTown,Pogo,You wanna know the tales of the [shake]ancient fog?[/shake]
@@ -845,13 +862,32 @@ p1Street1QuestionTown,,"char_update,Pogo,8"
 p1Street1QuestionTown,Pogo,[shake]Feeding on the fog...[/shake]
 p1Street1QuestionTown,,"char_update,Spook,8"
 p1Street1QuestionTown,Spook,...
-p1Street1QuestionTown,Spook,Are you messing with me?
-p1Street1QuestionTown,Pogo,Hehe.
-p1Street1QuestionTown,Pogo,Maybe. Maybe not.
-p1Street1QuestionTown,,map
+p1Street1QuestionTown,,"condition_flag,streetQuestionTown"
+p1Street1QuestionTown,,"scene_set,p1Street1QuestionTownAfraid"
+p1Street1QuestionTown,,"scene_set,p1Street1QuestionTownMessing"
+,,
+p1Street1QuestionTownAfraid,,"flag_set,streetQuestionTown,true"
+p1Street1QuestionTownAfraid,Pogo,"Hehe, your face is so funny when you're afraid, little mouse!"
+p1Street1QuestionTownAfraid,Spook,I'm not afraid! Just a little... you know!
+p1Street1QuestionTownAfraid,Pogo,"Oh, don't worry. I know."
+p1Street1QuestionTownAfraid,,map
+,,
+p1Street1QuestionTownMessing,,"flag_set,streetQuestionTown,true"
+p1Street1QuestionTownMessing,Spook,Are you messing with me?
+p1Street1QuestionTownMessing,Pogo,Hehe.
+p1Street1QuestionTownMessing,Pogo,Maybe. Maybe not.
+p1Street1QuestionTownMessing,,map
 ,,
 ,,
-p1Street1QuestionBar,,"flag_set,streetQuestionBar,true"
+p1Street1QuestionBarCheck,,"condition_flag,streetQuestionBar"
+p1Street1QuestionBarCheck,,"scene_set,p1Street1QuestionBarAsked"
+p1Street1QuestionBarCheck,,"scene_set,p1Street1QuestionBar"
+,,
+p1Street1QuestionBarAsked,Pogo,You really wanna hear the story of that old place again?
+p1Street1QuestionBarAsked,Spook,"Yeah, I like that one!"
+p1Street1QuestionBarAsked,Pogo,Very well. Listen closely!
+p1Street1QuestionBarAsked,,"scene_set,p1Street1QuestionBar"
+,,
 p1Street1QuestionBar,,"char_update,Pogo,1"
 p1Street1QuestionBar,Pogo,"Oh, the good old Barry's!"
 p1Street1QuestionBar,,"char_update,Pogo,0"
@@ -868,21 +904,41 @@ p1Street1QuestionBar,Pogo,"And well, soon we had drinks, music, new friends..."
 p1Street1QuestionBar,,"char_update,Pogo,0"
 p1Street1QuestionBar,Pogo,Now it's pretty much a club for anyone who is willing to contribute to our little community!
 p1Street1QuestionBar,,"char_update,Spook,6"
-p1Street1QuestionBar,Spook,"What do you mean ""unloved animals""?"
-p1Street1QuestionBar,Pogo,"Oh, you know. Humans are evolved to fear some of us. "
-p1Street1QuestionBar,Pogo,"Of course, we are evolved to fear each other as well."
-p1Street1QuestionBar,Pogo,But while we were able to put that to the side and build a community...
-p1Street1QuestionBar,Pogo,Humans are most likely always going to be judgemental of creatures like us!
-p1Street1QuestionBar,,"char_update,Spook,5"
-p1Street1QuestionBar,Spook,Shay isn't judgemental!
-p1Street1QuestionBar,,"char_update,Pogo,7"
-p1Street1QuestionBar,Pogo,Really? Would she let me into her house?
-p1Street1QuestionBar,Spook,"Yeah! Shay loves bats! She never kills bugs, too!"
-p1Street1QuestionBar,,"char_update,Pogo,1"
-p1Street1QuestionBar,Pogo,"Oh my. You got a special human, don't you? What a lucky mouse!"
-p1Street1QuestionBar,,"char_update,Spook,9"
-p1Street1QuestionBar,Spook,[wave]Mhm![/wave] Shay's the best!
-p1Street1QuestionBar,,map
+p1Street1QuestionBar,,"condition_flag,streetQuestionBar"
+p1Street1QuestionBar,,"scene_set,p1Street1QuestionBarPets"
+p1Street1QuestionBar,,"scene_set,p1Street1QuestionBarUnloved"
+,,
+p1Street1QuestionBarPets,,"flag_set,streetQuestionBar,true"
+p1Street1QuestionBarPets,Spook,"Wait, but is it really only for strays?"
+p1Street1QuestionBarPets,,"char_update,Spook,5"
+p1Street1QuestionBarPets,Spook,Screwdriver told me some of you go back to cages in the morning!
+p1Street1QuestionBarPets,Pogo,"Oh, sweetie. We had other pets who joined us at night, and very often."
+p1Street1QuestionBarPets,Spook,Did they stop? What happened?
+p1Street1QuestionBarPets,,"char_update,Pogo,5"
+p1Street1QuestionBarPets,Pogo,It's... a long story.
+p1Street1QuestionBarPets,,"char_update,Pogo,0"
+p1Street1QuestionBarPets,Pogo,"And it's not for me to tell, either way."
+p1Street1QuestionBarPets,,"char_update,Spook,0"
+p1Street1QuestionBarPets,Spook,Aw...
+p1Street1QuestionBarPets,Pogo,"Don't worry, just keep hanging around the bar. You'll find out, eventually."
+p1Street1QuestionBarPets,,map
+,,
+p1Street1QuestionBarUnloved,,"flag_set,streetQuestionBar,true"
+p1Street1QuestionBarUnloved,Spook,"What do you mean ""unloved animals""?"
+p1Street1QuestionBarUnloved,Pogo,"Oh, you know. Humans are evolved to fear some of us. "
+p1Street1QuestionBarUnloved,Pogo,"Of course, we are evolved to fear each other as well."
+p1Street1QuestionBarUnloved,Pogo,But while we were able to put that to the side and build a community...
+p1Street1QuestionBarUnloved,Pogo,Humans are most likely always going to be judgemental of creatures like us!
+p1Street1QuestionBarUnloved,,"char_update,Spook,5"
+p1Street1QuestionBarUnloved,Spook,Shay isn't judgemental!
+p1Street1QuestionBarUnloved,,"char_update,Pogo,7"
+p1Street1QuestionBarUnloved,Pogo,Really? Would she let me into her house?
+p1Street1QuestionBarUnloved,Spook,"Yeah! Shay loves bats! She never kills bugs, too!"
+p1Street1QuestionBarUnloved,,"char_update,Pogo,6"
+p1Street1QuestionBarUnloved,Pogo,"Oh my. You got a special human, don't you? What a lucky mouse!"
+p1Street1QuestionBarUnloved,,"char_update,Spook,9"
+p1Street1QuestionBarUnloved,Spook,[wave]Mhm![/wave] Shay's the best!
+p1Street1QuestionBarUnloved,,map
 ,,
 ,,
 p1Street1LostAll,,"char_update,Pogo,1"

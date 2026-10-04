@@ -32,11 +32,25 @@ for (var i = 0; i < array_length(locs); i++) {
 
 
 //reminder to finish quest
-if _visitedAll &&
-	!(global.flags.candy_quest_complete || global.flags.candy_quest_fail) &&
-	!global.midTransition {
-		scribble(global.uiData.mapReminder)
+if _visitedAll && !global.midTransition {
+	var _reminder = noone;
+	switch global.chapter {
+		case 0: {
+			if !(global.flags.candy_quest_complete ||
+				 global.flags.candy_quest_fail) 
+			{ _reminder = global.uiData.mapReminder1; }
+		} break;
+		case 1: {
+			if !(global.flags.princess_quest_complete ||
+				 global.flags.princess_quest_fail) 
+			{ _reminder = global.uiData.mapReminder2; }
+		} break;
+	}
+	
+	if is_string(_reminder) {
+		scribble(_reminder)
 			.starting_format(FONT_DIALOGUE_TEXT_TITLE, c_yellow)
 			.align(fa_right, fa_top)
 			.draw(VIEWPORT_WIDTH,0);
+	}
 }
