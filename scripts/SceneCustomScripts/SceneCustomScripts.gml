@@ -1,5 +1,5 @@
-function SceneCustomScriptTest(){
-	show_debug_message("it works!");
+function ChapterProgress(){
+	global.chapter++;
 }
 
 function Part1ClearCheck(){
@@ -12,4 +12,25 @@ function Part1ClearCheck(){
 		}
 	}
 	return true;
+}
+
+function MapDataUpdatePart2(){
+	var _locs = global.dataMapLocations;
+	var _names = struct_get_names(_locs);
+	
+	for (var i = 0; i < array_length(_names); i++) {
+		with _locs[$ _names[i]] {
+			visited = false;
+			locked = false;
+		}
+	}
+	
+	with _locs {
+		home.scene		= "p2Home1";
+		bar.scene		= "testScene1";
+		street.scene	= "testScene1";
+		yard.scene		= "testScene1";
+		front.scene		= "testScene1";
+		lamp.scene		= "testScene1";
+	}
 }

@@ -1420,9 +1420,11 @@ p1End,,"trans_scene,p2Intro"
 ,,
 ,,
 ,,
+p2Intro,,"custom_script_cont,ChapterProgress"
+p2Intro,,"custom_script_cont,MapDataUpdatePart2"
 p2Intro,,"scene_bg_clear,sBackgroundBlack"
 p2Intro,,"delay,2"
-p2Intro,Shay,"Ok, almost ready, almost ready..."
+p2Intro,Shay,"Okay, almost ready, almost ready..."
 p2Intro,,"music,bgmShayHome"
 p2Intro,,"trans_change,false,sBackgroundShayRoomDay"
 p2Intro,,"main_char_in,7"
@@ -1472,7 +1474,6 @@ p2IntroAh,Spook,Alright... This is my chance to go out for a little while!
 p2IntroAh,,main_char_out
 p2IntroAh,,"main_char_in,0"
 p2IntroAh,Spook,Let's see...
-p2IntroAh,,"custom_script_cont,MapDataUpdatePart2"
 p2IntroAh,,map
 ,,
 ,,
@@ -1483,134 +1484,147 @@ p2Home1,Spook,Shay is still away...
 p2Home1,Spook,I can explore some more!
 p2Home1,Spook,"Or... I can abandon those guys and stay with Shay, just like I wanted from the start!"
 p2Home1,Spook,They probably won't miss me anyway...
-p2Home1,,"char_update,Spook,3"
-p2Home1,Spook,...is what I would've said if this game was finished!
-p2Home1,,"char_update,Spook,0"
-p2Home1,Spook,"Unfortunately, we ran out of time to make a second chapter."
-p2Home1,,"condition_flag,candy_quest_complete"
-p2Home1,,"scene_set,p2Home1Path1"
-p2Home1,,"scene_set,p2Home1Path2"
-,,
-p2Home1Path1,,"char_update,Spook,6"
-p2Home1Path1,Spook,Let's see if my help with stealing that candy amounted to anything.
-p2Home1Path1,,"char_update,Spook,0"
-p2Home1Path1,Spook,To the party!
-p2Home1Path1,,"music,noone"
-p2Home1Path1,,"trans_scene,endingPartyOkay"
-,,
-p2Home1Path2,,"char_update,Spook,6"
-p2Home1Path2,Spook,"I hope those guys still managed to prepare a good party, despite me not helping them at all..."
-p2Home1Path2,,"char_update,Spook,0"
-p2Home1Path2,Spook,I guess it's time to find out!
-p2Home1Path2,,"music,noone"
-p2Home1Path2,,"trans_scene,endingPartyBad"
-,,
-,,
-endingPartyBad,,"scene_bg_clear,sBackgroundBlack"
-endingPartyBad,Empty,You climb down the Sewer.
-endingPartyBad,,"trans_change,false,sBackgroundSewerBar"
-endingPartyBad,Empty,"Few other animals are inside. There is low, darkwave music coming out of an old little speaker..."
-endingPartyBad,,"music,bgmBarPunk"
-endingPartyBad,,"main_char_in,10"
-endingPartyBad,,"char_in,Screwdriver,sScrewdriver,0"
-endingPartyBad,Screwdriver,Sup kid?
-endingPartyBad,Spook,Oh! You aren't dressed...?
-endingPartyBad,,"char_update,Screwdriver,2"
-endingPartyBad,Screwdriver,Didn't get the time! Was fixing up the place half of the time.
-endingPartyBad,Spook,Oooh! Where are the others?
-endingPartyBad,,"char_update,Screwdriver,0"
-endingPartyBad,Screwdriver,"Well, Pogo thought the party was too boring. She went to read somewhere."
-endingPartyBad,,"char_update,Screwdriver,7"
-endingPartyBad,Screwdriver,"Can't blame her, dude. This is like a college dorm party."
-endingPartyBad,Spook,A... what?
-endingPartyBad,,"char_update,Screwdriver,0"
-endingPartyBad,Screwdriver,"Well. They usually suck, is all you gotta know."
-endingPartyBad,Spook,Oooh...
-endingPartyBad,,"char_update,Screwdriver,2"
-endingPartyBad,Screwdriver,"Yeah, well. Thanks for comin'."
-endingPartyBad,Screwdriver,We'll do better next year! 
-endingPartyBad,,"char_update,Screwdriver,1"
-endingPartyBad,Screwdriver,"Or, you know, you could always go back in time and try to help or somethin'."
-endingPartyBad,Spook,I could [shake]WHAT?[/shake]
-endingPartyBad,Screwdriver,He-he.
-endingPartyBad,,"char_update,Screwdriver,0"
-endingPartyBad,Screwdriver,Just kiddin'.
-endingPartyBad,,"char_update,Screwdriver,2"
-endingPartyBad,Screwdriver,"Happy Halloween, kid. Try to enjoy!"
-endingPartyBad,,"char_out,Screwdriver"
-endingPartyBad,,main_char_out
-endingPartyBad,Empty,"You eat some candy and chat with a few drunken critters, and go home early..."
-endingPartyBad,,"trans_change,true,sBackgroundShayRoomNight"
-endingPartyBad,,"music,bgmSpookTheme"
-endingPartyBad,Empty,At least Shay comes in not so long after!
-endingPartyBad,,"main_char_in,10"
-endingPartyBad,,"char_in,Shay,sShay,3"
-endingPartyBad,Shay,Hi Spooky-boo!
-endingPartyBad,,"char_update,Shay,6"
-endingPartyBad,Shay,"My, that was [shake]EXHAUSTING![/shake]"
-endingPartyBad,,"char_update,Shay,7"
-endingPartyBad,Shay,I am never going outside again!!!! [shake]Ugh!!![/shake]
-endingPartyBad,,"char_update,Shay,5"
-endingPartyBad,Shay,"Well, nevermind."
-endingPartyBad,,"music,bgmTitleTheme"
-endingPartyBad,,"trans_change,false,sBackgroundBlack"
-endingPartyBad,Shay,It's time to watch some [wave]zombie rats![/wave]
-endingPartyBad,Spook,Squeak!
-endingPartyBad,,"trans_change,true"
-endingPartyBad,,"trans_room,rmCredits"
+p2Home1,,"choice,p2Home1Continue,p2Home1Stay"
+p2Home1,,map
+p2Home1,,"trans_scene,endStay"
 ,,
 ,,
 ,,
 ,,
 ,,
-endingPartyOkay,,"scene_bg_clear,sBackgroundBlack"
-endingPartyOkay,Empty,The nighttime comes....
-endingPartyOkay,,"music,bgmTitleTheme"
-endingPartyOkay,,"trans_change,true,sBackgroundSewerBarParty"
-endingPartyOkay,,"char_in,Screwdriver,sScrewdriver,12"
-endingPartyOkay,Screwdriver,Hiya kid!
-endingPartyOkay,,"main_char_in,10"
-endingPartyOkay,Spook,[shake]PARTY!!!![/shake]
-endingPartyOkay,,"char_in,Pogo,sPogo,3"
-endingPartyOkay,Pogo,[shake]PARTY!!!![/shake]
-endingPartyOkay,,"char_update,Pogo,2"
-endingPartyOkay,,"char_in,Barry,sBarry,5"
-endingPartyOkay,Barry,Cheers.
-endingPartyOkay,,"char_out,Screwdriver"
-endingPartyOkay,,"char_in,Möth,sMoth,2"
-endingPartyOkay,Möth,LAMP.
-endingPartyOkay,,"char_out,Möth"
-endingPartyOkay,,"char_in,Screwdriver,sScrewdriver,11"
-endingPartyOkay,Screwdriver,"Yeah, that about covers it."
-endingPartyOkay,,"char_update,Barry,8"
-endingPartyOkay,Barry,Time to drink some BSCWCCEC!
-endingPartyOkay,,"char_update,Pogo,1"
-endingPartyOkay,Pogo,"[wave]Yay, BSCWCCEC![/wave]"
-endingPartyOkay,Spook,"Where is your costume, Pogo?"
-endingPartyOkay,,"char_update,Pogo,8"
-endingPartyOkay,Pogo,Oh. Sweetie. I am a Halloween decoration [wave]aaaallll[/wave] year long!
-endingPartyOkay,Spook,Hm...
-endingPartyOkay,,"char_update,Screwdriver,12"
-endingPartyOkay,Screwdriver,You could be like. Double-bat.
-endingPartyOkay,,"char_update,Pogo,4"
-endingPartyOkay,Pogo,How so?
-endingPartyOkay,Screwdriver,Bat suit. On your bat skin.
-endingPartyOkay,,"char_update,Barry,9"
-endingPartyOkay,Barry,[wave]Woooow.[/wave]
-endingPartyOkay,,"char_update,Pogo,6"
-endingPartyOkay,Pogo,I'll do Frankenstein next year!
-endingPartyOkay,,"char_out,Screwdriver"
-endingPartyOkay,,"char_in,Möth,sMoth,2"
-endingPartyOkay,Möth,Like my costume?
-endingPartyOkay,Spook,Um! Yeah! Lamp!
-endingPartyOkay,Möth,LAMP.
-endingPartyOkay,,"char_update,Barry,6"
-endingPartyOkay,Barry,"Alright. Cheers, everyone!"
-endingPartyOkay,,"char_update,Pogo,1"
-endingPartyOkay,Pogo,[wave]Cheers![/wave]
-endingPartyOkay,,"char_out,Möth"
-endingPartyOkay,,"char_in,Screwdriver,sScrewdriver,12"
-endingPartyOkay,Screwdriver,Yeah!!!
-endingPartyOkay,Spook,[wave]Wohoo![/wave]
-endingPartyOkay,,"delay,1"
-endingPartyOkay,,"trans_room,rmCredits"
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+endStay,,"scene_bg_clear,sBackgroundShayRoomNight"
+endStay,,"music,bgmSpookTheme"
+endStay,Empty,You decide to sleep until Shay is home.
+endStay,Empty,Horrors outside can wait!
+endStay,Empty,You have horrors to witness at the comfort of your home!
+endStay,,"main_char_in,10"
+endStay,,"char_in,Shay,sShay,3"
+endStay,Shay,Hi Spooky-boo!
+endStay,,"char_update,Shay,6"
+endStay,Shay,"My, that was [shake]EXHAUSTING![/shake]"
+endStay,,"char_update,Shay,7"
+endStay,Shay,I am never going outside again!!!! [shake]Ugh!!![/shake]
+endStay,,"char_update,Shay,5"
+endStay,Shay,"Well, nevermind."
+endStay,,"music,bgmTitleTheme"
+endStay,,"trans_change,false,sBackgroundBlack"
+endStay,Shay,It's time to watch some [wave]zombie rats![/wave]
+endStay,Spook,Squeak!
+endStay,,"trans_change,true"
+endStay,,"trans_room,rmCredits"
+,,
+endPartyBad,,"scene_bg_clear,sBackgroundBlack"
+endPartyBad,Empty,You climb down the Sewer.
+endPartyBad,,"trans_change,false,sBackgroundSewerBar"
+endPartyBad,Empty,"Few other animals are inside. There is low, darkwave music coming out of an old little speaker..."
+endPartyBad,,"music,bgmBarPunk"
+endPartyBad,,"main_char_in,10"
+endPartyBad,,"char_in,Screwdriver,sScrewdriver,0"
+endPartyBad,Screwdriver,Sup kid?
+endPartyBad,Spook,Oh! You aren't dressed...?
+endPartyBad,,"char_update,Screwdriver,2"
+endPartyBad,Screwdriver,Didn't get the time! Was fixing up the place half of the time.
+endPartyBad,Spook,Oooh! Where are the others?
+endPartyBad,,"char_update,Screwdriver,0"
+endPartyBad,Screwdriver,"Well, Pogo thought the party was too boring. She went to read somewhere."
+endPartyBad,,"char_update,Screwdriver,7"
+endPartyBad,Screwdriver,"Can't blame her, dude. This is like a college dorm party."
+endPartyBad,Spook,A... what?
+endPartyBad,,"char_update,Screwdriver,0"
+endPartyBad,Screwdriver,"Well. They usually suck, is all you gotta know."
+endPartyBad,Spook,Oooh...
+endPartyBad,,"char_update,Screwdriver,2"
+endPartyBad,Screwdriver,"Yeah, well. Thanks for comin'."
+endPartyBad,Screwdriver,We'll do better next year! 
+endPartyBad,,"char_update,Screwdriver,1"
+endPartyBad,Screwdriver,"Or, you know, you could always go back in time and try to help or somethin'."
+endPartyBad,Spook,I could [shake]WHAT?[/shake]
+endPartyBad,Screwdriver,He-he.
+endPartyBad,,"char_update,Screwdriver,0"
+endPartyBad,Screwdriver,Just kiddin'.
+endPartyBad,,"char_update,Screwdriver,2"
+endPartyBad,Screwdriver,"Happy Halloween, kid. Try to enjoy!"
+endPartyBad,,"char_out,Screwdriver"
+endPartyBad,,main_char_out
+endPartyBad,Empty,"You eat some candy and chat with a few drunken critters, and go home early..."
+endPartyBad,,"trans_change,true,sBackgroundShayRoomNight"
+endPartyBad,,"music,bgmSpookTheme"
+endPartyBad,Empty,At least Shay comes in not so long after!
+endPartyBad,,"main_char_in,10"
+endPartyBad,,"char_in,Shay,sShay,3"
+endPartyBad,Shay,Hi Spooky-boo!
+endPartyBad,,"char_update,Shay,6"
+endPartyBad,Shay,"My, that was [shake]EXHAUSTING![/shake]"
+endPartyBad,,"char_update,Shay,7"
+endPartyBad,Shay,I am never going outside again!!!! [shake]Ugh!!![/shake]
+endPartyBad,,"char_update,Shay,5"
+endPartyBad,Shay,"Well, nevermind."
+endPartyBad,,"music,bgmTitleTheme"
+endPartyBad,,"trans_change,false,sBackgroundBlack"
+endPartyBad,Shay,It's time to watch some [wave]zombie rats![/wave]
+endPartyBad,Spook,Squeak!
+endPartyBad,,"trans_change,true"
+endPartyBad,,"trans_room,rmCredits"
+,,
+endPartyOkay,,"scene_bg_clear,sBackgroundBlack"
+endPartyOkay,Empty,The nighttime comes....
+endPartyOkay,,"music,bgmTitleTheme"
+endPartyOkay,,"trans_change,true,sBackgroundSewerBarParty"
+endPartyOkay,,"char_in,Screwdriver,sScrewdriver,12"
+endPartyOkay,Screwdriver,Hiya kid!
+endPartyOkay,,"main_char_in,10"
+endPartyOkay,Spook,[shake]PARTY!!!![/shake]
+endPartyOkay,,"char_in,Pogo,sPogo,3"
+endPartyOkay,Pogo,[shake]PARTY!!!![/shake]
+endPartyOkay,,"char_update,Pogo,2"
+endPartyOkay,,"char_in,Barry,sBarry,5"
+endPartyOkay,Barry,Cheers.
+endPartyOkay,,"char_out,Screwdriver"
+endPartyOkay,,"char_in,Möth,sMoth,2"
+endPartyOkay,Möth,LAMP.
+endPartyOkay,,"char_out,Möth"
+endPartyOkay,,"char_in,Screwdriver,sScrewdriver,11"
+endPartyOkay,Screwdriver,"Yeah, that about covers it."
+endPartyOkay,,"char_update,Barry,8"
+endPartyOkay,Barry,Time to drink some BSCWCCEC!
+endPartyOkay,,"char_update,Pogo,1"
+endPartyOkay,Pogo,"[wave]Yay, BSCWCCEC![/wave]"
+endPartyOkay,Spook,"Where is your costume, Pogo?"
+endPartyOkay,,"char_update,Pogo,8"
+endPartyOkay,Pogo,Oh. Sweetie. I am a Halloween decoration [wave]aaaallll[/wave] year long!
+endPartyOkay,Spook,Hm...
+endPartyOkay,,"char_update,Screwdriver,12"
+endPartyOkay,Screwdriver,You could be like. Double-bat.
+endPartyOkay,,"char_update,Pogo,4"
+endPartyOkay,Pogo,How so?
+endPartyOkay,Screwdriver,Bat suit. On your bat skin.
+endPartyOkay,,"char_update,Barry,9"
+endPartyOkay,Barry,[wave]Woooow.[/wave]
+endPartyOkay,,"char_update,Pogo,6"
+endPartyOkay,Pogo,I'll do Frankenstein next year!
+endPartyOkay,,"char_out,Screwdriver"
+endPartyOkay,,"char_in,Möth,sMoth,2"
+endPartyOkay,Möth,Like my costume?
+endPartyOkay,Spook,Um! Yeah! Lamp!
+endPartyOkay,Möth,LAMP.
+endPartyOkay,,"char_update,Barry,6"
+endPartyOkay,Barry,"Alright. Cheers, everyone!"
+endPartyOkay,,"char_update,Pogo,1"
+endPartyOkay,Pogo,[wave]Cheers![/wave]
+endPartyOkay,,"char_out,Möth"
+endPartyOkay,,"char_in,Screwdriver,sScrewdriver,12"
+endPartyOkay,Screwdriver,Yeah!!!
+endPartyOkay,Spook,[wave]Wohoo![/wave]
+endPartyOkay,,"delay,1"
+endPartyOkay,,"trans_room,rmCredits"
