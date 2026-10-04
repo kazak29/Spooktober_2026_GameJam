@@ -30,6 +30,12 @@ if global.cheat {
 		global.dataMapLocations.home.scene = "p1HomeQuest";
 		with oDirector { LineProgress(); }
 	}
+	
+	if keyboard_check_pressed(ord("P")) {
+		ChapterProgress();
+		MapDataUpdatePart2();
+		SceneToMap();
+	}
 }
 
 //ui buttons

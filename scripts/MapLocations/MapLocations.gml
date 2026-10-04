@@ -87,28 +87,3 @@ function MapDataCreate() {
 	};
 }
 
-function MapDataUpdatePart2(){
-	with global.dataMapLocations {
-		home.scene				= "p2Home1";
-		bar.scene				= "testScene1";
-		street.scene			= "testScene1";
-		yard.scene				= "testScene1";
-		front.scene				= "testScene1";
-		lamp.scene				= "testScene1";
-		
-		home.visited				= false;
-		bar.visited					= false;
-		street.visited				= false;
-		yard.visited				= false;
-		front.visited				= false;
-		lamp.visited				= false;
-		
-		home.locked					= false;
-		bar.locked					= true;
-		street.locked				= true;
-		yard.locked					= true;
-		front.locked				= true;
-		lamp.locked					= true;
-	}
-}
-
