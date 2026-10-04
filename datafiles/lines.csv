@@ -325,7 +325,7 @@ p1HomeQuestHouseAcross,Screwdriver,C'mon!
 p1HomeQuestHouseAcross,,"char_out,Screwdriver"
 p1HomeQuestHouseAcross,,"char_out,Giant Rabbit"
 p1HomeQuestHouseAcross,,main_char_out
-p1HomeQuestHouseAcross,Empty,Screwdriver leads you through an under-ground gateway...
+p1HomeQuestHouseAcross,Empty,Screwdriver leads you through an underground gateway...
 p1HomeQuestHouseAcross,,"trans_scene,p1HomeQuestHouseAcrossInside"
 ,,
 p1HomeQuestHouseAcrossInside,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
@@ -343,7 +343,7 @@ p1HomeQuestHouseAcrossInside,Screwdriver,"Yes, warn me if she wakes up. The code
 p1HomeQuestHouseAcrossInside,,"char_update,Spook,8"
 p1HomeQuestHouseAcrossInside,Spook,Wait-
 p1HomeQuestHouseAcrossInside,,"char_out,Screwdriver"
-p1HomeQuestHouseAcrossInside,Empty,"A well groomed, fluffy dog. Her perfume smells like cinnamon and she is wearing a single pink hair pin."
+p1HomeQuestHouseAcrossInside,Empty,"It's a well groomed, fluffy dog. Her perfume smells like cinnamon and she is wearing a single pink hair pin."
 p1HomeQuestHouseAcrossInside,,"trans_scene,p1HomeQuestHouseAcrossFadeOut1"
 ,,
 p1HomeQuestHouseAcrossFadeOut1,,"scene_bg_clear,sBackgroundBlack"
@@ -362,7 +362,7 @@ p1HomeQuestHouseAcrossGotCandy,Screwdriver,[shake]QUICK!!![/shake]
 p1HomeQuestHouseAcrossGotCandy,,"trans_scene,p1HomeQuestHouseAcrossFadeOut2"
 ,,
 p1HomeQuestHouseAcrossFadeOut2,,"scene_bg_clear,sBackgroundBlack"
-p1HomeQuestHouseAcrossFadeOut2,Empty,"[sound,sfxPrincessBark][tw,none][shake]*Barking*[/shake]"
+p1HomeQuestHouseAcrossFadeOut2,Empty,"[sound,sfxPrincessBark][tw,none][shake][b]Barking[/b][/shake]"
 p1HomeQuestHouseAcrossFadeOut2,,"delay,2"
 p1HomeQuestHouseAcrossFadeOut2,,"trans_scene,p1HomeQuestBar"
 p1HomeQuestHouseAcrossFadeOut2,,"music,noone"
