@@ -1,4 +1,4 @@
-SCENE NAME,LINE TITLE - ENGLISH,LINE TEXT - ENGLISH
+4,LINE TITLE - ENGLISH,LINE TEXT - ENGLISH
 rocketTestScene,Empty,.
 rocketTestScene,,map
 ,,
@@ -316,21 +316,35 @@ p1HomeQuestIntro,,"trans_scene,p1HomeQuestHouseAcross"
 p1HomeQuestHouseAcross,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
 p1HomeQuestHouseAcross,,"music,bgmHouseAcrossSneakIn"
 p1HomeQuestHouseAcross,,"main_char_in,0"
-p1HomeQuestHouseAcross,,"char_in,Screwdriver,sScrewdriver,2"
-p1HomeQuestHouseAcross,Screwdriver,"[wave]Candy, candy, sweet candy![/wave]"
-p1HomeQuestHouseAcross,Spook,Should we really be doing this?
-p1HomeQuestHouseAcross,,"char_update,Screwdriver,0"
-p1HomeQuestHouseAcross,Screwdriver,Ssshhh... Don't wake the housekeepers!
-p1HomeQuestHouseAcross,Screwdriver,See that puppy over there?
-p1HomeQuestHouseAcross,,"char_in,Princess,sPrincess,4"
-p1HomeQuestHouseAcross,Spook,Yeah?
+p1HomeQuestHouseAcross,,"char_in,Giant Rabbit,sDipper,0"
+p1HomeQuestHouseAcross,Giant Rabbit,[b]Snorrr.....[/b]
+p1HomeQuestHouseAcross,,"char_in,Screwdriver,sScrewdriver,0"
+p1HomeQuestHouseAcross,Screwdriver,"Heh, they got a bodyguard? Idiots!"
 p1HomeQuestHouseAcross,,"char_update,Screwdriver,1"
-p1HomeQuestHouseAcross,Screwdriver,"Yes, warn me if she wakes up. The code word is ""Squeak!"" nyeh heh!"
-p1HomeQuestHouseAcross,,"char_update,Spook,8"
-p1HomeQuestHouseAcross,Spook,Wait-
+p1HomeQuestHouseAcross,Screwdriver,C'mon!
 p1HomeQuestHouseAcross,,"char_out,Screwdriver"
-p1HomeQuestHouseAcross,Empty,"A well groomed, fluffy dog. Her perfume smells like cinnamon and she is wearing a single pink hair pin."
-p1HomeQuestHouseAcross,,"trans_scene,p1HomeQuestHouseAcrossFadeOut1"
+p1HomeQuestHouseAcross,,"char_out,Giant Rabbit"
+p1HomeQuestHouseAcross,,main_char_out
+p1HomeQuestHouseAcross,Empty,Screwdriver leads you through an under-ground gateway...
+p1HomeQuestHouseAcross,,"trans_scene,p1HomeQuestHouseAcrossInside"
+,,
+p1HomeQuestHouseAcrossInside,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
+p1HomeQuestHouseAcrossInside,,"main_char_in,0"
+p1HomeQuestHouseAcrossInside,,"char_in,Screwdriver,sScrewdriver,2"
+p1HomeQuestHouseAcrossInside,Screwdriver,"[wave]Candy, candy, sweet candy![/wave]"
+p1HomeQuestHouseAcrossInside,Spook,Should we really be doing this?
+p1HomeQuestHouseAcrossInside,,"char_update,Screwdriver,0"
+p1HomeQuestHouseAcrossInside,Screwdriver,Ssshhh... Don't wake the housekeepers!
+p1HomeQuestHouseAcrossInside,Screwdriver,See that puppy over there?
+p1HomeQuestHouseAcrossInside,,"char_in,Princess,sPrincess,4"
+p1HomeQuestHouseAcrossInside,Spook,Yeah?
+p1HomeQuestHouseAcrossInside,,"char_update,Screwdriver,1"
+p1HomeQuestHouseAcrossInside,Screwdriver,"Yes, warn me if she wakes up. The code word is ""Squeak!"" nyeh heh!"
+p1HomeQuestHouseAcrossInside,,"char_update,Spook,8"
+p1HomeQuestHouseAcrossInside,Spook,Wait-
+p1HomeQuestHouseAcrossInside,,"char_out,Screwdriver"
+p1HomeQuestHouseAcrossInside,Empty,"A well groomed, fluffy dog. Her perfume smells like cinnamon and she is wearing a single pink hair pin."
+p1HomeQuestHouseAcrossInside,,"trans_scene,p1HomeQuestHouseAcrossFadeOut1"
 ,,
 p1HomeQuestHouseAcrossFadeOut1,,"scene_bg_clear,sBackgroundBlack"
 p1HomeQuestHouseAcrossFadeOut1,Empty,Several minutes pass...
