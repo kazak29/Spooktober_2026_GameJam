@@ -13,10 +13,13 @@ kazakTestScene,,"trans_scene,testScene1"
 kazakTestScene,Empty,test test 3
 kazakTestScene,,map
 ,,
-testMap,Empty,...
-testMap,,map
+testMap1,Empty,...
+testMap1,,map
 ,,
-,,
+testMap2,Empty,...
+testMap2,,"custom_script_cont,ChapterProgress"
+testMap2,,"custom_script_cont,MapDataUpdatePart2"
+testMap2,,map
 ,,
 intro,,"scene_bg,sBackgroundShayHome"
 intro,,"music,bgmSpookTheme"
@@ -1560,10 +1563,98 @@ p2Home1,,"trans_scene,endStay"
 ,,
 ,,
 ,,
+p2BarNoCandy1,,"map_scene,bar,p2BarNoCandy2"
+p2BarNoCandy1,,"scene_bg_clear,sBackgroundSewerBar"
+p2BarNoCandy1,,"music,bgmSewerBar"
+p2BarNoCandy1,,"main_char_in,0"
+p2BarNoCandy1,,"char_in,Screwdriver,sScrewdriver,0"
+p2BarNoCandy1,Screwdriver,Oh hey kiddo!
+p2BarNoCandy1,,"char_update,Screwdriver,1"
+p2BarNoCandy1,Screwdriver,Slept well?
+p2BarNoCandy1,,"char_update,Spook,9"
+p2BarNoCandy1,Spook,Like a mouse cub!
+p2BarNoCandy1,,"char_update,Screwdriver,2"
+p2BarNoCandy1,Screwdriver,[wave]Niiiiceee...[/wave] So...
+p2BarNoCandy1,,"char_update,Spook,0"
+p2BarNoCandy1,Screwdriver,Are you coming tonight?
+p2BarNoCandy1,,"choice,p2BarNoCandy1Absolutely,p2BarNoCandy1Idk,p2BarNoCandy1No"
+p2BarNoCandy1,,"scene_set,p2BarNoCandy1Absolutely"
+p2BarNoCandy1,,"scene_set,p2BarNoCandy1Idk"
+p2BarNoCandy1,,"scene_set,p2BarNoCandy1No"
+,,
+p2BarNoCandy1Absolutely,,"char_update,Screwdriver,2"
+p2BarNoCandy1Absolutely,Screwdriver,[wave]Yeahhhh![/wave]
+p2BarNoCandy1Absolutely,,"char_update,Screwdriver,9"
+p2BarNoCandy1Absolutely,Screwdriver,We are kinda short on drinks and candy...
+p2BarNoCandy1Absolutely,,"char_update,Screwdriver,2"
+p2BarNoCandy1Absolutely,Screwdriver,[shake]BUT[/shake] I am working on the decorations!
+p2BarNoCandy1Absolutely,,"char_update,Screwdriver,1"
+p2BarNoCandy1Absolutely,Screwdriver,"So, yeah. Should be fun. Heh."
+p2BarNoCandy1Absolutely,Spook,"Okay, I'll see you around!"
+p2BarNoCandy1Absolutely,,"char_update,Screwdriver,0"
+p2BarNoCandy1Absolutely,Screwdriver,"Wait, you don't wanna help or anything?"
+p2BarNoCandy1Absolutely,Spook,"Uhh, I'll be on my way!"
+p2BarNoCandy1Absolutely,Screwdriver,Hey!
+p2BarNoCandy1Absolutely,,map
+,,
+p2BarNoCandy1Idk,,"char_update,Screwdriver,1"
+p2BarNoCandy1Idk,Screwdriver,"Well, we will be here!"
+p2BarNoCandy1Idk,,"char_update,Screwdriver,2"
+p2BarNoCandy1Idk,Screwdriver,[wave]A L L  N I G H T  L O N G!!![/wave]
+p2BarNoCandy1Idk,Spook,Alright! I'll see you around!
+p2BarNoCandy1Idk,Screwdriver,"Sure, see ya!"
+p2BarNoCandy1Idk,,map
+,,
+p2BarNoCandy1No,,"char_update,Screwdriver,0"
+p2BarNoCandy1No,Screwdriver,"Wait, what?"
+p2BarNoCandy1No,Spook,I decided I'd much rather stay in.
+p2BarNoCandy1No,Spook,"Plus we will see a horror film! I don't want to like, fall asleep!"
+p2BarNoCandy1No,,"char_update,Screwdriver,9"
+p2BarNoCandy1No,Screwdriver,You sure?
+p2BarNoCandy1No,Spook,"Yeah! I'm like, really sure!"
+p2BarNoCandy1No,,"char_update,Screwdriver,1"
+p2BarNoCandy1No,Screwdriver,"Really sure, huh? "
+p2BarNoCandy1No,Screwdriver,"You know, you can always just go back on your decision and stick around with us on the streets anyway. I won't judge."
+p2BarNoCandy1No,,"char_update,Spook,1"
+p2BarNoCandy1No,Spook,"No, right after this I am going home to wait for Shay!"
+p2BarNoCandy1No,,"char_update,Screwdriver,0"
+p2BarNoCandy1No,Screwdriver,"Heh, well, you call, kid."
+p2BarNoCandy1No,,"char_update,Spook,0"
+p2BarNoCandy1No,Spook,...
+p2BarNoCandy1No,,"char_update,Screwdriver,1"
+p2BarNoCandy1No,Screwdriver,We are throwing another one next year. You'll be a senior mouse 'til then!
+p2BarNoCandy1No,Screwdriver,"I'd live a little when I was young, If I were you."
+p2BarNoCandy1No,,"char_update,Spook,6"
+p2BarNoCandy1No,Spook,...How old even are you?
+p2BarNoCandy1No,,"char_update,Screwdriver,2"
+p2BarNoCandy1No,Screwdriver,[wave][c_red]666![/c][/wave]
+p2BarNoCandy1No,,"char_update,Spook,7"
+p2BarNoCandy1No,Spook,Ha-ha-ha.
+p2BarNoCandy1No,Screwdriver,Well. Enjoy your film kid!
+p2BarNoCandy1No,,map
+,,
+,,
+p2BarNoCandy2,,"scene_bg_clear,sBackgroundSewerBar"
+p2BarNoCandy2,,"music,bgmSewerBar"
+p2BarNoCandy2,,"main_char_in,0"
+p2BarNoCandy2,,"char_in,Screwdriver,sScrewdriver,0"
+p2BarNoCandy2,Screwdriver,"Hey, kiddo!"
+p2BarNoCandy2,,"char_update,Screwdriver,1"
+p2BarNoCandy2,Screwdriver,"Came to offer some help with the party preparations, at last?"
+p2BarNoCandy2,Spook,"No, I was just looking around."
+p2BarNoCandy2,,"char_update,Screwdriver,2"
+p2BarNoCandy2,Screwdriver,Don't be a stranger! We got plenty of heavy boxes to lift!
+p2BarNoCandy2,,"char_update,Spook,5"
+p2BarNoCandy2,Spook,"Uh, I'll be on my way!"
+p2BarNoCandy2,,"char_update,Screwdriver,0"
+p2BarNoCandy2,Screwdriver,Hey!
+p2BarNoCandy2,,map
 ,,
 ,,
 ,,
-,,
+p2BarCandy1,,"scene_bg_clear,sBackgroundSewerBar"
+p2BarCandy1,,"music,bgmSewerBar"
+p2BarCandy1,,"main_char_in,0"
 ,,
 ,,
 ,,

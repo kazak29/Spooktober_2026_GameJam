@@ -25,9 +25,10 @@ function MapDataUpdatePart2(){
 		}
 	}
 	
+	var _barScene = global.flags.candy_quest_complete ? "p2BarCandy1" : "p2BarNoCandy1";
 	with _locs {
 		home.scene		= "p2Home1";
-		bar.scene		= "testScene1";
+		bar.scene		= _barScene;
 		street.scene	= "testScene1";
 		yard.scene		= "testScene1";
 		front.scene		= "testScene1";
