@@ -18,6 +18,8 @@ if global.cheat {
 	if keyboard_check_pressed(ord("2")) global.flags.candy_quest_complete = true;
 	if keyboard_check_pressed(ord("3")) global.flags.candy_quest_fail = false;
 	if keyboard_check_pressed(ord("4")) global.flags.candy_quest_fail = true;
+	if keyboard_check_pressed(ord("5")) global.flags.metPrincess = false;
+	if keyboard_check_pressed(ord("6")) global.flags.metPrincess = true;
 	
 	if keyboard_check_pressed(ord("V")) {
 		var _names = struct_get_names(global.dataMapLocations);
@@ -28,7 +30,6 @@ if global.cheat {
 	
 	if keyboard_check_pressed(ord("Q")) {
 		global.dataMapLocations.home.scene = "p1HomeQuest";
-		with oDirector { LineProgress(); }
 	}
 	
 	if keyboard_check_pressed(ord("P")) {

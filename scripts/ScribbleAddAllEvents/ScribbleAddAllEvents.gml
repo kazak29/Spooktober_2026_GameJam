@@ -17,7 +17,7 @@
 	});
 	
 	// CHARACTER NAME AS SET IN global.dataTypewriterSfx
-	scribble_typists_add_event("tw", function(_element, _param_array)
+	scribble_typists_add_event("tw_sfx", function(_element, _param_array)
 	{
 		with oDirector {
 			TypewriterSoundSet(_param_array[0]);

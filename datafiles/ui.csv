@@ -127,3 +127,25 @@ p2IntroDisapprove,Squeak Disapprovingly
 ,
 p2Home1Continue,Continue exploring
 p2Home1Stay,Forget the party and stay home waiting for Shay
+,
+,
+p2BarNoCandy1Absolutely,Absolutely!
+p2BarNoCandy1Idk,I don't know yet...
+p2BarNoCandy1No,"Actually, no..."
+,
+p2BarCandy1Somewhere,I actually got somewhere to be...
+p2BarCandy1Ok,"Yes, ok!"
+,
+p2BarCandy2Nah,Nah.
+p2BarCandy2Sure,"Sure, why not!"
+,
+p2BarCandyDecorPink,What is that pink thing?
+p2BarCandyDecorBones,Are those ACTUAL bones!?
+p2BarCandyDecorWatch,Is that a pocket watch?
+,
+p2BarCandyDecorCubs,But...How are they gonna have cubs...?
+p2BarCandyDecorAlright,...I guess that is alright...
+,
+p2BarCandyDecorKeep,Keep the pocket watch
+p2BarCandyDecorLeave,Leave the pocket watch be
+p2BarCandyDecorLeaveReally,"Really, really leave it be"
