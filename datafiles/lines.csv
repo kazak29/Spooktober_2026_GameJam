@@ -1733,7 +1733,7 @@ p2BarCandy2Sure,Screwdriver,Almost thought I'll have to handle all of this on my
 p2BarCandy2Sure,,"scene_set,p2BarCandyDecor"
 ,,
 ,,
-p2BarCandyDecor,,"map_scene,bar,p2BarCandy3"
+p2BarCandyDecor,,"map_scene,bar,p2BarCandyComplete"
 p2BarCandyDecor,,"char_update,Screwdriver,2"
 p2BarCandyDecor,Screwdriver,"Alright, come with me! To the backrooms!"
 p2BarCandyDecor,,"char_update,Spook,8"
@@ -1757,7 +1757,7 @@ p2BarCandyDecorPink,,"char_update,Screwdriver,9"
 p2BarCandyDecorPink,Screwdriver,...Oh. A blobfish.
 p2BarCandyDecorPink,,"char_update,Spook,6"
 p2BarCandyDecorPink,Spook,But... why is it there...?
-p2BarCandyDecorPink,,"char_update,Screwdriver,10"
+p2BarCandyDecorPink,,"char_update,Screwdriver,7"
 p2BarCandyDecorPink,Screwdriver,It looks scary. I was scared when I saw it.
 p2BarCandyDecorPink,Spook,...Okay...???
 p2BarCandyDecorPink,,"scene_set,p2BarCandyDecorWatch"
@@ -1923,16 +1923,16 @@ p2BarCandyDecorFinish,Spook,I need some fresh air...
 p2BarCandyDecorFinish,Screwdriver,Hey!
 p2BarCandyDecorFinish,,map
 ,,
-p2BarCandy3,,"scene_bg_clear,sBackgroundSewerBarParty"
-p2BarCandy3,,"music,bgmSewerBar"
-p2BarCandy3,,"main_char_in,0"
-p2BarCandy3,,"char_in,Screwdriver,sScrewdriver,1"
-p2BarCandy3,Screwdriver,"Well would you look at that! Returned to finish what we started, at last?"
-p2BarCandy3,Spook,"N-no, I was just passing by."
-p2BarCandy3,,"char_update,Screwdriver,2"
-p2BarCandy3,Screwdriver,"Don't be shy, I know you want to carry that heavy box over there! [shake]C'moooooon!!![/shake]"
-p2BarCandy3,Spook,"Sorry, gotta go!"
-p2BarCandy3,,map
+p2BarCandyComplete,,"scene_bg_clear,sBackgroundSewerBarParty"
+p2BarCandyComplete,,"music,bgmSewerBar"
+p2BarCandyComplete,,"main_char_in,0"
+p2BarCandyComplete,,"char_in,Screwdriver,sScrewdriver,1"
+p2BarCandyComplete,Screwdriver,"Well would you look at that! Returned to finish what we started, at last?"
+p2BarCandyComplete,Spook,"N-no, I was just passing by."
+p2BarCandyComplete,,"char_update,Screwdriver,2"
+p2BarCandyComplete,Screwdriver,"Don't be shy, I know you want to carry that heavy box over there! [shake]C'moooooon!!![/shake]"
+p2BarCandyComplete,Spook,"Sorry, gotta go!"
+p2BarCandyComplete,,map
 ,,
 ,,
 ,,
@@ -2150,9 +2150,9 @@ p2FrontWatch,,
 ,,
 ,,
 ,,
-p2Front2Offended,,
+p2FrontOffended,,
 ,,
-p2Front2Complete,,
+p2FrontComplete,,
 ,,
 ,,
 ,,
