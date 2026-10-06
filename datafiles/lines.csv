@@ -753,7 +753,7 @@ p1Street1Scary,,"char_update,Spook,6"
 p1Street1Scary,Spook,I... guess?
 p1Street1Scary,,"char_update,Pogo,1"
 p1Street1Scary,Pogo,Let me know if you ever want a ride!
-p1Street1Scary,,"scene_set,p1Street1Questions"
+p1Street1Scary,,"scene_set,p1StreetQuestions"
 ,,
 p1Street1KindOf,,"char_update,Pogo,1"
 p1Street1KindOf,Pogo,"He-he! I could take you on a ride, if you wanted to."
@@ -765,7 +765,7 @@ p1Street1KindOf,,"char_update,Spook,8"
 p1Street1KindOf,Spook,That's not reassuring at all!
 p1Street1KindOf,,"char_update,Pogo,8"
 p1Street1KindOf,Pogo,Hehe...
-p1Street1KindOf,,"scene_set,p1Street1Questions"
+p1Street1KindOf,,"scene_set,p1StreetQuestions"
 ,,
 ,,
 p1Street1LostNo,,"char_update,Pogo,8"
@@ -780,182 +780,7 @@ p1Street1LostNo,,"char_update,Spook,5"
 p1Street1LostNo,Spook,...Somewhere.
 p1Street1LostNo,,"char_update,Pogo,8"
 p1Street1LostNo,Pogo,That's where I am going! [wave]Hihihi...[/wave]
-p1Street1LostNo,,"scene_set,p1Street1Questions"
-,,
-,,
-p1Street1Questions,,"char_update,Spook,0"
-p1Street1Questions,Spook,So...
-p1Street1Questions,,"char_update,Pogo,0"
-p1Street1Questions,Pogo,Hm?
-p1Street1Questions,,"choice,p1Street1QuestionYourself,p1Street1QuestionTown,p1Street1QuestionBar"
-p1Street1Questions,,"scene_set,p1Street1QuestionYourselfCheck"
-p1Street1Questions,,"scene_set,p1Street1QuestionTownCheck"
-p1Street1Questions,,"scene_set,p1Street1QuestionBarCheck"
-,,
-,,
-p1Street1QuestionYourselfCheck,,"condition_flag,streetQuestionYourself"
-p1Street1QuestionYourselfCheck,,"scene_set,p1Street1QuestionYourselfAsked"
-p1Street1QuestionYourselfCheck,,"scene_set,p1Street1QuestionYourself"
-,,
-p1Street1QuestionYourselfAsked,Pogo,"Oh my, aren't you too interested in me?"
-p1Street1QuestionYourselfAsked,Spook,I just wanna hear your story again!
-p1Street1QuestionYourselfAsked,Pogo,"Oh, well."
-p1Street1QuestionYourselfAsked,,"scene_set,p1Street1QuestionYourself"
-,,
-p1Street1QuestionYourself,,"flag_set,streetQuestionYourself,true"
-p1Street1QuestionYourself,Pogo,Hm hm... Let's see....
-p1Street1QuestionYourself,,"char_update,Pogo,4"
-p1Street1QuestionYourself,Pogo,My favorite drink is grape juice...
-p1Street1QuestionYourself,,"char_update,Pogo,0"
-p1Street1QuestionYourself,Pogo,And my favorite author is Marry Shelley!
-p1Street1QuestionYourself,,"char_update,Pogo,1"
-p1Street1QuestionYourself,Pogo,"And Dracula is my biggest crush, big time. Too bad I was born so late...."
-p1Street1QuestionYourself,,"char_update,Spook,9"
-p1Street1QuestionYourself,Spook,Maybe you will meet a vampire during Halloween!
-p1Street1QuestionYourself,,"char_update,Pogo,6"
-p1Street1QuestionYourself,Pogo,Oh that would be [wave]WONDERFUL![/wave]
-p1Street1QuestionYourself,,"char_update,Pogo,8"
-p1Street1QuestionYourself,Pogo,But what if they have a taste for mouses-
-p1Street1QuestionYourself,,"char_update,Spook,8"
-p1Street1QuestionYourself,Spook,[shake]QUIT JOKING ABOUT THAT!!!![/shake]
-p1Street1QuestionYourself,,"char_update,Pogo,0"
-p1Street1QuestionYourself,Pogo,"Alright, alright..."
-p1Street1QuestionYourself,,"char_update,Spook,0"
-p1Street1QuestionYourself,Pogo,"Well, I always wanted to be a singer as a little girl!"
-p1Street1QuestionYourself,,"char_update,Pogo,1"
-p1Street1QuestionYourself,Pogo,"I used to sing towards the mountains, so my voice would echo. It felt like a whole stage!"
-p1Street1QuestionYourself,Spook,Don't you sing anymore?
-p1Street1QuestionYourself,,"char_update,Pogo,0"
-p1Street1QuestionYourself,Pogo,"Hm... Been a while, no. But I could say I accomplished a dream in a way."
-p1Street1QuestionYourself,Pogo,"Now I am content with just being a little night dweller, hanging out with my friends!"
-p1Street1QuestionYourself,,"choice,p1Street1Sing,p1Street1Work"
-p1Street1QuestionYourself,,"scene_set,p1Street1Sing"
-p1Street1QuestionYourself,,"scene_set,p1Street1Work"
-,,
-p1Street1Sing,,"char_update,Pogo,5"
-p1Street1Sing,Pogo,"Oh, you know sweetie... It's just not the same anymore."
-p1Street1Sing,,"char_update,Spook,6"
-p1Street1Sing,Spook,Why so?
-p1Street1Sing,,"char_update,Pogo,0"
-p1Street1Sing,Pogo,...Dunno. Passion and inspiration are rare to find. Back then things were... different. 
-p1Street1Sing,,"char_update,Spook,5"
-p1Street1Sing,Spook,"But ""nothing easy is ever amazing"" or something, right!?"
-p1Street1Sing,,"char_update,Pogo,6"
-p1Street1Sing,Pogo,Hehe. Perhaps little one. Perhaps.
-p1Street1Sing,,map
-,,
-p1Street1Work,,"char_update,Pogo,1"
-p1Street1Work,Pogo,[shake]RIGHT!???[/shake]
-p1Street1Work,,"char_update,Pogo,0"
-p1Street1Work,Pogo,"Am not worried about you at all, kid."
-p1Street1Work,,"char_update,Pogo,1"
-p1Street1Work,Pogo,You will do [wave]juuuuust[/wave] fine among us!
-p1Street1Work,,map
-,,
-,,
-p1Street1QuestionTownCheck,,"condition_flag,streetQuestionTown"
-p1Street1QuestionTownCheck,,"scene_set,p1Street1QuestionTownAsked"
-p1Street1QuestionTownCheck,,"scene_set,p1Street1QuestionTown"
-,,
-p1Street1QuestionTownAsked,Pogo,"Hmm, didn't you get [wave]really[/wave] scared last time you asked this?"
-p1Street1QuestionTownAsked,Spook,I'm just... a little curious again!
-p1Street1QuestionTownAsked,,"scene_set,p1Street1QuestionTown"
-,,
-p1Street1QuestionTown,,"char_update,Pogo,8"
-p1Street1QuestionTown,Pogo,Ohoho!
-p1Street1QuestionTown,Pogo,You wanna know the tales of the [shake]ancient fog?[/shake]
-p1Street1QuestionTown,,"char_update,Spook,6"
-p1Street1QuestionTown,Spook,Um... Yes? Is it [wave]always[/wave] foggy or something?
-p1Street1QuestionTown,Pogo,You could say that...
-p1Street1QuestionTown,Pogo,"Some say it's coming from under the dirt, not the sky."
-p1Street1QuestionTown,Spook,Huh? How so?
-p1Street1QuestionTown,,"char_update,Pogo,0"
-p1Street1QuestionTown,Pogo,"You see, this part of the town is always foggy, more or less, even if it's a clear sky outside!"
-p1Street1QuestionTown,Pogo,"And if you walk a little away, you can actually see that surrounding areas aren't effected..."
-p1Street1QuestionTown,Pogo,The fog travels through streets like branches of veins. They say it follows the roots underground.
-p1Street1QuestionTown,Spook,...But why?
-p1Street1QuestionTown,Pogo,"Beats me, friend! Maybe there is something lurking right under our feet."
-p1Street1QuestionTown,,"char_update,Pogo,8"
-p1Street1QuestionTown,Pogo,[shake]Feeding on the fog...[/shake]
-p1Street1QuestionTown,,"char_update,Spook,8"
-p1Street1QuestionTown,Spook,...
-p1Street1QuestionTown,,"condition_flag,streetQuestionTown"
-p1Street1QuestionTown,,"scene_set,p1Street1QuestionTownAfraid"
-p1Street1QuestionTown,,"scene_set,p1Street1QuestionTownMessing"
-,,
-p1Street1QuestionTownAfraid,,"flag_set,streetQuestionTown,true"
-p1Street1QuestionTownAfraid,Pogo,"Hehe, your face is so funny when you're afraid, little mouse!"
-p1Street1QuestionTownAfraid,Spook,I'm not afraid! Just a little... you know!
-p1Street1QuestionTownAfraid,Pogo,"Oh, don't worry. I know."
-p1Street1QuestionTownAfraid,,map
-,,
-p1Street1QuestionTownMessing,,"flag_set,streetQuestionTown,true"
-p1Street1QuestionTownMessing,Spook,Are you messing with me?
-p1Street1QuestionTownMessing,Pogo,Hehe.
-p1Street1QuestionTownMessing,Pogo,Maybe. Maybe not.
-p1Street1QuestionTownMessing,,map
-,,
-,,
-p1Street1QuestionBarCheck,,"condition_flag,streetQuestionBar"
-p1Street1QuestionBarCheck,,"scene_set,p1Street1QuestionBarAsked"
-p1Street1QuestionBarCheck,,"scene_set,p1Street1QuestionBar"
-,,
-p1Street1QuestionBarAsked,Pogo,You really wanna hear the story of that old place again?
-p1Street1QuestionBarAsked,Spook,"Yeah, I like that one!"
-p1Street1QuestionBarAsked,Pogo,Very well. Listen closely!
-p1Street1QuestionBarAsked,,"scene_set,p1Street1QuestionBar"
-,,
-p1Street1QuestionBar,,"char_update,Pogo,1"
-p1Street1QuestionBar,Pogo,"Oh, the good old Barry's!"
-p1Street1QuestionBar,,"char_update,Pogo,0"
-p1Street1QuestionBar,Pogo,"When I was just a pup, I met Barry in the woods! Neither of us had much going on back then."
-p1Street1QuestionBar,Pogo,"But, well- Barry and Drivey are old friends."
-p1Street1QuestionBar,Pogo,"They taught me how I can loot trash cans, all the good spots in town..."
-p1Street1QuestionBar,,"char_update,Pogo,6"
-p1Street1QuestionBar,Pogo,We used to just light fires and make-up stories under that sewer back then!
-p1Street1QuestionBar,,"char_update,Pogo,0"
-p1Street1QuestionBar,Pogo,Soon the other strays joined us- and we carried what we collected over to years under the sewer.
-p1Street1QuestionBar,,"char_update,Pogo,1"
-p1Street1QuestionBar,Pogo,It was a safe haven for every unloved animal!
-p1Street1QuestionBar,Pogo,"And well, soon we had drinks, music, new friends..."
-p1Street1QuestionBar,,"char_update,Pogo,0"
-p1Street1QuestionBar,Pogo,Now it's pretty much a club for anyone who is willing to contribute to our little community!
-p1Street1QuestionBar,,"char_update,Spook,6"
-p1Street1QuestionBar,,"condition_flag,streetQuestionBar"
-p1Street1QuestionBar,,"scene_set,p1Street1QuestionBarPets"
-p1Street1QuestionBar,,"scene_set,p1Street1QuestionBarUnloved"
-,,
-p1Street1QuestionBarPets,,"flag_set,streetQuestionBar,true"
-p1Street1QuestionBarPets,Spook,"Wait, but is it really only for strays?"
-p1Street1QuestionBarPets,,"char_update,Spook,5"
-p1Street1QuestionBarPets,Spook,Screwdriver told me some of you go back to cages in the morning!
-p1Street1QuestionBarPets,Pogo,"Oh, sweetie. We had other pets who joined us at night, and very often."
-p1Street1QuestionBarPets,Spook,Did they stop? What happened?
-p1Street1QuestionBarPets,,"char_update,Pogo,5"
-p1Street1QuestionBarPets,Pogo,It's... a long story.
-p1Street1QuestionBarPets,,"char_update,Pogo,0"
-p1Street1QuestionBarPets,Pogo,"And it's not for me to tell, either way."
-p1Street1QuestionBarPets,,"char_update,Spook,0"
-p1Street1QuestionBarPets,Spook,Aw...
-p1Street1QuestionBarPets,Pogo,"Don't worry, just keep hanging around the bar. You'll find out, eventually."
-p1Street1QuestionBarPets,,map
-,,
-p1Street1QuestionBarUnloved,,"flag_set,streetQuestionBar,true"
-p1Street1QuestionBarUnloved,Spook,"What do you mean ""unloved animals""?"
-p1Street1QuestionBarUnloved,Pogo,"Oh, you know. Humans are evolved to fear some of us. "
-p1Street1QuestionBarUnloved,Pogo,"Of course, we are evolved to fear each other as well."
-p1Street1QuestionBarUnloved,Pogo,But while we were able to put that to the side and build a community...
-p1Street1QuestionBarUnloved,Pogo,Humans are most likely always going to be judgemental of creatures like us!
-p1Street1QuestionBarUnloved,,"char_update,Spook,5"
-p1Street1QuestionBarUnloved,Spook,Shay isn't judgemental!
-p1Street1QuestionBarUnloved,,"char_update,Pogo,7"
-p1Street1QuestionBarUnloved,Pogo,Really? Would she let me into her house?
-p1Street1QuestionBarUnloved,Spook,"Yeah! Shay loves bats! She never kills bugs, too!"
-p1Street1QuestionBarUnloved,,"char_update,Pogo,6"
-p1Street1QuestionBarUnloved,Pogo,"Oh my. You got a special human, don't you? What a lucky mouse!"
-p1Street1QuestionBarUnloved,,"char_update,Spook,9"
-p1Street1QuestionBarUnloved,Spook,[wave]Mhm![/wave] Shay's the best!
-p1Street1QuestionBarUnloved,,map
+p1Street1LostNo,,"scene_set,p1StreetQuestions"
 ,,
 ,,
 p1Street1LostAll,,"char_update,Pogo,1"
@@ -1021,6 +846,7 @@ p1Street1Books,,"scene_set,p1Street1Genre"
 ,,
 ,,
 p1Street1Genre,,"char_update,Spook,0"
+p1Street1Genre,Spook,Yep!
 p1Street1Genre,,"char_update,Pogo,0"
 p1Street1Genre,Pogo,"Which stories are your favorite, then?"
 p1Street1Genre,,"choice,p1Street1Horror,p1Street1Fairy,p1Street1Romance,p1Street1Scifi"
@@ -1099,21 +925,196 @@ p1Street2Other,,"music,bgmStreet"
 p1Street2Other,,"main_char_in,0"
 p1Street2Other,,"char_in,Pogo,sPogo,1"
 p1Street2Other,Pogo,"Night is young, little one!"
-p1Street2Other,,"scene_set,p1Street1Questions"
+p1Street2Other,,"scene_set,p1StreetQuestions"
 ,,
 p1Street2Horror,,"scene_bg_clear,sBackgroundStreetNight"
 p1Street2Horror,,"music,bgmStreet"
 p1Street2Horror,,"main_char_in,0"
 p1Street2Horror,,"char_in,Pogo,sPogo,1"
 p1Street2Horror,Pogo,"""Quoth the Raven, Nevermore!!!"""
-p1Street2Horror,,"scene_set,p1Street1Questions"
+p1Street2Horror,,"scene_set,p1StreetQuestions"
 ,,
 p1Street2Scifi,,"scene_bg_clear,sBackgroundStreetNight"
 p1Street2Scifi,,"music,bgmStreet"
 p1Street2Scifi,,"main_char_in,0"
 p1Street2Scifi,,"char_in,Pogo,sPogo,1"
 p1Street2Scifi,Pogo,"""The day after tomorrow, we are leaving for sure, Candide!"""
-p1Street2Scifi,,"scene_set,p1Street1Questions"
+p1Street2Scifi,,"scene_set,p1StreetQuestions"
+,,
+,,
+p1StreetQuestions,,"char_update,Spook,0"
+p1StreetQuestions,Spook,So...
+p1StreetQuestions,,"char_update,Pogo,0"
+p1StreetQuestions,Pogo,Hm?
+p1StreetQuestions,,"choice,p1StreetQuestionsYourself,p1StreetQuestionsTown,p1StreetQuestionsBar"
+p1StreetQuestions,,"scene_set,p1StreetQuestionsYourselfCheck"
+p1StreetQuestions,,"scene_set,p1StreetQuestionsTownCheck"
+p1StreetQuestions,,"scene_set,p1StreetQuestionsBarCheck"
+,,
+,,
+p1StreetQuestionsYourselfCheck,,"condition_flag,streetQuestionYourself"
+p1StreetQuestionsYourselfCheck,,"scene_set,p1StreetQuestionsYourselfAsked"
+p1StreetQuestionsYourselfCheck,,"scene_set,p1StreetQuestionsYourself"
+,,
+p1StreetQuestionsYourselfAsked,Pogo,"Oh my, aren't you too interested in me?"
+p1StreetQuestionsYourselfAsked,Spook,I just wanna hear your story again!
+p1StreetQuestionsYourselfAsked,Pogo,"Oh, well."
+p1StreetQuestionsYourselfAsked,,"scene_set,p1StreetQuestionsYourself"
+,,
+p1StreetQuestionsYourself,,"flag_set,streetQuestionYourself,true"
+p1StreetQuestionsYourself,Pogo,Hm hm... Let's see....
+p1StreetQuestionsYourself,,"char_update,Pogo,4"
+p1StreetQuestionsYourself,Pogo,My favorite drink is grape juice...
+p1StreetQuestionsYourself,,"char_update,Pogo,0"
+p1StreetQuestionsYourself,Pogo,And my favorite author is Marry Shelley!
+p1StreetQuestionsYourself,,"char_update,Pogo,1"
+p1StreetQuestionsYourself,Pogo,"And Dracula is my biggest crush, big time. Too bad I was born so late...."
+p1StreetQuestionsYourself,,"char_update,Spook,9"
+p1StreetQuestionsYourself,Spook,Maybe you will meet a vampire during Halloween!
+p1StreetQuestionsYourself,,"char_update,Pogo,6"
+p1StreetQuestionsYourself,Pogo,Oh that would be [wave]WONDERFUL![/wave]
+p1StreetQuestionsYourself,,"char_update,Pogo,8"
+p1StreetQuestionsYourself,Pogo,But what if they have a taste for mouses-
+p1StreetQuestionsYourself,,"char_update,Spook,8"
+p1StreetQuestionsYourself,Spook,[shake]QUIT JOKING ABOUT THAT!!!![/shake]
+p1StreetQuestionsYourself,,"char_update,Pogo,0"
+p1StreetQuestionsYourself,Pogo,"Alright, alright..."
+p1StreetQuestionsYourself,,"char_update,Spook,0"
+p1StreetQuestionsYourself,Pogo,"Well, I always wanted to be a singer as a little girl!"
+p1StreetQuestionsYourself,,"char_update,Pogo,1"
+p1StreetQuestionsYourself,Pogo,"I used to sing towards the mountains, so my voice would echo. It felt like a whole stage!"
+p1StreetQuestionsYourself,Spook,Don't you sing anymore?
+p1StreetQuestionsYourself,,"char_update,Pogo,0"
+p1StreetQuestionsYourself,Pogo,"Hm... Been a while, no. But I could say I accomplished a dream in a way."
+p1StreetQuestionsYourself,Pogo,"Now I am content with just being a little night dweller, hanging out with my friends!"
+p1StreetQuestionsYourself,,"choice,p1StreetQuestionsSing,p1StreetQuestionsWork"
+p1StreetQuestionsYourself,,"scene_set,p1StreetQuestionsSing"
+p1StreetQuestionsYourself,,"scene_set,p1StreetQuestionsWork"
+,,
+p1StreetQuestionsSing,,"char_update,Pogo,5"
+p1StreetQuestionsSing,Pogo,"Oh, you know sweetie... It's just not the same anymore."
+p1StreetQuestionsSing,,"char_update,Spook,6"
+p1StreetQuestionsSing,Spook,Why so?
+p1StreetQuestionsSing,,"char_update,Pogo,0"
+p1StreetQuestionsSing,Pogo,...Dunno. Passion and inspiration are rare to find. Back then things were... different. 
+p1StreetQuestionsSing,,"char_update,Spook,5"
+p1StreetQuestionsSing,Spook,"But ""nothing easy is ever amazing"" or something, right!?"
+p1StreetQuestionsSing,,"char_update,Pogo,6"
+p1StreetQuestionsSing,Pogo,Hehe. Perhaps little one. Perhaps.
+p1StreetQuestionsSing,,map
+,,
+p1StreetQuestionsWork,,"char_update,Pogo,6"
+p1StreetQuestionsWork,Pogo,[shake]RIGHT!???[/shake]
+p1StreetQuestionsWork,,"char_update,Pogo,0"
+p1StreetQuestionsWork,Pogo,"Am not worried about you at all, kid."
+p1StreetQuestionsWork,,"char_update,Pogo,1"
+p1StreetQuestionsWork,Pogo,You will do [wave]juuuuust[/wave] fine among us!
+p1StreetQuestionsWork,,map
+,,
+,,
+p1StreetQuestionsTownCheck,,"condition_flag,streetQuestionTown"
+p1StreetQuestionsTownCheck,,"scene_set,p1StreetQuestionsTownAsked"
+p1StreetQuestionsTownCheck,,"scene_set,p1StreetQuestionsTown"
+,,
+p1StreetQuestionsTownAsked,Pogo,"Hmm, didn't you get [wave]really[/wave] scared last time you asked this?"
+p1StreetQuestionsTownAsked,Spook,I'm just... a little curious again!
+p1StreetQuestionsTownAsked,,"scene_set,p1StreetQuestionsTown"
+,,
+p1StreetQuestionsTown,,"char_update,Pogo,8"
+p1StreetQuestionsTown,Pogo,Ohoho!
+p1StreetQuestionsTown,Pogo,You wanna know the tales of the [shake]ancient fog?[/shake]
+p1StreetQuestionsTown,,"char_update,Spook,6"
+p1StreetQuestionsTown,Spook,Um... Yes? Is it [wave]always[/wave] foggy or something?
+p1StreetQuestionsTown,Pogo,You could say that...
+p1StreetQuestionsTown,Pogo,"Some say it's coming from under the dirt, not the sky."
+p1StreetQuestionsTown,Spook,Huh? How so?
+p1StreetQuestionsTown,,"char_update,Pogo,0"
+p1StreetQuestionsTown,Pogo,"You see, this part of the town is always foggy, more or less, even if it's a clear sky outside!"
+p1StreetQuestionsTown,Pogo,"And if you walk a little away, you can actually see that surrounding areas aren't effected..."
+p1StreetQuestionsTown,Pogo,The fog travels through streets like branches of veins. They say it follows the roots underground.
+p1StreetQuestionsTown,Spook,...But why?
+p1StreetQuestionsTown,Pogo,"Beats me, friend! Maybe there is something lurking right under our feet."
+p1StreetQuestionsTown,,"char_update,Pogo,8"
+p1StreetQuestionsTown,Pogo,[shake]Feeding on the fog...[/shake]
+p1StreetQuestionsTown,,"char_update,Spook,8"
+p1StreetQuestionsTown,Spook,...
+p1StreetQuestionsTown,,"condition_flag,streetQuestionTown"
+p1StreetQuestionsTown,,"scene_set,p1StreetQuestionsTownAfraid"
+p1StreetQuestionsTown,,"scene_set,p1StreetQuestionsTownMessing"
+,,
+p1StreetQuestionsTownAfraid,,"flag_set,streetQuestionTown,true"
+p1StreetQuestionsTownAfraid,Pogo,"Hehe, your face is so funny when you're afraid, little mouse!"
+p1StreetQuestionsTownAfraid,Spook,I'm not afraid! Just a little... you know!
+p1StreetQuestionsTownAfraid,Pogo,"Oh, don't worry. I know."
+p1StreetQuestionsTownAfraid,,map
+,,
+p1StreetQuestionsTownMessing,,"flag_set,streetQuestionTown,true"
+p1StreetQuestionsTownMessing,Spook,Are you messing with me?
+p1StreetQuestionsTownMessing,Pogo,Hehe.
+p1StreetQuestionsTownMessing,Pogo,Maybe. Maybe not.
+p1StreetQuestionsTownMessing,,map
+,,
+,,
+p1StreetQuestionsBarCheck,,"condition_flag,streetQuestionBar"
+p1StreetQuestionsBarCheck,,"scene_set,p1StreetQuestionsBarAsked"
+p1StreetQuestionsBarCheck,,"scene_set,p1StreetQuestionsBar"
+,,
+p1StreetQuestionsBarAsked,Pogo,You really wanna hear the story of that old place again?
+p1StreetQuestionsBarAsked,Spook,"Yeah, I like that one!"
+p1StreetQuestionsBarAsked,Pogo,Very well. Listen closely!
+p1StreetQuestionsBarAsked,,"scene_set,p1StreetQuestionsBar"
+,,
+p1StreetQuestionsBar,,"char_update,Pogo,1"
+p1StreetQuestionsBar,Pogo,"Oh, the good old Barry's!"
+p1StreetQuestionsBar,,"char_update,Pogo,0"
+p1StreetQuestionsBar,Pogo,"When I was just a pup, I met Barry in the woods! Neither of us had much going on back then."
+p1StreetQuestionsBar,Pogo,"But, well- Barry and Drivey are old friends."
+p1StreetQuestionsBar,Pogo,"They taught me how I can loot trash cans, all the good spots in town..."
+p1StreetQuestionsBar,,"char_update,Pogo,6"
+p1StreetQuestionsBar,Pogo,We used to just light fires and make-up stories under that sewer back then!
+p1StreetQuestionsBar,,"char_update,Pogo,0"
+p1StreetQuestionsBar,Pogo,Soon the other strays joined us- and we carried what we collected over to years under the sewer.
+p1StreetQuestionsBar,,"char_update,Pogo,1"
+p1StreetQuestionsBar,Pogo,It was a safe haven for every unloved animal!
+p1StreetQuestionsBar,Pogo,"And well, soon we had drinks, music, new friends..."
+p1StreetQuestionsBar,,"char_update,Pogo,0"
+p1StreetQuestionsBar,Pogo,Now it's pretty much a club for anyone who is willing to contribute to our little community!
+p1StreetQuestionsBar,,"char_update,Spook,6"
+p1StreetQuestionsBar,,"condition_flag,streetQuestionBar"
+p1StreetQuestionsBar,,"scene_set,p1StreetQuestionsBarPets"
+p1StreetQuestionsBar,,"scene_set,p1StreetQuestionsBarUnloved"
+,,
+p1StreetQuestionsBarPets,,"flag_set,streetQuestionBar,true"
+p1StreetQuestionsBarPets,Spook,"Wait, but is it really only for strays?"
+p1StreetQuestionsBarPets,,"char_update,Spook,5"
+p1StreetQuestionsBarPets,Spook,Screwdriver told me some of you go back to cages in the morning!
+p1StreetQuestionsBarPets,Pogo,"Oh, sweetie. We had other pets who joined us at night, and very often."
+p1StreetQuestionsBarPets,Spook,Did they stop? What happened?
+p1StreetQuestionsBarPets,,"char_update,Pogo,5"
+p1StreetQuestionsBarPets,Pogo,It's... a long story.
+p1StreetQuestionsBarPets,,"char_update,Pogo,0"
+p1StreetQuestionsBarPets,Pogo,"And it's not for me to tell, either way."
+p1StreetQuestionsBarPets,,"char_update,Spook,0"
+p1StreetQuestionsBarPets,Spook,Aw...
+p1StreetQuestionsBarPets,Pogo,"Don't worry, just keep hanging around the bar. You'll find out, eventually."
+p1StreetQuestionsBarPets,,map
+,,
+p1StreetQuestionsBarUnloved,,"flag_set,streetQuestionBar,true"
+p1StreetQuestionsBarUnloved,Spook,"What do you mean ""unloved animals""?"
+p1StreetQuestionsBarUnloved,Pogo,"Oh, you know. Humans are evolved to fear some of us. "
+p1StreetQuestionsBarUnloved,Pogo,"Of course, we are evolved to fear each other as well."
+p1StreetQuestionsBarUnloved,Pogo,But while we were able to put that to the side and build a community...
+p1StreetQuestionsBarUnloved,Pogo,Humans are most likely always going to be judgemental of creatures like us!
+p1StreetQuestionsBarUnloved,,"char_update,Spook,5"
+p1StreetQuestionsBarUnloved,Spook,Shay isn't judgemental!
+p1StreetQuestionsBarUnloved,,"char_update,Pogo,7"
+p1StreetQuestionsBarUnloved,Pogo,Really? Would she let me into her house?
+p1StreetQuestionsBarUnloved,Spook,"Yeah! Shay loves bats! She never kills bugs, too!"
+p1StreetQuestionsBarUnloved,,"char_update,Pogo,6"
+p1StreetQuestionsBarUnloved,Pogo,"Oh my. You got a special human, don't you? What a lucky mouse!"
+p1StreetQuestionsBarUnloved,,"char_update,Spook,9"
+p1StreetQuestionsBarUnloved,Spook,[wave]Mhm![/wave] Shay's the best!
+p1StreetQuestionsBarUnloved,,map
 ,,
 ,,
 ,,
