@@ -1929,9 +1929,271 @@ p2BarCandy3,,"char_in,Screwdriver,sScrewdriver,1"
 p2BarCandy3,Screwdriver,"Well would you look at that! Returned to finish what we started, at last?"
 p2BarCandy3,Spook,"N-no, I was just passing by."
 p2BarCandy3,,"char_update,Screwdriver,2"
-p2BarCandy3,Screwdriver,"Don't be shy, I know you want to carry that heavy box over there! [shake]Cmoooooon!!![/shake]"
+p2BarCandy3,Screwdriver,"Don't be shy, I know you want to carry that heavy box over there! [shake]C'moooooon!!![/shake]"
 p2BarCandy3,Spook,"Sorry, gotta go!"
 p2BarCandy3,,map
+,,
+,,
+,,
+p2Front1,,"map_scene,front,p2Front2"
+p2Front1,,"flag_set,metPrincess,true"
+p2Front1,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
+p2Front1,,"music,bgmHouseAcross"
+p2Front1,Empty,You take notice that the front door is no longer guarded by the furry ball with ears!
+p2Front1,Empty,You enter through the little pet's door.
+p2Front1,,"main_char_in,0"
+p2Front1,,"char_in,Princess,sPrincess,0"
+p2Front1,Princess,"Ah, peasant!"
+p2Front1,Princess,How did you get past my bodyguard!?
+p2Front1,Spook,Do you mean... the rabbit?
+p2Front1,Princess,"That's [cycle,120,132]Great Dipper[/cycle] to you. The almighty protector of this kingdom and all who inhabit it!"
+p2Front1,Spook,Huh. Well.. he wasn't... there?
+p2Front1,Princess,I see...
+p2Front1,Princess,Approach. What brings you to my palace?
+p2Front1,Spook,Your palace?
+p2Front1,Princess,"Yes, peasant! You are in the presence of the Princess!"
+p2Front1,Spook,Princess who?
+p2Front1,Princess,Just Princess. [shake]THE[/shake] Princess.
+p2Front1,,"condition_flag,princess_quest_start"
+p2Front1,,"scene_set,p2Front1ChoiceQuest"
+p2Front1,,"scene_set,p2Front1Choice"
+,,
+p2Front1ChoiceQuest,Princess,Bow and greet me before you speak of your business!
+p2Front1ChoiceQuest,,"choice,p2Front1Yes,p2Front1Rule,p2Front1Guess,p2Front1Know"
+p2Front1ChoiceQuest,,"scene_set,p2Front1Yes"
+p2Front1ChoiceQuest,,"scene_set,p2Front1Rule"
+p2Front1ChoiceQuest,,"scene_set,p2Front1Guess"
+p2Front1ChoiceQuest,,"scene_set,p2Front1Know"
+,,
+p2Front1Choice,Princess,Bow and greet me before you speak of your business!
+p2Front1Choice,,"choice,p2Front1Yes,p2Front1Guess,p2Front1Rule"
+p2Front1Choice,,"scene_set,p2Front1Yes"
+p2Front1Choice,,"scene_set,p2Front1Guess"
+p2Front1Choice,,"scene_set,p2Front1Rule"
+,,
+p2Front1Yes,,"flag_set,gotKnight,true"
+p2Front1Yes,Princess,"Wonderful! Wonderful, truly!"
+p2Front1Yes,Princess,"What is your name, humble peasant?"
+p2Front1Yes,Spook,"It's Spook, your majesty!"
+p2Front1Yes,Princess,Spook. I see.
+p2Front1Yes,Princess,"Spook, you don't happen to be one of the little pests stealing from my keep the other night?"
+p2Front1Yes,Spook,"[shake]Uhhhh, nooo...[/shake]"
+p2Front1Yes,Spook,"I mean, your majesty, I wouldn't dare!"
+p2Front1Yes,Princess,"Hm... Very well. You should consider becoming my loyal knight, little mouse. "
+p2Front1Yes,Princess,I can see you are cut for it!
+p2Front1Yes,Spook,Spook the Knight!!!!
+p2Front1Yes,Spook,I actually already have my Halloween costume picked out!
+p2Front1Yes,Princess,Hehe.
+p2Front1Yes,,"scene_set,p2Front1Party"
+,,
+p2Front1Guess,Spook,"[b][alpha,0.5]Maybe this is her costume?[/alpha][/b]"
+p2Front1Guess,Empty,You bow your head and greet her awkwardly.
+p2Front1Guess,Princess,"Well done, well done! Now state your business! I am late to attending my royal duties!"
+p2Front1Guess,Spook,What kind of duties?
+p2Front1Guess,Princess,"Oh, you know. Walk down the street, greet my people..."
+p2Front1Guess,Princess,A beauty nap.
+p2Front1Guess,Princess,...
+p2Front1Guess,,"delay,0.5"
+p2Front1Guess,Princess,"Greet my people, again."
+p2Front1Guess,Spook,[wave]Oookay.[/wave]
+p2Front1Guess,,"scene_set,p2Front1Party"
+,,
+p2Front1Rule,Princess,"[sound,sfxPrincessBark][shake]The audacity![/shake]"
+p2Front1Rule,Spook,No! I am just saying that we've never met!
+p2Front1Rule,Princess,Am I to know each and every peasant in my kingdom? Do you think an actual Princess has any time for that?!
+p2Front1Rule,Spook,I don't know! I thought we had presidents now! [shake]This is very confusing!!![/shake]
+p2Front1Rule,Princess,"Get out of my sight, peasant!"
+p2Front1Rule,,"choice,p2Front1Sorry,p2Front1Go"
+p2Front1Rule,,"scene_set,p2Front1Sorry"
+p2Front1Rule,,"scene_set,p2Front1Go"
+,,
+p2Front1Go,Princess,Hmph!
+p2Front1Go,Spook,"[b][alpha,0.5]What's with that dog?[/alpha][/b]"
+p2Front1Go,Spook,"[b][alpha,0.5]I wonder if I should try and humor her next time?[/alpha][/b]"
+p2Front1Go,,map
+,,
+p2Front1Sorry,Spook,"Sorry, I didn't mean to offend you!"
+p2Front1Sorry,Spook,...
+p2Front1Sorry,Spook,Your Majesty.
+p2Front1Sorry,Princess,"You don't say ""Your Majesty"" to me! That is for the Queen."
+p2Front1Sorry,Princess,You'll adress the Princess as Your Highness.
+p2Front1Sorry,Princess,"Goodness, these peasants grow more ignorant by the day!"
+p2Front1Sorry,Spook,"Well, I am not from around here, really. Excuse my rudeness."
+p2Front1Sorry,Princess,Hmph.
+p2Front1Sorry,Spook,"So if you're the Princess, then your human is the Queen?"
+p2Front1Sorry,Princess,"Quite observant! Of course, my human is the most beautiful and powerful Queen of this land!"
+p2Front1Sorry,Princess,Any more questions?
+p2Front1Sorry,Spook,"Yes, well..."
+p2Front1Sorry,,"scene_set,p2Front1Party"
+,,
+p2Front1Party,Spook,Are you going to be attending the party tonight?
+p2Front1Party,Princess,Hm? What party?
+p2Front1Party,Spook,A Halloween party!
+p2Front1Party,Spook,"My new friends will be there. It's Pogo, Screwdriver, Barry-"
+p2Front1Party,Princess,"[sound,sfxPrincessBark][b][shake]BARK![/shake][/b]"
+p2Front1Party,Spook,[shake]AH!!!![/shake] What happened??
+p2Front1Party,Princess,N-nothing. Nothing happened.
+p2Front1Party,,"condition_flag,gotKnight"
+p2Front1Party,Princess,"...You may take your leave now, knight."
+p2Front1Party,Princess,"...You may take your leave now, peasant."
+p2Front1Party,,"condition_flag,princess_quest_start"
+p2Front1Party,,"scene_set,p2Front1PartyChoice"
+p2Front1Party,,"scene_set,p2Front1PartyLeave"
+,,
+p2Front1PartyLeave,Princess,It's... time for my beauty nap.
+p2Front1PartyLeave,,"scene_set,p2Front1Leave"
+,,
+p2Front1PartyChoice,Princess,It's... time for my beauty nap.
+p2Front1PartyChoice,,"choice,p2Front1Know,p2Front1Leave"
+p2Front1PartyChoice,,"scene_set,p2Front1Know"
+p2Front1PartyChoice,,"scene_set,p2Front1Leave"
+,,
+p2Front1Leave,Spook,Okay... if you say so.
+p2Front1Leave,,map
+,,
+p2Front1Know,Princess,"Hm? Well, of course you do! Everyone does!"
+p2Front1Know,Princess,"After all, I've got great many pictures of myself."
+p2Front1Know,,"choice,p2Front1Show,p2Front1Keep"
+p2Front1Know,,"scene_set,p2FrontWatch"
+p2Front1Know,,"scene_set,p2Front1Keep"
+,,
+p2Front1Keep,Spook,"I wasn't going to say anything, actually!"
+p2Front1Keep,Princess,Okay?
+p2Front1Keep,Princess,...
+p2Front1Keep,Spook,"[shake]Uh, yeah, haha...[/shake]"
+p2Front1Keep,Princess,I can see you're hiding something! What is it?!
+p2Front1Keep,Spook,Well...
+p2Front1Keep,,"choice,p2Front1Show,p2Front1BadIdea"
+p2Front1Keep,,"scene_set,p2FrontWatch"
+p2Front1Keep,,"scene_set,p2Front1BadIdea"
+,,
+p2Front1BadIdea,Spook,It was a bad idea to get involved! I'm out!
+p2Front1BadIdea,Princess,Did you steal something?! 
+p2Front1BadIdea,Princess,[shake]GUARDS!!![/shake]
+p2Front1BadIdea,Spook,[shake]AAAHH!![/shake]
+p2Front1BadIdea,Spook,[shake]DIPPER GET IN HERE!!! GUAAARDS!!![/shake]
+p2Front1BadIdea,Spook,"This is bad, I better get out of here!"
+p2Front1BadIdea,,"flag_set,princess_quest_fail,true"
+p2Front1BadIdea,,map
+,,
+,,
+p2Front2,Spook,"Hello, Princess!"
+p2Front2,,"condition_flag,gotKnight"
+p2Front2,Princess,Knight?
+p2Front2,Princess,Peasant?
+p2Front2,,"condition_flag,princess_quest_start"
+p2Front2,,"scene_set,p2Front2Choice"
+p2Front2,,"scene_set,p2Front2Passing"
+,,
+p2Front2Passing,Spook,Just passing through!
+p2Front2Passing,Princess,"Well don't dilly-dally! My time is precious, just like myself!"
+p2Front2Passing,,map
+,,
+p2Front2Choice,Spook,Um...
+p2Front2Choice,,"choice,p2Front2Something,p2Front2Passing"
+p2Front2Choice,,"scene_set,p2Front2Something"
+p2Front2Choice,,"scene_set,p2Front2Passing"
+,,
+p2Front2Something,Spook,"Actually, I got something to show you!"
+p2Front2Something,Princess,"A gift for the royalty? How unexpected, how pleasant!"
+p2Front2Something,Spook,It's this pocket watch!
+p2Front2Something,,"scene_set,p2FrontWatch"
+,,
+,,
+p2FrontWatch,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+p2Front2Offended,,
+,,
+p2Front2Complete,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
 ,,
 ,,
 ,,

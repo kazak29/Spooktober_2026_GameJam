@@ -31,7 +31,7 @@ function MapDataUpdatePart2(){
 		bar.scene		= _barScene;
 		street.scene	= "testScene1";
 		yard.scene		= "testScene1";
-		front.scene		= "testScene1";
+		front.scene		= "p2Front1";
 		lamp.scene		= "testScene1";
 	}
 }
