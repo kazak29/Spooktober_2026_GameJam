@@ -2009,8 +2009,8 @@ p2Front1Rule,,"scene_set,p2Front1Sorry"
 p2Front1Rule,,"scene_set,p2Front1Go"
 ,,
 p2Front1Go,Princess,Hmph!
-p2Front1Go,Spook,"[alpha,0.8](What's with that dog?)[/alpha]"
-p2Front1Go,Spook,"[alpha,0.8](I wonder if I should try and humor her next time?)[/alpha]"
+p2Front1Go,Spook,"[alpha,0.75](What's with that dog?)[/alpha]"
+p2Front1Go,Spook,"[alpha,0.75](I wonder if I should try and humor her next time...)[/alpha]"
 p2Front1Go,,map
 ,,
 p2Front1Sorry,Spook,"Sorry, I didn't mean to offend you!"
@@ -2066,13 +2066,14 @@ p2Front1Keep,,"choice,p2Front1Show,p2Front1BadIdea"
 p2Front1Keep,,"scene_set,p2FrontWatch"
 p2Front1Keep,,"scene_set,p2Front1BadIdea"
 ,,
+p2Front1BadIdea,,"map_scene,front,p2FrontOffended"
+p2Front1BadIdea,,"flag_set,princess_quest_fail,true"
 p2Front1BadIdea,Spook,It was a bad idea to get involved! I'm out!
 p2Front1BadIdea,Princess,Did you steal something?! 
 p2Front1BadIdea,Princess,[shake]GUARDS!!![/shake]
 p2Front1BadIdea,Spook,[shake]AAAHH!![/shake]
 p2Front1BadIdea,Spook,[shake]DIPPER GET IN HERE!!! GUAAARDS!!![/shake]
 p2Front1BadIdea,Spook,"This is bad, I better get out of here!"
-p2Front1BadIdea,,"flag_set,princess_quest_fail,true"
 p2Front1BadIdea,,map
 ,,
 ,,
@@ -2093,73 +2094,138 @@ p2Front2Choice,,"scene_set,p2Front2Passing"
 ,,
 p2Front2Something,Spook,"Actually, I got something to show you!"
 p2Front2Something,Princess,"A gift for the royalty? How unexpected, how pleasant!"
-p2Front2Something,Spook,It's this pocket watch!
+p2Front2Something,Spook,It's this pocket watch! Look!
 p2Front2Something,,"scene_set,p2FrontWatch"
 ,,
 ,,
-p2FrontWatch,,
+p2FrontWatch,Spook,Isn't this you?
+p2FrontWatch,Princess,"[sound,sfxPrincessBark][shake][b]BARK![/b][/shake]"
+p2FrontWatch,Spook,It looks special...
+p2FrontWatch,Princess,[shake]Remove that from my sight at once![/shake]
+p2FrontWatch,,"choice,p2FrontWatchWhy,p2FrontWatchSorry"
+p2FrontWatch,,"scene_set,p2FrontWatchWhy"
+p2FrontWatch,,"scene_set,p2FrontWatchSorry"
+,,
+p2FrontWatchWhy,Princess,[shake]Because![/shake]
+p2FrontWatchWhy,Princess,"[shake]Where did you even get that from!? You are a dirty thief, are you not!!??[/shake]"
+p2FrontWatchWhy,Spook,No! I am friends with Barry!
+p2FrontWatchWhy,Princess,[shake]B... Bar...[/shake]
+p2FrontWatchWhy,,"scene_set,p2FrontWatchMiss"
+,,
+p2FrontWatchSorry,Princess,[shake]H... hw...[/shake]
+p2FrontWatchSorry,Spook,"Are you okay, Princess?"
+p2FrontWatchSorry,Princess,[shake]I am fine! Leave me alone!!!![/shake]
+p2FrontWatchSorry,,"choice,p2FrontWatchMiss,p2FrontWatchLeave"
+p2FrontWatchSorry,,"scene_set,p2FrontWatchMiss"
+p2FrontWatchSorry,,"scene_set,p2FrontWatchLeave"
+,,
+p2FrontWatchLeave,Spook,"[alpha,0.75](This is getting intense. I didn't sign up to deal with this!)[/alpha]"
+p2FrontWatchLeave,Princess,[shake]...[/shake]
+p2FrontWatchLeave,Spook,"[alpha,0.75](Why did I even get involved? Now she's crying.)[/alpha]"
+p2FrontWatchLeave,Spook,"[alpha,0.75][shake]Ugh...[/shake] I don't know if I should push her more right now. But, there won't be a better time to get the answers![/alpha]"
+p2FrontWatchLeave,,"choice,p2FrontWatchMiss,p2FrontWatchSkeddadle"
+p2FrontWatchLeave,,"scene_set,p2FrontWatchMiss"
+p2FrontWatchLeave,,"scene_set,p2FrontWatchSkeddadle"
 ,,
 ,,
+p2FrontWatchMiss,Princess,Shut up!
+p2FrontWatchMiss,Spook,No! You should come to the party!
+p2FrontWatchMiss,Princess,You don't understand!
+p2FrontWatchMiss,Spook,"Oh, let me guess, because you are a princess and he is a pest!?"
+p2FrontWatchMiss,Princess,No!
+p2FrontWatchMiss,Princess,...No.
+p2FrontWatchMiss,Princess,They tried to poison my Bar-bar! My owners thought he was going to attack me or my brother!
+p2FrontWatchMiss,Spook,?!
+p2FrontWatchMiss,Princess,...It was so long ago. We used to sneak out at night.
+p2FrontWatchMiss,Princess,My brother would play the drums. 
+p2FrontWatchMiss,Spook,THE LOST DRUMMER!!!!?
+p2FrontWatchMiss,Princess,Oh? How do you know!?
+p2FrontWatchMiss,Spook,They speak of him still!
+p2FrontWatchMiss,Princess,Oh... and of me?
+p2FrontWatchMiss,,"choice,p2FrontWatchKept,p2FrontWatchTouchy,p2FrontWatchRecall"
+p2FrontWatchMiss,,"scene_set,p2FrontWatchKept"
+p2FrontWatchMiss,,"scene_set,p2FrontWatchTouchy"
+p2FrontWatchMiss,,"scene_set,p2FrontWatchRecall"
+,,
+p2FrontWatchKept,Princess,Oh what a silly racoon....
+p2FrontWatchKept,Princess,Where was it?
+p2FrontWatchKept,Spook,In the backrooms.
+p2FrontWatchKept,Princess,In the [shake]WHAT???[/shake]
+p2FrontWatchKept,Spook,"Yeah, it was in the box."
+p2FrontWatchKept,Spook,Among... other things.
+p2FrontWatchKept,Princess,Other things?
+p2FrontWatchKept,Spook,"Blobfish, bones, an old boot..."
+p2FrontWatchKept,Princess,What?
+p2FrontWatchKept,Spook,Nothing! Nevermind!
+p2FrontWatchKept,,"scene_set,p2FrontWatchCome"
+,,
+p2FrontWatchTouchy,Princess,I understand...
+p2FrontWatchTouchy,Spook,But I believe Barry misses you!
+p2FrontWatchTouchy,Princess,...You really think so?
+p2FrontWatchTouchy,Spook,"Well, yeah!"
+p2FrontWatchTouchy,Spook,He's always drinking.
+p2FrontWatchTouchy,Princess,Oh. Oh what a silly racoon....
+p2FrontWatchTouchy,,"scene_set,p2FrontWatchCome"
+,,
+p2FrontWatchRecall,Princess,...Hmph! 
+p2FrontWatchRecall,Princess,Who cares anyway!
+p2FrontWatchRecall,Princess,Tell him I've moved on! I have a... mate... that I will meet soon! Yeah!
+p2FrontWatchRecall,Spook,Oh... um... Do you really?
+p2FrontWatchRecall,Princess,YES!!!! 
+p2FrontWatchRecall,Princess,"And tell Pogo I have a new best friend, too!"
+p2FrontWatchRecall,Princess,A lot of them!
+p2FrontWatchRecall,Princess,At the dog park!!!!
+p2FrontWatchRecall,Spook,Pogo was your best friend?
+p2FrontWatchRecall,Princess,Hmph! WAS. 
+p2FrontWatchRecall,Princess,"Now out of my sight, [name_from_princess_low]!"
+p2FrontWatchRecall,,"choice,p2FrontWatchRemember,p2FrontWatchTried"
+p2FrontWatchRecall,,"scene_set,p2FrontWatchRemember"
+p2FrontWatchRecall,,"scene_set,p2FrontWatchTried"
+,,
+p2FrontWatchRemember,Princess,Lies! Your face says it all!!!
+p2FrontWatchRemember,Spook,I am just an outsider. I don't know everything!
+p2FrontWatchRemember,Spook,They do look very sad when talking about the old days. They definitely miss you!
+p2FrontWatchRemember,Princess,I... can't go back. I'll make a fool of myself!
+p2FrontWatchRemember,Spook,"But you're such a class act! They'll be thrilled to see you, I just know it!"
+p2FrontWatchRemember,Princess,...
+p2FrontWatchRemember,Spook,[wave]C'mon![/wave]
+p2FrontWatchRemember,,"scene_set,p2FrontWatchCome"
+,,
+p2FrontWatchTried,Princess,Tried to make a fool out of me! Now get out!!!
+p2FrontWatchTried,Spook,Time to skedaddle.
+p2FrontWatchTried,,"scene_set,p2FrontWatchSkeddadle"
 ,,
 ,,
+p2FrontWatchSkeddadle,,"map_scene,front,p2FrontOffended"
+p2FrontWatchSkeddadle,,"flag_set,princess_quest_fail,true"
+p2FrontWatchSkeddadle,Spook,"I think I saved those guys an awkward party! They should be thanking me, really."
+p2FrontWatchSkeddadle,,map
 ,,
 ,,
+p2FrontWatchCome,,"map_scene,p2FrontComplete"
+p2FrontWatchCome,,"flag_set,princess_quest_complete,true"
+p2FrontWatchCome,Spook,You should come to the party!
+p2FrontWatchCome,Princess,I...
+p2FrontWatchCome,Princess,I'll think about it.
+p2FrontWatchCome,Spook,Cool!
+p2FrontWatchCome,Princess,...Cool.
+p2FrontWatchCome,,map
 ,,
 ,,
+p2FrontOffended,Princess,[shake]YOU!!![/shake]
+p2FrontOffended,Spook,"Oops, wrong door!"
+p2FrontOffended,Princess,"[sound,sfxPrincessBark][shake]Get out!!! Get ouuuuuuut!!![/shake]"
+p2FrontOffended,,map
 ,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-p2FrontOffended,,
-,,
-p2FrontComplete,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
+p2FrontComplete,Princess,[name_from_princess_cap]!
+p2FrontComplete,Spook,"Hey, Princess!"
+p2FrontComplete,Princess,Do you have more business here?
+p2FrontComplete,Spook,"No, just checking in, is all!"
+p2FrontComplete,Princess,"Hm, well. Thank you."
+p2FrontComplete,Princess,But don't gad about here!
+p2FrontComplete,Princess,"I am a busy person, you know."
+p2FrontComplete,Spook,Okaaay. Be seeing you!
+p2FrontComplete,,map
 ,,
 ,,
 ,,
