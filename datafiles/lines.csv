@@ -1982,19 +1982,19 @@ p2Front1Yes,Spook,"[shake]Uhhhh, nooo...[/shake]"
 p2Front1Yes,Spook,"I mean, your majesty, I wouldn't dare!"
 p2Front1Yes,Princess,"Hm... Very well. You should consider becoming my loyal knight, little mouse. "
 p2Front1Yes,Princess,I can see you are cut for it!
-p2Front1Yes,Spook,Spook the Knight!!!!
+p2Front1Yes,Spook,[wave]Spook the Knight!!!![/wave]
 p2Front1Yes,Spook,I actually already have my Halloween costume picked out!
 p2Front1Yes,Princess,Hehe.
 p2Front1Yes,,"scene_set,p2Front1Party"
 ,,
-p2Front1Guess,Spook,"[b][alpha,0.5]Maybe this is her costume?[/alpha][/b]"
+p2Front1Guess,Spook,"[alpha,0.8](Maybe this is her costume?)[/alpha]"
 p2Front1Guess,Empty,You bow your head and greet her awkwardly.
 p2Front1Guess,Princess,"Well done, well done! Now state your business! I am late to attending my royal duties!"
 p2Front1Guess,Spook,What kind of duties?
 p2Front1Guess,Princess,"Oh, you know. Walk down the street, greet my people..."
 p2Front1Guess,Princess,A beauty nap.
-p2Front1Guess,Princess,...
 p2Front1Guess,,"delay,0.5"
+p2Front1Guess,Princess,...
 p2Front1Guess,Princess,"Greet my people, again."
 p2Front1Guess,Spook,[wave]Oookay.[/wave]
 p2Front1Guess,,"scene_set,p2Front1Party"
@@ -2009,8 +2009,8 @@ p2Front1Rule,,"scene_set,p2Front1Sorry"
 p2Front1Rule,,"scene_set,p2Front1Go"
 ,,
 p2Front1Go,Princess,Hmph!
-p2Front1Go,Spook,"[b][alpha,0.5]What's with that dog?[/alpha][/b]"
-p2Front1Go,Spook,"[b][alpha,0.5]I wonder if I should try and humor her next time?[/alpha][/b]"
+p2Front1Go,Spook,"[alpha,0.8](What's with that dog?)[/alpha]"
+p2Front1Go,Spook,"[alpha,0.8](I wonder if I should try and humor her next time?)[/alpha]"
 p2Front1Go,,map
 ,,
 p2Front1Sorry,Spook,"Sorry, I didn't mean to offend you!"
@@ -2034,9 +2034,7 @@ p2Front1Party,Spook,"My new friends will be there. It's Pogo, Screwdriver, Barry
 p2Front1Party,Princess,"[sound,sfxPrincessBark][b][shake]BARK![/shake][/b]"
 p2Front1Party,Spook,[shake]AH!!!![/shake] What happened??
 p2Front1Party,Princess,N-nothing. Nothing happened.
-p2Front1Party,,"condition_flag,gotKnight"
-p2Front1Party,Princess,"...You may take your leave now, knight."
-p2Front1Party,Princess,"...You may take your leave now, peasant."
+p2Front1Party,Princess,"...You may take your leave now, [name_from_princess_low]."
 p2Front1Party,,"condition_flag,princess_quest_start"
 p2Front1Party,,"scene_set,p2Front1PartyChoice"
 p2Front1Party,,"scene_set,p2Front1PartyLeave"
@@ -2079,9 +2077,7 @@ p2Front1BadIdea,,map
 ,,
 ,,
 p2Front2,Spook,"Hello, Princess!"
-p2Front2,,"condition_flag,gotKnight"
-p2Front2,Princess,Knight?
-p2Front2,Princess,Peasant?
+p2Front2,Princess,[name_from_princess_cap]?
 p2Front2,,"condition_flag,princess_quest_start"
 p2Front2,,"scene_set,p2Front2Choice"
 p2Front2,,"scene_set,p2Front2Passing"
