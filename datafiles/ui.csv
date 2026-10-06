@@ -80,21 +80,22 @@ p1Street1LostNo,Not at all! No!
 p1Street1LostAll,Aren't we all lost?
 p1Street1Scary,No... sounds scary!
 p1Street1KindOf,I kind of do...
-p1Street1QuestionYourself,Tell me about yourself!
-p1Street1QuestionTown,Tell me about Foggy Hallow!
-p1Street1QuestionBar,Tell me about the bar!
-p1Street1Sing,You should sing again if it is your dream!
-p1Street1Work,"Yeah, working sucks! Let's all party all night forever!!!!"
 p1Street1Read,I just didn't think pests could read...
 p1Street1Books,"I love books, too!!!"
 p1Street1ReadHuman,My human reads to me! That's why!
 p1Street1ReadTaught,But it's impressive you taught yourself!
 p1Street1ReadHunting,I assumed you'd rather be hunting or something!
+p1Street1HuntingFunny,That's not funny!
 p1Street1Horror,Horror!
 p1Street1Fairy,Fairytales!
 p1Street1Romance,Romance!
 p1Street1Scifi,Sci-Fi!
-p1Street1HuntingFunny,That's not funny!
+,
+p1StreetQuestionsYourself,Tell me about yourself!
+p1StreetQuestionsTown,Tell me about Foggy Hallow!
+p1StreetQuestionsBar,Tell me about the bar!
+p1StreetQuestionsSing,You should sing again if it is your dream!
+p1StreetQuestionsWork,"Yeah, working sucks! Let's all party all night forever!!!!"
 ,
 ,
 p1Yard1Called,"Well, [shake]I[/shake] never called you a mouse!"
@@ -149,3 +150,26 @@ p2BarCandyDecorAlright,...I guess that is alright...
 p2BarCandyDecorKeep,Keep the pocket watch
 p2BarCandyDecorLeave,Leave the pocket watch be
 p2BarCandyDecorLeaveReally,"Really, really leave it be"
+,
+p2Front1Yes,"Yes, Your Highness!"
+p2Front1Rule,I am pretty sure you don't rule [shake]MY[/shake] part of the country.
+p2Front1Guess,"Um... okay, I guess??"
+p2Front1Know,Wait! I know you! From that picture!
+p2Front1Sorry,Sorry!
+p2Front1Go,"Yeah, I better go now."
+p2Front1Leave,Leave the princess be
+p2Front1Show,Show her the pocket watch
+p2Front1Keep,Keep it to yourself
+p2Front1BadIdea,It was a bad idea to get involved! I'm out!
+p2Front2Something,"Actually, I got something to show you!"
+p2Front2Passing,Just passing through!
+p2FrontWatchSorry,"Oh, okay... sorry!"
+p2FrontWatchWhy,But why?
+p2FrontWatchLeave,Leave her alone
+p2FrontWatchMiss,"You miss him, don't you?"
+p2FrontWatchSkeddadle,Time to skedaddle
+p2FrontWatchKept,"Well, he kept the pocket watch, right?"
+p2FrontWatchTouchy,"Yeah but, I think it's a touchy subject..."
+p2FrontWatchRecall,I don't recall.
+p2FrontWatchRemember,"No, I remember now! They talk about you all the time!"
+p2FrontWatchTried,Oh well. I tried.

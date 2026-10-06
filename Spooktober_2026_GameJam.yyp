@@ -312,6 +312,7 @@
     {"id":{"name":"sBackgroundCageNightSpook","path":"sprites/sBackgroundCageNightSpook/sBackgroundCageNightSpook.yy",},},
     {"id":{"name":"sBackgroundCalendar","path":"sprites/sBackgroundCalendar/sBackgroundCalendar.yy",},},
     {"id":{"name":"sBackgroundGray","path":"sprites/sBackgroundGray/sBackgroundGray.yy",},},
+    {"id":{"name":"sBackgroundHouseAcrossYardDay","path":"sprites/sBackgroundHouseAcrossYardDay/sBackgroundHouseAcrossYardDay.yy",},},
     {"id":{"name":"sBackgroundHouseAcrossYardNight","path":"sprites/sBackgroundHouseAcrossYardNight/sBackgroundHouseAcrossYardNight.yy",},},
     {"id":{"name":"sBackgroundLampPostNight","path":"sprites/sBackgroundLampPostNight/sBackgroundLampPostNight.yy",},},
     {"id":{"name":"sBackgroundLampPostNightMoth","path":"sprites/sBackgroundLampPostNightMoth/sBackgroundLampPostNightMoth.yy",},},

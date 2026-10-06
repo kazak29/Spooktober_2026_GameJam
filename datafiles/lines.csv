@@ -753,7 +753,7 @@ p1Street1Scary,,"char_update,Spook,6"
 p1Street1Scary,Spook,I... guess?
 p1Street1Scary,,"char_update,Pogo,1"
 p1Street1Scary,Pogo,Let me know if you ever want a ride!
-p1Street1Scary,,"scene_set,p1Street1Questions"
+p1Street1Scary,,"scene_set,p1StreetQuestions"
 ,,
 p1Street1KindOf,,"char_update,Pogo,1"
 p1Street1KindOf,Pogo,"He-he! I could take you on a ride, if you wanted to."
@@ -765,7 +765,7 @@ p1Street1KindOf,,"char_update,Spook,8"
 p1Street1KindOf,Spook,That's not reassuring at all!
 p1Street1KindOf,,"char_update,Pogo,8"
 p1Street1KindOf,Pogo,Hehe...
-p1Street1KindOf,,"scene_set,p1Street1Questions"
+p1Street1KindOf,,"scene_set,p1StreetQuestions"
 ,,
 ,,
 p1Street1LostNo,,"char_update,Pogo,8"
@@ -780,182 +780,7 @@ p1Street1LostNo,,"char_update,Spook,5"
 p1Street1LostNo,Spook,...Somewhere.
 p1Street1LostNo,,"char_update,Pogo,8"
 p1Street1LostNo,Pogo,That's where I am going! [wave]Hihihi...[/wave]
-p1Street1LostNo,,"scene_set,p1Street1Questions"
-,,
-,,
-p1Street1Questions,,"char_update,Spook,0"
-p1Street1Questions,Spook,So...
-p1Street1Questions,,"char_update,Pogo,0"
-p1Street1Questions,Pogo,Hm?
-p1Street1Questions,,"choice,p1Street1QuestionYourself,p1Street1QuestionTown,p1Street1QuestionBar"
-p1Street1Questions,,"scene_set,p1Street1QuestionYourselfCheck"
-p1Street1Questions,,"scene_set,p1Street1QuestionTownCheck"
-p1Street1Questions,,"scene_set,p1Street1QuestionBarCheck"
-,,
-,,
-p1Street1QuestionYourselfCheck,,"condition_flag,streetQuestionYourself"
-p1Street1QuestionYourselfCheck,,"scene_set,p1Street1QuestionYourselfAsked"
-p1Street1QuestionYourselfCheck,,"scene_set,p1Street1QuestionYourself"
-,,
-p1Street1QuestionYourselfAsked,Pogo,"Oh my, aren't you too interested in me?"
-p1Street1QuestionYourselfAsked,Spook,I just wanna hear your story again!
-p1Street1QuestionYourselfAsked,Pogo,"Oh, well."
-p1Street1QuestionYourselfAsked,,"scene_set,p1Street1QuestionYourself"
-,,
-p1Street1QuestionYourself,,"flag_set,streetQuestionYourself,true"
-p1Street1QuestionYourself,Pogo,Hm hm... Let's see....
-p1Street1QuestionYourself,,"char_update,Pogo,4"
-p1Street1QuestionYourself,Pogo,My favorite drink is grape juice...
-p1Street1QuestionYourself,,"char_update,Pogo,0"
-p1Street1QuestionYourself,Pogo,And my favorite author is Marry Shelley!
-p1Street1QuestionYourself,,"char_update,Pogo,1"
-p1Street1QuestionYourself,Pogo,"And Dracula is my biggest crush, big time. Too bad I was born so late...."
-p1Street1QuestionYourself,,"char_update,Spook,9"
-p1Street1QuestionYourself,Spook,Maybe you will meet a vampire during Halloween!
-p1Street1QuestionYourself,,"char_update,Pogo,6"
-p1Street1QuestionYourself,Pogo,Oh that would be [wave]WONDERFUL![/wave]
-p1Street1QuestionYourself,,"char_update,Pogo,8"
-p1Street1QuestionYourself,Pogo,But what if they have a taste for mouses-
-p1Street1QuestionYourself,,"char_update,Spook,8"
-p1Street1QuestionYourself,Spook,[shake]QUIT JOKING ABOUT THAT!!!![/shake]
-p1Street1QuestionYourself,,"char_update,Pogo,0"
-p1Street1QuestionYourself,Pogo,"Alright, alright..."
-p1Street1QuestionYourself,,"char_update,Spook,0"
-p1Street1QuestionYourself,Pogo,"Well, I always wanted to be a singer as a little girl!"
-p1Street1QuestionYourself,,"char_update,Pogo,1"
-p1Street1QuestionYourself,Pogo,"I used to sing towards the mountains, so my voice would echo. It felt like a whole stage!"
-p1Street1QuestionYourself,Spook,Don't you sing anymore?
-p1Street1QuestionYourself,,"char_update,Pogo,0"
-p1Street1QuestionYourself,Pogo,"Hm... Been a while, no. But I could say I accomplished a dream in a way."
-p1Street1QuestionYourself,Pogo,"Now I am content with just being a little night dweller, hanging out with my friends!"
-p1Street1QuestionYourself,,"choice,p1Street1Sing,p1Street1Work"
-p1Street1QuestionYourself,,"scene_set,p1Street1Sing"
-p1Street1QuestionYourself,,"scene_set,p1Street1Work"
-,,
-p1Street1Sing,,"char_update,Pogo,5"
-p1Street1Sing,Pogo,"Oh, you know sweetie... It's just not the same anymore."
-p1Street1Sing,,"char_update,Spook,6"
-p1Street1Sing,Spook,Why so?
-p1Street1Sing,,"char_update,Pogo,0"
-p1Street1Sing,Pogo,...Dunno. Passion and inspiration are rare to find. Back then things were... different. 
-p1Street1Sing,,"char_update,Spook,5"
-p1Street1Sing,Spook,"But ""nothing easy is ever amazing"" or something, right!?"
-p1Street1Sing,,"char_update,Pogo,6"
-p1Street1Sing,Pogo,Hehe. Perhaps little one. Perhaps.
-p1Street1Sing,,map
-,,
-p1Street1Work,,"char_update,Pogo,1"
-p1Street1Work,Pogo,[shake]RIGHT!???[/shake]
-p1Street1Work,,"char_update,Pogo,0"
-p1Street1Work,Pogo,"Am not worried about you at all, kid."
-p1Street1Work,,"char_update,Pogo,1"
-p1Street1Work,Pogo,You will do [wave]juuuuust[/wave] fine among us!
-p1Street1Work,,map
-,,
-,,
-p1Street1QuestionTownCheck,,"condition_flag,streetQuestionTown"
-p1Street1QuestionTownCheck,,"scene_set,p1Street1QuestionTownAsked"
-p1Street1QuestionTownCheck,,"scene_set,p1Street1QuestionTown"
-,,
-p1Street1QuestionTownAsked,Pogo,"Hmm, didn't you get [wave]really[/wave] scared last time you asked this?"
-p1Street1QuestionTownAsked,Spook,I'm just... a little curious again!
-p1Street1QuestionTownAsked,,"scene_set,p1Street1QuestionTown"
-,,
-p1Street1QuestionTown,,"char_update,Pogo,8"
-p1Street1QuestionTown,Pogo,Ohoho!
-p1Street1QuestionTown,Pogo,You wanna know the tales of the [shake]ancient fog?[/shake]
-p1Street1QuestionTown,,"char_update,Spook,6"
-p1Street1QuestionTown,Spook,Um... Yes? Is it [wave]always[/wave] foggy or something?
-p1Street1QuestionTown,Pogo,You could say that...
-p1Street1QuestionTown,Pogo,"Some say it's coming from under the dirt, not the sky."
-p1Street1QuestionTown,Spook,Huh? How so?
-p1Street1QuestionTown,,"char_update,Pogo,0"
-p1Street1QuestionTown,Pogo,"You see, this part of the town is always foggy, more or less, even if it's a clear sky outside!"
-p1Street1QuestionTown,Pogo,"And if you walk a little away, you can actually see that surrounding areas aren't effected..."
-p1Street1QuestionTown,Pogo,The fog travels through streets like branches of veins. They say it follows the roots underground.
-p1Street1QuestionTown,Spook,...But why?
-p1Street1QuestionTown,Pogo,"Beats me, friend! Maybe there is something lurking right under our feet."
-p1Street1QuestionTown,,"char_update,Pogo,8"
-p1Street1QuestionTown,Pogo,[shake]Feeding on the fog...[/shake]
-p1Street1QuestionTown,,"char_update,Spook,8"
-p1Street1QuestionTown,Spook,...
-p1Street1QuestionTown,,"condition_flag,streetQuestionTown"
-p1Street1QuestionTown,,"scene_set,p1Street1QuestionTownAfraid"
-p1Street1QuestionTown,,"scene_set,p1Street1QuestionTownMessing"
-,,
-p1Street1QuestionTownAfraid,,"flag_set,streetQuestionTown,true"
-p1Street1QuestionTownAfraid,Pogo,"Hehe, your face is so funny when you're afraid, little mouse!"
-p1Street1QuestionTownAfraid,Spook,I'm not afraid! Just a little... you know!
-p1Street1QuestionTownAfraid,Pogo,"Oh, don't worry. I know."
-p1Street1QuestionTownAfraid,,map
-,,
-p1Street1QuestionTownMessing,,"flag_set,streetQuestionTown,true"
-p1Street1QuestionTownMessing,Spook,Are you messing with me?
-p1Street1QuestionTownMessing,Pogo,Hehe.
-p1Street1QuestionTownMessing,Pogo,Maybe. Maybe not.
-p1Street1QuestionTownMessing,,map
-,,
-,,
-p1Street1QuestionBarCheck,,"condition_flag,streetQuestionBar"
-p1Street1QuestionBarCheck,,"scene_set,p1Street1QuestionBarAsked"
-p1Street1QuestionBarCheck,,"scene_set,p1Street1QuestionBar"
-,,
-p1Street1QuestionBarAsked,Pogo,You really wanna hear the story of that old place again?
-p1Street1QuestionBarAsked,Spook,"Yeah, I like that one!"
-p1Street1QuestionBarAsked,Pogo,Very well. Listen closely!
-p1Street1QuestionBarAsked,,"scene_set,p1Street1QuestionBar"
-,,
-p1Street1QuestionBar,,"char_update,Pogo,1"
-p1Street1QuestionBar,Pogo,"Oh, the good old Barry's!"
-p1Street1QuestionBar,,"char_update,Pogo,0"
-p1Street1QuestionBar,Pogo,"When I was just a pup, I met Barry in the woods! Neither of us had much going on back then."
-p1Street1QuestionBar,Pogo,"But, well- Barry and Drivey are old friends."
-p1Street1QuestionBar,Pogo,"They taught me how I can loot trash cans, all the good spots in town..."
-p1Street1QuestionBar,,"char_update,Pogo,6"
-p1Street1QuestionBar,Pogo,We used to just light fires and make-up stories under that sewer back then!
-p1Street1QuestionBar,,"char_update,Pogo,0"
-p1Street1QuestionBar,Pogo,Soon the other strays joined us- and we carried what we collected over to years under the sewer.
-p1Street1QuestionBar,,"char_update,Pogo,1"
-p1Street1QuestionBar,Pogo,It was a safe haven for every unloved animal!
-p1Street1QuestionBar,Pogo,"And well, soon we had drinks, music, new friends..."
-p1Street1QuestionBar,,"char_update,Pogo,0"
-p1Street1QuestionBar,Pogo,Now it's pretty much a club for anyone who is willing to contribute to our little community!
-p1Street1QuestionBar,,"char_update,Spook,6"
-p1Street1QuestionBar,,"condition_flag,streetQuestionBar"
-p1Street1QuestionBar,,"scene_set,p1Street1QuestionBarPets"
-p1Street1QuestionBar,,"scene_set,p1Street1QuestionBarUnloved"
-,,
-p1Street1QuestionBarPets,,"flag_set,streetQuestionBar,true"
-p1Street1QuestionBarPets,Spook,"Wait, but is it really only for strays?"
-p1Street1QuestionBarPets,,"char_update,Spook,5"
-p1Street1QuestionBarPets,Spook,Screwdriver told me some of you go back to cages in the morning!
-p1Street1QuestionBarPets,Pogo,"Oh, sweetie. We had other pets who joined us at night, and very often."
-p1Street1QuestionBarPets,Spook,Did they stop? What happened?
-p1Street1QuestionBarPets,,"char_update,Pogo,5"
-p1Street1QuestionBarPets,Pogo,It's... a long story.
-p1Street1QuestionBarPets,,"char_update,Pogo,0"
-p1Street1QuestionBarPets,Pogo,"And it's not for me to tell, either way."
-p1Street1QuestionBarPets,,"char_update,Spook,0"
-p1Street1QuestionBarPets,Spook,Aw...
-p1Street1QuestionBarPets,Pogo,"Don't worry, just keep hanging around the bar. You'll find out, eventually."
-p1Street1QuestionBarPets,,map
-,,
-p1Street1QuestionBarUnloved,,"flag_set,streetQuestionBar,true"
-p1Street1QuestionBarUnloved,Spook,"What do you mean ""unloved animals""?"
-p1Street1QuestionBarUnloved,Pogo,"Oh, you know. Humans are evolved to fear some of us. "
-p1Street1QuestionBarUnloved,Pogo,"Of course, we are evolved to fear each other as well."
-p1Street1QuestionBarUnloved,Pogo,But while we were able to put that to the side and build a community...
-p1Street1QuestionBarUnloved,Pogo,Humans are most likely always going to be judgemental of creatures like us!
-p1Street1QuestionBarUnloved,,"char_update,Spook,5"
-p1Street1QuestionBarUnloved,Spook,Shay isn't judgemental!
-p1Street1QuestionBarUnloved,,"char_update,Pogo,7"
-p1Street1QuestionBarUnloved,Pogo,Really? Would she let me into her house?
-p1Street1QuestionBarUnloved,Spook,"Yeah! Shay loves bats! She never kills bugs, too!"
-p1Street1QuestionBarUnloved,,"char_update,Pogo,6"
-p1Street1QuestionBarUnloved,Pogo,"Oh my. You got a special human, don't you? What a lucky mouse!"
-p1Street1QuestionBarUnloved,,"char_update,Spook,9"
-p1Street1QuestionBarUnloved,Spook,[wave]Mhm![/wave] Shay's the best!
-p1Street1QuestionBarUnloved,,map
+p1Street1LostNo,,"scene_set,p1StreetQuestions"
 ,,
 ,,
 p1Street1LostAll,,"char_update,Pogo,1"
@@ -1021,6 +846,7 @@ p1Street1Books,,"scene_set,p1Street1Genre"
 ,,
 ,,
 p1Street1Genre,,"char_update,Spook,0"
+p1Street1Genre,Spook,Yep!
 p1Street1Genre,,"char_update,Pogo,0"
 p1Street1Genre,Pogo,"Which stories are your favorite, then?"
 p1Street1Genre,,"choice,p1Street1Horror,p1Street1Fairy,p1Street1Romance,p1Street1Scifi"
@@ -1099,21 +925,196 @@ p1Street2Other,,"music,bgmStreet"
 p1Street2Other,,"main_char_in,0"
 p1Street2Other,,"char_in,Pogo,sPogo,1"
 p1Street2Other,Pogo,"Night is young, little one!"
-p1Street2Other,,"scene_set,p1Street1Questions"
+p1Street2Other,,"scene_set,p1StreetQuestions"
 ,,
 p1Street2Horror,,"scene_bg_clear,sBackgroundStreetNight"
 p1Street2Horror,,"music,bgmStreet"
 p1Street2Horror,,"main_char_in,0"
 p1Street2Horror,,"char_in,Pogo,sPogo,1"
 p1Street2Horror,Pogo,"""Quoth the Raven, Nevermore!!!"""
-p1Street2Horror,,"scene_set,p1Street1Questions"
+p1Street2Horror,,"scene_set,p1StreetQuestions"
 ,,
 p1Street2Scifi,,"scene_bg_clear,sBackgroundStreetNight"
 p1Street2Scifi,,"music,bgmStreet"
 p1Street2Scifi,,"main_char_in,0"
 p1Street2Scifi,,"char_in,Pogo,sPogo,1"
 p1Street2Scifi,Pogo,"""The day after tomorrow, we are leaving for sure, Candide!"""
-p1Street2Scifi,,"scene_set,p1Street1Questions"
+p1Street2Scifi,,"scene_set,p1StreetQuestions"
+,,
+,,
+p1StreetQuestions,,"char_update,Spook,0"
+p1StreetQuestions,Spook,So...
+p1StreetQuestions,,"char_update,Pogo,0"
+p1StreetQuestions,Pogo,Hm?
+p1StreetQuestions,,"choice,p1StreetQuestionsYourself,p1StreetQuestionsTown,p1StreetQuestionsBar"
+p1StreetQuestions,,"scene_set,p1StreetQuestionsYourselfCheck"
+p1StreetQuestions,,"scene_set,p1StreetQuestionsTownCheck"
+p1StreetQuestions,,"scene_set,p1StreetQuestionsBarCheck"
+,,
+,,
+p1StreetQuestionsYourselfCheck,,"condition_flag,streetQuestionYourself"
+p1StreetQuestionsYourselfCheck,,"scene_set,p1StreetQuestionsYourselfAsked"
+p1StreetQuestionsYourselfCheck,,"scene_set,p1StreetQuestionsYourself"
+,,
+p1StreetQuestionsYourselfAsked,Pogo,"Oh my, aren't you too interested in me?"
+p1StreetQuestionsYourselfAsked,Spook,I just wanna hear your story again!
+p1StreetQuestionsYourselfAsked,Pogo,"Oh, well."
+p1StreetQuestionsYourselfAsked,,"scene_set,p1StreetQuestionsYourself"
+,,
+p1StreetQuestionsYourself,,"flag_set,streetQuestionYourself,true"
+p1StreetQuestionsYourself,Pogo,Hm hm... Let's see....
+p1StreetQuestionsYourself,,"char_update,Pogo,4"
+p1StreetQuestionsYourself,Pogo,My favorite drink is grape juice...
+p1StreetQuestionsYourself,,"char_update,Pogo,0"
+p1StreetQuestionsYourself,Pogo,And my favorite author is Marry Shelley!
+p1StreetQuestionsYourself,,"char_update,Pogo,1"
+p1StreetQuestionsYourself,Pogo,"And Dracula is my biggest crush, big time. Too bad I was born so late...."
+p1StreetQuestionsYourself,,"char_update,Spook,9"
+p1StreetQuestionsYourself,Spook,Maybe you will meet a vampire during Halloween!
+p1StreetQuestionsYourself,,"char_update,Pogo,6"
+p1StreetQuestionsYourself,Pogo,Oh that would be [wave]WONDERFUL![/wave]
+p1StreetQuestionsYourself,,"char_update,Pogo,8"
+p1StreetQuestionsYourself,Pogo,But what if they have a taste for mouses-
+p1StreetQuestionsYourself,,"char_update,Spook,8"
+p1StreetQuestionsYourself,Spook,[shake]QUIT JOKING ABOUT THAT!!!![/shake]
+p1StreetQuestionsYourself,,"char_update,Pogo,0"
+p1StreetQuestionsYourself,Pogo,"Alright, alright..."
+p1StreetQuestionsYourself,,"char_update,Spook,0"
+p1StreetQuestionsYourself,Pogo,"Well, I always wanted to be a singer as a little girl!"
+p1StreetQuestionsYourself,,"char_update,Pogo,1"
+p1StreetQuestionsYourself,Pogo,"I used to sing towards the mountains, so my voice would echo. It felt like a whole stage!"
+p1StreetQuestionsYourself,Spook,Don't you sing anymore?
+p1StreetQuestionsYourself,,"char_update,Pogo,0"
+p1StreetQuestionsYourself,Pogo,"Hm... Been a while, no. But I could say I accomplished a dream in a way."
+p1StreetQuestionsYourself,Pogo,"Now I am content with just being a little night dweller, hanging out with my friends!"
+p1StreetQuestionsYourself,,"choice,p1StreetQuestionsSing,p1StreetQuestionsWork"
+p1StreetQuestionsYourself,,"scene_set,p1StreetQuestionsSing"
+p1StreetQuestionsYourself,,"scene_set,p1StreetQuestionsWork"
+,,
+p1StreetQuestionsSing,,"char_update,Pogo,5"
+p1StreetQuestionsSing,Pogo,"Oh, you know sweetie... It's just not the same anymore."
+p1StreetQuestionsSing,,"char_update,Spook,6"
+p1StreetQuestionsSing,Spook,Why so?
+p1StreetQuestionsSing,,"char_update,Pogo,0"
+p1StreetQuestionsSing,Pogo,...Dunno. Passion and inspiration are rare to find. Back then things were... different. 
+p1StreetQuestionsSing,,"char_update,Spook,5"
+p1StreetQuestionsSing,Spook,"But ""nothing easy is ever amazing"" or something, right!?"
+p1StreetQuestionsSing,,"char_update,Pogo,6"
+p1StreetQuestionsSing,Pogo,Hehe. Perhaps little one. Perhaps.
+p1StreetQuestionsSing,,map
+,,
+p1StreetQuestionsWork,,"char_update,Pogo,6"
+p1StreetQuestionsWork,Pogo,[shake]RIGHT!???[/shake]
+p1StreetQuestionsWork,,"char_update,Pogo,0"
+p1StreetQuestionsWork,Pogo,"Am not worried about you at all, kid."
+p1StreetQuestionsWork,,"char_update,Pogo,1"
+p1StreetQuestionsWork,Pogo,You will do [wave]juuuuust[/wave] fine among us!
+p1StreetQuestionsWork,,map
+,,
+,,
+p1StreetQuestionsTownCheck,,"condition_flag,streetQuestionTown"
+p1StreetQuestionsTownCheck,,"scene_set,p1StreetQuestionsTownAsked"
+p1StreetQuestionsTownCheck,,"scene_set,p1StreetQuestionsTown"
+,,
+p1StreetQuestionsTownAsked,Pogo,"Hmm, didn't you get [wave]really[/wave] scared last time you asked this?"
+p1StreetQuestionsTownAsked,Spook,I'm just... a little curious again!
+p1StreetQuestionsTownAsked,,"scene_set,p1StreetQuestionsTown"
+,,
+p1StreetQuestionsTown,,"char_update,Pogo,8"
+p1StreetQuestionsTown,Pogo,Ohoho!
+p1StreetQuestionsTown,Pogo,You wanna know the tales of the [shake]ancient fog?[/shake]
+p1StreetQuestionsTown,,"char_update,Spook,6"
+p1StreetQuestionsTown,Spook,Um... Yes? Is it [wave]always[/wave] foggy or something?
+p1StreetQuestionsTown,Pogo,You could say that...
+p1StreetQuestionsTown,Pogo,"Some say it's coming from under the dirt, not the sky."
+p1StreetQuestionsTown,Spook,Huh? How so?
+p1StreetQuestionsTown,,"char_update,Pogo,0"
+p1StreetQuestionsTown,Pogo,"You see, this part of the town is always foggy, more or less, even if it's a clear sky outside!"
+p1StreetQuestionsTown,Pogo,"And if you walk a little away, you can actually see that surrounding areas aren't effected..."
+p1StreetQuestionsTown,Pogo,The fog travels through streets like branches of veins. They say it follows the roots underground.
+p1StreetQuestionsTown,Spook,...But why?
+p1StreetQuestionsTown,Pogo,"Beats me, friend! Maybe there is something lurking right under our feet."
+p1StreetQuestionsTown,,"char_update,Pogo,8"
+p1StreetQuestionsTown,Pogo,[shake]Feeding on the fog...[/shake]
+p1StreetQuestionsTown,,"char_update,Spook,8"
+p1StreetQuestionsTown,Spook,...
+p1StreetQuestionsTown,,"condition_flag,streetQuestionTown"
+p1StreetQuestionsTown,,"scene_set,p1StreetQuestionsTownAfraid"
+p1StreetQuestionsTown,,"scene_set,p1StreetQuestionsTownMessing"
+,,
+p1StreetQuestionsTownAfraid,,"flag_set,streetQuestionTown,true"
+p1StreetQuestionsTownAfraid,Pogo,"Hehe, your face is so funny when you're afraid, little mouse!"
+p1StreetQuestionsTownAfraid,Spook,I'm not afraid! Just a little... you know!
+p1StreetQuestionsTownAfraid,Pogo,"Oh, don't worry. I know."
+p1StreetQuestionsTownAfraid,,map
+,,
+p1StreetQuestionsTownMessing,,"flag_set,streetQuestionTown,true"
+p1StreetQuestionsTownMessing,Spook,Are you messing with me?
+p1StreetQuestionsTownMessing,Pogo,Hehe.
+p1StreetQuestionsTownMessing,Pogo,Maybe. Maybe not.
+p1StreetQuestionsTownMessing,,map
+,,
+,,
+p1StreetQuestionsBarCheck,,"condition_flag,streetQuestionBar"
+p1StreetQuestionsBarCheck,,"scene_set,p1StreetQuestionsBarAsked"
+p1StreetQuestionsBarCheck,,"scene_set,p1StreetQuestionsBar"
+,,
+p1StreetQuestionsBarAsked,Pogo,You really wanna hear the story of that old place again?
+p1StreetQuestionsBarAsked,Spook,"Yeah, I like that one!"
+p1StreetQuestionsBarAsked,Pogo,Very well. Listen closely!
+p1StreetQuestionsBarAsked,,"scene_set,p1StreetQuestionsBar"
+,,
+p1StreetQuestionsBar,,"char_update,Pogo,1"
+p1StreetQuestionsBar,Pogo,"Oh, the good old Barry's!"
+p1StreetQuestionsBar,,"char_update,Pogo,0"
+p1StreetQuestionsBar,Pogo,"When I was just a pup, I met Barry in the woods! Neither of us had much going on back then."
+p1StreetQuestionsBar,Pogo,"But, well- Barry and Drivey are old friends."
+p1StreetQuestionsBar,Pogo,"They taught me how I can loot trash cans, all the good spots in town..."
+p1StreetQuestionsBar,,"char_update,Pogo,6"
+p1StreetQuestionsBar,Pogo,We used to just light fires and make-up stories under that sewer back then!
+p1StreetQuestionsBar,,"char_update,Pogo,0"
+p1StreetQuestionsBar,Pogo,Soon the other strays joined us- and we carried what we collected over to years under the sewer.
+p1StreetQuestionsBar,,"char_update,Pogo,1"
+p1StreetQuestionsBar,Pogo,It was a safe haven for every unloved animal!
+p1StreetQuestionsBar,Pogo,"And well, soon we had drinks, music, new friends..."
+p1StreetQuestionsBar,,"char_update,Pogo,0"
+p1StreetQuestionsBar,Pogo,Now it's pretty much a club for anyone who is willing to contribute to our little community!
+p1StreetQuestionsBar,,"char_update,Spook,6"
+p1StreetQuestionsBar,,"condition_flag,streetQuestionBar"
+p1StreetQuestionsBar,,"scene_set,p1StreetQuestionsBarPets"
+p1StreetQuestionsBar,,"scene_set,p1StreetQuestionsBarUnloved"
+,,
+p1StreetQuestionsBarPets,,"flag_set,streetQuestionBar,true"
+p1StreetQuestionsBarPets,Spook,"Wait, but is it really only for strays?"
+p1StreetQuestionsBarPets,,"char_update,Spook,5"
+p1StreetQuestionsBarPets,Spook,Screwdriver told me some of you go back to cages in the morning!
+p1StreetQuestionsBarPets,Pogo,"Oh, sweetie. We had other pets who joined us at night, and very often."
+p1StreetQuestionsBarPets,Spook,Did they stop? What happened?
+p1StreetQuestionsBarPets,,"char_update,Pogo,5"
+p1StreetQuestionsBarPets,Pogo,It's... a long story.
+p1StreetQuestionsBarPets,,"char_update,Pogo,0"
+p1StreetQuestionsBarPets,Pogo,"And it's not for me to tell, either way."
+p1StreetQuestionsBarPets,,"char_update,Spook,0"
+p1StreetQuestionsBarPets,Spook,Aw...
+p1StreetQuestionsBarPets,Pogo,"Don't worry, just keep hanging around the bar. You'll find out, eventually."
+p1StreetQuestionsBarPets,,map
+,,
+p1StreetQuestionsBarUnloved,,"flag_set,streetQuestionBar,true"
+p1StreetQuestionsBarUnloved,Spook,"What do you mean ""unloved animals""?"
+p1StreetQuestionsBarUnloved,Pogo,"Oh, you know. Humans are evolved to fear some of us. "
+p1StreetQuestionsBarUnloved,Pogo,"Of course, we are evolved to fear each other as well."
+p1StreetQuestionsBarUnloved,Pogo,But while we were able to put that to the side and build a community...
+p1StreetQuestionsBarUnloved,Pogo,Humans are most likely always going to be judgemental of creatures like us!
+p1StreetQuestionsBarUnloved,,"char_update,Spook,5"
+p1StreetQuestionsBarUnloved,Spook,Shay isn't judgemental!
+p1StreetQuestionsBarUnloved,,"char_update,Pogo,7"
+p1StreetQuestionsBarUnloved,Pogo,Really? Would she let me into her house?
+p1StreetQuestionsBarUnloved,Spook,"Yeah! Shay loves bats! She never kills bugs, too!"
+p1StreetQuestionsBarUnloved,,"char_update,Pogo,6"
+p1StreetQuestionsBarUnloved,Pogo,"Oh my. You got a special human, don't you? What a lucky mouse!"
+p1StreetQuestionsBarUnloved,,"char_update,Spook,9"
+p1StreetQuestionsBarUnloved,Spook,[wave]Mhm![/wave] Shay's the best!
+p1StreetQuestionsBarUnloved,,map
 ,,
 ,,
 ,,
@@ -1732,7 +1733,7 @@ p2BarCandy2Sure,Screwdriver,Almost thought I'll have to handle all of this on my
 p2BarCandy2Sure,,"scene_set,p2BarCandyDecor"
 ,,
 ,,
-p2BarCandyDecor,,"map_scene,bar,p2BarCandy3"
+p2BarCandyDecor,,"map_scene,bar,p2BarCandyComplete"
 p2BarCandyDecor,,"char_update,Screwdriver,2"
 p2BarCandyDecor,Screwdriver,"Alright, come with me! To the backrooms!"
 p2BarCandyDecor,,"char_update,Spook,8"
@@ -1756,7 +1757,7 @@ p2BarCandyDecorPink,,"char_update,Screwdriver,9"
 p2BarCandyDecorPink,Screwdriver,...Oh. A blobfish.
 p2BarCandyDecorPink,,"char_update,Spook,6"
 p2BarCandyDecorPink,Spook,But... why is it there...?
-p2BarCandyDecorPink,,"char_update,Screwdriver,10"
+p2BarCandyDecorPink,,"char_update,Screwdriver,7"
 p2BarCandyDecorPink,Screwdriver,It looks scary. I was scared when I saw it.
 p2BarCandyDecorPink,Spook,...Okay...???
 p2BarCandyDecorPink,,"scene_set,p2BarCandyDecorWatch"
@@ -1922,16 +1923,455 @@ p2BarCandyDecorFinish,Spook,I need some fresh air...
 p2BarCandyDecorFinish,Screwdriver,Hey!
 p2BarCandyDecorFinish,,map
 ,,
-p2BarCandy3,,"scene_bg_clear,sBackgroundSewerBarParty"
-p2BarCandy3,,"music,bgmSewerBar"
-p2BarCandy3,,"main_char_in,0"
-p2BarCandy3,,"char_in,Screwdriver,sScrewdriver,1"
-p2BarCandy3,Screwdriver,"Well would you look at that! Returned to finish what we started, at last?"
-p2BarCandy3,Spook,"N-no, I was just passing by."
-p2BarCandy3,,"char_update,Screwdriver,2"
-p2BarCandy3,Screwdriver,"Don't be shy, I know you want to carry that heavy box over there! [shake]Cmoooooon!!![/shake]"
-p2BarCandy3,Spook,"Sorry, gotta go!"
-p2BarCandy3,,map
+p2BarCandyComplete,,"scene_bg_clear,sBackgroundSewerBarParty"
+p2BarCandyComplete,,"music,bgmSewerBar"
+p2BarCandyComplete,,"main_char_in,0"
+p2BarCandyComplete,,"char_in,Screwdriver,sScrewdriver,1"
+p2BarCandyComplete,Screwdriver,"Well would you look at that! Returned to finish what we started, at last?"
+p2BarCandyComplete,Spook,"N-no, I was just passing by."
+p2BarCandyComplete,,"char_update,Screwdriver,2"
+p2BarCandyComplete,Screwdriver,"Don't be shy, I know you want to carry that heavy box over there! [shake]C'moooooon!!![/shake]"
+p2BarCandyComplete,Spook,"Sorry, gotta go!"
+p2BarCandyComplete,,map
+,,
+,,
+,,
+p2Front1,,"map_scene,front,p2Front2"
+p2Front1,,"flag_set,metPrincess,true"
+p2Front1,,"scene_bg_clear,sBackgroundHouseAcrossYardDay"
+p2Front1,,"music,bgmHouseAcross"
+p2Front1,Empty,You take notice that the front door is no longer guarded by the furry ball with ears!
+p2Front1,,"trans_change,true,sBackgroundBlack"
+p2Front1,Empty,You enter through the little pet's door.
+p2Front1,,"trans_change,true,sBackgroundHouseAcrossYardDay"
+p2Front1,,"main_char_in,0"
+p2Front1,,"char_in,Princess,sPrincess,0"
+p2Front1,Princess,"Ah, [name_from_princess_low]!"
+p2Front1,Princess,How did you get past my bodyguard!?
+p2Front1,,"char_update,Spook,6"
+p2Front1,Spook,Do you mean... the rabbit?
+p2Front1,,"char_update,Princess,2"
+p2Front1,Princess,"That's [cycle,120,132]Great Dipper[/cycle] to you. The almighty protector of this kingdom and all who inhabit it!"
+p2Front1,,"char_update,Spook,5"
+p2Front1,Spook,Huh. Well... he wasn't... there?
+p2Front1,,"char_update,Princess,0"
+p2Front1,Princess,I see...
+p2Front1,Princess,Approach. What brings you to my palace?
+p2Front1,,"char_update,Spook,6"
+p2Front1,Spook,Your palace?
+p2Front1,,"char_update,Princess,2"
+p2Front1,Princess,"Yes, [name_from_princess_low]! You are in the presence of the Princess!"
+p2Front1,,"char_update,Spook,0"
+p2Front1,Spook,Princess who?
+p2Front1,,"char_update,Princess,0"
+p2Front1,Princess,Just Princess. [shake]THE[/shake] Princess.
+p2Front1,,"condition_flag,princess_quest_start"
+p2Front1,,"scene_set,p2Front1ChoiceQuest"
+p2Front1,,"scene_set,p2Front1Choice"
+,,
+p2Front1ChoiceQuest,,"char_update,Princess,2"
+p2Front1ChoiceQuest,Princess,Bow and greet me before you speak of your business!
+p2Front1ChoiceQuest,,"choice,p2Front1Yes,p2Front1Guess,p2Front1Rule,p2Front1Know"
+p2Front1ChoiceQuest,,"scene_set,p2Front1Yes"
+p2Front1ChoiceQuest,,"scene_set,p2Front1Guess"
+p2Front1ChoiceQuest,,"scene_set,p2Front1Rule"
+p2Front1ChoiceQuest,,"scene_set,p2Front1Know"
+,,
+p2Front1Choice,,"char_update,Princess,2"
+p2Front1Choice,Princess,Bow and greet me before you speak of your business!
+p2Front1Choice,,"choice,p2Front1Yes,p2Front1Guess,p2Front1Rule"
+p2Front1Choice,,"scene_set,p2Front1Yes"
+p2Front1Choice,,"scene_set,p2Front1Guess"
+p2Front1Choice,,"scene_set,p2Front1Rule"
+,,
+p2Front1Yes,,"char_update,Princess,1"
+p2Front1Yes,Princess,"Wonderful! Wonderful, truly!"
+p2Front1Yes,,"char_update,Princess,0"
+p2Front1Yes,Princess,"What is your name, humble [name_from_princess_low]?"
+p2Front1Yes,Spook,"It's Spook, Your Highness!"
+p2Front1Yes,Princess,Spook. I see.
+p2Front1Yes,Princess,"Spook, you don't happen to be one of the little pests stealing from my keep the other night?"
+p2Front1Yes,,"char_update,Spook,8"
+p2Front1Yes,Spook,"[shake]Uhhhh, nooo...[/shake]"
+p2Front1Yes,,"char_update,Spook,5"
+p2Front1Yes,Spook,"I mean, Your Highness, I wouldn't dare!"
+p2Front1Yes,,"char_update,Princess,2"
+p2Front1Yes,Princess,Hm... Very well.
+p2Front1Yes,,"char_update,Princess,0"
+p2Front1Yes,Princess,"You should consider becoming my loyal knight, little mouse. "
+p2Front1Yes,Princess,I can see you are cut for it!
+p2Front1Yes,,"char_update,Spook,9"
+p2Front1Yes,Spook,[wave]Spook the Knight!!!![/wave]
+p2Front1Yes,Spook,I actually already have my Halloween costume picked out!
+p2Front1Yes,,"char_update,Princess,1"
+p2Front1Yes,Princess,Hehe.
+p2Front1Yes,,"flag_set,gotKnight,true"
+p2Front1Yes,,"scene_set,p2Front1Party"
+,,
+p2Front1Guess,,"char_update,Spook,6"
+p2Front1Guess,Spook,"[alpha,0.8](Maybe this is her costume?)[/alpha]"
+p2Front1Guess,,main_char_out
+p2Front1Guess,Empty,You bow your head and greet her awkwardly.
+p2Front1Guess,,"main_char_in,0"
+p2Front1Guess,,"char_update,Princess,0"
+p2Front1Guess,Princess,"Well done, well done! Now state your business! I am late to attending my royal duties!"
+p2Front1Guess,,"char_update,Spook,6"
+p2Front1Guess,Spook,What kind of duties?
+p2Front1Guess,Princess,"Oh, you know. Walk down the street, greet my people..."
+p2Front1Guess,,"char_update,Princess,2"
+p2Front1Guess,Princess,A beauty nap.
+p2Front1Guess,,"delay,0.5"
+p2Front1Guess,,"char_update,Princess,0"
+p2Front1Guess,Princess,...
+p2Front1Guess,Princess,"Greet my people, again."
+p2Front1Guess,,"char_update,Spook,0"
+p2Front1Guess,Spook,"Ooh, okay."
+p2Front1Guess,,"scene_set,p2Front1Party"
+,,
+p2Front1Rule,,"char_update,Princess,3"
+p2Front1Rule,Princess,"[sound,sfxPrincessBark][shake]The audacity![/shake]"
+p2Front1Rule,,"char_update,Spook,5"
+p2Front1Rule,Spook,No! I am just saying that we've never met!
+p2Front1Rule,,"char_update,Princess,2"
+p2Front1Rule,Princess,Am I to know each and every [name_from_princess_low] in my kingdom? Do you think an actual Princess has any time for that?!
+p2Front1Rule,,"char_update,Spook,8"
+p2Front1Rule,Spook,I don't know! I thought we had presidents now! [shake]This is very confusing!!![/shake]
+p2Front1Rule,Princess,"Get out of my sight, [name_from_princess_low]!"
+p2Front1Rule,,"choice,p2Front1Sorry,p2Front1Go"
+p2Front1Rule,,"scene_set,p2Front1Sorry"
+p2Front1Rule,,"scene_set,p2Front1Go"
+,,
+p2Front1Go,Princess,Hmph!
+p2Front1Go,,"char_update,Spook,6"
+p2Front1Go,Spook,"[alpha,0.75](What's with that dog?)[/alpha]"
+p2Front1Go,Spook,"[alpha,0.75](I wonder if I should try and humor her next time...)[/alpha]"
+p2Front1Go,,map
+,,
+p2Front1Sorry,,"char_update,Spook,0"
+p2Front1Sorry,Spook,I really didn't mean to offend you!
+p2Front1Sorry,Spook,...
+p2Front1Sorry,Spook,Your Majesty.
+p2Front1Sorry,Princess,"You don't say ""Your Majesty"" to me! That is for the Queen."
+p2Front1Sorry,Princess,You'll adress the Princess as Your Highness.
+p2Front1Sorry,,"char_update,Princess,0"
+p2Front1Sorry,Princess,"Goodness, these [name_from_princess_low]s grow more ignorant by the day!"
+p2Front1Sorry,Spook,"Well, I am not from around here, really. Excuse my rudeness."
+p2Front1Sorry,,"char_update,Princess,2"
+p2Front1Sorry,Princess,Hmph.
+p2Front1Sorry,,"char_update,Spook,6"
+p2Front1Sorry,Spook,"So if you're the Princess, then your human is the Queen?"
+p2Front1Sorry,,"char_update,Princess,0"
+p2Front1Sorry,Princess,"Quite observant! Of course, my human is the most beautiful and powerful Queen of this land!"
+p2Front1Sorry,Princess,Any more questions?
+p2Front1Sorry,,"char_update,Spook,0"
+p2Front1Sorry,Spook,"Yes, well..."
+p2Front1Sorry,,"scene_set,p2Front1Party"
+,,
+p2Front1Party,,"char_update,Spook,6"
+p2Front1Party,Spook,Are you going to be attending the party tonight?
+p2Front1Party,,"char_update,Princess,2"
+p2Front1Party,Princess,Hm? What party?
+p2Front1Party,,"char_update,Spook,5"
+p2Front1Party,Spook,A Halloween party!
+p2Front1Party,Spook,"My new friends will be there. It's Pogo, Screwdriver, Barry-"
+p2Front1Party,,"char_update,Princess,3"
+p2Front1Party,Princess,"[sound,sfxPrincessBark][b][shake]BARK![/shake][/b]"
+p2Front1Party,,"char_update,Spook,8"
+p2Front1Party,Spook,[shake]AH!!!![/shake] What happened??
+p2Front1Party,,"char_update,Princess,2"
+p2Front1Party,Princess,N-nothing. Nothing happened.
+p2Front1Party,,"char_update,Spook,5"
+p2Front1Party,Princess,"...You may take your leave now, [name_from_princess_low]."
+p2Front1Party,,"condition_flag,princess_quest_start"
+p2Front1Party,,"scene_set,p2Front1PartyChoice"
+p2Front1Party,,"scene_set,p2Front1PartyLeave"
+,,
+p2Front1PartyLeave,,"char_update,Princess,0"
+p2Front1PartyLeave,Princess,It's... time for my beauty nap.
+p2Front1PartyLeave,,"scene_set,p2Front1Leave"
+,,
+p2Front1PartyChoice,,"char_update,Princess,0"
+p2Front1PartyChoice,Princess,It's... time for my beauty nap.
+p2Front1PartyChoice,,"choice,p2Front1Know,p2Front1Leave"
+p2Front1PartyChoice,,"scene_set,p2Front1Know"
+p2Front1PartyChoice,,"scene_set,p2Front1Leave"
+,,
+p2Front1Leave,Spook,Okay... if you say so.
+p2Front1Leave,,map
+,,
+p2Front1Know,,"char_update,Princess,2"
+p2Front1Know,Princess,"Hm? Well, of course you do! Everyone does!"
+p2Front1Know,,"char_update,Princess,0"
+p2Front1Know,Princess,"After all, I've got great many pictures of myself."
+p2Front1Know,,"choice,p2Front1Show,p2Front1Keep"
+p2Front1Know,,"scene_set,p2FrontWatch"
+p2Front1Know,,"scene_set,p2Front1Keep"
+,,
+p2Front1Keep,Spook,"I wasn't going to say anything, actually!"
+p2Front1Keep,,"char_update,Princess,2"
+p2Front1Keep,Princess,Okay?
+p2Front1Keep,Princess,...
+p2Front1Keep,Spook,"[shake]Uh, yeah, haha...[/shake]"
+p2Front1Keep,Princess,I can see you're hiding something! What is it?!
+p2Front1Keep,Spook,Well...
+p2Front1Keep,,"choice,p2Front1Show,p2Front1BadIdea"
+p2Front1Keep,,"scene_set,p2FrontWatch"
+p2Front1Keep,,"scene_set,p2Front1BadIdea"
+,,
+p2Front1BadIdea,,"map_scene,front,p2FrontOffended"
+p2Front1BadIdea,,"flag_set,princess_quest_fail,true"
+p2Front1BadIdea,,"char_update,Spook,8"
+p2Front1BadIdea,Spook,It was a bad idea to get involved! I'm out!
+p2Front1BadIdea,Princess,Did you steal something?! 
+p2Front1BadIdea,,"char_update,Princess,3"
+p2Front1BadIdea,Princess,[shake]GUARDS!!![/shake]
+p2Front1BadIdea,Spook,[shake]AAAHH!![/shake]
+p2Front1BadIdea,Princess,[shake]DIPPER GET IN HERE!!! GUAAARDS!!![/shake]
+p2Front1BadIdea,Spook,"This is bad, I better get out of here!"
+p2Front1BadIdea,,map
+,,
+,,
+p2Front2,,"scene_bg_clear,sBackgroundHouseAcrossYardDay"
+p2Front2,,"music,bgmHouseAcross"
+p2Front2,,"main_char_in,0"
+p2Front2,,"char_in,Princess,sPrincess,0"
+p2Front2,Spook,"Hello, Princess!"
+p2Front2,,"char_update,Princess,2"
+p2Front2,Princess,[name_from_princess_cap]?
+p2Front2,,"condition_flag,princess_quest_start"
+p2Front2,,"scene_set,p2Front2Choice"
+p2Front2,,"scene_set,p2Front2Passing"
+,,
+p2Front2Passing,Spook,Just passing through!
+p2Front2Passing,,"char_update,Princess,0"
+p2Front2Passing,Princess,"Well don't dilly-dally! My time is precious, just like myself!"
+p2Front2Passing,,map
+,,
+p2Front2Choice,,"char_update,Spook,5"
+p2Front2Choice,Spook,Um...
+p2Front2Choice,,"choice,p2Front2Something,p2Front2Passing"
+p2Front2Choice,,"scene_set,p2Front2Something"
+p2Front2Choice,,"scene_set,p2Front2Passing"
+,,
+p2Front2Something,,"char_update,Princess,1"
+p2Front2Something,Princess,"A gift for the royalty? How unexpected, how pleasant!"
+p2Front2Something,,"char_update,Princess,0"
+p2Front2Something,Spook,It's this pocket watch! Look!
+p2Front2Something,,"scene_set,p2FrontWatch"
+,,
+,,
+p2FrontWatch,,"char_update,Spook,0"
+p2FrontWatch,Spook,Isn't this you?
+p2FrontWatch,,"char_update,Princess,3"
+p2FrontWatch,Princess,"[sound,sfxPrincessBark][shake][b]BARK![/b][/shake]"
+p2FrontWatch,Spook,It looks special...
+p2FrontWatch,Princess,[shake]Remove that from my sight at once![/shake]
+p2FrontWatch,,"choice,p2FrontWatchWhy,p2FrontWatchSorry"
+p2FrontWatch,,"scene_set,p2FrontWatchWhy"
+p2FrontWatch,,"scene_set,p2FrontWatchSorry"
+,,
+p2FrontWatchWhy,Princess,[shake]Because![/shake]
+p2FrontWatchWhy,Princess,"[shake]Where did you even get that from!? You are a dirty thief, are you not!!??[/shake]"
+p2FrontWatchWhy,,"char_update,Spook,5"
+p2FrontWatchWhy,Spook,No! I am friends with Barry!
+p2FrontWatchWhy,Princess,[shake]B... Bar...[/shake]
+p2FrontWatchWhy,Spook,"You miss him, don't you?"
+p2FrontWatchWhy,,"scene_set,p2FrontWatchMiss"
+,,
+p2FrontWatchSorry,Princess,[shake]H... hw...[/shake]
+p2FrontWatchSorry,,"char_update,Spook,5"
+p2FrontWatchSorry,Spook,"Are you okay, Princess?"
+p2FrontWatchSorry,Princess,[shake]I am fine! Leave me alone!!!![/shake]
+p2FrontWatchSorry,,"choice,p2FrontWatchMiss,p2FrontWatchLeave"
+p2FrontWatchSorry,,"scene_set,p2FrontWatchMiss"
+p2FrontWatchSorry,,"scene_set,p2FrontWatchLeave"
+,,
+p2FrontWatchLeave,Spook,"[alpha,0.75](This is getting intense. I didn't sign up to deal with this!)[/alpha]"
+p2FrontWatchLeave,Princess,[shake]...[/shake]
+p2FrontWatchLeave,Spook,"[alpha,0.75](Why did I even get involved? Now she's crying.)[/alpha]"
+p2FrontWatchLeave,Spook,"[alpha,0.75][shake](Ugh...[/shake] I don't know if I should push her more right now.)[/alpha]"
+p2FrontWatchLeave,Spook,"[alpha,0.75](But, there won't be a better chance to get the answers!)[/alpha]"
+p2FrontWatchLeave,,"choice,p2FrontWatchMiss,p2FrontWatchSkeddadle"
+p2FrontWatchLeave,,"scene_set,p2FrontWatchMiss"
+p2FrontWatchLeave,,"scene_set,p2FrontWatchSkeddadle"
+,,
+,,
+p2FrontWatchMiss,Princess,[shake]Shut up![/shake]
+p2FrontWatchMiss,Spook,No! You should come to the party!
+p2FrontWatchMiss,Princess,[shake]You don't understand![/shake]
+p2FrontWatchMiss,,"char_update,Spook,1"
+p2FrontWatchMiss,Spook,"Oh, let me guess, because you are a princess and he is a pest!?"
+p2FrontWatchMiss,Princess,[shake]No![/shake]
+p2FrontWatchMiss,Princess,...No.
+p2FrontWatchMiss,Princess,They tried to poison my Bar-bar! My owners thought he was going to attack me or my brother!
+p2FrontWatchMiss,,"char_update,Spook,5"
+p2FrontWatchMiss,Spook,?!
+p2FrontWatchMiss,Princess,...It was so long ago. We used to sneak out at night.
+p2FrontWatchMiss,Princess,My brother would play the drums. 
+p2FrontWatchMiss,Spook,[shake]THE LOST DRUMMER!!!!?[/shake]
+p2FrontWatchMiss,,"char_update,Princess,0"
+p2FrontWatchMiss,Princess,Oh? How do you know!?
+p2FrontWatchMiss,,"char_update,Spook,0"
+p2FrontWatchMiss,Spook,They speak of him still!
+p2FrontWatchMiss,,"char_update,Princess,2"
+p2FrontWatchMiss,Princess,Oh... and of me?
+p2FrontWatchMiss,,"choice,p2FrontWatchKept,p2FrontWatchTouchy,p2FrontWatchRecall"
+p2FrontWatchMiss,,"scene_set,p2FrontWatchKept"
+p2FrontWatchMiss,,"scene_set,p2FrontWatchTouchy"
+p2FrontWatchMiss,,"scene_set,p2FrontWatchRecall"
+,,
+p2FrontWatchKept,,"char_update,Princess,3"
+p2FrontWatchKept,Princess,Oh what a silly racoon....
+p2FrontWatchKept,,"char_update,Princess,0"
+p2FrontWatchKept,Princess,Where was it?
+p2FrontWatchKept,Spook,In the backrooms.
+p2FrontWatchKept,,"char_update,Princess,2"
+p2FrontWatchKept,Princess,In the [shake]WHAT???[/shake]
+p2FrontWatchKept,Spook,"Yeah, it was in the box."
+p2FrontWatchKept,Spook,Among... other things.
+p2FrontWatchKept,Princess,Other things?
+p2FrontWatchKept,,"char_update,Spook,5"
+p2FrontWatchKept,Spook,"Blobfish, bones, an old boot..."
+p2FrontWatchKept,,"char_update,Princess,0"
+p2FrontWatchKept,Princess,What?
+p2FrontWatchKept,,"char_update,Spook,0"
+p2FrontWatchKept,Spook,Nothing! Nevermind!
+p2FrontWatchKept,,"scene_set,p2FrontWatchCome"
+,,
+p2FrontWatchTouchy,,"char_update,Princess,0"
+p2FrontWatchTouchy,Princess,I understand...
+p2FrontWatchTouchy,,"char_update,Spook,5"
+p2FrontWatchTouchy,Spook,But I believe Barry misses you!
+p2FrontWatchTouchy,,"char_update,Princess,3"
+p2FrontWatchTouchy,Princess,...You really think so?
+p2FrontWatchTouchy,Spook,"Well, yeah!"
+p2FrontWatchTouchy,,"char_update,Spook,0"
+p2FrontWatchTouchy,Spook,He's always drinking.
+p2FrontWatchTouchy,Princess,Oh. Oh what a silly racoon....
+p2FrontWatchTouchy,,"scene_set,p2FrontWatchCome"
+,,
+p2FrontWatchRecall,Princess,[shake]...Hmph![/shake]
+p2FrontWatchRecall,Princess,Who cares anyway!
+p2FrontWatchRecall,,"char_update,Princess,0"
+p2FrontWatchRecall,Princess,Tell him I've moved on! I have a... mate... that I will meet soon! Yeah!
+p2FrontWatchRecall,,"char_update,Spook,6"
+p2FrontWatchRecall,Spook,Oh... um... Do you really?
+p2FrontWatchRecall,,"char_update,Princess,2"
+p2FrontWatchRecall,Princess,[shake]YES!!!![/shake]
+p2FrontWatchRecall,Princess,"And tell Pogo I have a new best friend, too!"
+p2FrontWatchRecall,Princess,[shake]A lot of them![/shake]
+p2FrontWatchRecall,Princess,[shake]At the dog park!!!![/shake]
+p2FrontWatchRecall,,"char_update,Spook,5"
+p2FrontWatchRecall,Spook,Pogo was your best friend?
+p2FrontWatchRecall,,"char_update,Princess,0"
+p2FrontWatchRecall,Princess,Hmph! [shake]WAS.[/shake]
+p2FrontWatchRecall,,"char_update,Princess,2"
+p2FrontWatchRecall,Princess,"Now out of my sight, [name_from_princess_low]!"
+p2FrontWatchRecall,,"choice,p2FrontWatchRemember,p2FrontWatchTried"
+p2FrontWatchRecall,,"scene_set,p2FrontWatchRemember"
+p2FrontWatchRecall,,"scene_set,p2FrontWatchTried"
+,,
+p2FrontWatchRemember,,"char_update,Princess,3"
+p2FrontWatchRemember,Princess,[shake]Lies! Your face says it all!!![/shake]
+p2FrontWatchRemember,Spook,I am just an outsider. I don't know everything!
+p2FrontWatchRemember,,"char_update,Spook,0"
+p2FrontWatchRemember,Spook,They do look very sad when talking about the old days. They definitely miss you!
+p2FrontWatchRemember,Princess,I... can't go back. I'll make a fool of myself!
+p2FrontWatchRemember,Spook,"But you're such a class act! They'll be thrilled to see you, I just know it!"
+p2FrontWatchRemember,Princess,...
+p2FrontWatchRemember,Spook,"C'mon, Princess!"
+p2FrontWatchRemember,,"scene_set,p2FrontWatchCome"
+,,
+p2FrontWatchTried,Princess,Tried to make a fool out of me! Now get out!!!
+p2FrontWatchTried,Spook,Time to skedaddle.
+p2FrontWatchTried,,"scene_set,p2FrontWatchSkeddadle"
+,,
+,,
+p2FrontWatchSkeddadle,,"map_scene,front,p2FrontOffended"
+p2FrontWatchSkeddadle,,"flag_set,princess_quest_fail,true"
+p2FrontWatchSkeddadle,,"trans_change,true,sBackgroundHouseAcrossYardDay"
+p2FrontWatchSkeddadle,,"main_char_in,5"
+p2FrontWatchSkeddadle,Spook,"I think I saved those guys an awkward party! They should be thanking me, really."
+p2FrontWatchSkeddadle,,map
+,,
+,,
+p2FrontWatchCome,,"map_scene,front,p2FrontComplete"
+p2FrontWatchCome,,"flag_set,princess_quest_complete,true"
+p2FrontWatchCome,,"char_update,Spook,5"
+p2FrontWatchCome,Spook,You should come to the party!
+p2FrontWatchCome,,"char_update,Princess,2"
+p2FrontWatchCome,Princess,I...
+p2FrontWatchCome,,"char_update,Princess,0"
+p2FrontWatchCome,Princess,I'll think about it.
+p2FrontWatchCome,,"char_update,Spook,9"
+p2FrontWatchCome,Spook,Cool!
+p2FrontWatchCome,,"char_update,Princess,1"
+p2FrontWatchCome,Princess,...Cool.
+p2FrontWatchCome,,"char_update,Spook,0"
+p2FrontWatchCome,Spook,Alright. See you soon!
+p2FrontWatchCome,,"char_update,Princess,0"
+p2FrontWatchCome,Princess,"...Very well, [name_from_princess_low]."
+p2FrontWatchCome,,map
+,,
+,,
+p2FrontOffended,,"scene_bg_clear,sBackgroundHouseAcrossYardDay"
+p2FrontOffended,,"music,bgmHouseAcross"
+p2FrontOffended,,"main_char_in,0"
+p2FrontOffended,,"char_in,Princess,sPrincess,3"
+p2FrontOffended,Princess,[shake]YOU!!![/shake]
+p2FrontOffended,,"char_update,Spook,8"
+p2FrontOffended,Spook,"Oops, wrong door!"
+p2FrontOffended,Princess,"[sound,sfxPrincessBark][shake]Get out!!! Get ouuuuuuut!!![/shake]"
+p2FrontOffended,,map
+,,
+p2FrontComplete,,"scene_bg_clear,sBackgroundHouseAcrossYardDay"
+p2FrontComplete,,"music,bgmHouseAcross"
+p2FrontComplete,,"main_char_in,0"
+p2FrontComplete,,"char_in,Princess,sPrincess,0"
+p2FrontComplete,Princess,[name_from_princess_cap]!
+p2FrontComplete,Spook,"Hey, Princess!"
+p2FrontComplete,Princess,Do you have more business here?
+p2FrontComplete,,"char_update,Spook,9"
+p2FrontComplete,Spook,"No, just checking in, is all!"
+p2FrontComplete,Princess,"Hm, well. Thank you."
+p2FrontComplete,,"char_update,Princess,2"
+p2FrontComplete,Princess,But don't be gadding about here!
+p2FrontComplete,,"char_update,Princess,0"
+p2FrontComplete,Princess,"I am a busy person, you know."
+p2FrontComplete,,"char_update,Spook,0"
+p2FrontComplete,Spook,[wave]Okaaay.[/wave] Be seeing you!
+p2FrontComplete,,map
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
 ,,
 ,,
 ,,

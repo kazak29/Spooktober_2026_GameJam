@@ -16,5 +16,6 @@ function FlagsCreate() {
 		streetQuestionBar:			false,
 		
 		metPrincess:				false,
+		gotKnight:					false,
 	};
 }

@@ -14,12 +14,14 @@ if global.cheat {
 	if keyboard_check_pressed(ord("M")) { global.volMusic = 0; VolumeUpdateAmbient(); }
 	if keyboard_check_pressed(ord("R")) game_restart();
 	
-	if keyboard_check_pressed(ord("1")) global.flags.candy_quest_complete = false;
-	if keyboard_check_pressed(ord("2")) global.flags.candy_quest_complete = true;
-	if keyboard_check_pressed(ord("3")) global.flags.candy_quest_fail = false;
-	if keyboard_check_pressed(ord("4")) global.flags.candy_quest_fail = true;
-	if keyboard_check_pressed(ord("5")) global.flags.metPrincess = false;
-	if keyboard_check_pressed(ord("6")) global.flags.metPrincess = true;
+	if keyboard_check_pressed(ord("1")) global.flags.candy_quest_start = !global.flags.candy_quest_start;
+	if keyboard_check_pressed(ord("2")) global.flags.candy_quest_complete = !global.flags.candy_quest_complete;
+	if keyboard_check_pressed(ord("3")) global.flags.candy_quest_fail = !global.flags.candy_quest_fail;
+	if keyboard_check_pressed(ord("4")) global.flags.princess_quest_start = !global.flags.princess_quest_start;
+	if keyboard_check_pressed(ord("5")) global.flags.princess_quest_complete = !global.flags.princess_quest_complete;
+	if keyboard_check_pressed(ord("6")) global.flags.princess_quest_fail = !global.flags.princess_quest_fail;
+	if keyboard_check_pressed(ord("7")) global.flags.metPrincess = !global.flags.metPrincess;
+	if keyboard_check_pressed(ord("7")) global.flags.metPrincess = !global.flags.metPrincess;
 	
 	if keyboard_check_pressed(ord("V")) {
 		var _names = struct_get_names(global.dataMapLocations);

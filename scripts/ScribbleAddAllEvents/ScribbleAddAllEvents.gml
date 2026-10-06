@@ -3,7 +3,18 @@
 	scribble_font_set_style_family("fDialogueTextBody","fDialogueTextBodyBold",undefined,undefined);
 	
 #endregion
-
+#region macros
+	
+	scribble_add_macro("name_from_princess_low", function() {
+		if global.flags.gotKnight return "knight";
+		return "peasant";
+	});
+	scribble_add_macro("name_from_princess_cap", function() {
+		if global.flags.gotKnight return "Knight";
+		return "Peasant";
+	});
+	
+#endregion
 #region sound
 	
 	// SOUND, VOLUME, LOOP
