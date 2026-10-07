@@ -4,14 +4,13 @@ rocketTestScene,,map
 ,,
 kazakTestScene,,"scene_bg,sBackgroundGray"
 kazakTestScene,,"char_in,Barry,sBarry,0"
-kazakTestScene,Empty,[b]test test[/b] test test
-kazakTestScene,,scene_clear
-kazakTestScene,Empty,test test 1
+kazakTestScene,Empty,no zalgo
+kazakTestScene,Empty,"[zalgo_small, 30]zalgo small zalgo small zalgo small zalgo small zalgo small zalgo small zalgo small zalgo small zalgo small zalgo small"
+kazakTestScene,Empty,no zalgo
+kazakTestScene,Empty,"[zalgo_big, 60]zalgo big zalgo big zalgo big zalgo big zalgo big zalgo big zalgo big zalgo big zalgo big zalgo big zalgo big zalgo big"
 kazakTestScene,,"main_char_in,0"
 kazakTestScene,Empty,test test 2
-kazakTestScene,,"trans_scene,testScene1"
-kazakTestScene,Empty,test test 3
-kazakTestScene,,map
+kazakTestScene,,"scene_set,kazakTestScene"
 ,,
 testMap1,Empty,...
 testMap1,,map

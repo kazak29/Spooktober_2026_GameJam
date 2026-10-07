@@ -66,3 +66,24 @@
 	});
 
 #endregion
+#region zalgo
+	
+	// ANIMATION COOLDOWN IN FRAMES
+	scribble_typists_add_event("zalgo_small", function(_element, _param_array)
+	{
+		with oDirector {
+			zalgo.sprInd = sZalgoSmall;
+			zalgo.cdMax = (array_length(_param_array) > 0) ? real(_param_array[0]) : -1;
+		}
+	});
+	
+	// ANIMATION COOLDOWN IN FRAMES
+	scribble_typists_add_event("zalgo_big", function(_element, _param_array)
+	{
+		with oDirector {
+			zalgo.sprInd = sZalgoBig;
+			zalgo.cdMax = (array_length(_param_array) > 0) ? real(_param_array[0]) : -1;
+		}
+	});
+	
+#endregion
