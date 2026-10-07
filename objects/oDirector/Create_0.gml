@@ -69,6 +69,15 @@ mainCharacter = {
 spookUp = false;
 
 
+
+zalgo = {
+	sprInd: noone,
+	cd: 0,
+	cdMax: 0,
+	frames: [],
+};
+
+
 SceneClear = function(){
 	stageCharacters = [];
     
@@ -185,7 +194,8 @@ LineProgress = function(_amount = 1, _textlog = false){
 			//show_debug_message(string(global.textLog));
 		}
 	}
-			
+	
+	zalgo.sprInd = noone;
 	currentLineIndex += _amount;
 	LineSet();
 }

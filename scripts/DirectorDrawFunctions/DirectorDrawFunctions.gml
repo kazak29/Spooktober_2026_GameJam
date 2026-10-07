@@ -60,14 +60,27 @@ function DrawDialogueBox ()
     var _paddingY = 80;
     var _textX    = _boxLeft + _paddingX;
     var _textY    = _boxTop + _paddingY;
-    var _maxTextW = _boxW - (_paddingX * 1.5);
+    var _maxTextW = (_boxW - 64) - (_paddingX * 1.5);	//subtract 64 pixels cause textbox takes less space within sprite
     
-    var _scribble = scribble(_bodyText)
+    var _scribble = scribble(_bodyText);
+		_scribble
         .starting_format(FONT_DIALOGUE_TEXT_BODY, c_black)
         .sdf_shadow(c_black, 0.5, 1,1)
         .wrap(_maxTextW)
 		.blend(c_white,textbox.alpha)
         .draw(_textX, _textY, typist);
+		
+	if sprite_exists(zalgo.sprInd) {
+		var _pos = typist.get_position() - 1;
+		for (var i = 0; i < floor(_pos); i++) {
+			var _data = _scribble.allow_glyph_data_getter().get_glyph_data(i);
+			var _x = _textX + _data.left + (_data.right - _data.left)/2;
+			var _y = _textY + _data.top + (_data.bottom - _data.top)/2;
+			
+			if (array_length(zalgo.frames) - 1) < i array_push(zalgo.frames, irandom(sprite_get_number(zalgo.sprInd) - 1));
+			draw_sprite(zalgo.sprInd,zalgo.frames[i], _x,_y);
+		}
+	}
 }
 
 

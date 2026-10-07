@@ -7,7 +7,7 @@ var _buttonSettings = function() {
 		SYSTEM_LAYER,
 		oButton,
 		{	
-			//sprite_index: sPlaceholderButton,
+			//sprite_index: noone,
 			scr: uiButtonSettings,
 			title: global.uiData.buttonSettings
 		}
@@ -18,7 +18,7 @@ var _buttonSettings = function() {
 		SYSTEM_LAYER,
 		oButton,
 		{	
-			//sprite_index: sPlaceholderButton,
+			//sprite_index: noone,
 			scr: uiButtonTextLog,
 			title: global.uiData.buttonTextlog
 		}
