@@ -39,8 +39,9 @@ TextboxHide(); //hide for room transitions
 		var _soundName = currentLineSequence[currentLineIndex].lineTitle;
 		
 		_soundName = string_replace(_soundName,"ö","o");
-		if _soundName == "???"			_soundName = "Screwdriver";
-		if _soundName == "Giant Rabbit"	_soundName = "Empty";
+		if _soundName == "???"				_soundName = "Screwdriver";
+		if _soundName == "Giant Rabbit"		_soundName = "Empty";
+		if _soundName == "[limes_name_cap]"	_soundName = "Limes";
 		if is_string(_name) _soundName = _name;
 		
 		var _soundData = struct_get(_sounds, _soundName) ?? struct_get(_sounds, "none");
