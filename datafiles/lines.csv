@@ -1126,6 +1126,7 @@ p1StreetQuestionsBarUnloved,,map
 ,,
 ,,
 p1Yard1,,"map_scene,yard,p1Yard2"
+p1Yard1,,"flag_set,metHamster,true"
 p1Yard1,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
 p1Yard1,,"music,bgmHouseAcross"
 p1Yard1,Empty,The air smells like cinnamon and apple pie. Autumn leaves drift by.
@@ -2612,6 +2613,44 @@ p2Street2,,map
 ,,
 ,,
 ,,
+p2Yard1,,"map_scene,yard,p2Yard2"
+p2Yard1,,"scene_bg_clear,sBackgroundHouseAcrossYardDay"
+p2Yard1,,"music,bgmHouseAcross"
+p2Yard1,Empty,The yard is empty.
+p2Yard1,Empty,"In the distance, you take note of a small structure constructed of wood and stone."
+p2Yard1,Empty,"The name ""Hamilton"" is carved on it."
+p2Yard1,,"choice,p2Yard1Respect,p2Yard1Leave"
+p2Yard1,,"scene_set,p2Yard1Respect"
+p2Yard1,,"scene_set,p2Yard1Leave"
+,,
+p2Yard1Respect,Empty,You gather some flowers that catch your eye and place them in front of the small structure.
+p2Yard1Respect,,"condition_flag,metHamster"
+p2Yard1Respect,,"scene_set,p2Yard1RespectPresence"
+p2Yard1Respect,,"scene_set,p2Yard1Leave"
+,,
+p2Yard1RespectPresence,Empty,"Suddenly, you feel a familiar energetic presence."
+p2Yard1RespectPresence,,"main_char_in,0"
+p2Yard1RespectPresence,,"char_in,Hamster,sHamilton,5"
+p2Yard1RespectPresence,,"delay,0.5"
+p2Yard1RespectPresence,,"char_update,Hamster,1"
+p2Yard1RespectPresence,,"delay,1"
+p2Yard1RespectPresence,,"char_out,Hamster"
+p2Yard1RespectPresence,,"char_update,Spook,8"
+p2Yard1RespectPresence,Spook,...I think I need to lay down.
+p2Yard1RespectPresence,,map
+,,
+p2Yard1Leave,,"main_char_in,0"
+p2Yard1Leave,Spook,Hm...
+p2Yard1Leave,,map
+,,
+,,
+p2Yard2,,"scene_bg_clear,sBackgroundHouseAcrossYardDay"
+p2Yard2,,"music,bgmHouseAcross"
+p2Yard2,Empty,Autumn leaves rustle in the wind.
+p2Yard2,Empty,The eerie silence muffled by the leaves brings a chill down your spine.
+p2Yard2,,"main_char_in,0"
+p2Yard2,Spook,This place gives me the creeps...
+p2Yard2,,map
 ,,
 ,,
 ,,

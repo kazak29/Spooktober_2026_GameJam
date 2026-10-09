@@ -15,6 +15,8 @@ function FlagsCreate() {
 		streetQuestionTown:			false,
 		streetQuestionBar:			false,
 		
+		
+		metHamster:					false,
 		metPrincess:				false,
 		gotKnight:					false,
 		knowLimes:					false,

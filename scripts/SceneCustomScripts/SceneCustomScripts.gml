@@ -30,7 +30,7 @@ function Part2MapDataUpdate(){
 		home.scene		= "p2Home1";
 		bar.scene		= _barScene;
 		street.scene	= "p2Street1";
-		yard.scene		= "testScene1";
+		yard.scene		= "p2Yard1";
 		front.scene		= "p2Front1";
 		lamp.scene		= "testScene1";
 	}

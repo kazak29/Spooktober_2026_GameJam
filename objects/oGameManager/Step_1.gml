@@ -20,8 +20,10 @@ if global.cheat {
 	if keyboard_check_pressed(ord("4")) global.flags.princess_quest_start = !global.flags.princess_quest_start;
 	if keyboard_check_pressed(ord("5")) global.flags.princess_quest_complete = !global.flags.princess_quest_complete;
 	if keyboard_check_pressed(ord("6")) global.flags.princess_quest_fail = !global.flags.princess_quest_fail;
-	if keyboard_check_pressed(ord("7")) global.flags.metPrincess = !global.flags.metPrincess;
-	if keyboard_check_pressed(ord("7")) global.flags.metPrincess = !global.flags.metPrincess;
+	if keyboard_check_pressed(ord("7")) global.flags.metHamster = !global.flags.metHamster;
+	if keyboard_check_pressed(ord("8")) global.flags.metPrincess = !global.flags.metPrincess;
+	if keyboard_check_pressed(ord("9")) global.flags.gotKnight = !global.flags.gotKnight;
+	if keyboard_check_pressed(ord("0")) global.flags.knowLimes = !global.flags.knowLimes;
 	
 	if keyboard_check_pressed(ord("V")) {
 		var _names = struct_get_names(global.dataMapLocations);
