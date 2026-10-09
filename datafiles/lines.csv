@@ -1569,7 +1569,18 @@ p2Home1,Spook,"Or... I can abandon those guys and stay with Shay, just like I wa
 p2Home1,Spook,They probably won't miss me anyway...
 p2Home1,,"choice,p2Home1Continue,p2Home1Stay"
 p2Home1,,map
-p2Home1,,"trans_scene,endStay"
+p2Home1,,"scene_set,p2Home1Stay"
+,,
+p2Home1Stay,,"trans_change,true,sBackgroundCageDay"
+p2Home1Stay,,"delay,0.5"
+p2Home1Stay,,"main_char_in,0"
+p2Home1Stay,Spook,"Oh, my beautiful bed!"
+p2Home1Stay,Spook,Why did I ever leave you behind.
+p2Home1Stay,,"char_update,Spook,1"
+p2Home1Stay,Spook,"Well, no more! Not getting out of this cage. Nope!"
+p2Home1Stay,,main_char_out
+p2Home1Stay,,"delay,0.5"
+p2Home1Stay,,"trans_scene,endStay"
 ,,
 ,,
 ,,
@@ -2693,10 +2704,14 @@ p2Yard2,,map
 ,,
 ,,
 ,,
-endStay,,"scene_bg_clear,sBackgroundShayRoomNight"
+endStay,,"scene_bg_clear,sBackgroundCageNight"
 endStay,,"music,bgmSpookTheme"
+endStay,,"delay,0.5"
 endStay,Empty,You decide to sleep until Shay is home.
 endStay,Empty,Horrors outside can wait!
+endStay,,"delay,0.3"
+endStay,,"trans_change,true,sBackgroundShayRoomNight"
+endStay,,"delay,0.3"
 endStay,Empty,You have horrors to witness at the comfort of your home!
 endStay,,"main_char_in,10"
 endStay,,"char_in,Shay,sShay,3"
