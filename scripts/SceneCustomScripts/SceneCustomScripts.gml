@@ -32,7 +32,7 @@ function Part2MapDataUpdate(){
 		street.scene	= "p2Street1";
 		yard.scene		= "p2Yard1";
 		front.scene		= "p2Front1";
-		lamp.scene		= "testScene1";
+		lamp.scene		= "p2Lamp1";
 	}
 }
 

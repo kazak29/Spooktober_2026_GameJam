@@ -315,6 +315,7 @@
     {"id":{"name":"sBackgroundGray","path":"sprites/sBackgroundGray/sBackgroundGray.yy",},},
     {"id":{"name":"sBackgroundHouseAcrossYardDay","path":"sprites/sBackgroundHouseAcrossYardDay/sBackgroundHouseAcrossYardDay.yy",},},
     {"id":{"name":"sBackgroundHouseAcrossYardNight","path":"sprites/sBackgroundHouseAcrossYardNight/sBackgroundHouseAcrossYardNight.yy",},},
+    {"id":{"name":"sBackgroundLampPostDay","path":"sprites/sBackgroundLampPostDay/sBackgroundLampPostDay.yy",},},
     {"id":{"name":"sBackgroundLampPostNight","path":"sprites/sBackgroundLampPostNight/sBackgroundLampPostNight.yy",},},
     {"id":{"name":"sBackgroundLampPostNightMoth","path":"sprites/sBackgroundLampPostNightMoth/sBackgroundLampPostNightMoth.yy",},},
     {"id":{"name":"sBackgroundSewerBar","path":"sprites/sBackgroundSewerBar/sBackgroundSewerBar.yy",},},

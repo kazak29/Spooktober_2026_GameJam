@@ -2687,6 +2687,67 @@ p2Yard2,,map
 ,,
 ,,
 ,,
+p2Lamp1,,"map_scene,lamp,p2Lamp2"
+p2Lamp1,,"scene_bg_clear,sBackgroundLampPostDay"
+p2Lamp1,,"music,bgmLompTheme"
+p2Lamp1,,"main_char_in,0"
+p2Lamp1,,"delay,0.25"
+p2Lamp1,Spook,...There seems to be no one in here-
+p2Lamp1,,"delay,0.1"
+p2Lamp1,,"trans_change,true,sBackgroundBlack"
+p2Lamp1,,"delay,0.25"
+p2Lamp1,,"char_in,Lamp,sLamp,1"
+p2Lamp1,,"delay,0.5"
+p2Lamp1,,"char_update,Lamp,2"
+p2Lamp1,,"delay,1"
+p2Lamp1,Lamp,"[speed,0.1][zalgo_big, 30]¡´¦¨¬´¡¦´¨¬´¡¦´¨¬´[/speed]"
+p2Lamp1,,"main_char_in,8"
+p2Lamp1,Spook,!?
+p2Lamp1,,"delay,0.3"
+p2Lamp1,,"char_out,Lamp"
+p2Lamp1,,"delay,0.1"
+p2Lamp1,,"char_in,Lamp,sLamp,0"
+p2Lamp1,,"delay,1.2"
+p2Lamp1,Spook,...
+p2Lamp1,,"choice,p2Lamp1Touch,p2Lamp1Run"
+p2Lamp1,,"scene_set,p2Lamp1Touch"
+p2Lamp1,,"scene_set,p2Lamp1Run"
+,,
+p2Lamp1Touch,Empty,"[speed,0.75]You feel the roots wrapped around the lamp's frame pulsating."
+p2Lamp1Touch,,"delay,0.25"
+p2Lamp1Touch,,"char_out,Lamp"
+p2Lamp1Touch,,"delay,0.25"
+p2Lamp1Touch,,"char_in,Lamp,sLamp,1"
+p2Lamp1Touch,,"delay,0.25"
+p2Lamp1Touch,Lamp,"[tw_sfx,none][speed,0.5][zalgo_small, 30]You seek my warmth child, you wait for the night.[/speed]"
+p2Lamp1Touch,Lamp,"[tw_sfx,none][speed,0.5][zalgo_small, 30]I am what is always there, when there is no sun.[/speed]"
+p2Lamp1Touch,Spook,...
+p2Lamp1Touch,,"delay,0.5"
+p2Lamp1Touch,,"char_out,Lamp"
+p2Lamp1Touch,,"delay,0.25"
+p2Lamp1Touch,,"char_in,Lamp,sLamp,0"
+p2Lamp1Touch,,"delay,0.5"
+p2Lamp1Touch,,"trans_change,true,sBackgroundBlack"
+p2Lamp1Touch,,"delay,0.01"
+p2Lamp1Touch,,"trans_change,true,sBackgroundLampPostDay"
+p2Lamp1Touch,,"delay,2"
+p2Lamp1Touch,Empty,"[speed,0.75]A sense of clarity and warmth washes over you. You feel safe."
+p2Lamp1Touch,Empty,"[speed,0.75]Somehow, you simply know that the lamp is always watching over you, as long as you remain in Foggy Hallow..."
+p2Lamp1Touch,,"delay,0.5"
+p2Lamp1Touch,,map
+,,
+p2Lamp1Run,Spook,"Yeah, nope."
+p2Lamp1Run,,map
+,,
+,,
+p2Lamp2,,"scene_bg_clear,sBackgroundLampPostDay"
+p2Lamp2,,"music,bgmLompTheme"
+p2Lamp2,Empty,"[speed,0.75]The lamp stands there... menacingly."
+p2Lamp2,,"main_char_in,8"
+p2Lamp2,Spook,...I ain't getting near it again!
+p2Lamp2,,map
+,,
+,,
 ,,
 ,,
 ,,
