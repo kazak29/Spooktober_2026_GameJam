@@ -171,7 +171,7 @@ p2FrontWatchWhy,But why?
 p2FrontWatchLeave,Leave her alone
 p2FrontWatchMiss,"You miss him, don't you?"
 p2FrontWatchSkeddadle,Time to skedaddle
-p2FrontWatchKept,"Well, he kept the pocket watch, right?"
+p2FrontWatchKept,"Barry kept the pocket watch, right?"
 p2FrontWatchTouchy,"Yeah but, I think it's a touchy subject..."
 p2FrontWatchRecall,I don't recall.
 p2FrontWatchRemember,"No, I remember now! They talk about you all the time!"
@@ -183,3 +183,11 @@ p2Street1Doing,What are you doing here?
 p2Street1Stray,"Are you a stray, too?"
 p2Street1Forget,Forget about your sister!!!
 p2Street1Comes,And if your sister comes...?
+,
+,
+p2Yard1Respect,Pay respects
+p2Yard1Leave,Leave the yard
+,
+,
+p2Lamp1Touch,Touch the lamp
+p2Lamp1Run,Run away in fear

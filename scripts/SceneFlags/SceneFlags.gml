@@ -1,12 +1,12 @@
 function FlagsCreate() {
 	return {
-		candy_quest_start:			false,
-		candy_quest_complete:		false,
-		candy_quest_fail:			false,
+		questCandyStart:			false,
+		questCandyComplete:			false,
+		questCandyFail:				false,
 	
-		princess_quest_start:		false,
-		princess_quest_complete:	false,
-		princess_quest_fail:		false,
+		questPrincessStart:			false,
+		questPrincessComplete:		false,
+		questPrincessFail:			false,
 		
 		
 		streetGenreHorror:			false,
@@ -15,6 +15,8 @@ function FlagsCreate() {
 		streetQuestionTown:			false,
 		streetQuestionBar:			false,
 		
+		
+		metHamster:					false,
 		metPrincess:				false,
 		gotKnight:					false,
 		knowLimes:					false,

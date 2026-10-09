@@ -25,14 +25,14 @@ function Part2MapDataUpdate(){
 		}
 	}
 	
-	var _barScene = global.flags.candy_quest_complete ? "p2BarCandy1" : "p2BarNoCandy1";
+	var _barScene = global.flags.questCandyComplete ? "p2BarCandy1" : "p2BarNoCandy1";
 	with _locs {
 		home.scene		= "p2Home1";
 		bar.scene		= _barScene;
 		street.scene	= "p2Street1";
-		yard.scene		= "testScene1";
+		yard.scene		= "p2Yard1";
 		front.scene		= "p2Front1";
-		lamp.scene		= "testScene1";
+		lamp.scene		= "p2Lamp1";
 	}
 }
 

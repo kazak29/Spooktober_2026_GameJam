@@ -36,13 +36,13 @@ if _visitedAll && !global.midTransition {
 	var _reminder = noone;
 	switch global.chapter {
 		case 0: {
-			if !(global.flags.candy_quest_complete ||
-				 global.flags.candy_quest_fail) 
+			if !(global.flags.questCandyComplete ||
+				 global.flags.questCandyFail) 
 			{ _reminder = global.uiData.mapReminder1; }
 		} break;
 		case 1: {
-			if !(global.flags.princess_quest_complete ||
-				 global.flags.princess_quest_fail) 
+			if !(global.flags.questPrincessComplete ||
+				 global.flags.questPrincessFail) 
 			{ _reminder = global.uiData.mapReminder2; }
 		} break;
 	}

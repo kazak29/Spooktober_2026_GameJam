@@ -71,12 +71,17 @@ spookUp = false;
 
 
 
-zalgo = {
-	sprInd: noone,
-	cd: 0,
-	cdMax: 0,
-	frames: [],
-};
+
+ZalgoReset = function(){
+	zalgo = {
+		sprInd: noone,
+		cd: 0,
+		cdMax: 0,
+		frames: [],
+	};
+}
+ZalgoReset();
+
 
 
 SceneClear = function(){
@@ -196,7 +201,7 @@ LineProgress = function(_amount = 1, _textlog = false){
 		}
 	}
 	
-	zalgo.sprInd = noone;
+	ZalgoReset();
 	currentLineIndex += _amount;
 	LineSet();
 }
