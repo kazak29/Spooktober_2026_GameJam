@@ -14,6 +14,15 @@
 		return "Peasant";
 	});
 	
+	scribble_add_macro("limes_name_low", function() {
+		if global.flags.knowLimes return "limes";
+		return "ferret";
+	});
+	scribble_add_macro("limes_name_cap", function() {
+		if global.flags.knowLimes return "Limes";
+		return "Ferret";
+	});
+	
 #endregion
 #region sound
 	

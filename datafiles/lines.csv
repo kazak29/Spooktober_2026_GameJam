@@ -2,6 +2,14 @@
 rocketTestScene,Empty,.
 rocketTestScene,,map
 ,,
+kazakTestScene,,"map_scene,street,p2Street2"
+kazakTestScene,,"flag_set,knowLimes,true"
+kazakTestScene,,"scene_bg_clear,sBackgroundStreetDay"
+kazakTestScene,,"music,bgmStreet"
+kazakTestScene,,"main_char_in,0"
+kazakTestScene,,"char_in,[limes_name_cap],sLimes,0"
+kazakTestScene,,"scene_set,p2Street1Party"
+,,
 kazakTestScene,,"scene_bg,sBackgroundGray"
 kazakTestScene,,"char_in,Barry,sBarry,0"
 kazakTestScene,Empty,no zalgo
@@ -17,7 +25,7 @@ testMap1,,map
 ,,
 testMap2,Empty,...
 testMap2,,"custom_script_cont,ChapterProgress"
-testMap2,,"custom_script_cont,MapDataUpdatePart2"
+testMap2,,"custom_script_cont,Part2MapDataUpdate"
 testMap2,,map
 ,,
 intro,,"scene_bg,sBackgroundShayHome"
@@ -1494,7 +1502,7 @@ p1End,,"trans_scene,p2Intro"
 ,,
 ,,
 p2Intro,,"custom_script_cont,ChapterProgress"
-p2Intro,,"custom_script_cont,MapDataUpdatePart2"
+p2Intro,,"custom_script_cont,Part2MapDataUpdate"
 p2Intro,,"scene_bg_clear,sBackgroundBlack"
 p2Intro,,"delay,2"
 p2Intro,Shay,"Okay, almost ready, almost ready..."
@@ -2343,22 +2351,264 @@ p2FrontComplete,,map
 ,,
 ,,
 ,,
+p2Street1,,"map_scene,street,p2Street2"
+p2Street1,,"scene_bg_clear,sBackgroundStreetDay"
+p2Street1,,"music,bgmStreet"
+p2Street1,Empty,The streets are covered with crispy leaves.
+p2Street1,Empty,The air is thick with fog.
+p2Street1,,"main_char_in,0"
+p2Street1,Spook,[shake]Brr![/shake]
+p2Street1,,"char_in,[limes_name_cap],sLimes,0"
+p2Street1,[limes_name_cap],A?
+p2Street1,Spook,...A?
+p2Street1,[limes_name_cap],[shake]A!!!![/shake]
+p2Street1,,"char_update,Spook,6"
+p2Street1,Spook,Um... hello?
+p2Street1,[limes_name_cap],Henlo!
+p2Street1,,"char_update,Spook,5"
+p2Street1,Spook,...Um. Cool costume!
+p2Street1,,"custom_script_stop,Part2Street1ChoiceCheck"
+,,
+p2Street1ChoiceFull,,"char_update,[limes_name_cap],2"
+p2Street1ChoiceFull,[limes_name_cap],Yes.
+p2Street1ChoiceFull,,"char_update,Spook,0"
+p2Street1ChoiceFull,Spook,...
+p2Street1ChoiceFull,,"choice,p2Street1Animal,p2Street1Doing,p2Street1Stray"
+p2Street1ChoiceFull,,"scene_set,p2Street1Animal"
+p2Street1ChoiceFull,,"scene_set,p2Street1Doing"
+p2Street1ChoiceFull,,"scene_set,p2Street1Stray"
+,,
+p2Street1ChoiceAD,,"char_update,[limes_name_cap],2"
+p2Street1ChoiceAD,[limes_name_cap],Yes.
+p2Street1ChoiceAD,,"char_update,Spook,0"
+p2Street1ChoiceAD,Spook,...
+p2Street1ChoiceAD,,"choice,p2Street1Animal,p2Street1Doing"
+p2Street1ChoiceAD,,"scene_set,p2Street1Animal"
+p2Street1ChoiceAD,,"scene_set,p2Street1Doing"
+,,
+p2Street1ChoiceAS,,"char_update,[limes_name_cap],2"
+p2Street1ChoiceAS,[limes_name_cap],Yes.
+p2Street1ChoiceAS,,"char_update,Spook,0"
+p2Street1ChoiceAS,Spook,...
+p2Street1ChoiceAS,,"choice,p2Street1Animal,p2Street1Stray"
+p2Street1ChoiceAS,,"scene_set,p2Street1Animal"
+p2Street1ChoiceAS,,"scene_set,p2Street1Stray"
+,,
+p2Street1ChoiceDS,,"char_update,[limes_name_cap],2"
+p2Street1ChoiceDS,[limes_name_cap],Yes.
+p2Street1ChoiceDS,,"char_update,Spook,0"
+p2Street1ChoiceDS,Spook,...
+p2Street1ChoiceDS,,"choice,p2Street1Doing,p2Street1Stray"
+p2Street1ChoiceDS,,"scene_set,p2Street1Doing"
+p2Street1ChoiceDS,,"scene_set,p2Street1Stray"
+,,
+p2Street1AnimalIntro,,"char_update,[limes_name_cap],2"
+p2Street1AnimalIntro,[limes_name_cap],Yes.
+p2Street1AnimalIntro,,"char_update,Spook,0"
+p2Street1AnimalIntro,Spook,So...
+p2Street1AnimalIntro,Spook,"What animal are you, anyway?"
+p2Street1AnimalIntro,,"scene_set,p2Street1Animal"
+,,
+p2Street1DoingIntro,,"char_update,[limes_name_cap],2"
+p2Street1DoingIntro,[limes_name_cap],Yes.
+p2Street1DoingIntro,,"char_update,Spook,0"
+p2Street1DoingIntro,Spook,So...
+p2Street1DoingIntro,Spook,"What are you doing here, anyway?"
+p2Street1DoingIntro,,"scene_set,p2Street1Doing"
+,,
+p2Street1StrayIntro,,"char_update,[limes_name_cap],2"
+p2Street1StrayIntro,[limes_name_cap],Yes.
+p2Street1StrayIntro,,"char_update,Spook,0"
+p2Street1StrayIntro,Spook,So...
+p2Street1StrayIntro,Spook,"Are you a stray, too?"
+p2Street1StrayIntro,,"scene_set,p2Street1Stray"
 ,,
 ,,
+p2Street1Animal,,"flag_set,streetQuestionAnimal,true"
+p2Street1Animal,,"flag_set,knowLimes,true"
+p2Street1Animal,[limes_name_cap],Limez.
+p2Street1Animal,,"char_update,Spook,6"
+p2Street1Animal,Spook,Huh? What's that?
+p2Street1Animal,,"char_update,[limes_name_cap],0"
+p2Street1Animal,[limes_name_cap],Limez's the name.
+p2Street1Animal,,"char_update,Spook,5"
+p2Street1Animal,Spook,Oh! Your name is Limes!
+p2Street1Animal,[limes_name_cap],Is me!
+p2Street1Animal,Spook,Cool...
+p2Street1Animal,,"custom_script_stop,Part2Street1ChoiceCheck"
+,,
+p2Street1Doing,,"flag_set,streetQuestionDoing,true"
+p2Street1Doing,,"char_update,[limes_name_cap],0"
+p2Street1Doing,[limes_name_cap],Treat... and trick!
+p2Street1Doing,,"char_update,Spook,6"
+p2Street1Doing,Spook,Trick or treat?
+p2Street1Doing,,"char_update,[limes_name_cap],3"
+p2Street1Doing,Empty,The weird animal spins around himself wildly
+p2Street1Doing,[limes_name_cap],[shake][wave]Treat![/wave][/shake]
+p2Street1Doing,Spook,...That's not how it works!
+p2Street1Doing,,"char_update,[limes_name_cap],1"
+p2Street1Doing,[limes_name_cap],No treatz?
+p2Street1Doing,Spook,"I don't have any with me, so..."
+p2Street1Doing,[limes_name_cap],Limez sad.
+p2Street1Doing,,"char_update,Spook,5"
+p2Street1Doing,Spook,...Sorry.
+p2Street1Doing,,"char_update,[limes_name_cap],0"
+p2Street1Doing,[limes_name_cap],Is ok.
+p2Street1Doing,,"custom_script_stop,Part2Street1ChoiceCheck"
+,,
+p2Street1Stray,,"flag_set,streetQuestionStray,true"
+p2Street1Stray,,"char_update,[limes_name_cap],0"
+p2Street1Stray,[limes_name_cap],No stray! Got human. Got sister. 
+p2Street1Stray,,"char_update,Spook,5"
+p2Street1Stray,Spook,"Ooooh! I have a human, too! "
+p2Street1Stray,[limes_name_cap],Human good!
+p2Street1Stray,,"char_update,Spook,9"
+p2Street1Stray,Spook,Yeah!
+p2Street1Stray,,"custom_script_stop,Part2Street1ChoiceCheck"
 ,,
 ,,
+p2Street1Party,,"char_update,Spook,6"
+p2Street1Party,Spook,So... are you coming to the party?
+p2Street1Party,,"char_update,[limes_name_cap],2"
+p2Street1Party,[limes_name_cap],Party... for?
+p2Street1Party,,"char_update,Spook,5"
+p2Street1Party,Spook,"Halloween! You are dressed for Halloween, are you not!?"
+p2Street1Party,[limes_name_cap],Gnome.
+p2Street1Party,Spook,Yeah! Gnome costume! Awesome! And I'll be a pumpkin!
+p2Street1Party,[limes_name_cap],Pumpkin good.
+p2Street1Party,,"char_update,Spook,9"
+p2Street1Party,Spook,Pumpkin good!
+p2Street1Party,,"char_update,[limes_name_cap],1"
+p2Street1Party,[limes_name_cap],...We party no more. Makes sister sad.
+p2Street1Party,,"char_update,Spook,0"
+p2Street1Party,Spook,...Oh.
+p2Street1Party,[limes_name_cap],...I miss drums.
+p2Street1Party,,"condition_flag,candy_quest_complete"
+p2Street1Party,,"scene_set,p2Street1PartyCandy"
+p2Street1Party,,"scene_set,p2Street1PartyNoCandy"
+,,
+p2Street1PartyNoCandy,,"char_update,Spook,5"
+p2Street1PartyNoCandy,Spook,Drums? You were in a band?
+p2Street1PartyNoCandy,,"char_update,[limes_name_cap],0"
+p2Street1PartyNoCandy,[limes_name_cap],Yes. In the sewer!
+p2Street1PartyNoCandy,Spook,"Wait, the sewer bar!?"
+p2Street1PartyNoCandy,Spook,With Screwdriver and others?
+p2Street1PartyNoCandy,,"char_update,[limes_name_cap],3"
+p2Street1PartyNoCandy,Empty,Limes starts moving wildly and becomes a blur!
+p2Street1PartyNoCandy,[limes_name_cap],[shake][wave]BA-DUM-TSSS!!![/wave][/shake]
+p2Street1PartyNoCandy,,"scene_set,p2Street1PartyNoQuest"
+,,
+p2Street1PartyCandy,,"char_update,Spook,5"
+p2Street1PartyCandy,Spook,Wait... You are the lost drummer!?
+p2Street1PartyCandy,,"char_update,[limes_name_cap],3"
+p2Street1PartyCandy,Empty,Limes starts moving wildly and becomes a blur!
+p2Street1PartyCandy,[limes_name_cap],[shake][wave]BA-DUM-TSSS!!![/wave][/shake]
+p2Street1PartyCandy,,"condition_flag,princess_quest_complete"
+p2Street1PartyCandy,,"scene_set,p2Street1PartyQuest"
+p2Street1PartyCandy,,"scene_set,p2Street1PartyNoQuest"
+,,
+p2Street1PartyQuest,Spook,And the Princess is your sister!
+p2Street1PartyQuest,,"char_update,[limes_name_cap],2"
+p2Street1PartyQuest,[limes_name_cap],Limez love sister!
+p2Street1PartyQuest,Spook,"You know, she said she'll be coming to the party tonight! I mean, basically."
+p2Street1PartyQuest,Spook,You should join too! Try out your drums again!
+p2Street1PartyQuest,,"char_update,[limes_name_cap],1"
+p2Street1PartyQuest,[limes_name_cap],Sister comez for realz...?
+p2Street1PartyQuest,,"char_update,Spook,9"
+p2Street1PartyQuest,Spook,"Yeah, it's gonna be great!"
+p2Street1PartyQuest,,"char_update,[limes_name_cap],0"
+p2Street1PartyQuest,[limes_name_cap],[shake]!!![/shake]
+p2Street1PartyQuest,,"char_update,[limes_name_cap],3"
+p2Street1PartyQuest,[limes_name_cap],[shake][wave]Lezgo![/wave][/shake]
+p2Street1PartyQuest,Spook,Awesome!
+p2Street1PartyQuest,,"scene_set,p2Street1Leave"
+,,
+p2Street1PartyNoQuest,Spook,Your drumset is still at the bar! I've seen it!
+p2Street1PartyNoQuest,,"char_update,[limes_name_cap],2"
+p2Street1PartyNoQuest,[limes_name_cap],[shake]!!![/shake]
+p2Street1PartyNoQuest,[limes_name_cap],Drumz!!!
+p2Street1PartyNoQuest,,"char_update,Spook,0"
+p2Street1PartyNoQuest,Spook,You should join the party tonight!
+p2Street1PartyNoQuest,,"char_update,[limes_name_cap],1"
+p2Street1PartyNoQuest,[limes_name_cap],...Can't do. Sister will be sad.
+p2Street1PartyNoQuest,,"condition_flag,princess_quest_fail"
+p2Street1PartyNoQuest,,"scene_set,p2Street1PartyNoQuestFail"
+p2Street1PartyNoQuest,,"scene_set,p2Street1PartyNoQuestNoFail"
+,,
+p2Street1PartyNoQuestFail,Spook,Oh...
+p2Street1PartyNoQuestFail,Spook,Can't you just go alone? Is that really such a big deal?
+p2Street1PartyNoQuestFail,[limes_name_cap],Sister sad. Can't go.
+p2Street1PartyNoQuestFail,,"condition_flag,princess_quest_start"
+p2Street1PartyNoQuestFail,,"scene_set,p2Street1PartyNoQuestFailStart"
+p2Street1PartyNoQuestFail,,"scene_set,p2Street1PartyNoQuestFailNoStart"
+,,
+p2Street1PartyNoQuestFailStart,,"char_update,Spook,5"
+p2Street1PartyNoQuestFailStart,Spook,Wait... don't tell me...
+p2Street1PartyNoQuestFailStart,Spook,Is your sister the Princess?
+p2Street1PartyNoQuestFailStart,,"char_update,[limes_name_cap],0"
+p2Street1PartyNoQuestFailStart,[limes_name_cap],Yes. Limez love sister!
+p2Street1PartyNoQuestFailStart,Spook,Oh.
+p2Street1PartyNoQuestFailStart,,"char_update,Spook,0"
+p2Street1PartyNoQuestFailStart,Spook,Uh... I don't think she'll be coming to the party.
+p2Street1PartyNoQuestFailStart,,"char_update,[limes_name_cap],1"
+p2Street1PartyNoQuestFailStart,[limes_name_cap],Yes. Limez knows.
+p2Street1PartyNoQuestFailStart,,"char_update,Spook,5"
+p2Street1PartyNoQuestFailStart,Spook,"Well, maybe you guys can sort it out someday."
+p2Street1PartyNoQuestFailStart,Spook,"Who knows, maybe next year she'll change her mind! Or something."
+p2Street1PartyNoQuestFailStart,,"char_update,[limes_name_cap],2"
+p2Street1PartyNoQuestFailStart,[limes_name_cap],Think not. But thank you.
+p2Street1PartyNoQuestFailStart,,"scene_set,p2Street1Leave"
+,,
+p2Street1PartyNoQuestFailNoStart,,"char_update,Spook,5"
+p2Street1PartyNoQuestFailNoStart,Spook,...Man.
+p2Street1PartyNoQuestFailNoStart,Spook,That sounds like a really... complicated family issue.
+p2Street1PartyNoQuestFailNoStart,[limes_name_cap],...
+p2Street1PartyNoQuestFailNoStart,Spook,"Well, I'm sure you guys will figure it out someday!"
+p2Street1PartyNoQuestFailNoStart,Spook,"Gotta stay positive, and stuff, right?"
+p2Street1PartyNoQuestFailNoStart,,"char_update,[limes_name_cap],2"
+p2Street1PartyNoQuestFailNoStart,[limes_name_cap],Yes. Limes positive!
+p2Street1PartyNoQuestFailNoStart,[limes_name_cap],Life good!
+p2Street1PartyNoQuestFailNoStart,,"scene_set,p2Street1Leave"
+,,
+p2Street1PartyNoQuestNoFail,Spook,Oh.
+p2Street1PartyNoQuestNoFail,,"choice,p2Street1Forget,p2Street1Comes"
+p2Street1PartyNoQuestNoFail,,"scene_set,p2Street1PartyNoQuestNoFailForget"
+p2Street1PartyNoQuestNoFail,,"scene_set,p2Street1PartyNoQuestNoFailComes"
+,,
+p2Street1PartyNoQuestNoFailForget,[limes_name_cap],No can do.
+p2Street1PartyNoQuestNoFailForget,,"char_update,[limes_name_cap],0"
+p2Street1PartyNoQuestNoFailForget,[limes_name_cap],"Limez love sister, sister loves Limez!"
+p2Street1PartyNoQuestNoFailForget,Spook,And if your sister comes...?
+p2Street1PartyNoQuestNoFailForget,,"scene_set,p2Street1PartyNoQuestNoFailComes"
+,,
+p2Street1PartyNoQuestNoFailComes,,"char_update,[limes_name_cap],2"
+p2Street1PartyNoQuestNoFailComes,[limes_name_cap],Limez comez!
+p2Street1PartyNoQuestNoFailComes,,"scene_set,p2Street1Leave"
+,,
+p2Street1Leave,,"char_update,Spook,0"
+p2Street1Leave,Spook,...Okay. I'll see you around Limes!
+p2Street1Leave,,"char_update,[limes_name_cap],0"
+p2Street1Leave,[limes_name_cap],"Spook, bye-bye!"
+p2Street1Leave,,map
 ,,
 ,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
+p2Street2,,"scene_bg_clear,sBackgroundStreetDay"
+p2Street2,,"music,bgmStreet"
+p2Street2,,"main_char_in,0"
+p2Street2,,"char_in,[limes_name_cap],sLimes,0"
+p2Street2,[limes_name_cap],A!
+p2Street2,Spook,A.
+p2Street2,[limes_name_cap],A...
+p2Street2,Spook,"Ah, I'll get out of your hair."
+p2Street2,,"char_update,[limes_name_cap],2"
+p2Street2,[limes_name_cap],One more thing!
+p2Street2,Spook,What is it?
+p2Street2,[limes_name_cap],Nothing. 
+p2Street2,,"char_update,[limes_name_cap],3"
+p2Street2,[limes_name_cap],[shake][wave]BA-DUM-TSSS!!![/wave][/shake]
+p2Street2,,"char_update,Spook,7"
+p2Street2,Spook,...
+p2Street2,,map
 ,,
 ,,
 ,,

@@ -73,6 +73,8 @@
     {"link":"io.gamemaker.sdfshaders-1.0.0","name":"io.gamemaker.sdfshaders-1.0.0","path":"io.gamemaker.sdfshaders-1.0.0.yyp",},
   ],
   "IncludedFiles":[
+    {"$GMIncludedFile":"","%Name":".~lock.lines.csv#","CopyToMask":-1,"filePath":"datafiles","name":".~lock.lines.csv#","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":".~lock.ui.csv#","CopyToMask":-1,"filePath":"datafiles","name":".~lock.ui.csv#","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"lines.csv","CopyToMask":-1,"filePath":"datafiles","name":"lines.csv","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"scribble_license.txt","CopyToMask":-1,"filePath":"datafiles","name":"scribble_license.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"shader_license.txt","CopyToMask":-1,"filePath":"datafiles","name":"shader_license.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -322,6 +324,7 @@
     {"id":{"name":"sBackgroundShayRoomDay","path":"sprites/sBackgroundShayRoomDay/sBackgroundShayRoomDay.yy",},},
     {"id":{"name":"sBackgroundShayRoomNight","path":"sprites/sBackgroundShayRoomNight/sBackgroundShayRoomNight.yy",},},
     {"id":{"name":"sBackgroundSpookInShaysHand","path":"sprites/sBackgroundSpookInShaysHand/sBackgroundSpookInShaysHand.yy",},},
+    {"id":{"name":"sBackgroundStreetDay","path":"sprites/sBackgroundStreetDay/sBackgroundStreetDay.yy",},},
     {"id":{"name":"sBackgroundStreetNight","path":"sprites/sBackgroundStreetNight/sBackgroundStreetNight.yy",},},
     {"id":{"name":"sBarry","path":"sprites/sBarry/sBarry.yy",},},
     {"id":{"name":"sBorder","path":"sprites/sBorder/sBorder.yy",},},

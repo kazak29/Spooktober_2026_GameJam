@@ -76,4 +76,11 @@ global.dataTypewriterSfx = {
 		pitchMax:	1.2,
 		overlap:	10,
 	},
+	Limes: {
+		ids:		[sfxTypewriterSpook],
+		vol:		100,
+		pitchMin:	1.2,
+		pitchMax:	1.2,
+		overlap:	40,
+	},
 }

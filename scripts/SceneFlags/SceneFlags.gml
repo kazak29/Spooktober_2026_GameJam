@@ -17,5 +17,10 @@ function FlagsCreate() {
 		
 		metPrincess:				false,
 		gotKnight:					false,
+		knowLimes:					false,
+		
+		streetQuestionAnimal:		false,
+		streetQuestionDoing:		false,
+		streetQuestionStray:		false,
 	};
 }

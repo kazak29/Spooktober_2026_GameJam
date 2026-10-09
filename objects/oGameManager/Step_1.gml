@@ -36,7 +36,7 @@ if global.cheat {
 	
 	if keyboard_check_pressed(ord("P")) {
 		ChapterProgress();
-		MapDataUpdatePart2();
+		Part2MapDataUpdate();
 		SceneToMap();
 	}
 }
