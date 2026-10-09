@@ -26,8 +26,8 @@
 			
 			var _questFlag = false;
 			switch global.chapter {
-				case 0: _questFlag = global.flags.candy_quest_complete || global.flags.candy_quest_fail;			break;
-				case 1: _questFlag = global.flags.princess_quest_complete || global.flags.princess_quest_fail;		break;
+				case 0: _questFlag = global.flags.questCandyComplete || global.flags.questCandyFail;			break;
+				case 1: _questFlag = global.flags.questPrincessComplete || global.flags.questPrincessFail;		break;
 			}
 			
 			//check all locations done

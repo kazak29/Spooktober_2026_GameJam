@@ -309,7 +309,7 @@ p1HomeQuestCancel,,map
 ,,
 ,,
 p1HomeQuestIntro,,"map_scene,home,p1HomeSkip"
-p1HomeQuestIntro,,"flag_set,candy_quest_complete,true"
+p1HomeQuestIntro,,"flag_set,questCandyComplete,true"
 p1HomeQuestIntro,,"char_update,Screwdriver,3"
 p1HomeQuestIntro,Screwdriver,"For the last time, I'm not giving his heart undies back!"
 p1HomeQuestIntro,,"char_update,Spook,7"
@@ -602,7 +602,7 @@ p1Bar1NotBad,,"choice,p1Bar1Strong,p1Bar1Milk"
 p1Bar1NotBad,,"scene_set,p1Bar1Strong"
 p1Bar1NotBad,,"scene_set,p1Bar1Milk"
 ,,
-p1Bar1Leave,,"flag_set,candy_quest_fail,true"
+p1Bar1Leave,,"flag_set,questCandyFail,true"
 p1Bar1Leave,,map
 ,,
 ,,
@@ -662,14 +662,14 @@ p1Bar1Candy,Barry,...A fridge.
 p1Bar1Candy,Barry,Know what? Try catching up with Screwdriver. He can show you a trick or two!
 p1Bar1Candy,Spook,Hmm...
 p1Bar1Candy,,"map_scene,home,p1HomeQuest"
-p1Bar1Candy,,"flag_set,candy_quest_start,true"
+p1Bar1Candy,,"flag_set,questCandyStart,true"
 p1Bar1Candy,,map
 ,,
 ,,
 p1Bar1Nuh,,"char_update,Barry,1"
 p1Bar1Nuh,Barry,"Your call, kid!"
 p1Bar1Nuh,Barry,"More for ther rest of us, heh."
-p1Bar1Nuh,,"flag_set,candy_quest_fail,true"
+p1Bar1Nuh,,"flag_set,questCandyFail,true"
 p1Bar1Nuh,,map
 ,,
 p1Bar1Okay,,"char_update,Barry,1"
@@ -683,7 +683,7 @@ p1Bar1Okay,Spook,"Yeah, okay..."
 p1Bar1Okay,,"char_update,Barry,1"
 p1Bar1Okay,Barry,Happy trick or treatin'!
 p1Bar1Okay,,"map_scene,home,p1HomeQuest"
-p1Bar1Okay,,"flag_set,candy_quest_start,true"
+p1Bar1Okay,,"flag_set,questCandyStart,true"
 p1Bar1Okay,,map
 ,,
 ,,
@@ -1302,7 +1302,7 @@ p1Yard2,,map
 ,,
 ,,
 ,,
-p1Front1,,"condition_flag,candy_quest_complete"
+p1Front1,,"condition_flag,questCandyComplete"
 p1Front1,,"scene_set,p1Front1Candy"
 p1Front1,,"scene_set,p1Front1Default"
 ,,
@@ -1893,14 +1893,14 @@ p2BarCandyDecorLeave,,"choice,p2BarCandyDecorKeep,p2BarCandyDecorLeaveReally"
 p2BarCandyDecorLeave,,"scene_set,p2BarCandyDecorKeep"
 p2BarCandyDecorLeave,,"scene_set,p2BarCandyDecorLeaveReally"
 ,,
-p2BarCandyDecorLeaveReally,,"flag_set,princess_quest_fail,true"
+p2BarCandyDecorLeaveReally,,"flag_set,questPrincessFail,true"
 p2BarCandyDecorLeaveReally,,"char_update,Spook,7"
 p2BarCandyDecorLeaveReally,Spook,[shake]Ugh![/shake] Whatever.
 p2BarCandyDecorLeaveReally,,"char_update,Spook,0"
 p2BarCandyDecorLeaveReally,Spook,It's none of my business anyway.
 p2BarCandyDecorLeaveReally,,"trans_scene,p2BarCandyDecorFinish"
 ,,
-p2BarCandyDecorKeep,,"flag_set,princess_quest_start,true"
+p2BarCandyDecorKeep,,"flag_set,questPrincessStart,true"
 p2BarCandyDecorKeep,,"trans_change,true,sBackgroundBlack"
 p2BarCandyDecorKeep,Empty,You picked up the pocket watch!
 p2BarCandyDecorKeep,Empty,"...Not sure how you carry it with you, as it is about your size, but, you manage!"
@@ -1974,7 +1974,7 @@ p2Front1,,"char_update,Spook,0"
 p2Front1,Spook,Princess who?
 p2Front1,,"char_update,Princess,0"
 p2Front1,Princess,Just Princess. [shake]THE[/shake] Princess.
-p2Front1,,"condition_flag,princess_quest_start"
+p2Front1,,"condition_flag,questPrincessStart"
 p2Front1,,"scene_set,p2Front1ChoiceQuest"
 p2Front1,,"scene_set,p2Front1Choice"
 ,,
@@ -2091,7 +2091,7 @@ p2Front1Party,,"char_update,Princess,2"
 p2Front1Party,Princess,N-nothing. Nothing happened.
 p2Front1Party,,"char_update,Spook,5"
 p2Front1Party,Princess,"...You may take your leave now, [name_from_princess_low]."
-p2Front1Party,,"condition_flag,princess_quest_start"
+p2Front1Party,,"condition_flag,questPrincessStart"
 p2Front1Party,,"scene_set,p2Front1PartyChoice"
 p2Front1Party,,"scene_set,p2Front1PartyLeave"
 ,,
@@ -2128,7 +2128,7 @@ p2Front1Keep,,"scene_set,p2FrontWatch"
 p2Front1Keep,,"scene_set,p2Front1BadIdea"
 ,,
 p2Front1BadIdea,,"map_scene,front,p2FrontOffended"
-p2Front1BadIdea,,"flag_set,princess_quest_fail,true"
+p2Front1BadIdea,,"flag_set,questPrincessFail,true"
 p2Front1BadIdea,,"char_update,Spook,8"
 p2Front1BadIdea,Spook,It was a bad idea to get involved! I'm out!
 p2Front1BadIdea,Princess,Did you steal something?! 
@@ -2147,7 +2147,7 @@ p2Front2,,"char_in,Princess,sPrincess,0"
 p2Front2,Spook,"Hello, Princess!"
 p2Front2,,"char_update,Princess,2"
 p2Front2,Princess,[name_from_princess_cap]?
-p2Front2,,"condition_flag,princess_quest_start"
+p2Front2,,"condition_flag,questPrincessStart"
 p2Front2,,"scene_set,p2Front2Choice"
 p2Front2,,"scene_set,p2Front2Passing"
 ,,
@@ -2318,7 +2318,7 @@ p2FrontWatchTried,,"scene_set,p2FrontWatchSkeddadle"
 ,,
 ,,
 p2FrontWatchSkeddadle,,"map_scene,front,p2FrontOffended"
-p2FrontWatchSkeddadle,,"flag_set,princess_quest_fail,true"
+p2FrontWatchSkeddadle,,"flag_set,questPrincessFail,true"
 p2FrontWatchSkeddadle,,"trans_change,true,sBackgroundHouseAcrossYardDay"
 p2FrontWatchSkeddadle,,"main_char_in,5"
 p2FrontWatchSkeddadle,Spook,"I think I saved those guys an awkward party! They should be thanking me, really."
@@ -2326,7 +2326,7 @@ p2FrontWatchSkeddadle,,map
 ,,
 ,,
 p2FrontWatchCome,,"map_scene,front,p2FrontComplete"
-p2FrontWatchCome,,"flag_set,princess_quest_complete,true"
+p2FrontWatchCome,,"flag_set,questPrincessComplete,true"
 p2FrontWatchCome,,"char_update,Spook,5"
 p2FrontWatchCome,Spook,You should come to the party!
 p2FrontWatchCome,,"char_update,Princess,2"
@@ -2506,7 +2506,7 @@ p2Street1Party,[limes_name_cap],...We party no more. Makes sister sad.
 p2Street1Party,,"char_update,Spook,0"
 p2Street1Party,Spook,...Oh.
 p2Street1Party,[limes_name_cap],...I miss drums.
-p2Street1Party,,"condition_flag,candy_quest_complete"
+p2Street1Party,,"condition_flag,questCandyComplete"
 p2Street1Party,,"scene_set,p2Street1PartyCandy"
 p2Street1Party,,"scene_set,p2Street1PartyNoCandy"
 ,,
@@ -2526,7 +2526,7 @@ p2Street1PartyCandy,Spook,Wait... You are the lost drummer!?
 p2Street1PartyCandy,,"char_update,[limes_name_cap],3"
 p2Street1PartyCandy,Empty,Limes starts moving wildly and becomes a blur!
 p2Street1PartyCandy,[limes_name_cap],[shake][wave]BA-DUM-TSSS!!![/wave][/shake]
-p2Street1PartyCandy,,"condition_flag,princess_quest_complete"
+p2Street1PartyCandy,,"condition_flag,questPrincessComplete"
 p2Street1PartyCandy,,"scene_set,p2Street1PartyQuest"
 p2Street1PartyCandy,,"scene_set,p2Street1PartyNoQuest"
 ,,
@@ -2554,14 +2554,14 @@ p2Street1PartyNoQuest,,"char_update,Spook,0"
 p2Street1PartyNoQuest,Spook,You should join the party tonight!
 p2Street1PartyNoQuest,,"char_update,[limes_name_cap],1"
 p2Street1PartyNoQuest,[limes_name_cap],...Can't do. Sister will be sad.
-p2Street1PartyNoQuest,,"condition_flag,princess_quest_fail"
+p2Street1PartyNoQuest,,"condition_flag,questPrincessFail"
 p2Street1PartyNoQuest,,"scene_set,p2Street1PartyNoQuestFail"
 p2Street1PartyNoQuest,,"scene_set,p2Street1PartyNoQuestNoFail"
 ,,
 p2Street1PartyNoQuestFail,Spook,Oh...
 p2Street1PartyNoQuestFail,Spook,Can't you just go alone? Is that really such a big deal?
 p2Street1PartyNoQuestFail,[limes_name_cap],Sister sad. Can't go.
-p2Street1PartyNoQuestFail,,"condition_flag,princess_quest_start"
+p2Street1PartyNoQuestFail,,"condition_flag,questPrincessStart"
 p2Street1PartyNoQuestFail,,"scene_set,p2Street1PartyNoQuestFailStart"
 p2Street1PartyNoQuestFail,,"scene_set,p2Street1PartyNoQuestFailNoStart"
 ,,

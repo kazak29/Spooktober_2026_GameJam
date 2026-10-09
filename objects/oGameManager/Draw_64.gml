@@ -40,12 +40,12 @@ draw_set_halign(fa_left);
 		draw_set_halign(fa_right);
 		draw_text(VIEWPORT_WIDTH,	96+15*1,	$"Chapter: {global.chapter}");
 		
-		draw_text(VIEWPORT_WIDTH,	96+15*3,	$"Candy Quest Start: {global.flags.candy_quest_start}");
-		draw_text(VIEWPORT_WIDTH,	96+15*4,	$"Candy Quest Complete: {global.flags.candy_quest_complete}");
-		draw_text(VIEWPORT_WIDTH,	96+15*5,	$"Candy Quest Fail: {global.flags.candy_quest_fail}");
-		draw_text(VIEWPORT_WIDTH,	96+15*7,	$"Princess Quest Start: {global.flags.princess_quest_start}");
-		draw_text(VIEWPORT_WIDTH,	96+15*8,	$"Princess Quest Complete: {global.flags.princess_quest_complete}");
-		draw_text(VIEWPORT_WIDTH,	96+15*9,	$"Princess Quest Fail: {global.flags.princess_quest_fail}");
+		draw_text(VIEWPORT_WIDTH,	96+15*3,	$"Candy Quest Start: {global.flags.questCandyStart}");
+		draw_text(VIEWPORT_WIDTH,	96+15*4,	$"Candy Quest Complete: {global.flags.questCandyComplete}");
+		draw_text(VIEWPORT_WIDTH,	96+15*5,	$"Candy Quest Fail: {global.flags.questCandyFail}");
+		draw_text(VIEWPORT_WIDTH,	96+15*7,	$"Princess Quest Start: {global.flags.questPrincessStart}");
+		draw_text(VIEWPORT_WIDTH,	96+15*8,	$"Princess Quest Complete: {global.flags.questPrincessComplete}");
+		draw_text(VIEWPORT_WIDTH,	96+15*9,	$"Princess Quest Fail: {global.flags.questPrincessFail}");
 		
 		draw_text(VIEWPORT_WIDTH,	96+15*11,	$"Met Hamster: {global.flags.metHamster}");
 		draw_text(VIEWPORT_WIDTH,	96+15*12,	$"Met Princess: {global.flags.metPrincess}");

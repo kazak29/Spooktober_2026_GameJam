@@ -25,7 +25,7 @@ function Part2MapDataUpdate(){
 		}
 	}
 	
-	var _barScene = global.flags.candy_quest_complete ? "p2BarCandy1" : "p2BarNoCandy1";
+	var _barScene = global.flags.questCandyComplete ? "p2BarCandy1" : "p2BarNoCandy1";
 	with _locs {
 		home.scene		= "p2Home1";
 		bar.scene		= _barScene;
