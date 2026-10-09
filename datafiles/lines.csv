@@ -2,13 +2,14 @@
 rocketTestScene,Empty,.
 rocketTestScene,,map
 ,,
-kazakTestScene,,"map_scene,street,p2Street2"
-kazakTestScene,,"flag_set,knowLimes,true"
-kazakTestScene,,"scene_bg_clear,sBackgroundStreetDay"
-kazakTestScene,,"music,bgmStreet"
+,,
+kazakTestScene,,"map_scene,front,p2Front2"
+kazakTestScene,,"flag_set,metPrincess,true"
+kazakTestScene,,"scene_bg_clear,sBackgroundHouseAcrossYardDay"
+kazakTestScene,,"music,bgmHouseAcross"
 kazakTestScene,,"main_char_in,0"
-kazakTestScene,,"char_in,[limes_name_cap],sLimes,0"
-kazakTestScene,,"scene_set,p2Street1Party"
+kazakTestScene,,"char_in,Princess,sPrincess,0"
+kazakTestScene,,"scene_set,p2FrontWatch"
 ,,
 kazakTestScene,,"scene_bg,sBackgroundGray"
 kazakTestScene,,"char_in,Barry,sBarry,0"
@@ -568,7 +569,7 @@ p1Bar1Party,,"char_update,Spook,6"
 p1Bar1Party,Spook,Offer... in... return?
 p1Bar1Party,,"char_update,Barry,4"
 p1Bar1Party,Barry,Yeah!
-p1Bar1Party,Barry,"Barry's no charity, buddy. Or else it would be called... Barrity...."
+p1Bar1Party,Barry,"Barry's no charity, buddy. Or else it would be called... Barrity..."
 p1Bar1Party,,"char_update,Spook,5"
 p1Bar1Party,Spook,But I got no money!
 p1Bar1Party,Barry,Money? Don't be silly!
@@ -622,7 +623,7 @@ p1Bar1Milk,Barry,"This is a bar, not the grocery store!"
 p1Bar1Milk,,"char_update,Spook,6"
 p1Bar1Milk,Spook,What do you have then?
 p1Bar1Milk,,"char_update,Barry,1"
-p1Bar1Milk,Barry,"Well, cider... cheese, candy, leftover food, oat, rotten fruit...."
+p1Bar1Milk,Barry,"Well, cider... cheese, candy, leftover food, oat, rotten fruit..."
 p1Bar1Milk,,"char_update,Spook,7"
 p1Bar1Milk,Spook,...
 p1Bar1Milk,,"char_update,Spook,0"
@@ -753,7 +754,7 @@ p1Street1LostYes,,"scene_set,p1Street1KindOf"
 p1Street1Scary,Pogo,The best things in life often are!
 p1Street1Scary,,"char_update,Pogo,1"
 p1Street1Scary,Pogo,"How are you ever going to learn what could it be like, if you never spread your wings?"
-p1Street1Scary,Spook,But... I have no wings....
+p1Street1Scary,Spook,But... I have no wings...
 p1Street1Scary,,"char_update,Pogo,0"
 p1Street1Scary,Pogo,"That doesn't stop humans, does it?"
 p1Street1Scary,,"char_update,Spook,6"
@@ -802,7 +803,7 @@ p1Street1LostAll,,"scene_set,p1Street1Books"
 p1Street1Read,,"char_update,Pogo,8"
 p1Street1Read,Pogo,How rude! 
 p1Street1Read,,"char_update,Pogo,7"
-p1Street1Read,Pogo,I guess it's normal- knowing this is your first time going out by yourself....
+p1Street1Read,Pogo,I guess it's normal- knowing this is your first time going out by yourself...
 p1Street1Read,,"choice,p1Street1ReadHuman,p1Street1ReadTaught,p1Street1ReadHunting"
 p1Street1Read,,"scene_set,p1Street1ReadHuman"
 p1Street1Read,,"scene_set,p1Street1ReadTaught"
@@ -833,14 +834,14 @@ p1Street1ReadTaught,,"scene_set,p1Street1Genre"
 ,,
 p1Street1ReadHunting,,"char_update,Pogo,8"
 p1Street1ReadHunting,Pogo,"[wave]""Hunting or something"",[/wave] hm?"
-p1Street1ReadHunting,Pogo,Well. Of course. Who doesn't love a little [shake]mouse juice[/shake] after a good horror book....
+p1Street1ReadHunting,Pogo,Well. Of course. Who doesn't love a little [shake]mouse juice[/shake] after a good horror book...
 p1Street1ReadHunting,,"choice,p1Street1HuntingFunny,p1Street1Books"
 p1Street1ReadHunting,,"scene_set,p1Street1HuntingFunny"
 p1Street1ReadHunting,,"scene_set,p1Street1Books"
 ,,
 p1Street1HuntingFunny,,"char_update,Spook,8"
 p1Street1HuntingFunny,,"delay,0.15"
-p1Street1HuntingFunny,Pogo,[wave]But it is....[/wave]
+p1Street1HuntingFunny,Pogo,[wave]But it is...[/wave]
 p1Street1HuntingFunny,,"char_update,Spook,4"
 p1Street1HuntingFunny,Spook,Stop it!
 p1Street1HuntingFunny,Pogo,"Heh. I'll leave you be, little one."
@@ -969,13 +970,13 @@ p1StreetQuestionsYourselfAsked,Pogo,"Oh, well."
 p1StreetQuestionsYourselfAsked,,"scene_set,p1StreetQuestionsYourself"
 ,,
 p1StreetQuestionsYourself,,"flag_set,streetQuestionYourself,true"
-p1StreetQuestionsYourself,Pogo,Hm hm... Let's see....
+p1StreetQuestionsYourself,Pogo,Hm hm... Let's see...
 p1StreetQuestionsYourself,,"char_update,Pogo,4"
 p1StreetQuestionsYourself,Pogo,My favorite drink is grape juice...
 p1StreetQuestionsYourself,,"char_update,Pogo,0"
 p1StreetQuestionsYourself,Pogo,And my favorite author is Marry Shelley!
 p1StreetQuestionsYourself,,"char_update,Pogo,1"
-p1StreetQuestionsYourself,Pogo,"And Dracula is my biggest crush, big time. Too bad I was born so late...."
+p1StreetQuestionsYourself,Pogo,"And Dracula is my biggest crush, big time. Too bad I was born so late..."
 p1StreetQuestionsYourself,,"char_update,Spook,9"
 p1StreetQuestionsYourself,Spook,Maybe you will meet a vampire during Halloween!
 p1StreetQuestionsYourself,,"char_update,Pogo,6"
@@ -2216,20 +2217,41 @@ p2FrontWatchMiss,,"char_update,Spook,5"
 p2FrontWatchMiss,Spook,?!
 p2FrontWatchMiss,Princess,...It was so long ago. We used to sneak out at night.
 p2FrontWatchMiss,Princess,My brother would play the drums. 
-p2FrontWatchMiss,Spook,[shake]THE LOST DRUMMER!!!!?[/shake]
-p2FrontWatchMiss,,"char_update,Princess,0"
-p2FrontWatchMiss,Princess,Oh? How do you know!?
-p2FrontWatchMiss,,"char_update,Spook,0"
-p2FrontWatchMiss,Spook,They speak of him still!
-p2FrontWatchMiss,,"char_update,Princess,2"
-p2FrontWatchMiss,Princess,Oh... and of me?
-p2FrontWatchMiss,,"choice,p2FrontWatchKept,p2FrontWatchTouchy,p2FrontWatchRecall"
-p2FrontWatchMiss,,"scene_set,p2FrontWatchKept"
-p2FrontWatchMiss,,"scene_set,p2FrontWatchTouchy"
-p2FrontWatchMiss,,"scene_set,p2FrontWatchRecall"
+p2FrontWatchMiss,,"condition_flag,knowLimes"
+p2FrontWatchMiss,,"scene_set,p2FrontWatchMissLimes"
+p2FrontWatchMiss,,"scene_set,p2FrontWatchMissDrummer"
+,,
+p2FrontWatchMissLimes,Spook,Limes is your brother!?
+p2FrontWatchMissLimes,,"char_update,Princess,0"
+p2FrontWatchMissLimes,Princess,Oh? You met?
+p2FrontWatchMissLimes,,"char_update,Spook,0"
+p2FrontWatchMissLimes,Spook,"Yes! He wants to join the party, too!"
+p2FrontWatchMissLimes,Spook,And the guys miss him!
+p2FrontWatchMissLimes,,"char_update,Princess,2"
+p2FrontWatchMissLimes,Princess,My brother is the best drummer there is. Of course they'll miss him.
+p2FrontWatchMissLimes,,"char_update,Princess,0"
+p2FrontWatchMissLimes,Princess,...
+p2FrontWatchMissLimes,,"char_update,Princess,2"
+p2FrontWatchMissLimes,Princess,Did they ever... mention me as well?
+p2FrontWatchMissLimes,,"scene_set,p2FrontWatchOpinion"
+,,
+p2FrontWatchMissDrummer,Spook,[shake]THE LOST DRUMMER!!!!?[/shake]
+p2FrontWatchMissDrummer,,"char_update,Princess,0"
+p2FrontWatchMissDrummer,Princess,Oh? How do you know!?
+p2FrontWatchMissDrummer,Spook,They speak of him still!
+p2FrontWatchMissDrummer,,"char_update,Princess,2"
+p2FrontWatchMissDrummer,Princess,Oh... and of me?
+p2FrontWatchMissDrummer,,"scene_set,p2FrontWatchOpinion"
+,,
+p2FrontWatchOpinion,,"char_update,Spook,0"
+p2FrontWatchOpinion,Spook,Well...
+p2FrontWatchOpinion,,"choice,p2FrontWatchKept,p2FrontWatchTouchy,p2FrontWatchRecall"
+p2FrontWatchOpinion,,"scene_set,p2FrontWatchKept"
+p2FrontWatchOpinion,,"scene_set,p2FrontWatchTouchy"
+p2FrontWatchOpinion,,"scene_set,p2FrontWatchRecall"
 ,,
 p2FrontWatchKept,,"char_update,Princess,3"
-p2FrontWatchKept,Princess,Oh what a silly racoon....
+p2FrontWatchKept,Princess,Oh what a silly racoon...
 p2FrontWatchKept,,"char_update,Princess,0"
 p2FrontWatchKept,Princess,Where was it?
 p2FrontWatchKept,Spook,In the backrooms.
@@ -2255,7 +2277,7 @@ p2FrontWatchTouchy,Princess,...You really think so?
 p2FrontWatchTouchy,Spook,"Well, yeah!"
 p2FrontWatchTouchy,,"char_update,Spook,0"
 p2FrontWatchTouchy,Spook,He's always drinking.
-p2FrontWatchTouchy,Princess,Oh. Oh what a silly racoon....
+p2FrontWatchTouchy,Princess,Oh. Oh what a silly racoon...
 p2FrontWatchTouchy,,"scene_set,p2FrontWatchCome"
 ,,
 p2FrontWatchRecall,Princess,[shake]...Hmph![/shake]
@@ -2746,7 +2768,7 @@ endPartyBad,,"trans_change,true"
 endPartyBad,,"trans_room,rmCredits"
 ,,
 endPartyOkay,,"scene_bg_clear,sBackgroundBlack"
-endPartyOkay,Empty,The nighttime comes....
+endPartyOkay,Empty,The nighttime comes...
 endPartyOkay,,"music,bgmTitleTheme"
 endPartyOkay,,"trans_change,true,sBackgroundSewerBarParty"
 endPartyOkay,,"char_in,Screwdriver,sScrewdriver,12"
