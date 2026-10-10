@@ -2883,7 +2883,9 @@ endPartyOkay,,"char_out,Screwdriver"
 endPartyOkay,,"char_in,Möth,sMoth,2"
 endPartyOkay,Möth,Like my costume?
 endPartyOkay,Spook,Um! Yeah! Lamp!
-endPartyOkay,Möth,LAMP.
+endPartyOkay,,"delay,0.75"
+endPartyOkay,Möth,"[zalgo_small,30][speed,0.25]lamp...[/speed]"
+endPartyOkay,,"delay,0.5"
 endPartyOkay,,"char_update,Barry,6"
 endPartyOkay,Barry,"Alright. Cheers, everyone!"
 endPartyOkay,,"char_update,Pogo,1"
