@@ -74,6 +74,7 @@ function DataMenuElementsCreate(){
 				elemType:		MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
 				scr:			function() {
 									AmbientChange(AMBIENT_MUSIC, noone);
+									Part1MapDataUpdate();
 									global.sceneToPlay = "intro";
 									TransitionStart(rmStage, sqFadeOut, sqFadeIn);
 								},
@@ -84,6 +85,7 @@ function DataMenuElementsCreate(){
 				elemType:		MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
 				scr:			function() {
 									AmbientChange(AMBIENT_MUSIC, noone);
+									Part2MapDataUpdate();
 									global.sceneToPlay = "p2Intro";
 									TransitionStart(rmStage, sqFadeOut, sqFadeIn);
 								},
