@@ -73,6 +73,7 @@
     {"link":"io.gamemaker.sdfshaders-1.0.0","name":"io.gamemaker.sdfshaders-1.0.0","path":"io.gamemaker.sdfshaders-1.0.0.yyp",},
   ],
   "IncludedFiles":[
+    {"$GMIncludedFile":"","%Name":".~lock.lines.csv#","CopyToMask":-1,"filePath":"datafiles","name":".~lock.lines.csv#","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"lines.csv","CopyToMask":-1,"filePath":"datafiles","name":"lines.csv","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"scribble_license.txt","CopyToMask":-1,"filePath":"datafiles","name":"scribble_license.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"shader_license.txt","CopyToMask":-1,"filePath":"datafiles","name":"shader_license.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
@@ -297,6 +298,7 @@
     {"id":{"name":"sfxCageOpen","path":"sounds/sfxCageOpen/sfxCageOpen.yy",},},
     {"id":{"name":"sfxDoorClose","path":"sounds/sfxDoorClose/sfxDoorClose.yy",},},
     {"id":{"name":"sfxDoorOpen","path":"sounds/sfxDoorOpen/sfxDoorOpen.yy",},},
+    {"id":{"name":"sfxLightning","path":"sounds/sfxLightning/sfxLightning.yy",},},
     {"id":{"name":"sfxLoudThud","path":"sounds/sfxLoudThud/sfxLoudThud.yy",},},
     {"id":{"name":"sfxPrincessBark","path":"sounds/sfxPrincessBark/sfxPrincessBark.yy",},},
     {"id":{"name":"sfxSpookHungry","path":"sounds/sfxSpookHungry/sfxSpookHungry.yy",},},
