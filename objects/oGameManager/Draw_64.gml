@@ -30,6 +30,8 @@ draw_set_halign(fa_left);
 	
 	if (global.showDebugUI)
 	{
+		draw_set_colour(c_yellow);
+		
 		draw_set_halign(fa_left);
 		draw_text(10,	96+15*1,	$"FPS: {fps}");
 		draw_text(10,	96+15*2,	$"FPS REAL: {fps_real}");
@@ -52,6 +54,15 @@ draw_set_halign(fa_left);
 		draw_text(VIEWPORT_WIDTH,	96+15*13,	$"Got Knight: {global.flags.gotKnight}");
 		draw_text(VIEWPORT_WIDTH,	96+15*14,	$"Know Limes: {global.flags.knowLimes}");
 		draw_set_halign(fa_left);
+		
+		draw_set_colour(c_white);
+		
+		with oInputManager {
+			draw_set_colour(c_yellow);
+			draw_text(15,15, $"input: gamepad active: {using_gamepad}");
+			draw_text(15,15*2, $"input: mouse active: {mouse.active}");
+			draw_set_colour(c_white);
+		}
 	}
 	
 	//draw reminder
@@ -59,7 +70,10 @@ draw_set_halign(fa_left);
 	{	
 		draw_set_colour(c_yellow);
 		draw_set_halign(fa_left);
-		draw_text(16,	VIEWPORT_HEIGHT - 32,	$"CHEATS ARE ACTIVE");	
+		draw_text(16,	VIEWPORT_HEIGHT - 96,	$"CHEATS ARE ACTIVE");
+		draw_text(16,	VIEWPORT_HEIGHT - 64,	$"TAB - DEBUG UI");
+		draw_text(16,	VIEWPORT_HEIGHT - 32,	$"LEFT CTRL - DEBUG MENU");
+		draw_set_colour(c_white);
 	}
 	
 #endregion

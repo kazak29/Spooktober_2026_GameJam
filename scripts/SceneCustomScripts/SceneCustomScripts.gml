@@ -14,6 +14,27 @@ function Part1ClearCheck(){
 	return true;
 }
 
+function Part1MapDataUpdate(){
+	var _locs = global.dataMapLocations;
+	var _names = struct_get_names(_locs);
+	
+	for (var i = 0; i < array_length(_names); i++) {
+		with _locs[$ _names[i]] {
+			visited = false;
+			locked = false;
+		}
+	}
+	
+	with _locs {
+		home.scene		= "p1Home1";
+		bar.scene		= "p1Bar1";
+		street.scene	= "p1Street1";
+		yard.scene		= "p1Yard1";
+		front.scene		= "p1Front1";
+		lamp.scene		= "p1Lamp1";
+	}
+}
+
 function Part2MapDataUpdate(){
 	var _locs = global.dataMapLocations;
 	var _names = struct_get_names(_locs);
@@ -56,4 +77,24 @@ function Part2Street1ChoiceCheck(){
 	
 	SceneStart(_scene);
 	
+}
+
+function EndingCheck(){
+	var _scene = "endStay";
+	var _candy = global.flags.questCandyComplete;
+	var _princess = global.flags.questPrincessComplete;
+					
+	if !_candy	&& !_princess	_scene = "endPartyBad";
+	if _candy	&& !_princess	_scene = "endPartyOkay";
+	if _candy	&& _princess	_scene = "endPartyAmazing";
+					
+	SceneTransitionNext(_scene); 
+}
+
+function HamsterGhostCreate(){
+	instance_destroy(oHamsterGhost);
+	instance_create_layer(0,0, SYSTEM_LAYER, oHamsterGhost);
+}
+function HamsterGhostDestroy(){
+	with oHamsterGhost state = StateDisappear;
 }

@@ -87,7 +87,7 @@ if instance_exists(main.elemId) {
 				var _scr = _elemData[$"scr"] ?? noone;
 				var _arg = _elemData[$"arg"] ?? noone;
 		
-				if script_exists(_scr) _scr(_arg);
+				if is_callable(_scr) _scr(_arg);
 				_sfx = "click";
 			}
 		} break;

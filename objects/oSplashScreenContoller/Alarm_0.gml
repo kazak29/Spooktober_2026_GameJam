@@ -1,2 +1,0 @@
-
-TransitionStart(nextRoom, sqFadeOut, sqFadeIn);

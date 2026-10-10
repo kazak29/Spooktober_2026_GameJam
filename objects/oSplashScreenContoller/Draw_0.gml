@@ -1,0 +1,1 @@
+draw_sprite_ext(sSplashScreen,0,0,0, 1,1,0,c_white, alpha);

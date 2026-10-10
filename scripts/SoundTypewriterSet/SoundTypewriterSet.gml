@@ -83,4 +83,18 @@ global.dataTypewriterSfx = {
 		pitchMax:	1.2,
 		overlap:	40,
 	},
+	Lenore: {
+		ids:		[sfxTypewriterSpook],
+		vol:		100,
+		pitchMin:	1.15,
+		pitchMax:	1.15,
+		overlap:	20,
+	},
+	Edgar: {
+		ids:		[sfxTypewriterSpook],
+		vol:		100,
+		pitchMin:	0.75,
+		pitchMax:	0.75,
+		overlap:	20,
+	},
 }

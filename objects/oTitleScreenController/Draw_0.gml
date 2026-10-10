@@ -1,4 +1,4 @@
-if instance_exists(oMenu) && (oMenu.menuName == "titleSettings" || oMenu.menuName == "titleCrt") exit;
+if instance_exists(oMenu) && (oMenu.menuName != "titleMain" && oMenu.menuName != "titleMainWin") exit;
 
 scribble("[wheel]SPOOK'S SPOOKY\nHALLOWEEN PARTY![/wheel]")
 	.starting_format("fTitle",#E48034)

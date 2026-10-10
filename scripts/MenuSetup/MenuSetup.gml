@@ -5,6 +5,163 @@ function DataMenuElementsCreate(){
 			elemType:		MENU_ELEMENT_TYPE.BACK,
 		},
 		
+		#region cheats
+			restart: {
+				title:			"Game Restart (R)",
+				elemType:		MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				scr:			game_restart,
+				arg:			0,
+			},
+			muteMusic: {
+				title:			"Mute Music (M)",
+				elemType:		MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				scr:			function() { global.volMusic = 0; VolumeUpdateAmbient(); },
+				arg:			0,
+			},
+			cheatCrt: {
+				title:			"Toggle CRT (C)",
+				elemType:		MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				scr:			function() { global.crt.active = !global.crt.active; },
+				arg:			0,
+			},
+			
+			
+			mapVisited: {
+				title:			"Set All Locations As Visited",
+				elemType:		MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				scr:			function() {
+									var _names = struct_get_names(global.dataMapLocations);
+									for (var i = 0; i < array_length(_names); i++) {
+										global.dataMapLocations[$ _names[i]].visited = true;
+									}
+								},
+				arg:			0,
+			},
+			homeQuest: {
+				title:			"Set Home to Start Candy Quest",
+				elemType:		MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				scr:			function() { global.dataMapLocations.home.scene = "p1HomeQuest"; },
+				arg:			0,
+			},
+			map: {
+				title:			"Go to Map (From Stage)",
+				elemType:		MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				scr:			function() { SceneToMap(); },
+				arg:			0,
+			},
+			mapP1: {
+				title:			"Go to Map (Start of Part 1)",
+				elemType:		MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				scr:			function() {
+									global.chapter = 0;
+									Part1MapDataUpdate();
+									TransitionStart(rmMap, sqFadeOut, sqFadeIn);
+								},
+				arg:			0,
+			},
+			mapP2: {
+				title:			"Go to Map (Start of Part 2)",
+				elemType:		MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				scr:			function() {
+									ChapterProgress();
+									Part2MapDataUpdate();
+									TransitionStart(rmMap, sqFadeOut, sqFadeIn);
+								},
+				arg:			0,
+			},
+			introP1: {
+				title:			"Go to Intro (Part 1)",
+				elemType:		MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				scr:			function() {
+									AmbientChange(AMBIENT_MUSIC, noone);
+									global.sceneToPlay = "intro";
+									TransitionStart(rmStage, sqFadeOut, sqFadeIn);
+								},
+				arg:			0,
+			},
+			introP2: {
+				title:			"Go to Intro (Part 2)",
+				elemType:		MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				scr:			function() {
+									AmbientChange(AMBIENT_MUSIC, noone);
+									global.sceneToPlay = "p2Intro";
+									TransitionStart(rmStage, sqFadeOut, sqFadeIn);
+								},
+				arg:			0,
+			},
+			endP1: {
+				title:			"Go to End (Part 1)",
+				elemType:		MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				scr:			function() {
+									AmbientChange(AMBIENT_MUSIC, noone);
+									global.sceneToPlay = "p1EndIntro";
+									TransitionStart(rmStage, sqFadeOut, sqFadeIn);
+								},
+				arg:			0,
+			},
+			endP2: {
+				title:			"Go to End (Part 2)",
+				elemType:		MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				scr:			function() {
+									AmbientChange(AMBIENT_MUSIC, noone);
+									global.sceneToPlay = "p2EndIntro";
+									TransitionStart(rmStage, sqFadeOut, sqFadeIn);
+								},
+				arg:			0,
+			},
+			
+			
+			candyStart: {
+				title:			"Candy Quest Start",
+				elemType:		MENU_ELEMENT_TYPE.TOGGLE,
+				varName:		"flags.questCandyStart",
+			},
+			candyComplete: {
+				title:			"Candy Quest Complete",
+				elemType:		MENU_ELEMENT_TYPE.TOGGLE,
+				varName:		"flags.questCandyComplete",
+			},
+			candyFail: {
+				title:			"Candy Quest Fail",
+				elemType:		MENU_ELEMENT_TYPE.TOGGLE,
+				varName:		"flags.questCandyFail",
+			},
+			princessStart: {
+				title:			"Princess Quest Start",
+				elemType:		MENU_ELEMENT_TYPE.TOGGLE,
+				varName:		"flags.questPrincessStart",
+			},
+			princessComplete: {
+				title:			"Princess Quest Complete",
+				elemType:		MENU_ELEMENT_TYPE.TOGGLE,
+				varName:		"flags.questPrincessComplete",
+			},
+			princessFail: {
+				title:			"Princess Quest Fail",
+				elemType:		MENU_ELEMENT_TYPE.TOGGLE,
+				varName:		"flags.questPrincessFail",
+			},
+			metHamster: {
+				title:			"Met Hamster",
+				elemType:		MENU_ELEMENT_TYPE.TOGGLE,
+				varName:		"flags.metHamster",
+			},
+			metPrincess: {
+				title:			"Met Princess",
+				elemType:		MENU_ELEMENT_TYPE.TOGGLE,
+				varName:		"flags.metPrincess",
+			},
+			gotKnight: {
+				title:			"Got Knight",
+				elemType:		MENU_ELEMENT_TYPE.TOGGLE,
+				varName:		"flags.gotKnight",
+			},
+			knowLimes: {
+				title:			"Know Limes",
+				elemType:		MENU_ELEMENT_TYPE.TOGGLE,
+				varName:		"flags.knowLimes",
+			},
+		#endregion
 		#region main
 			gameStart: {
 				title:			"menuStart",
