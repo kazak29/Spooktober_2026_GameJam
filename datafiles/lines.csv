@@ -2920,73 +2920,129 @@ endPartyAmazing,,"char_update,Barry,8"
 endPartyAmazing,Barry,Time to drink some BSCWCCEC!
 endPartyAmazing,,"char_update,Pogo,1"
 endPartyAmazing,Pogo,"[wave]Yay, BSCWCCEC![/wave]"
-endPartyAmazing,,"delay,0.5"
+endPartyAmazing,,"delay,0.25"
 endPartyAmazing,Empty,You hear the Sewer door open...
+endPartyAmazing,,"char_update,Pogo,4"
 endPartyAmazing,Pogo,"Hm? I thought everyone arrived! Is your gang coming, Drivey?"
-endPartyAmazing,Screwdriver,"Um, no...."
+endPartyAmazing,Screwdriver,"Um, no..."
 endPartyAmazing,,"char_out,Pogo"
 endPartyAmazing,,"char_out,Screwdriver"
 endPartyAmazing,,"char_in,Princess,sPrincess,0"
 endPartyAmazing,Princess,...
-endPartyAmazing,Barry,...
+endPartyAmazing,,"char_update,Barry,9"
+endPartyAmazing,Barry,[shake]...[/shake]
 endPartyAmazing,,"char_in,Limes,sLimes,0"
 endPartyAmazing,Limes,...!
-endPartyAmazing,Pogo,!!!
-endPartyAmazing,Screwdriver,???
+endPartyAmazing,,"char_out,Barry"
+endPartyAmazing,,"char_in,Pogo,sPogo,6"
+endPartyAmazing,Pogo,[shake]!!![/shake]
+endPartyAmazing,,"char_out,Princess"
+endPartyAmazing,,"char_in,Screwdriver,sScrewdriver,11"
+endPartyAmazing,Screwdriver,[shake]???[/shake]
 endPartyAmazing,Screwdriver,Um...
+endPartyAmazing,,"char_out,Limes"
+endPartyAmazing,,"char_out,Pogo"
+endPartyAmazing,,"char_out,Screwdriver"
+endPartyAmazing,,"char_in,Princess,sPrincess,2"
 endPartyAmazing,Princess,"Greetings, old friends and the new citizens of Foggy Hallow."
+endPartyAmazing,,"char_update,Princess,0"
 endPartyAmazing,Princess,"I am here tonight, to ask you to retrieve what's mine."
-endPartyAmazing,Barry,...P...Princess...
+endPartyAmazing,,"char_in,Barry,sBarry,7"
+endPartyAmazing,Barry,[shake]...P...Princess...[/shake]
+endPartyAmazing,,"char_out,Barry"
 endPartyAmazing,Princess,Silence! Thief!
 endPartyAmazing,Princess,I demand you... give my [shake]HEART BACK![/shake]
+endPartyAmazing,,"char_out,Princess"
+endPartyAmazing,,"char_in,Limes,sLimes,3"
 endPartyAmazing,Limes,[shake][wave]BA-DUM-TSSS!!![/wave][/shake]
+endPartyAmazing,,"char_in,Screwdriver,sScrewdriver,12"
 endPartyAmazing,Screwdriver,[shake]PFFFFFFFFFFTTTTTTTTTTTTTTTTTTTTTTT-[/shake]
+endPartyAmazing,,"char_in,Pogo,sPogo,1"
 endPartyAmazing,Pogo,Princess!!!! It's wonderful to see you!!!!
 endPartyAmazing,Spook,"[alpha,0.75](Guys, I think they are having a moment....)[/alpha]"
-endPartyAmazing,Barry,Princess... my love...
-endPartyAmazing,Barry,Why... you... where have you been?
-endPartyAmazing,Princess,"Barbar, I...."
+endPartyAmazing,,"char_update,Pogo,0"
+endPartyAmazing,,"char_out,Limes"
+endPartyAmazing,,"char_out,Screwdriver"
+endPartyAmazing,,"char_out,Pogo"
+endPartyAmazing,,"char_in,Barry,sBarry,7"
+endPartyAmazing,Barry,[shake]Princess... my love...[/shake]
+endPartyAmazing,Barry,[shake]Why... you... where have you been?[/shake]
+endPartyAmazing,,"char_in,Princess,sPrincess,3"
+endPartyAmazing,Princess,"[shake]Barbar, I....[/shake]"
 endPartyAmazing,Princess,My owners were scared of you. I was worried you would get hurt if this kept going!
 endPartyAmazing,Barry,You left to... protect me?
 endPartyAmazing,Princess,It's how it was supposed to be!
+endPartyAmazing,,"char_update,Princess,0"
 endPartyAmazing,Princess,"You are a free spirit, Barbar. You showed me such wonderful things!"
 endPartyAmazing,Princess,But I... I have a duty to my human...
 endPartyAmazing,Barry,Princess... I... I just really miss you.
 endPartyAmazing,Barry,It's okay If we don' t run away like we used to... Can't you just... bark at me from your window sometimes and...
+endPartyAmazing,,"char_update,Princess,2"
 endPartyAmazing,Princess,No!
-endPartyAmazing,Barry,N... no?
+endPartyAmazing,Barry,[shake]N... no?[/shake]
+endPartyAmazing,,"char_update,Princess,0"
 endPartyAmazing,Princess,Not anymore! I am [shake]DONE[/shake] hiding! I won't be away from my true love! And my human better [shake]DEAL[/shake] with it!
-endPartyAmazing,Barry,Princess...
-endPartyAmazing,Princess,Barbar...
+endPartyAmazing,Barry,[shake]Princess...[/shake]
+endPartyAmazing,,"char_update,Princess,3"
+endPartyAmazing,Princess,[shake]Barbar...[/shake]
+endPartyAmazing,,"char_in,Screwdriver,sScrewdriver,12"
 endPartyAmazing,Screwdriver,[shake]BOOOO!!! GET A LAIR!!![/shake]
-endPartyAmazing,Pogo,Pffft....
+endPartyAmazing,,"char_out,Barry"
+endPartyAmazing,,"char_in,Pogo,sPogo,6"
+endPartyAmazing,Pogo,[shake]Pffft....[/shake]
+endPartyAmazing,,"char_out,Princess"
+endPartyAmazing,,"char_in,Limes,sLimes,0"
 endPartyAmazing,Limes,Screwz! POG! Barz! 
-endPartyAmazing,Limes,!!!
-endPartyAmazing,Screwdriver,WHAT IS UP you drumm-ass? 
-endPartyAmazing,Screwdriver,...We missed you.
+endPartyAmazing,,"char_update,Limes,3"
+endPartyAmazing,Limes,[shake]!!![/shake]
+endPartyAmazing,Screwdriver,[shake]WHAT IS UP[/shake] you drumm-ass?
+endPartyAmazing,Screwdriver,We missed you!
+endPartyAmazing,,"char_update,Pogo,1"
 endPartyAmazing,Pogo,We did. Both of you!
+endPartyAmazing,,"char_out,Screwdriver"
+endPartyAmazing,,"char_in,Möth,sMoth,2"
 endPartyAmazing,Möth,I miss lamp. Only.
+endPartyAmazing,,"char_out,Möth"
+endPartyAmazing,,"char_in,Princess,sPrincess,0"
 endPartyAmazing,Princess,...Well. It seems I have returned!
-endPartyAmazing,Pogo,"YOU, LAND PUPPY, OWE ME A BIG ONE!"
+endPartyAmazing,,"char_out,Limes"
+endPartyAmazing,,"char_update,Pogo,6"
+endPartyAmazing,Pogo,"[shake]YOU, LAND PUPPY, OWE ME A BIG ONE![/shake]"
+endPartyAmazing,,"char_update,Princess,2"
 endPartyAmazing,Princess,"That so, sky puppy? "
-endPartyAmazing,Pogo,YEAH! We started watching Gossipy Beawer and you left us halfway through!!!!
+endPartyAmazing,Pogo,[shake]YEAH![/shake] We started watching Gossipy Beawer and you left us halfway through!!!!
+endPartyAmazing,,"char_update,Princess,0"
 endPartyAmazing,Princess,That's... Yes. I... apologize. 
+endPartyAmazing,,"char_update,Princess,1"
 endPartyAmazing,Princess,Thankfully little [name_from_princess_low] was here to summon me from my castle!
-endPartyAmazing,Pogo,I WAS TOO!
+endPartyAmazing,,"char_update,Pogo,1"
+endPartyAmazing,Pogo,[shake]I WAS TOO![/shake]
 endPartyAmazing,Pogo,I flew over your ridicilous house for hours on end!
-endPartyAmazing,Princess,Oh you are OBSESSED with me.
+endPartyAmazing,,"char_update,Princess,0"
+endPartyAmazing,Princess,Oh you are [shake]OBSESSED[/shake] with me.
+endPartyAmazing,,"char_update,Pogo,6"
 endPartyAmazing,Pogo,"Girl, you know it."
+endPartyAmazing,,"char_out,Princess"
+endPartyAmazing,,"char_in,Screwdriver,sScrewdriver,11"
+endPartyAmazing,,"char_in,Limes,sLimes,0"
 endPartyAmazing,Screwdriver,Well well.  
-endPartyAmazing,Screwdriver,It seems the ASqueak/DSqueak is back at it!
+endPartyAmazing,Screwdriver,It seems the [wave][b]ASqueak/Dsqueak[/b][/wave] is back at it!
+endPartyAmazing,,"char_update,Screwdriver,12"
 endPartyAmazing,Screwdriver,We playin' tonight?
-endPartyAmazing,Pogo,"Oh, you're ASKING!?"
-endPartyAmazing,Limes,DRUMZ!
-endPartyAmazing,Barry,Yeah... Before... I... H... h... I... I will just...
+endPartyAmazing,,"char_update,Pogo,1"
+endPartyAmazing,Pogo,"Oh, you're [shake]ASKING!?[/shake]"
+endPartyAmazing,,"char_update,Limes,2"
+endPartyAmazing,Limes,[shake]DRUMZ![/shake]
+endPartyAmazing,,"char_out,Pogo"
+endPartyAmazing,,"char_in,Barry,sBarry,7"
+endPartyAmazing,Barry,[shake]Yeah... Before... I... H... h... I... I will just...[/shake]
 endPartyAmazing,Limes,Drinkz! 
 endPartyAmazing,Spook,"BSCWCCEC, right!!!?"
-endPartyAmazing,Barry,Coming riiiight up!
+endPartyAmazing,,"char_update,Barry,6"
+endPartyAmazing,Barry,Coming [wave]riiiight[/wave] up!
+endPartyAmazing,,"delay,1"
 endPartyAmazing,,"trans_change,true,sBackgroundGray"
-endPartyAmazing,,"delay,3"
+endPartyAmazing,,"delay,1"
 endPartyAmazing,Spook,Hehe.
 endPartyAmazing,,"trans_scene,endPartyAmazingCont"
 ,,
