@@ -42,6 +42,8 @@ TextboxHide(); //hide for room transitions
 		if _soundName == "???"				_soundName = "Screwdriver";
 		if _soundName == "Giant Rabbit"		_soundName = "Empty";
 		if _soundName == "[limes_name_cap]"	_soundName = "Limes";
+		if _soundName == "Girl"				_soundName = "Lenore";
+		if _soundName == "Boy"				_soundName = "Edgar";
 		if is_string(_name) _soundName = _name;
 		
 		var _soundData = struct_get(_sounds, _soundName) ?? struct_get(_sounds, "none");

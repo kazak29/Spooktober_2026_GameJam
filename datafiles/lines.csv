@@ -3047,56 +3047,65 @@ endPartyAmazing,Spook,Hehe.
 endPartyAmazing,,"trans_scene,endPartyAmazingCont"
 ,,
 endPartyAmazingCont,,"scene_bg_clear,sBackgroundSewerBarParty"
-endPartyAmazingCont,???,"Oh, I am sure she went that way!"
+endPartyAmazingCont,,"music,bgmSpookTheme"
+endPartyAmazingCont,???,"[tw_sfx,Edgar]Oh, I am sure she went that way!"
 endPartyAmazingCont,Empty,Sewer door opens...
-endPartyAmazingCont,Girl,PRINCESS!
+endPartyAmazingCont,Girl,[shake]PRINCESS![/shake]
 endPartyAmazingCont,Boy,Limes!!!
-endPartyAmazingCont,Shay,SPOOK!!!?? WHAT ARE YOU DOING HERE!!!?
+endPartyAmazingCont,Shay,[shake]SPOOK!!!?? WHAT ARE YOU DOING HERE!!!?[/shake]
 endPartyAmazingCont,,"trans_change,true,sBackgroundStreetNight"
 endPartyAmazingCont,,"char_in,Girl,sShay,0"
-endPartyAmazingCont,Girl,WHAT IS THE MEANING OF THIS????
-endPartyAmazingCont,,"char_in,Shay,sShay,0"
-endPartyAmazingCont,Shay,OH MY GOD!! ARE YOU OKAY SPOOK!!!
+endPartyAmazingCont,Girl,[shake]WHAT IS THE MEANING OF THIS????[/shake]
+endPartyAmazingCont,,"char_in,Shay,sShay,4"
+endPartyAmazingCont,Shay,[shake]OH MY GOD!! ARE YOU OKAY SPOOK!!![/shake]
 endPartyAmazingCont,,"char_in,Boy,sShay,0"
 endPartyAmazingCont,Boy,It... seems like... They are drinking something...
-endPartyAmazingCont,,And... playing music...?
+endPartyAmazingCont,Boy,And... playing music...?
 endPartyAmazingCont,Shay,...?
 endPartyAmazingCont,Spook,Squeak!
 endPartyAmazingCont,Spook,Squeak squeak!
 endPartyAmazingCont,Princess,Bark!
 endPartyAmazingCont,Limes,Limez.
+endPartyAmazingCont,,"char_update,Shay,3"
 endPartyAmazingCont,Shay,"I... I see. They are friends, huh?"
 endPartyAmazingCont,Girl,Princess! Is this where you have been vanishing into!?
-endPartyAmazingCont,Princess,Bark!
 endPartyAmazingCont,,"char_out,Girl"
-endPartyAmazingCont,Boy,Oh wow....
+endPartyAmazingCont,Princess,Bark!
+endPartyAmazingCont,Boy,Oh wow...
 endPartyAmazingCont,,"char_out,Boy"
+endPartyAmazingCont,,"char_update,Shay,5"
 endPartyAmazingCont,Shay,"I'm so glad you are okay, Spook!"
+endPartyAmazingCont,,"char_update,Shay,3"
 endPartyAmazingCont,Shay,...Um. 
 endPartyAmazingCont,Shay,"These are our neighbours, Edgar and Lenore!"
-endPartyAmazingCont,,"char_in,Lenore"
+endPartyAmazingCont,,"char_in,Lenore,sShay,0"
 endPartyAmazingCont,Lenore,That's your mouse..? He's cute. Or whatever. 
 endPartyAmazingCont,Shay,Yes! Um.. That's your dog and... a ferret?
+endPartyAmazingCont,,"char_in,Edgar,sShay,0"
 endPartyAmazingCont,Edgar,Ferret's mine. 
 endPartyAmazingCont,Lenore,Princess is... Her own person. 
 endPartyAmazingCont,Princess,Bark!
+endPartyAmazingCont,,"char_update,Shay,5"
 endPartyAmazingCont,Shay,"Oh, I see. Wonderful. And they have made so many friends!"
 endPartyAmazingCont,Lenore,Well... Seems like it.
 endPartyAmazingCont,Shay,...Why don't we bring them inside?
-endPartyAmazingCont,Edgar,Ah!!! No way! Mom and dad would freak out!
+endPartyAmazingCont,Edgar,[shake]Ah!!![/shake] No way! Mom and dad would [shake]freak out![/shake]
 endPartyAmazingCont,Shay,We can go to our house!
-endPartyAmazingCont,Shay,"Um... You guys ever watched ""Zombie Rats take over the world again?"""
+endPartyAmazingCont,Shay,"Um... You guys ever watched [b]""Zombie Rats take over the world again""[/b]?"
 endPartyAmazingCont,Screwdriver,Wow. Gotta call the gang for that!
 endPartyAmazingCont,Lenore,The sequel?
 endPartyAmazingCont,Lenore,"Hm... I don't think we did, no."
-endPartyAmazingCont,Shay,YOU WANT TO?
+endPartyAmazingCont,,"char_update,Shay,4"
+endPartyAmazingCont,Shay,[shake]YOU WANT TO?[/shake]
 endPartyAmazingCont,Lenore,....yeah.
 endPartyAmazingCont,Edgar,"Sure, I'm in!"
-endPartyAmazingCont,Shay,YEAH!
-endPartyAmazingCont,Spook,SQUEAK!
-endPartyAmazingCont,Lamp,"[zalgo_big,30][speed,0.5]What a beautiful turn of events.[/speed]"
-endPartyAmazingCont,Lenore,WHAT THE...?
-endPartyAmazingCont,Edgar,...
-endPartyAmazingCont,Shay,Um. Let's just go inside.
+endPartyAmazingCont,,"char_update,Shay,5"
+endPartyAmazingCont,Shay,[shake]YEAH![/shake]
+endPartyAmazingCont,Spook,[shake]SQUEAK![/shake]
+endPartyAmazingCont,,"delay,1"
+endPartyAmazingCont,Lamp,"[zalgo_big,30][speed,0.3]What a beautiful turn of events.[/speed]"
+endPartyAmazingCont,Lenore,[shake]WHAT THE...?[/shake]
+endPartyAmazingCont,Edgar,[shake]...[/shake]
+endPartyAmazingCont,Shay,[shake]Um.[/shake] Let's just go inside.
 endPartyAmazingCont,,"delay,1"
 endPartyAmazingCont,,"trans_room,rmCredits"
