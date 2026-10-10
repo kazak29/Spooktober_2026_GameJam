@@ -57,3 +57,15 @@ function Part2Street1ChoiceCheck(){
 	SceneStart(_scene);
 	
 }
+
+function EndingCheck(){
+	var _scene = "endStay";
+	var _candy = global.flags.questCandyComplete;
+	var _princess = global.flags.questPrincessComplete;
+					
+	if !_candy	&& !_princess	_scene = "endPartyBad";
+	if _candy	&& !_princess	_scene = "endPartyOkay";
+	if _candy	&& _princess	_scene = "endPartyAmazing";
+					
+	SceneTransitionNext(_scene); 
+}

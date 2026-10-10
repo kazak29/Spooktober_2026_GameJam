@@ -2759,11 +2759,12 @@ p2Lamp2,,map
 ,,
 ,,
 ,,
-,,
-,,
-,,
-,,
-,,
+p2EndIntro,,"scene_bg_clear,sBackgroundBlack"
+p2EndIntro,,"main_char_in,0"
+p2EndIntro,Spook,It's getting late.
+p2EndIntro,,"char_update,Spook,6"
+p2EndIntro,Spook,I wonder what that party looks like now?
+p2EndIntro,,"custom_script_stop,EndingCheck"
 ,,
 endStay,,"scene_bg_clear,sBackgroundCageNight"
 endStay,,"music,bgmSpookTheme"
@@ -2896,3 +2897,9 @@ endPartyOkay,Screwdriver,Yeah!!!
 endPartyOkay,Spook,[wave]Wohoo![/wave]
 endPartyOkay,,"delay,1"
 endPartyOkay,,"trans_room,rmCredits"
+,,
+endPartyAmazing,Empty,Amazing party.
+endPartyAmazing,,"trans_room,rmCredits"
+endPartyAmazing,,
+endPartyAmazing,,
+endPartyAmazing,,
