@@ -14,6 +14,27 @@ function Part1ClearCheck(){
 	return true;
 }
 
+function Part1MapDataUpdate(){
+	var _locs = global.dataMapLocations;
+	var _names = struct_get_names(_locs);
+	
+	for (var i = 0; i < array_length(_names); i++) {
+		with _locs[$ _names[i]] {
+			visited = false;
+			locked = false;
+		}
+	}
+	
+	with _locs {
+		home.scene		= "p1Home1";
+		bar.scene		= "p1Bar1";
+		street.scene	= "p1Street1";
+		yard.scene		= "p1Yard1";
+		front.scene		= "p1Front1";
+		lamp.scene		= "p1Lamp1";
+	}
+}
+
 function Part2MapDataUpdate(){
 	var _locs = global.dataMapLocations;
 	var _names = struct_get_names(_locs);

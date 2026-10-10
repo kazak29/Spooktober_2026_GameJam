@@ -1,12 +1,11 @@
 function uiButtonSettings(){
 	with global.textLogInst instance_destroy();
-	
-	if instance_exists(oMenu) {
+	with oMenu instance_destroy();
+	with oMenuElement instance_destroy();
+		
+	if global.gamePaused {
 		global.gamePaused = false;
 		with oDirector typist.unpause();
-		
-		with oMenu instance_destroy();
-		with oMenuElement instance_destroy();
 	} else {
 		global.gamePaused = true;
 		with oDirector typist.pause();

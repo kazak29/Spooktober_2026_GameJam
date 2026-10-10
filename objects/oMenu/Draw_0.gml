@@ -1,12 +1,13 @@
 //hardcoded fade
-if menuName == "pauseSettings" || menuName == "pauseCrt" {
+if menuName == "pauseSettings" || menuName == "pauseCrt" || menuName == "cheat" {
     draw_set_alpha(0.75);
     draw_rectangle_colour(0, 0, VIEWPORT_WIDTH, VIEWPORT_HEIGHT, c_black,c_black,c_black,c_black, false);
     draw_set_alpha(1);
 }
 
-
-if sprite_index != sBorder || global.showDebugUI draw_self();
+var _debugException = (global.showDebugUI); // && menuName != "cheat");
+var _colDefault = (menuName == "cheat") ? c_white : COL_MENU_OPTION_DEFAULT;
+if (sprite_index != sBorder || _debugException) draw_self();
 
 var _elems = global.dataMenu[$ menuName].elements;
 for (var i = 0; i < array_length(_elems); i++) {
@@ -14,16 +15,16 @@ for (var i = 0; i < array_length(_elems); i++) {
 	with _elems[i].elemId {
 		var _selected = other.main.elemId == id;
 
-		var _c = COL_MENU_OPTION_DEFAULT;
+		var _c = _colDefault;
 		var _frame = 0;
 		if _selected {
 			_c = COL_MENU_OPTION_SELECTED;
 			_frame = 1;
 		}
 
-		if sprite_exists(sprite_index) && (sprite_index != sBorder || global.showDebugUI) {
+		if sprite_exists(sprite_index) && (sprite_index != sBorder || _debugException) {
 	
-			_c = COL_MENU_OPTION_DEFAULT;
+			_c = _colDefault;
 			image_index = _frame;
 			draw_self();
 	
@@ -43,7 +44,7 @@ for (var i = 0; i < array_length(_elems); i++) {
 					var _selectedAlone = (id == other.sub.elemId);
 					var _selectedFull = (_elems[i].elemId == other.main.elemId);
 					
-					var _c = COL_MENU_OPTION_DEFAULT, _frame = 0;
+					var _c = _colDefault, _frame = 0;
 					if (_elems[i].arg != side)						{ _c = COL_MENU_OPTION_DISABLED;	_frame = 2; }
 					if _selectedFull								{ _c = COL_MENU_OPTION_SELECTED;	_frame = 1; }
 					if _selectedFull	&& (_elems[i].arg != side)	{ _c = COL_MENU_OPTION_DISABLED;	_frame = 2; }
@@ -51,9 +52,9 @@ for (var i = 0; i < array_length(_elems); i++) {
 					if _selectedAlone	&& (_elems[i].arg != side)	{ _c = COL_MENU_OPTION_HOVER;		_frame = 3; }
 					
 					
-					if sprite_exists(sprite_index) && (sprite_index != sBorder || global.showDebugUI) {
+					if sprite_exists(sprite_index) && (sprite_index != sBorder || _debugException) {
 						
-						_c = COL_MENU_OPTION_DEFAULT;
+						_c = _colDefault;
 						image_index = _frame;
 						draw_self();
 						
@@ -66,14 +67,14 @@ for (var i = 0; i < array_length(_elems); i++) {
 					var _selected = (id == other.sub.elemId) || (other.main.elemId == _elems[i].elemId);
 					var _selectedAlone = _selected && other.sub.hover;
 
-					var _c = COL_MENU_OPTION_DEFAULT;
+					var _c = _colDefault;
 					var _frame = 0;
 					if _selected {
 						_c = COL_MENU_OPTION_SELECTED;
 						_frame = 1;
 					}
 					
-					if sprite_exists(sprite_index) && (sprite_index != sBorder || global.showDebugUI) {
+					if sprite_exists(sprite_index) && (sprite_index != sBorder || _debugException) {
 						
 						image_index = _frame;
 						draw_self();
@@ -85,7 +86,7 @@ for (var i = 0; i < array_length(_elems); i++) {
 					var _circlePerc = ((_elems[i].arg - _elems[i].argClamp[0]) / (_elems[i].argClamp[1] - _elems[i].argClamp[0]));
 					
 					if percent {
-						var _cText = COL_MENU_OPTION_DEFAULT;
+						var _cText = _colDefault;
 						if (other.main.elemId == _elems[i].elemId) _cText = COL_MENU_OPTION_SELECTED;
 						
 						//calculate how to represent the value
@@ -136,7 +137,7 @@ for (var i = 0; i < array_length(_elems); i++) {
 					var _selectedAlone = (id == other.sub.elemId);
 					var _selectedFull = (_elems[i].elemId == other.main.elemId);
 
-					var _c = COL_MENU_OPTION_DEFAULT;
+					var _c = _colDefault;
 					var _frame = 0;
 					if _selectedFull {
 						_c = COL_MENU_OPTION_SELECTED;
@@ -147,9 +148,9 @@ for (var i = 0; i < array_length(_elems); i++) {
 						_frame = 1;
 					}
 					
-					if sprite_exists(sprite_index) && (sprite_index != sBorder || global.showDebugUI) {
+					if sprite_exists(sprite_index) && (sprite_index != sBorder || _debugException) {
 						
-						_c				= COL_MENU_OPTION_DEFAULT;
+						_c				= _colDefault;
 						image_index		= _frame;
 						draw_self();
 						

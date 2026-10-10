@@ -40,22 +40,29 @@ draw_set_halign(fa_left);
 		draw_text(10,	96+15*6,	$"Line Typewriter Volume: {global.volTypeWriter}");
 	
 		draw_set_halign(fa_right);
-		draw_text(VIEWPORT_WIDTH,	96+15*1,	$"Chapter: {global.chapter} (P - skip to chapter 2)");
+		draw_text(VIEWPORT_WIDTH,	96+15*1,	$"Chapter: {global.chapter}");
 		
-		draw_text(VIEWPORT_WIDTH,	96+15*3,	$"Candy Quest Start: {global.flags.questCandyStart} (1)");
-		draw_text(VIEWPORT_WIDTH,	96+15*4,	$"Candy Quest Complete: {global.flags.questCandyComplete} (2)");
-		draw_text(VIEWPORT_WIDTH,	96+15*5,	$"Candy Quest Fail: {global.flags.questCandyFail} (3)");
-		draw_text(VIEWPORT_WIDTH,	96+15*7,	$"Princess Quest Start: {global.flags.questPrincessStart} (4)");
-		draw_text(VIEWPORT_WIDTH,	96+15*8,	$"Princess Quest Complete: {global.flags.questPrincessComplete} (5)");
-		draw_text(VIEWPORT_WIDTH,	96+15*9,	$"Princess Quest Fail: {global.flags.questPrincessFail} (6)");
+		draw_text(VIEWPORT_WIDTH,	96+15*3,	$"Candy Quest Start: {global.flags.questCandyStart}");
+		draw_text(VIEWPORT_WIDTH,	96+15*4,	$"Candy Quest Complete: {global.flags.questCandyComplete}");
+		draw_text(VIEWPORT_WIDTH,	96+15*5,	$"Candy Quest Fail: {global.flags.questCandyFail}");
+		draw_text(VIEWPORT_WIDTH,	96+15*7,	$"Princess Quest Start: {global.flags.questPrincessStart}");
+		draw_text(VIEWPORT_WIDTH,	96+15*8,	$"Princess Quest Complete: {global.flags.questPrincessComplete}");
+		draw_text(VIEWPORT_WIDTH,	96+15*9,	$"Princess Quest Fail: {global.flags.questPrincessFail}");
 		
-		draw_text(VIEWPORT_WIDTH,	96+15*11,	$"Met Hamster: {global.flags.metHamster} (7)");
-		draw_text(VIEWPORT_WIDTH,	96+15*12,	$"Met Princess: {global.flags.metPrincess} (8)");
-		draw_text(VIEWPORT_WIDTH,	96+15*13,	$"Got Knight: {global.flags.gotKnight} (9)");
-		draw_text(VIEWPORT_WIDTH,	96+15*14,	$"Know Limes: {global.flags.knowLimes} (0)");
+		draw_text(VIEWPORT_WIDTH,	96+15*11,	$"Met Hamster: {global.flags.metHamster}");
+		draw_text(VIEWPORT_WIDTH,	96+15*12,	$"Met Princess: {global.flags.metPrincess}");
+		draw_text(VIEWPORT_WIDTH,	96+15*13,	$"Got Knight: {global.flags.gotKnight}");
+		draw_text(VIEWPORT_WIDTH,	96+15*14,	$"Know Limes: {global.flags.knowLimes}");
 		draw_set_halign(fa_left);
 		
 		draw_set_colour(c_white);
+		
+		with oInputManager {
+			draw_set_colour(c_yellow);
+			draw_text(15,15, $"input: gamepad active: {using_gamepad}");
+			draw_text(15,15*2, $"input: mouse active: {mouse.active}");
+			draw_set_colour(c_white);
+		}
 	}
 	
 	//draw reminder
@@ -63,7 +70,9 @@ draw_set_halign(fa_left);
 	{	
 		draw_set_colour(c_yellow);
 		draw_set_halign(fa_left);
-		draw_text(16,	VIEWPORT_HEIGHT - 32,	$"CHEATS ARE ACTIVE");
+		draw_text(16,	VIEWPORT_HEIGHT - 96,	$"CHEATS ARE ACTIVE");
+		draw_text(16,	VIEWPORT_HEIGHT - 64,	$"TAB - DEBUG UI");
+		draw_text(16,	VIEWPORT_HEIGHT - 32,	$"LEFT CTRL - DEBUG MENU");
 		draw_set_colour(c_white);
 	}
 	

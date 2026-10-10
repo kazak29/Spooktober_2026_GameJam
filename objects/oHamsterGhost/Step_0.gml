@@ -1,1 +1,1 @@
-state();
+if !global.gamePaused state();
