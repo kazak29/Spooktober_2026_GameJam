@@ -2900,6 +2900,7 @@ endPartyAmazing,Empty,"Until the skies themselves disappear completely. Consumed
 endPartyAmazing,Empty,"This night, something vast stirs below the surface..."
 endPartyAmazing,,"music,bgmTitleTheme"
 endPartyAmazing,,"trans_change,true,sBackgroundSewerBarParty"
+endPartyAmazing,,"custom_script_cont,HamsterGhostCreate"
 endPartyAmazing,,"main_char_in,10"
 endPartyAmazing,Spook,[shake]OK![/shake] Ready!
 endPartyAmazing,,"char_in,Screwdriver,sScrewdriver,12"
@@ -3040,6 +3041,7 @@ endPartyAmazing,Limes,Drinkz!
 endPartyAmazing,Spook,"BSCWCCEC, right!!!?"
 endPartyAmazing,,"char_update,Barry,6"
 endPartyAmazing,Barry,Coming [wave]riiiight[/wave] up!
+endPartyAmazing,,"custom_script_cont,HamsterGhostDestroy"
 endPartyAmazing,,"delay,1"
 endPartyAmazing,,"trans_change,true,sBackgroundGray"
 endPartyAmazing,,"delay,1"
@@ -3102,10 +3104,10 @@ endPartyAmazingCont,Edgar,"Sure, I'm in!"
 endPartyAmazingCont,,"char_update,Shay,5"
 endPartyAmazingCont,Shay,[shake]YEAH![/shake]
 endPartyAmazingCont,Spook,[shake]SQUEAK![/shake]
-endPartyAmazingCont,,"delay,1"
+endPartyAmazingCont,,"delay,0.5"
 endPartyAmazingCont,Lamp,"[zalgo_big,30][speed,0.3]What a beautiful turn of events.[/speed]"
 endPartyAmazingCont,Lenore,[shake]WHAT THE...?[/shake]
 endPartyAmazingCont,Edgar,[shake]...[/shake]
 endPartyAmazingCont,Shay,[shake]Um.[/shake] Let's just go inside.
-endPartyAmazingCont,,"delay,1"
+endPartyAmazingCont,,"delay,1.5"
 endPartyAmazingCont,,"trans_room,rmCredits"

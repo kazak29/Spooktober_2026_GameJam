@@ -97,6 +97,7 @@
     {"id":{"name":"oCreditsController","path":"objects/oCreditsController/oCreditsController.yy",},},
     {"id":{"name":"oDirector","path":"objects/oDirector/oDirector.yy",},},
     {"id":{"name":"oGameManager","path":"objects/oGameManager/oGameManager.yy",},},
+    {"id":{"name":"oHamsterGhost","path":"objects/oHamsterGhost/oHamsterGhost.yy",},},
     {"id":{"name":"oInputManager","path":"objects/oInputManager/oInputManager.yy",},},
     {"id":{"name":"oMapController","path":"objects/oMapController/oMapController.yy",},},
     {"id":{"name":"oMapLocationCollision","path":"objects/oMapLocationCollision/oMapLocationCollision.yy",},},

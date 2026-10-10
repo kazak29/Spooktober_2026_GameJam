@@ -4,6 +4,20 @@ if sprite_exists(bg.sprInd) {
 	}
 }
 
+
+with oHamsterGhost {
+	draw_self();
+
+	if global.showDebugUI {
+		draw_set_font(fConsol16);
+		draw_set_valign(fa_top);
+		draw_set_halign(fa_left);
+	
+		draw_text(x,y+15,$"cd: {cd}");
+	}
+}
+
+
 if (currentSceneName != noone)
 {
 	

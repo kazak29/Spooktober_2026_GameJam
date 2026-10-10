@@ -4,7 +4,7 @@ function MenuGameStart(_args){
 	
 	
 	//global.sceneToPlay = FIRST_SCENE;
-	global.sceneToPlay = "endPartyAmazingCont";
+	global.sceneToPlay = "endPartyAmazing";
 	//global.sceneToPlay = "rocketTestScene";
 	
 	TransitionStart(_args[0], _args[1], _args[2]);

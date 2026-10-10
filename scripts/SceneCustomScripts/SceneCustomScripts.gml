@@ -69,3 +69,11 @@ function EndingCheck(){
 					
 	SceneTransitionNext(_scene); 
 }
+
+function HamsterGhostCreate(){
+	instance_destroy(oHamsterGhost);
+	instance_create_layer(0,0, SYSTEM_LAYER, oHamsterGhost);
+}
+function HamsterGhostDestroy(){
+	with oHamsterGhost state = StateDisappear;
+}
