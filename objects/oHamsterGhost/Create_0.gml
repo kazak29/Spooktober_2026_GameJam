@@ -15,7 +15,7 @@ cdWaitMax = 1200;
 cdShowMin = 180;
 cdShowMax = 600;
 alphaSpd = 0.01;
-alphaMax = 0.75;
+alphaMax = 0.5;
 
 
 StateWait = function(){

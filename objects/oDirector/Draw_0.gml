@@ -12,8 +12,9 @@ with oHamsterGhost {
 		draw_set_font(fConsol16);
 		draw_set_valign(fa_top);
 		draw_set_halign(fa_left);
-	
-		draw_text(x,y+15,$"cd: {cd}");
+		
+		var _c = c_yellow;
+		draw_text_colour(x,y+15,$"cd: {cd}", _c,_c,_c,_c,1);
 	}
 }
 
@@ -64,5 +65,6 @@ with oSceneTransition {
 
 
 if global.showDebugUI {
-	draw_text(room_width/2, room_height/2, $"state: {directorState}");
+	var _c = c_yellow;
+	draw_text_colour(room_width/2, room_height/2, $"state: {directorState}", _c,_c,_c,_c,1);
 }
