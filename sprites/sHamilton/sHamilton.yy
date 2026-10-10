@@ -19,12 +19,15 @@
     {"$GMSpriteFrame":"v1","%Name":"d07babce-be3f-4979-b9b8-7098dbb3b184","name":"d07babce-be3f-4979-b9b8-7098dbb3b184","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"0bfbe253-3d26-4718-b17a-b251c719823a","name":"0bfbe253-3d26-4718-b17a-b251c719823a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
     {"$GMSpriteFrame":"v1","%Name":"184b4691-1a52-4862-8d17-38efa98d70fc","name":"184b4691-1a52-4862-8d17-38efa98d70fc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"9849aa1b-4332-4755-be1f-df897ae1c282","name":"9849aa1b-4332-4755-be1f-df897ae1c282","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"a72eb151-5037-4fc6-9f57-c19637ca9319","name":"a72eb151-5037-4fc6-9f57-c19637ca9319","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":844,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"4c5cbddb-3d4e-4e0c-8c01-68e595c44c60","blendMode":0,"displayName":"ghost","isLocked":false,"name":"4c5cbddb-3d4e-4e0c-8c01-68e595c44c60","opacity":50.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"2d6dddb6-fc86-4bc4-b3a3-9f67415d9baa","blendMode":0,"displayName":"default","isLocked":false,"name":"2d6dddb6-fc86-4bc4-b3a3-9f67415d9baa","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"sHamilton",
@@ -55,7 +58,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":7.0,
+    "length":9.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -95,6 +98,12 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"184b4691-1a52-4862-8d17-38efa98d70fc","path":"sprites/sHamilton/sHamilton.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"ac491a87-30db-4ced-81b6-ccf1a819d0a5","IsCreationKey":false,"Key":6.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"9849aa1b-4332-4755-be1f-df897ae1c282","path":"sprites/sHamilton/sHamilton.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"60953749-1940-4699-acbb-94ac5402906e","IsCreationKey":false,"Key":7.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"a72eb151-5037-4fc6-9f57-c19637ca9319","path":"sprites/sHamilton/sHamilton.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"142a81d8-e489-4ce7-82ac-aa40ef68d16a","IsCreationKey":false,"Key":8.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
