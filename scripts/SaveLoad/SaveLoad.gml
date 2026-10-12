@@ -1,51 +1,65 @@
-function SaveSettings(){
-	
-	var _saveData = {
-		
-		vol:	global.volume,
-		crt:	global.crt,
-		
-	}
-
-	//turn data into JSON string and save it via buffer
-	var _string = json_stringify(_saveData);
+function Save(_data, _fileName){
+	var _string = json_stringify(_data);
 	var _buffer = buffer_create(string_byte_length(_string) + 1, buffer_fixed, 1);
+	
 	buffer_write(_buffer, buffer_string, _string);
-	buffer_save(_buffer, "settings.save");
+	buffer_save(_buffer, _fileName);
 	buffer_delete(_buffer);
 
-	show_debug_message("Settings saved!" + _string);
-	
+	show_debug_message("Data saved! " + _string);
 }
 
-function LoadSettings(){
+function Load(_fileName){
+	var _data = undefined;
 	
-	if (file_exists("settings.save")) {
-		
-		var _buffer = buffer_load("settings.save");
-		if (_buffer != -1) {
-			
-			try {
-				
-				var _string = buffer_read(_buffer, buffer_string);
-				var _loadData = json_parse(_string);
-				
-				global.volume = _loadData.vol;
-				global.crt = _loadData.crt;
-				
-				show_debug_message("Settings loaded!" + _string);
-				
-			} catch(_exception) {
-				
-				SaveSettings();
-				show_debug_message(_exception.message);
-				show_debug_message(_exception.longMessage);
-				
-			}
-		
-		} else show_debug_message("Buffer load fail (returns -1)");
+	if !file_exists(_fileName) {
+		show_debug_message("Buffer file not found bruhnius momentius");
+		return _data;
+	}
+	
+	var _buffer = buffer_load(_fileName);
+	if (_buffer == -1) {
+		show_debug_message("Buffer load fail (returns -1)");
 		buffer_delete(_buffer);
-		
-	} else show_debug_message("Settings file not found bruhnius momentius.");
+		return _data;
+	}
 	
+	//old HTML bug disables file_exists, causing buffer_load to return 0 regardless if file actually exists
+	//idk if gx.games has same bug or if they fixed it yet or what, playing it safe just in case
+	try {
+		
+		var _string = buffer_read(_buffer, buffer_string);
+		_data = json_parse(_string);
+		
+		show_debug_message("Data loaded! " + _string);
+		
+	} catch(_exception) {
+		
+		_data = undefined;
+		show_debug_message(_exception.message);
+		show_debug_message(_exception.longMessage);
+		
+	}
+	
+	buffer_delete(_buffer);
+	return _data;
+}
+
+function SaveSettings(){
+	var _data = {
+		vol:	global.volume,
+		crt:	global.crt,
+	}
+	
+	Save(_data, "settings.save");
+}
+function LoadSettings(){
+	var _data = Load("settings.save");
+	if !is_struct(_data) {
+		SaveSettings();
+		exit;
+	}
+	
+	global.volume = _data.vol;
+	global.crt = _data.crt;
 }
