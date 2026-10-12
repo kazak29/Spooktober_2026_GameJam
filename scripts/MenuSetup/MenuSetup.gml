@@ -710,6 +710,7 @@ function MenuSettingGet(_elemData){
 	}
 }
 function MenuSettingSet(_elemData){
+	var _argPrev	= undefined;
 	var _arg		= _elemData[$"arg"];
 	var _varName	= _elemData[$"varName"];
 	
@@ -721,6 +722,7 @@ function MenuSettingSet(_elemData){
 	if variable_global_exists(_varName) {
 		
 		//straight global
+		_argPrev = variable_global_get(_varName);
 		variable_global_set(_varName, _arg);
 		
 	} else {
@@ -734,7 +736,8 @@ function MenuSettingSet(_elemData){
 			for (var i = 1; i < _al - 1; i++) {
 				_nestedArg = _nestedArg[$ _varParts[i]];
 			}
-						
+			
+			_argPrev = _nestedArg[$ _varParts[_al - 1]];
 			_nestedArg[$ _varParts[_al - 1]] = _arg;
 						
 		}
@@ -775,7 +778,7 @@ function MenuSettingSet(_elemData){
 	}
 	
 	//I'm something of a save myself, you know
-	SaveSettings();
+	if _arg != _argPrev SaveSettings();
 }
 function MenuUpdateShift(_elemData){
 	with _elemData.elemSubs.center.elemId {
@@ -806,6 +809,6 @@ function MenuUpdateSave(_elemData){
 		exit;
 	}
 	
-	_elemData.title = string_concat(_data.dateTime, "\n", _data.title);
+	_elemData.title = string_concat(_data.dateTime, " - ", $"Chapter {_data.chapter+1}", "\n", _data.title);
 	_setStr(_elemData);
 }
