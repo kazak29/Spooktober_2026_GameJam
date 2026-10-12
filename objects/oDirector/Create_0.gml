@@ -1,26 +1,13 @@
+#region state machine
 
-// State machine
-directorState = DirectorStateLineSequence;
-directorStatePrev = directorState;
-delayTimer = 0;
+	directorState = DirectorStateLineSequence;
+	directorStatePrev = directorState;
+	delayTimer = 0;
+	
+#endregion
+#region typewriter
+	typist = scribble_typist().in(TYPIST_SPEED, TYPIST_SMOOTHNESS);
 
-// Line Sequence
-typist = scribble_typist().in(TYPIST_SPEED, TYPIST_SMOOTHNESS);
-currentLineSequence = [];
-currentLineIndex = 0;
-
-//textbox
-textbox = {
-	alpha: 1,
-	alphaSpd: 0.05,
-};
-TextboxHide = function(){
-	textbox.alpha = 0;
-	typist.pause();
-}
-TextboxHide(); //hide for room transitions
-
-#region typewriter sound
 	TypewriterSoundPlay = function(){
 		typist.sound(
 			typewriterSound.ids, 
@@ -29,10 +16,6 @@ TextboxHide(); //hide for room transitions
 			typewriterSound.pitchMax, 
 			(global.volume.writer * typewriterSound.vol) / 100
 		);
-	}
-	TypewriterSoundReset = function(){
-		typewriterSound = struct_get(global.dataTypewriterSfx, "none");
-		TypewriterSoundPlay(); //stop typewriter sound by overriding it with empty array
 	}
 	TypewriterSoundSet = function(_name = noone){
 		var _sounds = global.dataTypewriterSfx;
@@ -52,160 +35,223 @@ TextboxHide(); //hide for room transitions
 		TypewriterSoundPlay();
 	}
 	
+	TypewriterSoundReset = function(){
+		typewriterSound = struct_get(global.dataTypewriterSfx, "none");
+		TypewriterSoundPlay(); //stop typewriter sound by overriding it with empty array
+	}
 	TypewriterSoundReset();
+	
 #endregion
+#region textbox
 
-
-// Speaker tracking for bounce animations
-previousSpeaker = "";
-
-
-// Auto-managed Character Stage (Max 3)
-stageCharacters = [];
-mainCharacter = {
-    charId: SPOOK,
-    sprite: sSpookPortrait,
-	expressionFrame: 0,
-    alpha: MIN_ALPHA,
-    targetAlpha: MIN_ALPHA
-};
-spookUp = false;
-
-
-
-
-ZalgoReset = function(){
-	zalgo = {
-		sprInd: noone,
-		cd: 0,
-		cdMax: 0,
-		frames: [],
+	textbox = {
+		alpha: 1,
+		alphaSpd: 0.05,
 	};
-}
-ZalgoReset();
-
-
-
-SceneClear = function(){
-	stageCharacters = [];
-    
-	// Reset main character
-	mainCharacter.alpha = MIN_ALPHA;
-	mainCharacter.targetAlpha = MIN_ALPHA;
-	mainCharacter.yOffset = 0;
-	mainCharacter.yVelocity = 0;
-	mainCharacter.blend = c_white;
 	
-	spookUp = false;
-    
+	TextboxHide = function(){
+		textbox.alpha = 0;
+		typist.pause();
+	}
+	TextboxHide(); //hide for room transitions
+	
+#endregion
+#region characters
+
+	// Speaker tracking for bounce animations
 	previousSpeaker = "";
-}
 
-// Start the scene that was set as a global
-currentSceneName = global.sceneToPlay;
-sceneTarget = "";
-
-choice = {
-	spr:	{
-		ind:		sChoiceBox,
-		bufferStrX:	64,
-		bufferStrY: 32,
-		bufferElem: 32,
-	},
-	waitCd:	0,
-	num:	0,
-		
-	mouseHoverCdMax: 5,
-	mouseHover: false,
-	elements: [],
-};
+	// Auto-managed Character Stage (Max 3)
+	stageCharacters = [];
+	mainCharacter = {
+	    charId: SPOOK,
+	    sprite: sSpookPortrait,
+		expressionFrame: 0,
+	    alpha: MIN_ALPHA,
+	    targetAlpha: MIN_ALPHA
+	};
+	spookUp = false;
 	
+#endregion
+#region zalgo
 
-bg = {
-	sprInd: noone,
-	imInd:	0,
-	alpha:	1,
-	col:	c_white,
-}
-BackgroundSet = function(_spr = noone, _imInd = 0, _alpha = 1, _col = c_white){
+	ZalgoReset = function(){
+		zalgo = {
+			sprInd: noone,
+			cd: 0,
+			cdMax: 0,
+			frames: [],
+		};
+	}
+	ZalgoReset();
+	
+#endregion
+#region choice
+
+	choice = {
+		spr:	{
+			ind:		sChoiceBox,
+			bufferStrX:	64,
+			bufferStrY: 32,
+			bufferElem: 32,
+		},
+		waitCd:	0,
+		num:	0,
+		
+		mouseHoverCdMax: 5,
+		mouseHover: false,
+		elements: [],
+	};
+	
+#endregion
+#region background
+
 	bg = {
-		sprInd: _spr,
-		imInd:	_imInd,
-		alpha:	_alpha,
-		col:	_col,
+		sprInd: noone,
+		imInd:	0,
+		alpha:	1,
+		col:	c_white,
 	}
-}
-BackgroundSetTarget = function(_spr = undefined, _imInd = undefined, _alpha = undefined, _col = undefined){
-	bgTarget = {
-		active: (_spr != undefined ? true : false),
-		sprInd: _spr	?? noone,
-		imInd:	_imInd	?? 0,
-		alpha:	_alpha	?? 1,
-		col:	_col	?? c_white,
-	}
-}
+	bgTarget = variable_clone(bg);
+	bgTarget.active = false;
 
-LineSet = function(){
-	var _curLineData = currentLineSequence[currentLineIndex];
-	var _lineTitle = _curLineData.lineTitle;
-	var _lineText = _curLineData.lineText;
-		
-	//check for commands
-	if _lineTitle == "" {
-		
-		var _lineCommand = SceneCommandCheck(_lineText);
-		if is_string(_lineCommand) {
-			
-			switch _lineCommand {
-				
-				//introduce delay
-				default: {
-					delayTimer = DEFAULT_DELAY * game_get_speed(gamespeed_fps);
-					directorState = DirectorStateCommandDelay;
-				} break;
-				
-				//delay exceptions
-				case "scene_set":				{ SceneCommandExecute(_lineText);	} break;
-				case "scene_clear":				{ SceneCommandExecute(_lineText);	} break;
-				case "scene_bg":				{ SceneCommandExecute(_lineText);	} break;
-				case "scene_bg_clear":			{ SceneCommandExecute(_lineText);	} break;
-				case "choice":					{ SceneCommandExecute(_lineText);	} break;
-				case "condition_flag":			{ SceneCommandExecute(_lineText);	} break;
-				case "condition_script":		{ SceneCommandExecute(_lineText);	} break;
-				case "custom_script_cont":		{ SceneCommandExecute(_lineText);	} break;
-				case "custom_script_stop":		{ SceneCommandExecute(_lineText);	} break;
-				case "music":					{ SceneCommandExecute(_lineText);	} break;
-				case "map":						{ SceneCommandExecute(_lineText);	} break;
-				case "map_scene":				{ SceneCommandExecute(_lineText);	} break;
-				case "map_visited":				{ SceneCommandExecute(_lineText);	} break;
-				case "map_lock":				{ SceneCommandExecute(_lineText);	} break;
-				case "flag_set":				{ SceneCommandExecute(_lineText);	} break;
-				
-			}
-			
-		} else LineProgress();
-		
-	} else {
-		
-		directorState = DirectorStateLineSequence;
-		TypewriterSoundSet();
-		
+	BackgroundSet = function(_spr = noone, _imInd = 0, _alpha = 1, _col = c_white){
+		bg = {
+			sprInd: _spr,
+			imInd:	_imInd,
+			alpha:	_alpha,
+			col:	_col,
+		}
 	}
-}
-LineProgress = function(_amount = 1, _textlog = false){
-	// Textlog: Put the line in the log before moving on
-	if _textlog {
-		var _curLineData = currentLineSequence[currentLineIndex];
-		var _lineTitle = _curLineData.lineTitle;
-		if _lineTitle != "" {
-			AddToTextLog({ title: _curLineData.lineTitle, text: _curLineData.lineText });
-			//show_debug_message(string(global.textLog));
+	BackgroundSetTarget = function(_spr = undefined, _imInd = undefined, _alpha = undefined, _col = undefined){
+		bgTarget = {
+			active: (_spr != undefined ? true : false),
+			sprInd: _spr	?? noone,
+			imInd:	_imInd	?? 0,
+			alpha:	_alpha	?? 1,
+			col:	_col	?? c_white,
 		}
 	}
 	
-	ZalgoReset();
-	currentLineIndex += _amount;
-	LineSet();
-}
+#endregion
+#region scene and line sequence
 
-SceneStart(currentSceneName);
+	currentLineSequence = [];
+	currentLineIndex = 0;
+	
+	currentSceneName = global.sceneToPlay;
+	sceneTarget = "";
+	
+	SceneClear = function(){
+		stageCharacters = [];
+    
+		// Reset main character
+		mainCharacter.alpha = MIN_ALPHA;
+		mainCharacter.targetAlpha = MIN_ALPHA;
+		mainCharacter.yOffset = 0;
+		mainCharacter.yVelocity = 0;
+		mainCharacter.blend = c_white;
+	
+		spookUp = false;
+    
+		previousSpeaker = "";
+	}
+	
+	LineSet = function(){
+		var _curLineData = currentLineSequence[currentLineIndex];
+		var _lineTitle = _curLineData.lineTitle;
+		var _lineText = _curLineData.lineText;
+		
+		//check for commands
+		if _lineTitle == "" {
+		
+			var _lineCommand = SceneCommandCheck(_lineText);
+			if is_string(_lineCommand) {
+			
+				switch _lineCommand {
+				
+					//introduce delay
+					default: {
+						delayTimer = DEFAULT_DELAY * game_get_speed(gamespeed_fps);
+						directorState = DirectorStateCommandDelay;
+					} break;
+				
+					//delay exceptions
+					case "scene_set":				{ SceneCommandExecute(_lineText);	} break;
+					case "scene_clear":				{ SceneCommandExecute(_lineText);	} break;
+					case "scene_bg":				{ SceneCommandExecute(_lineText);	} break;
+					case "scene_bg_clear":			{ SceneCommandExecute(_lineText);	} break;
+					case "choice":					{ SceneCommandExecute(_lineText);	} break;
+					case "condition_flag":			{ SceneCommandExecute(_lineText);	} break;
+					case "condition_script":		{ SceneCommandExecute(_lineText);	} break;
+					case "custom_script_cont":		{ SceneCommandExecute(_lineText);	} break;
+					case "custom_script_stop":		{ SceneCommandExecute(_lineText);	} break;
+					case "music":					{ SceneCommandExecute(_lineText);	} break;
+					case "map":						{ SceneCommandExecute(_lineText);	} break;
+					case "map_scene":				{ SceneCommandExecute(_lineText);	} break;
+					case "map_visited":				{ SceneCommandExecute(_lineText);	} break;
+					case "map_lock":				{ SceneCommandExecute(_lineText);	} break;
+					case "flag_set":				{ SceneCommandExecute(_lineText);	} break;
+				
+				}
+			
+			} else LineProgress();
+		
+		} else {
+		
+			directorState = DirectorStateLineSequence;
+			TypewriterSoundSet();
+		
+		}
+	}
+	
+	LineProgress = function(_amount = 1, _textlog = false){
+		// Textlog: Put the line in the log before moving on
+		if _textlog {
+			var _curLineData = currentLineSequence[currentLineIndex];
+			var _lineTitle = _curLineData.lineTitle;
+			if _lineTitle != "" {
+				AddToTextLog({ title: _curLineData.lineTitle, text: _curLineData.lineText });
+				//show_debug_message(string(global.textLog));
+			}
+		}
+	
+		ZalgoReset();
+		currentLineIndex += _amount;
+		LineSet();
+	}
+	
+#endregion
+
+#region first scene start
+
+	if !is_struct(global.saveData) {
+		SceneStart(currentSceneName);
+		exit;
+	}
+
+	with global.saveData {
+		other.currentSceneName			=	currentSceneName;
+		other.sceneTarget				=	sceneTarget;
+										
+		other.currentLineSequence		=	currentLineSequence;
+		other.currentLineIndex			=	currentLineIndex;
+										
+		other.previousSpeaker			=	previousSpeaker;
+		other.stageCharacters			=	stageCharacters;
+		other.mainCharacter				=	mainCharacter;
+		other.spookUp					=	spookUp;
+										
+		other.choice					=	choice;
+		other.bg						=	bg;
+		other.bgTarget					=	bgTarget;
+			
+		global.lastLocationBackground	=	lastLocationBackground;
+		global.textLog					=	textLog;
+		global.dataMapLocations			=	dataMapLocations;
+		global.flags					=	flags;
+		global.chapter					=	chapter;
+	};
+	LineSet();
+	
+#endregion

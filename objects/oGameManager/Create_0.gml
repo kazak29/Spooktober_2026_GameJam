@@ -40,6 +40,7 @@
 
 	global.uiData = LoadUI();
 	global.lineData = LoadLineData();
+	global.saveData = noone;
 	
 #endregion
 #region general

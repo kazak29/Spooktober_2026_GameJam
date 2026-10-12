@@ -49,7 +49,7 @@ function SaveSettings(){
 	var _data = {
 		vol:	global.volume,
 		crt:	global.crt,
-	}
+	};
 	
 	Save(_data, "settings.save");
 }
@@ -62,4 +62,35 @@ function LoadSettings(){
 	
 	global.volume = _data.vol;
 	global.crt = _data.crt;
+}
+
+function SaveGame(_fileName){
+	var _data = noone;
+	with oDirector {
+		_data = {
+			currentSceneName:		currentSceneName,
+			sceneTarget:			sceneTarget,
+			
+			currentLineSequence:	currentLineSequence,
+			currentLineIndex:		currentLineIndex,
+			
+			previousSpeaker:		previousSpeaker,
+			stageCharacters:		stageCharacters,
+			mainCharacter:			mainCharacter,
+			spookUp:				spookUp,
+			
+			choice:					choice,
+			bg:						bg,
+			bgTarget:				bgTarget,
+			
+			
+			lastLocationBackground: global.lastLocationBackground,
+			textLog:				global.textLog,
+			dataMapLocations:		global.dataMapLocations,
+			flags:					global.flags,
+			chapter:				global.chapter,
+		};
+	}
+	
+	Save(_data, _fileName);
 }

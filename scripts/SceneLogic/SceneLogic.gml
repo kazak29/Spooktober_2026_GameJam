@@ -1,6 +1,8 @@
 #region reusable scene triggers
 	
 	function ScreenPlayReset(){
+		global.saveData = noone;
+		
 		global.sceneToPlay = noone;
 		global.lastLocationBackground = noone;
 	

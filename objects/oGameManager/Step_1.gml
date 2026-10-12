@@ -35,6 +35,9 @@ if global.cheat {
 	if keyboard_check_pressed(ord("C")) global.crt.active = !global.crt.active;
 	if keyboard_check_pressed(ord("M")) { global.volume.music = 0; VolumeUpdateAmbient(); }
 	if keyboard_check_pressed(ord("R")) game_restart();
+	
+	if keyboard_check_pressed(ord("1")) MenuGameSave(["save0"]);
+	if keyboard_check_pressed(ord("2")) MenuGameLoad(["save0", sqFadeOut, sqFadeIn]);
 }
 
 //ui buttons

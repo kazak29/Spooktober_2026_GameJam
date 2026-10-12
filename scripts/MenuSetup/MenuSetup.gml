@@ -169,7 +169,7 @@ function DataMenuElementsCreate(){
 				title:			"menuStart",
 				elemType:		MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
 				scr:			MenuGameStart,
-				arg:			[rmStage, sqFadeOut, sqFadeIn],
+				arg:			[sqFadeOut, sqFadeIn],
 			},
 			pageSettings: {
 				title:			"menuSettings",
