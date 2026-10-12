@@ -33,8 +33,11 @@ menuCrtGlow,Inner Glow
 menuCrtBright,Gamma
 menuCrtFlicker,Flicker
 menuCrtRoll,Rolling Band
+menuSave,Save
+menuLoad,Load
 buttonSettings,SETTINGS
 buttonTextlog,TEXT LOG
+saveMap,Map
 ,
 mapHome,Home
 mapBar,Sewer Bar

@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"Textlog",
   "parent":{
-    "name":"Misc",
-    "path":"folders/Scripts/Misc.yy",
+    "name":"Textlog",
+    "path":"folders/Scripts/Textlog.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

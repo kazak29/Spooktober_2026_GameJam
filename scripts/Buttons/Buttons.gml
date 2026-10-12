@@ -1,4 +1,4 @@
-function uiButtonSettings(){
+function uiButtonPause(){
 	with global.textLogInst instance_destroy();
 	with oMenu instance_destroy();
 	with oMenuElement instance_destroy();
@@ -10,7 +10,7 @@ function uiButtonSettings(){
 		global.gamePaused = true;
 		with oDirector typist.pause();
 		
-		MenuCreate("pauseSettings");
+		MenuCreate("pauseMain");
 	}
 }
 

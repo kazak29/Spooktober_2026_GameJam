@@ -8,7 +8,7 @@ var _buttonSettings = function() {
 		oButton,
 		{	
 			//sprite_index: noone,
-			scr: uiButtonSettings,
+			scr: uiButtonPause,
 			title: global.uiData.buttonSettings
 		}
 	);

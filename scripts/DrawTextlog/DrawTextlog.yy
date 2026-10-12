@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"DrawTextlog",
   "parent":{
-    "name":"UI",
-    "path":"folders/Scripts/System/UI.yy",
+    "name":"Textlog",
+    "path":"folders/Scripts/Textlog.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -187,6 +187,11 @@ function DataMenuElementsCreate(){
 				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
 				menuName:		"titleCrt",
 			},
+			pageLoad: {
+				title:			"menuLoad",
+				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
+				menuName:		"titleLoad",
+			},
 			
 			pageSettingsWin: {
 				title:			"menuSettings",
@@ -197,6 +202,11 @@ function DataMenuElementsCreate(){
 				title:			"menuCrt",
 				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
 				menuName:		"titleCrtWin",
+			},
+			pageLoadWin: {
+				title:			"menuLoad",
+				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
+				menuName:		"titleLoadWin",
 			},
 			gameEnd: {
 				title:			"menuEnd",
@@ -333,9 +343,9 @@ function DataMenuElementsCreate(){
 		#endregion
 		#region pause
 			gameResume: {
-				title:		"",
+				title:		"menuResume",
 				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
-				scr:		uiButtonSettings,
+				scr:		uiButtonPause,
 				arg:		0,
 			},
 			gameToMain: {
@@ -344,25 +354,61 @@ function DataMenuElementsCreate(){
 				scr:		MenuTransitionStart,
 				arg:		[rmTitleScreen, sqFadeOut, sqFadeIn],
 			},
+			
+			pageSettingsPause: {
+				title:			"menuSettings",
+				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
+				menuName:		"pauseSettings",
+			},
 			pageCrtPause: {
 				title:			"menuCrt",
 				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
 				menuName:		"pauseCrt",
 			},
+			pageSavePause: {
+				title:			"menuSave",
+				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
+				menuName:		"pauseSave",
+			},
+			pageLoadPause: {
+				title:			"menuLoad",
+				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
+				menuName:		"pauseLoad",
+			},
 		#endregion
 		#region save
-			//0 is autosave, don't show here
+			//0 is autosave
 			save1: {
 				title:		"",
 				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
 				scr:		MenuGameSave,
-				arg:		["save1"],
+				arg:		["save1.save"],
 			},
 			save2: {
 				title:		"",
 				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
 				scr:		MenuGameSave,
-				arg:		["save2"],
+				arg:		["save2.save"],
+			},
+		#endregion
+		#region load
+			load0: {
+				title:		"",
+				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				scr:		MenuGameLoad,
+				arg:		["save0.save", sqFadeOut, sqFadeIn],
+			},
+			load1: {
+				title:		"",
+				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				scr:		MenuGameLoad,
+				arg:		["save1.save", sqFadeOut, sqFadeIn],
+			},
+			load2: {
+				title:		"",
+				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				scr:		MenuGameLoad,
+				arg:		["save2.save", sqFadeOut, sqFadeIn],
 			},
 		#endregion
 	};
@@ -537,6 +583,7 @@ function MenuCreate(_name){
 		for (var i = 0; i < array_length(elements); i++) {
 			with elements[i] {
 				MenuSettingGet(self);
+				MenuUpdateSave(self);
 				
 				elemId = instance_create_layer(x,y,SYSTEM_LAYER, oMenuElementMain);
 				with elemId {
@@ -730,11 +777,46 @@ function MenuUpdateShift(_elemData){
 }
 
 function MenuUpdateSave(_elemData){
-	var _scr = _elemData.scr;
+	var _scr = _elemData[$ "scr"];
 	if (_scr != MenuGameSave && _scr != MenuGameLoad) exit;
-	
 	var _data = Load(_elemData.arg[0]);
-	if !is_struct(_data) exit;
 	
+	//update element scribble data
+	var _setStr = function(_elemData){
+		if instance_exists(_elemData[$ "elemId"]) {
+			with _elemData[$ "elemId"] { MenuSetStr(_elemData, "menuElemMain"); }
+		}
+	}
 	
+	//reset title if no save file
+	if !is_struct(_data) {
+		if (_scr == MenuGameLoad) _elemData.locked = true;
+		
+		_elemData.title = _elemData.arg[0];
+		_setStr(_elemData);
+		
+		exit;
+	}
+	
+	//update title
+	var _title = _data.dateTime;
+	switch _data.room {
+		
+		case rmStage: {
+			var _log = _data.logLast;
+			if is_struct(_log) {
+				var _logTitle = (_log.title == "") ? "" : $"{_log.title}: ";
+				var _logText = _log.text;
+				_title = string_concat(_title, "\n", _logTitle, _logText);
+			}
+		} break;
+		
+		case rmMap: {
+			_title = string_concat(_title, "\n", global.uiData.saveMap);
+		} break;
+		
+	}
+	
+	_elemData.title = _title;
+	_setStr(_elemData);
 }

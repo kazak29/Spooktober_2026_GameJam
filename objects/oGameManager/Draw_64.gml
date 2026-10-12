@@ -61,6 +61,12 @@ draw_set_halign(fa_left);
 			draw_set_colour(c_yellow);
 			draw_text(15,15, $"input: gamepad active: {using_gamepad}");
 			draw_text(15,15*2, $"input: mouse active: {mouse.active}");
+			draw_text(15,15*4, $"mouse held any: {mouse.held.any}");
+			draw_set_colour(c_white);
+		}
+		with oMenu {
+			draw_set_colour(c_yellow);
+			draw_text(bbox_left,bbox_top-32, $"mouse lock: {mouseClickLock}");
 			draw_set_colour(c_white);
 		}
 	}

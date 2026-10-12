@@ -6,7 +6,7 @@ if (oInputManager.mouse.pressed.any &&
 	room != rmTitleScreen)
 {
 	uiSfxPlayClick();
-	uiButtonSettings();
+	uiButtonPause();
 	with oInputManager InputReset();
 	exit;
 }
@@ -75,7 +75,7 @@ var _elemsL = array_length(_elems);
 //inputs
 var _pressedMain	= oInputManager.pressed.confirm  || (oInputManager.mouse.pressed.left && main.hover);
 var _pressedSub		= oInputManager.mouse.pressed.left && sub.hover;
-var _heldSub		= oInputManager.mouse.held.left && sub.hover && !mouseClickLock;
+var _heldSub		= oInputManager.mouse.held.left && sub.hover;
 
 //main element confirm logic
 if instance_exists(main.elemId) {
@@ -86,8 +86,9 @@ if instance_exists(main.elemId) {
 			if _pressedMain {
 				var _scr = _elemData[$"scr"] ?? noone;
 				var _arg = _elemData[$"arg"] ?? noone;
-		
 				if is_callable(_scr) _scr(_arg);
+				
+				MenuUpdateSave(_elemData);
 				_sfx = "click";
 			}
 		} break;
@@ -114,6 +115,7 @@ if instance_exists(main.elemId) {
 				
 				_elemData.arg += _hinput;
 				_elemData.arg = clamp(_elemData.arg, 0,1);
+				
 				MenuSettingSet(_elemData);
 				_sfx = "click";
 			
@@ -147,7 +149,8 @@ if instance_exists(main.elemId) {
 					_elemData.arg = round(_elemData.arg + _hinput);
 				} else {
 					_elemData.arg += _hinput*((_elemData.argClamp[1] - _elemData.argClamp[0])/200);//*0.005;
-				}		
+				}
+				
 				_elemData.arg = clamp(_elemData.arg, _elemData.argClamp[0], _elemData.argClamp[1]);
 				MenuSettingSet(_elemData);
 				
@@ -203,9 +206,9 @@ if instance_exists(sub.elemId) {
 		} break;
 		
 		case MENU_ELEMENT_TYPE.SLIDER: {
-			if _heldSub && !sub.elemId.percent {
-				_mouseClickLockCheck = false;
+			if _heldSub && !mouseClickLock && !sub.elemId.percent {
 				
+				_mouseClickLockCheck = false;
 				num = sub.elemId.num;
 				
 				//get what percentage mouse position is hovering at (from 0 to 1)
@@ -221,6 +224,7 @@ if instance_exists(sub.elemId) {
 				
 				_elemData.arg = clamp(_elemData.arg, _elemData.argClamp[0], _elemData.argClamp[1]);
 				MenuSettingSet(_elemData);
+				
 			}
 		} break;
 		
@@ -232,7 +236,7 @@ if (oInputManager.pressed.cancel || oInputManager.mouse.pressed.right) {
 	
 	switch menuName {
 		default:				{ if (is_string(menuNamePrev) && menuNamePrev != "") MenuCreate(menuNamePrev);	} break;
-		case "pauseSettings":	{ uiButtonSettings();															} break;
+		case "pauseMain":		{ uiButtonPause();																} break;
 	}
 	
 	_sfx = "click";
@@ -243,8 +247,6 @@ switch _sfx {
 	case "hover": uiSfxPlayHover(); break;
 	case "click": uiSfxPlayClick(); break;
 }
-	
-if (oInputManager.mouse.held.any && _mouseClickLockCheck) mouseClickLock = true;
 
 //son
 switch menuName {
@@ -252,5 +254,5 @@ switch menuName {
 	case "pauseSettings": _elems[0].arg = window_get_fullscreen(); break;
 }
 
-//lock input for anything else
+mouseClickLock = (oInputManager.mouse.held.any && _mouseClickLockCheck);
 with oInputManager InputReset();

@@ -42,6 +42,7 @@
     {"$GMFolder":"","%Name":"Superfonts","folderPath":"folders/Scribble/Superfonts.yy","name":"Superfonts","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Scripts","folderPath":"folders/Scripts.yy","name":"Scripts","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Constants","folderPath":"folders/Scripts/Constants.yy","name":"Constants","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Textlog","folderPath":"folders/Scripts/Textlog.yy","name":"Textlog","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Loading","folderPath":"folders/Scripts/Loading.yy","name":"Loading","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"General","folderPath":"folders/Scripts/Loading/General.yy","name":"General","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Map","folderPath":"folders/Scripts/Loading/Map.yy","name":"Map","resourceType":"GMFolder","resourceVersion":"2.0",},

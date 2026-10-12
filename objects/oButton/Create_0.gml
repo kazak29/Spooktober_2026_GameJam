@@ -5,7 +5,7 @@ image_speed = 0;
 hoverResetCd = 0;
 
 switch scr {
-	case uiButtonSettings: {
+	case uiButtonPause: {
 		title = $"{title}\n[[ESCAPE/START]";
 	} break;
 	case uiButtonTextLog: {
