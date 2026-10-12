@@ -410,6 +410,12 @@ function DataMenuElementsCreate(){
 				scr:		MenuGameLoad,
 				arg:		["save2.save", sqFadeOut, sqFadeIn],
 			},
+			load3: {
+				title:		"",
+				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				scr:		MenuGameLoad,
+				arg:		["save3.save", sqFadeOut, sqFadeIn],
+			},
 		#endregion
 	};
 }
@@ -454,7 +460,8 @@ function DataMenuSetup(){
 			y: y,
 			spr: _spriteGet(self),
 			
-			menuNamePrev: menuNamePrev,
+			menuNamePrev:	menuNamePrev,
+			fade:			fade,
 			elements: [],
 		};
 	}
@@ -574,8 +581,9 @@ function MenuCreate(_name){
 	with global.dataMenu[$ _name] {
 		menuId = instance_create_layer(x,y,SYSTEM_LAYER,oMenu);
 		with menuId {
-			menuName = _name;
-			menuNamePrev = other.menuNamePrev;
+			menuName		= _name;
+			menuNamePrev	= other.menuNamePrev;
+			fade			= other.fade;
 			
 			MenuSetSprite(other.spr);
 		}
@@ -798,25 +806,6 @@ function MenuUpdateSave(_elemData){
 		exit;
 	}
 	
-	//update title
-	var _title = _data.dateTime;
-	switch _data.room {
-		
-		case rmStage: {
-			var _log = _data.logLast;
-			if is_struct(_log) {
-				var _logTitle = (_log.title == "") ? "" : $"{_log.title}: ";
-				var _logText = _log.text;
-				_title = string_concat(_title, "\n", _logTitle, _logText);
-			}
-		} break;
-		
-		case rmMap: {
-			_title = string_concat(_title, "\n", global.uiData.saveMap);
-		} break;
-		
-	}
-	
-	_elemData.title = _title;
+	_elemData.title = string_concat(_data.dateTime, "\n", _data.title);
 	_setStr(_elemData);
 }

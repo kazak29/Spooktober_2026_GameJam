@@ -66,20 +66,45 @@ function LoadSettings(){
 
 function SaveGame(_fileName){
 	var _data = {
-		room: room,
+		dateTime:	$"{current_day}.{current_month}.{current_year} - {current_hour}:{current_minute}:{current_second}",
+		title:		global.uiData.saveMap,
+		room:		room,
 		
 		ambient:				global.ambient,
-		
 		lastLocationBackground: global.lastLocationBackground,
 		textLog:				global.textLog,
-		
 		dataMapLocations:		global.dataMapLocations,
 		flags:					global.flags,
-		
 		chapter:				global.chapter,
 	};
 	
 	with oDirector {
+		
+		#region make title for save/load button
+		
+			//empty line
+			var _line = { title: "", text: ""};
+			
+			//pull last entry from text log
+			if is_array(_data.textLog) && (array_length(_data.textLog) > 0) {
+				_line = array_last(_data.textLog);
+			}
+			
+			//pull current line if not a command
+			var _curLineData = currentLineSequence[currentLineIndex];
+			if _curLineData.lineTitle != "" {
+				_line = { title: _curLineData.lineTitle, text: _curLineData.lineText };
+				_line.title = TitleMacrosCheck(_line.title);
+			}
+			
+			//combine title and text
+			_data.title = string_concat(
+				(_line.title == "") ? "" : $"{_line.title}: ",
+				_line.text
+			);
+			
+		#endregion
+		
 		_data.currentSceneName		=	currentSceneName;
 		_data.sceneTarget			=	sceneTarget;
 			
@@ -94,14 +119,7 @@ function SaveGame(_fileName){
 		_data.choice				=	choice;
 		_data.bg					=	bg;
 		_data.bgTarget				=	bgTarget;
-	}
-	
-	with _data {
-		dateTime = $"{current_day}.{current_month}.{current_year} - {current_hour}:{current_minute}";
-		logLast = noone;
-		if is_array(textLog) && (array_length(textLog) > 0) {
-			logLast = array_last(textLog);
-		}
+		
 	}
 	
 	Save(_data, _fileName);

@@ -1,9 +1,4 @@
-//hardcoded fade
-if (menuName == "pauseMain" ||
-	menuName == "pauseSettings" ||
-	menuName == "pauseCrt" ||
-	menuName == "cheat")
-{
+if fade {
     draw_set_alpha(0.75);
     draw_rectangle_colour(0, 0, VIEWPORT_WIDTH, VIEWPORT_HEIGHT, c_black,c_black,c_black,c_black, false);
     draw_set_alpha(1);
@@ -18,7 +13,7 @@ for (var i = 0; i < array_length(_elems); i++) {
 	
 	with _elems[i].elemId {
 		var _selected = other.main.elemId == id;
-
+		
 		var _c = _colDefault;
 		var _frame = 0;
 		if _selected {
@@ -33,8 +28,17 @@ for (var i = 0; i < array_length(_elems); i++) {
 			draw_self();
 	
 		}
-
-		scribId.blend(_c, 1).draw(x + strX, y + strY);
+		
+		var _textW = sprite_width;
+		var _textH = sprite_height;
+		switch sprite_index {
+			case sChoiceBox: { _textW -= 16; _textH -= 16; } break;
+		}
+		
+		scribId.blend(_c, 1)
+			.wrap(_textW,_textH)
+			//.scale_to_box(_textW,_textH)
+			.draw(x + strX, y + strY);
 	}
 	
 	var _elemSubs = _elems[i].elemSubs;
