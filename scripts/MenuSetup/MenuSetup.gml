@@ -15,7 +15,7 @@ function DataMenuElementsCreate(){
 			muteMusic: {
 				title:			"Mute Music (M)",
 				elemType:		MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
-				scr:			function() { global.volMusic = 0; VolumeUpdateAmbient(); },
+				scr:			function() { global.volume.music = 0; VolumeUpdateAmbient(); },
 				arg:			0,
 			},
 			cheatCrt: {
@@ -169,7 +169,7 @@ function DataMenuElementsCreate(){
 				title:			"menuStart",
 				elemType:		MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
 				scr:			MenuGameStart,
-				arg:			[rmStage, sqFadeOut, sqFadeIn],
+				arg:			[sqFadeOut, sqFadeIn],
 			},
 			pageSettings: {
 				title:			"menuSettings",
@@ -187,6 +187,11 @@ function DataMenuElementsCreate(){
 				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
 				menuName:		"titleCrt",
 			},
+			pageLoad: {
+				title:			"menuLoad",
+				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
+				menuName:		"titleLoad",
+			},
 			
 			pageSettingsWin: {
 				title:			"menuSettings",
@@ -197,6 +202,11 @@ function DataMenuElementsCreate(){
 				title:			"menuCrt",
 				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
 				menuName:		"titleCrtWin",
+			},
+			pageLoadWin: {
+				title:			"menuLoad",
+				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
+				menuName:		"titleLoadWin",
 			},
 			gameEnd: {
 				title:			"menuEnd",
@@ -214,7 +224,7 @@ function DataMenuElementsCreate(){
 			volMusic: {
 				title:			"menuVolMusic",
 				elemType:		MENU_ELEMENT_TYPE.SLIDER,
-				varName:		"volMusic",
+				varName:		"volume.music",
 				argClamp:		[0,1],
 				whole:			false,
 				style:			MENU_SLIDER_STYLE.PERC_BAR,
@@ -222,23 +232,26 @@ function DataMenuElementsCreate(){
 			volSound: {
 				title:			"menuVolSound",
 				elemType:		MENU_ELEMENT_TYPE.SLIDER,
-				varName:		"volSound",
+				varName:		"volume.sound",
 				argClamp:		[0,1],
 				whole:			false,
 				style:			MENU_SLIDER_STYLE.PERC_BAR,
 			},
-			volTW: {			//typewriter sfx
-				title:			"menuVolTypeWriter",
+			volWriter: {
+				title:			"menuVolWriter",
 				elemType:		MENU_ELEMENT_TYPE.SLIDER,
-				varName:		"volTypeWriter",
+				varName:		"volume.writer",
 				argClamp:		[0,1],
 				whole:			false,
 				style:			MENU_SLIDER_STYLE.PERC_BAR,
 			},
-			uiSfx: {
-				title:			"menuSfxUI",
-				elemType:		MENU_ELEMENT_TYPE.TOGGLE,
-				varName:		"uiSfxActive",
+			volUI: {
+				title:			"menuVolUI",
+				elemType:		MENU_ELEMENT_TYPE.SLIDER,
+				varName:		"volume.ui",
+				argClamp:		[0,1],
+				whole:			false,
+				style:			MENU_SLIDER_STYLE.PERC_BAR,
 			},
 			crtActive: {
 				title:			"menuCrtActive",
@@ -330,9 +343,9 @@ function DataMenuElementsCreate(){
 		#endregion
 		#region pause
 			gameResume: {
-				title:		"",
+				title:		"menuResume",
 				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
-				scr:		uiButtonSettings,
+				scr:		uiButtonPause,
 				arg:		0,
 			},
 			gameToMain: {
@@ -341,10 +354,67 @@ function DataMenuElementsCreate(){
 				scr:		MenuTransitionStart,
 				arg:		[rmTitleScreen, sqFadeOut, sqFadeIn],
 			},
+			
+			pageSettingsPause: {
+				title:			"menuSettings",
+				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
+				menuName:		"pauseSettings",
+			},
 			pageCrtPause: {
 				title:			"menuCrt",
 				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
 				menuName:		"pauseCrt",
+			},
+			pageSavePause: {
+				title:			"menuSave",
+				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
+				menuName:		"pauseSave",
+			},
+			pageLoadPause: {
+				title:			"menuLoad",
+				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
+				menuName:		"pauseLoad",
+			},
+		#endregion
+		#region save
+			//0 is autosave
+			save1: {
+				title:		"",
+				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				scr:		MenuGameSave,
+				arg:		["save1.save"],
+			},
+			save2: {
+				title:		"",
+				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				scr:		MenuGameSave,
+				arg:		["save2.save"],
+			},
+		#endregion
+		#region load
+			load0: {
+				title:		"",
+				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				scr:		MenuGameLoad,
+				arg:		["save0.save", sqFadeOut, sqFadeIn],
+			},
+			load1: {
+				title:		"",
+				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				scr:		MenuGameLoad,
+				arg:		["save1.save", sqFadeOut, sqFadeIn],
+			},
+			load2: {
+				title:		"",
+				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				scr:		MenuGameLoad,
+				arg:		["save2.save", sqFadeOut, sqFadeIn],
+			},
+			load3: {
+				title:		"",
+				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				scr:		MenuGameLoad,
+				arg:		["save3.save", sqFadeOut, sqFadeIn],
 			},
 		#endregion
 	};
@@ -390,7 +460,8 @@ function DataMenuSetup(){
 			y: y,
 			spr: _spriteGet(self),
 			
-			menuNamePrev: menuNamePrev,
+			menuNamePrev:	menuNamePrev,
+			fade:			fade,
 			elements: [],
 		};
 	}
@@ -510,8 +581,9 @@ function MenuCreate(_name){
 	with global.dataMenu[$ _name] {
 		menuId = instance_create_layer(x,y,SYSTEM_LAYER,oMenu);
 		with menuId {
-			menuName = _name;
-			menuNamePrev = other.menuNamePrev;
+			menuName		= _name;
+			menuNamePrev	= other.menuNamePrev;
+			fade			= other.fade;
 			
 			MenuSetSprite(other.spr);
 		}
@@ -519,6 +591,7 @@ function MenuCreate(_name){
 		for (var i = 0; i < array_length(elements); i++) {
 			with elements[i] {
 				MenuSettingGet(self);
+				MenuUpdateSave(self);
 				
 				elemId = instance_create_layer(x,y,SYSTEM_LAYER, oMenuElementMain);
 				with elemId {
@@ -599,109 +672,143 @@ function MenuSetStr(_from,_uniqueId){
 }
 
 function MenuSettingGet(_elemData){
-	var _varName = struct_get(_elemData, "varName") ?? noone;
-	if is_string(_varName) {
-		if variable_global_exists(_varName) {
-			
-			_elemData.arg = variable_global_get(_varName);
-			
-		} else {
-			
-			//special variables
-			switch _varName {
-				default: {
-					
-					//nested struct variables
-					var _varParts = string_split(_varName, ".");
-					var _al = array_length(_varParts);
-					if _al > 0 && variable_global_exists(_varParts[0]) {
-						
-						var _nestedArg = variable_global_get(_varParts[0]);
-						for (var i = 1; i < _al; i++) {
-							_nestedArg = _nestedArg[$ _varParts[i]];
-						}
-						
-						_elemData.arg = _nestedArg;
-						
-					}
-					
-				} break;
-				
-				case "fullscreen": {
-					_elemData.arg = window_get_fullscreen();
-				} break;
-			}
-			
-		}
-	}
-}
-function MenuSettingSet(_elemData){
-	var _arg		= _elemData[$"arg"];
-	var _varName	= _elemData[$"varName"];
-		
-	if !is_string(_varName) {
-		show_debug_message("settings variable name is not set properly YOU FOOL");
-		exit;
-	}
-		
+	var _varName = _elemData[$"varName"];
+	if !is_string(_varName) exit;	//is not a setting element
+	
 	if variable_global_exists(_varName) {
-		variable_global_set(_varName, _arg);
-			
-		//additional triggers
-		switch _varName {
-			case "volMusic": {
-				VolumeUpdateAmbient();
-			} break;
-				
-			case "volSound": {
-				VolumeUpdateAmbient();
-					
-				if !audio_is_playing(sfxUI)
-				{ SoundPlay(sfxUI, 50); }
-			} break;
-				
-			case "volTypeWriter": {
-				VolumeUpdateAmbient();
-				with oDirector TypewriterSoundPlay();
-					
-				if !audio_is_playing(sfxTypewriterSpook)
-				{ SoundPlay(sfxTypewriterSpook, 50, false, global.volTypeWriter); }
-			} break;
-				
-		}
+		
+		//straight global
+		_elemData.arg = variable_global_get(_varName);
 			
 	} else {
-			
-		//special vars
+		
+		//special variables
 		switch _varName {
 			default: {
 					
 				//nested struct variables
 				var _varParts = string_split(_varName, ".");
-				var _al = array_length(_varParts)
+				var _al = array_length(_varParts);
 				if _al > 0 && variable_global_exists(_varParts[0]) {
 						
 					var _nestedArg = variable_global_get(_varParts[0]);
-					for (var i = 1; i < _al - 1; i++) {
+					for (var i = 1; i < _al; i++) {
 						_nestedArg = _nestedArg[$ _varParts[i]];
 					}
 						
-					_nestedArg[$ _varParts[_al - 1]] = _arg;
+					_elemData.arg = _nestedArg;
 						
 				}
 					
 			} break;
 				
 			case "fullscreen": {
-				window_set_fullscreen(_arg);
+				_elemData.arg = window_get_fullscreen();
 			} break;
 		}
 			
 	}
+}
+function MenuSettingSet(_elemData){
+	var _argPrev	= undefined;
+	var _arg		= _elemData[$"arg"];
+	var _varName	= _elemData[$"varName"];
+	
+	if !is_string(_varName) {
+		show_debug_message("settings variable name is not set properly YOU FOOL");
+		exit;
+	}
+	
+	if variable_global_exists(_varName) {
+		
+		//straight global
+		_argPrev = variable_global_get(_varName);
+		variable_global_set(_varName, _arg);
+		
+	} else {
+			
+		//nested struct variables
+		var _varParts = string_split(_varName, ".");
+		var _al = array_length(_varParts)
+		if _al > 0 && variable_global_exists(_varParts[0]) {
+						
+			var _nestedArg = variable_global_get(_varParts[0]);
+			for (var i = 1; i < _al - 1; i++) {
+				_nestedArg = _nestedArg[$ _varParts[i]];
+			}
+			
+			_argPrev = _nestedArg[$ _varParts[_al - 1]];
+			_nestedArg[$ _varParts[_al - 1]] = _arg;
+						
+		}
+			
+	}
+	
+	//additional triggers
+	switch _varName {
+		case "fullscreen": {
+			window_set_fullscreen(_arg);
+		} break;
+			
+		case "volume.music": {
+			VolumeUpdateAmbient();
+		} break;
+				
+		case "volume.sound": {
+			VolumeUpdateAmbient();
+					
+			if !audio_is_playing(sfxUI)
+			{ SoundPlay(sfxUI, 50); }
+		} break;
+				
+		case "volume.writer": {
+			//VolumeUpdateAmbient();
+			with oDirector TypewriterSoundPlay();
+					
+			if !audio_is_playing(sfxTypewriterSpook)
+			{ SoundPlay(sfxTypewriterSpook, 50, false, global.volume.writer); }
+		} break;
+		
+		case "volume.ui": {
+			//VolumeUpdateAmbient();
+					
+			if !audio_is_playing(sfxUI)
+			{ uiSfxPlayHover(); }
+		} break;
+	}
+	
+	//I'm something of a save myself, you know
+	if _arg != _argPrev SaveSettings();
 }
 function MenuUpdateShift(_elemData){
 	with _elemData.elemSubs.center.elemId {
 		title = _elemData.argTitles[_elemData.arg];
 		MenuSetStr(self,"menuElemShift");
 	}
+}
+
+function MenuUpdateSave(_elemData){
+	var _scr = _elemData[$ "scr"];
+	if (_scr != MenuGameSave && _scr != MenuGameLoad) exit;
+	var _data = Load(_elemData.arg[0]);
+	
+	//update element scribble data
+	var _setStr = function(_elemData){
+		if instance_exists(_elemData[$ "elemId"]) {
+			with _elemData[$ "elemId"] { MenuSetStr(_elemData, "menuElemMain"); }
+		}
+	}
+	
+	//reset title if no save file
+	if !is_struct(_data) {
+		if (_scr == MenuGameLoad) _elemData.locked = true;
+		
+		_elemData.title = _elemData.arg[0];
+		_setStr(_elemData);
+		
+		exit;
+	}
+	
+	_elemData.title = string_concat(_data.dateTime, " - ", $"Chapter {_data.chapter+1}", "\n", _data.title);
+	_setStr(_elemData);
 }

@@ -1,7 +1,8 @@
 depth = MENU_DEPTH;
 
 num = 0;
-mouseClickLock = false;
+mouseClickLock = oInputManager.mouse.held.any;
+
 ElemSelectReset = function(){
 	
 	main = {

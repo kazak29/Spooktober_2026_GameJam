@@ -35,9 +35,9 @@ draw_set_halign(fa_left);
 		draw_set_halign(fa_left);
 		draw_text(10,	96+15*1,	$"FPS: {fps}");
 		draw_text(10,	96+15*2,	$"FPS REAL: {fps_real}");
-		draw_text(10,	96+15*4,	$"Music Volume: {global.volMusic}");
-		draw_text(10,	96+15*5,	$"Sound Volume: {global.volSound}");
-		draw_text(10,	96+15*6,	$"Line Typewriter Volume: {global.volTypeWriter}");
+		draw_text(10,	96+15*4,	$"Music Volume: {global.volume.music}");
+		draw_text(10,	96+15*5,	$"Sound Volume: {global.volume.sound}");
+		draw_text(10,	96+15*6,	$"Line Typewriter Volume: {global.volume.writer}");
 	
 		draw_set_halign(fa_right);
 		draw_text(VIEWPORT_WIDTH,	96+15*1,	$"Chapter: {global.chapter}");
@@ -61,6 +61,12 @@ draw_set_halign(fa_left);
 			draw_set_colour(c_yellow);
 			draw_text(15,15, $"input: gamepad active: {using_gamepad}");
 			draw_text(15,15*2, $"input: mouse active: {mouse.active}");
+			draw_text(15,15*4, $"mouse held any: {mouse.held.any}");
+			draw_set_colour(c_white);
+		}
+		with oMenu {
+			draw_set_colour(c_yellow);
+			draw_text(bbox_left,bbox_top-32, $"mouse lock: {mouseClickLock}");
 			draw_set_colour(c_white);
 		}
 	}

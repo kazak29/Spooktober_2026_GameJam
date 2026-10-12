@@ -1,7 +1,7 @@
 #region simple sfx
 
 	//sfx (general)
-	function SoundPlay(_snd, _volPercent = 100, _looping = false, _volGlobal = global.volSound){
+	function SoundPlay(_snd, _volPercent = 100, _looping = false, _volGlobal = global.volume.sound){
 	
 		//stop previous sound
 		if audio_is_playing(_snd) audio_stop_sound(_snd);
@@ -97,10 +97,10 @@
 		
 		
 		//switch which global volume type is applied
-		var _volGlobal = global.volSound;
+		var _volGlobal = global.volume.sound;
 		switch _type {
 			
-			case AMBIENT_MUSIC: _volGlobal = global.volMusic; break;
+			case AMBIENT_MUSIC: _volGlobal = global.volume.music; break;
 			
 		}
 	
@@ -153,10 +153,10 @@
 		} else {
 			
 			//switch type of volume depending on ambient type
-			var _volGlobal = global.volSound;
+			var _volGlobal = global.volume.sound;
 			switch _type {
 			
-				case AMBIENT_MUSIC: _volGlobal = global.volMusic; break;
+				case AMBIENT_MUSIC: _volGlobal = global.volume.music; break;
 			
 			}
 			
@@ -212,16 +212,30 @@
 	//this is used for volume changes from menu
 	function VolumeUpdateAmbient(){
 		
-		//change gain
 		var _ambientTypes = struct_get_names(global.ambient);
 		var _al = array_length(_ambientTypes);
 		for (var i = 0; i < _al; i++) {
 		
 			var _name = _ambientTypes[i];
-			var _data = global.ambient[$ _name] ?? {ambientId: noone, ambientTrack: noone, ambientIdFade: noone, ambientVol: 100};
-			var _vol = _data.ambientVol;
+			var _data = global.ambient[$ _name];
 		
-			AmbientChange(_name, _data.ambientTrack, _vol, true, 0, 0);
+			AmbientChange(_name, _data.ambientTrack, _data.ambientVol, true, 0, 0);
+		
+		}
+		
+	}
+	
+	//play all ambient again after loading
+	function AmbientPlayAll(){
+		
+		var _ambientTypes = struct_get_names(global.ambient);
+		var _al = array_length(_ambientTypes);
+		for (var i = 0; i < _al; i++) {
+		
+			var _name = _ambientTypes[i];
+			var _data = global.ambient[$ _name];
+			
+			AmbientChange(_name, _data.ambientTrack, _data.ambientVol, true);
 		
 		}
 		

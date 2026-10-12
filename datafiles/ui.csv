@@ -9,14 +9,14 @@ menuBack,Back
 menuFullscreen,Fullscreen
 menuVolSound,Sound
 menuVolMusic,Music
-menuVolTypeWriter,Dialogue SFX
+menuVolWriter,Dialogue SFX
+menuVolUI,UI SFX
 menuLanguage,Language
 menuLanguageEng,English
 menuLanguageTur,Turkish
 menuLanguageKaz,Kazakh
 menuOn,On
 menuOff,Off
-menuSfxUI,UI SFX
 menuReset,Reset To Default
 menuCrt,CRT Parameters
 menuCrtActive,CRT Enabled
@@ -33,8 +33,11 @@ menuCrtGlow,Inner Glow
 menuCrtBright,Gamma
 menuCrtFlicker,Flicker
 menuCrtRoll,Rolling Band
+menuSave,Save
+menuLoad,Load
 buttonSettings,SETTINGS
 buttonTextlog,TEXT LOG
+saveMap,Map
 ,
 mapHome,Home
 mapBar,Sewer Bar

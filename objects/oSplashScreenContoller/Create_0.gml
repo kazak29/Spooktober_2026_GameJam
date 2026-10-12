@@ -1,6 +1,6 @@
 StateWait = function(){
 	alpha = Approach(alpha,1,0.012);
-	if alpha >= 1 {
+	if alpha >= 0.5 {
 		
 		cd = Approach(cd, 0, 1);
 		with oInputManager {

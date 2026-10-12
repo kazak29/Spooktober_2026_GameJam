@@ -3,13 +3,13 @@ rocketTestScene,Empty,.
 rocketTestScene,,map
 ,,
 ,,
-kazakTestScene,,"map_scene,front,p2Front2"
-kazakTestScene,,"flag_set,metPrincess,true"
 kazakTestScene,,"scene_bg_clear,sBackgroundHouseAcrossYardDay"
 kazakTestScene,,"music,bgmHouseAcross"
 kazakTestScene,,"main_char_in,0"
 kazakTestScene,,"char_in,Princess,sPrincess,0"
-kazakTestScene,,"scene_set,p2FrontWatch"
+kazakTestScene,,"trans_change,true,sBackgroundGray"
+kazakTestScene,,"delay,1"
+kazakTestScene,,"trans_scene,p2FrontWatch"
 ,,
 kazakTestScene,,"scene_bg,sBackgroundGray"
 kazakTestScene,,"char_in,Barry,sBarry,0"
