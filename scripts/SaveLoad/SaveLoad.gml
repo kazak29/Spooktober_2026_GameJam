@@ -2,13 +2,12 @@ function SaveSettings(){
 	
 	var _saveData = {
 		
-		//volume.music:		global.volume.music,
-		//volume.sound:		global.volume.sound,	
-		//volume.writer:	global.volume.writer,
+		vol:	global.volume,
+		crt:	global.crt,
 		
 	}
 
-	// turn data into JSON string and save it via buffer
+	//turn data into JSON string and save it via buffer
 	var _string = json_stringify(_saveData);
 	var _buffer = buffer_create(string_byte_length(_string) + 1, buffer_fixed, 1);
 	buffer_write(_buffer, buffer_string, _string);
@@ -31,17 +30,14 @@ function LoadSettings(){
 				var _string = buffer_read(_buffer, buffer_string);
 				var _loadData = json_parse(_string);
 				
-				//SetVolumeMusic(_loadData.musicVolume);
-				//SetVolumeSound(_loadData.soundVolume);
+				global.volume = _loadData.vol;
+				global.crt = _loadData.crt;
 				
 				show_debug_message("Settings loaded!" + _string);
 				
 			} catch(_exception) {
 				
-				//create a save file
 				SaveSettings();
-				
-				//show messages
 				show_debug_message(_exception.message);
 				show_debug_message(_exception.longMessage);
 				

@@ -605,7 +605,7 @@ function MenuSettingGet(_elemData){
 	var _varName = _elemData[$"varName"];
 	
 	if !is_string(_varName) {
-		show_debug_message("settings variable name is not set properly YOU FOOL");
+		show_debug_message("GET - settings variable name is not set properly YOU FOOL");
 		exit;
 	}
 	
@@ -648,7 +648,7 @@ function MenuSettingSet(_elemData){
 	var _varName	= _elemData[$"varName"];
 	
 	if !is_string(_varName) {
-		show_debug_message("settings variable name is not set properly YOU FOOL");
+		show_debug_message("SET - settings variable name is not set properly YOU FOOL");
 		exit;
 	}
 	
@@ -708,6 +708,7 @@ function MenuSettingSet(_elemData){
 		} break;
 	}
 	
+	SaveSettings();
 }
 function MenuUpdateShift(_elemData){
 	with _elemData.elemSubs.center.elemId {

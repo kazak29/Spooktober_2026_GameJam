@@ -80,3 +80,5 @@
 	global.chapter = 0;
 	
 #endregion
+
+LoadSettings();
