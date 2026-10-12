@@ -212,16 +212,30 @@
 	//this is used for volume changes from menu
 	function VolumeUpdateAmbient(){
 		
-		//change gain
 		var _ambientTypes = struct_get_names(global.ambient);
 		var _al = array_length(_ambientTypes);
 		for (var i = 0; i < _al; i++) {
 		
 			var _name = _ambientTypes[i];
-			var _data = global.ambient[$ _name] ?? {ambientId: noone, ambientTrack: noone, ambientIdFade: noone, ambientVol: 100};
-			var _vol = _data.ambientVol;
+			var _data = global.ambient[$ _name];
 		
-			AmbientChange(_name, _data.ambientTrack, _vol, true, 0, 0);
+			AmbientChange(_name, _data.ambientTrack, _data.ambientVol, true, 0, 0);
+		
+		}
+		
+	}
+	
+	//play all ambient again after loading
+	function AmbientPlayAll(){
+		
+		var _ambientTypes = struct_get_names(global.ambient);
+		var _al = array_length(_ambientTypes);
+		for (var i = 0; i < _al; i++) {
+		
+			var _name = _ambientTypes[i];
+			var _data = global.ambient[$ _name];
+			
+			AmbientChange(_name, _data.ambientTrack, _data.ambientVol, true);
 		
 		}
 		

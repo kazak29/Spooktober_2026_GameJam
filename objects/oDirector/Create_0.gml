@@ -225,12 +225,12 @@
 
 #region first scene start
 
-	if !is_struct(global.saveData) {
+	if !is_struct(global.saveDirectorData) {
 		SceneStart(currentSceneName);
 		exit;
 	}
 
-	with global.saveData {
+	with global.saveDirectorData {
 		other.currentSceneName		=	currentSceneName;
 		other.sceneTarget			=	sceneTarget;
 									
@@ -247,7 +247,7 @@
 		other.bgTarget				=	bgTarget;
 	};
 	
-	global.saveData = noone;
+	global.saveDirectorData = noone;
 	LineSet();
 	
 #endregion

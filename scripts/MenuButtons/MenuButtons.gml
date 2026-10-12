@@ -18,8 +18,9 @@ function MenuGameLoad(_args){
 		exit;
 	}
 	
-	if (_data.room == rmStage) global.saveData = _data;
+	if (_data.room == rmStage) global.saveDirectorData = _data;
 	with _data {
+		global.ambient					=	ambient;
 		global.lastLocationBackground	=	lastLocationBackground;
 		global.textLog					=	textLog;
 		global.dataMapLocations			=	dataMapLocations;
