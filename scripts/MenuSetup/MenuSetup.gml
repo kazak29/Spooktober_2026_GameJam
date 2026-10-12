@@ -603,11 +603,7 @@ function MenuSetStr(_from,_uniqueId){
 
 function MenuSettingGet(_elemData){
 	var _varName = _elemData[$"varName"];
-	
-	if !is_string(_varName) {
-		show_debug_message("GET - settings variable name is not set properly YOU FOOL");
-		exit;
-	}
+	if !is_string(_varName) exit;	//is not a setting element
 	
 	if variable_global_exists(_varName) {
 		
@@ -648,7 +644,7 @@ function MenuSettingSet(_elemData){
 	var _varName	= _elemData[$"varName"];
 	
 	if !is_string(_varName) {
-		show_debug_message("SET - settings variable name is not set properly YOU FOOL");
+		show_debug_message("settings variable name is not set properly YOU FOOL");
 		exit;
 	}
 	
@@ -708,6 +704,7 @@ function MenuSettingSet(_elemData){
 		} break;
 	}
 	
+	//I'm something of a save myself, you know
 	SaveSettings();
 }
 function MenuUpdateShift(_elemData){

@@ -49,4 +49,6 @@ function MenuSettingsReset(){
 	for (var i = 0; i < array_length(_elems); i++) {
 		MenuSettingGet(_elems[i]);
 	}
+	
+	SaveSettings();
 }
