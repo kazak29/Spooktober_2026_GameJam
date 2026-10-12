@@ -15,7 +15,7 @@ function DataMenuElementsCreate(){
 			muteMusic: {
 				title:			"Mute Music (M)",
 				elemType:		MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
-				scr:			function() { global.volMusic = 0; VolumeUpdateAmbient(); },
+				scr:			function() { global.volume.music = 0; VolumeUpdateAmbient(); },
 				arg:			0,
 			},
 			cheatCrt: {
@@ -214,7 +214,7 @@ function DataMenuElementsCreate(){
 			volMusic: {
 				title:			"menuVolMusic",
 				elemType:		MENU_ELEMENT_TYPE.SLIDER,
-				varName:		"volMusic",
+				varName:		"volume.music",
 				argClamp:		[0,1],
 				whole:			false,
 				style:			MENU_SLIDER_STYLE.PERC_BAR,
@@ -222,23 +222,26 @@ function DataMenuElementsCreate(){
 			volSound: {
 				title:			"menuVolSound",
 				elemType:		MENU_ELEMENT_TYPE.SLIDER,
-				varName:		"volSound",
+				varName:		"volume.sound",
 				argClamp:		[0,1],
 				whole:			false,
 				style:			MENU_SLIDER_STYLE.PERC_BAR,
 			},
-			volTW: {			//typewriter sfx
-				title:			"menuVolTypeWriter",
+			volWriter: {
+				title:			"menuVolWriter",
 				elemType:		MENU_ELEMENT_TYPE.SLIDER,
-				varName:		"volTypeWriter",
+				varName:		"volume.writer",
 				argClamp:		[0,1],
 				whole:			false,
 				style:			MENU_SLIDER_STYLE.PERC_BAR,
 			},
-			uiSfx: {
-				title:			"menuSfxUI",
-				elemType:		MENU_ELEMENT_TYPE.TOGGLE,
-				varName:		"uiSfxActive",
+			volUI: {
+				title:			"menuVolUI",
+				elemType:		MENU_ELEMENT_TYPE.SLIDER,
+				varName:		"volume.ui",
+				argClamp:		[0,1],
+				whole:			false,
+				style:			MENU_SLIDER_STYLE.PERC_BAR,
 			},
 			crtActive: {
 				title:			"menuCrtActive",
@@ -599,105 +602,112 @@ function MenuSetStr(_from,_uniqueId){
 }
 
 function MenuSettingGet(_elemData){
-	var _varName = struct_get(_elemData, "varName") ?? noone;
-	if is_string(_varName) {
-		if variable_global_exists(_varName) {
-			
-			_elemData.arg = variable_global_get(_varName);
-			
-		} else {
-			
-			//special variables
-			switch _varName {
-				default: {
-					
-					//nested struct variables
-					var _varParts = string_split(_varName, ".");
-					var _al = array_length(_varParts);
-					if _al > 0 && variable_global_exists(_varParts[0]) {
-						
-						var _nestedArg = variable_global_get(_varParts[0]);
-						for (var i = 1; i < _al; i++) {
-							_nestedArg = _nestedArg[$ _varParts[i]];
-						}
-						
-						_elemData.arg = _nestedArg;
-						
-					}
-					
-				} break;
-				
-				case "fullscreen": {
-					_elemData.arg = window_get_fullscreen();
-				} break;
-			}
-			
-		}
-	}
-}
-function MenuSettingSet(_elemData){
-	var _arg		= _elemData[$"arg"];
-	var _varName	= _elemData[$"varName"];
-		
+	var _varName = _elemData[$"varName"];
+	
 	if !is_string(_varName) {
 		show_debug_message("settings variable name is not set properly YOU FOOL");
 		exit;
 	}
-		
+	
 	if variable_global_exists(_varName) {
-		variable_global_set(_varName, _arg);
-			
-		//additional triggers
-		switch _varName {
-			case "volMusic": {
-				VolumeUpdateAmbient();
-			} break;
-				
-			case "volSound": {
-				VolumeUpdateAmbient();
-					
-				if !audio_is_playing(sfxUI)
-				{ SoundPlay(sfxUI, 50); }
-			} break;
-				
-			case "volTypeWriter": {
-				VolumeUpdateAmbient();
-				with oDirector TypewriterSoundPlay();
-					
-				if !audio_is_playing(sfxTypewriterSpook)
-				{ SoundPlay(sfxTypewriterSpook, 50, false, global.volTypeWriter); }
-			} break;
-				
-		}
+		
+		//straight global
+		_elemData.arg = variable_global_get(_varName);
 			
 	} else {
-			
-		//special vars
+		
+		//special variables
 		switch _varName {
 			default: {
 					
 				//nested struct variables
 				var _varParts = string_split(_varName, ".");
-				var _al = array_length(_varParts)
+				var _al = array_length(_varParts);
 				if _al > 0 && variable_global_exists(_varParts[0]) {
 						
 					var _nestedArg = variable_global_get(_varParts[0]);
-					for (var i = 1; i < _al - 1; i++) {
+					for (var i = 1; i < _al; i++) {
 						_nestedArg = _nestedArg[$ _varParts[i]];
 					}
 						
-					_nestedArg[$ _varParts[_al - 1]] = _arg;
+					_elemData.arg = _nestedArg;
 						
 				}
 					
 			} break;
 				
 			case "fullscreen": {
-				window_set_fullscreen(_arg);
+				_elemData.arg = window_get_fullscreen();
 			} break;
 		}
 			
 	}
+}
+function MenuSettingSet(_elemData){
+	var _arg		= _elemData[$"arg"];
+	var _varName	= _elemData[$"varName"];
+	
+	if !is_string(_varName) {
+		show_debug_message("settings variable name is not set properly YOU FOOL");
+		exit;
+	}
+	
+	if variable_global_exists(_varName) {
+		
+		//straight global
+		variable_global_set(_varName, _arg);
+		
+	} else {
+			
+		//nested struct variables
+		var _varParts = string_split(_varName, ".");
+		var _al = array_length(_varParts)
+		if _al > 0 && variable_global_exists(_varParts[0]) {
+						
+			var _nestedArg = variable_global_get(_varParts[0]);
+			for (var i = 1; i < _al - 1; i++) {
+				_nestedArg = _nestedArg[$ _varParts[i]];
+			}
+						
+			_nestedArg[$ _varParts[_al - 1]] = _arg;
+						
+		}
+			
+	}
+	
+	//additional triggers
+	switch _varName {
+		case "fullscreen": {
+			window_set_fullscreen(_arg);
+		} break;
+			
+		case "volume.music": {
+			VolumeUpdateAmbient();
+		} break;
+				
+		case "volume.sound": {
+			VolumeUpdateAmbient();
+					
+			if !audio_is_playing(sfxUI)
+			{ SoundPlay(sfxUI, 50); }
+		} break;
+				
+		case "volume.writer": {
+			//VolumeUpdateAmbient();
+			with oDirector TypewriterSoundPlay();
+					
+			if !audio_is_playing(sfxTypewriterSpook)
+			{ SoundPlay(sfxTypewriterSpook, 50, false, global.volume.writer); }
+		} break;
+		
+		case "volume.ui": {
+			//VolumeUpdateAmbient();
+					
+			if !audio_is_playing(sfxUI)
+			{ uiSfxPlayHover(); }
+		} break;
+	}
+	
 }
 function MenuUpdateShift(_elemData){
 	with _elemData.elemSubs.center.elemId {

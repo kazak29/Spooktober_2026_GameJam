@@ -9,14 +9,14 @@ menuBack,Back
 menuFullscreen,Fullscreen
 menuVolSound,Sound
 menuVolMusic,Music
-menuVolTypeWriter,Dialogue SFX
+menuVolWriter,Dialogue SFX
+menuVolUI,UI SFX
 menuLanguage,Language
 menuLanguageEng,English
 menuLanguageTur,Turkish
 menuLanguageKaz,Kazakh
 menuOn,On
 menuOff,Off
-menuSfxUI,UI SFX
 menuReset,Reset To Default
 menuCrt,CRT Parameters
 menuCrtActive,CRT Enabled

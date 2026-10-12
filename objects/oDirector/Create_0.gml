@@ -27,7 +27,7 @@ TextboxHide(); //hide for room transitions
 			typewriterSound.overlap, 
 			typewriterSound.pitchMin, 
 			typewriterSound.pitchMax, 
-			(global.volTypeWriter * typewriterSound.vol) / 100
+			(global.volume.writer * typewriterSound.vol) / 100
 		);
 	}
 	TypewriterSoundReset = function(){

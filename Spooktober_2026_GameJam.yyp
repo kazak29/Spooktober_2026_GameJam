@@ -181,6 +181,7 @@
     {"id":{"name":"MapLocations","path":"scripts/MapLocations/MapLocations.yy",},},
     {"id":{"name":"MenuButtons","path":"scripts/MenuButtons/MenuButtons.yy",},},
     {"id":{"name":"MenuSetup","path":"scripts/MenuSetup/MenuSetup.yy",},},
+    {"id":{"name":"SaveLoad","path":"scripts/SaveLoad/SaveLoad.yy",},},
     {"id":{"name":"SceneCustomScripts","path":"scripts/SceneCustomScripts/SceneCustomScripts.yy",},},
     {"id":{"name":"SceneFlags","path":"scripts/SceneFlags/SceneFlags.yy",},},
     {"id":{"name":"SceneLogic","path":"scripts/SceneLogic/SceneLogic.yy",},},

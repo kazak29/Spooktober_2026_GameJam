@@ -3,8 +3,8 @@ function MenuGameStart(_args){
 	ScreenPlayReset();
 	
 	
-	global.sceneToPlay = FIRST_SCENE;
-	//global.sceneToPlay = "endPartyAmazing";
+	//global.sceneToPlay = FIRST_SCENE;
+	global.sceneToPlay = "kazakTestScene";
 	//global.sceneToPlay = "rocketTestScene";
 	
 	TransitionStart(_args[0], _args[1], _args[2]);
@@ -23,12 +23,10 @@ function MenuTransitionStart(_args){
 function MenuSettingsReset(){
 	window_set_fullscreen(false);
 	
-	global.volMusic			= 0.5;
-	global.volSound			= 0.5;
-	global.volTypeWriter	= 0.5;
-	
-	global.uiSfxActive		= false;
-	global.crt.active		= true;
+	global.volume.music		= 0.5;
+	global.volume.sound		= 0.5;
+	global.volume.writer	= 0.5;
+	global.volume.ui		= 0;
 	
 	global.crt = {
 		active:			true,

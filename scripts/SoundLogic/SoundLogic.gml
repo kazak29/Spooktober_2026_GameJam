@@ -1,7 +1,7 @@
 #region simple sfx
 
 	//sfx (general)
-	function SoundPlay(_snd, _volPercent = 100, _looping = false, _volGlobal = global.volSound){
+	function SoundPlay(_snd, _volPercent = 100, _looping = false, _volGlobal = global.volume.sound){
 	
 		//stop previous sound
 		if audio_is_playing(_snd) audio_stop_sound(_snd);
@@ -97,10 +97,10 @@
 		
 		
 		//switch which global volume type is applied
-		var _volGlobal = global.volSound;
+		var _volGlobal = global.volume.sound;
 		switch _type {
 			
-			case AMBIENT_MUSIC: _volGlobal = global.volMusic; break;
+			case AMBIENT_MUSIC: _volGlobal = global.volume.music; break;
 			
 		}
 	
@@ -153,10 +153,10 @@
 		} else {
 			
 			//switch type of volume depending on ambient type
-			var _volGlobal = global.volSound;
+			var _volGlobal = global.volume.sound;
 			switch _type {
 			
-				case AMBIENT_MUSIC: _volGlobal = global.volMusic; break;
+				case AMBIENT_MUSIC: _volGlobal = global.volume.music; break;
 			
 			}
 			

@@ -59,11 +59,11 @@ function uiElementSpriteUpdate(_sprStruct, _w, _h){
 //play ui sfx (why did I even bother)
 function uiSfxPlayHover(){
 	
-	if global.uiSfxActive audio_sound_pitch(SoundPlay(sfxUI, 15), 1);
+	audio_sound_pitch(SoundPlay(sfxUI, 15, false, global.volume.ui), 1);
 	
 }
 function uiSfxPlayClick(){
 	
-	if global.uiSfxActive audio_sound_pitch(SoundPlay(sfxUI, 15), 0.5);
+	audio_sound_pitch(SoundPlay(sfxUI, 15, false, global.volume.ui), 0.5);
 	
 }

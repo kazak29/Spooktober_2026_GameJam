@@ -50,15 +50,15 @@
 #endregion
 #region sound
 	
-	//volume
-	global.volMusic		 = 0.5;	  // Music
-	global.volSound		 = 0.5;	  // Ambient and sound effects
-	global.volTypeWriter = 0.5;   // Line typewriter
+	global.volume = {
+		music:		0.5,
+		sound:		0.5,
+		writer:		0.5,
+		ui:			0,
+	};
 	
 	// Struct for all ambient data (includes music)
 	global.ambient = {};
-	
-	global.uiSfxActive = false;
 	
 #endregion
 #region transition
