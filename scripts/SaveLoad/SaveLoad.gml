@@ -65,31 +65,43 @@ function LoadSettings(){
 }
 
 function SaveGame(_fileName){
-	var _data = noone;
+	var _data = {
+		room: room,
+		
+		ambient:				global.ambient,
+		
+		lastLocationBackground: global.lastLocationBackground,
+		textLog:				global.textLog,
+		
+		dataMapLocations:		global.dataMapLocations,
+		flags:					global.flags,
+		
+		chapter:				global.chapter,
+	};
+	
 	with oDirector {
-		_data = {
-			currentSceneName:		currentSceneName,
-			sceneTarget:			sceneTarget,
+		_data.currentSceneName		=	currentSceneName;
+		_data.sceneTarget			=	sceneTarget;
 			
-			currentLineSequence:	currentLineSequence,
-			currentLineIndex:		currentLineIndex,
+		_data.currentLineSequence	=	currentLineSequence;
+		_data.currentLineIndex		=	currentLineIndex;
 			
-			previousSpeaker:		previousSpeaker,
-			stageCharacters:		stageCharacters,
-			mainCharacter:			mainCharacter,
-			spookUp:				spookUp,
+		_data.previousSpeaker		=	previousSpeaker;
+		_data.stageCharacters		=	stageCharacters;
+		_data.mainCharacter			=	mainCharacter;
+		_data.spookUp				=	spookUp;
 			
-			choice:					choice,
-			bg:						bg,
-			bgTarget:				bgTarget,
-			
-			
-			lastLocationBackground: global.lastLocationBackground,
-			textLog:				global.textLog,
-			dataMapLocations:		global.dataMapLocations,
-			flags:					global.flags,
-			chapter:				global.chapter,
-		};
+		_data.choice				=	choice;
+		_data.bg					=	bg;
+		_data.bgTarget				=	bgTarget;
+	}
+	
+	with _data {
+		dateTime = $"{current_day}.{current_month}.{current_year} - {current_hour}:{current_minute}";
+		logLast = noone;
+		if is_array(textLog) && (array_length(textLog) > 0) {
+			logLast = array_last(textLog);
+		}
 	}
 	
 	Save(_data, _fileName);

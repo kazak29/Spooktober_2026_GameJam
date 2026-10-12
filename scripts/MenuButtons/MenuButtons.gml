@@ -18,8 +18,16 @@ function MenuGameLoad(_args){
 		exit;
 	}
 	
-	global.saveData = _data;
-	TransitionStart(rmStage, _args[1], _args[2]);
+	if (_data.room == rmStage) global.saveData = _data;
+	with _data {
+		global.lastLocationBackground	=	lastLocationBackground;
+		global.textLog					=	textLog;
+		global.dataMapLocations			=	dataMapLocations;
+		global.flags					=	flags;
+		global.chapter					=	chapter;
+	}
+	
+	TransitionStart(_data.room, _args[1], _args[2]);
 }
 function MenuGameSave(_args){
 	SaveGame(_args[0]);

@@ -231,27 +231,23 @@
 	}
 
 	with global.saveData {
-		other.currentSceneName			=	currentSceneName;
-		other.sceneTarget				=	sceneTarget;
-										
-		other.currentLineSequence		=	currentLineSequence;
-		other.currentLineIndex			=	currentLineIndex;
-										
-		other.previousSpeaker			=	previousSpeaker;
-		other.stageCharacters			=	stageCharacters;
-		other.mainCharacter				=	mainCharacter;
-		other.spookUp					=	spookUp;
-										
-		other.choice					=	choice;
-		other.bg						=	bg;
-		other.bgTarget					=	bgTarget;
-			
-		global.lastLocationBackground	=	lastLocationBackground;
-		global.textLog					=	textLog;
-		global.dataMapLocations			=	dataMapLocations;
-		global.flags					=	flags;
-		global.chapter					=	chapter;
+		other.currentSceneName		=	currentSceneName;
+		other.sceneTarget			=	sceneTarget;
+									
+		other.currentLineSequence	=	currentLineSequence;
+		other.currentLineIndex		=	currentLineIndex;
+									
+		other.previousSpeaker		=	previousSpeaker;
+		other.stageCharacters		=	stageCharacters;
+		other.mainCharacter			=	mainCharacter;
+		other.spookUp				=	spookUp;
+									
+		other.choice				=	choice;
+		other.bg					=	bg;
+		other.bgTarget				=	bgTarget;
 	};
+	
+	global.saveData = noone;
 	LineSet();
 	
 #endregion

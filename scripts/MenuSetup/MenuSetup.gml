@@ -350,6 +350,21 @@ function DataMenuElementsCreate(){
 				menuName:		"pauseCrt",
 			},
 		#endregion
+		#region save
+			//0 is autosave, don't show here
+			save1: {
+				title:		"",
+				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				scr:		MenuGameSave,
+				arg:		["save1"],
+			},
+			save2: {
+				title:		"",
+				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				scr:		MenuGameSave,
+				arg:		["save2"],
+			},
+		#endregion
 	};
 }
 function DataMenuSetup(){
@@ -712,4 +727,14 @@ function MenuUpdateShift(_elemData){
 		title = _elemData.argTitles[_elemData.arg];
 		MenuSetStr(self,"menuElemShift");
 	}
+}
+
+function MenuUpdateSave(_elemData){
+	var _scr = _elemData.scr;
+	if (_scr != MenuGameSave && _scr != MenuGameLoad) exit;
+	
+	var _data = Load(_elemData.arg[0]);
+	if !is_struct(_data) exit;
+	
+	
 }
