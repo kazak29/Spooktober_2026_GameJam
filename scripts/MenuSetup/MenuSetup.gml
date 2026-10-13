@@ -616,13 +616,21 @@ function DataMenuSetup(){
 			y = other.y;
 			spr = _spriteGet(other);
 			str = _strGet(other);
+			position = other.position;
 		}
 	}
 	
-	//sort arrays by element y position
+	//sort arrays by element positions
 	with oMenuBlueprint {
 		array_sort(_data[$ menuName].elements,function(_prev,_next) {
-			return sign(_prev.y - _next.y);
+			var _h = sign(_prev.x - _next.x);
+			var _v = sign(_prev.y - _next.y);
+			var _p = sign(_prev.position - _next.position);
+			
+			if _p != 0 return _p;
+			if _h != 0 return _h;
+			if _v != 0 return _v;
+			return 0;
 		});
 	}
 	

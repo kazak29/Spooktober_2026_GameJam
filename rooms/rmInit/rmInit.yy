@@ -991,7 +991,7 @@
         {"$GMRInstance":"v4","%Name":"inst_140220CC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_140220CC","objectId":{"name":"oMenuBlueprintElementMain","path":"objects/oMenuBlueprintElementMain/oMenuBlueprintElementMain.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oMenuBlueprintElement","path":"objects/oMenuBlueprintElement/oMenuBlueprintElement.yy",},"propertyId":{"name":"elemName","path":"objects/oMenuBlueprintElement/oMenuBlueprintElement.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"pageLoadPause",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":4.0,"scaleY":1.0,"x":832.0,"y":560.0,},
-      ],"layers":[],"name":"pauseMain","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
+      ],"layers":[],"name":"pauseMain","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":false,},
     {"$GMRInstanceLayer":"","%Name":"pauseSettings","depth":1100,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_7D02A771","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7D02A771","objectId":{"name":"oMenuBlueprint","path":"objects/oMenuBlueprint/oMenuBlueprint.yy",},"previewSprite":{"name":"sChoiceBox","path":"sprites/sChoiceBox/sChoiceBox.yy",},"properties":[
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oMenuBlueprint","path":"objects/oMenuBlueprint/oMenuBlueprint.yy",},"propertyId":{"name":"menuName","path":"objects/oMenuBlueprint/oMenuBlueprint.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"pauseSettings",},
@@ -1283,7 +1283,7 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oMenuBlueprintElement","path":"objects/oMenuBlueprintElement/oMenuBlueprintElement.yy",},"propertyId":{"name":"alignH","path":"objects/oMenuBlueprintElement/oMenuBlueprintElement.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"fa_left",},
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oMenuBlueprintElement","path":"objects/oMenuBlueprintElement/oMenuBlueprintElement.yy",},"propertyId":{"name":"strX","path":"objects/oMenuBlueprintElement/oMenuBlueprintElement.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"320+32+8",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":6.125,"scaleY":1.625,"x":1368.0,"y":712.0,},
-      ],"layers":[],"name":"pauseSave","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":false,},
+      ],"layers":[],"name":"pauseSave","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
   ],
   "name":"rmInit",
   "parent":{
