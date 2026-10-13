@@ -917,6 +917,8 @@ function MenuUpdateSave(_elemData){
 		}
 	}
 	
+	//reset locked state
+	_elemData.locked = false;
 	
 	//setup title
 	var _title = "";
