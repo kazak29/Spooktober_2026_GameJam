@@ -41,24 +41,18 @@ for (var i = 0; i < array_length(_elems); i++) {
 	
 		}
 		
-		var _shiftX = 0;
-		var _shiftY = 0;
-		switch sprite_index {
-			case sChoiceBox: { _shiftX = 16; _shiftY = 16; } break;
-		}
-		
 		//special draw
 		switch _elems[i].elemType {
 			
 			case MENU_ELEMENT_TYPE.SAVE_FILE: {
 				var _spr = _elems[i].surfSpr;
-				if sprite_exists(_spr) draw_sprite(_spr,0, bbox_left + _shiftX, bbox_top + _shiftY);
+				if sprite_exists(_spr) draw_sprite(_spr,0, bbox_left + 32, bbox_top + 16);
 			} break;
 			
 		}
 		
 		scribId.blend(_c, 1)
-			.wrap(sprite_width - _shiftX, sprite_height - _shiftY)
+			.wrap(sprite_width - shiftX, sprite_height - shiftY)
 			.draw(x + strX, y + strY);
 	}
 	

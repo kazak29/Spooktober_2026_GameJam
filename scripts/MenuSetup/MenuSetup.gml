@@ -439,6 +439,10 @@ function DataMenuSetup(){
 	}
 	
 	var _strGet = function(_from){
+		//save shift separately
+		var _shiftX = _from.strX;
+		var _shiftY = _from.strY;
+		
 		//string position shift relative to button
 		switch _from.alignH {
 			case fa_left:	_from.strX += _from.bbox_left - _from.x;										break;
@@ -450,12 +454,15 @@ function DataMenuSetup(){
 			case fa_middle: _from.strY += (_from.bbox_bottom - _from.bbox_top)/2 - _from.sprite_yoffset;	break;
 			case fa_bottom:	_from.strY += _from.bbox_bottom - _from.y;										break;
 		}
+		
 		return {
 			font:	(is_string(_from.font) && font_exists(asset_get_index(_from.font)) ? _from.font : FONT_DIALOGUE_TEXT_TITLE),
 			alignH: _from.alignH,
 			alignV: _from.alignV,
 			x:		_from.strX,
 			y:		_from.strY,
+			shiftX: _shiftX,
+			shiftY: _shiftY,
 		};
 	}
 	
@@ -675,6 +682,8 @@ function MenuSetStr(_from,_uniqueId){
 	scribId = scribble(_title, _uniqueId).starting_format(_from.str.font, c_white).align(_from.str.alignH,_from.str.alignV);
 	strX = _from.str.x;
 	strY = _from.str.y;
+	shiftX = _from.str.shiftX;
+	shiftY = _from.str.shiftY;
 }
 
 function MenuSettingGet(_elemData){
