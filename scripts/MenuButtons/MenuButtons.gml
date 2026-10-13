@@ -12,7 +12,9 @@ function MenuGameLoad(_args){
 	AmbientFadeOutAll();
 	ScreenPlayReset();
 	
-	var _data = Load(_args[0]);
+	var _fileName = SaveFileGetName(_args[0]);
+	var _data = Load(_fileName);
+	
 	if !is_struct(_data) {
 		show_debug_message("Save file error!");
 		exit;
@@ -31,10 +33,14 @@ function MenuGameLoad(_args){
 	TransitionStart(_data.room, _args[1], _args[2]);
 }
 function MenuGameSave(_args){
-	SaveGame(_args[0]);
+	var _fileName = SaveFileGetName(_args[0]);
+	SaveGame(_fileName);
 	
-	var _data = Load(_args[0]);
-	if !is_struct(_data) show_debug_message("Save file error!");
+	var _data = Load(_fileName);
+	if !is_struct(_data) {
+		show_debug_message("Save file error!");
+		exit;
+	}
 }
 
 function MenuTransitionStart(_args){

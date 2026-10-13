@@ -11,6 +11,7 @@ if (sprite_index != sBorder || _debugException) draw_self();
 var _elems = global.dataMenu[$ menuName].elements;
 for (var i = 0; i < array_length(_elems); i++) {
 	
+	//main element draw
 	with _elems[i].elemId {
 		var _selected = other.main.elemId == id;
 		
@@ -29,18 +30,22 @@ for (var i = 0; i < array_length(_elems); i++) {
 	
 		}
 		
-		var _textW = sprite_width;
-		var _textH = sprite_height;
-		switch sprite_index {
-			case sChoiceBox: { _textW -= 16; _textH -= 16; } break;
+		//special draw
+		switch _elems[i].elemType {
+			
+			case MENU_ELEMENT_TYPE.SAVE_FILE: {
+				var _spr = _elems[i].surfSpr;
+				if sprite_exists(_spr) draw_sprite(_spr,0, bbox_left + 32, bbox_top + 16 - 1);
+			} break;
+			
 		}
 		
 		scribId.blend(_c, 1)
-			.wrap(_textW,_textH)
-			//.scale_to_box(_textW,_textH)
+			.wrap(sprite_width - shiftX, sprite_height - shiftY)
 			.draw(x + strX, y + strY);
 	}
 	
+	//sub element draw
 	var _elemSubs = _elems[i].elemSubs;
 	var _names = struct_get_names(_elemSubs);
 	for (var j = 0; j < array_length(_names); j++) {

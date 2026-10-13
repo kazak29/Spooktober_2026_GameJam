@@ -135,7 +135,9 @@
 	
 #endregion
 #region scene and line sequence
-
+	
+	saveAuto = false;
+	
 	currentLineSequence = [];
 	currentLineIndex = 0;
 	
@@ -198,7 +200,7 @@
 			} else LineProgress();
 		
 		} else {
-		
+			
 			directorState = DirectorStateLineSequence;
 			TypewriterSoundSet();
 		

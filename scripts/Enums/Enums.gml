@@ -21,6 +21,7 @@
 		SLIDER,
 		SHIFT,
 		TOGGLE,
+		SAVE_FILE,
 	
 		HEIGHT
 	}

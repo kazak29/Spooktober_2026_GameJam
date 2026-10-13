@@ -377,44 +377,91 @@ function DataMenuElementsCreate(){
 			},
 		#endregion
 		#region save
-			//0 is autosave
+			save0: {	//<--- AUTOSAVE
+				title:		"",
+				elemType:	MENU_ELEMENT_TYPE.SAVE_FILE,
+				scr:		MenuGameSave,
+				arg:		[0],
+				surfSpr:	noone,
+			},
 			save1: {
 				title:		"",
-				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				elemType:	MENU_ELEMENT_TYPE.SAVE_FILE,
 				scr:		MenuGameSave,
-				arg:		["save1.save"],
+				arg:		[1],
+				surfSpr:	noone,
 			},
 			save2: {
 				title:		"",
-				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				elemType:	MENU_ELEMENT_TYPE.SAVE_FILE,
 				scr:		MenuGameSave,
-				arg:		["save2.save"],
+				arg:		[2],
+				surfSpr:	noone,
+			},
+			save3: {
+				title:		"",
+				elemType:	MENU_ELEMENT_TYPE.SAVE_FILE,
+				scr:		MenuGameSave,
+				arg:		[3],
+				surfSpr:	noone,
+			},
+			save4: {
+				title:		"",
+				elemType:	MENU_ELEMENT_TYPE.SAVE_FILE,
+				scr:		MenuGameSave,
+				arg:		[4],
+				surfSpr:	noone,
+			},
+			save5: {
+				title:		"",
+				elemType:	MENU_ELEMENT_TYPE.SAVE_FILE,
+				scr:		MenuGameSave,
+				arg:		[5],
+				surfSpr:	noone,
 			},
 		#endregion
 		#region load
 			load0: {
 				title:		"",
-				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				elemType:	MENU_ELEMENT_TYPE.SAVE_FILE,
 				scr:		MenuGameLoad,
-				arg:		["save0.save", sqFadeOut, sqFadeIn],
+				arg:		[0, sqFadeOut, sqFadeIn],
+				surfSpr:	noone,
 			},
 			load1: {
 				title:		"",
-				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				elemType:	MENU_ELEMENT_TYPE.SAVE_FILE,
 				scr:		MenuGameLoad,
-				arg:		["save1.save", sqFadeOut, sqFadeIn],
+				arg:		[1, sqFadeOut, sqFadeIn],
+				surfSpr:	noone,
 			},
 			load2: {
 				title:		"",
-				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				elemType:	MENU_ELEMENT_TYPE.SAVE_FILE,
 				scr:		MenuGameLoad,
-				arg:		["save2.save", sqFadeOut, sqFadeIn],
+				arg:		[2, sqFadeOut, sqFadeIn],
+				surfSpr:	noone,
 			},
 			load3: {
 				title:		"",
-				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				elemType:	MENU_ELEMENT_TYPE.SAVE_FILE,
 				scr:		MenuGameLoad,
-				arg:		["save3.save", sqFadeOut, sqFadeIn],
+				arg:		[3, sqFadeOut, sqFadeIn],
+				surfSpr:	noone,
+			},
+			load4: {
+				title:		"",
+				elemType:	MENU_ELEMENT_TYPE.SAVE_FILE,
+				scr:		MenuGameLoad,
+				arg:		[4, sqFadeOut, sqFadeIn],
+				surfSpr:	noone,
+			},
+			load5: {
+				title:		"",
+				elemType:	MENU_ELEMENT_TYPE.SAVE_FILE,
+				scr:		MenuGameLoad,
+				arg:		[5, sqFadeOut, sqFadeIn],
+				surfSpr:	noone,
 			},
 		#endregion
 	};
@@ -433,6 +480,10 @@ function DataMenuSetup(){
 	}
 	
 	var _strGet = function(_from){
+		//save shift separately
+		var _shiftX = _from.strX;
+		var _shiftY = _from.strY;
+		
 		//string position shift relative to button
 		switch _from.alignH {
 			case fa_left:	_from.strX += _from.bbox_left - _from.x;										break;
@@ -444,12 +495,15 @@ function DataMenuSetup(){
 			case fa_middle: _from.strY += (_from.bbox_bottom - _from.bbox_top)/2 - _from.sprite_yoffset;	break;
 			case fa_bottom:	_from.strY += _from.bbox_bottom - _from.y;										break;
 		}
+		
 		return {
 			font:	(is_string(_from.font) && font_exists(asset_get_index(_from.font)) ? _from.font : FONT_DIALOGUE_TEXT_TITLE),
 			alignH: _from.alignH,
 			alignV: _from.alignV,
 			x:		_from.strX,
 			y:		_from.strY,
+			shiftX: _shiftX,
+			shiftY: _shiftY,
 		};
 	}
 	
@@ -651,8 +705,11 @@ function MenuCreate(_name){
 			}
 		}
 		
-		//set menu to highlight first element on frame 1
-		menuId.main.elemId = struct_get(elements[0], "elemId") ?? noone;
+		//set menu to highlight first (unlocked) element on frame 1
+		with menuId {
+			while CheckLocked(other.elements[num]) DiscretProgress(1);
+			main.elemId = struct_get(other.elements[num], "elemId") ?? noone;
+		}
 	}
 }
 
@@ -669,6 +726,8 @@ function MenuSetStr(_from,_uniqueId){
 	scribId = scribble(_title, _uniqueId).starting_format(_from.str.font, c_white).align(_from.str.alignH,_from.str.alignV);
 	strX = _from.str.x;
 	strY = _from.str.y;
+	shiftX = _from.str.shiftX;
+	shiftY = _from.str.shiftY;
 }
 
 function MenuSettingGet(_elemData){
@@ -790,7 +849,9 @@ function MenuUpdateShift(_elemData){
 function MenuUpdateSave(_elemData){
 	var _scr = _elemData[$ "scr"];
 	if (_scr != MenuGameSave && _scr != MenuGameLoad) exit;
-	var _data = Load(_elemData.arg[0]);
+	
+	var _fileName = SaveFileGetName(_elemData.arg[0]);
+	var _data = Load(_fileName);
 	
 	//update element scribble data
 	var _setStr = function(_elemData){
@@ -799,16 +860,29 @@ function MenuUpdateSave(_elemData){
 		}
 	}
 	
+	
+	//setup title
+	var _title = "";
+	if _elemData.arg[0] == 0 {
+		_title = "AUTOSAVE\n";
+		if (_scr == MenuGameSave) _elemData.locked = true;
+	}
+	
 	//reset title if no save file
 	if !is_struct(_data) {
 		if (_scr == MenuGameLoad) _elemData.locked = true;
 		
-		_elemData.title = _elemData.arg[0];
+		_elemData.title = _title;
 		_setStr(_elemData);
 		
 		exit;
 	}
 	
-	_elemData.title = string_concat(_data.dateTime, " - ", $"Chapter {_data.chapter+1}", "\n", _data.title);
+	//apply proper title
+	_elemData.title = string_concat(_title, _data.dateTime, "\n", $"Chapter {_data.chapter+1}", "\n", _data.title);
 	_setStr(_elemData);
+	
+	//apply surface
+	if sprite_exists(_elemData.surfSpr) sprite_delete(_elemData.surfSpr);	//delete current surface sprite to prevent memory leaking
+	_elemData.surfSpr = LoadSurface(SaveSurfGetName(_elemData.arg[0]));
 }

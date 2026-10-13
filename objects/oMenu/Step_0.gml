@@ -27,22 +27,27 @@ var _elemsL = array_length(_elems);
 	//discret navigation for main elements
 	var _pressVer = oInputManager.pressed.down - oInputManager.pressed.up;
 	if (_pressVer != 0) {
-		num += _pressVer;
-		if (num > _elemsL-1)	{ num = 0;			}
-		if (num < 0)			{ num = _elemsL-1;	}
 		
+		DiscretProgress(_pressVer);
+		while CheckLocked(_elems[num]) DiscretProgress(_pressVer);
+
 		_sfx = "hover";
+		
 	}
 	
 	//mouse navigation for main elements
 	with oMenuElementMain {
-
+		
 		if uiMouseCollision(id) {
-			if other.num != num _sfx = "hover";
 			
+			var _selfData = global.dataMenu[$ other.menuName].elements[num];
+			if other.CheckLocked(_selfData) break;
+			
+			if other.num != num _sfx = "hover";
 			other.num = num;
 			other.main.hover = true;
 			break;
+			
 		}
 	
 	}
@@ -81,14 +86,26 @@ var _heldSub		= oInputManager.mouse.held.left && sub.hover;
 if instance_exists(main.elemId) {
 	var _elemData = _elems[num];
 	switch _elemData.elemType {
-	
+		
+		case MENU_ELEMENT_TYPE.SAVE_FILE: {
+			if _pressedMain {
+				var _scr = _elemData[$"scr"] ?? noone;
+				var _arg = _elemData[$"arg"] ?? noone;
+				if is_callable(_scr) _scr(_arg);
+				
+				//set a flag so a manager saves a surface on draw event and updates button appearence
+				if (_scr == MenuGameSave) oSaveSurfaceManager.saveElemUpdating = _elemData;
+				
+				_sfx = "click";
+			}
+		} break;
+		
 		case MENU_ELEMENT_TYPE.SCRIPT_RUNNER: {
 			if _pressedMain {
 				var _scr = _elemData[$"scr"] ?? noone;
 				var _arg = _elemData[$"arg"] ?? noone;
 				if is_callable(_scr) _scr(_arg);
 				
-				MenuUpdateSave(_elemData);
 				_sfx = "click";
 			}
 		} break;

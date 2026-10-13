@@ -18,8 +18,8 @@ function Load(_fileName){
 	}
 	
 	var _buffer = buffer_load(_fileName);
-	if (_buffer == -1) {
-		show_debug_message("Buffer load fail (returns -1)");
+	if (_buffer < 0) {
+		show_debug_message($"Buffer load fail (returns {_buffer})");
 		buffer_delete(_buffer);
 		return _data;
 	}
@@ -41,6 +41,60 @@ function Load(_fileName){
 		
 	}
 	
+	buffer_delete(_buffer);
+	return _data;
+}
+
+//should be run in draw event before menu drawing
+function SaveSurface(_fileName, _w = SURF_SAVE_W, _h = SURF_SAVE_H){
+	var _surface = surface_create(_w,_h);
+	
+	surface_set_target(_surface);
+	draw_clear_alpha(c_white,0);
+	draw_surface_stretched(application_surface, 0,0, _w,_h);
+	surface_reset_target();
+	
+    var _buffer = buffer_create(_w*_h*4,buffer_fixed,1);
+	buffer_get_surface(_buffer, _surface, 0);
+	buffer_save(_buffer, _fileName);
+	surface_free(_surface);
+    buffer_delete(_buffer);
+	
+	show_debug_message("Surface saved!");
+}
+//retuns a sprite from surface
+function LoadSurface(_fileName, _w = SURF_SAVE_W, _h = SURF_SAVE_H){
+	var _data = undefined;
+	var _surface = surface_create(_w,_h);
+	
+	if !file_exists(_fileName) {
+		show_debug_message("Buffer file not found bruhnius momentius");
+		return _data;
+	}
+	
+	var _buffer = buffer_load(_fileName);
+	if (_buffer < 0) {
+		show_debug_message($"Buffer load fail (returns {_buffer})");
+		buffer_delete(_buffer);
+		return _data;
+	}
+	
+	try {
+		
+		buffer_set_surface(_buffer, _surface, 0);
+		_data = sprite_create_from_surface(_surface, 0,0, _w,_h, false,false, 0,0);
+		
+		show_debug_message("Surface loaded!");
+		
+	} catch(_exception) {
+		
+		_data = undefined;
+		show_debug_message(_exception.message);
+		show_debug_message(_exception.longMessage);
+		
+	}
+	
+	surface_free(_surface);
 	buffer_delete(_buffer);
 	return _data;
 }
@@ -123,4 +177,17 @@ function SaveGame(_fileName){
 	}
 	
 	Save(_data, _fileName);
+}
+
+function SaveFileGetName(_num) {
+	return $"save{_num}.save";
+}
+function SaveSurfGetName(_num) {
+	return $"save{_num}.thumbnail";
+}
+
+function SaveAuto(_lineStop = false){
+	MenuGameSave([0]);
+	oSaveSurfaceManager.saveElemUpdating = 0;
+	oSaveSurfaceManager.lineStop = _lineStop;
 }

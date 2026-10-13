@@ -1,6 +1,8 @@
 #region misc
 	
 	scribble_font_set_style_family("fDialogueTextBody","fDialogueTextBodyBold",undefined,undefined);
+	scribble_font_set_style_family("fConsol24","fConsol24Bold",undefined,undefined);
+	scribble_font_set_style_family("fConsol16","fConsol16Bold",undefined,undefined);
 	
 #endregion
 #region macros

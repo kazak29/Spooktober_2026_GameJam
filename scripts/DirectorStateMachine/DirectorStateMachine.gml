@@ -35,7 +35,15 @@ function DirectorStateLineSequence()
 	    }
 	    else
 	    {
-			LineProgress(1, true);
+			
+			if saveAuto {
+				SaveAuto(true);
+				saveAuto = false;
+			} else {
+				//surface must be saved before line changes
+				LineProgress(1, true);
+			}
+			
 	    }
 	}
 }

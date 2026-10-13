@@ -1,4 +1,9 @@
 if global.midTransition || global.gamePaused exit;
+if saveAuto {
+	SaveAuto();
+	saveAuto = false;
+}
+
 mouseHover = false;
 var _locsL = array_length(locs);
 var _sfx = "";

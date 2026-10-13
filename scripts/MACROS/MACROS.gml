@@ -26,6 +26,7 @@
 	#macro MENU_ELEMENT_DEPTH	-9998
 	#macro MENU_DEPTH			-9997
 	#macro UI_BUTTON_DEPTH		-9996
+	#macro SAVE_DEPTH			-9995
 
 	#macro SYSTEM_LAYER     "System"
 	#macro BACKGROUND_LAYER "Background"
@@ -115,5 +116,11 @@
 	#macro COL_MAP_VISITED				c_dkgray
 	#macro COL_MAP_HOVER				#F5555D
 	#macro COL_MAP_HOVER_MOUSE			c_red
+	
+#endregion
+#region surface saving
+	
+	#macro SURF_SAVE_W VIEWPORT_WIDTH/6
+	#macro SURF_SAVE_H VIEWPORT_HEIGHT/6
 	
 #endregion
