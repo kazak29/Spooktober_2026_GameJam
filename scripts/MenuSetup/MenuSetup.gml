@@ -380,41 +380,47 @@ function DataMenuElementsCreate(){
 			//0 is autosave
 			save1: {
 				title:		"",
-				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				elemType:	MENU_ELEMENT_TYPE.SAVE_FILE,
 				scr:		MenuGameSave,
-				arg:		["save1.save"],
+				arg:		[1],
+				surfSpr:	noone,
 			},
 			save2: {
 				title:		"",
-				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				elemType:	MENU_ELEMENT_TYPE.SAVE_FILE,
 				scr:		MenuGameSave,
-				arg:		["save2.save"],
+				arg:		[2],
+				surfSpr:	noone,
 			},
 		#endregion
 		#region load
 			load0: {
 				title:		"",
-				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				elemType:	MENU_ELEMENT_TYPE.SAVE_FILE,
 				scr:		MenuGameLoad,
-				arg:		["save0.save", sqFadeOut, sqFadeIn],
+				arg:		[0, sqFadeOut, sqFadeIn],
+				surfSpr:	noone,
 			},
 			load1: {
 				title:		"",
-				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				elemType:	MENU_ELEMENT_TYPE.SAVE_FILE,
 				scr:		MenuGameLoad,
-				arg:		["save1.save", sqFadeOut, sqFadeIn],
+				arg:		[1, sqFadeOut, sqFadeIn],
+				surfSpr:	noone,
 			},
 			load2: {
 				title:		"",
-				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				elemType:	MENU_ELEMENT_TYPE.SAVE_FILE,
 				scr:		MenuGameLoad,
-				arg:		["save2.save", sqFadeOut, sqFadeIn],
+				arg:		[2, sqFadeOut, sqFadeIn],
+				surfSpr:	noone,
 			},
 			load3: {
 				title:		"",
-				elemType:	MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				elemType:	MENU_ELEMENT_TYPE.SAVE_FILE,
 				scr:		MenuGameLoad,
-				arg:		["save3.save", sqFadeOut, sqFadeIn],
+				arg:		[3, sqFadeOut, sqFadeIn],
+				surfSpr:	noone,
 			},
 		#endregion
 	};
@@ -790,7 +796,9 @@ function MenuUpdateShift(_elemData){
 function MenuUpdateSave(_elemData){
 	var _scr = _elemData[$ "scr"];
 	if (_scr != MenuGameSave && _scr != MenuGameLoad) exit;
-	var _data = Load(_elemData.arg[0]);
+	
+	var _fileName = SaveFileGetName(_elemData.arg[0]);
+	var _data = Load(_fileName);
 	
 	//update element scribble data
 	var _setStr = function(_elemData){
@@ -803,12 +811,17 @@ function MenuUpdateSave(_elemData){
 	if !is_struct(_data) {
 		if (_scr == MenuGameLoad) _elemData.locked = true;
 		
-		_elemData.title = _elemData.arg[0];
+		_elemData.title = _fileName;
 		_setStr(_elemData);
 		
 		exit;
 	}
 	
+	//apply proper title
 	_elemData.title = string_concat(_data.dateTime, " - ", $"Chapter {_data.chapter+1}", "\n", _data.title);
 	_setStr(_elemData);
+	
+	//apply surface
+	if sprite_exists(_elemData.surfSpr) sprite_delete(_elemData.surfSpr);	//delete current surface sprite to prevent memory leaking
+	_elemData.surfSpr = LoadSurface(SaveSurfGetName(_elemData.arg[0]));
 }

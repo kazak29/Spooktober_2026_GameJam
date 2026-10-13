@@ -1,4 +1,5 @@
 depth = MENU_DEPTH;
+saveElemUpdating = noone;
 
 num = 0;
 mouseClickLock = oInputManager.mouse.held.any;

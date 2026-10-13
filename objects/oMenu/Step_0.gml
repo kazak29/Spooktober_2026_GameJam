@@ -81,14 +81,26 @@ var _heldSub		= oInputManager.mouse.held.left && sub.hover;
 if instance_exists(main.elemId) {
 	var _elemData = _elems[num];
 	switch _elemData.elemType {
-	
+		
+		case MENU_ELEMENT_TYPE.SAVE_FILE: {
+			if _pressedMain {
+				var _scr = _elemData[$"scr"] ?? noone;
+				var _arg = _elemData[$"arg"] ?? noone;
+				if is_callable(_scr) _scr(_arg);
+				
+				//set a flag so menu saves a surface on draw event and updates button appearence
+				if (_scr == MenuGameSave) saveElemUpdating = _elemData;
+				
+				_sfx = "click";
+			}
+		} break;
+		
 		case MENU_ELEMENT_TYPE.SCRIPT_RUNNER: {
 			if _pressedMain {
 				var _scr = _elemData[$"scr"] ?? noone;
 				var _arg = _elemData[$"arg"] ?? noone;
 				if is_callable(_scr) _scr(_arg);
 				
-				MenuUpdateSave(_elemData);
 				_sfx = "click";
 			}
 		} break;

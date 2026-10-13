@@ -1,3 +1,14 @@
+//save element - surface saving and appearance update
+if is_struct(saveElemUpdating) {
+	var _data = saveElemUpdating;
+	var _fileName = SaveSurfGetName(_data.arg[0]);
+	
+	SaveSurface(_fileName);
+	MenuUpdateSave(_data);
+	
+	saveElemUpdating = noone;
+}
+
 if fade {
     draw_set_alpha(0.75);
     draw_rectangle_colour(0, 0, VIEWPORT_WIDTH, VIEWPORT_HEIGHT, c_black,c_black,c_black,c_black, false);
@@ -11,6 +22,7 @@ if (sprite_index != sBorder || _debugException) draw_self();
 var _elems = global.dataMenu[$ menuName].elements;
 for (var i = 0; i < array_length(_elems); i++) {
 	
+	//main element draw
 	with _elems[i].elemId {
 		var _selected = other.main.elemId == id;
 		
@@ -29,18 +41,28 @@ for (var i = 0; i < array_length(_elems); i++) {
 	
 		}
 		
-		var _textW = sprite_width;
-		var _textH = sprite_height;
+		var _shiftX = 0;
+		var _shiftY = 0;
 		switch sprite_index {
-			case sChoiceBox: { _textW -= 16; _textH -= 16; } break;
+			case sChoiceBox: { _shiftX = 16; _shiftY = 16; } break;
+		}
+		
+		//special draw
+		switch _elems[i].elemType {
+			
+			case MENU_ELEMENT_TYPE.SAVE_FILE: {
+				var _spr = _elems[i].surfSpr;
+				if sprite_exists(_spr) draw_sprite(_spr,0, bbox_left + _shiftX, bbox_top + _shiftY);
+			} break;
+			
 		}
 		
 		scribId.blend(_c, 1)
-			.wrap(_textW,_textH)
-			//.scale_to_box(_textW,_textH)
+			.wrap(sprite_width - _shiftX, sprite_height - _shiftY)
 			.draw(x + strX, y + strY);
 	}
 	
+	//sub element draw
 	var _elemSubs = _elems[i].elemSubs;
 	var _names = struct_get_names(_elemSubs);
 	for (var j = 0; j < array_length(_names); j++) {

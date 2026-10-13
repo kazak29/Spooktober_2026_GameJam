@@ -178,3 +178,10 @@ function SaveGame(_fileName){
 	
 	Save(_data, _fileName);
 }
+
+function SaveFileGetName(_num) {
+	return $"save{_num}.save";
+}
+function SaveSurfGetName(_num) {
+	return $"save{_num}.thumbnail";
+}
