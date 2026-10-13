@@ -27,22 +27,27 @@ var _elemsL = array_length(_elems);
 	//discret navigation for main elements
 	var _pressVer = oInputManager.pressed.down - oInputManager.pressed.up;
 	if (_pressVer != 0) {
-		num += _pressVer;
-		if (num > _elemsL-1)	{ num = 0;			}
-		if (num < 0)			{ num = _elemsL-1;	}
 		
+		DiscretProgress(_pressVer);
+		while CheckLocked(_elems[num]) DiscretProgress(_pressVer);
+
 		_sfx = "hover";
+		
 	}
 	
 	//mouse navigation for main elements
 	with oMenuElementMain {
-
+		
 		if uiMouseCollision(id) {
-			if other.num != num _sfx = "hover";
 			
+			var _selfData = global.dataMenu[$ other.menuName].elements[num];
+			if other.CheckLocked(_selfData) break;
+			
+			if other.num != num _sfx = "hover";
 			other.num = num;
 			other.main.hover = true;
 			break;
+			
 		}
 	
 	}

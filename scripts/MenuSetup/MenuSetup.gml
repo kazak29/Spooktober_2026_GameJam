@@ -377,7 +377,13 @@ function DataMenuElementsCreate(){
 			},
 		#endregion
 		#region save
-			//0 is autosave
+			save0: {	//<--- AUTOSAVE
+				title:		"",
+				elemType:	MENU_ELEMENT_TYPE.SAVE_FILE,
+				scr:		MenuGameSave,
+				arg:		[0],
+				surfSpr:	noone,
+			},
 			save1: {
 				title:		"",
 				elemType:	MENU_ELEMENT_TYPE.SAVE_FILE,
@@ -390,6 +396,27 @@ function DataMenuElementsCreate(){
 				elemType:	MENU_ELEMENT_TYPE.SAVE_FILE,
 				scr:		MenuGameSave,
 				arg:		[2],
+				surfSpr:	noone,
+			},
+			save3: {
+				title:		"",
+				elemType:	MENU_ELEMENT_TYPE.SAVE_FILE,
+				scr:		MenuGameSave,
+				arg:		[3],
+				surfSpr:	noone,
+			},
+			save4: {
+				title:		"",
+				elemType:	MENU_ELEMENT_TYPE.SAVE_FILE,
+				scr:		MenuGameSave,
+				arg:		[4],
+				surfSpr:	noone,
+			},
+			save5: {
+				title:		"",
+				elemType:	MENU_ELEMENT_TYPE.SAVE_FILE,
+				scr:		MenuGameSave,
+				arg:		[5],
 				surfSpr:	noone,
 			},
 		#endregion
@@ -420,6 +447,20 @@ function DataMenuElementsCreate(){
 				elemType:	MENU_ELEMENT_TYPE.SAVE_FILE,
 				scr:		MenuGameLoad,
 				arg:		[3, sqFadeOut, sqFadeIn],
+				surfSpr:	noone,
+			},
+			load4: {
+				title:		"",
+				elemType:	MENU_ELEMENT_TYPE.SAVE_FILE,
+				scr:		MenuGameLoad,
+				arg:		[4, sqFadeOut, sqFadeIn],
+				surfSpr:	noone,
+			},
+			load5: {
+				title:		"",
+				elemType:	MENU_ELEMENT_TYPE.SAVE_FILE,
+				scr:		MenuGameLoad,
+				arg:		[5, sqFadeOut, sqFadeIn],
 				surfSpr:	noone,
 			},
 		#endregion
@@ -664,8 +705,11 @@ function MenuCreate(_name){
 			}
 		}
 		
-		//set menu to highlight first element on frame 1
-		menuId.main.elemId = struct_get(elements[0], "elemId") ?? noone;
+		//set menu to highlight first (unlocked) element on frame 1
+		with menuId {
+			while CheckLocked(other.elements[num]) DiscretProgress(1);
+			main.elemId = struct_get(other.elements[num], "elemId") ?? noone;
+		}
 	}
 }
 
@@ -827,7 +871,7 @@ function MenuUpdateSave(_elemData){
 	}
 	
 	//apply proper title
-	_elemData.title = string_concat(_data.dateTime, " - ", $"Chapter {_data.chapter+1}", "\n", _data.title);
+	_elemData.title = string_concat(_data.dateTime, "\n", $"Chapter {_data.chapter+1}", "\n", _data.title);
 	_setStr(_elemData);
 	
 	//apply surface
