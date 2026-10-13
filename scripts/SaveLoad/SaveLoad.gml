@@ -186,7 +186,8 @@ function SaveSurfGetName(_num) {
 	return $"save{_num}.thumbnail";
 }
 
-function SaveAuto(){
+function SaveAuto(_lineStop = false){
 	MenuGameSave([0]);
 	oSaveSurfaceManager.saveElemUpdating = 0;
+	oSaveSurfaceManager.lineStop = _lineStop;
 }

@@ -16,6 +16,8 @@
 	
 	function SceneStart(_name){
 		with oDirector {
+			saveAuto = true;
+			
 			currentSceneName = _name;
 			currentLineSequence = global.lineData[$ _name] ?? [];
 	        currentLineIndex = 0;
