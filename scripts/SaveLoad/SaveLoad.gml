@@ -6,14 +6,14 @@ function Save(_data, _fileName){
 	buffer_save(_buffer, _fileName);
 	buffer_delete(_buffer);
 
-	show_debug_message("Data saved! " + _string);
+	//show_debug_message("Data saved! " + _string);
 }
 
 function Load(_fileName){
 	var _data = undefined;
 	
 	if !file_exists(_fileName) {
-		show_debug_message("Buffer file not found bruhnius momentius");
+		//show_debug_message("Buffer file not found bruhnius momentius");
 		return _data;
 	}
 	
@@ -31,7 +31,7 @@ function Load(_fileName){
 		var _string = buffer_read(_buffer, buffer_string);
 		_data = json_parse(_string);
 		
-		show_debug_message("Data loaded! " + _string);
+		//show_debug_message("Data loaded! " + _string);
 		
 	} catch(_exception) {
 		
@@ -60,7 +60,7 @@ function SaveSurface(_fileName, _w = SURF_SAVE_W, _h = SURF_SAVE_H){
 	surface_free(_surface);
     buffer_delete(_buffer);
 	
-	show_debug_message("Surface saved!");
+	//show_debug_message("Surface saved!");
 }
 //retuns a sprite from surface
 function LoadSurface(_fileName, _w = SURF_SAVE_W, _h = SURF_SAVE_H){
@@ -68,7 +68,7 @@ function LoadSurface(_fileName, _w = SURF_SAVE_W, _h = SURF_SAVE_H){
 	var _surface = surface_create(_w,_h);
 	
 	if !file_exists(_fileName) {
-		show_debug_message("Buffer file not found bruhnius momentius");
+		//show_debug_message("Buffer file not found bruhnius momentius");
 		return _data;
 	}
 	
@@ -84,7 +84,7 @@ function LoadSurface(_fileName, _w = SURF_SAVE_W, _h = SURF_SAVE_H){
 		buffer_set_surface(_buffer, _surface, 0);
 		_data = sprite_create_from_surface(_surface, 0,0, _w,_h, false,false, 0,0);
 		
-		show_debug_message("Surface loaded!");
+		//show_debug_message("Surface loaded!");
 		
 	} catch(_exception) {
 		
@@ -119,8 +119,15 @@ function LoadSettings(){
 }
 
 function SaveGame(_fileName){
+	
+	//format date-time
+	var _dt = function(_dateOrTime){
+		_dateOrTime = string_format(_dateOrTime, 2, 0);
+		return string_replace_all(_dateOrTime, " ", "0");
+	}
+	
 	var _data = {
-		dateTime:	$"{current_day}.{current_month}.{current_year} - {current_hour}:{current_minute}:{current_second}",
+		dateTime:	$"{_dt(current_day)}.{_dt(current_month)}.{current_year} - {_dt(current_hour)}:{_dt(current_minute)}:{_dt(current_second)}",
 		title:		global.uiData.saveMap,
 		room:		room,
 		
