@@ -35,6 +35,10 @@ menuCrtFlicker,Flicker
 menuCrtRoll,Rolling Band
 menuSave,Save
 menuLoad,Load
+menuSaveDummy,SAVE
+menuLoadDummy,LOAD
+menuChapter,Chapter
+menuAuto,AUTOSAVE
 buttonSettings,SETTINGS
 buttonTextlog,TEXT LOG
 saveMap,Map

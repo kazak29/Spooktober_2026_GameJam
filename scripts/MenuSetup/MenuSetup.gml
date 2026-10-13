@@ -377,6 +377,10 @@ function DataMenuElementsCreate(){
 			},
 		#endregion
 		#region save
+			saveDummy: {
+				title: global.uiData.menuSaveDummy,
+				elemType:	MENU_ELEMENT_TYPE.DUMMY,
+			},
 			save0: {	//<--- AUTOSAVE
 				title:		"",
 				elemType:	MENU_ELEMENT_TYPE.SAVE_FILE,
@@ -421,6 +425,10 @@ function DataMenuElementsCreate(){
 			},
 		#endregion
 		#region load
+			loadDummy: {
+				title: global.uiData.menuLoadDummy,
+				elemType:	MENU_ELEMENT_TYPE.DUMMY,
+			},
 			load0: {
 				title:		"",
 				elemType:	MENU_ELEMENT_TYPE.SAVE_FILE,
@@ -504,6 +512,7 @@ function DataMenuSetup(){
 			y:		_from.strY,
 			shiftX: _shiftX,
 			shiftY: _shiftY,
+			scale:	_from.strScale,
 		};
 	}
 	
@@ -516,7 +525,8 @@ function DataMenuSetup(){
 			
 			menuNamePrev:	menuNamePrev,
 			fade:			fade,
-			elements: [],
+			elements:		[],
+			dummies:		[],
 		};
 	}
 	
@@ -634,6 +644,24 @@ function DataMenuSetup(){
 		});
 	}
 	
+	with oMenuBlueprintElementDummy {
+		//search menu
+		var _menu = noone;
+		with oMenuBlueprint {if depth == other.depth _menu = id;}
+		
+		//add all parameters into global menu data
+		array_push(
+			_data[$ _menu.menuName].dummies,
+			variable_clone(global.menuElements[$ elemName])
+		);
+		with array_last(_data[$ _menu.menuName].dummies) {
+			x = other.x;
+			y = other.y;
+			spr = _spriteGet(other);
+			str = _strGet(other);
+		}
+	}
+	
 	return _data;
 }
 function MenuCreate(_name){
@@ -641,6 +669,7 @@ function MenuCreate(_name){
 	instance_destroy(oMenuElement);
 	
 	with global.dataMenu[$ _name] {
+		//save instance id to menu data struct
 		menuId = instance_create_layer(x,y,SYSTEM_LAYER,oMenu);
 		with menuId {
 			menuName		= _name;
@@ -650,23 +679,26 @@ function MenuCreate(_name){
 			MenuSetSprite(other.spr);
 		}
 		
+		//create elements
 		for (var i = 0; i < array_length(elements); i++) {
 			with elements[i] {
 				MenuSettingGet(self);
 				MenuUpdateSave(self);
 				
+				//save instance id to element data struct
 				elemId = instance_create_layer(x,y,SYSTEM_LAYER, oMenuElementMain);
 				with elemId {
 					num	= i;
 					
 					MenuSetSprite(other.spr);
-					MenuSetStr(other,"menuElemMain")
+					MenuSetStr(other,"menuElemMain");
 				}
 				
 				var _names = struct_get_names(elemSubs);
 				for (var j = 0; j < array_length(_names); j++) {
 					with elemSubs[$ _names[j]] {
 						
+						//save instance id to sub element data struct
 						elemId = instance_create_layer(x,y,SYSTEM_LAYER,oMenuElementSub);
 						switch other.elemType {
 							
@@ -687,7 +719,7 @@ function MenuCreate(_name){
 									bufferY			= other.bufferY;
 									sprSlider		= other.sprSlider;
 									sprCircle		= other.sprCircle;
-									sprCircleScale	= other.sprCircleScale
+									sprCircleScale	= other.sprCircleScale;
 								
 									MenuSetSprite(other.spr);
 									str = variable_clone(other.str);
@@ -718,6 +750,18 @@ function MenuCreate(_name){
 			while CheckLocked(other.elements[num]) DiscretProgress(1);
 			main.elemId = struct_get(other.elements[num], "elemId") ?? noone;
 		}
+		
+		//create dummies
+		for (var i = 0; i < array_length(dummies); i++) {
+			with dummies[i] {
+				//save instance id to dummy data struct
+				elemId = instance_create_layer(x,y,SYSTEM_LAYER, oMenuElementDummy);
+				with elemId {
+					MenuSetSprite(other.spr);
+					MenuSetStr(other,"menuElemDummy");
+				}
+			}
+		}
 	}
 }
 
@@ -731,7 +775,12 @@ function MenuSetSprite(_from){
 }
 function MenuSetStr(_from,_uniqueId){
 	var _title = global.uiData[$ _from.title] ?? _from.title;
-	scribId = scribble(_title, _uniqueId).starting_format(_from.str.font, c_white).align(_from.str.alignH,_from.str.alignV);
+	
+	scribId = scribble(_title, _uniqueId)
+			.starting_format(_from.str.font, c_white)
+			.align(_from.str.alignH,_from.str.alignV)
+			.scale(_from.str.scale);
+			
 	strX = _from.str.x;
 	strY = _from.str.y;
 	shiftX = _from.str.shiftX;
@@ -872,7 +921,7 @@ function MenuUpdateSave(_elemData){
 	//setup title
 	var _title = "";
 	if _elemData.arg[0] == 0 {
-		_title = "AUTOSAVE\n";
+		_title = string_concat(global.uiData.menuAuto, "\n");
 		if (_scr == MenuGameSave) _elemData.locked = true;
 	}
 	
@@ -887,7 +936,7 @@ function MenuUpdateSave(_elemData){
 	}
 	
 	//apply proper title
-	_elemData.title = string_concat(_title, _data.dateTime, "\n", $"Chapter {_data.chapter+1}", "\n", _data.title);
+	_elemData.title = string_concat(_title, _data.dateTime, "\n", global.uiData.menuChapter, $" {_data.chapter+1}", "\n", _data.title);
 	_setStr(_elemData);
 	
 	//apply surface

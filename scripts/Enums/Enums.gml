@@ -22,6 +22,7 @@
 		SHIFT,
 		TOGGLE,
 		SAVE_FILE,
+		DUMMY,
 	
 		HEIGHT
 	}

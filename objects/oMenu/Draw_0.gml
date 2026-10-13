@@ -177,3 +177,21 @@ for (var i = 0; i < array_length(_elems); i++) {
 	}
 	
 }
+
+//dummies draw
+var _dummies = global.dataMenu[$ menuName].dummies;
+for (var i = 0; i < array_length(_dummies); i++) {
+	with _dummies[i].elemId {
+		
+		var _c = _colDefault;
+		if sprite_exists(sprite_index) && (sprite_index != sBorder || _debugException) {
+			draw_self();
+		}
+		
+		scribId.blend(_c, 1)
+			.wrap(sprite_width - shiftX, sprite_height - shiftY)
+			//.scale_to_box(sprite_width - shiftX, sprite_height - shiftY)
+			.draw(x + strX, y + strY);
+			
+	}
+}
