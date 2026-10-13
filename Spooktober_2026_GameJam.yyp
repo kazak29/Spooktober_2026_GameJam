@@ -114,6 +114,7 @@
     {"id":{"name":"oMenuElement","path":"objects/oMenuElement/oMenuElement.yy",},},
     {"id":{"name":"oMenuElementMain","path":"objects/oMenuElementMain/oMenuElementMain.yy",},},
     {"id":{"name":"oMenuElementSub","path":"objects/oMenuElementSub/oMenuElementSub.yy",},},
+    {"id":{"name":"oSaveSurfaceManager","path":"objects/oSaveSurfaceManager/oSaveSurfaceManager.yy",},},
     {"id":{"name":"oSceneTransition","path":"objects/oSceneTransition/oSceneTransition.yy",},},
     {"id":{"name":"oSplashScreenContoller","path":"objects/oSplashScreenContoller/oSplashScreenContoller.yy",},},
     {"id":{"name":"oTextLog","path":"objects/oTextLog/oTextLog.yy",},},

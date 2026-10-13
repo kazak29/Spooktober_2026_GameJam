@@ -1,4 +1,6 @@
 AmbientChange(AMBIENT_MUSIC, bgmMapTheme, 100, true, 2500, 1500);
+saveAuto = true;
+
 num = 0;
 mouseHover = false;
 

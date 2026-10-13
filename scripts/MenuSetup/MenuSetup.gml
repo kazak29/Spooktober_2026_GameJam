@@ -860,18 +860,26 @@ function MenuUpdateSave(_elemData){
 		}
 	}
 	
+	
+	//setup title
+	var _title = "";
+	if _elemData.arg[0] == 0 {
+		_title = "AUTOSAVE\n";
+		if (_scr == MenuGameSave) _elemData.locked = true;
+	}
+	
 	//reset title if no save file
 	if !is_struct(_data) {
 		if (_scr == MenuGameLoad) _elemData.locked = true;
 		
-		_elemData.title = _fileName;
+		_elemData.title = _title;
 		_setStr(_elemData);
 		
 		exit;
 	}
 	
 	//apply proper title
-	_elemData.title = string_concat(_data.dateTime, "\n", $"Chapter {_data.chapter+1}", "\n", _data.title);
+	_elemData.title = string_concat(_title, _data.dateTime, "\n", $"Chapter {_data.chapter+1}", "\n", _data.title);
 	_setStr(_elemData);
 	
 	//apply surface

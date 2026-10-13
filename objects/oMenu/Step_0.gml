@@ -93,8 +93,8 @@ if instance_exists(main.elemId) {
 				var _arg = _elemData[$"arg"] ?? noone;
 				if is_callable(_scr) _scr(_arg);
 				
-				//set a flag so menu saves a surface on draw event and updates button appearence
-				if (_scr == MenuGameSave) saveElemUpdating = _elemData;
+				//set a flag so a manager saves a surface on draw event and updates button appearence
+				if (_scr == MenuGameSave) oSaveSurfaceManager.saveElemUpdating = _elemData;
 				
 				_sfx = "click";
 			}

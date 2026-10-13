@@ -1,14 +1,3 @@
-//save element - surface saving and appearance update
-if is_struct(saveElemUpdating) {
-	var _data = saveElemUpdating;
-	var _fileName = SaveSurfGetName(_data.arg[0]);
-	
-	SaveSurface(_fileName);
-	MenuUpdateSave(_data);
-	
-	saveElemUpdating = noone;
-}
-
 if fade {
     draw_set_alpha(0.75);
     draw_rectangle_colour(0, 0, VIEWPORT_WIDTH, VIEWPORT_HEIGHT, c_black,c_black,c_black,c_black, false);
@@ -46,7 +35,7 @@ for (var i = 0; i < array_length(_elems); i++) {
 			
 			case MENU_ELEMENT_TYPE.SAVE_FILE: {
 				var _spr = _elems[i].surfSpr;
-				if sprite_exists(_spr) draw_sprite(_spr,0, bbox_left + 32, bbox_top + 16);
+				if sprite_exists(_spr) draw_sprite(_spr,0, bbox_left + 32, bbox_top + 16 - 1);
 			} break;
 			
 		}

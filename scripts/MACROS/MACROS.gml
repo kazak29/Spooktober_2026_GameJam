@@ -26,6 +26,7 @@
 	#macro MENU_ELEMENT_DEPTH	-9998
 	#macro MENU_DEPTH			-9997
 	#macro UI_BUTTON_DEPTH		-9996
+	#macro SAVE_DEPTH			-9995
 
 	#macro SYSTEM_LAYER     "System"
 	#macro BACKGROUND_LAYER "Background"

@@ -185,3 +185,8 @@ function SaveFileGetName(_num) {
 function SaveSurfGetName(_num) {
 	return $"save{_num}.thumbnail";
 }
+
+function SaveAuto(){
+	MenuGameSave([0]);
+	oSaveSurfaceManager.saveElemUpdating = 0;
+}
