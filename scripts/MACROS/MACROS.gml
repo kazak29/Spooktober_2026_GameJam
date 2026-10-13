@@ -117,3 +117,9 @@
 	#macro COL_MAP_HOVER_MOUSE			c_red
 	
 #endregion
+#region surface saving
+	
+	#macro SURF_SAVE_W VIEWPORT_WIDTH/4
+	#macro SURF_SAVE_H VIEWPORT_HEIGHT/4
+	
+#endregion
