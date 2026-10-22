@@ -32,7 +32,7 @@ testMap2,,map
 intro,,"scene_bg,sBackgroundShayHome"
 intro,,"music,bgmSpookTheme"
 intro,,"delay,2"
-intro,Spook,"This week, we moved into a new house with my family."
+intro,Spook,"This week, my family and I moved into a new house."
 intro,Spook,Everyone has been so busy unpacking...
 intro,Spook,Me?
 intro,,"trans_scene,introCage"
