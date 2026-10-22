@@ -87,9 +87,9 @@ introShayRoomDay,Shay,...And can I stay up late to watch the movie...?
 introShayRoomDay,Mom,[b]...Sigh.[/b] Yes. Yes you may.
 introShayRoomDay,Shay,"[wave]Okaaay.[/wave] Love you, mom."
 introShayRoomDay,Mom,"Love you too, pumpkin!"
-introShayRoomDay,,"char_in,Shay,sShay,2"
 introShayRoomDay,,"char_update,Spook,0"
 introShayRoomDay,Sound,"[b]SLAM[/b][sound,sfxDoorClose]"
+introShayRoomDay,,"char_in,Shay,sShay,2"
 introShayRoomDay,Shay,[wave]Uuuugh![/wave]
 introShayRoomDay,Shay,This is horrible!
 introShayRoomDay,Shay,How am I gonna spend an entire night with people I don't even know?!

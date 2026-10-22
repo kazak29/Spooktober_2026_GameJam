@@ -10,7 +10,7 @@
   "compression":1,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":76.82542,
+  "duration":80.46086,
   "exportDir":"",
   "name":"bgmSuspense2",
   "parent":{

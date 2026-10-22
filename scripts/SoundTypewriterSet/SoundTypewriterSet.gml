@@ -36,7 +36,7 @@ global.dataTypewriterSfx = {
 		overlap:	30,
 	},
 	Pogo: {
-		ids:		[sfxTypewriterSpook],
+		ids:		[sfxTypewriterPogo],
 		vol:		100,
 		pitchMin:	0.8,
 		pitchMax:	0.8,
