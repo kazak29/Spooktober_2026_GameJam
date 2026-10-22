@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.1718821,
+  "duration":0.25,
   "exportDir":"",
   "name":"sfxTypewriterScrewdriver",
   "parent":{

@@ -32,9 +32,9 @@ testMap2,,map
 intro,,"scene_bg,sBackgroundShayHome"
 intro,,"music,bgmSpookTheme"
 intro,,"delay,2"
-intro,Spook,"This week, my family and I moved into a new house."
-intro,Spook,Everyone has been so busy unpacking...
-intro,Spook,Me?
+intro,NarratorSpook,"This week, my family and I moved into a new house."
+intro,NarratorSpook,Everyone has been so busy unpacking...
+intro,NarratorSpook,Me?
 intro,,"trans_scene,introCage"
 ,,
 introCage,,"scene_bg,sBackgroundCageNightSpook"
@@ -47,13 +47,14 @@ introCage,,"trans_scene,introShay"
 ,,
 introShay,,"scene_bg_clear,sBackgroundBlack"
 introShay,,"char_in,Shay,sShay,0"
-introShay,,"main_char_in,0"
 introShay,,"delay,1"
+introShay,,"main_char_in,0"
 introShay,Spook,And this is Shay! My human and my best friend! 
 introShay,Spook,She seems to be nervous about the new school and everything.
 introShay,,"trans_scene,introShaysHand"
 ,,
 introShaysHand,,"scene_bg_clear,sBackgroundSpookInShaysHand"
+introShaysHand,,"delay,2"
 introShaysHand,Spook,But I am here to make her feel better!
 introShaysHand,Spook,"Me and my human don't have many other friends- and, well, we don't need 'em!"
 introShaysHand,,"trans_scene,introCalendar"
@@ -88,7 +89,8 @@ introShayRoomDay,Shay,"[wave]Okaaay.[/wave] Love you, mom."
 introShayRoomDay,Mom,"Love you too, pumpkin!"
 introShayRoomDay,,"char_in,Shay,sShay,2"
 introShayRoomDay,,"char_update,Spook,0"
-introShayRoomDay,Shay,"[sound,sfxDoorClose][wave]Uuuugh![/wave]"
+introShayRoomDay,Sound,"[b]SLAM[/b][sound,sfxDoorClose]"
+introShayRoomDay,Shay,[wave]Uuuugh![/wave]
 introShayRoomDay,Shay,This is horrible!
 introShayRoomDay,Shay,How am I gonna spend an entire night with people I don't even know?!
 introShayRoomDay,Shay,This is gonna be a disaster!
@@ -100,6 +102,7 @@ introShayRoomDay,,"char_update,Shay,0"
 introShayRoomDay,Shay,"You're right, Spook!"
 introShayRoomDay,Shay,It's Halloween! It's going to be awesome whether they like me or not!
 introShayRoomDay,Shay,And we'll have some candy for our movie too! Isn't that awesome?!
+introShayRoomDay,,"char_update,Spook,9"
 introShayRoomDay,Spook,Squeak!
 introShayRoomDay,Shay,"Well said, boy!"
 introShayRoomDay,,"music,noone"
@@ -108,6 +111,8 @@ introShayRoomDay,,"trans_scene,introShayRoomNight"
 introShayRoomNight,,"scene_bg_clear,sBackgroundShayRoomNight"
 introShayRoomNight,Empty,"October 30th, Night"
 introShayRoomNight,,"music,bgmSuspense"
+introShayRoomNight,,"delay,1"
+introShayRoomNight,Sound,"[b]THUD[/b][sound,sfxLoudThud]"
 introShayRoomNight,,"main_char_in,6"
 introShayRoomNight,Spook,Squeak?
 introShayRoomNight,???,"Pssst, kid"
@@ -154,9 +159,9 @@ introShayRoomNight,???,"The veil [wave]thins,[/wave] the night is [wave]alive,[/
 introShayRoomNight,,"char_update,Spook,5"
 introShayRoomNight,Spook,There's a [shake]HALLOWEEN PARTY?![/shake]
 introShayRoomNight,???,"[wave]Ooooh,[/wave] that got your attention?"
-introShayRoomNight,???,"Indeed we do, friend. Indeed we do."
+introShayRoomNight,???,"Indeed there is, friend. Indeed there is..."
 introShayRoomNight,???,Come with me.
-introShayRoomNight,,"char_update,Spook,0"
+introShayRoomNight,,"char_update,Spook,11"
 introShayRoomNight,Spook,But if Shay wakes up...
 introShayRoomNight,???,Then she will find you in the morning!
 introShayRoomNight,???,"Live a little, friend! C'mon!"
@@ -164,23 +169,26 @@ introShayRoomNight,Spook,"...Yeah, okay."
 introShayRoomNight,,"trans_scene,introCageOpen"
 ,,
 introCageOpen,,"scene_bg_clear,sBackgroundBlack"
+introCageOpen,,"music,noone"
 introCageOpen,???,"[sound,sfxCageOpen][wave]Yeaaah![/wave] Now we're talkin'."
 introCageOpen,,"trans_scene,introScrewdriver"
 ,,
 introScrewdriver,,"scene_bg_clear,sBackgroundCageNight"
 introScrewdriver,,"music,bgmStrayRatStrut"
-introScrewdriver,,"delay,0.5"
 introScrewdriver,,"main_char_in,0"
 introScrewdriver,,"delay,0.5"
 introScrewdriver,,"char_in,Screwdriver,sScrewdriver,2"
+introScrewdriver,,"delay,1"
 introScrewdriver,Screwdriver,I'm Screw. Screwdriver.
 introScrewdriver,Spook,Uh... I'm Spook.
 introScrewdriver,,"char_update,Screwdriver,1"
 introScrewdriver,Screwdriver,Wow! So are you [wave]spooky[/wave] then?
+introScrewdriver,,"char_update,Spook,6"
 introScrewdriver,Spook,Ugh... dunno. Are you a screwdriver?
 introScrewdriver,,"char_update,Screwdriver,0"
 introScrewdriver,Screwdriver,"Fair point, fair point."
-introScrewdriver,Spook,...Let's just go before we wake up Shay!
+introScrewdriver,,"char_update,Spook,11"
+introScrewdriver,Spook,...Let's just go before we wake up Shay.
 introScrewdriver,,"music,noone"
 introScrewdriver,,"trans_scene,introBar"
 ,,
@@ -189,17 +197,21 @@ introBar,,"music,bgmBarPunk"
 introBar,,"main_char_in,0"
 introBar,,"char_in,Screwdriver,sScrewdriver,2"
 introBar,Screwdriver,Welcome to our little club!
-introBar,Screwdriver,"Folks, I got fresh blood!"
+introBar,Screwdriver,"Folks, we got fresh blood!"
 introBar,,"char_in,Pogo,sPogo,2"
 introBar,Pogo,Yummy.
 introBar,,"char_update,Spook,8"
 introBar,Spook,[shake]Eeeeeeek!!!!!!!!![/shake]
 introBar,,"char_update,Pogo,0"
 introBar,Pogo,"He-he, fear not little one! I don't bite!"
+introBar,,"char_update,Pogo,7"
 introBar,Pogo,...[wave]Almost[/wave] never!
-introBar,,"char_in,Barry,sBarry,1"
-introBar,Barry,"Don't mess with the kid, Pogo!"
+introBar,,"char_in,Barry,sBarry,3"
+introBar,Barry,"Don't mess with the kid, Pogo..."
+introBar,,"char_update,Pogo,0"
+introBar,,"char_update,Barry,4"
 introBar,Barry,"Don't worry, she's harmless as a fly!"
+introBar,,"char_update,Barry,1"
 introBar,Barry,"I am Barry, the bartender. Pleasure."
 introBar,,"char_update,Spook,0"
 introBar,,"char_out,Pogo"
