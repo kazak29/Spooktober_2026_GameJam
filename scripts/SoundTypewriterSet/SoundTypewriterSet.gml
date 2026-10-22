@@ -6,6 +6,13 @@ global.dataTypewriterSfx = {
 		pitchMax:	1,
 		overlap:	0,
 	},
+	Sound: {
+		ids:		[],
+		vol:		100,
+		pitchMin:	1.0,
+		pitchMax:	1.0,
+		overlap:	20,
+	},
 	Spook: {
 		ids:		[sfxTypewriterSpook],
 		vol:		100,
@@ -13,26 +20,34 @@ global.dataTypewriterSfx = {
 		pitchMax:	1.2,
 		overlap:	20,
 	},
-	Screwdriver: {
+	NarratorSpook: {
 		ids:		[sfxTypewriterSpook],
 		vol:		100,
-		pitchMin:	0.8,
-		pitchMax:	0.8,
+		pitchMin:	1.2,
+		pitchMax:	1.2,
 		overlap:	20,
+	
+	},
+	Screwdriver: {
+		ids:		[sfxTypewriterScrewdriver],
+		vol:		100,
+		pitchMin:	1.0,
+		pitchMax:	1.0,
+		overlap:	30,
 	},
 	Pogo: {
-		ids:		[sfxTypewriterSpook],
+		ids:		[sfxTypewriterPogo],
 		vol:		100,
 		pitchMin:	0.8,
 		pitchMax:	0.8,
 		overlap:	20,
 	},
 	Barry: {
-		ids:		[sfxTypewriterSpook],
+		ids:		[sfxTypewriterBarry],
 		vol:		100,
-		pitchMin:	0.6,
-		pitchMax:	0.6,
-		overlap:	10,
+		pitchMin:	1.0,
+		pitchMax:	1.0,
+		overlap:	20,
 	},
 	Moth: {
 		ids:		[sfxTypewriterSpook],

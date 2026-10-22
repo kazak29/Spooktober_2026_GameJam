@@ -39,8 +39,8 @@ menuSaveDummy,SAVE
 menuLoadDummy,LOAD
 menuChapter,Chapter
 menuAuto,AUTOSAVE
-buttonSettings,SETTINGS
-buttonTextlog,TEXT LOG
+buttonSettings,MENU
+buttonTextlog,LOG
 saveMap,Map
 ,
 mapHome,Home

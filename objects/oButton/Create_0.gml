@@ -6,7 +6,7 @@ hoverResetCd = 0;
 
 switch scr {
 	case uiButtonPause: {
-		title = $"{title}\n[[ESCAPE/START]";
+		title = $"{title}\n[[ESC/START]";
 	} break;
 	case uiButtonTextLog: {
 		title = $"{title}\n[[ENTER/SELECT]";

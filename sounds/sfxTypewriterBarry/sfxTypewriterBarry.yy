@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.12501134,
+  "duration":0.49,
   "exportDir":"",
   "name":"sfxTypewriterBarry",
   "parent":{

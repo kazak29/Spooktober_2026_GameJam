@@ -97,7 +97,7 @@ function DrawCharacterPortraits ()
         var _char = stageCharacters[_i];
         if (_char.alpha > 0 && sprite_exists(_char.sprite))
         {
-            var _drawY = _guiH + _char.yOffset;
+            var _drawY = _guiH + _char.yOffset + CHARACTER_Y_OFFSET;
             draw_sprite_ext(_char.sprite, _char.expressionFrame, _char.xPosition, _drawY, 1, 1, 0, _char.blend, _char.alpha);
         }
     }
