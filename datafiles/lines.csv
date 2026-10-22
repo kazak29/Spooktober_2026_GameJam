@@ -1408,13 +1408,14 @@ p1Lamp1,Empty,A bright light flickers rapidly. The moth from the bar is glaring 
 p1Lamp1,,"trans_change,false,sBackgroundLampPostNight"
 p1Lamp1,,"char_in,Möth,sMoth,0"
 p1Lamp1,Möth,My sweet... My love...
+p1Lamp1,,"char_update,Spook,6"
 p1Lamp1,Spook,Um... Hello?
 p1Lamp1,Möth,You see my lover? She is excited to see me.
 p1Lamp1,,"choice,p1Lamp1ThatsALamp,p1Lamp1Beautiful"
 p1Lamp1,,"scene_set,p1Lamp1ThatsALamp"
 p1Lamp1,,"scene_set,p1Lamp1Beautiful"
 ,,
-p1Lamp1ThatsALamp,Möth,[shake]Watch your mouth![/shake]
+p1Lamp1ThatsALamp,Möth,[shake]Watch your mouth...[/shake]
 p1Lamp1ThatsALamp,Möth,"You want to be smart when speaking of the lamp, little mouse."
 p1Lamp1ThatsALamp,,"music,noone"
 p1Lamp1ThatsALamp,,"delay,3"
@@ -1429,7 +1430,7 @@ p1Lamp1ThatsALamp,Möth,The bright light that mortals are drawn to before death?
 p1Lamp1ThatsALamp,Möth,...
 p1Lamp1ThatsALamp,Möth,"That's the lamp, little mouse."
 p1Lamp1ThatsALamp,Möth,The lamp will one day reap your soul.
-p1Lamp1ThatsALamp,Möth,...And
+p1Lamp1ThatsALamp,Möth,...and
 p1Lamp1ThatsALamp,Möth,When that day comes?
 p1Lamp1ThatsALamp,Möth,You are going to wish you respected the lamp some more.
 p1Lamp1ThatsALamp,,"delay,3"
@@ -1479,10 +1480,10 @@ p1Lamp2,,"music,bgmLompTheme"
 p1Lamp2,,"main_char_in,0"
 p1Lamp2,Möth,My love...
 p1Lamp2,Spook,Uh...
+p1Lamp2,,"char_update,Spook,7"
 p1Lamp2,Spook,I should just go...
 p1Lamp2,,"music,noone"
 p1Lamp2,,map
-,,
 ,,
 ,,
 ,,
