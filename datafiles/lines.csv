@@ -110,7 +110,7 @@ introShayRoomDay,,"trans_scene,introShayRoomNight"
 ,,
 introShayRoomNight,,"scene_bg_clear,sBackgroundShayRoomNight"
 introShayRoomNight,Empty,"October 30th, Night"
-introShayRoomNight,,"music,bgmSuspense"
+introShayRoomNight,,"music,bgmSuspense2"
 introShayRoomNight,,"delay,1"
 introShayRoomNight,Sound,"[b]THUD[/b][sound,sfxLoudThud]"
 introShayRoomNight,,"main_char_in,6"
