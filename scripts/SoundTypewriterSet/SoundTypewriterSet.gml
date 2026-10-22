@@ -43,11 +43,11 @@ global.dataTypewriterSfx = {
 		overlap:	20,
 	},
 	Barry: {
-		ids:		[sfxTypewriterSpook],
+		ids:		[sfxTypewriterBarry],
 		vol:		100,
-		pitchMin:	0.6,
-		pitchMax:	0.6,
-		overlap:	10,
+		pitchMin:	1.0,
+		pitchMax:	1.0,
+		overlap:	20,
 	},
 	Moth: {
 		ids:		[sfxTypewriterSpook],

@@ -250,7 +250,7 @@ introBar,,"char_out,Pogo"
 introBar,,"char_in,Möth,sMoth,0"
 introBar,Möth,Must return to my lover...
 introBar,,"char_out,Möth"
-introBar,,"char_in,Barry,sBarry,0"
+introBar,,"char_in,Barry,sBarry,3"
 introBar,Barry,...
 introBar,,"char_update,Barry,1"
 introBar,Barry,"Go on, friend. I'll be here if you need anything."
