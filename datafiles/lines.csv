@@ -1097,15 +1097,15 @@ p1StreetQuestionsBarAsked,Pogo,Very well. Listen closely!
 p1StreetQuestionsBarAsked,,"scene_set,p1StreetQuestionsBar"
 ,,
 p1StreetQuestionsBar,,"char_update,Pogo,1"
-p1StreetQuestionsBar,Pogo,"Oh, the good old Barry's!"
+p1StreetQuestionsBar,Pogo,Good old Barry's!
 p1StreetQuestionsBar,,"char_update,Pogo,0"
 p1StreetQuestionsBar,Pogo,"When I was just a pup, I met Barry in the woods! Neither of us had much going on back then."
 p1StreetQuestionsBar,Pogo,"But, well- Barry and Drivey are old friends."
-p1StreetQuestionsBar,Pogo,"They taught me how I can loot trash cans, all the good spots in town..."
+p1StreetQuestionsBar,Pogo,"They taught me how to loot trash cans, all the good spots in town..."
 p1StreetQuestionsBar,,"char_update,Pogo,6"
-p1StreetQuestionsBar,Pogo,We used to just light fires and make-up stories under that sewer back then!
+p1StreetQuestionsBar,Pogo,We used to just light fires and make up stories in that sewer back then!
 p1StreetQuestionsBar,,"char_update,Pogo,0"
-p1StreetQuestionsBar,Pogo,Soon the other strays joined us- and we carried what we collected over to years under the sewer.
+p1StreetQuestionsBar,Pogo,"Soon the other strays joined us, and we carried in what we collected over the years."
 p1StreetQuestionsBar,,"char_update,Pogo,1"
 p1StreetQuestionsBar,Pogo,It was a safe haven for every unloved animal!
 p1StreetQuestionsBar,Pogo,"And well, soon we had drinks, music, new friends..."
@@ -1124,31 +1124,34 @@ p1StreetQuestionsBarPets,Pogo,"Oh, sweetie. We had other pets who joined us at n
 p1StreetQuestionsBarPets,Spook,Did they stop? What happened?
 p1StreetQuestionsBarPets,,"char_update,Pogo,5"
 p1StreetQuestionsBarPets,Pogo,It's... a long story.
-p1StreetQuestionsBarPets,,"char_update,Pogo,0"
-p1StreetQuestionsBarPets,Pogo,"And it's not for me to tell, either way."
-p1StreetQuestionsBarPets,,"char_update,Spook,0"
+p1StreetQuestionsBarPets,Pogo,"And it's not for me to tell, either..."
+p1StreetQuestionsBarPets,,"char_update,Spook,11"
 p1StreetQuestionsBarPets,Spook,Aw...
+p1StreetQuestionsBarPets,,"char_update,Pogo,1"
 p1StreetQuestionsBarPets,Pogo,"Don't worry, just keep hanging around the bar. You'll find out, eventually."
+p1StreetQuestionsBarPets,,"char_update,Spook,0"
+p1StreetQuestionsBarPets,Pogo,"For now, go out! Explore! I'll be here just flying around."
 p1StreetQuestionsBarPets,,map
 ,,
 p1StreetQuestionsBarUnloved,,"flag_set,streetQuestionBar,true"
 p1StreetQuestionsBarUnloved,Spook,"What do you mean ""unloved animals""?"
-p1StreetQuestionsBarUnloved,Pogo,"Oh, you know. Humans are evolved to fear some of us. "
-p1StreetQuestionsBarUnloved,Pogo,"Of course, we are evolved to fear each other as well."
-p1StreetQuestionsBarUnloved,Pogo,But while we were able to put that to the side and build a community...
+p1StreetQuestionsBarUnloved,Pogo,"Oh, you know. Humans tend to fear some of us. "
+p1StreetQuestionsBarUnloved,Pogo,"Of course, sometimes we fear each other as well."
+p1StreetQuestionsBarUnloved,Pogo,But while we were able to put that aside and build a community...
 p1StreetQuestionsBarUnloved,Pogo,Humans are most likely always going to be judgemental of creatures like us!
 p1StreetQuestionsBarUnloved,,"char_update,Spook,5"
 p1StreetQuestionsBarUnloved,Spook,Shay isn't judgemental!
 p1StreetQuestionsBarUnloved,,"char_update,Pogo,7"
-p1StreetQuestionsBarUnloved,Pogo,Really? Would she let me into her house?
-p1StreetQuestionsBarUnloved,Spook,"Yeah! Shay loves bats! She never kills bugs, too!"
+p1StreetQuestionsBarUnloved,Pogo,Really? Would she let me into your house?
+p1StreetQuestionsBarUnloved,,"char_update,Spook,9"
+p1StreetQuestionsBarUnloved,Spook,Yeah! Shay loves bats! She never kills bugs either!
 p1StreetQuestionsBarUnloved,,"char_update,Pogo,6"
 p1StreetQuestionsBarUnloved,Pogo,"Oh my. You got a special human, don't you? What a lucky mouse!"
-p1StreetQuestionsBarUnloved,,"char_update,Spook,9"
 p1StreetQuestionsBarUnloved,Spook,[wave]Mhm![/wave] Shay's the best!
+p1StreetQuestionsBarUnloved,,"char_update,Pogo,1"
+p1StreetQuestionsBarUnloved,Pogo,"Well that's lovely, perhaps another time."
+p1StreetQuestionsBarUnloved,Pogo,I'm going to fly around and stretch my wings a bit. Until next time!
 p1StreetQuestionsBarUnloved,,map
-,,
-,,
 ,,
 p1Yard1,,"map_scene,yard,p1Yard2"
 p1Yard1,,"flag_set,metHamster,true"
