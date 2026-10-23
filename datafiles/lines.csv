@@ -757,7 +757,7 @@ p1Street1,,"scene_set,p1Street1LostNo"
 p1Street1,,"scene_set,p1Street1LostAll"
 ,,
 p1Street1LostYes,,"char_update,Pogo,0"
-p1Street1LostYes,Pogo,"Big world, is it not? The sky is even bigger!"
+p1Street1LostYes,Pogo,"Big world, isn't it? The sky is even bigger!"
 p1Street1LostYes,Pogo,"Don't you wish you could fly, too?"
 p1Street1LostYes,,"choice,p1Street1Scary,p1Street1KindOf"
 p1Street1LostYes,,"scene_set,p1Street1Scary"
@@ -765,9 +765,10 @@ p1Street1LostYes,,"scene_set,p1Street1KindOf"
 ,,
 p1Street1Scary,Pogo,The best things in life often are!
 p1Street1Scary,,"char_update,Pogo,1"
-p1Street1Scary,Pogo,"How are you ever going to learn what could it be like, if you never spread your wings?"
-p1Street1Scary,Spook,But... I have no wings...
-p1Street1Scary,,"char_update,Pogo,0"
+p1Street1Scary,Pogo,But... how are you ever going to learn what life could like if you never spread your wings?
+p1Street1Scary,,"char_update,Spook,11"
+p1Street1Scary,Spook,I don't have wings...
+p1Street1Scary,,"char_update,Pogo,7"
 p1Street1Scary,Pogo,"That doesn't stop humans, does it?"
 p1Street1Scary,,"char_update,Spook,6"
 p1Street1Scary,Spook,I... guess?
@@ -776,7 +777,7 @@ p1Street1Scary,Pogo,Let me know if you ever want a ride!
 p1Street1Scary,,"scene_set,p1StreetQuestions"
 ,,
 p1Street1KindOf,,"char_update,Pogo,1"
-p1Street1KindOf,Pogo,"He-he! I could take you on a ride, if you wanted to."
+p1Street1KindOf,Pogo,"He-he! I could take you on a ride, if you wanted."
 p1Street1KindOf,,"char_update,Pogo,6"
 p1Street1KindOf,Pogo,The city lights are beautiful from above...
 p1Street1KindOf,,"char_update,Pogo,7"
@@ -787,17 +788,17 @@ p1Street1KindOf,,"char_update,Pogo,8"
 p1Street1KindOf,Pogo,Hehe...
 p1Street1KindOf,,"scene_set,p1StreetQuestions"
 ,,
-,,
 p1Street1LostNo,,"char_update,Pogo,8"
 p1Street1LostNo,Pogo,"[wave]Oooh,[/wave] you know your streets, hm?"
 p1Street1LostNo,Pogo,Wonderful! Wonderful!
 p1Street1LostNo,,"char_update,Pogo,1"
 p1Street1LostNo,Pogo,Though there is no shame in being lost!
-p1Street1LostNo,Spook,But I am not!
+p1Street1LostNo,,"char_update,Spook,6"
+p1Street1LostNo,Spook,But I'm not...?
 p1Street1LostNo,Pogo,"Very well, very well."
 p1Street1LostNo,Pogo,"Where to next, then?"
-p1Street1LostNo,,"char_update,Spook,5"
-p1Street1LostNo,Spook,...Somewhere.
+p1Street1LostNo,,"char_update,Spook,11"
+p1Street1LostNo,Spook,"I'm not sure... Somewhere, I guess."
 p1Street1LostNo,,"char_update,Pogo,8"
 p1Street1LostNo,Pogo,That's where I am going! [wave]Hihihi...[/wave]
 p1Street1LostNo,,"scene_set,p1StreetQuestions"
@@ -806,8 +807,8 @@ p1Street1LostNo,,"scene_set,p1StreetQuestions"
 p1Street1LostAll,,"char_update,Pogo,1"
 p1Street1LostAll,Pogo,"[wave]Wowzie,[/wave] okay, Chesire cat!"
 p1Street1LostAll,,"char_update,Spook,5"
-p1Street1LostAll,Spook,You've read Alice??
-p1Street1LostAll,Pogo,"Mmm, yes-yes. A classic truly. Up there with Poe in my favorite book-list!"
+p1Street1LostAll,Spook,You've read Alice?
+p1Street1LostAll,Pogo,"Mmm, yes-yes. A classic, truly. Up there with Poe in my list of favorite books!"
 p1Street1LostAll,,"choice,p1Street1Read,p1Street1Books"
 p1Street1LostAll,,"scene_set,p1Street1Read"
 p1Street1LostAll,,"scene_set,p1Street1Books"
@@ -835,10 +836,11 @@ p1Street1ReadTaught,Pogo,And this other friend.
 p1Street1ReadTaught,,"char_update,Pogo,0"
 p1Street1ReadTaught,Pogo,We used to write lyrics to songs together.
 p1Street1ReadTaught,Pogo,They definitely sounded better once we knew about letters. Heheh!
-p1Street1ReadTaught,,"char_update,Spook,5"
-p1Street1ReadTaught,Spook,You were in a band!?
+p1Street1ReadTaught,,"char_update,Spook,6"
+p1Street1ReadTaught,Spook,You were in a band?
 p1Street1ReadTaught,Pogo,[wave]Ssssh![/wave] It's top secret!
-p1Street1ReadTaught,Pogo,Now I am just a gal who loves books.
+p1Street1ReadTaught,,"char_update,Spook,0"
+p1Street1ReadTaught,Pogo,Now I'm just a gal who loves books.
 p1Street1ReadTaught,Spook,My human reads to me sometimes!
 p1Street1ReadTaught,,"char_update,Pogo,1"
 p1Street1ReadTaught,Pogo,"Ooh, how sweet."
@@ -856,7 +858,7 @@ p1Street1HuntingFunny,,"delay,0.15"
 p1Street1HuntingFunny,Pogo,[wave]But it is...[/wave]
 p1Street1HuntingFunny,,"char_update,Spook,4"
 p1Street1HuntingFunny,Spook,Stop it!
-p1Street1HuntingFunny,Pogo,"Heh. I'll leave you be, little one."
+p1Street1HuntingFunny,Pogo,"Heh. I'll leave you be, little one. Off with you then, until next time!"
 p1Street1HuntingFunny,,map
 ,,
 ,,
@@ -878,11 +880,11 @@ p1Street1Genre,,"scene_set,p1Street1Scifi"
 p1Street1Horror,,"map_scene,street,p1Street2Horror"
 p1Street1Horror,,"flag_set,streetGenreHorror,true"
 p1Street1Horror,,"char_update,Pogo,6"
-p1Street1Horror,Pogo,"Ooh, we will just be besties!!! [wave]How exciting!!![/wave]"
+p1Street1Horror,Pogo,"Ooh, then we will be besties!!! [wave]How exciting!!![/wave]"
 p1Street1Horror,Pogo,"Y'know, we could read some books together!"
 p1Street1Horror,Pogo,You wouldn't believe how many of them people throw away or just leave behind!
 p1Street1Horror,Pogo,Barry has a whole library at this point!
-p1Street1Horror,,"char_update,Spook,5"
+p1Street1Horror,,"char_update,Spook,9"
 p1Street1Horror,Spook,Wow!
 p1Street1Horror,,"char_update,Pogo,0"
 p1Street1Horror,Pogo,"Well then, don't let me keep you. The night is young."
@@ -894,15 +896,15 @@ p1Street1Fairy,Pogo,[wave]Aww![/wave]
 p1Street1Fairy,,"char_update,Pogo,8"
 p1Street1Fairy,Pogo,"Y'know, most fairytales hide darker stories behind them..."
 p1Street1Fairy,,"char_update,Pogo,0"
-p1Street1Fairy,Pogo,Think of the little red! A stranger followed the little girl home.
-p1Street1Fairy,Pogo,He found her grandma because of her. 
+p1Street1Fairy,Pogo,Think of Little Red... A stranger followed her home.
+p1Street1Fairy,Pogo,He found her grandmother because of her. 
 p1Street1Fairy,,"char_update,Pogo,1"
 p1Street1Fairy,Pogo,[shake]Ate her alive![/shake]
 p1Street1Fairy,,"char_update,Spook,8"
 p1Street1Fairy,Pogo,No one thinks about the part where the sick old lady screamed and cried out in terror!
 p1Street1Fairy,,"char_update,Pogo,8"
-p1Street1Fairy,Pogo,And that wolf? How big that mouth had to open? How many teeth did he have? [shake]That was no wolf.[/shake]
-p1Street1Fairy,Pogo,Everyone who lived long enough in a forest knows that shadows lurk out there! 
+p1Street1Fairy,Pogo,And that wolf? How big that mouth had to open? How many teeth he had? [shake]That was no wolf.[/shake]
+p1Street1Fairy,Pogo,Anyone who has lived long enough in a forest knows that shadows lurk out there! 
 p1Street1Fairy,Pogo,"[shake]Way worse[/shake] things than wolves! [shake]Way worse, truly...[/shake]"
 p1Street1Fairy,Spook,...
 p1Street1Fairy,,"delay,1"
@@ -912,13 +914,14 @@ p1Street1Fairy,Pogo,"Go at ease, little one."
 p1Street1Fairy,,map
 ,,
 p1Street1Romance,,"char_update,Pogo,6"
-p1Street1Romance,Pogo,[wave]Oooo![/wave] You like a good story?
+p1Street1Romance,Pogo,[wave]Oooo![/wave] You like a good love story?
 p1Street1Romance,,"char_update,Pogo,1"
 p1Street1Romance,Pogo,"Me too! From time to time, I suppose."
-p1Street1Romance,Pogo,Me and Drivey sometimes read trashy romance for fun! 
+p1Street1Romance,Pogo,Drivey and I sometimes read trashy romance for fun! 
 p1Street1Romance,Pogo,"But more often than not, I get carried away and end up actually caring about the story..."
-p1Street1Romance,,"char_update,Pogo,0"
+p1Street1Romance,,"char_update,Pogo,8"
 p1Street1Romance,Pogo,Don't tell Drivey that! 
+p1Street1Romance,Pogo,"Anyways, I've said too much. Away with you! You still have much to see!"
 p1Street1Romance,,map
 ,,
 p1Street1Scifi,,"map_scene,street,p1Street2Scifi"
@@ -927,8 +930,8 @@ p1Street1Scifi,,"char_update,Pogo,1"
 p1Street1Scifi,Pogo,"Ooh, little space mouse! Hehe!"
 p1Street1Scifi,Pogo,"Doesn't everything feel like a sci-fi novel, when you think about it? "
 p1Street1Scifi,,"char_update,Pogo,0"
-p1Street1Scifi,Pogo,"I mean, humans get all excited, because, oh my god- a flying object we can't identify!"
-p1Street1Scifi,Pogo,What [shake]IF[/shake] we could shoot lasers from guns!?
+p1Street1Scifi,Pogo,"I mean, humans get all excited, because ""Oh my gosh- a flying object we can't identify!"""
+p1Street1Scifi,Pogo,What [shake]IF[/shake] we could shoot lasers from guns?!
 p1Street1Scifi,,"char_update,Pogo,4"
 p1Street1Scifi,Pogo,"...Then again, everything they made seems equally impossible."
 p1Street1Scifi,Pogo,I just don't get why a car isn't as exciting as a spaceship. Different metal? It can [shake]FLY[/shake]? So what? Heh.
@@ -937,8 +940,8 @@ p1Street1Scifi,Spook,...
 p1Street1Scifi,,"char_update,Pogo,0"
 p1Street1Scifi,Pogo,"Sorry, sorry!"
 p1Street1Scifi,Pogo,"I just don't understand some things about humans, I s'pose..."
+p1Street1Scifi,Pogo,"Anyways, why don't you go exploring some more? Off with you, until next time!"
 p1Street1Scifi,,map
-,,
 ,,
 p1Street2Other,,"scene_bg_clear,sBackgroundStreetNight"
 p1Street2Other,,"music,bgmStreet"
@@ -958,9 +961,14 @@ p1Street2Scifi,,"scene_bg_clear,sBackgroundStreetNight"
 p1Street2Scifi,,"music,bgmStreet"
 p1Street2Scifi,,"main_char_in,0"
 p1Street2Scifi,,"char_in,Pogo,sPogo,1"
-p1Street2Scifi,Pogo,"""The day after tomorrow, we are leaving for sure, Candide!"""
+p1Street2Scifi,Pogo,"""We are leaving the day after tomorrow. For sure, the day after tomorrow."""
+p1Street2Scifi,,"char_update,Pogo,5"
+p1Street2Scifi,Pogo,...
+p1Street2Scifi,Pogo,"For sure, we are leaving the day after tomorrow, Candide..."
+p1Street2Scifi,,"char_update,Pogo,0"
+p1Street2Scifi,Pogo,?
+p1Street2Scifi,Pogo,"Oh, it's you."
 p1Street2Scifi,,"scene_set,p1StreetQuestions"
-,,
 ,,
 p1StreetQuestions,,"char_update,Spook,0"
 p1StreetQuestions,Spook,So...
