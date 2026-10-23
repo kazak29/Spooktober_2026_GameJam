@@ -1322,7 +1322,7 @@ p1Front1,,"scene_set,p1Front1Default"
 p1Front1Default,,"map_scene,front,p1Front2"
 p1Front1Default,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
 p1Front1Default,,"music,bgmHouseAcross"
-p1Front1Default,,"main_char_in,0"
+p1Front1Default,,"main_char_in,5"
 p1Front1Default,Spook,Whoa! What a large house!
 p1Front1Default,???,"[tw_sfx,Empty][b]Snorrrrrr[/b]"
 p1Front1Default,,"char_in,Giant Rabbit,sDipper,0"
@@ -1344,7 +1344,7 @@ p1Front1DefaultPoke,,"scene_set,p1Front1DefaultAnother"
 p1Front1DefaultAnother,,main_char_out
 p1Front1DefaultAnother,,"char_out,Giant Rabbit"
 p1Front1DefaultAnother,Empty,"You try every window you can climb to, but the house seems heavily guarded!"
-p1Front1DefaultAnother,Empty,"Maybe try again during the day, when the rabbit is awake."
+p1Front1DefaultAnother,Spook,Maybe I should come back during the day.
 p1Front1DefaultAnother,,map
 ,,
 ,,
