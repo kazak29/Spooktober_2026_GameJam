@@ -1160,7 +1160,7 @@ p1Yard1,,"music,bgmHouseAcross"
 p1Yard1,Empty,The air smells like cinnamon and apple pie. Autumn leaves drift by.
 p1Yard1,Empty,...
 p1Yard1,Empty,"The wind howls, suddenly colder. "
-p1Yard1,,"main_char_in,0"
+p1Yard1,,"main_char_in,8"
 p1Yard1,Spook,[shake]Brrr!!![/shake]
 p1Yard1,???,"[tw_sfx,Hamster]Visitor! Small one! Approach!"
 p1Yard1,,"char_update,Spook,6"
@@ -1288,7 +1288,7 @@ p1Yard1Lucky,Hamster,You don't even have cheek pockets!
 p1Yard1Lucky,,"char_update,Spook,1"
 p1Yard1Lucky,Spook,Don't need em!
 p1Yard1Lucky,,"char_update,Spook,2"
-p1Yard1Lucky,Spook,"It's disgusting to carry food like that, okay!?"
+p1Yard1Lucky,Spook,It's disgusting to carry food like that!
 p1Yard1Lucky,,"char_update,Hamster,6"
 p1Yard1Lucky,,"music,noone"
 p1Yard1Lucky,Hamster,"[sound,sfxLightning][shake]CURSES ON YOU!!!! CURSES ON YOUR CHEESE, YOUR BURROWS, THE LAND OF YOUR OWNERS! CURSES!!![shake]"
@@ -1301,7 +1301,7 @@ p1Yard1Sorry,,"char_update,Spook,7"
 p1Yard1Sorry,Spook,Uh... Sooo...
 p1Yard1Sorry,,"char_update,Spook,0"
 p1Yard1Sorry,Spook,Are you gonna join the Halloween party?
-p1Yard1Sorry,,"char_update,Hamster,5"
+p1Yard1Sorry,,"char_update,Hamster,3"
 p1Yard1Sorry,Hamster,Is... Is it... [wave]HALLOW'S EVE?![/wave]
 p1Yard1Sorry,Spook,Mhm...
 p1Yard1Sorry,,"char_update,Hamster,1"
