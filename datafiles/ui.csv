@@ -110,12 +110,12 @@ p1Yard1Lucky,You'd be lucky to be called a mouse!
 p1Yard1Sorry,Sorry about that.
 ,
 p1Yard1Where,Do you not know where you are...?
-p1Yard1Outside,Yes. this is outside. Very much.
-p1Yard1Cage,Why aren't you in a cage anyways?
+p1Yard1Outside,"Yes, this is outside."
+p1Yard1Cage,"Why aren't you in a cage, anyway?"
 ,
 p1Yard1LiveCage,Do you live in a cage then..?
 p1Yard1Ball,But... shouldn't you be inside a hamster ball...?
-p1Yard1Enclosure,Okay..why aren't you in your enclosure?
+p1Yard1Enclosure,Okay... why aren't you in your enclosure?
 ,
 ,
 p1Front1Poke,Poke the rabbit
