@@ -800,7 +800,7 @@ p1Street1LostNo,Pogo,"Where to next, then?"
 p1Street1LostNo,,"char_update,Spook,11"
 p1Street1LostNo,Spook,"I'm not sure... Somewhere, I guess."
 p1Street1LostNo,,"char_update,Pogo,8"
-p1Street1LostNo,Pogo,That's where I am going! [wave]Hihihi...[/wave]
+p1Street1LostNo,Pogo,That's where I'm going! [wave]Hihihi...[/wave]
 p1Street1LostNo,,"scene_set,p1StreetQuestions"
 ,,
 ,,
@@ -984,7 +984,7 @@ p1StreetQuestionsYourselfCheck,,"condition_flag,streetQuestionYourself"
 p1StreetQuestionsYourselfCheck,,"scene_set,p1StreetQuestionsYourselfAsked"
 p1StreetQuestionsYourselfCheck,,"scene_set,p1StreetQuestionsYourself"
 ,,
-p1StreetQuestionsYourselfAsked,Pogo,"Oh my, aren't you too interested in me?"
+p1StreetQuestionsYourselfAsked,Pogo,"Oh my, you have quite the interest in me, don't you?"
 p1StreetQuestionsYourselfAsked,Spook,I just wanna hear your story again!
 p1StreetQuestionsYourselfAsked,Pogo,"Oh, well."
 p1StreetQuestionsYourselfAsked,,"scene_set,p1StreetQuestionsYourself"
@@ -994,7 +994,7 @@ p1StreetQuestionsYourself,Pogo,Hm hm... Let's see...
 p1StreetQuestionsYourself,,"char_update,Pogo,4"
 p1StreetQuestionsYourself,Pogo,My favorite drink is grape juice...
 p1StreetQuestionsYourself,,"char_update,Pogo,0"
-p1StreetQuestionsYourself,Pogo,And my favorite author is Marry Shelley!
+p1StreetQuestionsYourself,Pogo,And my favorite author is Mary Shelley!
 p1StreetQuestionsYourself,,"char_update,Pogo,1"
 p1StreetQuestionsYourself,Pogo,"And Dracula is my biggest crush, big time. Too bad I was born so late..."
 p1StreetQuestionsYourself,,"char_update,Spook,9"
@@ -1002,7 +1002,7 @@ p1StreetQuestionsYourself,Spook,Maybe you will meet a vampire during Halloween!
 p1StreetQuestionsYourself,,"char_update,Pogo,6"
 p1StreetQuestionsYourself,Pogo,Oh that would be [wave]WONDERFUL![/wave]
 p1StreetQuestionsYourself,,"char_update,Pogo,8"
-p1StreetQuestionsYourself,Pogo,But what if they have a taste for mouses-
+p1StreetQuestionsYourself,Pogo,But what if they have a taste for mice-
 p1StreetQuestionsYourself,,"char_update,Spook,8"
 p1StreetQuestionsYourself,Spook,[shake]QUIT JOKING ABOUT THAT!!!![/shake]
 p1StreetQuestionsYourself,,"char_update,Pogo,0"
@@ -1022,23 +1022,25 @@ p1StreetQuestionsYourself,,"scene_set,p1StreetQuestionsWork"
 p1StreetQuestionsSing,,"char_update,Pogo,5"
 p1StreetQuestionsSing,Pogo,"Oh, you know sweetie... It's just not the same anymore."
 p1StreetQuestionsSing,,"char_update,Spook,6"
-p1StreetQuestionsSing,Spook,Why so?
+p1StreetQuestionsSing,Spook,Why's that?
 p1StreetQuestionsSing,,"char_update,Pogo,0"
 p1StreetQuestionsSing,Pogo,...Dunno. Passion and inspiration are rare to find. Back then things were... different. 
 p1StreetQuestionsSing,,"char_update,Spook,5"
-p1StreetQuestionsSing,Spook,"But ""nothing easy is ever amazing"" or something, right!?"
-p1StreetQuestionsSing,,"char_update,Pogo,6"
-p1StreetQuestionsSing,Pogo,Hehe. Perhaps little one. Perhaps.
+p1StreetQuestionsSing,Spook,"But ""nothing easy is ever amazing"" or something, right?"
+p1StreetQuestionsSing,,"char_update,Pogo,5"
+p1StreetQuestionsSing,Pogo,Heh. Perhaps little one. Perhaps.
+p1StreetQuestionsSing,,"char_update,Pogo,1"
+p1StreetQuestionsSing,Pogo,"Well, I'm going to fly around the street a little. See you next time!"
 p1StreetQuestionsSing,,map
 ,,
 p1StreetQuestionsWork,,"char_update,Pogo,6"
-p1StreetQuestionsWork,Pogo,[shake]RIGHT!???[/shake]
+p1StreetQuestionsWork,Pogo,[shake]RIGHT?![/shake]
 p1StreetQuestionsWork,,"char_update,Pogo,0"
-p1StreetQuestionsWork,Pogo,"Am not worried about you at all, kid."
+p1StreetQuestionsWork,Pogo,"I'm not worried about you at all, kid."
 p1StreetQuestionsWork,,"char_update,Pogo,1"
 p1StreetQuestionsWork,Pogo,You will do [wave]juuuuust[/wave] fine among us!
+p1StreetQuestionsWork,Pogo,"Well, I'm going to fly around the street a little. See you next time!"
 p1StreetQuestionsWork,,map
-,,
 ,,
 p1StreetQuestionsTownCheck,,"condition_flag,streetQuestionTown"
 p1StreetQuestionsTownCheck,,"scene_set,p1StreetQuestionsTownAsked"
@@ -1058,7 +1060,7 @@ p1StreetQuestionsTown,Pogo,"Some say it's coming from under the dirt, not the sk
 p1StreetQuestionsTown,Spook,Huh? How so?
 p1StreetQuestionsTown,,"char_update,Pogo,0"
 p1StreetQuestionsTown,Pogo,"You see, this part of the town is always foggy, more or less, even if it's a clear sky outside!"
-p1StreetQuestionsTown,Pogo,"And if you walk a little away, you can actually see that surrounding areas aren't effected..."
+p1StreetQuestionsTown,Pogo,"And if you walk away a little, you can actually see that the surrounding areas aren't affected..."
 p1StreetQuestionsTown,Pogo,The fog travels through streets like branches of veins. They say it follows the roots underground.
 p1StreetQuestionsTown,Spook,...But why?
 p1StreetQuestionsTown,Pogo,"Beats me, friend! Maybe there is something lurking right under our feet."
@@ -1080,6 +1082,8 @@ p1StreetQuestionsTownMessing,,"flag_set,streetQuestionTown,true"
 p1StreetQuestionsTownMessing,Spook,Are you messing with me?
 p1StreetQuestionsTownMessing,Pogo,Hehe.
 p1StreetQuestionsTownMessing,Pogo,Maybe. Maybe not.
+p1StreetQuestionsTownMessing,,"char_update,Pogo,1"
+p1StreetQuestionsTownMessing,Pogo,Why don't you go exploring around a little more? See ya next time!
 p1StreetQuestionsTownMessing,,map
 ,,
 ,,
