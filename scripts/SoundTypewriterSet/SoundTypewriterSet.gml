@@ -50,11 +50,11 @@ global.dataTypewriterSfx = {
 		overlap:	20,
 	},
 	Moth: {
-		ids:		[sfxTypewriterSpook],
+		ids:		[sfxTypewriterMoth],
 		vol:		100,
-		pitchMin:	0.4,
-		pitchMax:	0.4,
-		overlap:	0,
+		pitchMin:	1.0,
+		pitchMax:	1.0,
+		overlap:	20,
 	},
 	Shay: {
 		ids:		[sfxTypewriterSpook],
@@ -80,9 +80,9 @@ global.dataTypewriterSfx = {
 	Hamster: {
 		ids:		[sfxTypewriterSpook],
 		vol:		100,
-		pitchMin:	1.1,
-		pitchMax:	1.1,
-		overlap:	30,
+		pitchMin:	1.4,
+		pitchMax:	1.4,
+		overlap:	40,
 	},
 	Princess: {
 		ids:		[sfxTypewriterSpook],
