@@ -543,7 +543,7 @@ p1Bar1,,"map_scene,bar,p1Bar2"
 p1Bar1,,"scene_bg_clear,sBackgroundSewerBar"
 p1Bar1,,"music,bgmSewerBar"
 p1Bar1,,"main_char_in,0"
-p1Bar1,,"char_in,Barry,sBarry,0"
+p1Bar1,,"char_in,Barry,sBarry,1"
 p1Bar1,Barry,Hey kid.
 p1Bar1,Barry,"It's your first night out, hm? Are you excited?"
 p1Bar1,,"choice,p1Bar1Nervous,p1Bar1Party"
@@ -565,6 +565,7 @@ p1Bar1Nervous,,"scene_set,p1Bar1Milk"
 ,,
 p1Bar1Party,,"char_update,Barry,4"
 p1Bar1Party,Barry,That's the spirit!
+p1Bar1Party,,"char_update,Barry,1"
 p1Bar1Party,Barry,"Still, be careful, alright?"
 p1Bar1Party,Barry,"We look after each other, but the careless don't live long out in the streets... heh."
 p1Bar1Party,,"char_update,Spook,5"
@@ -582,10 +583,11 @@ p1Bar1Party,Spook,Offer... in... return?
 p1Bar1Party,,"char_update,Barry,4"
 p1Bar1Party,Barry,Yeah!
 p1Bar1Party,Barry,"Barry's no charity, buddy. Or else it would be called... Barrity..."
-p1Bar1Party,,"char_update,Spook,5"
-p1Bar1Party,Spook,But I got no money!
+p1Bar1Party,,"char_update,Spook,11"
+p1Bar1Party,Spook,But I don't have any money...
 p1Bar1Party,Barry,Money? Don't be silly!
 p1Bar1Party,,"char_update,Barry,0"
+p1Bar1Party,,"char_update,Spook,0"
 p1Bar1Party,Barry,"Look. How about you help me restock the Halloween candy, and I make you my special drink?"
 p1Bar1Party,,"choice,p1Bar1Errands,p1Bar1Candy"
 p1Bar1Party,,"scene_set,p1Bar1Errands"
@@ -712,10 +714,12 @@ p1Bar2,Spook,...
 p1Bar2,,"delay,0.2"
 p1Bar2,Barry,...
 p1Bar2,,"delay,0.2"
+p1Bar2,,"char_update,Spook,11"
 p1Bar2,Spook,...
 p1Bar2,,"delay,0.2"
 p1Bar2,Barry,...
 p1Bar2,,"delay,0.2"
+p1Bar2,,"char_update,Spook,0"
 p1Bar2,Spook,Soooo... why do they call it Foggy Hallow?
 p1Bar2,,"delay,0.2"
 p1Bar2,Barry,Cause there's fog.
@@ -1159,7 +1163,7 @@ p1Yard1,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
 p1Yard1,,"music,bgmHouseAcross"
 p1Yard1,Empty,The air smells like cinnamon and apple pie. Autumn leaves drift by.
 p1Yard1,Empty,...
-p1Yard1,Empty,"The wind howls, suddenly colder. "
+p1Yard1,Empty,"The wind howls[sound,sfxWind], suddenly colder. "
 p1Yard1,,"main_char_in,8"
 p1Yard1,Spook,[shake]Brrr!!![/shake]
 p1Yard1,???,"[tw_sfx,Hamster]Visitor! Small one! Approach!"
