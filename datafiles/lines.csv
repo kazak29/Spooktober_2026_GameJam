@@ -387,7 +387,7 @@ p1HomeQuestHouseAcrossGotCandy,Screwdriver,[shake]QUICK!!![/shake]
 p1HomeQuestHouseAcrossGotCandy,,"trans_scene,p1HomeQuestHouseAcrossFadeOut2"
 ,,
 p1HomeQuestHouseAcrossFadeOut2,,"scene_bg_clear,sBackgroundBlack"
-p1HomeQuestHouseAcrossFadeOut2,Empty,"[sound,sfxPrincessBark][tw_sfx,none][shake][b]Barking[/b][/shake]"
+p1HomeQuestHouseAcrossFadeOut2,Empty,"[sound,sfxPrincessBark][tw_sfx,none][shake][b]Bark![/b][/shake]"
 p1HomeQuestHouseAcrossFadeOut2,,"delay,2"
 p1HomeQuestHouseAcrossFadeOut2,,"trans_scene,p1HomeQuestBar"
 p1HomeQuestHouseAcrossFadeOut2,,"music,noone"
@@ -425,7 +425,7 @@ p1HomeQuestBar,,"char_update,Barry,4"
 p1HomeQuestBar,Barry,Okay! Drinks coming up! 
 p1HomeQuestBar,,"char_update,Spook,0"
 p1HomeQuestBar,Empty,Everyone joins in for Barry's Special Cider With Crushed Candy and Extra Cream: BSCWCCEC! 
-p1HomeQuestBar,Empty,"(No, there is no shorter name for it)"
+p1HomeQuestBar,Empty,"(No, there isn't a shorter name for it)"
 p1HomeQuestBar,,"char_update,Pogo,5"
 p1HomeQuestBar,Pogo,Man... I miss playing together... This bar used to be [wave]waaay[/wave] more lively...
 p1HomeQuestBar,,"char_update,Barry,3"
@@ -449,16 +449,19 @@ p1HomeQuestBarDead,Barry,Dead to us anyway...
 p1HomeQuestBarDead,Spook,Wow... What is that about?
 p1HomeQuestBarDead,,"char_update,Screwdriver,0"
 p1HomeQuestBarDead,Screwdriver,"Told ya, kid. The bar used to be way livelier."
+p1HomeQuestBarDead,,"char_update,Barry,3"
 p1HomeQuestBarDead,Barry,Let's not dig up old skeletons...
 p1HomeQuestBarDead,,"char_update,Screwdriver,2"
 p1HomeQuestBarDead,Screwdriver,Why not Barry? It is past midnight. Officially [shake]Hallow's Eve!!!![/shake]
-p1HomeQuestBarDead,,"char_update,Pogo,0"
+p1HomeQuestBarDead,,"char_update,Pogo,7"
 p1HomeQuestBarDead,Pogo,What's a better time to rise from the dead?!
 p1HomeQuestBarDead,,"char_update,Barry,0"
-p1HomeQuestBarDead,Barry,Never! Never is a good time!
-p1HomeQuestBarDead,,"char_update,Screwdriver,0"
+p1HomeQuestBarDead,Barry,Never. Never is a good time.
+p1HomeQuestBarDead,,"char_update,Screwdriver,9"
 p1HomeQuestBarDead,Screwdriver,[wave]Booooorrrrrriiiiiinnng![/wave]
+p1HomeQuestBarDead,,"char_update,Spook,6"
 p1HomeQuestBarDead,Spook,"Weird, the vibe suddenly got so depressing."
+p1HomeQuestBarDead,,"char_update,Spook,0"
 p1HomeQuestBarDead,,"scene_set,p1HomeQuestBarClearCheck"
 ,,
 p1HomeQuestBarPlay,,"char_update,Screwdriver,2"
@@ -503,6 +506,7 @@ p1HomeQuestBarClearCheck,,"condition_script,Part1ClearCheck"
 p1HomeQuestBarClearCheck,,"scene_set,p1HomeQuestBarCleared"
 p1HomeQuestBarClearCheck,,"scene_set,p1HomeQuestBarNotCleared"
 ,,
+p1HomeQuestBarCleared,,"char_update,Pogo,0"
 p1HomeQuestBarCleared,Pogo,"Ahem! I'm calling it a night! Are you going home yet, Spook?"
 p1HomeQuestBarCleared,Spook,"Yeah, I am tired..."
 p1HomeQuestBarCleared,,"scene_set,p1HomeQuestBarTired"
@@ -512,7 +516,8 @@ p1HomeQuestBarNotCleared,,"choice,p1HomeQuestBarTired,p1HomeQuestBarExplore"
 p1HomeQuestBarNotCleared,,"scene_set,p1HomeQuestBarTired"
 p1HomeQuestBarNotCleared,,"scene_set,p1HomeQuestBarExplore"
 ,,
-p1HomeQuestBarTired,Screwdriver,"Well, have a good morning's sleep!"
+p1HomeQuestBarTired,,"char_update,Screwdriver,2"
+p1HomeQuestBarTired,Screwdriver,"Well, have a good morning's sleep! I'm outta here."
 p1HomeQuestBarTired,,"char_out,Screwdriver"
 p1HomeQuestBarTired,Pogo,Hope you enjoyed your first night out!
 p1HomeQuestBarTired,,"char_out,Pogo"
@@ -539,8 +544,6 @@ p1HomeSkip,Spook,Should I go to sleep now?
 p1HomeSkip,,"choice,p1HomeSkipSleep,p1HomeSkipExplore"
 p1HomeSkip,,"trans_scene,p1End"
 p1HomeSkip,,map
-,,
-,,
 ,,
 p1Bar1,,"map_scene,bar,p1Bar2"
 p1Bar1,,"scene_bg_clear,sBackgroundSewerBar"
@@ -1377,7 +1380,8 @@ p1Front1Candy,,"map_scene,front,p1Front2"
 p1Front1Candy,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
 p1Front1Candy,,"music,bgmHouseAcross"
 p1Front1Candy,,"main_char_in,0"
-p1Front1Candy,Spook,I wonder if that dog woke up. We shouldn't have caused so much trouble just to get some drinks!
+p1Front1Candy,Spook,I wonder if that dog woke up. We shouldn't have caused so much trouble just to get some drinks.
+p1Front1Candy,,"char_update,Spook,11"
 p1Front1Candy,Spook,"At least, that's what I should've said..."
 p1Front1Candy,???,"[tw_sfx,Empty][b]Snorrrrrr[/b]"
 p1Front1Candy,,"char_in,Giant Rabbit,sDipper,0"
@@ -1412,7 +1416,6 @@ p1Front1CandyAnother,,"main_char_in,0"
 p1Front1CandyAnother,Spook,This is impossible! I'm clearly not fit to be a burglar!
 p1Front1CandyAnother,Spook,I should just ask Screwdriver to show me the hidden entrance again later...
 p1Front1CandyAnother,,map
-,,
 ,,
 p1Front2,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
 p1Front2,,"music,bgmHouseAcross"
