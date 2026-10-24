@@ -57,10 +57,10 @@ global.dataTypewriterSfx = {
 		overlap:	20,
 	},
 	Shay: {
-		ids:		[sfxTypewriterSpook],
+		ids:		[sfxTypewriterShay],
 		vol:		100,
-		pitchMin:	1.1,
-		pitchMax:	1.1,
+		pitchMin:	1.2,
+		pitchMax:	1.2,
 		overlap:	15,
 	},
 	Mom: {
