@@ -622,7 +622,7 @@ p1Bar1Leave,,map
 ,,
 p1Bar1Strong,,"char_update,Barry,0"
 p1Bar1Strong,Barry,"Woah there, friend!"
-p1Bar1Strong,Barry,"Eager for a night out, are you not?"
+p1Bar1Strong,Barry,"Eager for a night out, aren't you?"
 p1Bar1Strong,,"char_update,Barry,4"
 p1Bar1Strong,Barry,Tell you what?
 p1Bar1Strong,Barry,"In this community, we earn what we get!"
@@ -640,21 +640,20 @@ p1Bar1Milk,,"char_update,Barry,1"
 p1Bar1Milk,Barry,"Well, cider... cheese, candy, leftover food, oat, rotten fruit..."
 p1Bar1Milk,,"char_update,Spook,7"
 p1Bar1Milk,Spook,...
-p1Bar1Milk,,"char_update,Spook,0"
 p1Bar1Milk,Spook,...I think I'll pass.
 p1Bar1Milk,,"char_update,Barry,4"
 p1Bar1Milk,Barry,No fun!
-p1Bar1Milk,Barry,"Tell you what, If you can help me restock the Halloween candy, I can make you my special drink."
-p1Bar1Milk,Barry,What'dya say?
+p1Bar1Milk,Barry,"Tell you what, If you can help me restock the Halloween candy, I can make you my [wave]special drink.[/wave]"
+p1Bar1Milk,,"char_update,Spook,0"
+p1Bar1Milk,Barry,What'd ya say?
 p1Bar1Milk,,"choice,p1Bar1Errands,p1Bar1Candy"
 p1Bar1Milk,,"scene_set,p1Bar1Errands"
 p1Bar1Milk,,"scene_set,p1Bar1Candy"
 ,,
-,,
 p1Bar1Errands,,"char_update,Barry,1"
-p1Bar1Errands,Barry,"Well, you order a drink, you pay, friend!"
+p1Bar1Errands,Barry,"Well... you order a drink, you pay!"
 p1Bar1Errands,Barry,Do you have something else to pay with?
-p1Bar1Errands,,"char_update,Spook,0"
+p1Bar1Errands,,"char_update,Spook,11"
 p1Bar1Errands,Spook,...No.
 p1Bar1Errands,Barry,Screwdriver brings all kinds of things.
 p1Bar1Errands,Barry,"Food, mostly."
@@ -679,27 +678,28 @@ p1Bar1Candy,,"map_scene,home,p1HomeQuest"
 p1Bar1Candy,,"flag_set,questCandyStart,true"
 p1Bar1Candy,,map
 ,,
-,,
 p1Bar1Nuh,,"char_update,Barry,1"
 p1Bar1Nuh,Barry,"Your call, kid!"
 p1Bar1Nuh,Barry,"More for ther rest of us, heh."
+p1Bar1Nuh,Barry,"Well, I gotta get back to serving paying customers, see ya later!"
 p1Bar1Nuh,,"flag_set,questCandyFail,true"
 p1Bar1Nuh,,map
 ,,
 p1Bar1Okay,,"char_update,Barry,1"
 p1Bar1Okay,Barry,A mouse of action!
+p1Bar1Okay,,"char_update,Spook,6"
 p1Bar1Okay,Spook,But where do I get the candy from?
 p1Bar1Okay,,"char_update,Barry,0"
-p1Bar1Okay,Barry,"All kinds of places, friend! "
+p1Bar1Okay,Barry,All kinds of places! 
 p1Bar1Okay,Barry,"Your human, another human, the candy shop..."
 p1Bar1Okay,Barry,"Know what? Go find Screwdriver. He is a professional looter, afterall."
-p1Bar1Okay,Spook,"Yeah, okay..."
-p1Bar1Okay,,"char_update,Barry,1"
+p1Bar1Okay,,"char_update,Spook,0"
+p1Bar1Okay,Spook,"Yeah, okay."
+p1Bar1Okay,,"char_update,Barry,4"
 p1Bar1Okay,Barry,Happy trick or treatin'!
 p1Bar1Okay,,"map_scene,home,p1HomeQuest"
 p1Bar1Okay,,"flag_set,questCandyStart,true"
 p1Bar1Okay,,map
-,,
 ,,
 p1Bar2,,"map_scene,bar,p1Bar3"
 p1Bar2,,"scene_bg_clear,sBackgroundSewerBar"
