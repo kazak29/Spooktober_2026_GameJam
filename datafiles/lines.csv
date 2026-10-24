@@ -270,11 +270,11 @@ p1Home1,Screwdriver,"Quitting already, kid?"
 p1Home1,,"char_update,Spook,8"
 p1Home1,Spook,[shake]Eeeek!!![/shake]
 p1Home1,,"char_update,Screwdriver,1"
-p1Home1,Screwdriver,Wow! You still react the same!
+p1Home1,Screwdriver,Wow! Surprised to see me or something?
 p1Home1,Spook,Why are you back here?!
 p1Home1,,"char_update,Screwdriver,0"
-p1Home1,Screwdriver,Unfinished... business. 
-p1Home1,Screwdriver,Why are [shake]YOU[/shake] back here!?
+p1Home1,Screwdriver,Unfinished... rat business. 
+p1Home1,Screwdriver,Why are [shake]YOU[/shake] back here?
 p1Home1,Screwdriver,Night is young! Go explore! Go!
 p1Home1,,"music,noone"
 p1Home1,,map
@@ -355,13 +355,15 @@ p1HomeQuestHouseAcrossInside,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
 p1HomeQuestHouseAcrossInside,,"main_char_in,0"
 p1HomeQuestHouseAcrossInside,,"char_in,Screwdriver,sScrewdriver,2"
 p1HomeQuestHouseAcrossInside,Screwdriver,"[wave]Candy, candy, sweet candy![/wave]"
+p1HomeQuestHouseAcrossInside,,"char_update,Spook,11"
 p1HomeQuestHouseAcrossInside,Spook,Should we really be doing this?
-p1HomeQuestHouseAcrossInside,,"char_update,Screwdriver,0"
+p1HomeQuestHouseAcrossInside,,"char_update,Screwdriver,3"
 p1HomeQuestHouseAcrossInside,Screwdriver,Ssshhh... Don't wake the housekeepers!
+p1HomeQuestHouseAcrossInside,,"char_update,Screwdriver,0"
 p1HomeQuestHouseAcrossInside,Screwdriver,See that puppy over there?
 p1HomeQuestHouseAcrossInside,,"char_in,Princess,sPrincess,4"
+p1HomeQuestHouseAcrossInside,,"char_update,Spook,6"
 p1HomeQuestHouseAcrossInside,Spook,Yeah?
-p1HomeQuestHouseAcrossInside,,"char_update,Screwdriver,1"
 p1HomeQuestHouseAcrossInside,Screwdriver,"Yes, warn me if she wakes up. The code word is ""Squeak!"" nyeh heh!"
 p1HomeQuestHouseAcrossInside,,"char_update,Spook,8"
 p1HomeQuestHouseAcrossInside,Spook,Wait-
@@ -389,6 +391,7 @@ p1HomeQuestHouseAcrossFadeOut2,Empty,"[sound,sfxPrincessBark][tw_sfx,none][shake
 p1HomeQuestHouseAcrossFadeOut2,,"delay,2"
 p1HomeQuestHouseAcrossFadeOut2,,"trans_scene,p1HomeQuestBar"
 p1HomeQuestHouseAcrossFadeOut2,,"music,noone"
+,,
 ,,
 p1HomeQuestBar,,"scene_bg_clear,sBackgroundSewerBar"
 p1HomeQuestBar,,"music,bgmSewerBar"
