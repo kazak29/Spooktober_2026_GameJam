@@ -88,7 +88,8 @@ introShayRoomDay,Mom,[b]...Sigh.[/b] Yes. Yes you may.
 introShayRoomDay,Shay,"[wave]Okaaay.[/wave] Love you, mom."
 introShayRoomDay,Mom,"Love you too, pumpkin!"
 introShayRoomDay,,"char_update,Spook,0"
-introShayRoomDay,Sound,"[b]SLAM[/b][sound,sfxDoorClose]"
+introShayRoomDay,,"sound,sfxDoorClose"
+introShayRoomDay,,"delay,0.1"
 introShayRoomDay,,"char_in,Shay,sShay,2"
 introShayRoomDay,Shay,[wave]Uuuugh![/wave]
 introShayRoomDay,Shay,This is horrible!
@@ -115,7 +116,8 @@ introShayRoomNight,,"scene_bg_clear,sBackgroundShayRoomNight"
 introShayRoomNight,Empty,"October 30th, Night"
 introShayRoomNight,,"music,bgmSuspense2"
 introShayRoomNight,,"delay,1"
-introShayRoomNight,Sound,"[b]THUD[/b][sound,sfxLoudThud]"
+introShayRoomNight,,"sound,sfxLoudThud"
+introShayRoomNight,,"delay,0.1"
 introShayRoomNight,,"main_char_in,6"
 introShayRoomNight,Spook,Squeak?
 introShayRoomNight,???,"Pssst, kid"
@@ -279,7 +281,6 @@ p1Home1,Screwdriver,Why are [shake]YOU[/shake] back here?
 p1Home1,Screwdriver,Night is young! Go explore! Go!
 p1Home1,,"music,noone"
 p1Home1,,map
-,,
 ,,
 p1Home2,,"scene_bg_clear,sBackgroundShayRoomNight"
 p1Home2,,"music,bgmShayHome"
@@ -750,7 +751,6 @@ p1Bar3,,"char_update,Spook,5"
 p1Bar3,Spook,Aw...
 p1Bar3,Barry,"I insist. C'mon, go out there!"
 p1Bar3,,map
-,,
 ,,
 ,,
 p1Street1,,"map_scene,street,p1Street2Other"
@@ -1553,45 +1553,54 @@ p2Intro,,"music,bgmShayHome"
 p2Intro,,"trans_change,false,sBackgroundShayRoomDay"
 p2Intro,,"main_char_in,7"
 p2Intro,Spook,[wave]Yawwwwwwn...[/wave]
-p2Intro,,"char_in,Shay,sShay,3"
+p2Intro,,"char_in,Shay,sShay,4"
 p2Intro,Shay,[shake]HEY SPOOK!!!!![/shake]
 p2Intro,,"char_update,Spook,5"
 p2Intro,Spook,[shake]!!![/shake]
+p2Intro,,"char_update,Shay,5"
 p2Intro,Shay,What do you think?
 p2Intro,,"choice,p2IntroApprove,p2IntroDisapprove"
-p2Intro,,"scene_set,p2IntroAprrove"
+p2Intro,,"scene_set,p2IntroApprove"
 p2Intro,,"scene_set,p2IntroDisapprove"
 ,,
-p2IntroAprrove,,"char_update,Shay,4"
-p2IntroAprrove,Shay,"I know, right?!"
-p2IntroAprrove,,"char_update,Shay,5"
-p2IntroAprrove,Shay,I'm getting better at making costumes!
-p2IntroAprrove,Shay,"Last year was... Well, goblin wasn't the best idea."
-p2IntroAprrove,Shay,Everyone kept asking if I was Shrek!
-p2IntroAprrove,,"scene_set,p2IntroAh"
+p2IntroApprove,,"char_update,Spook,9"
+p2IntroApprove,,"char_update,Shay,3"
+p2IntroApprove,Shay,"I know, right?!"
+p2IntroApprove,,"char_update,Shay,5"
+p2IntroApprove,Shay,I'm getting better at making costumes!
+p2IntroApprove,,"char_update,Spook,0"
+p2IntroApprove,,"char_update,Shay,6"
+p2IntroApprove,Shay,Last year was...
+p2IntroApprove,,"char_update,Shay,7"
+p2IntroApprove,Shay,"Well, goblin wasn't the best idea."
+p2IntroApprove,Shay,Everyone kept asking if I was Shrek...
+p2IntroApprove,,"scene_set,p2IntroAh"
 ,,
+,,
+p2IntroDisapprove,,"char_update,Spook,11"
 p2IntroDisapprove,,"char_update,Shay,7"
-p2IntroDisapprove,Shay,"Oh, I know you wanted me to be the giant cheese instead!"
+p2IntroDisapprove,Shay,"Oh, I know you wanted me to be the giant cheese instead..."
 p2IntroDisapprove,,"char_update,Spook,3"
 p2IntroDisapprove,,"delay,0.5"
 p2IntroDisapprove,,"char_update,Shay,5"
 p2IntroDisapprove,Shay,"...Maybe next year, ok?"
 p2IntroDisapprove,,"scene_set,p2IntroAh"
 ,,
+p2IntroAh,,"char_update,Spook,0"
 p2IntroAh,,"char_update,Shay,3"
 p2IntroAh,Shay,Ah- before I forget! Here is yours!!!
 p2IntroAh,,main_char_out
 p2IntroAh,Empty,"You equipped ""Spook'o lantern"" Costume!"
 p2IntroAh,,"main_char_in,10"
 p2IntroAh,,"delay,0.3"
-p2IntroAh,Mom,Honey! We are leaving in five!
-p2IntroAh,,"char_update,Shay,6"
+p2IntroAh,Mom,Honey! We're leaving in five!
+p2IntroAh,,"char_update,Shay,10"
 p2IntroAh,Shay,"Oh, right! "
 p2IntroAh,Shay,We somehow ran out of Halloween candy...
-p2IntroAh,,"char_update,Shay,7"
+p2IntroAh,,"char_update,Shay,8"
 p2IntroAh,Shay,I swear I didn't eat all of it! But I can't convince mom...
 p2IntroAh,,"char_out,Shay"
-p2IntroAh,Shay,"[sound,sfxDoorOpen]Protect the house from the spirits while I am gone, Spook!"
+p2IntroAh,Shay,"[sound,sfxDoorOpen]Protect the house from evil spirits while I'm gone, Spook!"
 p2IntroAh,,"sound,sfxDoorClose"
 p2IntroAh,,"delay,0.1"
 p2IntroAh,Spook,Alright... This is my chance to go out for a little while!
@@ -1599,8 +1608,6 @@ p2IntroAh,,main_char_out
 p2IntroAh,,"main_char_in,0"
 p2IntroAh,Spook,Let's see...
 p2IntroAh,,map
-,,
-,,
 ,,
 p2Home1,,"scene_bg_clear,sBackgroundShayRoomDay"
 p2Home1,,"music,bgmShayHome"
@@ -1623,8 +1630,6 @@ p2Home1Stay,Spook,"Well, no more! Not getting out of this cage. Nope!"
 p2Home1Stay,,main_char_out
 p2Home1Stay,,"delay,0.5"
 p2Home1Stay,,"trans_scene,endStay"
-,,
-,,
 ,,
 p2BarNoCandy1,,"map_scene,bar,p2BarNoCandy2"
 p2BarNoCandy1,,"scene_bg_clear,sBackgroundSewerBar"
@@ -1696,7 +1701,6 @@ p2BarNoCandy1No,Spook,Ha-ha-ha.
 p2BarNoCandy1No,Screwdriver,Well. Enjoy your film kid!
 p2BarNoCandy1No,,map
 ,,
-,,
 p2BarNoCandy2,,"scene_bg_clear,sBackgroundSewerBar"
 p2BarNoCandy2,,"music,bgmSewerBar"
 p2BarNoCandy2,,"main_char_in,0"
@@ -1712,7 +1716,6 @@ p2BarNoCandy2,Spook,"Uh, I'll be on my way!"
 p2BarNoCandy2,,"char_update,Screwdriver,0"
 p2BarNoCandy2,Screwdriver,Hey!
 p2BarNoCandy2,,map
-,,
 ,,
 p2BarCandy1,,"map_scene,bar,p2BarCandy2"
 p2BarCandy1,,"scene_bg_clear,sBackgroundSewerBar"
@@ -1772,7 +1775,6 @@ p2BarCandy1Ok,,"main_char_in,0"
 p2BarCandy1Ok,Spook,I'm ready!
 p2BarCandy1Ok,,"scene_set,p2BarCandyDecor"
 ,,
-,,
 p2BarCandy2,,"scene_bg_clear,sBackgroundSewerBar"
 p2BarCandy2,,"music,bgmSewerBar"
 p2BarCandy2,,"main_char_in,0"
@@ -1793,7 +1795,6 @@ p2BarCandy2Sure,Screwdriver,"Finally, some help!"
 p2BarCandy2Sure,,"char_update,Screwdriver,0"
 p2BarCandy2Sure,Screwdriver,Almost thought I'll have to handle all of this on my own.
 p2BarCandy2Sure,,"scene_set,p2BarCandyDecor"
-,,
 ,,
 p2BarCandyDecor,,"map_scene,bar,p2BarCandyComplete"
 p2BarCandyDecor,,"char_update,Screwdriver,2"
@@ -1898,7 +1899,6 @@ p2BarCandyDecorCubs,,"scene_set,p2BarCandyDecorChoice"
 p2BarCandyDecorAlright,,"char_update,Screwdriver,1"
 p2BarCandyDecorAlright,Screwdriver,"Wow! Super progressive, Spook. I am impressed."
 p2BarCandyDecorAlright,,"scene_set,p2BarCandyDecorChoice"
-,,
 ,,
 p2BarCandyDecorNotMetPrincess,,"char_update,Spook,5"
 p2BarCandyDecorNotMetPrincess,Spook,Isn't that the dog that was sleeping in that house last night?
