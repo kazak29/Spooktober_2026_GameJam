@@ -101,9 +101,12 @@ introShayRoomDay,,"char_update,Shay,0"
 introShayRoomDay,,"char_update,Shay,0"
 introShayRoomDay,Shay,"You're right, Spook!"
 introShayRoomDay,Shay,It's Halloween! It's going to be awesome whether they like me or not!
-introShayRoomDay,Shay,And we'll have some candy for our movie too! Isn't that awesome?!
+introShayRoomDay,,"char_update,Shay,1"
+introShayRoomDay,Shay,And we'll have some candy for our movie too!
+introShayRoomDay,Shay,Isn't that awesome?!
 introShayRoomDay,,"char_update,Spook,9"
 introShayRoomDay,Spook,Squeak!
+introShayRoomDay,,"char_update,Shay,0"
 introShayRoomDay,Shay,"Well said, boy!"
 introShayRoomDay,,"music,noone"
 introShayRoomDay,,"trans_scene,introShayRoomNight"
@@ -258,8 +261,6 @@ introBar,Spook,Alright... Let's see where this goes.
 introBar,,"music,noone"
 introBar,,map
 ,,
-,,
-,,
 p1Home1,,"map_scene,home,p1Home2"
 p1Home1,,"scene_bg_clear,sBackgroundShayRoomNight"
 p1Home1,,"music,bgmShayHome"
@@ -318,7 +319,6 @@ p1HomeQuest2,,"scene_set,p1HomeQuestCancel"
 p1HomeQuestCancel,Screwdriver,Hey!
 p1HomeQuestCancel,,"music,noone"
 p1HomeQuestCancel,,map
-,,
 ,,
 p1HomeQuestIntro,,"map_scene,home,p1HomeSkip"
 p1HomeQuestIntro,,"flag_set,questCandyComplete,true"
@@ -1543,11 +1543,11 @@ p1End,,"trans_scene,p2Intro"
 ,,
 ,,
 ,,
-,,
 p2Intro,,"custom_script_cont,ChapterProgress"
 p2Intro,,"custom_script_cont,Part2MapDataUpdate"
 p2Intro,,"scene_bg_clear,sBackgroundBlack"
 p2Intro,,"delay,2"
+p2Intro,Empty,"October 31st, Morning"
 p2Intro,Shay,"Okay, almost ready, almost ready..."
 p2Intro,,"music,bgmShayHome"
 p2Intro,,"trans_change,false,sBackgroundShayRoomDay"
@@ -1563,9 +1563,9 @@ p2Intro,,"scene_set,p2IntroAprrove"
 p2Intro,,"scene_set,p2IntroDisapprove"
 ,,
 p2IntroAprrove,,"char_update,Shay,4"
-p2IntroAprrove,Shay,"I know, right!?"
+p2IntroAprrove,Shay,"I know, right?!"
 p2IntroAprrove,,"char_update,Shay,5"
-p2IntroAprrove,Shay,I am getting better at making costumes!
+p2IntroAprrove,Shay,I'm getting better at making costumes!
 p2IntroAprrove,Shay,"Last year was... Well, goblin wasn't the best idea."
 p2IntroAprrove,Shay,Everyone kept asking if I was Shrek!
 p2IntroAprrove,,"scene_set,p2IntroAh"
