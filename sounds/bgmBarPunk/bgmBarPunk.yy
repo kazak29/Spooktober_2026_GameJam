@@ -10,7 +10,7 @@
   "compression":1,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":50.304012,
+  "duration":48.954285,
   "exportDir":"",
   "name":"bgmBarPunk",
   "parent":{

@@ -6,7 +6,7 @@ global.dataTypewriterSfx = {
 		pitchMax:	1,
 		overlap:	0,
 	},
-	Sound: {
+	Sound: {  // Ignore this
 		ids:		[],
 		vol:		100,
 		pitchMin:	1.0,
@@ -20,7 +20,7 @@ global.dataTypewriterSfx = {
 		pitchMax:	1.2,
 		overlap:	20,
 	},
-	NarratorSpook: {
+	NarratorSpook: {  // Used only in the intro
 		ids:		[sfxTypewriterSpook],
 		vol:		100,
 		pitchMin:	1.2,
@@ -112,4 +112,11 @@ global.dataTypewriterSfx = {
 		pitchMax:	0.75,
 		overlap:	20,
 	},
+	Lamp: {
+		ids:		[sfxTypewriterLamp],
+		vol:		100,
+		pitchMin:	0.75,
+		pitchMax:	0.75,
+		overlap:	20,
+	}
 }
