@@ -112,4 +112,11 @@ global.dataTypewriterSfx = {
 		pitchMax:	0.75,
 		overlap:	20,
 	},
+	Lamp: {
+		ids:		[sfxTypewriterLamp],
+		vol:		100,
+		pitchMin:	0.75,
+		pitchMax:	0.75,
+		overlap:	20,
+	}
 }
