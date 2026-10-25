@@ -309,6 +309,8 @@
     {"id":{"name":"sfxDoorClose","path":"sounds/sfxDoorClose/sfxDoorClose.yy",},},
     {"id":{"name":"sfxDoorOpen","path":"sounds/sfxDoorOpen/sfxDoorOpen.yy",},},
     {"id":{"name":"sfxLightning","path":"sounds/sfxLightning/sfxLightning.yy",},},
+    {"id":{"name":"sfxLimesBadumTss","path":"sounds/sfxLimesBadumTss/sfxLimesBadumTss.yy",},},
+    {"id":{"name":"sfxLimesSpin","path":"sounds/sfxLimesSpin/sfxLimesSpin.yy",},},
     {"id":{"name":"sfxLoudThud","path":"sounds/sfxLoudThud/sfxLoudThud.yy",},},
     {"id":{"name":"sfxPrincessBark","path":"sounds/sfxPrincessBark/sfxPrincessBark.yy",},},
     {"id":{"name":"sfxSnore1","path":"sounds/sfxSnore1/sfxSnore1.yy",},},
