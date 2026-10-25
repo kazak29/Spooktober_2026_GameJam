@@ -327,6 +327,7 @@
     {"id":{"name":"sfxWind","path":"sounds/sfxWind/sfxWind.yy",},},
     {"id":{"name":"sArrowDown","path":"sprites/sArrowDown/sArrowDown.yy",},},
     {"id":{"name":"sBackgroundBlack","path":"sprites/sBackgroundBlack/sBackgroundBlack.yy",},},
+    {"id":{"name":"sBackgroundBox","path":"sprites/sBackgroundBox/sBackgroundBox.yy",},},
     {"id":{"name":"sBackgroundCageDay","path":"sprites/sBackgroundCageDay/sBackgroundCageDay.yy",},},
     {"id":{"name":"sBackgroundCageNight","path":"sprites/sBackgroundCageNight/sBackgroundCageNight.yy",},},
     {"id":{"name":"sBackgroundCageNightSpook","path":"sprites/sBackgroundCageNightSpook/sBackgroundCageNightSpook.yy",},},
