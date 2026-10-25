@@ -23,7 +23,7 @@
 		
 		_soundName = string_replace(_soundName,"ö","o");
 		if _soundName == "???"				_soundName = "Screwdriver";
-		if _soundName == "Giant Rabbit"		_soundName = "Empty";
+		if (_soundName == "Giant Rabbit" || _soundName == "?")	_soundName = "."; // Do not make a sound
 		if _soundName == "[limes_name_cap]"	_soundName = "Limes";
 		if _soundName == "Girl"				_soundName = "Lenore";
 		if _soundName == "Boy"				_soundName = "Edgar";

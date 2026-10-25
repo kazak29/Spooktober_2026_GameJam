@@ -341,7 +341,7 @@ p1HomeQuestHouseAcross,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
 p1HomeQuestHouseAcross,,"music,bgmHouseAcrossSneakIn"
 p1HomeQuestHouseAcross,,"main_char_in,0"
 p1HomeQuestHouseAcross,,"char_in,Giant Rabbit,sDipper,0"
-p1HomeQuestHouseAcross,Giant Rabbit,[b]Snorrr.....[/b]
+p1HomeQuestHouseAcross,Giant Rabbit,"[sound,sfxSnore1][b]Snorrr.....[/b]"
 p1HomeQuestHouseAcross,,"char_in,Screwdriver,sScrewdriver,0"
 p1HomeQuestHouseAcross,Screwdriver,"Heh, they got a bodyguard? Idiots!"
 p1HomeQuestHouseAcross,,"char_update,Screwdriver,1"
@@ -1352,9 +1352,9 @@ p1Front1Default,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
 p1Front1Default,,"music,bgmHouseAcross"
 p1Front1Default,,"main_char_in,5"
 p1Front1Default,Spook,Whoa! What a large house!
-p1Front1Default,???,"[tw_sfx,Empty][b]Snorrrrrr[/b]"
+p1Front1Default,?,"[sound,sfxSnore1][b]Snorrrrrr[/b]"
 p1Front1Default,,"char_in,Giant Rabbit,sDipper,0"
-p1Front1Default,Giant Rabbit,[b]Snorrrrrrrrrrrr[/b]
+p1Front1Default,Giant Rabbit,"[sound,sfxSnore2][b]Snorrrrrrrrrrrr[/b]"
 p1Front1Default,,"char_update,Spook,8"
 p1Front1Default,Spook,[shake]WHOA! WHAT A LARGE RABBIT![/shake]
 p1Front1Default,Spook,Um...
@@ -1364,7 +1364,7 @@ p1Front1Default,,"scene_set,p1Front1DefaultAnother"
 ,,
 p1Front1DefaultPoke,,"char_update,Spook,0"
 p1Front1DefaultPoke,Spook,"Excuse me, um, Mr. Rabbit? Could you please move aside?"
-p1Front1DefaultPoke,Giant Rabbit,[b]Snorrrrrrr[/b]
+p1Front1DefaultPoke,Giant Rabbit,"[sound,sfxSnore1][b]Snorrrrrrr[/b]"
 p1Front1DefaultPoke,Empty,"You try to push him, but the rabbit doesn't move an inch!"
 p1Front1DefaultPoke,Spook,"Hmm, I'll just try another entrance."
 p1Front1DefaultPoke,,"scene_set,p1Front1DefaultAnother"
@@ -1383,9 +1383,9 @@ p1Front1Candy,,"main_char_in,0"
 p1Front1Candy,Spook,I wonder if that dog woke up. We shouldn't have caused so much trouble just to get some drinks.
 p1Front1Candy,,"char_update,Spook,11"
 p1Front1Candy,Spook,"At least, that's what I should've said..."
-p1Front1Candy,???,"[tw_sfx,Empty][b]Snorrrrrr[/b]"
+p1Front1Candy,?,"[sound,sfxSnore2][b]Snorrrrrr[/b]"
 p1Front1Candy,,"char_in,Giant Rabbit,sDipper,0"
-p1Front1Candy,Giant Rabbit,[b]Snorrrrrrrrrrrr[/b]
+p1Front1Candy,Giant Rabbit,"[sound,sfxSnore1][b]Snorrrrrrrrrrrr[/b]"
 p1Front1Candy,,"char_update,Spook,6"
 p1Front1Candy,Spook,That rabbit is still sleeping?
 p1Front1Candy,Spook,Um...
@@ -1394,10 +1394,10 @@ p1Front1Candy,,"scene_set,p1Front1CandyPoke"
 p1Front1Candy,,"scene_set,p1Front1CandyAnother"
 ,,
 p1Front1CandyPoke,Spook,Hmm...
-p1Front1CandyPoke,Giant Rabbit,[b]Snore...[/b]
+p1Front1CandyPoke,Giant Rabbit,"[sound,sfxSnore1][b]Snore...[/b]"
 p1Front1CandyPoke,,"char_update,Spook,5"
 p1Front1CandyPoke,Spook,Hey! Mr. rabbit! Are you asleep?
-p1Front1CandyPoke,Giant Rabbit,"[shake][b]Somehow, even louder snore...[/b][/shake]"
+p1Front1CandyPoke,Giant Rabbit,[sfxSnoreLoud][shake][b]SNOOOOORRRRRRRRR[/b][/shake]
 p1Front1CandyPoke,Spook,Well... I guess I can come in?
 p1Front1CandyPoke,Empty,"You try to push him, but the rabbit doesn't move an inch!"
 p1Front1CandyPoke,Spook,Huh. That is one way to guard a door.
@@ -1421,7 +1421,7 @@ p1Front2,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
 p1Front2,,"music,bgmHouseAcross"
 p1Front2,,"main_char_in,0"
 p1Front2,,"char_in,Giant Rabbit,sDipper,0"
-p1Front2,Giant Rabbit,[b]Snorrr[/b]
+p1Front2,Giant Rabbit,"[sound,sfxSnore1][b]Snorrr[/b]"
 p1Front2,Spook,Can't get in this time...
 p1Front2,Spook,Maybe I should try again during the day.
 p1Front2,,map
@@ -1614,7 +1614,9 @@ p2Home1,,"music,bgmShayHome"
 p2Home1,,"main_char_in,0"
 p2Home1,Spook,Shay is still away...
 p2Home1,Spook,I can explore some more!
-p2Home1,Spook,"Or... I can abandon those guys and stay with Shay, just like I wanted from the start!"
+p2Home1,,"char_update,Spook,11"
+p2Home1,Spook,"Or, I could forget those guys and stay with Shay, just like I wanted from the start..."
+p2Home1,,"char_update,Spook,7"
 p2Home1,Spook,They probably won't miss me anyway...
 p2Home1,,"choice,p2Home1Continue,p2Home1Stay"
 p2Home1,,map
@@ -1624,7 +1626,7 @@ p2Home1Stay,,"trans_change,true,sBackgroundCageDay"
 p2Home1Stay,,"delay,0.5"
 p2Home1Stay,,"main_char_in,0"
 p2Home1Stay,Spook,"Oh, my beautiful bed!"
-p2Home1Stay,Spook,Why did I ever leave you behind.
+p2Home1Stay,Spook,Why did I ever leave you behind?
 p2Home1Stay,,"char_update,Spook,1"
 p2Home1Stay,Spook,"Well, no more! Not getting out of this cage. Nope!"
 p2Home1Stay,,main_char_out
@@ -1839,7 +1841,6 @@ p2BarCandyDecorBones,,"char_update,Screwdriver,1"
 p2BarCandyDecorBones,Screwdriver,"Heh, just messin' with ya, kid."
 p2BarCandyDecorBones,,"scene_set,p2BarCandyDecorWatch"
 ,,
-,,
 p2BarCandyDecorWatch,,"char_update,Spook,0"
 p2BarCandyDecorWatch,Spook,"Uh, wait. Is that a pocket watch?"
 p2BarCandyDecorWatch,,"char_update,Screwdriver,9"
@@ -1915,7 +1916,6 @@ p2BarCandyDecorNotMetPrincess,Spook,That's Barry?!
 p2BarCandyDecorNotMetPrincess,,"char_update,Screwdriver,1"
 p2BarCandyDecorNotMetPrincess,Screwdriver,Heh. Yeah. He had some crazy hair back then.
 p2BarCandyDecorNotMetPrincess,,"scene_set,p2BarCandyDecorChoice"
-,,
 ,,
 p2BarCandyDecorChoice,,"char_update,Screwdriver,2"
 p2BarCandyDecorChoice,Screwdriver,"Anyway, enough reminiscing. Let's get things going!"
