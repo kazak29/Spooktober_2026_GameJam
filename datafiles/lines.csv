@@ -1818,7 +1818,7 @@ p2BarCandyDecorWatch,Spook,"Uh, wait. What is that?"
 p2BarCandyDecorWatch,Screwdriver,Huh... what...?
 p2BarCandyDecorWatch,,"char_in,Watch,sPocketWatch,0"
 p2BarCandyDecorWatch,,"delay,2"
-p2BarCandyDecorWatch,Empty,"You see a pocket watch. One side has a picture of Barry, the other... of the dog from the neighbor's house."
+p2BarCandyDecorWatch,Empty,"You see a pocket watch. One side has a picture of a raccoon, and on the other side... the dog from the neighbor's house."
 p2BarCandyDecorWatch,,"char_in,Screwdriver,sScrewdriver,0"
 p2BarCandyDecorWatch,Screwdriver,"Oh, that old thing?"
 p2BarCandyDecorWatch,,"condition_flag,metPrincess"
@@ -1882,10 +1882,10 @@ p2BarCandyDecorNotMetPrincess,,"char_update,Spook,6"
 p2BarCandyDecorNotMetPrincess,Spook,Who is she?
 p2BarCandyDecorNotMetPrincess,,"char_update,Screwdriver,0"
 p2BarCandyDecorNotMetPrincess,Screwdriver,"Ah, just an old friend of ours."
-p2BarCandyDecorNotMetPrincess,Spook,"From the ""band""?"
+p2BarCandyDecorNotMetPrincess,Spook,From the band?
 p2BarCandyDecorNotMetPrincess,Screwdriver,"Oh, no no. She is... another story."
 p2BarCandyDecorNotMetPrincess,,"char_update,Spook,5"
-p2BarCandyDecorNotMetPrincess,Spook,That's Barry?!
+p2BarCandyDecorNotMetPrincess,Spook,And that's... Barry?!
 p2BarCandyDecorNotMetPrincess,,"char_update,Screwdriver,1"
 p2BarCandyDecorNotMetPrincess,Screwdriver,Heh. Yeah. He had some crazy hair back then.
 p2BarCandyDecorNotMetPrincess,,"scene_set,p2BarCandyDecorChoice"
@@ -1934,8 +1934,10 @@ p2BarCandyDecorKeep,Empty,"...Not sure how you carry it with you, since it's abo
 p2BarCandyDecorKeep,,"trans_scene,p2BarCandyDecorFinish"
 ,,
 p2BarCandyDecorFinish,,"scene_bg_clear,sBackgroundBlack"
+p2BarCandyDecorFinish,,"music,noone"
 p2BarCandyDecorFinish,Empty,You finish helping Screwdriver setup the Halloween decorations.
 p2BarCandyDecorFinish,,"trans_change,true,sBackgroundSewerBarParty"
+p2BarCandyDecorFinish,,"music,bgmBarPunk"
 p2BarCandyDecorFinish,,"main_char_in,7"
 p2BarCandyDecorFinish,,"char_in,Screwdriver,sScrewdriver,1"
 p2BarCandyDecorFinish,Screwdriver,"Well, would you look at that. Not bad, huh?"
@@ -1960,7 +1962,7 @@ p2BarCandyDecorFinish,Screwdriver,Hey!
 p2BarCandyDecorFinish,,map
 ,,
 p2BarCandyComplete,,"scene_bg_clear,sBackgroundSewerBarParty"
-p2BarCandyComplete,,"music,bgmSewerBar"
+p2BarCandyComplete,,"music,bgmBarPunk"
 p2BarCandyComplete,,"main_char_in,0"
 p2BarCandyComplete,,"char_in,Screwdriver,sScrewdriver,1"
 p2BarCandyComplete,Screwdriver,"Well would you look at that! Returned to finish what we started, at last?"
@@ -1974,7 +1976,7 @@ p2Front1,,"map_scene,front,p2Front2"
 p2Front1,,"flag_set,metPrincess,true"
 p2Front1,,"scene_bg_clear,sBackgroundHouseAcrossYardDay"
 p2Front1,,"music,bgmHouseAcross"
-p2Front1,Empty,You take notice that the front door is no longer guarded by the furry ball with ears!
+p2Front1,Empty,You take notice that the front door is no longer guarded by the giant furry ball with ears!
 p2Front1,,"trans_change,true,sBackgroundBlack"
 p2Front1,Empty,You enter through the little pet's door.
 p2Front1,,"trans_change,true,sBackgroundHouseAcrossYardDay"
