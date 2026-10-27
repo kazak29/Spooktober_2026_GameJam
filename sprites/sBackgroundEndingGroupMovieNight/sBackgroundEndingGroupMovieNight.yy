@@ -1,6 +1,6 @@
 {
   "$GMSprite":"v2",
-  "%Name":"sBackgroundGroupMovieNight",
+  "%Name":"sBackgroundEndingGroupMovieNight",
   "bboxMode":0,
   "bbox_bottom":1079,
   "bbox_left":0,
@@ -24,7 +24,7 @@
   "layers":[
     {"$GMImageLayer":"","%Name":"13c4e51f-2920-40a2-85fa-bd80ec2d168a","blendMode":0,"displayName":"default","isLocked":false,"name":"13c4e51f-2920-40a2-85fa-bd80ec2d168a","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"sBackgroundGroupMovieNight",
+  "name":"sBackgroundEndingGroupMovieNight",
   "nineSlice":null,
   "origin":0,
   "parent":{
@@ -36,7 +36,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1",
-    "%Name":"sBackgroundGroupMovieNight",
+    "%Name":"sBackgroundEndingGroupMovieNight",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -60,7 +60,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"sBackgroundGroupMovieNight",
+    "name":"sBackgroundEndingGroupMovieNight",
     "playback":1,
     "playbackSpeed":6.0,
     "playbackSpeedType":0,
@@ -72,16 +72,16 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"fe47ae7b-c820-4606-9814-b2158853e421","path":"sprites/sBackgroundGroupMovieNight/sBackgroundGroupMovieNight.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"fe47ae7b-c820-4606-9814-b2158853e421","path":"sprites/sBackgroundEndingGroupMovieNight/sBackgroundEndingGroupMovieNight.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"7a925399-35f2-4dd9-ba17-246e50957a30","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"e79e2f23-d2f9-4ea7-9643-9832372ea046","path":"sprites/sBackgroundGroupMovieNight/sBackgroundGroupMovieNight.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"e79e2f23-d2f9-4ea7-9643-9832372ea046","path":"sprites/sBackgroundEndingGroupMovieNight/sBackgroundEndingGroupMovieNight.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"c9786b72-8331-4ad8-b196-9db924fb27c7","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"0552f6b7-5a86-4c69-9046-0b2bdd7e92ae","path":"sprites/sBackgroundGroupMovieNight/sBackgroundGroupMovieNight.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"0552f6b7-5a86-4c69-9046-0b2bdd7e92ae","path":"sprites/sBackgroundEndingGroupMovieNight/sBackgroundEndingGroupMovieNight.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"41b3a42f-1a48-4fd4-8a1a-99a02c9b8ddc","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"00469b6b-344b-4ed0-ae75-215bd6ad0b77","path":"sprites/sBackgroundGroupMovieNight/sBackgroundGroupMovieNight.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"00469b6b-344b-4ed0-ae75-215bd6ad0b77","path":"sprites/sBackgroundEndingGroupMovieNight/sBackgroundEndingGroupMovieNight.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"6fa1a8ee-1196-4821-abde-1229013b10f5","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
