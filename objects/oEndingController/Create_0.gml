@@ -1,1 +1,24 @@
 AmbientChange(AMBIENT_MUSIC, bgmZombieRatsTheme, DEFAULT_VOLUME_PERCENT, true, 0);
+
+
+returnPrompt = $"Press {global.uiData.menuCreditsReturn} to Continue";
+returnPromptEnabled = false;
+
+StateWait = function(){
+	cd = Approach(cd, 0, 1);
+	if cd <= 0 {
+		returnPromptEnabled = true;
+		state = StateLocked;
+	}
+}
+
+StateLocked = function(){
+	//empty state
+}
+
+cd = game_get_speed(gamespeed_fps) * 5;
+state = StateWait;
+
+
+drawX = VIEWPORT_WIDTH / 2;
+drawY = VIEWPORT_HEIGHT - 60;
