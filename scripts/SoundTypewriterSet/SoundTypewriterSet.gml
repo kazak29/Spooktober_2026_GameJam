@@ -6,13 +6,6 @@ global.dataTypewriterSfx = {
 		pitchMax:	1,
 		overlap:	0,
 	},
-	Sound: {  // Ignore this
-		ids:		[],
-		vol:		100,
-		pitchMin:	1.0,
-		pitchMax:	1.0,
-		overlap:	20,
-	},
 	Spook: {
 		ids:		[sfxTypewriterSpook],
 		vol:		100,
@@ -99,14 +92,14 @@ global.dataTypewriterSfx = {
 		overlap:	40,
 	},
 	Lenore: {
-		ids:		[sfxTypewriterSpook],
+		ids:		[sfxTypewriterLenore],
 		vol:		100,
 		pitchMin:	1.15,
 		pitchMax:	1.15,
 		overlap:	20,
 	},
 	Edgar: {
-		ids:		[sfxTypewriterSpook],
+		ids:		[sfxTypewriterEdgar],
 		vol:		100,
 		pitchMin:	0.75,
 		pitchMax:	0.75,
