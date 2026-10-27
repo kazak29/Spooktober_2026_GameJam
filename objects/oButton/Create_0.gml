@@ -17,7 +17,6 @@ if (instance_exists(oDirector)) {
 		title = $"{global.uiData.buttonHideUI}\n{global.uiData.toggleUiInputs}";
 	}
 }
-
 scribId = scribble(title, "button").starting_format(titleFont, c_white).align(fa_center, fa_middle);
 
 strX = x;
