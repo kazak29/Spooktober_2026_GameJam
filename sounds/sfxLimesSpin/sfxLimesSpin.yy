@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":14.255986,
+  "duration":6.672018,
   "exportDir":"",
   "name":"sfxLimesSpin",
   "parent":{
