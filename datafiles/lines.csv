@@ -2300,16 +2300,18 @@ p2FrontWatchKept,,"char_update,Spook,0"
 p2FrontWatchKept,Spook,"Nothing, nevermind!"
 p2FrontWatchKept,,"scene_set,p2FrontWatchCome"
 ,,
-p2FrontWatchTouchy,,"char_update,Princess,0"
+p2FrontWatchTouchy,,"char_update,Princess,9"
 p2FrontWatchTouchy,Princess,I understand...
 p2FrontWatchTouchy,,"char_update,Spook,5"
-p2FrontWatchTouchy,Spook,But I believe Barry misses you!
+p2FrontWatchTouchy,Spook,But I believe Barry really misses you!
 p2FrontWatchTouchy,,"char_update,Princess,3"
 p2FrontWatchTouchy,Princess,...You really think so?
 p2FrontWatchTouchy,Spook,"Well, yeah!"
-p2FrontWatchTouchy,,"char_update,Spook,0"
-p2FrontWatchTouchy,Spook,He's always drinking.
-p2FrontWatchTouchy,Princess,Oh. Oh what a silly racoon...
+p2FrontWatchTouchy,,"char_update,Spook,11"
+p2FrontWatchTouchy,Spook,He's always drinking...
+p2FrontWatchTouchy,Spook,...discarded milk he found in the garbage.
+p2FrontWatchTouchy,,"char_update,Princess,9"
+p2FrontWatchTouchy,Princess,Oh. Oh that silly racoon...
 p2FrontWatchTouchy,,"scene_set,p2FrontWatchCome"
 ,,
 p2FrontWatchRecall,,"char_update,Princess,8"
@@ -2322,11 +2324,11 @@ p2FrontWatchRecall,Spook,Oh... um... Do you really?
 p2FrontWatchRecall,,"char_update,Princess,6"
 p2FrontWatchRecall,Princess,[shake]YES!!!![/shake]
 p2FrontWatchRecall,Princess,"And tell Pogo I have a new best friend, too!"
-p2FrontWatchRecall,Princess,[shake]A lot of them![/shake]
+p2FrontWatchRecall,Princess,"[shake]Many of them, actually! Tell her that![/shake]"
 p2FrontWatchRecall,Princess,[shake]At the dog park!!!![/shake]
 p2FrontWatchRecall,,"char_update,Spook,5"
 p2FrontWatchRecall,Spook,Pogo was your best friend?
-p2FrontWatchRecall,,"char_update,Princess,0"
+p2FrontWatchRecall,,"char_update,Princess,7"
 p2FrontWatchRecall,Princess,Hmph! [shake]WAS.[/shake]
 p2FrontWatchRecall,,"char_update,Princess,8"
 p2FrontWatchRecall,Princess,"Now, out of my sight, [name_from_princess_low]!"
@@ -2336,11 +2338,15 @@ p2FrontWatchRecall,,"scene_set,p2FrontWatchTried"
 ,,
 p2FrontWatchRemember,,"char_update,Princess,3"
 p2FrontWatchRemember,Princess,[shake]Lies! Your face says it all!!![/shake]
-p2FrontWatchRemember,Spook,I am just an outsider. I don't know everything!
+p2FrontWatchRemember,,"char_update,Spook,8"
+p2FrontWatchRemember,Spook,"I'm just new around here, I don't know everything!"
+p2FrontWatchRemember,,"char_update,Spook,11"
+p2FrontWatchRemember,Spook,They do look very sad when talking about the old days. They definitely miss you.
+p2FrontWatchRemember,,"char_update,Princess,9"
+p2FrontWatchRemember,Princess,I... can't go back. I'll make a fool of myself.
 p2FrontWatchRemember,,"char_update,Spook,0"
-p2FrontWatchRemember,Spook,They do look very sad when talking about the old days. They definitely miss you!
-p2FrontWatchRemember,Princess,I... can't go back. I'll make a fool of myself!
 p2FrontWatchRemember,Spook,"But you're such a class act! They'll be thrilled to see you, I just know it!"
+p2FrontWatchRemember,,"char_update,Princess,5"
 p2FrontWatchRemember,Princess,...
 p2FrontWatchRemember,Spook,"C'mon, Princess!"
 p2FrontWatchRemember,,"scene_set,p2FrontWatchCome"
