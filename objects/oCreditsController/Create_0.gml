@@ -21,7 +21,7 @@ creditEntries = [
 creditsLength = array_length(creditEntries);
 
 
-returnPrompt = "Press [ESC] or Click to Return to Title Screen";
+returnPrompt = $"Press {global.uiData.menuCreditsReturn} to Return to Title Screen";
 
 
 drawX      = VIEWPORT_WIDTH / 2;

@@ -2,6 +2,7 @@ Key,Text
 menuStart,Start
 menuEnd,Exit
 menuCredits,Credits
+menuCreditsReturn,[ESC/START/Click]
 menuSettings,Settings
 menuResume,Resume
 menuToMain,Main Menu

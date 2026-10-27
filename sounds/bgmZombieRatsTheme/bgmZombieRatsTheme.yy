@@ -7,10 +7,10 @@
   },
   "bitDepth":1,
   "channelFormat":0,
-  "compression":0,
+  "compression":1,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.0,
+  "duration":122.328,
   "exportDir":"",
   "name":"bgmZombieRatsTheme",
   "parent":{
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"",
+  "soundFile":"bgmZombieRatsTheme.mp3",
   "volume":1.0,
 }
