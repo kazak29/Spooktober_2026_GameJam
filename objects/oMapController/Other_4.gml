@@ -1,0 +1,2 @@
+
+SoundPlay(sfxMapOpen);
