@@ -3,13 +3,13 @@ global.gamePaused = false;
 var _buttonSettings = function() {
 	instance_create_layer(
 		VIEWPORT_WIDTH - 80,
-		VIEWPORT_HEIGHT - 64,
+		VIEWPORT_HEIGHT - 192,
 		SYSTEM_LAYER,
 		oButton,
 		{	
 			//sprite_index: noone,
-			scr: uiButtonPause,
-			title: global.uiData.buttonSettings
+			scr: noone,
+			title: global.uiData.buttonHideUI
 		}
 	);
 	instance_create_layer(
@@ -21,6 +21,17 @@ var _buttonSettings = function() {
 			//sprite_index: noone,
 			scr: uiButtonTextLog,
 			title: global.uiData.buttonTextlog
+		}
+	);
+	instance_create_layer(
+		VIEWPORT_WIDTH - 80,
+		VIEWPORT_HEIGHT - 64,
+		SYSTEM_LAYER,
+		oButton,
+		{	
+			//sprite_index: noone,
+			scr: uiButtonPause,
+			title: global.uiData.buttonMenu
 		}
 	);
 }

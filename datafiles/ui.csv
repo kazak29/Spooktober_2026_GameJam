@@ -39,7 +39,9 @@ menuSaveDummy,SAVE
 menuLoadDummy,LOAD
 menuChapter,Chapter
 menuAuto,AUTOSAVE
-buttonSettings,MENU
+buttonHideUI,HIDE UI
+buttonShowUI,SHOW UI
+buttonMenu,MENU
 buttonTextlog,LOG
 saveMap,Map
 ,
