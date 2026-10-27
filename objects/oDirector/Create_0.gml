@@ -1,3 +1,5 @@
+uiToggled = true;
+
 #region state machine
 
 	directorState = DirectorStateLineSequence;

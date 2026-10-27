@@ -5,13 +5,19 @@ image_speed = 0;
 hoverResetCd = 0;
 
 switch scr {
-	case uiButtonPause: {
-		title = $"{title}\n[[ESC/START]";
-	} break;
 	case uiButtonTextLog: {
-		title = $"{title}\n[[ENTER/SELECT]";
+		title = $"{title}\n{global.uiData.logInputs}";
+	} break;
+	case uiButtonPause: {
+		title = $"{title}\n{global.uiData.menuInputs}";
 	} break;
 }
+if (instance_exists(oDirector)) {
+	if scr == uiButtonToggleUI {
+		title = $"{global.uiData.buttonHideUI}\n{global.uiData.toggleUiInputs}";
+	}
+}
+
 scribId = scribble(title, "button").starting_format(titleFont, c_white).align(fa_center, fa_middle);
 
 strX = x;

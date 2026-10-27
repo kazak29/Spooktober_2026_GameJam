@@ -41,8 +41,11 @@ menuChapter,Chapter
 menuAuto,AUTOSAVE
 buttonHideUI,HIDE UI
 buttonShowUI,SHOW UI
+toggleUiInputs,[[H/R1/RB]
 buttonMenu,MENU
+menuInputs,[[ESC/START]
 buttonTextlog,LOG
+logInputs,[[ENTER/SELECT]
 saveMap,Map
 ,
 mapHome,Home
