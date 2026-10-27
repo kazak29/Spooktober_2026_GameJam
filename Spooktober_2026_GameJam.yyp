@@ -305,6 +305,7 @@
     {"id":{"name":"bgmSuspense","path":"sounds/bgmSuspense/bgmSuspense.yy",},},
     {"id":{"name":"bgmSuspense2","path":"sounds/bgmSuspense2/bgmSuspense2.yy",},},
     {"id":{"name":"bgmTitleTheme","path":"sounds/bgmTitleTheme/bgmTitleTheme.yy",},},
+    {"id":{"name":"bgmZombieRatsTheme","path":"sounds/bgmZombieRatsTheme/bgmZombieRatsTheme.yy",},},
     {"id":{"name":"sfxCageOpen","path":"sounds/sfxCageOpen/sfxCageOpen.yy",},},
     {"id":{"name":"sfxDoorClose","path":"sounds/sfxDoorClose/sfxDoorClose.yy",},},
     {"id":{"name":"sfxDoorOpen","path":"sounds/sfxDoorOpen/sfxDoorOpen.yy",},},
