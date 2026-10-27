@@ -1,17 +1,20 @@
 global.gamePaused = false;
 
 var _buttonSettings = function() {
-	instance_create_layer(
-		VIEWPORT_WIDTH - 80,
-		VIEWPORT_HEIGHT - 64,
-		SYSTEM_LAYER,
-		oButton,
-		{	
-			//sprite_index: noone,
-			scr: uiButtonPause,
-			title: global.uiData.buttonSettings
-		}
-	);
+	if instance_exists(oDirector) {
+		instance_create_layer(
+			VIEWPORT_WIDTH - 80,
+			VIEWPORT_HEIGHT - 192,
+			SYSTEM_LAYER,
+			oButton,
+			{	
+				//sprite_index: noone,
+				scr: uiButtonToggleUI,
+				title: global.uiData.buttonHideUI,
+				toggled: false   // This button is toggleable
+			}
+		);
+	}
 	instance_create_layer(
 		VIEWPORT_WIDTH - 80,
 		VIEWPORT_HEIGHT - 128,
@@ -21,6 +24,17 @@ var _buttonSettings = function() {
 			//sprite_index: noone,
 			scr: uiButtonTextLog,
 			title: global.uiData.buttonTextlog
+		}
+	);
+	instance_create_layer(
+		VIEWPORT_WIDTH - 80,
+		VIEWPORT_HEIGHT - 64,
+		SYSTEM_LAYER,
+		oButton,
+		{	
+			//sprite_index: noone,
+			scr: uiButtonPause,
+			title: global.uiData.buttonMenu
 		}
 	);
 }

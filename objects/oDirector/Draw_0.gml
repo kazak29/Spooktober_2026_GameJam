@@ -21,38 +21,41 @@ with oHamsterGhost {
 
 if (currentSceneName != noone)
 {
+	if (uiToggled) {
+		DrawCharacterPortraits();
 	
-	DrawCharacterPortraits();
+		if (directorState == DirectorStateLineSequence ||
+	    directorState == DirectorStateChoice) && (textbox.alpha > 0)
+		{ 
+			if currentLineSequence[currentLineIndex].lineTitle != ""
+			 { DrawDialogueBox(); }
+		}
 	
-	if (directorState == DirectorStateLineSequence ||
-    directorState == DirectorStateChoice) && (textbox.alpha > 0)
-	{ 
-		if currentLineSequence[currentLineIndex].lineTitle != ""
-		 { DrawDialogueBox(); }
+		DrawMainCharacterPortrait();
 	}
-	
-	DrawMainCharacterPortrait();
 }
 
-with oChoice {
-	var _selected = (num == other.choice.num);
+if (uiToggled) {
+	with oChoice {
+		var _selected = (num == other.choice.num);
 
-	var _c = COL_MENU_OPTION_DEFAULT;
-	var _frame = 0;
-	if _selected {
-		_c = COL_MENU_OPTION_SELECTED;
-		_frame = 1;
-	}
+		var _c = COL_MENU_OPTION_DEFAULT;
+		var _frame = 0;
+		if _selected {
+			_c = COL_MENU_OPTION_SELECTED;
+			_frame = 1;
+		}
 
-	if sprite_exists(sprite_index) {
+		if sprite_exists(sprite_index) {
 	
-		_c = COL_MENU_OPTION_DEFAULT;
-		image_index = _frame;
-		draw_self();
+			_c = COL_MENU_OPTION_DEFAULT;
+			image_index = _frame;
+			draw_self();
 	
-	}
+		}
 
-	scribId.blend(_c, 1).draw(strX, strY);
+		scribId.blend(_c, 1).draw(strX, strY);
+	}
 }
 
 with oSceneTransition {

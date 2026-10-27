@@ -2,7 +2,6 @@ SCENE NAME,LINE TITLE,LINE TEXT
 rocketTestScene,Empty,.
 rocketTestScene,,map
 ,,
-,,
 kazakTestScene,,"scene_bg_clear,sBackgroundHouseAcrossYardDay"
 kazakTestScene,,"music,bgmHouseAcross"
 kazakTestScene,,"main_char_in,0"
@@ -295,7 +294,6 @@ p1Home2,Screwdriver,Go explore!
 p1Home2,,"music,noone"
 p1Home2,,map
 ,,
-,,
 p1HomeQuest,,"map_scene,home,p1HomeQuest2"
 p1HomeQuest,,"scene_bg_clear,sBackgroundShayRoomNight"
 p1HomeQuest,,"music,bgmShayHome"
@@ -392,7 +390,6 @@ p1HomeQuestHouseAcrossFadeOut2,Empty,"[sound,sfxPrincessBark][tw_sfx,none][shake
 p1HomeQuestHouseAcrossFadeOut2,,"delay,2"
 p1HomeQuestHouseAcrossFadeOut2,,"trans_scene,p1HomeQuestBar"
 p1HomeQuestHouseAcrossFadeOut2,,"music,noone"
-,,
 ,,
 p1HomeQuestBar,,"scene_bg_clear,sBackgroundSewerBar"
 p1HomeQuestBar,,"music,bgmSewerBar"
@@ -626,7 +623,6 @@ p1Bar1NotBad,,"scene_set,p1Bar1Milk"
 p1Bar1Leave,,"flag_set,questCandyFail,true"
 p1Bar1Leave,,map
 ,,
-,,
 p1Bar1Strong,,"char_update,Barry,0"
 p1Bar1Strong,Barry,"Woah there, friend!"
 p1Bar1Strong,Barry,"Eager for a night out, aren't you?"
@@ -752,7 +748,6 @@ p1Bar3,Spook,Aw...
 p1Bar3,Barry,"I insist. C'mon, go out there!"
 p1Bar3,,map
 ,,
-,,
 p1Street1,,"map_scene,street,p1Street2Other"
 p1Street1,,"scene_bg_clear,sBackgroundStreetNight"
 p1Street1,,"music,bgmStreet"
@@ -813,7 +808,6 @@ p1Street1LostNo,,"char_update,Pogo,8"
 p1Street1LostNo,Pogo,That's where I'm going! [wave]Hihihi...[/wave]
 p1Street1LostNo,,"scene_set,p1StreetQuestions"
 ,,
-,,
 p1Street1LostAll,,"char_update,Pogo,1"
 p1Street1LostAll,Pogo,"[wave]Wowzie,[/wave] okay, Chesire cat!"
 p1Street1LostAll,,"char_update,Spook,5"
@@ -871,11 +865,9 @@ p1Street1HuntingFunny,Spook,Stop it!
 p1Street1HuntingFunny,Pogo,"Heh. I'll leave you be, little one. Off with you then, until next time!"
 p1Street1HuntingFunny,,map
 ,,
-,,
 p1Street1Books,,"char_update,Pogo,1"
 p1Street1Books,Pogo,"Ah, a fellow little nerd! What a joy!"
 p1Street1Books,,"scene_set,p1Street1Genre"
-,,
 ,,
 p1Street1Genre,,"char_update,Spook,0"
 p1Street1Genre,Spook,Yep!
@@ -989,7 +981,6 @@ p1StreetQuestions,,"scene_set,p1StreetQuestionsYourselfCheck"
 p1StreetQuestions,,"scene_set,p1StreetQuestionsTownCheck"
 p1StreetQuestions,,"scene_set,p1StreetQuestionsBarCheck"
 ,,
-,,
 p1StreetQuestionsYourselfCheck,,"condition_flag,streetQuestionYourself"
 p1StreetQuestionsYourselfCheck,,"scene_set,p1StreetQuestionsYourselfAsked"
 p1StreetQuestionsYourselfCheck,,"scene_set,p1StreetQuestionsYourself"
@@ -1096,7 +1087,6 @@ p1StreetQuestionsTownMessing,,"char_update,Pogo,1"
 p1StreetQuestionsTownMessing,Pogo,Why don't you go exploring around a little more? See ya next time!
 p1StreetQuestionsTownMessing,,map
 ,,
-,,
 p1StreetQuestionsBarCheck,,"condition_flag,streetQuestionBar"
 p1StreetQuestionsBarCheck,,"scene_set,p1StreetQuestionsBarAsked"
 p1StreetQuestionsBarCheck,,"scene_set,p1StreetQuestionsBar"
@@ -1195,7 +1185,6 @@ p1Yard1Called,,"scene_set,p1Yard1Where"
 p1Yard1Called,,"scene_set,p1Yard1Outside"
 p1Yard1Called,,"scene_set,p1Yard1Cage"
 ,,
-,,
 p1Yard1Where,,"char_update,Hamster,0"
 p1Yard1Where,Hamster,Of course I do!
 p1Yard1Where,,"char_update,Hamster,5"
@@ -1292,7 +1281,6 @@ p1Yard1Enclosure,,"char_update,Hamster,2"
 p1Yard1Enclosure,Hamster,This is my yard! You will treat me with respect!
 p1Yard1Enclosure,,"scene_set,p1Yard1Whatever"
 ,,
-,,
 p1Yard1Lucky,,"char_update,Hamster,2"
 p1Yard1Lucky,Hamster,[shake]LUCKY!!!?[/shake]
 p1Yard1Lucky,Hamster,Arrogant little pest!!!!!
@@ -1323,7 +1311,6 @@ p1Yard1Sorry,Spook,Cool. So I will see you there...?
 p1Yard1Sorry,Hamster,"You will, you will..."
 p1Yard1Sorry,,"scene_set,p1Yard1Disappear"
 ,,
-,,
 p1Yard1Whatever,,"char_update,Spook,7"
 p1Yard1Whatever,Spook,[shake]Ugh...[/shake] Whatever.
 p1Yard1Whatever,Spook,"You talk so much, man..."
@@ -1340,8 +1327,6 @@ p1Yard2,,"main_char_in,0"
 p1Yard2,Spook,I blinked and that hamster just took off!
 p1Yard2,Spook,Weird...
 p1Yard2,,map
-,,
-,,
 ,,
 p1Front1,,"condition_flag,questCandyComplete"
 p1Front1,,"scene_set,p1Front1Candy"
@@ -1374,7 +1359,6 @@ p1Front1DefaultAnother,,"char_out,Giant Rabbit"
 p1Front1DefaultAnother,Empty,"You try every window you can climb to, but the house seems heavily guarded!"
 p1Front1DefaultAnother,Spook,Maybe I should come back during the day.
 p1Front1DefaultAnother,,map
-,,
 ,,
 p1Front1Candy,,"map_scene,front,p1Front2"
 p1Front1Candy,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
@@ -1425,8 +1409,6 @@ p1Front2,Giant Rabbit,"[sound,sfxSnore1][b]Snorrr[/b]"
 p1Front2,Spook,Can't get in this time...
 p1Front2,Spook,Maybe I should try again during the day.
 p1Front2,,map
-,,
-,,
 ,,
 p1Lamp1,,"map_scene,lamp,p1Lamp2"
 p1Lamp1,,"scene_bg_clear,sBackgroundLampPostNightMoth"
@@ -1502,7 +1484,6 @@ p1Lamp1Love,,"scene_set,p1Lamp1Privacy"
 p1Lamp1Privacy,,"music,noone"
 p1Lamp1Privacy,,map
 ,,
-,,
 p1Lamp2,,"scene_bg_clear,sBackgroundLampPostNightMoth"
 p1Lamp2,,"music,bgmLompTheme"
 p1Lamp2,,"main_char_in,0"
@@ -1512,10 +1493,6 @@ p1Lamp2,,"char_update,Spook,7"
 p1Lamp2,Spook,I should just go...
 p1Lamp2,,"music,noone"
 p1Lamp2,,map
-,,
-,,
-,,
-,,
 ,,
 p1EndIntro,,"scene_bg_clear,sBackgroundBlack"
 p1EndIntro,,"main_char_in,0"
@@ -1540,8 +1517,6 @@ p1End,Empty,"Goodnight, little mouse..."
 p1End,,"delay,2"
 p1End,,"music,noone,2500,3000"
 p1End,,"trans_scene,p2Intro"
-,,
-,,
 ,,
 p2Intro,,"custom_script_cont,ChapterProgress"
 p2Intro,,"custom_script_cont,Part2MapDataUpdate"
@@ -1575,7 +1550,6 @@ p2IntroApprove,,"char_update,Shay,7"
 p2IntroApprove,Shay,"Well, goblin wasn't the best idea."
 p2IntroApprove,Shay,Everyone kept asking if I was Shrek...
 p2IntroApprove,,"scene_set,p2IntroAh"
-,,
 ,,
 p2IntroDisapprove,,"char_update,Spook,11"
 p2IntroDisapprove,,"char_update,Shay,7"
@@ -1631,7 +1605,6 @@ p2Home1Stay,Spook,"Well, no more! Not getting out of this cage. Nope!"
 p2Home1Stay,,"char_out,Spook"
 p2Home1Stay,,"delay,0.5"
 p2Home1Stay,,"trans_scene,endStay"
-,,
 ,,
 p2BarNoCandy1,,"map_scene,bar,p2BarNoCandy2"
 p2BarNoCandy1,,"scene_bg_clear,sBackgroundSewerBar"
@@ -1739,34 +1712,34 @@ p2BarCandy1,Spook,"Also, check this out!"
 p2BarCandy1,,"char_update,Screwdriver,1"
 p2BarCandy1,Screwdriver,"[wave]Woow,[/wave] cool costume!"
 p2BarCandy1,Spook,Thanks. Where is yours?
-p2BarCandy1,Screwdriver,"Oh, mine's a surpirse! You'll see it soon enough!"
-p2BarCandy1,Spook,"At the party, right???"
+p2BarCandy1,Screwdriver,"Oh, mine's a surprise! You'll see it soon enough!"
+p2BarCandy1,Spook,"At the party, right?"
 p2BarCandy1,,"char_update,Screwdriver,2"
 p2BarCandy1,Screwdriver,[shake]AT THE PARTY!!![/shake]
 p2BarCandy1,,"char_update,Screwdriver,1"
 p2BarCandy1,Screwdriver,We'll be down here. Party starts at sunset!
 p2BarCandy1,,"char_update,Screwdriver,2"
-p2BarCandy1,Screwdriver,"Return before midnight, or you will be turned into a pumpkin!!!!"
-p2BarCandy1,,"char_update,Screwdriver,1"
+p2BarCandy1,Screwdriver,"Return before midnight, or you'll be turned into a pumpkin!"
+p2BarCandy1,,"char_update,Screwdriver,0"
 p2BarCandy1,Screwdriver,Oh. wait. That's already done. Heh.
 p2BarCandy1,Spook,What's so bad about turning into a pumpkin? Pumpkins are awesome!
 p2BarCandy1,,"char_update,Screwdriver,9"
 p2BarCandy1,Screwdriver,"...You need to read more, kiddo."
 p2BarCandy1,,"char_update,Screwdriver,0"
-p2BarCandy1,Screwdriver,"Come help with the decorations! Barry said he would, but then he went to sleep cause he is, uh, ""Nocturnal""."
+p2BarCandy1,Screwdriver,"Come help with the decorations! Barry said he would, but then he went to sleep 'cuz he's, uh, ""Nocturnal""."
 p2BarCandy1,Screwdriver,You know what choosing when to sleep and wake up is called in my book?
 p2BarCandy1,,"char_update,Screwdriver,2"
-p2BarCandy1,Screwdriver,Privilige! It's privilige!
+p2BarCandy1,Screwdriver,Privilege! It's a privilege!
 p2BarCandy1,,"choice,p2BarCandy1Somewhere,p2BarCandy1Ok"
 p2BarCandy1,,"scene_set,p2BarCandy1Somewhere"
 p2BarCandy1,,"scene_set,p2BarCandy1Ok"
 ,,
 p2BarCandy1Somewhere,,"char_update,Screwdriver,0"
 p2BarCandy1Somewhere,Screwdriver,[wave]Booo![/wave]
-p2BarCandy1Somewhere,Screwdriver,A bunch of traitors!
+p2BarCandy1Somewhere,Screwdriver,Buncha lazy bums!
 p2BarCandy1Somewhere,,"char_update,Screwdriver,2"
 p2BarCandy1Somewhere,Screwdriver,Fine!
-p2BarCandy1Somewhere,Screwdriver,"I am the only one with taste here, anyway!"
+p2BarCandy1Somewhere,Screwdriver,"I'm the only one with taste here, anyway!"
 p2BarCandy1Somewhere,Screwdriver,Go do your thing. Heh.
 p2BarCandy1Somewhere,,map
 ,,
@@ -1791,13 +1764,14 @@ p2BarCandy2,,"scene_set,p2BarCandy2Sure"
 ,,
 p2BarCandy2Nah,Screwdriver,"Oh, c'mon!"
 p2BarCandy2Nah,Spook,"Sorry, I'll see you around!"
+p2BarCandy2Nah,,"char_update,Screwdriver,3"
 p2BarCandy2Nah,Screwdriver,Hey!
 p2BarCandy2Nah,,map
 ,,
 p2BarCandy2Sure,,"char_update,Screwdriver,2"
 p2BarCandy2Sure,Screwdriver,"Finally, some help!"
 p2BarCandy2Sure,,"char_update,Screwdriver,0"
-p2BarCandy2Sure,Screwdriver,Almost thought I'll have to handle all of this on my own.
+p2BarCandy2Sure,Screwdriver,Almost thought I'd have to handle all of this myself.
 p2BarCandy2Sure,,"scene_set,p2BarCandyDecor"
 ,,
 p2BarCandyDecor,,"map_scene,bar,p2BarCandyComplete"
@@ -1807,58 +1781,52 @@ p2BarCandyDecor,,"char_update,Spook,8"
 p2BarCandyDecor,Spook,To the [shake]WHAT?[/shake]
 p2BarCandyDecor,,"char_out,Screwdriver"
 p2BarCandyDecor,,main_char_out
-p2BarCandyDecor,Empty,Screwdriver leads you to a room in the back of the bar. It's stuffy in here.
-p2BarCandyDecor,,"main_char_in,0"
-p2BarCandyDecor,Empty,"You see a box of Halloween decorations, some are really questionable objects, hardly even decorations."
-p2BarCandyDecor,Empty,"Amongst all the items you spot a weird blobfish plushie, or is it an ornament?"
-p2BarCandyDecor,,"char_in,Screwdriver,sScrewdriver,0"
-p2BarCandyDecor,Screwdriver,See these?
-p2BarCandyDecor,Spook,...Um...
-p2BarCandyDecor,,"char_update,Screwdriver,1"
-p2BarCandyDecor,Screwdriver,We are going to create wonders with them!
-p2BarCandyDecor,,"choice,p2BarCandyDecorPink,p2BarCandyDecorBones"
-p2BarCandyDecor,,"scene_set,p2BarCandyDecorPink"
-p2BarCandyDecor,,"scene_set,p2BarCandyDecorBones"
+p2BarCandyDecor,,"scene_set,p2BarCandyDecorBack"
 ,,
-p2BarCandyDecorPink,,"char_update,Screwdriver,9"
+p2BarCandyDecorBack,,"trans_change,true,sBackgroundBlack"
+p2BarCandyDecorBack,Empty,Screwdriver leads you to a room in the back of the bar. It's stuffy in here.
+p2BarCandyDecorBack,,"trans_change,true,sBackgroundBox"
+p2BarCandyDecorBack,Empty,"You see a box of Halloween decorations, some are really questionable objects, hardly even decorations."
+p2BarCandyDecorBack,Empty,"Among all the items, you spot a weird pink plushie... or is it an ornament?"
+p2BarCandyDecorBack,,"main_char_in,0"
+p2BarCandyDecorBack,Screwdriver,See these?
+p2BarCandyDecorBack,Spook,...Um... yeah.
+p2BarCandyDecorBack,Screwdriver,We are going to create wonders with them!
+p2BarCandyDecorBack,,"choice,p2BarCandyDecorPink,p2BarCandyDecorBones"
+p2BarCandyDecorBack,,"scene_set,p2BarCandyDecorPink"
+p2BarCandyDecorBack,,"scene_set,p2BarCandyDecorBones"
+,,
 p2BarCandyDecorPink,Screwdriver,...Oh. A blobfish.
 p2BarCandyDecorPink,,"char_update,Spook,6"
 p2BarCandyDecorPink,Spook,But... why is it there...?
-p2BarCandyDecorPink,,"char_update,Screwdriver,7"
 p2BarCandyDecorPink,Screwdriver,It looks scary. I was scared when I saw it.
-p2BarCandyDecorPink,Spook,...Okay...???
+p2BarCandyDecorPink,Spook,...Okay...?
 p2BarCandyDecorPink,,"scene_set,p2BarCandyDecorWatch"
 ,,
-p2BarCandyDecorBones,,"char_update,Screwdriver,2"
-p2BarCandyDecorBones,Screwdriver,Of course! Who needs cheap plastic when we all have bones under our skins!
-p2BarCandyDecorBones,,"char_update,Spook,8"
+p2BarCandyDecorBones,Screwdriver,Of course! Who needs cheap plastic when we all have bones under our skin!
+p2BarCandyDecorBones,,"char_update,Spook,11"
 p2BarCandyDecorBones,Spook,Um. I'd like mine to remain under my skin...
-p2BarCandyDecorBones,,"char_update,Screwdriver,1"
 p2BarCandyDecorBones,Screwdriver,"Well, you can have it that way."
-p2BarCandyDecorBones,,"char_update,Screwdriver,0"
 p2BarCandyDecorBones,Screwdriver,...For now.
-p2BarCandyDecorBones,,"char_update,Spook,4"
+p2BarCandyDecorBones,,"char_update,Spook,8"
 p2BarCandyDecorBones,Spook,Stop!!!
-p2BarCandyDecorBones,,"char_update,Screwdriver,1"
 p2BarCandyDecorBones,Screwdriver,"Heh, just messin' with ya, kid."
 p2BarCandyDecorBones,,"scene_set,p2BarCandyDecorWatch"
 ,,
-p2BarCandyDecorWatch,,"char_update,Spook,0"
-p2BarCandyDecorWatch,Spook,"Uh, wait. Is that a pocket watch?"
-p2BarCandyDecorWatch,,"char_update,Screwdriver,9"
-p2BarCandyDecorWatch,Screwdriver,Huh... dunno...?
-p2BarCandyDecorWatch,,"trans_change,true,sBackgroundBlack"
-p2BarCandyDecorWatch,Empty,"You see a pocket watch. One side has a picture of Barry, the other - of the dog from the house across."
-p2BarCandyDecorWatch,,"trans_change,true,sBackgroundSewerBar"
-p2BarCandyDecorWatch,,"main_char_in,0"
+p2BarCandyDecorWatch,,"char_update,Spook,6"
+p2BarCandyDecorWatch,Spook,"Uh, wait. What is that?"
+p2BarCandyDecorWatch,Screwdriver,Huh... what...?
+p2BarCandyDecorWatch,,"char_in,Watch,sPocketWatch,0"
+p2BarCandyDecorWatch,,"delay,2"
+p2BarCandyDecorWatch,Empty,"You see a pocket watch. One side has a picture of a raccoon, and on the other side... the dog from the neighbor's house."
 p2BarCandyDecorWatch,,"char_in,Screwdriver,sScrewdriver,0"
-p2BarCandyDecorWatch,Screwdriver,Oh! This old thing!
+p2BarCandyDecorWatch,Screwdriver,"Oh, that old thing?"
 p2BarCandyDecorWatch,,"condition_flag,metPrincess"
 p2BarCandyDecorWatch,,"scene_set,p2BarCandyDecorMetPrincess"
 p2BarCandyDecorWatch,,"scene_set,p2BarCandyDecorNotMetPrincess"
 ,,
 p2BarCandyDecorMetPrincess,,"char_update,Spook,5"
-p2BarCandyDecorMetPrincess,Spook,[shake]IS THAT THE PRINCESS!?[/shake]
+p2BarCandyDecorMetPrincess,Spook,[shake]IS THAT THE PRINCESS?![/shake]
 p2BarCandyDecorMetPrincess,,"char_update,Screwdriver,1"
 p2BarCandyDecorMetPrincess,Screwdriver,"You've met? Wow, kid. You are quite the explorer!"
 p2BarCandyDecorMetPrincess,,"char_update,Spook,6"
@@ -1867,10 +1835,10 @@ p2BarCandyDecorMetPrincess,Screwdriver,Oh little Spooky... You should've been th
 p2BarCandyDecorMetPrincess,,"char_update,Screwdriver,2"
 p2BarCandyDecorMetPrincess,Screwdriver,They used to be so grossly in love!
 p2BarCandyDecorMetPrincess,,"char_update,Spook,5"
-p2BarCandyDecorMetPrincess,Spook,[shake]REALLY!?[/shake]
+p2BarCandyDecorMetPrincess,Spook,[shake]REALLY?![/shake]
 p2BarCandyDecorMetPrincess,,"char_update,Screwdriver,1"
 p2BarCandyDecorMetPrincess,Screwdriver,"Really, really. "
-p2BarCandyDecorMetPrincess,Spook,But... one is a dog... and the other is a Racoon...
+p2BarCandyDecorMetPrincess,Spook,But... one is a dog... and the other is a racoon...
 p2BarCandyDecorMetPrincess,,"char_update,Screwdriver,0"
 p2BarCandyDecorMetPrincess,Screwdriver,[wave]Boo![/wave] Spook! 
 p2BarCandyDecorMetPrincess,Screwdriver,You can't say things like that! They are two adult animals who happened to love each other!
@@ -1879,14 +1847,15 @@ p2BarCandyDecorMetPrincess,,"scene_set,p2BarCandyDecorCubs"
 p2BarCandyDecorMetPrincess,,"scene_set,p2BarCandyDecorAlright"
 ,,
 p2BarCandyDecorCubs,,"char_update,Screwdriver,1"
-p2BarCandyDecorCubs,Screwdriver,[shake]CUBS!!!!????[/shake]
+p2BarCandyDecorCubs,Screwdriver,[shake]CUBS?!!![/shake]
 p2BarCandyDecorCubs,,"char_update,Screwdriver,2"
 p2BarCandyDecorCubs,Screwdriver,[shake]BWAHAHAHAHA!!![/shake]
 p2BarCandyDecorCubs,,"char_update,Screwdriver,0"
 p2BarCandyDecorCubs,Screwdriver,Kid.
-p2BarCandyDecorCubs,Spook,Would they be like... Dogcoons...
+p2BarCandyDecorCubs,Spook,Would they be like... Dogcoons...?
 p2BarCandyDecorCubs,Screwdriver,Kid. Hey. Listen to me. 
 p2BarCandyDecorCubs,Screwdriver,There are more things to life than having cubs!
+p2BarCandyDecorCubs,,"char_update,Screwdriver,2"
 p2BarCandyDecorCubs,Screwdriver,[rainbow][pulse]Love! Passion! Companionship![/pulse][/rainbow]
 p2BarCandyDecorCubs,,"char_update,Spook,0"
 p2BarCandyDecorCubs,Spook,"I get it, I get it."
@@ -1896,11 +1865,13 @@ p2BarCandyDecorCubs,Screwdriver,"You're a funny one, kid."
 p2BarCandyDecorCubs,Screwdriver,You said nothin' about the moth and the lamp!
 p2BarCandyDecorCubs,Spook,I was scared of the lamp!
 p2BarCandyDecorCubs,,"char_update,Screwdriver,0"
-p2BarCandyDecorCubs,Screwdriver,...? Alright?
+p2BarCandyDecorCubs,Screwdriver,"Ah c'mon, it's not THAT scary."
+p2BarCandyDecorCubs,,"char_update,Screwdriver,7"
+p2BarCandyDecorCubs,Screwdriver,...
 p2BarCandyDecorCubs,,"scene_set,p2BarCandyDecorChoice"
 ,,
 p2BarCandyDecorAlright,,"char_update,Screwdriver,1"
-p2BarCandyDecorAlright,Screwdriver,"Wow! Super progressive, Spook. I am impressed."
+p2BarCandyDecorAlright,Screwdriver,"Hehe, see? You get it."
 p2BarCandyDecorAlright,,"scene_set,p2BarCandyDecorChoice"
 ,,
 p2BarCandyDecorNotMetPrincess,,"char_update,Spook,5"
@@ -1911,17 +1882,17 @@ p2BarCandyDecorNotMetPrincess,,"char_update,Spook,6"
 p2BarCandyDecorNotMetPrincess,Spook,Who is she?
 p2BarCandyDecorNotMetPrincess,,"char_update,Screwdriver,0"
 p2BarCandyDecorNotMetPrincess,Screwdriver,"Ah, just an old friend of ours."
-p2BarCandyDecorNotMetPrincess,Spook,"From the ""band""?"
+p2BarCandyDecorNotMetPrincess,Spook,From the band?
 p2BarCandyDecorNotMetPrincess,Screwdriver,"Oh, no no. She is... another story."
 p2BarCandyDecorNotMetPrincess,,"char_update,Spook,5"
-p2BarCandyDecorNotMetPrincess,Spook,That's Barry?!
+p2BarCandyDecorNotMetPrincess,Spook,And that's... Barry?!
 p2BarCandyDecorNotMetPrincess,,"char_update,Screwdriver,1"
 p2BarCandyDecorNotMetPrincess,Screwdriver,Heh. Yeah. He had some crazy hair back then.
 p2BarCandyDecorNotMetPrincess,,"scene_set,p2BarCandyDecorChoice"
 ,,
 p2BarCandyDecorChoice,,"char_update,Screwdriver,2"
 p2BarCandyDecorChoice,Screwdriver,"Anyway, enough reminiscing. Let's get things going!"
-p2BarCandyDecorChoice,,"char_update,Screwdriver,0"
+p2BarCandyDecorChoice,,"char_update,Screwdriver,7"
 p2BarCandyDecorChoice,Screwdriver,"You can start with the blobfish, I don't trust that thing."
 p2BarCandyDecorChoice,,"char_update,Screwdriver,1"
 p2BarCandyDecorChoice,Screwdriver,I'll go make some ghosts out of sheets!
@@ -1932,13 +1903,14 @@ p2BarCandyDecorChoice,,"choice,p2BarCandyDecorKeep,p2BarCandyDecorLeave"
 p2BarCandyDecorChoice,,"scene_set,p2BarCandyDecorKeep"
 p2BarCandyDecorChoice,,"scene_set,p2BarCandyDecorLeave"
 ,,
+p2BarCandyDecorLeave,,"char_update,Spook,11"
 p2BarCandyDecorLeave,Spook,"This thing looks important, but I don't wanna steal it..."
 p2BarCandyDecorLeave,Screwdriver,"[tw_sfx_vol,50]What was that?"
 p2BarCandyDecorLeave,,"char_update,Spook,5"
 p2BarCandyDecorLeave,Spook,Nothing!
 p2BarCandyDecorLeave,Screwdriver,"[tw_sfx_vol,50]There better not be any [shake]STEALING[/shake] of anything that I stole in here!"
 p2BarCandyDecorLeave,,"char_update,Spook,7"
-p2BarCandyDecorLeave,Spook,What does that even mean...
+p2BarCandyDecorLeave,Spook,What does that even mean...?
 p2BarCandyDecorLeave,Screwdriver,"[tw_sfx_vol,50]It means what I mean that it means!"
 p2BarCandyDecorLeave,Spook,[shake]Ugh...[/shake]
 p2BarCandyDecorLeave,,"char_update,Spook,0"
@@ -1957,18 +1929,20 @@ p2BarCandyDecorLeaveReally,,"trans_scene,p2BarCandyDecorFinish"
 ,,
 p2BarCandyDecorKeep,,"flag_set,questPrincessStart,true"
 p2BarCandyDecorKeep,,"trans_change,true,sBackgroundBlack"
-p2BarCandyDecorKeep,Empty,You picked up the pocket watch!
-p2BarCandyDecorKeep,Empty,"...Not sure how you carry it with you, as it is about your size, but, you manage!"
+p2BarCandyDecorKeep,Empty,You picked up the pocket watch.
+p2BarCandyDecorKeep,Empty,"...Not sure how you carry it with you, since it's about your size, but you manage!"
 p2BarCandyDecorKeep,,"trans_scene,p2BarCandyDecorFinish"
 ,,
 p2BarCandyDecorFinish,,"scene_bg_clear,sBackgroundBlack"
+p2BarCandyDecorFinish,,"music,noone"
 p2BarCandyDecorFinish,Empty,You finish helping Screwdriver setup the Halloween decorations.
 p2BarCandyDecorFinish,,"trans_change,true,sBackgroundSewerBarParty"
+p2BarCandyDecorFinish,,"music,bgmBarPunk"
 p2BarCandyDecorFinish,,"main_char_in,7"
 p2BarCandyDecorFinish,,"char_in,Screwdriver,sScrewdriver,1"
 p2BarCandyDecorFinish,Screwdriver,"Well, would you look at that. Not bad, huh?"
 p2BarCandyDecorFinish,Screwdriver,And we barely broke a sweat!
-p2BarCandyDecorFinish,Spook,"[wave]Haah[/wave], maybe you didn't, but I'm exhausted!"
+p2BarCandyDecorFinish,Spook,"[wave]Haah[/wave], maybe you didn't, but I'm exhausted."
 p2BarCandyDecorFinish,,"char_update,Screwdriver,2"
 p2BarCandyDecorFinish,Screwdriver,"Don't worry, kid. We're already half way done!"
 p2BarCandyDecorFinish,Screwdriver,"Together, we'll finish this in no time!"
@@ -1988,7 +1962,7 @@ p2BarCandyDecorFinish,Screwdriver,Hey!
 p2BarCandyDecorFinish,,map
 ,,
 p2BarCandyComplete,,"scene_bg_clear,sBackgroundSewerBarParty"
-p2BarCandyComplete,,"music,bgmSewerBar"
+p2BarCandyComplete,,"music,bgmBarPunk"
 p2BarCandyComplete,,"main_char_in,0"
 p2BarCandyComplete,,"char_in,Screwdriver,sScrewdriver,1"
 p2BarCandyComplete,Screwdriver,"Well would you look at that! Returned to finish what we started, at last?"
@@ -1998,13 +1972,11 @@ p2BarCandyComplete,Screwdriver,"Don't be shy, I know you want to carry that heav
 p2BarCandyComplete,Spook,"Sorry, gotta go!"
 p2BarCandyComplete,,map
 ,,
-,,
-,,
 p2Front1,,"map_scene,front,p2Front2"
 p2Front1,,"flag_set,metPrincess,true"
 p2Front1,,"scene_bg_clear,sBackgroundHouseAcrossYardDay"
 p2Front1,,"music,bgmHouseAcross"
-p2Front1,Empty,You take notice that the front door is no longer guarded by the furry ball with ears!
+p2Front1,Empty,You take notice that the front door is no longer guarded by the giant furry ball with ears!
 p2Front1,,"trans_change,true,sBackgroundBlack"
 p2Front1,Empty,You enter through the little pet's door.
 p2Front1,,"trans_change,true,sBackgroundHouseAcrossYardDay"
@@ -2194,7 +2166,6 @@ p2Front1BadIdea,Princess,[shake]DIPPER GET IN HERE!!! GUAAARDS!!![/shake]
 p2Front1BadIdea,Spook,"This is bad, I better get out of here!"
 p2Front1BadIdea,,map
 ,,
-,,
 p2Front2,,"scene_bg_clear,sBackgroundHouseAcrossYardDay"
 p2Front2,,"music,bgmHouseAcross"
 p2Front2,,"main_char_in,0"
@@ -2222,7 +2193,6 @@ p2Front2Something,Princess,"A gift for the royalty? How unexpected, how pleasant
 p2Front2Something,,"char_update,Princess,0"
 p2Front2Something,Spook,It's this pocket watch! Look!
 p2Front2Something,,"scene_set,p2FrontWatch"
-,,
 ,,
 p2FrontWatch,,"char_update,Spook,0"
 p2FrontWatch,Spook,Isn't this you?
@@ -2258,7 +2228,6 @@ p2FrontWatchLeave,Spook,"[alpha,0.75](But, there won't be a better chance to get
 p2FrontWatchLeave,,"choice,p2FrontWatchMiss,p2FrontWatchSkeddadle"
 p2FrontWatchLeave,,"scene_set,p2FrontWatchMiss"
 p2FrontWatchLeave,,"scene_set,p2FrontWatchSkeddadle"
-,,
 ,,
 p2FrontWatchMiss,Princess,[shake]Shut up![/shake]
 p2FrontWatchMiss,Spook,No! You should come to the party!
@@ -2371,14 +2340,12 @@ p2FrontWatchTried,Princess,Tried to make a fool out of me! Now get out!!!
 p2FrontWatchTried,Spook,Time to skedaddle.
 p2FrontWatchTried,,"scene_set,p2FrontWatchSkeddadle"
 ,,
-,,
 p2FrontWatchSkeddadle,,"map_scene,front,p2FrontOffended"
 p2FrontWatchSkeddadle,,"flag_set,questPrincessFail,true"
 p2FrontWatchSkeddadle,,"trans_change,true,sBackgroundHouseAcrossYardDay"
 p2FrontWatchSkeddadle,,"main_char_in,5"
 p2FrontWatchSkeddadle,Spook,"I think I saved those guys an awkward party! They should be thanking me, really."
 p2FrontWatchSkeddadle,,map
-,,
 ,,
 p2FrontWatchCome,,"map_scene,front,p2FrontComplete"
 p2FrontWatchCome,,"flag_set,questPrincessComplete,true"
@@ -2397,7 +2364,6 @@ p2FrontWatchCome,Spook,Alright. See you soon!
 p2FrontWatchCome,,"char_update,Princess,0"
 p2FrontWatchCome,Princess,"...Very well, [name_from_princess_low]."
 p2FrontWatchCome,,map
-,,
 ,,
 p2FrontOffended,,"scene_bg_clear,sBackgroundHouseAcrossYardDay"
 p2FrontOffended,,"music,bgmHouseAcross"
@@ -2499,7 +2465,6 @@ p2Street1StrayIntro,Spook,So...
 p2Street1StrayIntro,Spook,"Are you a stray, too?"
 p2Street1StrayIntro,,"scene_set,p2Street1Stray"
 ,,
-,,
 p2Street1Animal,,"flag_set,streetQuestionAnimal,true"
 p2Street1Animal,,"flag_set,knowLimes,true"
 p2Street1Animal,[limes_name_cap],Limez.
@@ -2574,7 +2539,6 @@ p2Street1PartyNoCandy,Empty,"[sound,sfxLimesSpin]Limes starts moving wildly and 
 p2Street1PartyNoCandy,,"delay,1"
 p2Street1PartyNoCandy,[limes_name_cap],"[shake][wave]BA-DUM-TSSS!!![/wave][/shake][sound,sfxLimesBadumTss]"
 p2Street1PartyNoCandy,,"scene_set,p2Street1PartyNoQuest"
-,,
 ,,
 p2Street1PartyCandy,,"char_update,Spook,5"
 p2Street1PartyCandy,Spook,Wait... You are the lost drummer?!

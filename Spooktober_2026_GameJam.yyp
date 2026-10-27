@@ -363,6 +363,7 @@
     {"id":{"name":"sMapLocations","path":"sprites/sMapLocations/sMapLocations.yy",},},
     {"id":{"name":"sMoth","path":"sprites/sMoth/sMoth.yy",},},
     {"id":{"name":"sPixel","path":"sprites/sPixel/sPixel.yy",},},
+    {"id":{"name":"sPocketWatch","path":"sprites/sPocketWatch/sPocketWatch.yy",},},
     {"id":{"name":"sPogo","path":"sprites/sPogo/sPogo.yy",},},
     {"id":{"name":"sPrincess","path":"sprites/sPrincess/sPrincess.yy",},},
     {"id":{"name":"sScrewdriver","path":"sprites/sScrewdriver/sScrewdriver.yy",},},

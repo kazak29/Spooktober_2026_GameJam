@@ -11,6 +11,8 @@ input = {
 	left:  [ A_KEY, gp_padl ],
 	right: [ D_KEY, gp_padr ],
 	
+	toggleUI: [ H_KEY, gp_shoulderr ],            // RB on XBox, R1 on Playstation
+	
 	confirm: [ vk_space,  gp_face1],				// A on XBox, X on Playstation
 	cancel:  [ vk_escape, gp_face2],				// B on XBox, Circle on Playstation
 	

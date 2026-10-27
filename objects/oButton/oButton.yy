@@ -35,6 +35,7 @@
     {"$GMObjectProperty":"v2","%Name":"titleFont","filters":[],"listItems":[],"multiselect":false,"name":"titleFont","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"FONT_CONSOLE_16","varType":4,},
     {"$GMObjectProperty":"v2","%Name":"scaleToText","filters":[],"listItems":[],"multiselect":false,"name":"scaleToText","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"true","varType":3,},
     {"$GMObjectProperty":"v2","%Name":"posToText","filters":[],"listItems":[],"multiselect":false,"name":"posToText","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"true","varType":3,},
+    {"$GMObjectProperty":"v2","%Name":"toggled","filters":[],"listItems":[],"multiselect":false,"name":"toggled","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"True","varType":3,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

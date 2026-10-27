@@ -40,6 +40,8 @@
 	#macro A_KEY ord("A")
 	#macro S_KEY ord("S")
 	#macro D_KEY ord("D")
+	
+	#macro H_KEY ord("H")
 
 	#macro GAMEPAD_DISCONNECTED -1
 	#macro SLOT_1                0
