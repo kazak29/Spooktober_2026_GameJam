@@ -40,7 +40,7 @@ var _buttonSettings = function() {
 }
 
 switch room {
-	case rmInit:		{	global.dataMenu = DataMenuSetup(); room_goto(rmTitleScreen /*TODO rmSplashScreen*/);							}	break;
+	case rmInit:		{	global.dataMenu = DataMenuSetup(); room_goto(rmTitleScreen); /*TODO: room_goto(rmSplashScreen);*/	}	break;
 	case rmStage:		{	_buttonSettings();	AmbientPlayAll();													}	break;
 	case rmMap:			{	_buttonSettings();	AmbientPlayAll();													}	break;
 	case rmTitleScreen:	{	if (os_type == os_gxgames) MenuCreate("titleMain"); else MenuCreate("titleMainWin");	}	break;

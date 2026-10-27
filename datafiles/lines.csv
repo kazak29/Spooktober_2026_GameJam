@@ -1976,18 +1976,20 @@ p2Front1,,"map_scene,front,p2Front2"
 p2Front1,,"flag_set,metPrincess,true"
 p2Front1,,"scene_bg_clear,sBackgroundHouseAcrossYardDay"
 p2Front1,,"music,bgmHouseAcross"
-p2Front1,Empty,You take notice that the front door is no longer guarded by the giant furry ball with ears!
+p2Front1,Empty,You notice that the front door is no longer guarded by the giant furry ball with long ears.
 p2Front1,,"trans_change,true,sBackgroundBlack"
-p2Front1,Empty,You enter through the little pet's door.
+p2Front1,Empty,You squeeze through a small hole in the front door.
 p2Front1,,"trans_change,true,sBackgroundHouseAcrossYardDay"
 p2Front1,,"main_char_in,0"
-p2Front1,,"char_in,Princess,sPrincess,0"
+p2Front1,,"char_in,Princess,sPrincess,7"
+p2Front1,,"sound,sfxPrincessBark"
+p2Front1,,"delay,0.1"
 p2Front1,Princess,"Ah, [name_from_princess_low]!"
-p2Front1,Princess,How did you get past my bodyguard!?
+p2Front1,Princess,How did you get past my bodyguard?
 p2Front1,,"char_update,Spook,6"
 p2Front1,Spook,Do you mean... the rabbit?
 p2Front1,,"char_update,Princess,2"
-p2Front1,Princess,"That's [cycle,120,132]Great Dipper[/cycle] to you. The almighty protector of this kingdom and all who inhabit it!"
+p2Front1,Princess,That's [wave]Great Dipper[/wave] to you. The almighty protector of this kingdom and all who inhabit it!
 p2Front1,,"char_update,Spook,5"
 p2Front1,Spook,Huh. Well... he wasn't... there?
 p2Front1,,"char_update,Princess,0"

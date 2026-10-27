@@ -80,19 +80,19 @@ global.dataTypewriterSfx = {
 	Hamster: {
 		ids:		[sfxTypewriterSpook],
 		vol:		100,
-		pitchMin:	1.4,
-		pitchMax:	1.4,
+		pitchMin:	1.5,
+		pitchMax:	1.5,
 		overlap:	40,
 	},
 	Princess: {
-		ids:		[sfxTypewriterSpook],
+		ids:		[sfxTypewriterPrincess],
 		vol:		100,
 		pitchMin:	1.2,
 		pitchMax:	1.2,
 		overlap:	10,
 	},
 	Limes: {
-		ids:		[sfxTypewriterSpook],
+		ids:		[sfxTypewriterLimes],
 		vol:		100,
 		pitchMin:	1.2,
 		pitchMax:	1.2,
