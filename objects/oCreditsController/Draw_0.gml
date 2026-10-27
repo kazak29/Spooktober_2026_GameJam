@@ -1,4 +1,4 @@
-// 1. Draw Title
+// Draw Title
 draw_set_font(fConsol24);
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
@@ -25,10 +25,8 @@ for (var _i = 0; _i < creditsLength; _i++)
 
 
 // Draw Prompt to Exit
-
-
 draw_set_color(c_gray);
-draw_text(drawX, VIEWPORT_HEIGHT - 60, returnPrompt);
+draw_text(drawX, drawY, returnPrompt);
 
 
 

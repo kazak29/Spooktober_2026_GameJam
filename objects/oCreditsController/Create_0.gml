@@ -25,5 +25,6 @@ returnPrompt = $"Press {global.uiData.menuCreditsReturn} to Return to Title Scre
 
 
 drawX      = VIEWPORT_WIDTH / 2;
+drawY      = VIEWPORT_HEIGHT - 60;
 drawStartY = VIEWPORT_HEIGHT * 0.25;
 ySpacing   = 36;

@@ -1603,7 +1603,6 @@ p2Home1Stay,Spook,"Oh, my beautiful bed!"
 p2Home1Stay,Spook,Why did I ever leave you behind?
 p2Home1Stay,Spook,"Well, no more! Not getting out of this cage. Nope!"
 p2Home1Stay,,"char_out,Spook"
-p2Home1Stay,,"delay,0.5"
 p2Home1Stay,,"trans_scene,endStay"
 ,,
 p2BarNoCandy1,,"map_scene,bar,p2BarNoCandy2"
@@ -2783,10 +2782,11 @@ p2EndIntro,,"char_update,Spook,6"
 p2EndIntro,Spook,I wonder what that party looks like now?
 p2EndIntro,,"custom_script_stop,EndingCheck"
 ,,
-endStay,,"scene_bg_clear,sBackgroundCageNight"
-endStay,,"music,bgmSpookTheme"
+endStay,,"scene_bg_clear,sBackgroundBlack"
 endStay,,"delay,0.5"
 endStay,Empty,You decide to sleep until Shay is home.
+endStay,,"delay,0.5"
+endStay,,"trans_change,true,sBackgroundCageNightSpook"
 endStay,Empty,Horrors outside can wait!
 endStay,,"delay,0.3"
 endStay,,"trans_change,true,sBackgroundShayRoomNight"
@@ -2796,17 +2796,22 @@ endStay,,"main_char_in,10"
 endStay,,"char_in,Shay,sShay,3"
 endStay,Shay,Hi Spooky-boo!
 endStay,,"char_update,Shay,6"
-endStay,Shay,"My, that was [shake]EXHAUSTING![/shake]"
+endStay,Shay,"Gosh, that was [shake]EXHAUSTING![/shake]"
 endStay,,"char_update,Shay,7"
 endStay,Shay,I am never going outside again!!!! [shake]Ugh!!![/shake]
+endStay,Shay,"I'm sure you were just as bored at home all day, too!"
+endStay,,"char_update,Shay,6"
+endStay,Shay,Well...
 endStay,,"char_update,Shay,5"
-endStay,Shay,"Well, nevermind."
-endStay,,"music,bgmTitleTheme"
-endStay,,"trans_change,false,sBackgroundBlack"
 endStay,Shay,It's time to watch some [wave]zombie rats![/wave]
+endStay,,main_char_out
+endStay,,"delay,0.1"
+endStay,,"main_char_in,9"
 endStay,Spook,Squeak!
-endStay,,"trans_change,true"
-endStay,,"trans_room,rmCredits"
+endStay,,"music,noone"
+endStay,,"trans_change,true,sBackgroundBlack"
+endStay,Empty,"For some reason, rats don't feel as scary anymore..."
+endStay,,"trans_room,rmStayInEnding"
 ,,
 endPartyBad,,"scene_bg_clear,sBackgroundBlack"
 endPartyBad,Empty,You climb down the Sewer.
