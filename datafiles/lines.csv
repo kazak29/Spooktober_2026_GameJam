@@ -1982,14 +1982,14 @@ p2Front1,Empty,You squeeze through a small hole in the front door.
 p2Front1,,"trans_change,true,sBackgroundHouseAcrossYardDay"
 p2Front1,,"main_char_in,0"
 p2Front1,,"char_in,Princess,sPrincess,7"
-p2Front1,,"sound,sfxPrincessBark"
+p2Front1,Princess,"[sound,sfxPrincessBark][b]Bark![/b]"
 p2Front1,,"delay,0.1"
 p2Front1,Princess,"Ah, [name_from_princess_low]!"
 p2Front1,Princess,How did you get past my bodyguard?
 p2Front1,,"char_update,Spook,6"
 p2Front1,Spook,Do you mean... the rabbit?
-p2Front1,,"char_update,Princess,2"
-p2Front1,Princess,That's [wave]Great Dipper[/wave] to you. The almighty protector of this kingdom and all who inhabit it!
+p2Front1,,"char_update,Princess,6"
+p2Front1,Princess,That's [wave]The Great Dipper[/wave] to you! The almighty protector of this kingdom and all who inhabit it!
 p2Front1,,"char_update,Spook,5"
 p2Front1,Spook,Huh. Well... he wasn't... there?
 p2Front1,,"char_update,Princess,0"
@@ -2001,8 +2001,8 @@ p2Front1,,"char_update,Princess,2"
 p2Front1,Princess,"Yes, [name_from_princess_low]! You are in the presence of the Princess!"
 p2Front1,,"char_update,Spook,0"
 p2Front1,Spook,Princess who?
-p2Front1,,"char_update,Princess,0"
-p2Front1,Princess,Just Princess. [shake]THE[/shake] Princess.
+p2Front1,,"char_update,Princess,7"
+p2Front1,Princess,"[speed,0.2][shake]THE. PRINCESS.[/shake][/speed]"
 p2Front1,,"condition_flag,questPrincessStart"
 p2Front1,,"scene_set,p2Front1ChoiceQuest"
 p2Front1,,"scene_set,p2Front1Choice"
@@ -2028,7 +2028,7 @@ p2Front1Yes,,"char_update,Princess,0"
 p2Front1Yes,Princess,"What is your name, humble [name_from_princess_low]?"
 p2Front1Yes,Spook,"It's Spook, Your Highness!"
 p2Front1Yes,Princess,Spook. I see.
-p2Front1Yes,Princess,"Spook, you don't happen to be one of the little pests stealing from my keep the other night?"
+p2Front1Yes,Princess,"Spook, you wouldn't happen to be one of the little [shake]pests[/shake] who stole from my keep the other night, would you?"
 p2Front1Yes,,"char_update,Spook,8"
 p2Front1Yes,Spook,"[shake]Uhhhh, nooo...[/shake]"
 p2Front1Yes,,"char_update,Spook,5"
@@ -2039,10 +2039,10 @@ p2Front1Yes,,"char_update,Princess,0"
 p2Front1Yes,Princess,"You should consider becoming my loyal knight, little mouse. "
 p2Front1Yes,Princess,I can see you are cut for it!
 p2Front1Yes,,"char_update,Spook,9"
-p2Front1Yes,Spook,[wave]Spook the Knight!!!![/wave]
+p2Front1Yes,Spook,[wave]Spook the Knight?![/wave]
 p2Front1Yes,Spook,I actually already have my Halloween costume picked out!
-p2Front1Yes,,"char_update,Princess,1"
-p2Front1Yes,Princess,Hehe.
+p2Front1Yes,,"char_update,Princess,8"
+p2Front1Yes,Princess,Hmph...
 p2Front1Yes,,"flag_set,gotKnight,true"
 p2Front1Yes,,"scene_set,p2Front1Party"
 ,,
@@ -2066,41 +2066,40 @@ p2Front1Guess,,"char_update,Spook,0"
 p2Front1Guess,Spook,"Ooh, okay."
 p2Front1Guess,,"scene_set,p2Front1Party"
 ,,
-p2Front1Rule,,"char_update,Princess,3"
+p2Front1Rule,,"char_update,Princess,6"
+p2Front1Rule,Princess,[shake][b]GASP[/b][/shake]
 p2Front1Rule,Princess,"[sound,sfxPrincessBark][shake]The audacity![/shake]"
-p2Front1Rule,,"char_update,Spook,5"
-p2Front1Rule,Spook,No! I am just saying that we've never met!
-p2Front1Rule,,"char_update,Princess,2"
-p2Front1Rule,Princess,Am I to know each and every [name_from_princess_low] in my kingdom? Do you think an actual Princess has any time for that?!
 p2Front1Rule,,"char_update,Spook,8"
-p2Front1Rule,Spook,I don't know! I thought we had presidents now! [shake]This is very confusing!!![/shake]
+p2Front1Rule,Spook,No! I'm just saying that we've never met!
+p2Front1Rule,,"char_update,Princess,7"
+p2Front1Rule,Princess,"Am I to know each and every [name_from_princess_low] in my kingdom? Do you think a Princess as busy as I, has any time for that?!"
+p2Front1Rule,Spook,I don't know! [shake]This is very confusing!!![/shake]
 p2Front1Rule,Princess,"Get out of my sight, [name_from_princess_low]!"
 p2Front1Rule,,"choice,p2Front1Sorry,p2Front1Go"
 p2Front1Rule,,"scene_set,p2Front1Sorry"
 p2Front1Rule,,"scene_set,p2Front1Go"
 ,,
+p2Front1Go,,"char_update,Princess,8"
 p2Front1Go,Princess,Hmph!
-p2Front1Go,,"char_update,Spook,6"
-p2Front1Go,Spook,"[alpha,0.75](What's with that dog?)[/alpha]"
-p2Front1Go,Spook,"[alpha,0.75](I wonder if I should try and humor her next time...)[/alpha]"
+p2Front1Go,Princess,Begone then!
 p2Front1Go,,map
 ,,
-p2Front1Sorry,,"char_update,Spook,0"
 p2Front1Sorry,Spook,I really didn't mean to offend you!
 p2Front1Sorry,Spook,...
+p2Front1Sorry,,"char_update,Spook,11"
 p2Front1Sorry,Spook,Your Majesty.
-p2Front1Sorry,Princess,"You don't say ""Your Majesty"" to me! That is for the Queen."
-p2Front1Sorry,Princess,You'll adress the Princess as Your Highness.
-p2Front1Sorry,,"char_update,Princess,0"
+p2Front1Sorry,Princess,"You do not say ""Your Majesty"" to me! That is for the Queen."
+p2Front1Sorry,Princess,"You will address the Princess as ""Your Highness""."
+p2Front1Sorry,Princess,Do I make myself clear?!
+p2Front1Sorry,,"char_update,Princess,8"
 p2Front1Sorry,Princess,"Goodness, these [name_from_princess_low]s grow more ignorant by the day!"
-p2Front1Sorry,Spook,"Well, I am not from around here, really. Excuse my rudeness."
-p2Front1Sorry,,"char_update,Princess,2"
+p2Front1Sorry,Spook,"Well, I'm not from around here, really. Excuse my rudeness."
 p2Front1Sorry,Princess,Hmph.
 p2Front1Sorry,,"char_update,Spook,6"
 p2Front1Sorry,Spook,"So if you're the Princess, then your human is the Queen?"
 p2Front1Sorry,,"char_update,Princess,0"
-p2Front1Sorry,Princess,"Quite observant! Of course, my human is the most beautiful and powerful Queen of this land!"
-p2Front1Sorry,Princess,Any more questions?
+p2Front1Sorry,Princess,"Indeed. Of course, [shake]MY[/shake] human is the most powerful and beautiful Queen in all the land!"
+p2Front1Sorry,Princess,"Any more silly questions? I really am quite busy, you know."
 p2Front1Sorry,,"char_update,Spook,0"
 p2Front1Sorry,Spook,"Yes, well..."
 p2Front1Sorry,,"scene_set,p2Front1Party"
@@ -2110,16 +2109,17 @@ p2Front1Party,Spook,Are you going to be attending the party tonight?
 p2Front1Party,,"char_update,Princess,2"
 p2Front1Party,Princess,Hm? What party?
 p2Front1Party,,"char_update,Spook,5"
-p2Front1Party,Spook,A Halloween party!
-p2Front1Party,Spook,"My new friends will be there. It's Pogo, Screwdriver, Barry-"
+p2Front1Party,Spook,The Halloween Party!
+p2Front1Party,Spook,"My new friends will be there. There's Pogo, Screwdriver, Barry-"
 p2Front1Party,,"char_update,Princess,3"
 p2Front1Party,Princess,"[sound,sfxPrincessBark][b][shake]BARK![/shake][/b]"
 p2Front1Party,,"char_update,Spook,8"
-p2Front1Party,Spook,[shake]AH!!!![/shake] What happened??
-p2Front1Party,,"char_update,Princess,2"
+p2Front1Party,Spook,[shake]AH!!!![/shake] What happened?!
+p2Front1Party,,"char_update,Princess,9"
 p2Front1Party,Princess,N-nothing. Nothing happened.
-p2Front1Party,,"char_update,Spook,5"
+p2Front1Party,,"char_update,Princess,5"
 p2Front1Party,Princess,"...You may take your leave now, [name_from_princess_low]."
+p2Front1Party,,"char_update,Spook,5"
 p2Front1Party,,"condition_flag,questPrincessStart"
 p2Front1Party,,"scene_set,p2Front1PartyChoice"
 p2Front1Party,,"scene_set,p2Front1PartyLeave"
@@ -2140,17 +2140,19 @@ p2Front1Leave,,map
 p2Front1Know,,"char_update,Princess,2"
 p2Front1Know,Princess,"Hm? Well, of course you do! Everyone does!"
 p2Front1Know,,"char_update,Princess,0"
-p2Front1Know,Princess,"After all, I've got great many pictures of myself."
+p2Front1Know,Princess,"After all, I've got a great many pictures of myself."
 p2Front1Know,,"choice,p2Front1Show,p2Front1Keep"
 p2Front1Know,,"scene_set,p2FrontWatch"
 p2Front1Know,,"scene_set,p2Front1Keep"
 ,,
-p2Front1Keep,Spook,"I wasn't going to say anything, actually!"
-p2Front1Keep,,"char_update,Princess,2"
-p2Front1Keep,Princess,Okay?
+p2Front1Keep,,"char_update,Spook,11"
+p2Front1Keep,Spook,"I wasn't going to say anything, actually..."
+p2Front1Keep,,"char_update,Princess,8"
+p2Front1Keep,Princess,"Hmph. Wasting my precious time, then."
 p2Front1Keep,Princess,...
 p2Front1Keep,Spook,"[shake]Uh, yeah, haha...[/shake]"
-p2Front1Keep,Princess,I can see you're hiding something! What is it?!
+p2Front1Keep,,"char_update,Princess,7"
+p2Front1Keep,Princess,"Wait, I can see you're hiding something. What is it?"
 p2Front1Keep,Spook,Well...
 p2Front1Keep,,"choice,p2Front1Show,p2Front1BadIdea"
 p2Front1Keep,,"scene_set,p2FrontWatch"
@@ -2158,11 +2160,11 @@ p2Front1Keep,,"scene_set,p2Front1BadIdea"
 ,,
 p2Front1BadIdea,,"map_scene,front,p2FrontOffended"
 p2Front1BadIdea,,"flag_set,questPrincessFail,true"
-p2Front1BadIdea,,"char_update,Spook,8"
-p2Front1BadIdea,Spook,It was a bad idea to get involved! I'm out!
 p2Front1BadIdea,Princess,Did you steal something?! 
-p2Front1BadIdea,,"char_update,Princess,3"
-p2Front1BadIdea,Princess,[shake]GUARDS!!![/shake]
+p2Front1BadIdea,,"char_update,Spook,8"
+p2Front1BadIdea,Spook,No! I-
+p2Front1BadIdea,,"char_update,Princess,6"
+p2Front1BadIdea,Princess,"[sound,sfxPrincessBark][shake]GUARDS!!![/shake]"
 p2Front1BadIdea,Spook,[shake]AAAHH!![/shake]
 p2Front1BadIdea,Princess,[shake]DIPPER GET IN HERE!!! GUAAARDS!!![/shake]
 p2Front1BadIdea,Spook,"This is bad, I better get out of here!"
@@ -2182,6 +2184,7 @@ p2Front2,,"scene_set,p2Front2Passing"
 p2Front2Passing,Spook,Just passing through!
 p2Front2Passing,,"char_update,Princess,0"
 p2Front2Passing,Princess,"Well don't dilly-dally! My time is precious, just like myself!"
+p2Front2Passing,Princess,Now begone!
 p2Front2Passing,,map
 ,,
 p2Front2Choice,,"char_update,Spook,5"
@@ -2370,10 +2373,11 @@ p2FrontWatchCome,,map
 p2FrontOffended,,"scene_bg_clear,sBackgroundHouseAcrossYardDay"
 p2FrontOffended,,"music,bgmHouseAcross"
 p2FrontOffended,,"main_char_in,0"
-p2FrontOffended,,"char_in,Princess,sPrincess,3"
+p2FrontOffended,,"char_in,Princess,sPrincess,7"
 p2FrontOffended,Princess,[shake]YOU!!![/shake]
 p2FrontOffended,,"char_update,Spook,8"
 p2FrontOffended,Spook,"Oops, wrong door!"
+p2FrontOffended,,"char_update,Princess,6"
 p2FrontOffended,Princess,"[sound,sfxPrincessBark][shake]Get out!!! Get ouuuuuuut!!![/shake]"
 p2FrontOffended,,map
 ,,
@@ -2486,7 +2490,7 @@ p2Street1Doing,[limes_name_cap],Treat... and trick!
 p2Street1Doing,,"char_update,Spook,6"
 p2Street1Doing,Spook,Trick or treat?
 p2Street1Doing,,"char_update,[limes_name_cap],3"
-p2Street1Doing,Empty,"[sound,sfxLimesSpin]The strange critter spins around himself wildly."
+p2Street1Doing,Empty,"[sound,sfxLimesSpin]The strange critter spins wildly."
 p2Street1Doing,,"delay,1"
 p2Street1Doing,[limes_name_cap],[shake][wave]Treat![/wave][/shake]
 p2Street1Doing,Spook,...That's not how it works!
@@ -2522,7 +2526,7 @@ p2Street1Party,[limes_name_cap],Pumpkin good.
 p2Street1Party,,"char_update,Spook,9"
 p2Street1Party,Spook,Pumpkin good!
 p2Street1Party,,"char_update,[limes_name_cap],1"
-p2Street1Party,[limes_name_cap],...We party no more. Makes sister sad.
+p2Street1Party,[limes_name_cap],...But we party no more. Makes sister sad.
 p2Street1Party,,"char_update,Spook,0"
 p2Street1Party,Spook,...Oh.
 p2Street1Party,[limes_name_cap],...I miss drums.
