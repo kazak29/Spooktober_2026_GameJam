@@ -14,11 +14,10 @@ if global.cheat {
 	}
 	if keyboard_check_pressed(vk_lcontrol) {
 		with global.textLogInst instance_destroy();
-		with oMenu instance_destroy();
-		with oMenuElement instance_destroy();
+		MenuDestroy();
 		
 		if room == rmTitleScreen {
-			if (os_type == os_gxgames) MenuCreate("titleMain"); else MenuCreate("titleMainWin");
+			if (os_type == os_gxgames) MenuCreateFirst("titleMain"); else MenuCreateFirst("titleMainWin");
 		}
 		
 		if global.gamePaused {
@@ -28,7 +27,7 @@ if global.cheat {
 			global.gamePaused = true;
 			with oDirector typist.pause();
 		
-			MenuCreate("cheat");
+			MenuCreateFirst("cheat");
 		}
 	}
 	

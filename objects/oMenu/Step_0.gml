@@ -89,13 +89,11 @@ if instance_exists(main.elemId) {
 		
 		case MENU_ELEMENT_TYPE.SAVE_FILE: {
 			if _pressedMain {
-				var _scr = _elemData[$"scr"] ?? noone;
-				var _arg = _elemData[$"arg"] ?? noone;
-				if is_callable(_scr) _scr(_arg);
-				
-				//set a flag so a manager saves a surface on draw event and updates button appearence
-				if (_scr == MenuGameSave) oSaveSurfaceManager.saveElemUpdating = _elemData;
-				
+				global.menuParameters.confirmElemData = _elemData;
+				switch _elemData.scr {
+					case MenuGameSave: MenuCreate("confirmSave"); break;
+					case MenuGameLoad: MenuCreate("confirmLoad"); break;
+				}
 				_sfx = "click";
 			}
 		} break;
@@ -119,7 +117,7 @@ if instance_exists(main.elemId) {
 		
 		case MENU_ELEMENT_TYPE.BACK: {
 			if _pressedMain {
-				MenuCreate(menuNamePrev);
+				MenuGoBack();
 				_sfx = "click";
 			}
 		} break;
@@ -250,13 +248,14 @@ if instance_exists(sub.elemId) {
 
 //cancel logic
 if (oInputManager.pressed.cancel || oInputManager.mouse.pressed.right) {
+	var _cancelResult = false;
 	
 	switch menuName {
-		default:				{ if (is_string(menuNamePrev) && menuNamePrev != "") MenuCreate(menuNamePrev);	} break;
-		case "pauseMain":		{ uiButtonPause();																} break;
+		default:				{ _cancelResult = MenuGoBack();				} break;
+		case "pauseMain":		{ _cancelResult = true; uiButtonPause();	} break;
 	}
 	
-	_sfx = "click";
+	if _cancelResult _sfx = "click";
 }
 
 
@@ -267,8 +266,7 @@ switch _sfx {
 
 //son
 switch menuName {
-	case "titleSettings": _elems[0].arg = window_get_fullscreen(); break;
-	case "pauseSettings": _elems[0].arg = window_get_fullscreen(); break;
+	case "settings": _elems[0].arg = window_get_fullscreen(); break;
 }
 
 mouseClickLock = (oInputManager.mouse.held.any && _mouseClickLockCheck);

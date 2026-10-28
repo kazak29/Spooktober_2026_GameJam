@@ -171,42 +171,11 @@ function DataMenuElementsCreate(){
 				scr:			MenuGameStart,
 				arg:			[sqFadeOut, sqFadeIn],
 			},
-			pageSettings: {
-				title:			"menuSettings",
-				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
-				menuName:		"titleSettings",
-			},
 			credits: {
 				title:			"menuCredits",
 				elemType:		MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
 				scr:			MenuTransitionStart,
 				arg:			[rmCredits, sqFadeOut, sqFadeIn],
-			},
-			pageCrtTitle: {
-				title:			"menuCrt",
-				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
-				menuName:		"titleCrt",
-			},
-			pageLoad: {
-				title:			"menuLoad",
-				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
-				menuName:		"titleLoad",
-			},
-			
-			pageSettingsWin: {
-				title:			"menuSettings",
-				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
-				menuName:		"titleSettingsWin",
-			},
-			pageCrtTitleWin: {
-				title:			"menuCrt",
-				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
-				menuName:		"titleCrtWin",
-			},
-			pageLoadWin: {
-				title:			"menuLoad",
-				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
-				menuName:		"titleLoadWin",
 			},
 			gameEnd: {
 				title:			"menuEnd",
@@ -216,6 +185,11 @@ function DataMenuElementsCreate(){
 			},
 		#endregion
 		#region settings
+			pageSettings: {
+				title:			"menuSettings",
+				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
+				menuName:		"settings",
+			},
 			fullscreen: {
 				title:			"menuFullscreen",
 				elemType:		MENU_ELEMENT_TYPE.TOGGLE,
@@ -265,6 +239,11 @@ function DataMenuElementsCreate(){
 			},
 		#endregion
 		#region crt
+			pageCrt: {
+				title:			"menuCrt",
+				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
+				menuName:		"crt",
+			},
 			crtAbberation: {
 				title:			"menuCrtAbberation",
 				elemType:		MENU_ELEMENT_TYPE.SLIDER,
@@ -354,29 +333,13 @@ function DataMenuElementsCreate(){
 				scr:		MenuTransitionStart,
 				arg:		[rmTitleScreen, sqFadeOut, sqFadeIn],
 			},
-			
-			pageSettingsPause: {
-				title:			"menuSettings",
-				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
-				menuName:		"pauseSettings",
-			},
-			pageCrtPause: {
-				title:			"menuCrt",
-				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
-				menuName:		"pauseCrt",
-			},
-			pageSavePause: {
-				title:			"menuSave",
-				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
-				menuName:		"pauseSave",
-			},
-			pageLoadPause: {
-				title:			"menuLoad",
-				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
-				menuName:		"pauseLoad",
-			},
 		#endregion
 		#region save
+			pageSave: {
+				title:			"menuSave",
+				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
+				menuName:		"save",
+			},
 			saveDummy: {
 				title: global.uiData.menuSaveDummy,
 				elemType:	MENU_ELEMENT_TYPE.DUMMY,
@@ -425,6 +388,11 @@ function DataMenuElementsCreate(){
 			},
 		#endregion
 		#region load
+			pageLoad: {
+				title:			"menuLoad",
+				elemType:		MENU_ELEMENT_TYPE.PAGE_TRANSFER,
+				menuName:		"load",
+			},
 			loadDummy: {
 				title: global.uiData.menuLoadDummy,
 				elemType:	MENU_ELEMENT_TYPE.DUMMY,
@@ -470,6 +438,26 @@ function DataMenuElementsCreate(){
 				scr:		MenuGameLoad,
 				arg:		[5, sqFadeOut, sqFadeIn],
 				surfSpr:	noone,
+			},
+		#endregion
+		#region confirm
+			confirmSaveDummy: {
+				title:			"menuConfirmSaveDummy",
+				elemType:		MENU_ELEMENT_TYPE.DUMMY,
+			},
+			confirmLoadDummy: {
+				title:			"menuConfirmLoadDummy",
+				elemType:		MENU_ELEMENT_TYPE.DUMMY,
+			},
+			confirmYes: {
+				title:			"menuYes",
+				elemType:		MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				scr:			MenuConfirmYes,
+				arg:			[0],
+			},
+			confirmNo: {
+				title:			"menuNo",
+				elemType:		MENU_ELEMENT_TYPE.BACK,
 			},
 		#endregion
 	};
@@ -523,7 +511,6 @@ function DataMenuSetup(){
 			y: y,
 			spr: _spriteGet(self),
 			
-			menuNamePrev:	menuNamePrev,
 			fade:			fade,
 			elements:		[],
 			dummies:		[],
@@ -665,19 +652,23 @@ function DataMenuSetup(){
 	return _data;
 }
 function MenuCreate(_name){
+	//lock mouse from hovering when switching menus
+	with oInputManager mouse.active = false;
+	
 	instance_destroy(oMenu);
 	instance_destroy(oMenuElement);
+	array_push(global.menuParameters.layers, _name);
 	
 	with global.dataMenu[$ _name] {
 		//save instance id to menu data struct
 		menuId = instance_create_layer(x,y,SYSTEM_LAYER,oMenu);
 		with menuId {
-			menuName		= _name;
-			menuNamePrev	= other.menuNamePrev;
-			fade			= other.fade;
-			
+			menuName = _name;
 			MenuSetSprite(other.spr);
 		}
+		
+		//setup fade
+		if !global.menuParameters.fade global.menuParameters.fade = fade;
 		
 		//create elements
 		for (var i = 0; i < array_length(elements); i++) {
@@ -758,11 +749,70 @@ function MenuCreate(_name){
 				elemId = instance_create_layer(x,y,SYSTEM_LAYER, oMenuElementDummy);
 				with elemId {
 					MenuSetSprite(other.spr);
+					
+					//quick script to load data
+					var _loadConfirm = function(_elemData){
+						if !is_struct(_elemData) return undefined;
+						var _fileName = SaveFileGetName(_elemData.arg[0]);
+						return Load(_fileName);
+					}
+					
+					//change title for save file related dummies
+					switch other.title {
+						case "menuConfirmSaveDummy": {
+							var _elemData = global.menuParameters.confirmElemData;
+							var _data = _loadConfirm(_elemData);
+							if is_struct(_data) {
+								other.title = "menuConfirmSaveOverrideDummy";
+								saveFileStr = {};
+								with saveFileStr MenuSetStr(_elemData, "menuElemDummy");
+							}
+						} break;
+						case "menuConfirmSaveOverrideDummy": {
+							var _elemData = global.menuParameters.confirmElemData;
+							var _data = _loadConfirm(_elemData);
+							if is_struct(_data) {
+								saveFileStr = {};
+								with saveFileStr MenuSetStr(_elemData, "menuElemDummy");
+							} else other.title = "menuConfirmSaveDummy";
+						} break;
+						case "menuConfirmLoadDummy": {
+							var _elemData = global.menuParameters.confirmElemData;
+							var _data = _loadConfirm(_elemData);
+							if is_struct(_data) {
+								saveFileStr = {};
+								with saveFileStr MenuSetStr(_elemData, "menuElemDummy");
+							}
+						} break;
+					}
 					MenuSetStr(other,"menuElemDummy");
 				}
 			}
 		}
 	}
+}
+
+function MenuDestroy(){
+	instance_destroy(oMenu);
+	instance_destroy(oMenuElement);
+	
+	global.menuParameters = {
+		fade: false,
+		layers: [],
+		confirmElemData: noone,
+	};
+}
+function MenuCreateFirst(_name){
+	MenuDestroy();
+	MenuCreate(_name);
+}
+function MenuGoBack(){
+	if !is_array(global.menuParameters.layers) || (array_length(global.menuParameters.layers) <= 1) return false;
+	
+	array_pop(global.menuParameters.layers);
+	var _menuPrev = array_pop(global.menuParameters.layers);
+	MenuCreate(_menuPrev);
+	return true;
 }
 
 function MenuSetSprite(_from){

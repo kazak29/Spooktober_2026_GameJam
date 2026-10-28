@@ -18,6 +18,8 @@ menuLanguageTur,Turkish
 menuLanguageKaz,Kazakh
 menuOn,On
 menuOff,Off
+menuYes,Yes
+menuNo,No
 menuReset,Reset To Default
 menuCrt,CRT Parameters
 menuCrtActive,CRT Enabled
@@ -34,10 +36,14 @@ menuCrtGlow,Inner Glow
 menuCrtBright,Gamma
 menuCrtFlicker,Flicker
 menuCrtRoll,Rolling Band
+menuSaveFile,SAVE FILE
 menuSave,Save
 menuLoad,Load
 menuSaveDummy,SAVE
 menuLoadDummy,LOAD
+menuConfirmSaveDummy,Save Game?
+menuConfirmSaveOverrideDummy,Save Game? This will override the file!
+menuConfirmLoadDummy,Load Game?
 menuChapter,Chapter
 menuAuto,AUTOSAVE
 buttonHideUI,HIDE UI

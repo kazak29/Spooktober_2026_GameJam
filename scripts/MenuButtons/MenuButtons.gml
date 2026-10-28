@@ -55,7 +55,7 @@ function MenuTransitionStart(_args){
 function MenuSettingsReset(){
 	window_set_fullscreen(false);
 	
-	global.volume.music		= 0.5;
+	global.volume.music		= 0.3;
 	global.volume.sound		= 0.5;
 	global.volume.writer	= 0.5;
 	global.volume.ui		= 0;
@@ -83,4 +83,29 @@ function MenuSettingsReset(){
 	}
 	
 	SaveSettings();
+}
+
+function MenuConfirmYes(){
+	var _elemData = global.menuParameters.confirmElemData;
+	if !is_struct(_elemData) exit;
+	
+	switch _elemData.elemType {
+		
+		case MENU_ELEMENT_TYPE.SAVE_FILE: {
+			var _scr = _elemData[$"scr"] ?? noone;
+			var _arg = _elemData[$"arg"] ?? noone;
+			if is_callable(_scr) _scr(_arg);
+				
+			if (_scr == MenuGameSave) {
+				//set a flag so a manager saves a surface on draw event and updates button appearence
+				oSaveSurfaceManager.saveElemUpdating = _elemData;
+				
+				//go back only on save
+				MenuGoBack();
+			}
+		} break;
+		
+	}
+	
+	//global.menuParameters.confirmElemData = noone;
 }
