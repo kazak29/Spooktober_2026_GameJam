@@ -664,6 +664,9 @@ function DataMenuSetup(){
 	return _data;
 }
 function MenuCreate(_name){
+	//lock mouse from hovering when switching menus
+	with oInputManager mouse.active = false;
+	
 	instance_destroy(oMenu);
 	instance_destroy(oMenuElement);
 	array_push(global.menuLayers, _name);
@@ -773,11 +776,12 @@ function MenuCreateFirst(_name){
 	MenuCreate(_name);
 }
 function MenuGoBack(){
-	if !is_array(global.menuLayers) || (array_length(global.menuLayers) <= 1) exit;
+	if !is_array(global.menuLayers) || (array_length(global.menuLayers) <= 1) return false;
 	
 	array_pop(global.menuLayers);
 	var _menuPrev = array_pop(global.menuLayers);
 	MenuCreate(_menuPrev);
+	return true;
 }
 
 function MenuSetSprite(_from){

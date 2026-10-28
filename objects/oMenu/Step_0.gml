@@ -250,13 +250,14 @@ if instance_exists(sub.elemId) {
 
 //cancel logic
 if (oInputManager.pressed.cancel || oInputManager.mouse.pressed.right) {
+	var _cancelResult = false;
 	
 	switch menuName {
-		default:				{ MenuGoBack();		} break;
-		case "pauseMain":		{ uiButtonPause();	} break;
+		default:				{ _cancelResult = MenuGoBack();				} break;
+		case "pauseMain":		{ _cancelResult = true; uiButtonPause();	} break;
 	}
 	
-	_sfx = "click";
+	if _cancelResult _sfx = "click";
 }
 
 
