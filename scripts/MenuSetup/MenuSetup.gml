@@ -750,21 +750,39 @@ function MenuCreate(_name){
 				with elemId {
 					MenuSetSprite(other.spr);
 					
-					//change title if save file present or not
+					//quick script to load data
+					var _loadConfirm = function(_elemData){
+						if !is_struct(_elemData) return undefined;
+						var _fileName = SaveFileGetName(_elemData.arg[0]);
+						return Load(_fileName);
+					}
+					
+					//change title for save file related dummies
 					switch other.title {
 						case "menuConfirmSaveDummy": {
 							var _elemData = global.menuParameters.confirmElemData;
-							if !is_struct(_elemData) break;
-							var _fileName = SaveFileGetName(_elemData.arg[0]);
-							var _data = Load(_fileName);
-							if is_struct(_data) other.title = "menuConfirmSaveOverrideDummy";
+							var _data = _loadConfirm(_elemData);
+							if is_struct(_data) {
+								other.title = "menuConfirmSaveOverrideDummy";
+								saveFileStr = {};
+								with saveFileStr MenuSetStr(_elemData, "menuElemDummy");
+							}
 						} break;
 						case "menuConfirmSaveOverrideDummy": {
 							var _elemData = global.menuParameters.confirmElemData;
-							if !is_struct(_elemData) break;
-							var _fileName = SaveFileGetName(_elemData.arg[0]);
-							var _data = Load(_fileName);
-							if !is_struct(_data) other.title = "menuConfirmSaveDummy";
+							var _data = _loadConfirm(_elemData);
+							if is_struct(_data) {
+								saveFileStr = {};
+								with saveFileStr MenuSetStr(_elemData, "menuElemDummy");
+							} else other.title = "menuConfirmSaveDummy";
+						} break;
+						case "menuConfirmLoadDummy": {
+							var _elemData = global.menuParameters.confirmElemData;
+							var _data = _loadConfirm(_elemData);
+							if is_struct(_data) {
+								saveFileStr = {};
+								with saveFileStr MenuSetStr(_elemData, "menuElemDummy");
+							}
 						} break;
 					}
 					MenuSetStr(other,"menuElemDummy");

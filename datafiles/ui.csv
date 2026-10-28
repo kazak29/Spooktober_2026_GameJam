@@ -36,6 +36,7 @@ menuCrtGlow,Inner Glow
 menuCrtBright,Gamma
 menuCrtFlicker,Flicker
 menuCrtRoll,Rolling Band
+menuSaveFile,SAVE FILE
 menuSave,Save
 menuLoad,Load
 menuSaveDummy,SAVE

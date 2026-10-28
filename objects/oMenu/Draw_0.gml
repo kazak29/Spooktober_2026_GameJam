@@ -183,23 +183,6 @@ var _dummies = global.dataMenu[$ menuName].dummies;
 for (var i = 0; i < array_length(_dummies); i++) {
 	with _dummies[i].elemId {
 		
-		//special dummy draw for confirm menus
-		if _dummies[i].title == "confirmDummy" {
-			
-			var _elemData = global.menuParameters.confirmElemData;
-			if !is_struct(_elemData) break;
-			
-			switch _elemData.elemType {
-				case MENU_ELEMENT_TYPE.SAVE_FILE: {
-					
-					
-					
-				} break;
-			}
-			
-			break;
-		}
-		
 		var _c = _colDefault;
 		if sprite_exists(sprite_index) && (sprite_index != sBorder || _debugException) {
 			draw_self();
@@ -209,6 +192,59 @@ for (var i = 0; i < array_length(_dummies); i++) {
 			.wrap(sprite_width - shiftX, sprite_height - shiftY)
 			//.scale_to_box(sprite_width - shiftX, sprite_height - shiftY)
 			.draw(x + strX, y + strY);
+		
+		//special draw
+		switch _dummies[i].title {
+			case "menuConfirmSaveDummy": {
+				var _elemData = global.menuParameters.confirmElemData;
+				if !is_struct(_elemData) break;
+				
+				var _text = string_concat(global.uiData.menuSaveFile,$" {_elemData.arg[0]}");
+				scribble(_text, "menuElemDummy")
+					.blend(_c, 1)
+					.starting_format(_elemData.str.font, c_white)
+					.align(fa_center,fa_middle)
+					.draw(bbox_left + sprite_width/2,bbox_top + sprite_height/2);
+			} break;
+			case "menuConfirmSaveOverrideDummy": {
+				var _elemData = global.menuParameters.confirmElemData;
+				if !is_struct(_elemData) break;
+				
+				var _spr = _elemData.surfSpr;
+				var _shiftX = 32;
+				var _shiftY = 32+8;
+				if sprite_exists(_spr) {
+					draw_sprite(_spr,0, bbox_left + _shiftX, bbox_top + sprite_height/2 - sprite_get_height(_spr)/2);
+					_shiftX += sprite_get_width(_spr) + 32;
+				}
+				if variable_instance_exists(self, "saveFileStr") {
+					with saveFileStr {
+						scribId.blend(_c, 1)
+						.wrap(other.sprite_width - _shiftX, other.sprite_height - _shiftY)
+						.draw(other.bbox_left + _shiftX, other.bbox_top + other.sprite_height/2);
+					}
+				}
+			} break;
+			case "menuConfirmLoadDummy": {
+				var _elemData = global.menuParameters.confirmElemData;
+				if !is_struct(_elemData) break;
+				
+				var _spr = _elemData.surfSpr;
+				var _shiftX = 32;
+				var _shiftY = 32+8;
+				if sprite_exists(_spr) {
+					draw_sprite(_spr,0, bbox_left + _shiftX, bbox_top + sprite_height/2 - sprite_get_height(_spr)/2);
+					_shiftX += sprite_get_width(_spr) + 32;
+				}
+				if variable_instance_exists(self, "saveFileStr") {
+					with saveFileStr {
+						scribId.blend(_c, 1)
+						.wrap(other.sprite_width - _shiftX, other.sprite_height - _shiftY)
+						.draw(other.bbox_left + _shiftX, other.bbox_top + other.sprite_height/2);
+					}
+				}
+			} break;
+		}
 			
 	}
 }

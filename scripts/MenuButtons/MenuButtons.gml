@@ -107,5 +107,5 @@ function MenuConfirmYes(){
 		
 	}
 	
-	global.menuParameters.confirmElemData = noone;
+	//global.menuParameters.confirmElemData = noone;
 }
