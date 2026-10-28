@@ -1,7 +1,7 @@
 AmbientChange(AMBIENT_MUSIC, bgmZombieRatsTheme, DEFAULT_VOLUME_PERCENT, true, 0);
 
 
-returnPrompt = $"Press {global.uiData.menuCreditsReturn} to Continue";
+returnPrompt = $"Press {global.uiData.endingProceedInputs} to Continue";
 returnPromptEnabled = false;
 
 StateWait = function(){
