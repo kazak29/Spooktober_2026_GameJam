@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.32,
+  "duration":0.0937415,
   "exportDir":"",
   "name":"sfxTypewriterLimes",
   "parent":{

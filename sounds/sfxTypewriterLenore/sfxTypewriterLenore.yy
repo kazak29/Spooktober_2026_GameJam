@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":0.75,
+  "duration":0.0937415,
   "exportDir":"",
   "name":"sfxTypewriterLenore",
   "parent":{

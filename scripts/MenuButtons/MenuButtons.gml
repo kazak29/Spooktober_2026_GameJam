@@ -2,8 +2,8 @@ function MenuGameStart(_args){
 	AmbientFadeOutAll();
 	ScreenPlayReset();
 	
-	global.sceneToPlay = FIRST_SCENE;
-	//global.sceneToPlay = "kazakTestScene";
+	//global.sceneToPlay = FIRST_SCENE;
+	global.sceneToPlay = "endPartyAmazingCont"; //"kazakTestScene";
 	//global.sceneToPlay = "rocketTestScene";
 	
 	TransitionStart(rmStage, _args[0], _args[1]);
