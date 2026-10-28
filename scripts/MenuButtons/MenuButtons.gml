@@ -55,7 +55,7 @@ function MenuTransitionStart(_args){
 function MenuSettingsReset(){
 	window_set_fullscreen(false);
 	
-	global.volume.music		= 0.5;
+	global.volume.music		= 0.3;
 	global.volume.sound		= 0.5;
 	global.volume.writer	= 0.5;
 	global.volume.ui		= 0;

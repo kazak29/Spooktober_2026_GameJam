@@ -47,12 +47,13 @@
 	
 	global.gamePaused = false;
 	global.menuElements = DataMenuElementsCreate();
+	global.menuLayers = [];
 	
 #endregion
 #region sound
 	
 	global.volume = {
-		music:		0.5,
+		music:		0.3,
 		sound:		0.5,
 		writer:		0.5,
 		ui:			0,

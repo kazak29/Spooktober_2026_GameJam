@@ -119,7 +119,7 @@ if instance_exists(main.elemId) {
 		
 		case MENU_ELEMENT_TYPE.BACK: {
 			if _pressedMain {
-				MenuCreate(menuNamePrev);
+				MenuGoBack();
 				_sfx = "click";
 			}
 		} break;
@@ -252,8 +252,8 @@ if instance_exists(sub.elemId) {
 if (oInputManager.pressed.cancel || oInputManager.mouse.pressed.right) {
 	
 	switch menuName {
-		default:				{ if (is_string(menuNamePrev) && menuNamePrev != "") MenuCreate(menuNamePrev);	} break;
-		case "pauseMain":		{ uiButtonPause();																} break;
+		default:				{ MenuGoBack();		} break;
+		case "pauseMain":		{ uiButtonPause();	} break;
 	}
 	
 	_sfx = "click";

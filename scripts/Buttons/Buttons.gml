@@ -2,8 +2,7 @@ function uiButtonPause(){
 	if (instance_exists(oDirector) && !oDirector.uiToggled) exit;
 	
 	with global.textLogInst instance_destroy();
-	with oMenu instance_destroy();
-	with oMenuElement instance_destroy();
+	MenuDestroy();
 		
 	if global.gamePaused {
 		global.gamePaused = false;
@@ -12,15 +11,14 @@ function uiButtonPause(){
 		global.gamePaused = true;
 		with oDirector typist.pause();
 		
-		MenuCreate("pauseMain");
+		MenuCreateFirst("pauseMain");
 	}
 }
 
 function uiButtonTextLog(){
 	if (instance_exists(oDirector) && !oDirector.uiToggled) exit;
 	
-	with oMenu instance_destroy();
-	with oMenuElement instance_destroy();
+	MenuDestroy();
 	
 	if instance_exists(oTextLog) {
 		global.gamePaused = false;

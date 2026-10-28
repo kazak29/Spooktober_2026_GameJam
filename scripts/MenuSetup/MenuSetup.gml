@@ -523,7 +523,6 @@ function DataMenuSetup(){
 			y: y,
 			spr: _spriteGet(self),
 			
-			menuNamePrev:	menuNamePrev,
 			fade:			fade,
 			elements:		[],
 			dummies:		[],
@@ -667,13 +666,13 @@ function DataMenuSetup(){
 function MenuCreate(_name){
 	instance_destroy(oMenu);
 	instance_destroy(oMenuElement);
+	array_push(global.menuLayers, _name);
 	
 	with global.dataMenu[$ _name] {
 		//save instance id to menu data struct
 		menuId = instance_create_layer(x,y,SYSTEM_LAYER,oMenu);
 		with menuId {
 			menuName		= _name;
-			menuNamePrev	= other.menuNamePrev;
 			fade			= other.fade;
 			
 			MenuSetSprite(other.spr);
@@ -763,6 +762,22 @@ function MenuCreate(_name){
 			}
 		}
 	}
+}
+function MenuDestroy(){
+	instance_destroy(oMenu);
+	instance_destroy(oMenuElement);
+	global.menuLayers = [];
+}
+function MenuCreateFirst(_name){
+	MenuDestroy();
+	MenuCreate(_name);
+}
+function MenuGoBack(){
+	if !is_array(global.menuLayers) || (array_length(global.menuLayers) <= 1) exit;
+	
+	array_pop(global.menuLayers);
+	var _menuPrev = array_pop(global.menuLayers);
+	MenuCreate(_menuPrev);
 }
 
 function MenuSetSprite(_from){
