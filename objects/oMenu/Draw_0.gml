@@ -183,6 +183,23 @@ var _dummies = global.dataMenu[$ menuName].dummies;
 for (var i = 0; i < array_length(_dummies); i++) {
 	with _dummies[i].elemId {
 		
+		//special dummy draw for confirm menus
+		if _dummies[i].title == "confirmDummy" {
+			
+			var _elemData = global.menuParameters.confirmElemData;
+			if !is_struct(_elemData) break;
+			
+			switch _elemData.elemType {
+				case MENU_ELEMENT_TYPE.SAVE_FILE: {
+					
+					
+					
+				} break;
+			}
+			
+			break;
+		}
+		
 		var _c = _colDefault;
 		if sprite_exists(sprite_index) && (sprite_index != sBorder || _debugException) {
 			draw_self();

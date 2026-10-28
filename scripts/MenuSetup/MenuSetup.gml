@@ -440,6 +440,26 @@ function DataMenuElementsCreate(){
 				surfSpr:	noone,
 			},
 		#endregion
+		#region confirm
+			confirmSaveDummy: {
+				title:			"menuConfirmSaveDummy",
+				elemType:		MENU_ELEMENT_TYPE.DUMMY,
+			},
+			confirmLoadDummy: {
+				title:			"menuConfirmLoadDummy",
+				elemType:		MENU_ELEMENT_TYPE.DUMMY,
+			},
+			confirmYes: {
+				title:			"menuYes",
+				elemType:		MENU_ELEMENT_TYPE.SCRIPT_RUNNER,
+				scr:			MenuConfirmYes,
+				arg:			[0],
+			},
+			confirmNo: {
+				title:			"menuNo",
+				elemType:		MENU_ELEMENT_TYPE.BACK,
+			},
+		#endregion
 	};
 }
 function DataMenuSetup(){
@@ -729,12 +749,31 @@ function MenuCreate(_name){
 				elemId = instance_create_layer(x,y,SYSTEM_LAYER, oMenuElementDummy);
 				with elemId {
 					MenuSetSprite(other.spr);
+					
+					//change title if save file present or not
+					switch other.title {
+						case "menuConfirmSaveDummy": {
+							var _elemData = global.menuParameters.confirmElemData;
+							if !is_struct(_elemData) break;
+							var _fileName = SaveFileGetName(_elemData.arg[0]);
+							var _data = Load(_fileName);
+							if is_struct(_data) other.title = "menuConfirmSaveOverrideDummy";
+						} break;
+						case "menuConfirmSaveOverrideDummy": {
+							var _elemData = global.menuParameters.confirmElemData;
+							if !is_struct(_elemData) break;
+							var _fileName = SaveFileGetName(_elemData.arg[0]);
+							var _data = Load(_fileName);
+							if !is_struct(_data) other.title = "menuConfirmSaveDummy";
+						} break;
+					}
 					MenuSetStr(other,"menuElemDummy");
 				}
 			}
 		}
 	}
 }
+
 function MenuDestroy(){
 	instance_destroy(oMenu);
 	instance_destroy(oMenuElement);
@@ -742,6 +781,7 @@ function MenuDestroy(){
 	global.menuParameters = {
 		fade: false,
 		layers: [],
+		confirmElemData: noone,
 	};
 }
 function MenuCreateFirst(_name){

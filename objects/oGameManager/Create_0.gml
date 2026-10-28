@@ -50,6 +50,7 @@
 	global.menuParameters = {
 		fade: false,
 		layers: [],
+		confirmElemData: noone,
 	};
 	
 #endregion

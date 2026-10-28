@@ -89,13 +89,11 @@ if instance_exists(main.elemId) {
 		
 		case MENU_ELEMENT_TYPE.SAVE_FILE: {
 			if _pressedMain {
-				var _scr = _elemData[$"scr"] ?? noone;
-				var _arg = _elemData[$"arg"] ?? noone;
-				if is_callable(_scr) _scr(_arg);
-				
-				//set a flag so a manager saves a surface on draw event and updates button appearence
-				if (_scr == MenuGameSave) oSaveSurfaceManager.saveElemUpdating = _elemData;
-				
+				global.menuParameters.confirmElemData = _elemData;
+				switch _elemData.scr {
+					case MenuGameSave: MenuCreate("confirmSave"); break;
+					case MenuGameLoad: MenuCreate("confirmLoad"); break;
+				}
 				_sfx = "click";
 			}
 		} break;

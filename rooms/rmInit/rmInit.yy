@@ -142,6 +142,14 @@
     {"name":"inst_7651564C","path":"rooms/rmInit/rmInit.yy",},
     {"name":"inst_176CBA55","path":"rooms/rmInit/rmInit.yy",},
     {"name":"inst_1661AD0D","path":"rooms/rmInit/rmInit.yy",},
+    {"name":"inst_49281354","path":"rooms/rmInit/rmInit.yy",},
+    {"name":"inst_78F32FD4","path":"rooms/rmInit/rmInit.yy",},
+    {"name":"inst_7B256204","path":"rooms/rmInit/rmInit.yy",},
+    {"name":"inst_620E1FDB","path":"rooms/rmInit/rmInit.yy",},
+    {"name":"inst_19D25B0A","path":"rooms/rmInit/rmInit.yy",},
+    {"name":"inst_25989A92","path":"rooms/rmInit/rmInit.yy",},
+    {"name":"inst_6AD0448E","path":"rooms/rmInit/rmInit.yy",},
+    {"name":"inst_74157179","path":"rooms/rmInit/rmInit.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -667,6 +675,34 @@
             {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oMenuBlueprintElement","path":"objects/oMenuBlueprintElement/oMenuBlueprintElement.yy",},"propertyId":{"name":"font","path":"objects/oMenuBlueprintElement/oMenuBlueprintElement.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"FONT_DIALOGUE_TEXT_TITLE",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":4.0,"scaleY":1.5,"x":832.0,"y":840.0,},
       ],"layers":[],"name":"save","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":false,},
+    {"$GMRInstanceLayer":"","%Name":"confirmLoad","depth":900,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
+        {"$GMRInstance":"v4","%Name":"inst_19D25B0A","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_19D25B0A","objectId":{"name":"oMenuBlueprint","path":"objects/oMenuBlueprint/oMenuBlueprint.yy",},"previewSprite":{"name":"sChoiceBox","path":"sprites/sChoiceBox/sChoiceBox.yy",},"properties":[
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oMenuBlueprint","path":"objects/oMenuBlueprint/oMenuBlueprint.yy",},"propertyId":{"name":"menuName","path":"objects/oMenuBlueprint/oMenuBlueprint.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"confirmLoad",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":5.0,"scaleY":3.25,"x":960.0,"y":528.0,},
+        {"$GMRInstance":"v4","%Name":"inst_25989A92","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_25989A92","objectId":{"name":"oMenuBlueprintElementMain","path":"objects/oMenuBlueprintElementMain/oMenuBlueprintElementMain.yy",},"properties":[
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oMenuBlueprintElement","path":"objects/oMenuBlueprintElement/oMenuBlueprintElement.yy",},"propertyId":{"name":"elemName","path":"objects/oMenuBlueprintElement/oMenuBlueprintElement.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"confirmNo",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":1.5,"x":800.0,"y":608.0,},
+        {"$GMRInstance":"v4","%Name":"inst_6AD0448E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6AD0448E","objectId":{"name":"oMenuBlueprintElementMain","path":"objects/oMenuBlueprintElementMain/oMenuBlueprintElementMain.yy",},"properties":[
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oMenuBlueprintElement","path":"objects/oMenuBlueprintElement/oMenuBlueprintElement.yy",},"propertyId":{"name":"elemName","path":"objects/oMenuBlueprintElement/oMenuBlueprintElement.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"confirmYes",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":1.5,"x":992.0,"y":608.0,},
+        {"$GMRInstance":"v4","%Name":"inst_74157179","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_74157179","objectId":{"name":"oMenuBlueprintElementDummy","path":"objects/oMenuBlueprintElementDummy/oMenuBlueprintElementDummy.yy",},"properties":[
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oMenuBlueprintElement","path":"objects/oMenuBlueprintElement/oMenuBlueprintElement.yy",},"propertyId":{"name":"elemName","path":"objects/oMenuBlueprintElement/oMenuBlueprintElement.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"confirmLoadDummy",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":9.0,"scaleY":3.5,"x":672.0,"y":352.0,},
+      ],"layers":[],"name":"confirmLoad","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
+    {"$GMRInstanceLayer":"","%Name":"confirmSave","depth":1000,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
+        {"$GMRInstance":"v4","%Name":"inst_49281354","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_49281354","objectId":{"name":"oMenuBlueprint","path":"objects/oMenuBlueprint/oMenuBlueprint.yy",},"previewSprite":{"name":"sChoiceBox","path":"sprites/sChoiceBox/sChoiceBox.yy",},"properties":[
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oMenuBlueprint","path":"objects/oMenuBlueprint/oMenuBlueprint.yy",},"propertyId":{"name":"menuName","path":"objects/oMenuBlueprint/oMenuBlueprint.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"confirmSave",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":5.0,"scaleY":3.25,"x":960.0,"y":528.0,},
+        {"$GMRInstance":"v4","%Name":"inst_78F32FD4","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_78F32FD4","objectId":{"name":"oMenuBlueprintElementMain","path":"objects/oMenuBlueprintElementMain/oMenuBlueprintElementMain.yy",},"properties":[
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oMenuBlueprintElement","path":"objects/oMenuBlueprintElement/oMenuBlueprintElement.yy",},"propertyId":{"name":"elemName","path":"objects/oMenuBlueprintElement/oMenuBlueprintElement.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"confirmNo",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":1.5,"x":800.0,"y":608.0,},
+        {"$GMRInstance":"v4","%Name":"inst_7B256204","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7B256204","objectId":{"name":"oMenuBlueprintElementMain","path":"objects/oMenuBlueprintElementMain/oMenuBlueprintElementMain.yy",},"properties":[
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oMenuBlueprintElement","path":"objects/oMenuBlueprintElement/oMenuBlueprintElement.yy",},"propertyId":{"name":"elemName","path":"objects/oMenuBlueprintElement/oMenuBlueprintElement.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"confirmYes",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":1.5,"x":992.0,"y":608.0,},
+        {"$GMRInstance":"v4","%Name":"inst_620E1FDB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_620E1FDB","objectId":{"name":"oMenuBlueprintElementDummy","path":"objects/oMenuBlueprintElementDummy/oMenuBlueprintElementDummy.yy",},"properties":[
+            {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"oMenuBlueprintElement","path":"objects/oMenuBlueprintElement/oMenuBlueprintElement.yy",},"propertyId":{"name":"elemName","path":"objects/oMenuBlueprintElement/oMenuBlueprintElement.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"confirmSaveDummy",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":9.0,"scaleY":3.5,"x":672.0,"y":352.0,},
+      ],"layers":[],"name":"confirmSave","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
   ],
   "name":"rmInit",
   "parent":{
