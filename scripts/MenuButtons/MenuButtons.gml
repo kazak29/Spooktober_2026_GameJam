@@ -3,7 +3,7 @@ function MenuGameStart(_args){
 	ScreenPlayReset();
 	
 	//global.sceneToPlay = FIRST_SCENE;
-	global.sceneToPlay = "endPartyAmazingCont"; //"kazakTestScene";
+	global.sceneToPlay = "kazakTestScene";
 	//global.sceneToPlay = "rocketTestScene";
 	
 	TransitionStart(rmStage, _args[0], _args[1]);

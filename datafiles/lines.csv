@@ -2,22 +2,22 @@ SCENE NAME,LINE TITLE,LINE TEXT
 rocketTestScene,Empty,.
 rocketTestScene,,map
 ,,
-kazakTestScene,,"scene_bg_clear,sBackgroundHouseAcrossYardDay"
-kazakTestScene,,"music,bgmHouseAcross"
-kazakTestScene,,"main_char_in,0"
-kazakTestScene,,"char_in,Princess,sPrincess,0"
-kazakTestScene,,"trans_change,true,sBackgroundGray"
-kazakTestScene,,"delay,1"
-kazakTestScene,,"trans_scene,p2FrontWatch"
-,,
 kazakTestScene,,"scene_bg,sBackgroundGray"
 kazakTestScene,,"char_in,Barry,sBarry,0"
-kazakTestScene,Empty,no zalgo
-kazakTestScene,Empty,"[zalgo_small, 30]zalgo small zalgo small zalgo small zalgo small zalgo small zalgo small zalgo small zalgo small zalgo small zalgo small"
-kazakTestScene,Empty,no zalgo
-kazakTestScene,Empty,"[zalgo_big, 60]zalgo big zalgo big zalgo big zalgo big zalgo big zalgo big zalgo big zalgo big zalgo big zalgo big zalgo big zalgo big"
-kazakTestScene,,"main_char_in,0"
-kazakTestScene,Empty,test test 2
+kazakTestScene,?,Test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+kazakTestScene,[limes_name_cap],Test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+kazakTestScene,Lenore,Test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+kazakTestScene,Edgar,Test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+kazakTestScene,Screwdriver,Test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+kazakTestScene,Pogo,Test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+kazakTestScene,Barry,Test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+kazakTestScene,Möth,Test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+kazakTestScene,Shay,Test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+kazakTestScene,Mom,Test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+kazakTestScene,Empty,Test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+kazakTestScene,Hamster,Test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+kazakTestScene,Princess,Test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+kazakTestScene,Lamp,Test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 kazakTestScene,,"scene_set,kazakTestScene"
 ,,
 testMap1,Empty,...

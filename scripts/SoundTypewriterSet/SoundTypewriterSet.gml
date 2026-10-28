@@ -78,7 +78,7 @@ global.dataTypewriterSfx = {
 	},
 	Princess: {
 		ids:		[sfxTypewriterPrincess],
-		vol:		100,
+		vol:		80,
 		pitchMin:	1.6,
 		pitchMax:	1.6,
 		overlap:	10,
