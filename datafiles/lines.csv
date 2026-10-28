@@ -2,22 +2,22 @@ SCENE NAME,LINE TITLE,LINE TEXT
 rocketTestScene,Empty,.
 rocketTestScene,,map
 ,,
-kazakTestScene,,"scene_bg_clear,sBackgroundHouseAcrossYardDay"
-kazakTestScene,,"music,bgmHouseAcross"
-kazakTestScene,,"main_char_in,0"
-kazakTestScene,,"char_in,Princess,sPrincess,0"
-kazakTestScene,,"trans_change,true,sBackgroundGray"
-kazakTestScene,,"delay,1"
-kazakTestScene,,"trans_scene,p2FrontWatch"
-,,
 kazakTestScene,,"scene_bg,sBackgroundGray"
 kazakTestScene,,"char_in,Barry,sBarry,0"
-kazakTestScene,Empty,no zalgo
-kazakTestScene,Empty,"[zalgo_small, 30]zalgo small zalgo small zalgo small zalgo small zalgo small zalgo small zalgo small zalgo small zalgo small zalgo small"
-kazakTestScene,Empty,no zalgo
-kazakTestScene,Empty,"[zalgo_big, 60]zalgo big zalgo big zalgo big zalgo big zalgo big zalgo big zalgo big zalgo big zalgo big zalgo big zalgo big zalgo big"
-kazakTestScene,,"main_char_in,0"
-kazakTestScene,Empty,test test 2
+kazakTestScene,?,Test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+kazakTestScene,[limes_name_cap],Test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+kazakTestScene,Lenore,Test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+kazakTestScene,Edgar,Test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+kazakTestScene,Screwdriver,Test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+kazakTestScene,Pogo,Test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+kazakTestScene,Barry,Test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+kazakTestScene,Möth,Test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+kazakTestScene,Shay,Test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+kazakTestScene,Mom,Test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+kazakTestScene,Empty,Test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+kazakTestScene,Hamster,Test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+kazakTestScene,Princess,Test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
+kazakTestScene,Lamp,Test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test
 kazakTestScene,,"scene_set,kazakTestScene"
 ,,
 testMap1,Empty,...
@@ -1981,7 +1981,7 @@ p2Front1,Empty,You squeeze through a small hole in the front door.
 p2Front1,,"trans_change,true,sBackgroundHouseAcrossYardDay"
 p2Front1,,"main_char_in,0"
 p2Front1,,"char_in,Princess,sPrincess,7"
-p2Front1,Princess,"[sound,sfxPrincessBark][b]Bark![/b]"
+p2Front1,Princess,"[sound,sfxPrincessBark][tw_sfx,none][b]Bark![/b]"
 p2Front1,,"delay,0.1"
 p2Front1,Princess,"Ah, [name_from_princess_low]!"
 p2Front1,Princess,How did you get past my bodyguard?
@@ -2066,8 +2066,8 @@ p2Front1Guess,Spook,"Ooh, okay."
 p2Front1Guess,,"scene_set,p2Front1Party"
 ,,
 p2Front1Rule,,"char_update,Princess,6"
-p2Front1Rule,Princess,[shake][b]GASP[/b][/shake]
-p2Front1Rule,Princess,"[sound,sfxPrincessBark][shake]The audacity![/shake]"
+p2Front1Rule,Princess,"[sound,sfxPrincessBark][tw_sfx,none][shake][b]GASP[/b][/shake]"
+p2Front1Rule,Princess,[shake]The audacity![/shake]
 p2Front1Rule,,"char_update,Spook,8"
 p2Front1Rule,Spook,No! I'm just saying that we've never met!
 p2Front1Rule,,"char_update,Princess,7"
@@ -2111,7 +2111,7 @@ p2Front1Party,,"char_update,Spook,5"
 p2Front1Party,Spook,The Halloween Party!
 p2Front1Party,Spook,"My new friends will be there. There's Pogo, Screwdriver, Barry-"
 p2Front1Party,,"char_update,Princess,3"
-p2Front1Party,Princess,"[sound,sfxPrincessBark][b][shake]BARK![/shake][/b]"
+p2Front1Party,Princess,"[sound,sfxPrincessBark][tw_sfx,none][b][shake]BARK![/shake][/b]"
 p2Front1Party,,"char_update,Spook,8"
 p2Front1Party,Spook,[shake]AH!!!![/shake] What happened?!
 p2Front1Party,,"char_update,Princess,9"
@@ -2163,7 +2163,7 @@ p2Front1BadIdea,Princess,Did you steal something?!
 p2Front1BadIdea,,"char_update,Spook,8"
 p2Front1BadIdea,Spook,No! I-
 p2Front1BadIdea,,"char_update,Princess,6"
-p2Front1BadIdea,Princess,"[sound,sfxPrincessBark][shake]GUARDS!!![/shake]"
+p2Front1BadIdea,Princess,"[sound,sfxPrincessBark][tw_sfx,none][shake]GUARDS!!![/shake]"
 p2Front1BadIdea,Spook,[shake]AAAHH!![/shake]
 p2Front1BadIdea,Princess,[shake]DIPPER GET IN HERE!!! GUAAARDS!!![/shake]
 p2Front1BadIdea,Spook,"This is bad, I better get out of here!"
@@ -2201,7 +2201,7 @@ p2Front2Something,,"scene_set,p2FrontWatch"
 p2FrontWatch,,"char_update,Spook,0"
 p2FrontWatch,Spook,Isn't this you?
 p2FrontWatch,,"char_update,Princess,3"
-p2FrontWatch,Princess,"[sound,sfxPrincessBark][shake][b]BARK![/b][/shake]"
+p2FrontWatch,Princess,"[sound,sfxPrincessBark][tw_sfx,none][shake][b]BARK![/b][/shake]"
 p2FrontWatch,Spook,It looks special...
 p2FrontWatch,Princess,[shake]Remove that from my sight at once![/shake]
 p2FrontWatch,,"choice,p2FrontWatchWhy,p2FrontWatchSorry"
@@ -2383,11 +2383,11 @@ p2FrontOffended,,"scene_bg_clear,sBackgroundHouseAcrossYardDay"
 p2FrontOffended,,"music,bgmHouseAcross"
 p2FrontOffended,,"main_char_in,0"
 p2FrontOffended,,"char_in,Princess,sPrincess,7"
-p2FrontOffended,Princess,[shake]YOU!!![/shake]
+p2FrontOffended,Princess,"[sound,sfxPrincessBark][tw_sfx,none][shake]YOU!!![/shake]"
 p2FrontOffended,,"char_update,Spook,8"
 p2FrontOffended,Spook,"Oops, wrong door!"
 p2FrontOffended,,"char_update,Princess,6"
-p2FrontOffended,Princess,"[sound,sfxPrincessBark][shake]Get out!!! Get ouuuuuuut!!![/shake]"
+p2FrontOffended,Princess,[shake]Get out!!! Get ouuuuuuut!!![/shake]
 p2FrontOffended,,map
 ,,
 p2FrontComplete,,"scene_bg_clear,sBackgroundHouseAcrossYardDay"
@@ -2550,7 +2550,7 @@ p2Street1PartyNoCandy,Spook,With Screwdriver and others?
 p2Street1PartyNoCandy,,"char_update,[limes_name_cap],3"
 p2Street1PartyNoCandy,Empty,"[sound,sfxLimesSpin]Limes starts moving wildly and becomes a blur!"
 p2Street1PartyNoCandy,,"delay,1"
-p2Street1PartyNoCandy,[limes_name_cap],"[shake][wave]BA-DUM-TSSS!!![/wave][/shake][sound,sfxLimesBadumTss]"
+p2Street1PartyNoCandy,[limes_name_cap],"[sound,sfxLimesBadumTss][tw_sfx,none][shake][wave]BA-DUM-TSSS!!![/wave][/shake]"
 p2Street1PartyNoCandy,,"scene_set,p2Street1PartyNoQuest"
 ,,
 p2Street1PartyCandy,,"char_update,Spook,5"
@@ -2558,7 +2558,7 @@ p2Street1PartyCandy,Spook,Wait... You are the lost drummer?!
 p2Street1PartyCandy,,"char_update,[limes_name_cap],3"
 p2Street1PartyCandy,Empty,"[sound,sfxLimesSpin]Limes starts moving wildly and becomes a blur!"
 p2Street1PartyCandy,,"delay,1"
-p2Street1PartyCandy,[limes_name_cap],"[shake][wave]BA-DUM-TSSS!!![/wave][/shake][sound,sfxLimesBadumTss]"
+p2Street1PartyCandy,[limes_name_cap],"[sound,sfxLimesBadumTss][tw_sfx,none][shake][wave]BA-DUM-TSSS!!![/wave][/shake]"
 p2Street1PartyCandy,,"condition_flag,questPrincessComplete"
 p2Street1PartyCandy,,"scene_set,p2Street1PartyQuest"
 p2Street1PartyCandy,,"scene_set,p2Street1PartyNoQuest"
@@ -2662,7 +2662,7 @@ p2Street2,[limes_name_cap],One more thing!
 p2Street2,Spook,What is it?
 p2Street2,[limes_name_cap],Nothing. 
 p2Street2,,"char_update,[limes_name_cap],3"
-p2Street2,[limes_name_cap],"[shake][wave]BA-DUM-TSSS!!![/wave][/shake][sound,sfxLimesBadumTss]"
+p2Street2,[limes_name_cap],"[sound,sfxLimesBadumTss][tw_sfx,none][shake][wave]BA-DUM-TSSS!!![/wave][/shake]"
 p2Street2,,"char_update,Spook,7"
 p2Street2,Spook,...
 p2Street2,Spook,See ya later.
@@ -2983,7 +2983,7 @@ endPartyAmazing,Princess,Silence! Thief!
 endPartyAmazing,Princess,I demand you... give my [shake]HEART BACK![/shake]
 endPartyAmazing,,"char_out,Princess"
 endPartyAmazing,,"char_in,Limes,sLimes,3"
-endPartyAmazing,Limes,[shake][wave]BA-DUM-TSSS!!![/wave][/shake]
+endPartyAmazing,Limes,"[sound,sfxLimesBadumTss][tw_sfx,none][shake][wave]BA-DUM-TSSS!!![/wave][/shake]"
 endPartyAmazing,,"char_in,Screwdriver,sScrewdriver,12"
 endPartyAmazing,Screwdriver,[shake]PFFFFFFFFFFTTTTTTTTTTTTTTTTTTTTTTT-[/shake]
 endPartyAmazing,,"char_in,Pogo,sPogo,1"

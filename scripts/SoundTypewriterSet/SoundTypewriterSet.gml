@@ -19,27 +19,26 @@ global.dataTypewriterSfx = {
 		pitchMin:	1.2,
 		pitchMax:	1.2,
 		overlap:	20,
-	
 	},
 	Screwdriver: {
 		ids:		[sfxTypewriterScrewdriver],
 		vol:		100,
-		pitchMin:	1.0,
-		pitchMax:	1.0,
-		overlap:	30,
+		pitchMin:	1.05,
+		pitchMax:	1.05,
+		overlap:	10,
 	},
 	Pogo: {
 		ids:		[sfxTypewriterPogo],
 		vol:		100,
-		pitchMin:	0.8,
-		pitchMax:	0.8,
+		pitchMin:	1,
+		pitchMax:	1,
 		overlap:	20,
 	},
 	Barry: {
 		ids:		[sfxTypewriterBarry],
 		vol:		100,
-		pitchMin:	1.0,
-		pitchMax:	1.0,
+		pitchMin:	1.05,
+		pitchMax:	1.05,
 		overlap:	20,
 	},
 	Moth: {
@@ -52,16 +51,16 @@ global.dataTypewriterSfx = {
 	Shay: {
 		ids:		[sfxTypewriterShay],
 		vol:		100,
-		pitchMin:	1.2,
-		pitchMax:	1.2,
-		overlap:	15,
+		pitchMin:	1.1,
+		pitchMax:	1.1,
+		overlap:	20,
 	},
 	Mom: {
-		ids:		[sfxTypewriterSpook],
+		ids:		[sfxTypewriterShay],	//spook
 		vol:		100,
-		pitchMin:	0.9,
+		pitchMin:	0.9,					//0.9
 		pitchMax:	0.9,
-		overlap:	0,
+		overlap:	5,						//0
 	},
 	Empty: {
 		ids:		[sfxTypewriterSpook],
@@ -79,9 +78,9 @@ global.dataTypewriterSfx = {
 	},
 	Princess: {
 		ids:		[sfxTypewriterPrincess],
-		vol:		100,
-		pitchMin:	1.4,
-		pitchMax:	1.4,
+		vol:		80,
+		pitchMin:	1.6,
+		pitchMax:	1.6,
 		overlap:	10,
 	},
 	Limes: {
@@ -89,21 +88,21 @@ global.dataTypewriterSfx = {
 		vol:		100,
 		pitchMin:	1.2,
 		pitchMax:	1.2,
-		overlap:	40,
+		overlap:	20,			//40
 	},
 	Lenore: {
 		ids:		[sfxTypewriterLenore],
 		vol:		100,
-		pitchMin:	1.15,
-		pitchMax:	1.15,
+		pitchMin:	1.1,
+		pitchMax:	1.1,
 		overlap:	20,
 	},
 	Edgar: {
 		ids:		[sfxTypewriterEdgar],
 		vol:		100,
-		pitchMin:	0.75,
-		pitchMax:	0.75,
-		overlap:	20,
+		pitchMin:	1,
+		pitchMax:	1,
+		overlap:	0,
 	},
 	Lamp: {
 		ids:		[sfxTypewriterLamp],
