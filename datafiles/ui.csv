@@ -2,7 +2,7 @@ Key,Text
 menuStart,Start
 menuEnd,Exit
 menuCredits,Credits
-menuCreditsReturn,[ESC/START/Click]
+menuCreditsReturn,[ESC/START] or Click
 menuSettings,Settings
 menuResume,Resume
 menuToMain,Main Menu
@@ -48,6 +48,7 @@ menuInputs,[[ESC/START]
 buttonTextlog,LOG
 logInputs,[[ENTER/SELECT]
 saveMap,Map
+endingProceedInputs,[SPACE/X/A] or Click
 ,
 mapHome,Home
 mapBar,Sewer Bar
