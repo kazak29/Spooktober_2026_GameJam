@@ -268,8 +268,7 @@ switch _sfx {
 
 //son
 switch menuName {
-	case "titleSettings": _elems[0].arg = window_get_fullscreen(); break;
-	case "pauseSettings": _elems[0].arg = window_get_fullscreen(); break;
+	case "settings": _elems[0].arg = window_get_fullscreen(); break;
 }
 
 mouseClickLock = (oInputManager.mouse.held.any && _mouseClickLockCheck);

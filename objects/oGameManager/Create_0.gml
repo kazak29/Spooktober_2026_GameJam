@@ -47,7 +47,10 @@
 	
 	global.gamePaused = false;
 	global.menuElements = DataMenuElementsCreate();
-	global.menuLayers = [];
+	global.menuParameters = {
+		fade: false,
+		layers: [],
+	};
 	
 #endregion
 #region sound
