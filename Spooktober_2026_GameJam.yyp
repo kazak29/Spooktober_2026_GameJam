@@ -127,6 +127,7 @@
     {"id":{"name":"oTitleScreenController","path":"objects/oTitleScreenController/oTitleScreenController.yy",},},
     {"id":{"name":"oTransitionSprite","path":"objects/oTransitionSprite/oTransitionSprite.yy",},},
     {"id":{"name":"rmBandEnding","path":"rooms/rmBandEnding/rmBandEnding.yy",},},
+    {"id":{"name":"rmCiko","path":"rooms/rmCiko/rmCiko.yy",},},
     {"id":{"name":"rmCredits","path":"rooms/rmCredits/rmCredits.yy",},},
     {"id":{"name":"rmInit","path":"rooms/rmInit/rmInit.yy",},},
     {"id":{"name":"rmMap","path":"rooms/rmMap/rmMap.yy",},},
@@ -369,6 +370,7 @@
     {"id":{"name":"sBarry","path":"sprites/sBarry/sBarry.yy",},},
     {"id":{"name":"sBorder","path":"sprites/sBorder/sBorder.yy",},},
     {"id":{"name":"sChoiceBox","path":"sprites/sChoiceBox/sChoiceBox.yy",},},
+    {"id":{"name":"sCiko","path":"sprites/sCiko/sCiko.yy",},},
     {"id":{"name":"scribble_fallback_bulletpoint","path":"sprites/scribble_fallback_bulletpoint/scribble_fallback_bulletpoint.yy",},},
     {"id":{"name":"sDipper","path":"sprites/sDipper/sDipper.yy",},},
     {"id":{"name":"sHamilton","path":"sprites/sHamilton/sHamilton.yy",},},
@@ -408,6 +410,7 @@
     {"roomId":{"name":"rmMap","path":"rooms/rmMap/rmMap.yy",},},
     {"roomId":{"name":"rmStayInEnding","path":"rooms/rmStayInEnding/rmStayInEnding.yy",},},
     {"roomId":{"name":"rmBandEnding","path":"rooms/rmBandEnding/rmBandEnding.yy",},},
+    {"roomId":{"name":"rmCiko","path":"rooms/rmCiko/rmCiko.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
