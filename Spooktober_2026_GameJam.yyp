@@ -344,6 +344,7 @@
     {"id":{"name":"sBackgroundCageNight","path":"sprites/sBackgroundCageNight/sBackgroundCageNight.yy",},},
     {"id":{"name":"sBackgroundCageNightSpook","path":"sprites/sBackgroundCageNightSpook/sBackgroundCageNightSpook.yy",},},
     {"id":{"name":"sBackgroundCalendar","path":"sprites/sBackgroundCalendar/sBackgroundCalendar.yy",},},
+    {"id":{"name":"sBackgroundDrink","path":"sprites/sBackgroundDrink/sBackgroundDrink.yy",},},
     {"id":{"name":"sBackgroundEndingGroupMovieNight","path":"sprites/sBackgroundEndingGroupMovieNight/sBackgroundEndingGroupMovieNight.yy",},},
     {"id":{"name":"sBackgroundEndingMovieNight","path":"sprites/sBackgroundEndingMovieNight/sBackgroundEndingMovieNight.yy",},},
     {"id":{"name":"sBackgroundGray","path":"sprites/sBackgroundGray/sBackgroundGray.yy",},},
