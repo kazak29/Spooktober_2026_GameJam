@@ -1337,7 +1337,7 @@ p1Front1Default,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
 p1Front1Default,,"music,bgmHouseAcross"
 p1Front1Default,,"main_char_in,5"
 p1Front1Default,Spook,Whoa! What a large house!
-p1Front1Default,?,"[sound,sfxSnore1][b]Snorrrrrr[/b]"
+p1Front1Default,???,"[tw_sfx,none][sound,sfxSnore1][b]Snorrrrrr[/b]"
 p1Front1Default,,"char_in,Giant Rabbit,sDipper,0"
 p1Front1Default,Giant Rabbit,"[sound,sfxSnore2][b]Snorrrrrrrrrrrr[/b]"
 p1Front1Default,,"char_update,Spook,8"
@@ -2793,6 +2793,8 @@ endStay,,"trans_change,true,sBackgroundShayRoomNight"
 endStay,,"delay,0.3"
 endStay,Empty,You have horrors to witness at the comfort of your home!
 endStay,,"main_char_in,10"
+endStay,,"sound,sfxDoorOpen"
+endStay,,"delay,0.1"
 endStay,,"char_in,Shay,sShay,3"
 endStay,Shay,Hi Spooky-boo!
 endStay,,"char_update,Shay,6"
@@ -2801,7 +2803,7 @@ endStay,,"char_update,Shay,7"
 endStay,Shay,I am never going outside again!!!! [shake]Ugh!!![/shake]
 endStay,Shay,"I'm sure you were just as bored at home all day, too!"
 endStay,,"char_update,Shay,6"
-endStay,Shay,Well...
+endStay,Shay,"Well, anyway..."
 endStay,,"char_update,Shay,5"
 endStay,Shay,It's time to watch some [wave]zombie rats![/wave]
 endStay,,main_char_out
@@ -2810,61 +2812,61 @@ endStay,,"main_char_in,9"
 endStay,Spook,Squeak!
 endStay,,"music,noone"
 endStay,,"trans_change,true,sBackgroundBlack"
-endStay,Empty,"For some reason, rats don't feel as scary anymore..."
+endStay,Empty,You spend this Halloween the way you always wanted to.
 endStay,,"trans_room,rmStayInEnding"
 ,,
 endPartyBad,,"scene_bg_clear,sBackgroundBlack"
-endPartyBad,Empty,You climb down the Sewer.
+endPartyBad,Empty,You scurry to the Sewer Bar.
 endPartyBad,,"trans_change,false,sBackgroundSewerBar"
-endPartyBad,Empty,"Few other animals are inside. There is low, darkwave music coming out of an old little speaker..."
 endPartyBad,,"music,bgmBarPunk"
+endPartyBad,Empty,Few other critters are inside...
 endPartyBad,,"main_char_in,10"
 endPartyBad,,"char_in,Screwdriver,sScrewdriver,0"
 endPartyBad,Screwdriver,Sup kid?
 endPartyBad,Spook,Oh! You aren't dressed...?
-endPartyBad,,"char_update,Screwdriver,2"
-endPartyBad,Screwdriver,Didn't get the time! Was fixing up the place half of the time.
-endPartyBad,Spook,Oooh! Where are the others?
+endPartyBad,,"char_update,Screwdriver,9"
+endPartyBad,Screwdriver,"Didn't get the time, I was fixing up the place the whole time."
+endPartyBad,Spook,Oh... Where are the others?
 endPartyBad,,"char_update,Screwdriver,0"
 endPartyBad,Screwdriver,"Well, Pogo thought the party was too boring. She went to read somewhere."
 endPartyBad,,"char_update,Screwdriver,7"
 endPartyBad,Screwdriver,"Can't blame her, dude. This is like a college dorm party."
 endPartyBad,Spook,A... what?
 endPartyBad,,"char_update,Screwdriver,0"
-endPartyBad,Screwdriver,"Well. They usually suck, is all you gotta know."
+endPartyBad,Screwdriver,"Well. They're usually awkward, is all you gotta know."
 endPartyBad,Spook,Oooh...
 endPartyBad,,"char_update,Screwdriver,2"
-endPartyBad,Screwdriver,"Yeah, well. Thanks for comin'."
-endPartyBad,Screwdriver,We'll do better next year! 
-endPartyBad,,"char_update,Screwdriver,1"
-endPartyBad,Screwdriver,"Or, you know, you could always go back in time and try to help or somethin'."
-endPartyBad,Spook,I could [shake]WHAT?[/shake]
-endPartyBad,Screwdriver,He-he.
-endPartyBad,,"char_update,Screwdriver,0"
-endPartyBad,Screwdriver,Just kiddin'.
+endPartyBad,Screwdriver,"Yeah, well. Thanks for comin' anyway!"
+endPartyBad,Screwdriver,I'm sure it'll be better next year! 
+endPartyBad,,"char_update,Screwdriver,7"
+endPartyBad,Screwdriver,Hehe.
 endPartyBad,,"char_update,Screwdriver,2"
 endPartyBad,Screwdriver,"Happy Halloween, kid. Try to enjoy!"
 endPartyBad,,"char_out,Screwdriver"
 endPartyBad,,main_char_out
-endPartyBad,Empty,"You eat some candy and chat with a few drunken critters, and go home early..."
+endPartyBad,Empty,"You eat some candy and chat with a few drunken critters, then go home early..."
 endPartyBad,,"trans_change,true,sBackgroundShayRoomNight"
-endPartyBad,,"music,bgmSpookTheme"
-endPartyBad,Empty,At least Shay comes in not so long after!
-endPartyBad,,"main_char_in,10"
+endPartyBad,,"music,bgmShayHome"
+endPartyBad,,"main_char_in,7"
+endPartyBad,Spook,"Well, at least Shay should be getting home any minute now."
+endPartyBad,,"sound,sfxDoorOpen"
+endPartyBad,,"delay,0.1"
 endPartyBad,,"char_in,Shay,sShay,3"
 endPartyBad,Shay,Hi Spooky-boo!
-endPartyBad,,"char_update,Shay,6"
-endPartyBad,Shay,"My, that was [shake]EXHAUSTING![/shake]"
 endPartyBad,,"char_update,Shay,7"
+endPartyBad,Shay,"Gosh, that was [shake]EXHAUSTING![/shake]"
+endPartyBad,,"char_update,Shay,6"
 endPartyBad,Shay,I am never going outside again!!!! [shake]Ugh!!![/shake]
+endPartyBad,Shay,"Well, anyway..."
 endPartyBad,,"char_update,Shay,5"
-endPartyBad,Shay,"Well, nevermind."
-endPartyBad,,"music,bgmTitleTheme"
-endPartyBad,,"trans_change,false,sBackgroundBlack"
 endPartyBad,Shay,It's time to watch some [wave]zombie rats![/wave]
+endPartyBad,,"char_update,Spook,9"
 endPartyBad,Spook,Squeak!
-endPartyBad,,"trans_change,true"
-endPartyBad,,"trans_room,rmCredits"
+endPartyBad,,"music,noone"
+endPartyBad,,"trans_change,true,sBackgroundBlack"
+endPartyBad,Empty,"Well, at least you tried to make some friends."
+endPartyBad,,"trans_room,rmStayInEnding"
+,,
 ,,
 endPartyOkay,,"scene_bg_clear,sBackgroundBlack"
 endPartyOkay,Empty,The nighttime comes...
