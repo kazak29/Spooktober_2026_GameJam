@@ -10,7 +10,7 @@
   "compression":2,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":4.992018,
+  "duration":2.9512925,
   "exportDir":"",
   "name":"sfxCageOpen",
   "parent":{
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sfxCageOpen.wav",
+  "soundFile":"sfxCageOpen.mp3",
   "volume":1.0,
 }

@@ -1337,7 +1337,7 @@ p1Front1Default,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
 p1Front1Default,,"music,bgmHouseAcross"
 p1Front1Default,,"main_char_in,5"
 p1Front1Default,Spook,Whoa! What a large house!
-p1Front1Default,?,"[sound,sfxSnore1][b]Snorrrrrr[/b]"
+p1Front1Default,???,"[tw_sfx,none][sound,sfxSnore1][b]Snorrrrrr[/b]"
 p1Front1Default,,"char_in,Giant Rabbit,sDipper,0"
 p1Front1Default,Giant Rabbit,"[sound,sfxSnore2][b]Snorrrrrrrrrrrr[/b]"
 p1Front1Default,,"char_update,Spook,8"
@@ -2793,6 +2793,8 @@ endStay,,"trans_change,true,sBackgroundShayRoomNight"
 endStay,,"delay,0.3"
 endStay,Empty,You have horrors to witness at the comfort of your home!
 endStay,,"main_char_in,10"
+endStay,,"sound,sfxDoorOpen"
+endStay,,"delay,0.1"
 endStay,,"char_in,Shay,sShay,3"
 endStay,Shay,Hi Spooky-boo!
 endStay,,"char_update,Shay,6"
@@ -2801,7 +2803,7 @@ endStay,,"char_update,Shay,7"
 endStay,Shay,I am never going outside again!!!! [shake]Ugh!!![/shake]
 endStay,Shay,"I'm sure you were just as bored at home all day, too!"
 endStay,,"char_update,Shay,6"
-endStay,Shay,Well...
+endStay,Shay,"Well, anyway..."
 endStay,,"char_update,Shay,5"
 endStay,Shay,It's time to watch some [wave]zombie rats![/wave]
 endStay,,main_char_out
@@ -2810,115 +2812,163 @@ endStay,,"main_char_in,9"
 endStay,Spook,Squeak!
 endStay,,"music,noone"
 endStay,,"trans_change,true,sBackgroundBlack"
-endStay,Empty,"For some reason, rats don't feel as scary anymore..."
+endStay,Empty,You spend this Halloween the way you always wanted to.
 endStay,,"trans_room,rmStayInEnding"
 ,,
 endPartyBad,,"scene_bg_clear,sBackgroundBlack"
-endPartyBad,Empty,You climb down the Sewer.
+endPartyBad,Empty,You scurry to the Sewer Bar.
 endPartyBad,,"trans_change,false,sBackgroundSewerBar"
-endPartyBad,Empty,"Few other animals are inside. There is low, darkwave music coming out of an old little speaker..."
 endPartyBad,,"music,bgmBarPunk"
+endPartyBad,Empty,Few other critters are inside...
 endPartyBad,,"main_char_in,10"
 endPartyBad,,"char_in,Screwdriver,sScrewdriver,0"
 endPartyBad,Screwdriver,Sup kid?
 endPartyBad,Spook,Oh! You aren't dressed...?
-endPartyBad,,"char_update,Screwdriver,2"
-endPartyBad,Screwdriver,Didn't get the time! Was fixing up the place half of the time.
-endPartyBad,Spook,Oooh! Where are the others?
+endPartyBad,,"char_update,Screwdriver,9"
+endPartyBad,Screwdriver,"Didn't get the time, I was fixing up the place the whole time."
+endPartyBad,Spook,Oh... Where are the others?
 endPartyBad,,"char_update,Screwdriver,0"
 endPartyBad,Screwdriver,"Well, Pogo thought the party was too boring. She went to read somewhere."
 endPartyBad,,"char_update,Screwdriver,7"
 endPartyBad,Screwdriver,"Can't blame her, dude. This is like a college dorm party."
 endPartyBad,Spook,A... what?
 endPartyBad,,"char_update,Screwdriver,0"
-endPartyBad,Screwdriver,"Well. They usually suck, is all you gotta know."
+endPartyBad,Screwdriver,"Well. They're usually awkward, is all you gotta know."
 endPartyBad,Spook,Oooh...
 endPartyBad,,"char_update,Screwdriver,2"
-endPartyBad,Screwdriver,"Yeah, well. Thanks for comin'."
-endPartyBad,Screwdriver,We'll do better next year! 
-endPartyBad,,"char_update,Screwdriver,1"
-endPartyBad,Screwdriver,"Or, you know, you could always go back in time and try to help or somethin'."
-endPartyBad,Spook,I could [shake]WHAT?[/shake]
-endPartyBad,Screwdriver,He-he.
-endPartyBad,,"char_update,Screwdriver,0"
-endPartyBad,Screwdriver,Just kiddin'.
+endPartyBad,Screwdriver,"Yeah, well. Thanks for comin' anyway!"
+endPartyBad,Screwdriver,I'm sure it'll be better next year! 
+endPartyBad,,"char_update,Screwdriver,7"
+endPartyBad,Screwdriver,Hehe.
 endPartyBad,,"char_update,Screwdriver,2"
 endPartyBad,Screwdriver,"Happy Halloween, kid. Try to enjoy!"
 endPartyBad,,"char_out,Screwdriver"
 endPartyBad,,main_char_out
-endPartyBad,Empty,"You eat some candy and chat with a few drunken critters, and go home early..."
+endPartyBad,Empty,"You eat some candy and chat with a few drunken critters, then go home early..."
 endPartyBad,,"trans_change,true,sBackgroundShayRoomNight"
-endPartyBad,,"music,bgmSpookTheme"
-endPartyBad,Empty,At least Shay comes in not so long after!
-endPartyBad,,"main_char_in,10"
+endPartyBad,,"music,bgmShayHome"
+endPartyBad,,"main_char_in,7"
+endPartyBad,Spook,"Well, at least Shay should be getting home any minute now."
+endPartyBad,,"sound,sfxDoorOpen"
+endPartyBad,,"delay,0.1"
 endPartyBad,,"char_in,Shay,sShay,3"
 endPartyBad,Shay,Hi Spooky-boo!
 endPartyBad,,"char_update,Shay,6"
-endPartyBad,Shay,"My, that was [shake]EXHAUSTING![/shake]"
+endPartyBad,Shay,"Gosh, that was [shake]EXHAUSTING![/shake]"
 endPartyBad,,"char_update,Shay,7"
 endPartyBad,Shay,I am never going outside again!!!! [shake]Ugh!!![/shake]
+endPartyBad,Shay,"I'm sure you were just as bored at home all day, too!"
+endPartyBad,,"char_update,Shay,6"
+endPartyBad,Shay,"Well, anyway..."
 endPartyBad,,"char_update,Shay,5"
-endPartyBad,Shay,"Well, nevermind."
-endPartyBad,,"music,bgmTitleTheme"
-endPartyBad,,"trans_change,false,sBackgroundBlack"
 endPartyBad,Shay,It's time to watch some [wave]zombie rats![/wave]
+endPartyBad,,"char_update,Spook,9"
 endPartyBad,Spook,Squeak!
-endPartyBad,,"trans_change,true"
-endPartyBad,,"trans_room,rmCredits"
+endPartyBad,,"music,noone"
+endPartyBad,,"trans_change,true,sBackgroundBlack"
+endPartyBad,Empty,"Well, at least you tried to make some friends."
+endPartyBad,,"trans_room,rmStayInEnding"
 ,,
 endPartyOkay,,"scene_bg_clear,sBackgroundBlack"
-endPartyOkay,Empty,The nighttime comes...
-endPartyOkay,,"music,bgmTitleTheme"
+endPartyOkay,Empty,You scurry to the Sewer Bar.
 endPartyOkay,,"trans_change,true,sBackgroundSewerBarParty"
-endPartyOkay,,"char_in,Screwdriver,sScrewdriver,12"
-endPartyOkay,Screwdriver,Hiya kid!
+endPartyOkay,,"music,bgmBarPunk"
 endPartyOkay,,"main_char_in,10"
+endPartyOkay,,"char_in,Screwdriver,sScrewdriver,12"
+endPartyOkay,Screwdriver,Hey kid!
 endPartyOkay,Spook,[shake]PARTY!!!![/shake]
 endPartyOkay,,"char_in,Pogo,sPogo,3"
 endPartyOkay,Pogo,[shake]PARTY!!!![/shake]
 endPartyOkay,,"char_update,Pogo,2"
 endPartyOkay,,"char_in,Barry,sBarry,5"
-endPartyOkay,Barry,Cheers.
-endPartyOkay,,"char_out,Screwdriver"
-endPartyOkay,,"char_in,Möth,sMoth,2"
-endPartyOkay,Möth,LAMP.
-endPartyOkay,,"char_out,Möth"
-endPartyOkay,,"char_in,Screwdriver,sScrewdriver,11"
-endPartyOkay,Screwdriver,"Yeah, that about covers it."
-endPartyOkay,,"char_update,Barry,8"
-endPartyOkay,Barry,Time to drink some BSCWCCEC!
-endPartyOkay,,"char_update,Pogo,1"
+endPartyOkay,Barry,Anyone up for some BSCWCCEC?
+endPartyOkay,,"trans_change,true,sBackgroundDrink"
 endPartyOkay,Pogo,"[wave]Yay, BSCWCCEC![/wave]"
+endPartyOkay,Barry,Cheers.
+endPartyOkay,,"trans_change,true,sBackgroundSewerBarParty"
+endPartyOkay,,"main_char_in,10"
+endPartyOkay,,"char_in,Pogo,sPogo,3"
 endPartyOkay,Spook,"Where is your costume, Pogo?"
 endPartyOkay,,"char_update,Pogo,8"
 endPartyOkay,Pogo,Oh. Sweetie. I am a Halloween decoration [wave]aaaallll[/wave] year long!
-endPartyOkay,Spook,Hm...
-endPartyOkay,,"char_update,Screwdriver,12"
-endPartyOkay,Screwdriver,You could be like. Double-bat.
+endPartyOkay,Spook,Hm... I guess that's true.
+endPartyOkay,,"char_in,Screwdriver,sScrewdriver,12"
+endPartyOkay,Screwdriver,"You could be like, Double-bat."
 endPartyOkay,,"char_update,Pogo,4"
 endPartyOkay,Pogo,How so?
 endPartyOkay,Screwdriver,Bat suit. On your bat skin.
-endPartyOkay,,"char_update,Barry,9"
-endPartyOkay,Barry,[wave]Woooow.[/wave]
+endPartyOkay,Pogo,"Hm... Oh, I know!"
 endPartyOkay,,"char_update,Pogo,6"
-endPartyOkay,Pogo,I'll do Frankenstein next year!
+endPartyOkay,Pogo,I'll be Frankenstein next year!
 endPartyOkay,,"char_out,Screwdriver"
 endPartyOkay,,"char_in,Möth,sMoth,2"
-endPartyOkay,Möth,Like my costume?
-endPartyOkay,Spook,Um! Yeah! Lamp!
+endPartyOkay,Möth,Do you like my costume?
+endPartyOkay,Spook,Um! Yeah!
+endPartyOkay,Spook,Uh... What are you?
+endPartyOkay,Möth,LAMP.
 endPartyOkay,,"delay,0.75"
-endPartyOkay,Möth,"[zalgo_small,30][speed,0.25]lamp...[/speed]"
+endPartyOkay,Möth,"[zalgo_small,30][speed,0.25]Lamp...[/speed]"
 endPartyOkay,,"delay,0.5"
-endPartyOkay,,"char_update,Barry,6"
+endPartyOkay,,"char_out,Möth"
+endPartyOkay,,"char_in,Barry,sBarry,8"
 endPartyOkay,Barry,"Alright. Cheers, everyone!"
 endPartyOkay,,"char_update,Pogo,1"
 endPartyOkay,Pogo,[wave]Cheers![/wave]
-endPartyOkay,,"char_out,Möth"
 endPartyOkay,,"char_in,Screwdriver,sScrewdriver,12"
 endPartyOkay,Screwdriver,Yeah!!!
-endPartyOkay,Spook,[wave]Wohoo![/wave]
+endPartyOkay,Spook,[wave]Wahoo![/wave]
 endPartyOkay,,"delay,1"
-endPartyOkay,,"trans_room,rmCredits"
+endPartyOkay,Spook,Wow! This is- um...
+endPartyOkay,,"char_update,Pogo,7"
+endPartyOkay,Pogo,"Drink slowly, silly! It has a lot of-"
+endPartyOkay,Screwdriver,Sugar! And candy!
+endPartyOkay,Barry,"Well, you are a small fella. You need to be more careful."
+endPartyOkay,Screwdriver,"Everyone's a small fella to you, Barry."
+endPartyOkay,Screwdriver,No offense.
+endPartyOkay,Barry,Offense taken...
+endPartyOkay,,"char_out,Pogo"
+endPartyOkay,Spook,I want BSC...uh...WCC...EC every day!
+endPartyOkay,,"char_in,Möth,sMoth,2"
+endPartyOkay,Möth,I don't need it every day. I have lamp every day.
+endPartyOkay,Barry,"Well, we can't afford it every day..."
+endPartyOkay,Screwdriver,"Actually, we can!"
+endPartyOkay,Screwdriver,"Since I, well, found a way to ""borrow"" candy from that snobby rich house."
+endPartyOkay,Barry,...
+endPartyOkay,Möth,I must return to the lamp now.
+endPartyOkay,Möth,Happy Halloween.
+endPartyOkay,Spook,"See ya later, Möth!"
+endPartyOkay,,"char_out,Möth"
+endPartyOkay,,"char_in,Pogo,sPogo,6"
+endPartyOkay,Pogo,"Well, it's 'Ween, everyone!"
+endPartyOkay,Screwdriver,To 'Ween!
+endPartyOkay,Spook,To the Hallow's eve!
+endPartyOkay,Empty,"You enjoy a good time with some new friends, then head home."
+endPartyOkay,,"trans_change,true,sBackgroundShayRoomNight"
+endPartyOkay,,"music,bgmShayHome"
+endPartyOkay,,"main_char_in,10"
+endPartyOkay,Spook,Shay should be getting back any second!
+endPartyOkay,,"sound,sfxDoorOpen"
+endPartyOkay,,"delay,0.1"
+endPartyOkay,,"char_in,Shay,sShay,3"
+endPartyOkay,Shay,Hi Spooky-boo!
+endPartyOkay,,"char_update,Shay,6"
+endPartyOkay,Shay,"Gosh, that was [shake]EXHAUSTING![/shake]"
+endPartyOkay,,"char_update,Shay,7"
+endPartyOkay,Shay,I am never going outside again!!!! [shake]Ugh!!![/shake]
+endPartyOkay,Shay,"I'm sure you were just as bored at home all day, too!"
+endPartyOkay,,"char_update,Shay,6"
+endPartyOkay,Shay,"Well, anyway..."
+endPartyOkay,,"char_update,Shay,5"
+endPartyOkay,Shay,It's time to watch some [wave]zombie rats![/wave]
+endPartyOkay,,main_char_out
+endPartyOkay,,"delay,0.1"
+endPartyOkay,,"main_char_in,9"
+endPartyOkay,Spook,Squeak!
+endPartyOkay,,"music,noone"
+endPartyOkay,,"trans_change,true,sBackgroundBlack"
+endPartyOkay,Empty,"You enjoy another movie night with Shay, and made some friends along the way!"
+endPartyOkay,,"trans_room,rmStayInEnding"
+,,
 ,,
 endPartyAmazing,,"scene_bg_clear,sBackgroundBlack"
 endPartyAmazing,Empty,Dark moonless skies fall upon the horizon. Not a hint of color visible above.
@@ -2926,155 +2976,192 @@ endPartyAmazing,Empty,"The light of distant stars fail to break through the dark
 endPartyAmazing,Empty,"Below, heavy fog crawls in the dim light of street lamps. Growing, spreading, reaching ever higher."
 endPartyAmazing,Empty,"Until the skies themselves disappear completely. Consumed and discarded, like a forgotten memory."
 endPartyAmazing,Empty,"This night, something vast stirs below the surface..."
-endPartyAmazing,,"music,bgmTitleTheme"
 endPartyAmazing,,"trans_change,true,sBackgroundSewerBarParty"
+endPartyAmazing,,"music,bgmBarPunk"
 endPartyAmazing,,"custom_script_cont,HamsterGhostCreate"
 endPartyAmazing,,"main_char_in,10"
 endPartyAmazing,Spook,[shake]OK![/shake] Ready!
 endPartyAmazing,,"char_in,Screwdriver,sScrewdriver,12"
-endPartyAmazing,Screwdriver,Hiya kid!
+endPartyAmazing,Screwdriver,Hey kid!
 endPartyAmazing,Spook,[shake]PARTY!!!![/shake]
 endPartyAmazing,,"char_in,Pogo,sPogo,3"
 endPartyAmazing,Pogo,[shake]PARTY!!!![/shake]
 endPartyAmazing,,"char_update,Pogo,2"
 endPartyAmazing,,"char_in,Barry,sBarry,5"
+endPartyAmazing,Barry,Anyone up for some BSCWCCEC?
+endPartyAmazing,,"custom_script_cont,HamsterGhostDestroy"
+endPartyAmazing,,"trans_change,true,sBackgroundDrink"
+endPartyAmazing,Pogo,"[wave]Yay, BSCWCCEC![/wave]"
 endPartyAmazing,Barry,Cheers.
+endPartyAmazing,,"trans_change,true,sBackgroundSewerBarParty"
+endPartyAmazing,,"custom_script_cont,HamsterGhostCreate"
+endPartyAmazing,,"main_char_in,10"
+endPartyAmazing,,"char_in,Pogo,sPogo,3"
+endPartyAmazing,Spook,"Where is your costume, Pogo?"
+endPartyAmazing,,"char_update,Pogo,8"
+endPartyAmazing,Pogo,Oh. Sweetie. I am a Halloween decoration [wave]aaaallll[/wave] year long!
+endPartyAmazing,Spook,Hm... I guess that's true.
+endPartyAmazing,,"char_in,Screwdriver,sScrewdriver,12"
+endPartyAmazing,Screwdriver,"You could be like, Double-bat."
+endPartyAmazing,,"char_update,Pogo,4"
+endPartyAmazing,Pogo,How so?
+endPartyAmazing,Screwdriver,Bat suit. On your bat skin.
+endPartyAmazing,Pogo,"Hm... Oh, I know!"
+endPartyAmazing,,"char_update,Pogo,6"
+endPartyAmazing,Pogo,I'll be Frankenstein next year!
 endPartyAmazing,,"char_out,Screwdriver"
 endPartyAmazing,,"char_in,Möth,sMoth,2"
+endPartyAmazing,Möth,Do you like my costume?
+endPartyAmazing,Spook,Um! Yeah!
+endPartyAmazing,Spook,Uh... What are you?
 endPartyAmazing,Möth,LAMP.
+endPartyAmazing,,"delay,0.75"
+endPartyAmazing,Möth,"[zalgo_small,30][speed,0.25]Lamp...[/speed]"
+endPartyAmazing,,"delay,0.5"
 endPartyAmazing,,"char_out,Möth"
-endPartyAmazing,,"char_in,Screwdriver,sScrewdriver,11"
-endPartyAmazing,Screwdriver,"Yeah, that about covers it."
-endPartyAmazing,,"char_update,Barry,8"
-endPartyAmazing,Barry,Time to drink some BSCWCCEC!
+endPartyAmazing,,"char_in,Barry,sBarry,8"
+endPartyAmazing,Barry,"Alright. Cheers, everyone!"
 endPartyAmazing,,"char_update,Pogo,1"
-endPartyAmazing,Pogo,"[wave]Yay, BSCWCCEC![/wave]"
-endPartyAmazing,,"delay,0.25"
-endPartyAmazing,Empty,You hear the Sewer door open...
+endPartyAmazing,Pogo,[wave]Cheers![/wave]
+endPartyAmazing,,"char_in,Screwdriver,sScrewdriver,12"
+endPartyAmazing,Screwdriver,Yeah!!!
+endPartyAmazing,Spook,[wave]Wahoo![/wave]
+endPartyAmazing,,"delay,1"
+endPartyAmazing,Spook,Wow! This is- um...
+endPartyAmazing,,"char_update,Pogo,7"
+endPartyAmazing,Pogo,"Drink slowly, silly! It has a lot of-"
+endPartyAmazing,Screwdriver,Sugar! And candy!
+endPartyAmazing,Barry,"Well, you are a small fella. You need to be more careful."
+endPartyAmazing,Screwdriver,"Everyone's a small fella to you, Barry."
+endPartyAmazing,Screwdriver,No offense.
+endPartyAmazing,Barry,Offense taken...
+endPartyAmazing,,"delay,1"
+endPartyAmazing,Empty,"Suddenly, you hear the sewer door open[sound,sfxCageOpen]..."
+endPartyAmazing,,"delay,0.1"
 endPartyAmazing,,"char_update,Pogo,4"
-endPartyAmazing,Pogo,"Hm? I thought everyone arrived! Is your gang coming, Drivey?"
-endPartyAmazing,Screwdriver,"Um, no..."
-endPartyAmazing,,"char_out,Pogo"
+endPartyAmazing,Pogo,Hm? I thought everyone was already here.
+endPartyAmazing,Pogo,"Is your gang coming, Drivey?"
+endPartyAmazing,,"char_update,Screwdriver,11"
+endPartyAmazing,Screwdriver,Um... no?
 endPartyAmazing,,"char_out,Screwdriver"
-endPartyAmazing,,"char_in,Princess,sPrincess,0"
-endPartyAmazing,Princess,...
+endPartyAmazing,,"delay,1"
+endPartyAmazing,,"char_in,Princess,sPrincess,11"
 endPartyAmazing,,"char_update,Barry,9"
-endPartyAmazing,Barry,[shake]...[/shake]
-endPartyAmazing,,"char_in,Limes,sLimes,0"
-endPartyAmazing,Limes,...!
-endPartyAmazing,,"char_out,Barry"
-endPartyAmazing,,"char_in,Pogo,sPogo,6"
-endPartyAmazing,Pogo,[shake]!!![/shake]
-endPartyAmazing,,"char_out,Princess"
-endPartyAmazing,,"char_in,Screwdriver,sScrewdriver,11"
-endPartyAmazing,Screwdriver,[shake]???[/shake]
-endPartyAmazing,Screwdriver,Um...
-endPartyAmazing,,"char_out,Limes"
-endPartyAmazing,,"char_out,Pogo"
+endPartyAmazing,Princess,...
 endPartyAmazing,,"char_out,Screwdriver"
-endPartyAmazing,,"char_in,Princess,sPrincess,2"
 endPartyAmazing,Princess,"Greetings, old friends and the new citizens of Foggy Hallow."
-endPartyAmazing,,"char_update,Princess,0"
-endPartyAmazing,Princess,"I am here tonight, to ask you to retrieve what's mine."
-endPartyAmazing,,"char_in,Barry,sBarry,7"
+endPartyAmazing,,"char_update,Pogo,6"
+endPartyAmazing,Pogo,!!!
+endPartyAmazing,Princess,"I am here tonight, to request you to retrieve what's mine."
+endPartyAmazing,,"char_out,Pogo"
+endPartyAmazing,,"char_update,Barry,7"
 endPartyAmazing,Barry,[shake]...P...Princess...[/shake]
+endPartyAmazing,,"char_update,Princess,16"
+endPartyAmazing,Princess,"[tw_sfx,none][sound,sfxPrincessBark]Silence! Thief!"
+endPartyAmazing,Princess,I demand you to return the candy!
+endPartyAmazing,Princess,...and
+endPartyAmazing,,"char_update,Princess,13"
+endPartyAmazing,Princess,...Give my [shake]HEART BACK![/shake]
+endPartyAmazing,Spook,"[alpha,0.75](I think these two need a moment...)[/alpha]"
+endPartyAmazing,,main_char_out
+endPartyAmazing,Barry,[shake]Princess... my love...[/shake]
+endPartyAmazing,Barry,[shake]Why... you... where have you been?[/shake]
+endPartyAmazing,,"char_update,Princess,14"
+endPartyAmazing,Princess,"[shake]Bar-Bar, I...[/shake]"
+endPartyAmazing,,"char_update,Princess,15"
+endPartyAmazing,Princess,My owners were scared of you. I was worried you would get hurt if this kept going!
+endPartyAmazing,Barry,You left to... protect me?
+endPartyAmazing,,"char_update,Princess,14"
+endPartyAmazing,Princess,Yes... It's how it was supposed to be.
+endPartyAmazing,,"char_update,Princess,15"
+endPartyAmazing,Princess,"But you are a free spirit, Bar-Bar. You showed me such wonderful things!"
+endPartyAmazing,Princess,I... I have a duty to my human...
+endPartyAmazing,Barry,Princess... I... I just really miss you.
+endPartyAmazing,Barry,It's okay if we don't run away like we used to... Can't you just... Bark at me from your window sometimes? And-
+endPartyAmazing,,"char_update,Princess,16"
+endPartyAmazing,Princess,"[tw_sfx,none][sound,sfxPrincessBark]No!"
+endPartyAmazing,Barry,[shake]N... no?[/shake]
+endPartyAmazing,Princess,"Not anymore, I am [shake]DONE[/shake] hiding! I won't be away from my true love! And my human better [shake]DEAL[/shake] with it!"
+endPartyAmazing,,"char_update,Barry,11"
+endPartyAmazing,Barry,[shake]Princess...[/shake]
+endPartyAmazing,,"char_update,Princess,12"
+endPartyAmazing,Princess,[shake]Bar-Bar...[/shake]
+endPartyAmazing,,"char_in,Pogo,sPogo,6"
+endPartyAmazing,Pogo,"[shake]YOU, LAND PUPPY, OWE ME A BIG ONE![/shake]"
 endPartyAmazing,,"char_out,Barry"
-endPartyAmazing,Princess,Silence! Thief!
-endPartyAmazing,Princess,I demand you... give my [shake]HEART BACK![/shake]
+endPartyAmazing,,"char_update,Princess,11"
+endPartyAmazing,Princess,"That so, sky puppy? "
+endPartyAmazing,,"char_update,Pogo,7"
+endPartyAmazing,Pogo,[shake]YEAH![/shake] We started watching Gossipy Beawer and you left us halfway through!!!!
+endPartyAmazing,,"char_update,Princess,14"
+endPartyAmazing,Princess,That's... Yes. I... apologize. 
+endPartyAmazing,,"char_update,Princess,12"
+endPartyAmazing,Princess,"Thankfully, this little [name_from_princess_low] was here to summon me from my castle!"
+endPartyAmazing,,"main_char_in,10"
+endPartyAmazing,,"char_update,Pogo,7"
+endPartyAmazing,Pogo,[shake]I WAS TOO![/shake]
+endPartyAmazing,Pogo,I flew over your ridiculous house for hours on end!
+endPartyAmazing,Princess,Oh you are [shake]OBSESSED[/shake] with me.
+endPartyAmazing,,"char_update,Pogo,6"
+endPartyAmazing,Pogo,"Girl, you know it."
+endPartyAmazing,,"char_in,Screwdriver,sScrewdriver,11"
+endPartyAmazing,Screwdriver,BOO!!!! GET A LAIR!!!!
+endPartyAmazing,,"char_update,Princess,16"
+endPartyAmazing,Princess,Hmph!
+endPartyAmazing,Princess,Limes! Are you going to stay out there or are you going to finally come in?
 endPartyAmazing,,"char_out,Princess"
 endPartyAmazing,,"char_in,Limes,sLimes,3"
 endPartyAmazing,Limes,"[sound,sfxLimesBadumTss][tw_sfx,none][shake][wave]BA-DUM-TSSS!!![/wave][/shake]"
 endPartyAmazing,,"char_in,Screwdriver,sScrewdriver,12"
 endPartyAmazing,Screwdriver,[shake]PFFFFFFFFFFTTTTTTTTTTTTTTTTTTTTTTT-[/shake]
-endPartyAmazing,,"char_in,Pogo,sPogo,1"
-endPartyAmazing,Pogo,Princess!!!! It's wonderful to see you!!!!
-endPartyAmazing,Spook,"[alpha,0.75](Guys, I think they are having a moment....)[/alpha]"
-endPartyAmazing,,"char_update,Pogo,0"
-endPartyAmazing,,"char_out,Limes"
-endPartyAmazing,,"char_out,Screwdriver"
-endPartyAmazing,,"char_out,Pogo"
-endPartyAmazing,,"char_in,Barry,sBarry,7"
-endPartyAmazing,Barry,[shake]Princess... my love...[/shake]
-endPartyAmazing,Barry,[shake]Why... you... where have you been?[/shake]
-endPartyAmazing,,"char_in,Princess,sPrincess,3"
-endPartyAmazing,Princess,"[shake]Barbar, I....[/shake]"
-endPartyAmazing,Princess,My owners were scared of you. I was worried you would get hurt if this kept going!
-endPartyAmazing,Barry,You left to... protect me?
-endPartyAmazing,Princess,It's how it was supposed to be!
-endPartyAmazing,,"char_update,Princess,0"
-endPartyAmazing,Princess,"You are a free spirit, Barbar. You showed me such wonderful things!"
-endPartyAmazing,Princess,But I... I have a duty to my human...
-endPartyAmazing,Barry,Princess... I... I just really miss you.
-endPartyAmazing,Barry,It's okay If we don' t run away like we used to... Can't you just... bark at me from your window sometimes and...
-endPartyAmazing,,"char_update,Princess,2"
-endPartyAmazing,Princess,No!
-endPartyAmazing,Barry,[shake]N... no?[/shake]
-endPartyAmazing,,"char_update,Princess,0"
-endPartyAmazing,Princess,Not anymore! I am [shake]DONE[/shake] hiding! I won't be away from my true love! And my human better [shake]DEAL[/shake] with it!
-endPartyAmazing,Barry,[shake]Princess...[/shake]
-endPartyAmazing,,"char_update,Princess,3"
-endPartyAmazing,Princess,[shake]Barbar...[/shake]
-endPartyAmazing,,"char_in,Screwdriver,sScrewdriver,12"
-endPartyAmazing,Screwdriver,[shake]BOOOO!!! GET A LAIR!!![/shake]
-endPartyAmazing,,"char_out,Barry"
-endPartyAmazing,,"char_in,Pogo,sPogo,6"
-endPartyAmazing,Pogo,[shake]Pffft....[/shake]
-endPartyAmazing,,"char_out,Princess"
-endPartyAmazing,,"char_in,Limes,sLimes,0"
-endPartyAmazing,Limes,Screwz! POG! Barz! 
+endPartyAmazing,Pogo,LIMES!
+endPartyAmazing,,"char_update,Limes,0"
+endPartyAmazing,Limes,Screwz! POG!
 endPartyAmazing,,"char_update,Limes,3"
-endPartyAmazing,Limes,[shake]!!![/shake]
+endPartyAmazing,Limes,"[sound,sfxLimesSpin][shake]!!!!![/shake]"
+endPartyAmazing,,"delay,1"
+endPartyAmazing,,"char_update,Screwdriver,12"
 endPartyAmazing,Screwdriver,[shake]WHAT IS UP[/shake] you drumm-ass?
 endPartyAmazing,Screwdriver,We missed you!
-endPartyAmazing,,"char_update,Pogo,1"
-endPartyAmazing,Pogo,We did. Both of you!
-endPartyAmazing,,"char_out,Screwdriver"
-endPartyAmazing,,"char_in,Möth,sMoth,2"
-endPartyAmazing,Möth,I miss lamp. Only.
-endPartyAmazing,,"char_out,Möth"
-endPartyAmazing,,"char_in,Princess,sPrincess,0"
-endPartyAmazing,Princess,...Well. It seems I have returned!
-endPartyAmazing,,"char_out,Limes"
-endPartyAmazing,,"char_update,Pogo,6"
-endPartyAmazing,Pogo,"[shake]YOU, LAND PUPPY, OWE ME A BIG ONE![/shake]"
-endPartyAmazing,,"char_update,Princess,2"
-endPartyAmazing,Princess,"That so, sky puppy? "
-endPartyAmazing,Pogo,[shake]YEAH![/shake] We started watching Gossipy Beawer and you left us halfway through!!!!
-endPartyAmazing,,"char_update,Princess,0"
-endPartyAmazing,Princess,That's... Yes. I... apologize. 
-endPartyAmazing,,"char_update,Princess,1"
-endPartyAmazing,Princess,Thankfully little [name_from_princess_low] was here to summon me from my castle!
-endPartyAmazing,,"char_update,Pogo,1"
-endPartyAmazing,Pogo,[shake]I WAS TOO![/shake]
-endPartyAmazing,Pogo,I flew over your ridicilous house for hours on end!
-endPartyAmazing,,"char_update,Princess,0"
-endPartyAmazing,Princess,Oh you are [shake]OBSESSED[/shake] with me.
-endPartyAmazing,,"char_update,Pogo,6"
-endPartyAmazing,Pogo,"Girl, you know it."
-endPartyAmazing,,"char_out,Princess"
-endPartyAmazing,,"char_in,Screwdriver,sScrewdriver,11"
-endPartyAmazing,,"char_in,Limes,sLimes,0"
+endPartyAmazing,,"char_update,Limes,0"
+endPartyAmazing,Limes,Limes missed you too!
+endPartyAmazing,,"char_update,Limes,1"
+endPartyAmazing,Limes,Also miss drumz.
+endPartyAmazing,Limes,Spook tell me drumz still here.
 endPartyAmazing,Screwdriver,Well well.  
-endPartyAmazing,Screwdriver,It seems the [wave][b]ASqueak/Dsqueak[/b][/wave] is back at it!
-endPartyAmazing,,"char_update,Screwdriver,12"
+endPartyAmazing,Screwdriver,Looks like [wave][b]ASqueak/Dsqueak[/b][/wave] is back at it!
+endPartyAmazing,,"char_update,Limes,0"
 endPartyAmazing,Screwdriver,We playin' tonight?
 endPartyAmazing,,"char_update,Pogo,1"
 endPartyAmazing,Pogo,"Oh, you're [shake]ASKING!?[/shake]"
-endPartyAmazing,,"char_update,Limes,2"
-endPartyAmazing,Limes,[shake]DRUMZ![/shake]
-endPartyAmazing,,"char_out,Pogo"
-endPartyAmazing,,"char_in,Barry,sBarry,7"
-endPartyAmazing,Barry,[shake]Yeah... Before... I... H... h... I... I will just...[/shake]
-endPartyAmazing,Limes,Drinkz! 
-endPartyAmazing,Spook,"BSCWCCEC, right!!!?"
-endPartyAmazing,,"char_update,Barry,6"
-endPartyAmazing,Barry,Coming [wave]riiiight[/wave] up!
+endPartyAmazing,,"char_update,Limes,3"
+endPartyAmazing,Limes,"[sound,sfxLimesBadumTss][tw_sfx,none][shake]DRUMZ![/shake]"
+endPartyAmazing,Spook,No way! The band's back together!
+endPartyAmazing,,"delay,1"
 endPartyAmazing,,"custom_script_cont,HamsterGhostDestroy"
+endPartyAmazing,,"trans_change,true,sBackgroundBlack"
+endPartyAmazing,,"music,noone"
 endPartyAmazing,,"delay,1"
-endPartyAmazing,,"trans_change,true,sBackgroundGray"
-endPartyAmazing,,"delay,1"
-endPartyAmazing,Spook,Hehe.
-endPartyAmazing,,"trans_scene,endPartyAmazingCont"
+endPartyAmazing,Screwdriver,[shake]ALRIGHT FOLKS!!![/shake]
+endPartyAmazing,Pogo,It's been so long!
+endPartyAmazing,Limes,"Long, muzic-free, boring!"
+endPartyAmazing,Screwdriver,To the delight of all you critters on this spooky night...
+endPartyAmazing,Screwdriver,We would [wave]LOVE[/wave] to announce...
+endPartyAmazing,Pogo,[shake]THE GREAT COMEBACK OF...[/shake]
+endPartyAmazing,Limes,[shake][b]A/Squeak D/Squeak!!!!![/b][/shake]
+endPartyAmazing,,"trans_room,rmBandEnding"
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
 ,,
 endPartyAmazingCont,,"scene_bg_clear,sBackgroundSewerBarParty"
 endPartyAmazingCont,,"music,bgmSpookTheme"

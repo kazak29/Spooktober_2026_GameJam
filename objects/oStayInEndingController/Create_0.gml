@@ -1,7 +1,7 @@
 AmbientChange(AMBIENT_MUSIC, bgmZombieRatsTheme, DEFAULT_VOLUME_PERCENT, true, 0);
 
 
-returnPrompt = $"Press {global.uiData.endingProceedInputs} to Continue";
+returnPrompt = $"THE END\nPress {global.uiData.endingProceedInputs} to Continue";
 returnPromptEnabled = false;
 
 StateWait = function(){
@@ -16,7 +16,7 @@ StateLocked = function(){
 	//empty state
 }
 
-cd = game_get_speed(gamespeed_fps) * 5;
+cd = game_get_speed(gamespeed_fps) * 8;
 state = StateWait;
 
 
