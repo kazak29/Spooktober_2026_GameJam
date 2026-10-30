@@ -40,7 +40,7 @@ var _buttonSettings = function() {
 }
 
 switch room {
-	case rmInit:		{	global.dataMenu = DataMenuSetup(); /*TODO*/ /*room_goto(rmBandEnding);*/ /*room_goto(rmTitleScreen);*/ room_goto(rmSplashScreen);	}	break;
+	case rmInit:		{	global.dataMenu = DataMenuSetup(); /*TODO*/ room_goto(rmBandEnding); /*room_goto(rmTitleScreen);*/ /*room_goto(rmSplashScreen);*/	}	break;
 	case rmStage:		{	_buttonSettings();	AmbientPlayAll();															}	break;
 	case rmMap:			{	_buttonSettings();	AmbientPlayAll();															}	break;
 	case rmTitleScreen:	{	if (os_type == os_gxgames) MenuCreateFirst("titleMain"); else MenuCreateFirst("titleMainWin");	}	break;

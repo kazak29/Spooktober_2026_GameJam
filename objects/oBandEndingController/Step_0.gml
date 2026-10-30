@@ -12,6 +12,7 @@ if (songTypist.get_state() >= 1.0) {
     
     // Move to the next line if available
     if (currentLine < array_length(lyrics) - 1) {
+		array_push(global.textLog, {title: POGO+" (Singing)", text: lyrics[currentLine]});
         currentLine++;
         
         // Create the new scribble element normally (do NOT use .in() here)
