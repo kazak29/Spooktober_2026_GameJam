@@ -350,7 +350,7 @@ p1HomeQuestHouseAcross,,main_char_out
 p1HomeQuestHouseAcross,Empty,Screwdriver leads you through an underground gateway...
 p1HomeQuestHouseAcross,,"trans_scene,p1HomeQuestHouseAcrossInside"
 ,,
-p1HomeQuestHouseAcrossInside,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
+p1HomeQuestHouseAcrossInside,,"scene_bg_clear,sBackgroundHouseAcrossInsideNight"
 p1HomeQuestHouseAcrossInside,,"main_char_in,0"
 p1HomeQuestHouseAcrossInside,,"char_in,Screwdriver,sScrewdriver,2"
 p1HomeQuestHouseAcrossInside,Screwdriver,"[wave]Candy, candy, sweet candy![/wave]"
@@ -374,7 +374,7 @@ p1HomeQuestHouseAcrossFadeOut1,,"scene_bg_clear,sBackgroundBlack"
 p1HomeQuestHouseAcrossFadeOut1,Empty,Several minutes pass...
 p1HomeQuestHouseAcrossFadeOut1,,"trans_scene,p1HomeQuestHouseAcrossGotCandy"
 ,,
-p1HomeQuestHouseAcrossGotCandy,,"scene_bg_clear,sBackgroundHouseAcrossYardNight"
+p1HomeQuestHouseAcrossGotCandy,,"scene_bg_clear,sBackgroundHouseAcrossInsideNight"
 p1HomeQuestHouseAcrossGotCandy,,"main_char_in,0"
 p1HomeQuestHouseAcrossGotCandy,,"char_in,Princess,sPrincess,4"
 p1HomeQuestHouseAcrossGotCandy,,"char_in,Screwdriver,sScrewdriver,8"
