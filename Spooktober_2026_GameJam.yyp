@@ -356,6 +356,8 @@
     {"id":{"name":"sBackgroundEndingGroupMovieNight","path":"sprites/sBackgroundEndingGroupMovieNight/sBackgroundEndingGroupMovieNight.yy",},},
     {"id":{"name":"sBackgroundEndingMovieNight","path":"sprites/sBackgroundEndingMovieNight/sBackgroundEndingMovieNight.yy",},},
     {"id":{"name":"sBackgroundGray","path":"sprites/sBackgroundGray/sBackgroundGray.yy",},},
+    {"id":{"name":"sBackgroundHouseAcrossInsideDay","path":"sprites/sBackgroundHouseAcrossInsideDay/sBackgroundHouseAcrossInsideDay.yy",},},
+    {"id":{"name":"sBackgroundHouseAcrossInsideNight","path":"sprites/sBackgroundHouseAcrossInsideNight/sBackgroundHouseAcrossInsideNight.yy",},},
     {"id":{"name":"sBackgroundHouseAcrossYardDay","path":"sprites/sBackgroundHouseAcrossYardDay/sBackgroundHouseAcrossYardDay.yy",},},
     {"id":{"name":"sBackgroundHouseAcrossYardNight","path":"sprites/sBackgroundHouseAcrossYardNight/sBackgroundHouseAcrossYardNight.yy",},},
     {"id":{"name":"sBackgroundLamp","path":"sprites/sBackgroundLamp/sBackgroundLamp.yy",},},
