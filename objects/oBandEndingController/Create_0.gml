@@ -1,5 +1,3 @@
-AmbientChange(AMBIENT_MUSIC, bgmBand, DEFAULT_VOLUME_PERCENT, false, 0);
-
 returnPrompt = $"Press {global.uiData.endingProceedInputs} to Skip";
 returnPromptEnabled = false;
 
@@ -21,54 +19,46 @@ state = StateWait;
 drawX = VIEWPORT_WIDTH / 2;
 drawY = VIEWPORT_HEIGHT - 60;
 
-lyrics = [
-	"[delay,3000]Hal-[delay,1000]lo-[delay,500]ween![delay,3000]",
-	"Trick or treat [delay,400]til [delay,300]sun [delay,300]is [delay,300]dawn[delay,400]ing[delay,7000]",
-	"Au[delay,1000]tumn [delay,300]leaves[delay,2800]",
-	"Fell the trees, [delay,400]the [delay,300]creeps [delay,300]go [delay,300]haunt[delay,300]in'[delay,5000]",
-	"Oh-[delay,800]oh[delay,700]",
-	"Boo [delay,800]scare![delay,2500]",
-	"Don't [delay,700]go in [delay,700]there![delay,900]",
-	"I sense [delay,200]a [delay,400]jump[delay,700]scare![delay,2400]",
-	"Don't [delay,700]go in [delay,600]there![delay,400]",
-	"The [delay,300]creeps [delay,300]go [delay,300]wandering, [delay,400]ghouls [delay,250]and [delay,250]beasts[delay,300]",
-	"On [delay,300]Hal-[delay,300]lo-[delay,250]ween![delay,3600]",
-	"Critters [delay,300]go [delay,250]loose [delay,250]on [delay,250]streets[delay,300]",
-	"On [delay,300]Hal-[delay,300]lo-[delay,250]ween![delay,3000]",
-	"At [delay,300]Fog[delay,600]gy [delay,600]Hal[delay,600]low[delay,1500]",
-	"Spook-[delay,1000]y [delay,500]spree[delay,2900]",
-	"Stole the treats [delay,300]from [delay,300]rich [delay,300]dog [delay,300]prin[delay,300]cess[delay,6800]",
-	"Made [delay,900]new [delay,400]friends[delay,3000]",
-	"Got the band [delay,400]all [delay,300]back [delay,300]to[delay,300]ge[delay,300]ther [delay,250]again[delay,4800]",
-	"Oh-[delay,900]oh[delay,600]",
-	"Boo [delay,800]scare![delay,2500]",
-	"Don't [delay,600]go in [delay,700]there![delay,300]",
-	"The [delay,300]creeps [delay,300]go [delay,300]wandering, [delay,400]ghouls [delay,250]and [delay,250]beasts[delay,300]",
-	"On [delay,300]Hal-[delay,300]lo-[delay,250]ween![delay,4000]",
-	//"The band of critters",
-	//"Get loose on streets",
-	//"On []Hal-[]lo-[]ween![]",
-	//"The creeps go wandering, ghouls and beasts",
-	//"On []Hal-[]lo-[]ween![]",
-	//"The band of critters",
-	//"Get loose on streets",
-	//"On []Hal-[]lo-[]ween![]",
-	//"Oh I don't care",
-	//"I'll just stay here",
-	//"With ghostly dreams",
-	//"Fog[]gy []Hal[]low[]",
-	//"...[]",
-	//"Thank you so much! Have a wonderful night!"
-];
 
-currentLine = 0;
-
-songTypist = scribble_typist().in(TYPIST_SPEED, TYPIST_SMOOTHNESS);
-
-// LINK THE TYPIST HERE USING .in(songTypist)
-scribbleElement = scribble(lyrics[currentLine]);
-scribbleElement.starting_format("fBandLyrics", c_white);
-scribbleElement.align(fa_center, fa_top);
 
 lyricsX = VIEWPORT_WIDTH / 2;
 lyricsY = VIEWPORT_HEIGHT - 250;
+
+audioHandle = AmbientChange(AMBIENT_MUSIC, bgmBand, DEFAULT_VOLUME_PERCENT, false, 0);
+
+// Global audio offset calibration (e.g., 0.05 = -50ms offset if audio lags slightly)
+audioOffset = 0.0; 
+
+currentLineIndex = 0;
+
+// Structured timestamps in SECONDS
+lyricsData = [
+    { text: "Hal-lo-ween!", startTime: 3, duration: 4.5, endTime: 8 },
+    //{ text: "Trick or treat til sun is dawning", startTime: 5.8, duration: 3.5, endTime: 12.8 },
+    //{ text: "Autumn leaves", startTime: 13.0, duration: 4.1, endTime: 17.5 },
+    //{ text: "Fell the trees, the creeps go hauntin'", startTime: 18.0, duration: 3.5, endTime: 23.0 },
+    //{ text: "Oh-oh", startTime: 23.5, duration: 1.5, endTime: 25.5 },
+    //{ text: "Boo scare!", startTime: 26.0, duration: 3.3, endTime: 29.5 },
+    //{ text: "Don't go in there!", startTime: 30.0, duration: 2.3, endTime: 32.5 },
+    //{ text: "I sense a jumpscare!", startTime: 33.0, duration: 2.0, endTime: 35.5 },
+    //{ text: "Don't go in there!", startTime: 36.0, duration: 1.7, endTime: 38.0 },
+    //{ text: "The creeps go wandering, ghouls and beasts", startTime: 38.5, duration: 3.0, endTime: 42.0 },
+    //{ text: "On Hal-lo-ween!", startTime: 42.5, duration: 1.5, endTime: 46.5 }
+];
+
+// Initialize Scribble without an automatic speed typist
+songTypist = scribble_typist();
+
+// Helper to rebuild Scribble element on line change
+function LoadLyricLine(index) {
+    if (index < array_length(lyricsData)) {
+        var line = lyricsData[index];
+        scribbleElement = scribble(line.text);
+        scribbleElement.starting_format("fBandLyrics", c_white);
+        scribbleElement.align(fa_center, fa_top);
+    } else {
+        scribbleElement = undefined;
+    }
+}
+
+LoadLyricLine(currentLineIndex);

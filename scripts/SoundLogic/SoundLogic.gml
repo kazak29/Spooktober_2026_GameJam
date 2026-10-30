@@ -165,7 +165,7 @@
 			}
 		}
 		
-		return _id;
+		return _data.ambientId;
 	}
 	
 	//check for fading every step
