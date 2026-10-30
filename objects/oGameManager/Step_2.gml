@@ -4,7 +4,11 @@
 		room == rmInit || 
 		room == rmTitleScreen || 
 		room == rmCredits || 
-		room == rmSplashScreen
+		room == rmSplashScreen ||
+		room == rmStayInEnding ||
+		room == rmGroupMovieEnding ||
+		room == rmBandEnding ||
+		room == rmCiko
 	);
 	var _exception = _exceptionRoom;
 	
