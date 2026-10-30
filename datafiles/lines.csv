@@ -1978,7 +1978,7 @@ p2Front1,,"music,bgmHouseAcross"
 p2Front1,Empty,You notice that the front door is no longer guarded by the giant furry ball with long ears.
 p2Front1,,"trans_change,true,sBackgroundBlack"
 p2Front1,Empty,You squeeze through a small hole in the front door.
-p2Front1,,"trans_change,true,sBackgroundHouseAcrossYardDay"
+p2Front1,,"trans_change,true,sBackgroundHouseAcrossInsideDay"
 p2Front1,,"main_char_in,0"
 p2Front1,,"char_in,Princess,sPrincess,7"
 p2Front1,Princess,"[sound,sfxPrincessBark][tw_sfx,none][b]Bark![/b]"
@@ -2169,7 +2169,7 @@ p2Front1BadIdea,Princess,[shake]DIPPER GET IN HERE!!! GUAAARDS!!![/shake]
 p2Front1BadIdea,Spook,"This is bad, I better get out of here!"
 p2Front1BadIdea,,map
 ,,
-p2Front2,,"scene_bg_clear,sBackgroundHouseAcrossYardDay"
+p2Front2,,"scene_bg_clear,sBackgroundHouseAcrossInsideDay"
 p2Front2,,"music,bgmHouseAcross"
 p2Front2,,"main_char_in,0"
 p2Front2,,"char_in,Princess,sPrincess,0"
@@ -2379,7 +2379,7 @@ p2FrontWatchCome,,"char_update,Princess,10"
 p2FrontWatchCome,Princess,"...Very well, [name_from_princess_low]."
 p2FrontWatchCome,,map
 ,,
-p2FrontOffended,,"scene_bg_clear,sBackgroundHouseAcrossYardDay"
+p2FrontOffended,,"scene_bg_clear,sBackgroundHouseAcrossInsideDay"
 p2FrontOffended,,"music,bgmHouseAcross"
 p2FrontOffended,,"main_char_in,0"
 p2FrontOffended,,"char_in,Princess,sPrincess,7"
@@ -2390,7 +2390,7 @@ p2FrontOffended,,"char_update,Princess,6"
 p2FrontOffended,Princess,[shake]Get out!!! Get ouuuuuuut!!![/shake]
 p2FrontOffended,,map
 ,,
-p2FrontComplete,,"scene_bg_clear,sBackgroundHouseAcrossYardDay"
+p2FrontComplete,,"scene_bg_clear,sBackgroundHouseAcrossInsideDay"
 p2FrontComplete,,"music,bgmHouseAcross"
 p2FrontComplete,,"main_char_in,0"
 p2FrontComplete,,"char_in,Princess,sPrincess,2"
