@@ -26,30 +26,10 @@ audioHandle = AmbientChange(AMBIENT_MUSIC, bgmBand, DEFAULT_VOLUME_PERCENT, fals
 audioOffset = 0.0; 
 currentLineIndex = 0;
 
-// Simple timestamp triggers: Just the text and the exact second it should appear
-lyricsData = [
-    { 
-        endTime: 15.0,
-        chunks: [
-            { text: "Hal-",  time: 3.5 },
-            { text: "lo-",   time: 4.6 },
-            { text: "ween!", time: 5.2 }
-        ]
-    },
-    {
-		endTime: 20.0,
-		chunks: [
-			{ text: "Trick or treat", time: 0.0 },
-			{ text: "'til ", time: 0.0 },
-			{ text: "", time: 0.0 },
-			{ text: "", time: 0.0 },
-			{ text: "", time: 0.0 },
-			{ text: "", time: 0.0 },
-		]
-	}
-];
 
-// Keep track of the currently built string to avoid unnecessary re-creation
+lyricsData = LoadLyricsData();
+if (global.cheat) { audioTimeString = "00:00:000"; }
+
 builtText = "";
 lastActiveChunkCount = -1;
 scribbleElement = undefined;

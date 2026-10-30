@@ -9,6 +9,22 @@ if (returnPromptEnabled && (oInputManager.pressed.confirm || oInputManager.mouse
 if (audio_is_playing(audioHandle) && currentLineIndex < array_length(lyricsData)) {
     
     var trackPos = audio_sound_get_track_position(audioHandle) - audioOffset;
+	
+	if (global.cheat) {
+	    var _mins = floor(trackPos / 60);
+	    var _secs = floor(trackPos) % 60;
+	    var _ms   = floor((trackPos - floor(trackPos)) * 1000);
+		// Pad with leading zeros
+	    var _mStr = (_mins < 10) ? $"0{_mins}" : string(_mins);
+	    var _sStr = (_secs < 10) ? $"0{_secs}" : string(_secs);
+    
+	    var _msStr = string(_ms);
+	    if (_ms < 100) _msStr = "0" + _msStr;
+	    if (_ms < 10)  _msStr = "0" + _msStr;
+    
+	    audioTimeString = $"{_mStr}:{_sStr}:{_msStr}";
+	}
+	
     var currentLine = lyricsData[currentLineIndex];
     
     // Check if it's time to clear the line and move to the next one
