@@ -6,13 +6,7 @@ if (returnPromptEnabled) {
     draw_text(drawX, drawY, returnPrompt);
 }
 
-// Render active line if present
+// Render active line if it has started drawing
 if (scribbleElement != undefined && currentLineIndex < array_length(lyricsData)) {
-    var trackPos = audio_sound_get_track_position(audioHandle) - audioOffset;
-    var currentLine = lyricsData[currentLineIndex];
-    
-    // Only draw line if audio has reached its start time
-    if (trackPos >= currentLine.startTime) {
-        scribbleElement.draw(lyricsX, lyricsY, songTypist);
-    }
+    scribbleElement.draw(lyricsX, lyricsY);
 }
