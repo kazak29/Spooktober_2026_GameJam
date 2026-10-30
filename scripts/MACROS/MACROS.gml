@@ -81,6 +81,7 @@
 #region Screen Play
 	
 	#macro FIRST_SCENE "intro"
+	#macro BEST_ENDING_CONTINUED "endPartyAmazingCont"
 	
 	#macro MAX_TEXTLOG_CAPACITY 100
 	
