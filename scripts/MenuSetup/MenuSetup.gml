@@ -971,13 +971,13 @@ function MenuUpdateSave(_elemData){
 	_elemData.locked = false;
 	
 	//setup title
-	var _title = "";
+	var _title = $"SAVE FILE {_elemData.arg[0]}\n";
 	if _elemData.arg[0] == 0 {
 		_title = string_concat(global.uiData.menuAuto, "\n");
 		if (_scr == MenuGameSave) _elemData.locked = true;
 	}
 	
-	//reset title if no save file
+	//set title for no save file
 	if !is_struct(_data) {
 		if (_scr == MenuGameLoad) _elemData.locked = true;
 		
