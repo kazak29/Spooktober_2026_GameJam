@@ -23,7 +23,7 @@
   ],
   "name":"sCiko",
   "nineSlice":null,
-  "origin":0,
+  "origin":1,
   "parent":{
     "name":"Backgrounds",
     "path":"folders/Sprites/Backgrounds.yy",
@@ -75,7 +75,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":0,
+    "xorigin":720,
     "yorigin":0,
   },
   "swatchColours":null,

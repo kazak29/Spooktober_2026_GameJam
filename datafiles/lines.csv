@@ -471,7 +471,7 @@ p1HomeQuestBarPlay,,"char_update,Screwdriver,1"
 p1HomeQuestBarPlay,Screwdriver,You should join in! We have motorcycles and everything!
 p1HomeQuestBarPlay,Spook,But I'm a mouse.
 p1HomeQuestBarPlay,Screwdriver,Are you a mouse against capitalism?
-p1HomeQuestBarPlay,Spook,I guess I could be...?
+p1HomeQuestBarPlay,Spook,Uh...?
 p1HomeQuestBarPlay,,"char_update,Screwdriver,2"
 p1HomeQuestBarPlay,Screwdriver,[shake]GREAT! YOU'RE IN![/shake]
 p1HomeQuestBarPlay,,"char_update,Spook,7"
@@ -3128,12 +3128,12 @@ endPartyAmazing,Limes,Limes missed you too!
 endPartyAmazing,,"char_update,Limes,1"
 endPartyAmazing,Limes,Also miss drumz.
 endPartyAmazing,Limes,Spook tell me drumz still here.
-endPartyAmazing,Screwdriver,Well well.  
+endPartyAmazing,Screwdriver,And check it out! I found my old guitar in a box while decorating the place!
 endPartyAmazing,Screwdriver,Looks like [wave][b]ASqueak/Dsqueak[/b][/wave] is back at it!
 endPartyAmazing,,"char_update,Limes,0"
 endPartyAmazing,Screwdriver,We playin' tonight?
 endPartyAmazing,,"char_update,Pogo,1"
-endPartyAmazing,Pogo,"Oh, you're [shake]ASKING!?[/shake]"
+endPartyAmazing,Pogo,"Oh, you're [shake]ASKING?![/shake]"
 endPartyAmazing,,"char_update,Limes,3"
 endPartyAmazing,Limes,"[sound,sfxLimesBadumTss][tw_sfx,none][shake]DRUMZ![/shake]"
 endPartyAmazing,Spook,No way! The band's back together!
@@ -3151,78 +3151,97 @@ endPartyAmazing,Pogo,[shake]THE GREAT COMEBACK OF...[/shake]
 endPartyAmazing,Limes,[shake][b]A/Squeak D/Squeak!!!!![/b][/shake]
 endPartyAmazing,,"trans_room,rmBandEnding"
 ,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
 endPartyAmazingCont,,"scene_bg_clear,sBackgroundSewerBarParty"
-endPartyAmazingCont,,"music,bgmSpookTheme"
 endPartyAmazingCont,???,"[tw_sfx,Edgar]Oh, I am sure she went that way!"
-endPartyAmazingCont,Empty,Sewer door opens...
-endPartyAmazingCont,Girl,[shake]PRINCESS![/shake]
-endPartyAmazingCont,Boy,Limes!!!
-endPartyAmazingCont,Shay,[shake]SPOOK!!!?? WHAT ARE YOU DOING HERE!!!?[/shake]
+endPartyAmazingCont,???,"[tw_sfx,Shay]The sewer? Are you sure?"
+endPartyAmazingCont,Empty,You hear a familiar voice outside...
+endPartyAmazingCont,Empty,It's Shay!
 endPartyAmazingCont,,"trans_change,true,sBackgroundStreetNight"
-endPartyAmazingCont,,"char_in,Girl,sShay,0"
-endPartyAmazingCont,Girl,[shake]WHAT IS THE MEANING OF THIS????[/shake]
-endPartyAmazingCont,,"char_in,Shay,sShay,4"
-endPartyAmazingCont,Shay,[shake]OH MY GOD!! ARE YOU OKAY SPOOK!!![/shake]
-endPartyAmazingCont,,"char_in,Boy,sShay,0"
-endPartyAmazingCont,Boy,It... seems like... They are drinking something...
-endPartyAmazingCont,Boy,And... playing music...?
-endPartyAmazingCont,Shay,...?
+endPartyAmazingCont,,"music,bgmSpookTheme"
+endPartyAmazingCont,???,"[tw_sfx,Lenore][shake]PRINCESS![/shake]"
+endPartyAmazingCont,,"char_in,Lenore,sLenore,1"
+endPartyAmazingCont,???,"[tw_sfx,Edgar]Limes!!!"
+endPartyAmazingCont,,"char_in,Edgar,sEdgar,1"
+endPartyAmazingCont,Shay,Edgar! Lenore! Wait up!
+endPartyAmazingCont,,"char_in,Shay,sShay,9"
+endPartyAmazingCont,Lenore,[shake]WHAT IS THE MEANING OF THIS????[/shake]
+endPartyAmazingCont,,"char_update,Shay,4"
+endPartyAmazingCont,Shay,[shake]SPOOK??!! WHAT ARE YOU DOING HERE??!![/shake]
+endPartyAmazingCont,,"main_char_in,10"
+endPartyAmazingCont,Shay,[shake]OH MY GOD!! ARE YOU OKAY SPOOK??!![/shake]
 endPartyAmazingCont,Spook,Squeak!
+endPartyAmazingCont,,"char_update,Edgar,0"
+endPartyAmazingCont,Edgar,It... seems like... they were drinking something...
+endPartyAmazingCont,Edgar,And... did I hear music down there...?
 endPartyAmazingCont,Spook,Squeak squeak!
-endPartyAmazingCont,Princess,Bark!
-endPartyAmazingCont,Limes,Limez.
-endPartyAmazingCont,,"char_update,Shay,3"
+endPartyAmazingCont,Princess,"[tw_sfx,none][sound,sfxPrincessBark][b]Bark![/b]"
+endPartyAmazingCont,Limes,Dook!
+endPartyAmazingCont,,"char_update,Shay,11"
+endPartyAmazingCont,Shay,...?
+endPartyAmazingCont,,"char_in,Shay,8"
+endPartyAmazingCont,,"char_update,Shay,10"
 endPartyAmazingCont,Shay,"I... I see. They are friends, huh?"
-endPartyAmazingCont,Girl,Princess! Is this where you have been vanishing into!?
-endPartyAmazingCont,,"char_out,Girl"
-endPartyAmazingCont,Princess,Bark!
-endPartyAmazingCont,Boy,Oh wow...
-endPartyAmazingCont,,"char_out,Boy"
+endPartyAmazingCont,,"char_update,Lenore,2"
+endPartyAmazingCont,Lenore,Princess! What are you doing out here this late?!
+endPartyAmazingCont,Princess,"[tw_sfx,none][sound,sfxPrincessBark][b]Bark![/b]"
+endPartyAmazingCont,Lenore,Don't scare me like that again!
 endPartyAmazingCont,,"char_update,Shay,5"
-endPartyAmazingCont,Shay,"I'm so glad you are okay, Spook!"
+endPartyAmazingCont,Shay,"I'm just glad you're okay, Spook!"
+endPartyAmazingCont,Shay,Did you have fun with your new friends?
+endPartyAmazingCont,Spook,Squeak!
 endPartyAmazingCont,,"char_update,Shay,3"
-endPartyAmazingCont,Shay,...Um. 
-endPartyAmazingCont,Shay,"These are our neighbours, Edgar and Lenore!"
-endPartyAmazingCont,,"char_in,Lenore,sShay,0"
-endPartyAmazingCont,Lenore,That's your mouse..? He's cute. Or whatever. 
-endPartyAmazingCont,Shay,Yes! Um.. That's your dog and... a ferret?
-endPartyAmazingCont,,"char_in,Edgar,sShay,0"
-endPartyAmazingCont,Edgar,Ferret's mine. 
-endPartyAmazingCont,Lenore,Princess is... Her own person. 
-endPartyAmazingCont,Princess,Bark!
+endPartyAmazingCont,Shay,Well...
+endPartyAmazingCont,Shay,"These are our new neighbours, Edgar and Lenore!"
+endPartyAmazingCont,,"char_update,Lenore,0"
+endPartyAmazingCont,Lenore,"That's your mouse...? He's cute, I suppose. "
+endPartyAmazingCont,Shay,Yes! Um... That's your dog and... a ferret?
+endPartyAmazingCont,,"char_update,Edgar,2"
+endPartyAmazingCont,Edgar,Limes is mine. Though I'm not sure where he got that costume...
+endPartyAmazingCont,Limes,Dook!
+endPartyAmazingCont,Empty,"[sound,sfxLimesSpin]Limes starts spinning rapidly."
+endPartyAmazingCont,,"delay,1"
+endPartyAmazingCont,Lenore,Princess is... her own person. Isn't that right?
+endPartyAmazingCont,Princess,"[tw_sfx,none][sound,sfxPrincessBark][b]Bark![/b]"
 endPartyAmazingCont,,"char_update,Shay,5"
 endPartyAmazingCont,Shay,"Oh, I see. Wonderful. And they have made so many friends!"
 endPartyAmazingCont,Lenore,Well... Seems like it.
+endPartyAmazingCont,,"char_update,Lenore,1"
+endPartyAmazingCont,Lenore,"Ew, even that gross raccoon is here!"
+endPartyAmazingCont,Lenore,"Princess, surely you'd rather be anywhere but near that thing!"
+endPartyAmazingCont,Princess,"[tw_sfx,none][sound,sfxPrincessBark][b]Bark![/b]"
+endPartyAmazingCont,,"char_update,Lenore,2"
+endPartyAmazingCont,Lenore,Really? You're serious?
+endPartyAmazingCont,Shay,"C'mon, Lenore! He's not THAT gross... I think he's cute!"
+endPartyAmazingCont,,"char_update,Lenore,3"
+endPartyAmazingCont,Lenore,"Well, okay... But it'll take some getting used to."
 endPartyAmazingCont,Shay,...Why don't we bring them inside?
+endPartyAmazingCont,,"char_update,Edgar,1"
 endPartyAmazingCont,Edgar,[shake]Ah!!![/shake] No way! Mom and dad would [shake]freak out![/shake]
-endPartyAmazingCont,Shay,We can go to our house!
-endPartyAmazingCont,Shay,"Um... You guys ever watched [b]""Zombie Rats take over the world again""[/b]?"
-endPartyAmazingCont,Screwdriver,Wow. Gotta call the gang for that!
+endPartyAmazingCont,Shay,We can go to my house!
+endPartyAmazingCont,,"char_update,Shay,3"
+endPartyAmazingCont,Shay,"Um... Have you ever seen [b]""Zombie Rats Take Over the World Again""[/b]?"
+endPartyAmazingCont,Screwdriver,Zombie rats? Gotta call the gang for that!
+endPartyAmazingCont,,"char_update,Lenore,0"
 endPartyAmazingCont,Lenore,The sequel?
-endPartyAmazingCont,Lenore,"Hm... I don't think we did, no."
+endPartyAmazingCont,Lenore,Hm... I don't think so.
 endPartyAmazingCont,,"char_update,Shay,4"
 endPartyAmazingCont,Shay,[shake]YOU WANT TO?[/shake]
-endPartyAmazingCont,Lenore,....yeah.
+endPartyAmazingCont,,"char_update,Edgar,0"
 endPartyAmazingCont,Edgar,"Sure, I'm in!"
+endPartyAmazingCont,Lenore,"...Yeah, okay."
 endPartyAmazingCont,,"char_update,Shay,5"
 endPartyAmazingCont,Shay,[shake]YEAH![/shake]
 endPartyAmazingCont,Spook,[shake]SQUEAK![/shake]
 endPartyAmazingCont,,"delay,0.5"
 endPartyAmazingCont,Lamp,"[zalgo_big,30][speed,0.3]What a beautiful turn of events.[/speed]"
+endPartyAmazingCont,,"char_update,Lenore,2"
 endPartyAmazingCont,Lenore,[shake]WHAT THE...?[/shake]
+endPartyAmazingCont,,"char_update,Edgar,2"
 endPartyAmazingCont,Edgar,[shake]...[/shake]
+endPartyAmazingCont,,"char_update,Shay,9"
 endPartyAmazingCont,Shay,[shake]Um.[/shake] Let's just go inside.
-endPartyAmazingCont,,"delay,1.5"
-endPartyAmazingCont,,"trans_room,rmCredits"
+endPartyAmazingCont,,"delay,1"
+endPartyAmazingCont,,"music,noone"
+endPartyAmazingCont,,"trans_change,true,sBackgroundBlack"
+endPartyAmazingCont,Empty,Looks like living in Foggy Hallow won't be so bad after all.
+endPartyAmazingCont,,"trans_room,rmGroupMovieEnding"
