@@ -124,54 +124,48 @@
 
 	//change ambient to new track or empty
 	function AmbientChange(_type, _nextTrack = noone, _volPercent = 100, _looping = true, _fadeInTime = 2500, _fadeOutTime = 1000){
+		var _id = noone;
 		
 		//get ambient struct or setup a new one
 		if !struct_exists(global.ambient, _type) global.ambient[$ _type] = AmbientDataSetup();
 		var _data = global.ambient[$ _type];
 		
-		
 		//check if this track is being played already
 		if (_data.ambientTrack != _nextTrack) || (!audio_is_playing(_data.ambientId)) {
-		
+			
 			//fade out last track
 			AmbientFadeOut(_type, _fadeOutTime);
-	
+			
 			//check if track should be empty
 			if audio_exists(_nextTrack) {
-		
-				AmbientPlay(_type, _nextTrack, _volPercent, _looping, _fadeInTime);
-		
+				_id = AmbientPlay(_type, _nextTrack, _volPercent, _looping, _fadeInTime);
 			} else {
-		
 				//empty stored data
 				_data.ambientTrack = noone;
 				_data.ambientId = noone;
 				_data.ambientVol = 100;
-		
 			}
-	
+		
 		} else {
 			
 			//switch type of volume depending on ambient type
 			var _volGlobal = global.volume.sound;
 			switch _type {
-			
 				case AMBIENT_MUSIC: _volGlobal = global.volume.music; break;
-			
 			}
 			
 			//get current gain and new gain
 			var _gain = audio_sound_get_gain(_data.ambientId);
 			var _gainNew = (_volGlobal * _volPercent) / 100;
-				
+			
 			//change gain if they are unequal (do this so it would change if global volume changes as well as in-code vol percent changes)
 			if (_gain != _gainNew) {
 				audio_sound_gain(_data.ambientId, _gainNew, _fadeInTime);
 				_data.ambientVol = _volPercent;
 			}
-		
 		}
-	
+		
+		return _data.ambientId;
 	}
 	
 	//check for fading every step

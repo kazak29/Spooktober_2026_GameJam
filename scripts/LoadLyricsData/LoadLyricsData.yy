@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"LoadLyricsData",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"LoadLyricsData",
+  "parent":{
+    "name":"Music",
+    "path":"folders/Scripts/Loading/Music.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
