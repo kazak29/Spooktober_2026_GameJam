@@ -3,7 +3,7 @@ function LoadLyricsData ()
 {
 	var _lyricsData = [
 		{ 
-	        endTime: 13.0,
+	        endTime: 8.0,
 	        chunks: [
 	            { text: "Hal-",  time: 3.5 },
 	            { text: "lo-",   time: 4.6 },
@@ -11,9 +11,9 @@ function LoadLyricsData ()
 	        ]
 	    },
 	    {
-			endTime: 20.0,
+			endTime: 100.0,
 			chunks: [
-				{ text: "Trick or treat", time: 13.0 },
+				{ text: "Trick or treat", time: 8.0 },
 				{ text: "'til ", time: 14.0 },
 				{ text: "sun ", time: 15.0 },
 				{ text: "is ", time: 16.0 },

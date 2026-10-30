@@ -28,7 +28,10 @@ currentLineIndex = 0;
 
 
 lyricsData = LoadLyricsData();
-if (global.cheat) { audioTimeString = "00:00:000"; }
+if (global.cheat) {
+	audioTimeString = "00:00:000";
+	audioPaused = false;
+}
 
 builtText = "";
 lastActiveChunkCount = -1;

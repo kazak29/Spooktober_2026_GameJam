@@ -23,6 +23,15 @@ if (audio_is_playing(audioHandle) && currentLineIndex < array_length(lyricsData)
 	    if (_ms < 10)  _msStr = "0" + _msStr;
     
 	    audioTimeString = $"{_mStr}:{_sStr}:{_msStr}";
+		
+		if (oInputManager.pressed.down) {
+			audioPaused = !audioPaused;
+			if (audioPaused) {
+				audio_pause_sound(audioHandle);
+			} else {
+				audio_resume_sound(audioHandle);
+			}
+		}
 	}
 	
     var currentLine = lyricsData[currentLineIndex];
