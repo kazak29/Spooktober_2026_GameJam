@@ -106,6 +106,4 @@ function MenuConfirmYes(){
 		} break;
 		
 	}
-	
-	//global.menuParameters.confirmElemData = noone;
 }
